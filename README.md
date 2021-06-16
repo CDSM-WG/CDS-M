@@ -3,7 +3,7 @@ City Data Standard for Mobility
 
 The City Data Standard for Mobility (CDS-M) is an initiative to develop a standardised way to communicate data between Transport Operators (TOs) and the Govermental Departments on whose infrastructure they operate.  The purpose of this definiton is to achieve a level of standardisation within the European Union in line with existing EU laws and legistation relating to transportation standards and privacy.
 
-The aim of the CDS-M is to agree on `The Standard` that will be used for the communication, and `The Agreement` for the use of this data, as part of a Business to Government collaboration (B2G).  
+The aim of the CDS-M is to aree on **The Standard** that will be used for the communication, and **The Agreement** for the use of this data, as part of a Business to Government collaboration (B2G).  
 
 ## The Standard
 
@@ -13,12 +13,13 @@ The Standard of the CDS-M will not look to create new standards where existing s
 
 Standards currently identified as being relevant for the purpose of data collection by Cities are as follows:
 
-* GBFS
-* GTFS-Realtime
-* MDS
-* NeTEx
-* Siri
-* TOMP-API
+* [DATEXII](https://datex2.eu/)
+* [GBFS](https://github.com/MobilityData/gbfs)
+* [GTFS-Realtime](https://github.com/google/transit/tree/master/gtfs-realtime/spec/en)
+* [MDS](https://github.com/openmobilityfoundation/mds-core)
+* [NeTEx](https://github.com/NeTEx-CEN/NeTEx)
+* [SIRI](https://www.siri-cen.eu/)
+* [TOMP-API](https://github.com/TOMP-WG/TOMP-API)
 
 ## The Agreement
 
