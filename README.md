@@ -16,7 +16,7 @@ Standards currently identified as being relevant for the purpose of data collect
 * [DATEXII](https://datex2.eu/)
 * [GBFS](https://github.com/MobilityData/gbfs)
 * [GTFS-Realtime](https://github.com/google/transit/tree/master/gtfs-realtime/spec/en)
-* [MDS](https://github.com/openmobilityfoundation/mds-core)
+* [MDS](https://github.com/openmobilityfoundation/mobility-data-specification)
 * [NeTEx](https://github.com/NeTEx-CEN/NeTEx)
 * [SIRI](https://www.siri-cen.eu/)
 * [TOMP-API](https://github.com/TOMP-WG/TOMP-API)
