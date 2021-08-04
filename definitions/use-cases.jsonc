@@ -1,0 +1,125 @@
+{
+    "id": "POL-UC-001-1", // unique identifier of use case definition (WT1)
+    "story": {  // WT 1
+        "asA": "string",
+        "iWouldLikeTo": "string",
+        "inOrderTo": "string"
+    },
+    "benefitsToCities":[ // WT 1
+        "string",
+        "string",
+        "string"
+    ],
+    "benefitsToTOs":[ // WT 1
+        "string",
+        "string",
+        "string"
+    ],
+    "deliveryStandards":[ // WT 2 & 4
+        {
+            "standard": "GBFS",
+            "defintion": "free_asset_status.json",
+            "version": "2.x"
+        },
+        {
+            "standard": "MDS",
+            "defintion": "metrics.json",
+            "version": "1.2"
+        }
+    ],
+    "sharingAgreements": { // WT3
+        "canBeSharedWith": [
+            {
+                "receivingCategory": "RESEARCH_PROVIDERS",
+                "format": "agregated",
+                "viaDefintions": [
+                    {
+                        "standard": "MDS",
+                        "defintion": "metrics.json",
+                        "minVersion": "1.x"
+                    },
+                    {
+                        "standard": "TOMP",
+                        "defintion": "Operations.json",
+                        "minVersion": "1.x"
+                    }
+                ]
+            },
+            {
+                "receivingCategory": "OTHER_CITIES",
+                "format": "GBFS",
+                "viaDefintions": [
+                    {
+                        "standard": "GBFS",
+                        "defintion": "free_asset_status.json",
+                        "minVersion": "2.x"
+                    }
+                ]
+            }
+        ],
+        "cannotBeSharedWith": [
+            "TRANSPORT_OPERATORS",
+            "EXTERNAL_DATA_PARTIES"
+        ] // Definition states that this is an optional and any names not mentioned in "canBeSharedWith" are by default excluded
+    },
+    "securityRequirements": { // WT 6
+        "collection":[
+            {
+                "standard": "GBFS",
+                "format": "free_asset_status.json",
+                "certification": "ISO 27001"
+            },
+            {
+                "standard": "MDS",
+                "format": "metrics.json",
+                "certification": "ISO 27001"
+            }
+        ],
+        "processing": [
+            {
+                "standard": "MDS",
+                "format": "metrics.json",
+                "certification": "ISO 27001",
+                "durationDays": 14
+            },
+            {
+                "standard": "GBFS",
+                "format": "free_asset_status.json",
+                "certification": "ISO 27001",
+                "durationDays": 14
+            }
+        ],
+        "shortTermStorage": [
+            {
+                "certification": "ISO 27001",
+                "durationDays": 30
+            }
+        ],
+        "longTermStorage": [
+            {
+                "certification": "ISO 27001",
+                "durationYears": 7
+            }
+        ],
+        "encryptionInTransport": [
+            {
+                "type": "TLS",
+                "versionLevel": "1.3"
+            }
+        ],
+        "encryptionAtRest": [
+            {
+                "type": "CDSM",
+                "versionLevel": "1"
+            }
+        ]
+    },
+    "legalConsiderations": [ // WT 5
+        {"gdpr": {"template": "DPIA-UC-001-1"}}
+    ],
+    "combinationOptions": [ // WT 1
+        "PLA-UC-007-1-alpha",
+        "POL-UC-054-1",
+        "POL-UC-102-1"
+    ]
+}

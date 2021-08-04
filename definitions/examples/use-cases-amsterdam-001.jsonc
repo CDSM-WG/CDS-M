@@ -1,0 +1,128 @@
+{
+    "id": "POL-UC-001-1", // unique identifier of use case definition
+    "story": {
+        "asA": "Policy Maker",
+        "iWouldLikeTo": "Collect near real time location data of non-booked assets",
+        "inOrderTo": "Make informed decisions about the geographical distribution of assets between different regions that I am responsible for "
+    },
+    "definitionOfDone": "When I have a stream of near real time data providing information relating to the location of non-booked assets. The stream can provide insights via reporting tools or GUI dashboards to gain insight into the distribution of a TO’s assets, when in a non-booked state. I can see all assets that are in a non-booked state on a dashboard and I can export those GUIs maps based on a historical time window of 1 hour.",
+    "benefitsToCities":[
+        "Monitor assets to make sure there’s even distribution in a non-booked sense.",
+        "Prediction models to better reallocate assets where and when they are needed.",
+        "Planners can better allocate resources to manage assets that may travel between municipal regions. This could include the creation of dedicated parking zones and/or regular planned pickups by the TO.",
+        "Ensure that overcrowding of assets doesn’t occur at peak times.",
+        "Keep a better allocation of assets within the metropole region."
+    ],
+    "benefitsToTOs":[
+        "Potential to increase the license to include more allocation of assets to cover the daily flow between cdertain regions",
+        "Opportunity to increase return on an asset by encouraging re-distribution at the relevant times",
+        "Get planning for the deployment of a charging station at hotspots of bikes"
+    ],
+    "deliveryStandards":[
+        {
+            "standard": "GBFS",
+            "defintion": "free_asset_status.json",
+            "version": "2.1"
+        },
+        {
+            "standard": "MDS",
+            "defintion": "metrics.json",
+            "version": "1.2"
+        }
+    ],
+    "sharingAgreements": {
+        "canBeSharedWith": [
+            {
+                "receivingCategory": "RESEARCH_PROVIDERS",
+                "format": "AGREGATED",
+                "viaDefintions": [
+                    {
+                        "standard": "MDS",
+                        "defintion": "metrics.json",
+                        "minVersion": "1.1"
+                    },
+                    {
+                        "standard": "TOMP",
+                        "defintion": "Operations.json",
+                        "minVersion": "1.2.2"
+                    }
+                ]
+            },
+            {
+                "receivingCategory": "OTHER_CITIES",
+                "format": "AGREGATED",
+                "viaDefintions": [
+                    {
+                        "standard": "MDS",
+                        "defintion": "metrics.json",
+                        "minVersion": "1.1"
+                    }
+                ]
+            }
+        ],
+        "cannotBeSharedWith": [
+            "TRANSPORT_OPERATORS",
+            "EXTERNAL_DATA_PARTIES"
+        ] // Definition states that this is an optional and any names not mentioned in "canBeSharedWith" are by default excluded
+    },
+    "securityRequirements": {
+        "collectionOneOf":[
+            {
+                "standard": "GBFS",
+                "format": "free_asset_status.json",
+                "certification": "ISO 27001"
+            },
+            {
+                "standard": "MDS",
+                "format": "metrics.json",
+                "certification": "ISO 27001"
+            }
+        ],
+        "processingOneOf": [
+            {
+                "standard": "MDS",
+                "format": "metrics.json",
+                "certification": "ISO 27001",
+                "durationDays": 14
+            },
+            {
+                "standard": "GBFS",
+                "format": "free_asset_status.json",
+                "certification": "ISO 27001",
+                "durationDays": 14
+            }
+        ],
+        "shortTermStorage": [
+            {
+                "certification": "ISO 27001",
+                "durationDays": 30
+            }
+        ],
+        "longTermStorage": [
+            {
+                "certification": "ISO 27001",
+                "durationYears": 7
+            }
+        ],
+        "encryptionInTransport": [
+            {
+                "type": "TLS",
+                "versionLevel": "1.3"
+            }
+        ],
+        "encryptionAtRest": [
+            {
+                "type": "CDSM",
+                "versionLevel": "1"
+            }
+        ]
+    },
+    "legalConsiderations": [
+        {"gdpr": {"template": "DPIA-UC-001-1"}}
+    ],
+    "combinationOptions": [
+        "PLA-UC-007-1-alpha",
+        "POL-UC-054-1",
+        "POL-UC-102-1"
+    ]
+}
