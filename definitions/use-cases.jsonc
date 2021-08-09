@@ -5,11 +5,21 @@
         "iWouldLikeTo": "string",
         "inOrderTo": "string"
     },
+    "problemBeingSolvedForCities":[ // WT 1 - stakeholders should have a view of what 'city facing' problem is being solved per use case
+        "string",
+        "string",
+        "string"
+    ],        
     "benefitsToCities":[ // WT 1
         "string",
         "string",
         "string"
     ],
+    "problemBeingSolvedForTOs":[ // WT 1 - stakeholders should have a view of what 'TO facing' problem is being solved per use case
+        "string",
+        "string",
+        "string"
+    ], 
     "benefitsToTOs":[ // WT 1
         "string",
         "string",
@@ -18,12 +28,12 @@
     "deliveryStandards":[ // WT 2 & 4
         {
             "standard": "GBFS",
-            "defintion": "free_asset_status.json",
+            "definition": "free_asset_status.json",
             "version": "2.x"
         },
         {
             "standard": "MDS",
-            "defintion": "metrics.json",
+            "definition": "metrics.json",
             "version": "1.2"
         }
     ],
@@ -32,15 +42,15 @@
             {
                 "receivingCategory": "RESEARCH_PROVIDERS",
                 "format": "agregated",
-                "viaDefintions": [
+                "viaDefinitions": [
                     {
                         "standard": "MDS",
-                        "defintion": "metrics.json",
+                        "definition": "metrics.json",
                         "minVersion": "1.x"
                     },
                     {
                         "standard": "TOMP",
-                        "defintion": "Operations.json",
+                        "definition": "Operations.json",
                         "minVersion": "1.x"
                     }
                 ]
@@ -48,10 +58,10 @@
             {
                 "receivingCategory": "OTHER_CITIES",
                 "format": "GBFS",
-                "viaDefintions": [
+                "viaDefinitions": [
                     {
                         "standard": "GBFS",
-                        "defintion": "free_asset_status.json",
+                        "definition": "free_asset_status.json",
                         "minVersion": "2.x"
                     }
                 ]
