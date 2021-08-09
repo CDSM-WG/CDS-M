@@ -8,7 +8,7 @@
             "versions":[
                 {
                     "version": "1.1",
-                    "defintions": [
+                    "definitions": [
                         "system_information.json",
                         "free_bike_status.json"
                     ],
@@ -16,7 +16,7 @@
                 },
                 {
                     "version": "2.2",
-                    "defintions": [
+                    "definitions": [
                         "gbfs.json",
                         "free_bike_status.json",
                         "system_information.json"
@@ -30,7 +30,7 @@
             "reference": "https://github.com/openmobilityfoundation/mobility-data-specification",
             "versions":[
                 {
-                    "defintions": [
+                    "definitions": [
                         "metrics.json",
                         "vehicles.json"
                     ],
@@ -46,7 +46,7 @@
             "versions":[
                 {
                     "version": "1.2.2",
-                    "defintions": [
+                    "definitions": [
                         "operator_information.json",
                         "planning.json",
                         "booking.json",
@@ -69,7 +69,7 @@
             "versions":[
                 {
                     "version": "1.1",
-                    "defintions": [
+                    "definitions": [
                         "system_information.json",
                         "free_bike_status.json"
                     ],
@@ -77,7 +77,7 @@
                 },
                 {
                     "version": "2.2",
-                    "defintions": [
+                    "definitions": [
                         "gbfs.json",
                         "free_bike_status.json",
                         "system_information.json"
@@ -91,7 +91,7 @@
             "reference": "https://github.com/openmobilityfoundation/mobility-data-specification",
             "versions":[
                 {
-                    "defintions": [
+                    "definitions": [
                         "policy.json",
                         "agency.json"
                     ],
@@ -107,7 +107,7 @@
             "versions":[
                 {
                     "version": "1.2.2",
-                    "defintions": [
+                    "definitions": [
                         "operator_information.json",
                         "planning.json",
                         "booking.json",
