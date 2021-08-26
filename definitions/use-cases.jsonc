@@ -4,26 +4,38 @@
         "asA": "string",
         "iWouldLikeTo": "string",
         "inOrderTo": "string"
-    },
-    "problemBeingSolvedForCities":[ // WT 1 - stakeholders should have a view of what 'city facing' problem is being solved per use case
-        "string",
-        "string",
-        "string"
-    ],        
-    "benefitsToCities":[ // WT 1
-        "string",
-        "string",
-        "string"
+    }, 
+    "problemsToBeSolved": [ // WT 1 - stakeholders experiencing problems are "cities", "TOs"
+        { "for": "cities", 
+          "items": [
+            "string",
+            "string",
+            "string" 
+          ]
+        },
+        { "for": "TOs", 
+          "items": [
+            "string",
+            "string",
+            "string" 
+          ]
+        }
     ],
-    "problemBeingSolvedForTOs":[ // WT 1 - stakeholders should have a view of what 'TO facing' problem is being solved per use case
-        "string",
-        "string",
-        "string"
-    ], 
-    "benefitsToTOs":[ // WT 1
-        "string",
-        "string",
-        "string"
+  "benefits": [  // WT 1 - stakeholders receiving benefits are "cities", "TOs"
+        { "to": "cities", 
+          "items": [
+            "string",
+            "string",
+            "string" 
+          ]
+        },
+        { "to": "TOs", 
+          "items": [
+            "string",
+            "string",
+            "string" 
+          ]
+        }
     ],
     "deliveryStandards":[ // WT 2 & 4
         {
