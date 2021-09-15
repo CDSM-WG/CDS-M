@@ -27,6 +27,10 @@ The key areas that The Agreement will address are the process, security and priv
 
 The need for this Agreement is to ensure that the exchange of B2G data within the EU, gives consideration to the main party involved in this exchange of data, that of the end user.  This is inline with the GDPR Law around the use of an individual’s personal data. 
 
+## Use Case Templates
+
+Use Case templates provide a standard format for the discussion and realisation of effective standards for the delivery of define use cases of data collection.  The template also defines agreements and requirements that have been identified in a standard format to enable additional parties to adopt the same Use Case template for their own purposes.
+
 ## Benefits of the CDS-M
 
 The CDS-M provides a common framework of communication to reduce the need for technical development and management overhead of data exchange between TOs and Cities.
