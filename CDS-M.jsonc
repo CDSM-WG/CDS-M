@@ -1,0 +1,162 @@
+{
+  "id": "POL-UC-001-1", // unique identifier of use case definition (WT1)
+  "story": {  // WT 1
+      "asA": "string",
+      "iWouldLikeTo": "string",
+      "inOrderTo": "string"
+  },
+  "benefits": [ // WT 1
+      { "to": "cities", 
+        "items": [
+          "string",
+          "string",
+          "string" 
+        ]
+  } ],
+  "problemsSolved":  [ // WT 1
+    { "to": "cities", 
+      "items": [
+        "string",
+        "string",
+        "string" 
+      ]
+  } ],
+  "deliveryStandards": [ // WT 2 & 4 => deliveryStandards renamed to requestedStandards
+    {
+      "standard": "GBFS",
+      "minVersion": "2.0",
+      "maxVersion": "2.2",
+      "endpointModifications" : [{}], // TO DO, look at https://github.com/openmobilityfoundation/mobility-data-specification/issues/608#issuecomment-889167578
+      "endpoints": [ 
+        {
+          "name": [ "free_asset_status.json" ],
+          "annotation": "Authentication with PKI is needed because ...",
+          "fieldModifications": [ { "field": "assetId", "level": "disallowed", "semantics": "" } ], // TO DO, https://github.com/openmobilityfoundation/mobility-data-specification/issues/608#issuecomment-889167578
+          "sharingProfiles": [ "default" ],
+          "securityProfiles": {
+            "collection": [ "ISO27001", "encryptionInTransport", "authenticationLevel2" ],
+            "processing": [ "ISO27001", "encryptionInTransport", "authenticationLevel2" ],
+            "storage": [ "ISO27001", "shortTermStorage", "encryptionAtRest", "aggregatedOnly" ]
+          },
+          "legalProfiles": [ "gdpr" ]
+        },
+        {
+          "name": [ "system_information.json", "system_regions.json" ],
+          "annotation": "bladibla",
+          "sharingProfiles": [ "default" ],
+          "securityProfiles": {
+            "collection": [ "ISO27001", "encryptionInTransport", "authenticationNone" ], 
+            "processing": [ "ISO27001", "encryptionInTransport", "authenticationNone" ],
+            "storage": [ "ISO27001", "longTermStorage" ]
+          }
+        }
+      ]
+    },
+    {
+      "standard": "MDS",
+      "minVersion": "1.2",
+      "maxVersion": "1.2",
+      "endpoints": [
+        {
+          "name": "metrics.json",
+          "sharingProfiles": [ ], // we're not going to share it!
+          "securityProfiles": {
+            "collection": [ "ISO27001", "encryptionInTransport", "authenticationLevel1" ], 
+            "processing": [ "ISO27001", "encryptionInTransport", "authenticationLevel1" ],
+            "storage": [ "ISO27001", "longTermStorage", "aggregatedOnly" ]
+          },
+          "legalProfiles": [ "gdpr" ]
+        }
+      ]
+    },
+    {
+      "standard": "TOMP-API",
+      "minVersion": "1.2.0",
+      "maxVersion": "1.2.2",
+      "endpoints": [
+        {
+          "name": "/operator/stations",
+          "sharingProfiles": [ ], // we're not going to share it!
+          "securityProfiles": {
+            "collection": [ "ISO27001", "encryptionInTransport", "authenticationNone" ], 
+            "processing": [ "ISO27001", "encryptionInTransport", "authenticationNone" ],
+            "storage": [ "ISO27001", "longTermStorage" ]
+          }
+        }
+      ]
+    }
+  ],
+  "sharingProfiles": [
+    {
+      "source": "/general/sharingProfiles.json" // To reference to reusable profiles. Also applicable for the other profiles
+    },
+    { // WT3
+      "name": "default",
+      "canBeSharedWith": [
+        {
+          "receivingCategory": "RESEARCH_PROVIDERS", // EVERYONE = opendata
+          "format": "aggregated",
+          "aggregationFields": [ "postalcode", "city", "region", "street", "hour", "quarter" ]
+        },
+        {
+          "receivingCategory": "OTHER_CITIES",
+          "format": "raw" // TO DO: extend, provide types like GBFS-regions.json
+        }
+      ],
+      "cannotBeSharedWith": [
+          "TRANSPORT_OPERATORS",
+          "EXTERNAL_DATA_PARTIES"
+      ] // Definition states that this is an optional and any names not mentioned in "canBeSharedWith" are by default excluded
+    }
+  ],
+  "securityProfiles": [ // WT 6
+    {
+      "name": "ISO27001",
+      "requiredCertificate": "ISO 27001"
+    },
+    {
+      "name": "shortTermStorage",
+      "durationDays": 30 // It's clear over here: max term to store this data. I'd like to rename this one to maxStorageDays
+    }, 
+    {
+      "name": "longTermStorage",
+      "durationDays": 2556 // 7 years
+    },
+    {
+      "name": "encryptionInTransport",
+      "encryptionTypes": [ "TLS" ], // should be enum
+      "versions": [ "1.2", "1.3" ]
+    },
+    {
+      "name": "authenticationLevel1",
+      "authenticationTypes": [ "basic" ] // should be enum
+    },
+    {
+      "name": "authenticationLevel2",
+      "authenticationTypes": [ "X-API-key", "PKI", "whitelisted" ]
+    },
+    {
+      "name": "authenticationNone",
+      "authenticationTypes": [ ]
+    },
+    {
+      "name": "aggregatedOnly",
+      "aggregationFields": [ "postalcode", "city", "region", "street", "hour", "quarter" ]
+    },
+    {
+      "name": "encryptionAtRest",
+      "encryptionTypes": [ "SHA256" ] // I guess this is for encryption formats, like md5 or SHA256 etc? should be enum
+    }
+  ],
+  "legalProfiles": [ // WT 5
+    { 
+      "name": "gdpr", 
+      "template": "DPIA-UC-001-1" 
+    }
+  ],
+  "combinations": [ // WT 1
+    { "template": "PLA-UC-007-1-alpha", "combinationAllowed": true }, // if 'combinationAllowed' is not specified, it defaults to 'true'
+    { "template": "POL-UC-054-1", "combinationAllowed": true },
+    { "template": "POL-UC-102-1", "combinationAllowed": true }
+  ]
+}
