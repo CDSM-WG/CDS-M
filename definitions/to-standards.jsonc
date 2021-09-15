@@ -1,0 +1,176 @@
+{
+    "dataOrgId": "TO001", // unique MaaS identifier of Transport Operator
+    "role": "COLLECTOR",
+    "standardsExposed":[
+        {
+            "standard": "GBFS",
+            "reference": "https://github.com/NABSA/gbfs",
+            "versions":[
+                {
+                    "version": "1.1",
+                    "definitions": [
+                        "system_information.json",
+                        "free_bike_status.json"
+                    ],
+                    "baseUrl": "https://api.somemobilitycompany.eu/v1/gbfs"
+                },
+                {
+                    "version": "2.2",
+                    "definitions": [
+                        "gbfs.json",
+                        "free_bike_status.json",
+                        "system_information.json"
+                    ],
+                    "baseUrl": "https://api.somemobilitycompany.eu/v2/gbfs"
+                }
+            ]
+        },
+        {
+            "standard": "MDS",
+            "reference": "https://github.com/openmobilityfoundation/mobility-data-specification",
+            "versions":[
+                {
+                    "definitions": [
+                        "metrics.json",
+                        "vehicles.json"
+                    ],
+                    "version": "1.0.0",
+                    "baseUrl": "https://api.somemobilitycompany.eu/v2/mds"
+                }
+            ]
+            
+        },
+        {
+            "standard": "TOMP-API",
+            "reference": "https://github.com/TOMP-WG/TOMP-API",
+            "versions":[
+                {
+                    "version": "1.2.2",
+                    "definitions": [
+                        "operator_information.json",
+                        "planning.json",
+                        "booking.json",
+                        "trip.json",
+                        "support.json",
+                        "payment.json"
+                    ],
+                    "baseUrl": "https://api.somemobilitycompany.eu/v2/tomp",
+                    "notes": [
+                        "Cannot be used for real time data"
+                    ]
+                }
+            ]
+        }
+    ],
+    "standardsConsumed":[
+        {
+            "standard": "GBFS",
+            "reference": "https://github.com/NABSA/gbfs",
+            "versions":[
+                {
+                    "version": "1.1",
+                    "definitions": [
+                        "system_information.json",
+                        "free_bike_status.json"
+                    ],
+                    "baseUrl": "https://api.somemobilitycompany.eu/v1/gbfs"
+                },
+                {
+                    "version": "2.2",
+                    "definitions": [
+                        "gbfs.json",
+                        "free_bike_status.json",
+                        "system_information.json"
+                    ],
+                    "baseUrl": "https://api.somemobilitycompany.eu/v2/gbfs"
+                }
+            ]
+        },
+        {
+            "standard": "MDS",
+            "reference": "https://github.com/openmobilityfoundation/mobility-data-specification",
+            "versions":[
+                {
+                    "definitions": [
+                        "policy.json",
+                        "agency.json"
+                    ],
+                    "version": "1.0.0",
+                    "baseUrl": "https://api.somemobilitycompany.eu/v2/mds"
+                }
+            ]
+            
+        },
+        {
+            "standard": "TOMP-API",
+            "reference": "https://github.com/TOMP-WG/TOMP-API",
+            "versions":[
+                {
+                    "version": "1.2.2",
+                    "definitions": [
+                        "operator_information.json",
+                        "planning.json",
+                        "booking.json",
+                        "trip.json",
+                        "support.json",
+                        "payment.json"
+                    ],
+                    "baseUrl": "https://api.somemobilitycompany.eu/v2/tomp",
+                    "notes": [
+                        "Cannot be used for real time data"
+                    ]
+                }
+            ]
+        }
+    ],
+    "security" : {
+        "certifications":[
+            "ISO-27001"
+        ],
+        "processing": [
+            {
+                "certification": "ISO 27001",
+                "durationHours": 1
+            }
+        ],
+        "shortTermStorage": [
+            {
+                "certification": "ISO 27001",
+                "durationDays": 30
+            }
+        ],
+        "longTermStorage": [
+            {
+                "certification": "ISO 27001",
+                "durationYears": 7
+            }
+        ],
+        "encryptionInTransport": [
+            {
+                "type": "TLS",
+                "versionLevel": "1.3"
+            }
+        ],
+        "encryptionAtRest": [
+            {
+                "type": "CDSM",
+                "versionLevel": "1"
+            }
+        ]
+
+    },
+    "useCasesCovered": [
+        "PLA-UC-001-1",
+        "PLA-UC-001-2",
+        "PLA-UC-002-1",
+        "PLA-UC-003-1",
+        "PLA-UC-004-1",
+        "PLA-UC-007-1-alpha",
+        "POL-UC-054-1",
+        "POL-UC-102-1",
+        "POL-UC-111-1",
+        "POL-UC-111-2",
+        "POL-UC-111-3",
+        "POL-UC-111-4-beta"
+    ]
+}
