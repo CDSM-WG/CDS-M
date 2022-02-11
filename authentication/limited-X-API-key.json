@@ -1,0 +1,8 @@
+{
+    "authentication": [
+        {
+            "name": "limited-X-API-key", 
+            "annotation": "The delivering party must expose a webservice to request a valid x-api-key. This key must expire frequently."
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "storageProfiles": [
+        {
+            "name": "storage-max-24-hours",
+            "durationDays": 1
+        }
+    ]
+}

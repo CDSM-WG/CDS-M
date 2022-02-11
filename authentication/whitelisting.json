@@ -1,0 +1,8 @@
+{
+    "authentication": [
+        {
+            "name": "whitelisting",
+            "annotation": "The delivering party must whitelist the requesting party's server based on IP"
+        }
+    ]
+}
