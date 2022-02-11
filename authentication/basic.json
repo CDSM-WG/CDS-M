@@ -1,0 +1,8 @@
+{
+    "authentication": [
+        {
+            "name": "basic",
+            "annotation": "username/password authentication"
+        }
+    ]
+}

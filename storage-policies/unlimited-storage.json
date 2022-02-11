@@ -1,0 +1,15 @@
+{
+    "storageProfiles": [
+        {
+            "name": "unlimited-storage",
+            "consequences": [
+                {
+                    "type": "ethical",
+                    "dimension": "tailored to the people",
+                    "penalty": "-2", 
+                    "explanation": "people have the right to forget"
+                }
+            ]
+        }
+    ]
+}

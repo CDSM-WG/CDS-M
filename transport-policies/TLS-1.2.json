@@ -1,0 +1,9 @@
+{
+    "transportProfiles": [
+        {
+            "name": "TLS-1.2",
+            "encryption": "TLS",
+            "version": "1.2"
+        }
+    ]
+}

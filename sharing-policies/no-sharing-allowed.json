@@ -1,0 +1,11 @@
+{
+    "sharingProfiles": [
+        {
+            "name": "no-sharing-allowed",
+            "canBeSharedWith": [],
+            "cannotBeSharedWith": [
+                "EVERYONE"
+            ]
+        }
+    ]
+}
