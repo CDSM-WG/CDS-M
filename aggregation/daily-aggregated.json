@@ -1,9 +1,0 @@
-{
-    "storageProfiles": [
-        {
-            "name": "daily-aggregated",
-            "dimension" : "time",
-            "level": "day"
-        }
-    ]
-}

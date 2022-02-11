@@ -1,9 +1,0 @@
-{
-    "sharingProfiles": [
-        {
-            "name": "open-data",
-            "canBeSharedWith": [ "EVERYONE" ],
-            "cannotBeSharedWith": [ ]
-        }
-    ]
-}
