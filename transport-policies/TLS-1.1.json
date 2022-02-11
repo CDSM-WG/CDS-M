@@ -1,0 +1,17 @@
+{
+    "transportProfiles": [
+        {
+            "name": "TLS-1.1",
+            "encryption": "TLS",
+            "version": "1.1",
+            "consequences": [
+                {
+                    "type": "security",
+                    "dimension": "encryption",
+                    "penalty": "-3",
+                    "explanation": "TLS 1-1 is less secure and easy to decrypt"
+                }
+            ]
+        }
+    ]
+}

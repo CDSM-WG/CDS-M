@@ -1,0 +1,16 @@
+{
+    "storageProfiles": [
+        {
+            "name": "md5-encrypted",
+            "encryption": "MD5", 
+            "consequences": [
+                {
+                    "type": "security",
+                    "dimension": "encryption",
+                    "penalty": "-3",
+                    "explanation": "MD5 is less secure and easy to decrypt"
+                }
+            ]
+        }
+    ]
+}
