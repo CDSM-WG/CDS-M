@@ -1,9 +1,0 @@
-{
-    "storageProfiles": [
-        {
-            "name": "hourly-aggregated",
-            "dimension" : "time",
-            "level": "hour"
-        }
-    ]
-}

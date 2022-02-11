@@ -1,9 +1,0 @@
-{
-    "storageProfiles": [
-        {
-            "name": "district-aggregated",
-            "dimension" : "geografical",
-            "level": "district"
-        }
-    ]
-}

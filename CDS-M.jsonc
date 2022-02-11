@@ -21,20 +21,7 @@
         "string" 
       ]
   } ],
-  "termsAndConditions": [],
-  "contract": [
-    {
-      "name": "DPIA",
-      "template": "https://gdpr.eu/data-processing-agreement/",
-      "parameters": [{ "Company": "[the signing party]", "order": [1, 23] } ]
-    },
-    {
-      "name": "OpenBike II",
-      "template": "",
-      "parameters": []
-    }
-  ],
-  "standards": [ // WT 2 & 4 => deliveryStandards renamed to requestedStandards
+  "deliveryStandards": [ // WT 2 & 4 => deliveryStandards renamed to requestedStandards
     {
       "standard": "GBFS",
       "minVersion": "2.0",
@@ -101,7 +88,7 @@
   ],
   "sharingProfiles": [
     {
-      "reference": "/sharingProfiles/sharingProfiles.json" // To reference to reusable profiles. Also applicable for the other profiles
+      "source": "/general/sharingProfiles.json" // To reference to reusable profiles. Also applicable for the other profiles
     },
     { // WT3
       "name": "default",
