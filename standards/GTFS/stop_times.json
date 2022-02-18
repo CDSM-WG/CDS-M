@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GTFS",
+    "part": "stop_times.txt",
+    "version": "[version]",
+    "mediumType": "csv-file",
+    "fieldModifications": []
+}

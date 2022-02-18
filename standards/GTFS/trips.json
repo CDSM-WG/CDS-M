@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GTFS",
+    "part": "trips.txt",
+    "version": "[version]",
+    "mediumType": "csv-file",
+    "fieldModifications": []
+}

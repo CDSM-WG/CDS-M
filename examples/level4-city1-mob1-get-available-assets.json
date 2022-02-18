@@ -18,43 +18,54 @@
     } ],
     "termsAndConditions": ["BIO"],
     "contract": [
-        {   "name": "DPIA", 
+        {   
+            "name": "DPIA", 
             "parameters": [ 
-                { "Company": "City 1", "order": [ 1 ] },
-                { "Data Processor": "Mob 1", "order": [ 2 ] },
-                { "Services": "Delivery of availability information", "section": "1.1.9", "order": [ 3 ] },
-                { "Agreement laws": "[This Agreement is governed by the laws of]", "section": "13.1", "order": [ 4 ] },
-                { "Jurisdiction": "[jurisdiction of the courts of]", "section": "13.2", "order": [ 5 ] },
-                { "Subject to appeal": "[subject to possible appeal to]", "section": "13.2", "order": [ 6 ] },
+                { "name": "Company", "description": "City 1", "order": [ 1 ] },
+                { "name": "Data Processor", "description": "Mob 1", "order": [ 2 ] },
+                { "name": "Services", "description": "Delivery of availability information", "section": "1.1.9", "order": [ 3 ] },
+                { "name": "Agreement laws", "description": "[This Agreement is governed by the laws of]", "section": "13.1", "order": [ 4 ] },
+                { "name": "Jurisdiction", "description": "[jurisdiction of the courts of]", "section": "13.2", "order": [ 5 ] },
+                { "name": "Subject to appeal", "description": "[subject to possible appeal to]", "section": "13.2", "order": [ 6 ] },
     
-                { "Your company - signature": "Binary data", "section": "Your company", "order": [ 7 ] },
-                { "Your company - name": "City major 1", "section": "Your company", "order": [ 8 ] },
-                { "Your company - title": "Major", "section": "Your company", "order": [ 9 ] },
-                { "Your company - date signed": "today", "section": "Your company", "order": [ 10 ] },
+                { "name": "Your company - signature", "description": "Binary data", "section": "Your company", "order": [ 7 ] },
+                { "name": "Your company - name", "description": "City major 1", "section": "Your company", "order": [ 8 ] },
+                { "name": "Your company - title", "description": "Major", "section": "Your company", "order": [ 9 ] },
+                { "name": "Your company - date signed", "description": "today", "section": "Your company", "order": [ 10 ] },
     
-                { "Processor company - signature": "Binary data", "section": "Processor company", "order": [ 11 ] },
-                { "Processor company - name": "CEO of Mob1", "section": "Processor company", "order": [ 12 ] },
-                { "Processor company - title": "CEO", "section": "Processor company", "order": [ 13 ] },
-                { "Processor company - date signed": "yesterday", "section": "Processor company", "order": [ 14 ] }
+                { "name": "Processor company - signature", "description": "Binary data", "section": "Processor company", "order": [ 11 ] },
+                { "name": "Processor company - name", "description": "CEO of Mob1", "section": "Processor company", "order": [ 12 ] },
+                { "name": "Processor company - title", "description": "CEO", "section": "Processor company", "order": [ 13 ] },
+                { "name": "Processor company - date signed", "description": "yesterday", "section": "Processor company", "order": [ 14 ] }
             ]
           }],
-    "standards": ["GBFS-2.1-free-bike-status"],
+    "standards": 
+        [
+            { "name": "GBFS", "part": "free-bike-status", "version": "1.1", "field-modifications": [] },
+            { "name": "GBFS", "part": "free-bike-status", "version": "2.0", "field-modifications": [] },
+            { "name": "GBFS", "part": "free-bike-status", "version": "2.1", "field-modifications": [] },
+            { "name": "TOMP-API", "part": "available-assets", "version": "1.1.0", "field-modifications": [] },
+            { "name": "TOMP-API", "part": "available-assets", "version": "1.2.2", "field-modifications": [] },
+            { "name": "TOMP-API", "part": "available-assets", "version": "1.3.0", "field-modifications": [] }
+        ],
     "sharing": [],
     "authentication": ["none"],
     "transport": ["TLS-1.3"],
-    "storage": ["/storageProfiles/storage-max-two-years", "sha256-encrypted", "postalcode-aggregated", "hourly-aggregated"],
+    "storage": ["/customDefinitions/storage-max-two-years", "sha256-encrypted", "postalcode-aggregated", "hourly-aggregated"],
     "security": ["iso-27001"], 
     "legalRequirement": ["GDPR-compliancy"],
-    "storageProfiles": [
+    "customDefinitions": [
         {
+            "type": "storage",
             "name": "storage-max-two-year",
-            "years": 2,
+            "units": "years",
+            "value": 2,
             "consequences": [
                 {
                     "type": "ethical",
                     "dimension": "legitimate and monitored",
-                    "penalty": "=0",
-                    "explanation": "custom storage profile"
+                    "penalty": "-2",
+                    "explanation": "custom storage profile, longer than normal"
                 }
             ]
         }

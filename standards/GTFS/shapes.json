@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GTFS",
+    "part": "shapes.txt",
+    "version": "[version]",
+    "mediumType": "csv-file",
+    "fieldModifications": []
+}

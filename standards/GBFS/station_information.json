@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GBFS",
+    "part": "station_information.json",
+    "version": "[version]",
+    "mediumType": "json-file",
+    "fieldModifications": []
+}

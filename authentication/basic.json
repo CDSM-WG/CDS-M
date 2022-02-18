@@ -1,8 +1,5 @@
 {
-    "authentication": [
-        {
-            "name": "basic",
-            "annotation": "username/password authentication"
-        }
-    ]
+    "type": "authentication",
+    "name": "basic",
+    "annotation": "username/password authentication"
 }

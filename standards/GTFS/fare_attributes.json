@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GTFS",
+    "part": "fare_attributes.txt",
+    "version": "[version]",
+    "mediumType": "csv-file",
+    "fieldModifications": []
+}

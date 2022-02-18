@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GBFS",
+    "part": "free_bike_status.json",
+    "version": "[version]",
+    "mediumType": "json-file",
+    "fieldModifications": []
+}

@@ -1,8 +1,4 @@
 {
-    "storageProfiles": [
-        {
-            "name": "storage-max-one-week",
-            "durationDays": 7
-        }
-    ]
+    "name": "storage-max-one-week",
+    "durationDays": 7
 }

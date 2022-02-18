@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GTFS",
+    "part": "fare_rules.txt",
+    "version": "[version]",
+    "mediumType": "csv-file",
+    "fieldModifications": []
+}

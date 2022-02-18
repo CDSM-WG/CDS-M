@@ -1,8 +1,5 @@
 {
-    "authentication": [
-        {
-            "name": "PKI", 
-            "annotation": "The delivering party must generate a certificate and hand over the public key to the requesting party"
-        }
-    ]
+    "type": "authentication",
+    "name": "PKI", 
+    "annotation": "The delivering party must generate a certificate and hand over the public key to the requesting party"
 }

@@ -1,0 +1,7 @@
+{
+    "name": "TOMP-API",
+    "part": "/operator/alerts",
+    "version": "[version]",
+    "mediumType": "API",
+    "fieldModifications": []
+}

@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GBFS",
+    "part": "system_calendar.json",
+    "version": "[version]",
+    "mediumType": "json-file",
+    "fieldModifications": []
+}

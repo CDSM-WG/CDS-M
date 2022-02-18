@@ -1,8 +1,4 @@
 {
-    "storageProfiles": [
-        {
-            "name": "sha256-encrypted",
-            "encryption": "SHA256"
-        }
-    ]
+    "name": "sha256-encrypted",
+    "encryption": "SHA256"
 }

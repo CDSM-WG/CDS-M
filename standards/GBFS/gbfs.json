@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GBFS",
+    "part": "gbfs.json",
+    "version": "[version]",
+    "mediumType": "json-file",
+    "fieldModifications": []
+}

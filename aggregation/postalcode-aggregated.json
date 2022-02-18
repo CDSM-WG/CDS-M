@@ -1,9 +1,5 @@
 {
-    "storageProfiles": [
-        {
-            "name": "postalcode-aggregated",
-            "dimension" : "geografical",
-            "level": "postalcode"
-        }
-    ]
+    "name": "postalcode-aggregated",
+    "dimension" : "geografical",
+    "level": "postalcode"
 }

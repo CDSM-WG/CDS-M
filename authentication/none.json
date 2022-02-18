@@ -1,7 +1,4 @@
 {
-    "authentication": [
-        {
-            "name": "none"
-        }
-    ]
+    "type": "authentication",
+    "name": "none"
 }

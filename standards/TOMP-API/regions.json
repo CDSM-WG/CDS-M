@@ -1,0 +1,7 @@
+{
+    "name": "TOMP-API",
+    "part": "/operator/regions",
+    "version": "[version]",
+    "mediumType": "API",
+    "fieldModifications": []
+}

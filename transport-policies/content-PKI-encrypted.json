@@ -1,8 +1,4 @@
 {
-    "transportProfiles": [
-        {
-            "name": "content-PKI-encrypted",
-            "encryption": "PKI"
-        }
-    ]
+    "name": "content-PKI-encrypted",
+    "encryption": "PKI"
 }

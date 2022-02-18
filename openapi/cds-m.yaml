@@ -1,0 +1,412 @@
+openapi: 3.0.0
+info:
+  title: CDS-M API
+  description:
+    bladibla
+  version: "0.1.1"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+
+# security. Allowed methods basic (in header: Authorization: Basic ZGVtbzpwQDU1dzByZA==),
+#                           bearer (in header: Authorization: Bearer <token>)
+#                           Api-key (in header: X-API-Key: abcdef12345)
+#                           OAuth2 and OpenId are also available
+# The exact ways to authenticate will be described in a later version
+security:
+  - BasicAuth: []
+  - BearerAuth: []
+  - ApiKeyAuth: []
+  - OAuth: []
+  - OpenId: []
+
+tags:
+  - name: use-cases
+  - name: building-blocks
+
+paths:
+  /use-cases/{useCaseId}:
+    get:
+      tags:
+      - use-cases
+      parameters:
+      - $ref: "#/components/parameters/useCaseId"
+      responses:
+        "200":
+          description: a specific use case
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/template"
+  /use-cases/:
+    get:
+      tags:
+      - use-cases
+      responses:
+        "200":
+          description: complete overview of the use cases of CDS-M
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/template"
+
+  /authentication/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific use case
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/authenticationDefinition"
+  /authentication/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: a specific use case
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/authenticationDefinition"
+
+components:
+  schemas:
+    template:
+      type: object
+      properties:
+        id:
+          type: string
+        story:
+          $ref: "#/components/schemas/story"
+        benefits:
+          $ref: "#/components/schemas/prosAndCons"
+        problemsSolved:
+          $ref: "#/components/schemas/prosAndCons"
+        termsAndConditions:
+          $ref: "#/components/schemas/referenceArray"
+        contract:
+          type: array
+          items:
+            $ref: "#/components/schemas/contract"
+        standards:
+          type: array
+          items:
+            $ref: "#/components/schemas/standard"
+        sharing:
+          $ref: "#/components/schemas/referenceArray"
+        authentication:
+          $ref: "#/components/schemas/referenceArray"
+        transport:
+          $ref: "#/components/schemas/referenceArray"
+        storage:
+          $ref: "#/components/schemas/referenceArray"
+        certificates:
+          $ref: "#/components/schemas/referenceArray"
+        customDefinitions:
+          type: array
+          items:
+            discriminator:
+              propertyName: type
+            oneOf:
+              -  $ref: "#/components/schemas/aggregationDefinition"
+              -  $ref: "#/components/schemas/authenticationDefinition"
+              -  $ref: "#/components/schemas/contractDefinition"
+              -  $ref: "#/components/schemas/certificatesDefinition"
+              -  $ref: "#/components/schemas/sharingDefinition"
+              -  $ref: "#/components/schemas/standardsDefinition"
+              -  $ref: "#/components/schemas/storageDefinition"
+              -  $ref: "#/components/schemas/termsAndConditionDefinition"
+              -  $ref: "#/components/schemas/transportDefinition"
+        combinations:
+          type: array
+          items:
+            $ref: "#/components/schemas/combination"
+
+    contract:
+      type: object
+      properties:
+        name: 
+          type: string
+        parameters:
+          type: array
+          items:
+            $ref: "#/components/schemas/contractParameters"
+
+    contractParameters:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        section: 
+          type: string
+        order: 
+          type: array
+          items:
+            type: number
+
+    combination:
+      type: object
+      example: { "template": "PLA-UC-007-1-alpha", "combinationAllowed": true }
+      properties:
+        template:
+          type: string
+        combinationAllowed:
+          type: boolean
+
+    definition:
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+        consequences:
+          type: array
+          items:
+            $ref: "#/components/schemas/consequence"
+
+    aggregationDefinition:
+      type: object
+      allOf:
+      - $ref: "#/components/schemas/definition"
+      properties:
+        dimension:
+          type: string
+          enum: [time, geografical]
+        level:
+          type: string
+
+    authenticationDefinition:
+      type: object
+      allOf:
+      - $ref: "#/components/schemas/definition"
+      properties:
+        annotation:
+          type: string
+
+    certificatesDefinition:
+      type: object
+      allOf:
+      - $ref: "#/components/schemas/definition"
+      properties:
+        requiredCertificate:
+          type: string
+        issuer:
+          type: string
+
+    sharingDefinition:
+      type: object
+      allOf:
+      - $ref: "#/components/schemas/definition"
+      properties:
+        canBeSharedWith:
+          type: array
+          items:
+            type: string
+        cannotBeSharedWith:
+          type: array
+          items:
+            type: string
+
+    standardsDefinition:
+      allOf:
+      - $ref: "#/components/schemas/definition"
+      - $ref: "#/components/schemas/standard"
+
+    termsAndConditionDefinition:
+      allOf:
+        - $ref: "#/components/schemas/definition"
+      type: object
+      properties:
+        reference:
+          type: string
+
+    contractDefinition:
+      allOf:
+      - $ref: "#/components/schemas/definition"    
+      - $ref: "#/components/schemas/contract"
+
+    storageDefinition:
+      allOf:
+      - $ref: "#/components/schemas/definition"      
+      type: object
+      properties:
+        unit:
+          type: string
+          enum: [hours, days, weeks, months, years]
+        value:
+          type: number
+
+    transportDefinition:
+      allOf:
+      - $ref: "#/components/schemas/definition"    
+      type: object
+      properties:
+        encryption:
+          type: string
+        
+    role:
+      type: string
+      enum: [ "RESEARCH_PROVIDERS", "OTHER_CITIES", "TRANSPORT_OPERATORS", "EXTERNAL_DATA_PARTIES" ]
+            
+    standard:
+      type: object
+      properties:
+        name: 
+          type: string
+        part:
+          type: string
+        version:
+          type: string
+        mediumType: 
+          type: string
+          enum: [xml, json-file, csv-file, API]
+        fieldModifications: 
+          type: array
+          items:
+            $ref: "#/components/schemas/fieldModification"
+  
+    fieldModification:
+      type: object
+      properties:
+        field: 
+          type: string
+        exception: 
+          type: string
+        consequences: 
+          type: array
+          items:
+            $ref: "#/components/schemas/consequence"            
+    
+    consequence:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: ["ethical", "security", "interoperability"]
+        dimensions:
+          type: string
+          enum: [""]
+        penalty: 
+          type: string
+          enum: ["-1", "=0", "+1"]
+        explanation:
+          type: string
+
+    story:
+      type: object
+      properties:
+        asA: 
+          type: string
+        iWouldLikeTo: 
+          type: string
+        inOrderTo: 
+          type: string
+
+    prosAndCons:
+      type: array
+      items: 
+        type: object
+        properties:
+          to: 
+            type: string
+          items:
+            type: array
+            items: 
+              type: string
+
+    referenceArray:
+      type: array
+      items:
+        type: string
+
+    error:
+      type: object
+
+  parameters:
+    useCaseId:
+      in: path
+      name: useCaseId
+      required: true
+      schema:
+        type: string
+      description: The ID of the use case
+      example: 1324A-DFB3482-32ACD
+    name:
+      in: path
+      name: name
+      required: true
+      schema:
+        type: string
+      description: a referencing name
+      example: basic-enhanced
+
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+    OAuth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: /oauth/authorize
+          tokenUrl: /oauth/token
+          scopes: {}
+    OpenId:
+      type: openIdConnect
+      openIdConnectUrl: https://unknownserver/.well-known/openid-configuration
+
+  responses:
+    202Accepted:
+      description: Request was successfully accepted for processing but has not yet completed.
+      headers:
+        Location:
+          schema:
+            type: string
+          description: The URI where the created or updated resource will eventually be found.
+          example: "/bookings/1234"
+    204NoContent:
+      description: Request was successful, no content to return.
+    400BadRequest:
+      description: Bad request. 
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    401Unauthorized:
+      description: Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    403Forbidden:
+      description: The client does not have access rights to the content, i.e. they are unauthorized, so server is rejecting to give proper response. Unlike 401, the client's identity is known to the server.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    404NotFound:
+      description: The requested resources does not exist or the requester is not authorized to see it or know it exists.
+    409Conflict:
+      description: The request will not be fulfilled. The request itself is legal, but the content conflicts with the server and might be stale. The user might try again after looking up the current state of the resource.
+
+    410Gone:
+      description: The requested resource is no longer available. This is permanent.

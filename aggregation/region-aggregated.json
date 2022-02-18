@@ -1,9 +1,5 @@
 {
-    "storageProfiles": [
-        {
-            "name": "region-aggregated",
-            "dimension" : "geografical",
-            "level": "region"
-        }
-    ]
+    "name": "region-aggregated",
+    "dimension" : "geografical",
+    "level": "region"
 }

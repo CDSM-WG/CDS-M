@@ -1,11 +1,8 @@
 {
-    "sharingProfiles": [
-        {
-            "name": "no-sharing-allowed",
-            "canBeSharedWith": [],
-            "cannotBeSharedWith": [
-                "EVERYONE"
-            ]
-        }
+    "type": "sharing-policy",
+    "name": "no-sharing-allowed",
+    "canBeSharedWith": [],
+    "cannotBeSharedWith": [
+        "EVERYONE"
     ]
 }

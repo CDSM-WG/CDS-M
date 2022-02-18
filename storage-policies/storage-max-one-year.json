@@ -1,8 +1,4 @@
 {
-    "storageProfiles": [
-        {
-            "name": "storage-max-one-year",
-            "durationDays": 365
-        }
-    ]
+    "name": "storage-max-one-year",
+    "durationDays": 365
 }

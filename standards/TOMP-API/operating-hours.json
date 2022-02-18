@@ -1,0 +1,7 @@
+{
+    "name": "TOMP-API",
+    "part": "/operator/operating-calendar",
+    "version": "[version]",
+    "mediumType": "API",
+    "fieldModifications": []
+}

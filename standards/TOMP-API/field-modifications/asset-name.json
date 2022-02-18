@@ -1,0 +1,19 @@
+{
+    "type": "standards",
+    "name": "TOMP-API",
+    "part": "/operator/available-assets",
+    "fieldModifications": [
+        {
+            "field": "assets[].name",
+            "exception": "exposed",
+            "consequences": [
+                {
+                    "type": "ethical",
+                    "dimension": "tailored to the people",
+                    "penalty": "=0",
+                    "explanation": "this facilitates derival of personal movements"
+                }
+            ]
+        }
+    ]
+}

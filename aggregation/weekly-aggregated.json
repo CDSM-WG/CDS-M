@@ -1,9 +1,5 @@
 {
-    "storageProfiles": [
-        {
-            "name": "weekly-aggregated",
-            "dimension" : "time",
-            "level": "week"
-        }
-    ]
+    "name": "weekly-aggregated",
+    "dimension" : "time",
+    "level": "week"
 }

@@ -1,9 +1,5 @@
 {
-    "storageProfiles": [
-        {
-            "name": "biweekly-aggregated",
-            "dimension" : "time",
-            "level": "2 weeks"
-        }
-    ]
+    "name": "biweekly-aggregated",
+    "dimension" : "time",
+    "level": "2 weeks"
 }

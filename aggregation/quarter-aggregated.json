@@ -1,9 +1,5 @@
 {
-    "storageProfiles": [
-        {
-            "name": "quarter-aggregated",
-            "dimension" : "time",
-            "level": "quarter"
-        }
-    ]
+    "name": "quarter-aggregated",
+    "dimension" : "time",
+    "level": "quarter"
 }

@@ -1,9 +1,5 @@
 {
-    "storageProfiles": [
-        {
-            "name": "street-aggregated",
-            "dimension" : "geografical",
-            "level": "street"
-        }
-    ]
+    "name": "street-aggregated",
+    "dimension" : "geografical",
+    "level": "street"
 }

@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "GBFS",
+    "part": "system_pricing_plans.json",
+    "version": "[version]",
+    "mediumType": "json-file",
+    "fieldModifications": []
+}

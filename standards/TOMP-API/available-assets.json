@@ -1,0 +1,7 @@
+{
+    "name": "TOMP-API",
+    "part": "/operator/available-assets",
+    "version": "[version]",
+    "mediumType": "API",
+    "fieldModifications": []
+}

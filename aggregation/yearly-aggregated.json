@@ -1,9 +1,5 @@
 {
-    "storageProfiles": [
-        {
-            "name": "yearly-aggregated",
-            "dimension" : "time",
-            "level": "yearly"
-        }
-    ]
+    "name": "yearly-aggregated",
+    "dimension" : "time",
+    "level": "yearly"
 }

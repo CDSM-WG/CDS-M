@@ -1,13 +1,10 @@
 {
-    "sharingProfiles": [
-        {
-            "name": "share-with-public-parties",
-            "canBeSharedWith": [
-                "PUBLIC_AUTHORITIES"
-            ],
-            "cannotBeSharedWith": [
-                "PRIVATE_PARTIES"
-            ]
-        }
+    "type": "sharing-policy",
+    "name": "share-with-public-parties",
+    "canBeSharedWith": [
+        "PUBLIC_AUTHORITIES"
+    ],
+    "cannotBeSharedWith": [
+        "PRIVATE_PARTIES"
     ]
 }

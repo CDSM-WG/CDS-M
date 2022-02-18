@@ -1,0 +1,7 @@
+{
+    "name": "TOMP-API",
+    "part": "/operator/meta",
+    "version": "[version]",
+    "mediumType": "API",
+    "fieldModifications": []
+}
