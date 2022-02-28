@@ -1,0 +1,10 @@
+{
+    "id": "parking-availability",
+    "externalReference": "",
+    "tags": [""],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "",
+        "inOrderTo": ""
+    }
+}

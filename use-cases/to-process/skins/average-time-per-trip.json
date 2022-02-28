@@ -1,0 +1,10 @@
+{
+    "id": "average-time-per-trip",
+    "externalReference": "",
+    "tags": ["asset-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "",
+        "inOrderTo": ""
+    }
+}

@@ -60,7 +60,7 @@ paths:
       - $ref: "#/components/parameters/name"
       responses:
         "200":
-          description: a specific use case
+          description: a specific authentication building-block
           content:
             application/json:
               schema:
@@ -71,13 +71,229 @@ paths:
       - building-blocks
       responses:
         "200":
-          description: a specific use case
+          description: all authentication building-blocks
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: "#/components/schemas/authenticationDefinition"
+
+  /aggregation/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific aggregation building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/aggregationDefinition"
+  /aggregation/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all aggregation building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/aggregationDefinition"
+
+  /certificates/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific certificate building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/certificatesDefinition"
+  /certificates/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all certificate building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/certificatesDefinition"
+
+  /contract/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific contract building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/contractDefinition"
+  /contract/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all contract building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/contractDefinition"
+
+  /sharing-policies/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific sharing-policies building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/sharingDefinition"
+  /sharing-policies/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all sharing-policies building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/sharingDefinition"
+
+  /standards/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific standards building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/standardsDefinition"
+  /standards/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all standards building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/standardsDefinition"
+
+  /storage/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific storage building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/storageDefinition"
+  /storage/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all storage building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/storageDefinition"
+
+  /terms-and-conditions/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific terms-and-conditions building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/termsAndConditionDefinition"
+  /terms-and-conditions/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all terms-and-conditions building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/termsAndConditionDefinition"
+
+  /transport/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific transport building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/transportDefinition"
+  /transport/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all transport building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/transportDefinition"
 
 components:
   schemas:
@@ -86,6 +302,19 @@ components:
       properties:
         id:
           type: string
+        tags:
+          type: array
+          items:
+            type: object
+            properties:
+              dimension:
+                type: string
+                enum: [availability, asset-usage, safety, contract-management, public-space-usage, green-deel]
+              value:
+                type: string
+        externalReference:
+          type: string
+          format: URL
         story:
           $ref: "#/components/schemas/story"
         benefits:
@@ -111,6 +340,8 @@ components:
         storage:
           $ref: "#/components/schemas/referenceArray"
         certificates:
+          $ref: "#/components/schemas/referenceArray"
+        aggregation:
           $ref: "#/components/schemas/referenceArray"
         customDefinitions:
           type: array
@@ -186,6 +417,10 @@ components:
           enum: [time, geografical]
         level:
           type: string
+          enum: [quarter, hour, dayparts, daily, weekly, biweekly, monthly, half-yearly, yearly, postal, postal1_4, district, city, region, custom]
+        customGeographicalDimension:
+          type: string
+          format: URL
 
     authenticationDefinition:
       type: object

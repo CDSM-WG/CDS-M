@@ -1,0 +1,10 @@
+{
+    "id": "average-km-per-trip",
+    "externalReference": "",
+    "tags": ["asset-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "",
+        "inOrderTo": ""
+    }
+}

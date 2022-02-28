@@ -1,0 +1,6 @@
+{
+    "name": "custom-geographical-aggregated",
+    "dimension" : "geografical",
+    "level": "custom",
+    "customGeographicalDimension": "This should be replaced in the city contract"
+}
