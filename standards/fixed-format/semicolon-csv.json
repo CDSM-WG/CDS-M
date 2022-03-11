@@ -1,0 +1,9 @@
+{
+    "type": "standards",
+    "name": "semicolon-csv",
+    "part": "[complete url]",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "semicolon-delimited-csv-file",
+    "schema": "[semicolon seperated field list]"
+}

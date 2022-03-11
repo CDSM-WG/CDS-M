@@ -1,0 +1,9 @@
+{
+    "type": "standards",
+    "name": "comma-csv",
+    "part": "[complete url]",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "comma-delimited-csv-file",
+    "schema": "[comma seperated field list]"
+}

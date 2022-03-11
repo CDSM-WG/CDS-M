@@ -1,0 +1,10 @@
+{
+    "id": "operating-area",
+    "externalReference": "",
+    "tags": ["public-space:distribution"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish the operational area for transport operators",
+        "inOrderTo": "maintain the order"
+    }
+}

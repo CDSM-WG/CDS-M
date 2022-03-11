@@ -4,5 +4,6 @@
     "part": "system_alerts.json",
     "version": "[version]",
     "mediumType": "json-file",
+    "refreshRate": "[refresh rate]",
     "fieldModifications": []
 }

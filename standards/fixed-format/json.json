@@ -1,0 +1,9 @@
+{
+    "type": "standards",
+    "name": "json",
+    "part": "[complete url]",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "json-file",
+    "schema": "[complete url of JSON scheme]"
+}

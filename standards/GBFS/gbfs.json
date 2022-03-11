@@ -4,5 +4,6 @@
     "part": "gbfs.json",
     "version": "[version]",
     "mediumType": "json-file",
+    "refreshRate": "[refresh rate]",
     "fieldModifications": []
 }

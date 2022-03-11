@@ -1,1 +1,4 @@
 /.vscode
+tools/tool-use-case-selector/use-case-selector/.vscode/extensions.json
+tools/tool-use-case-selector/use-case-selector/.vscode/launch.json
+tools/tool-use-case-selector/use-case-selector/.vscode/tasks.json

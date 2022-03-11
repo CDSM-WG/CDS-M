@@ -4,5 +4,6 @@
     "part": "stops.txt",
     "version": "[version]",
     "mediumType": "csv-file",
+    "refreshRate": "[refresh rate]",
     "fieldModifications": []
 }

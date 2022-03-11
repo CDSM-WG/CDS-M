@@ -4,5 +4,6 @@
     "part": "system_pricing_plans.json",
     "version": "[version]",
     "mediumType": "json-file",
+    "refreshRate": "[refresh rate]",
     "fieldModifications": []
 }

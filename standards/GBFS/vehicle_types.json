@@ -4,5 +4,6 @@
     "part": "vehicle_types.json",
     "version": "[version >= 2.1]",
     "mediumType": "json-file",
+    "refreshRate": "[refresh rate]",
     "fieldModifications": []
 }

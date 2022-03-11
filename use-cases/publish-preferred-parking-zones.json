@@ -1,0 +1,14 @@
+{
+    "id": "publish-preferred-parking-zones",
+    "externalReference": "",
+    "tags": [
+        "public-space:parking-pressure",
+        "public-space:nuisances",
+        "public-space:distribution"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish the preferred parking zones",
+        "inOrderTo": "manage the usage of public space"
+    }
+}

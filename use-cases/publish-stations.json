@@ -1,0 +1,10 @@
+{
+    "id": "operating-area",
+    "externalReference": "",
+    "tags": ["public-space:distribution", "public-space:parking-pressure"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish the assigned station locations for transport operators",
+        "inOrderTo": "maintain the order"
+    }
+}

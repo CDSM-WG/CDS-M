@@ -1,0 +1,35 @@
+{
+    "type": "standards",
+    "name": "MDS",
+    "part": "/vehicles",
+    "version": "[version]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "fieldModifications": [
+        {
+            "field": "vehicles[].device_id",
+            "exception": "exposed",
+            "consequences": [
+                {
+                    "type": "ethical",
+                    "dimension": "tailored to the people",
+                    "penalty": "=0",
+                    "explanation": "this facilitates derival of personal movements"
+                }
+            ]
+        },
+        {
+            "field": "vehicles[].vehicle_id",
+            "exception": "exposed",
+            "consequences": [
+                {
+                    "type": "ethical",
+                    "dimension": "tailored to the people",
+                    "penalty": "=0",
+                    "explanation": "this facilitates derival of personal movements"
+                }
+            ]
+        }
+    ]
+
+}

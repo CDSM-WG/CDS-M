@@ -3,5 +3,6 @@
     "part": "/operator/available-assets",
     "version": "[version]",
     "mediumType": "API",
+    "refreshRate": 0,
     "fieldModifications": []
 }

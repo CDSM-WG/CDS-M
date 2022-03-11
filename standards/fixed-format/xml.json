@@ -1,0 +1,9 @@
+{
+    "type": "standards",
+    "name": "xml",
+    "part": "[complete url]",
+    "version": "[version]",
+    "mediumType": "xml-file",
+    "refreshRate": "[refresh rate]",
+    "schema": "[complete url of XSD]"
+}

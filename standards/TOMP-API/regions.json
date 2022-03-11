@@ -3,5 +3,6 @@
     "part": "/operator/regions",
     "version": "[version]",
     "mediumType": "API",
+    "refreshRate": 0,
     "fieldModifications": []
 }

@@ -417,7 +417,7 @@ components:
           enum: [time, geografical]
         level:
           type: string
-          enum: [quarter, hour, dayparts, daily, weekly, biweekly, monthly, half-yearly, yearly, postal, postal1_4, district, city, region, custom]
+          enum: [quarterly, hourly, dayparts, daily, weekly, biweekly, monthly, half-yearly, yearly, postal, postal1_4, district, city, region, custom]
         customGeographicalDimension:
           type: string
           format: URL
@@ -506,7 +506,12 @@ components:
           type: string
         mediumType: 
           type: string
-          enum: [xml, json-file, csv-file, API]
+          enum: [xml-file, json-file, comma-delimited-csv-file, semicolon-delimited-csv-file, pipe-delimited-csv-file, shapefile, API]
+        schema:
+          type: string
+        refreshRate:
+          type: number
+          description: the number of minutes between 2 refreshes. When it is a real-time connection or API, this should be considered as 0 (always up-to-date). When it's obsolete, it is not specified.
         fieldModifications: 
           type: array
           items:

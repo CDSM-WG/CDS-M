@@ -1,0 +1,9 @@
+{
+    "type": "standards",
+    "name": "pipe-csv",
+    "part": "[complete url]",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "pipe-delimited-csv-file",
+    "schema": "[pipe seperated field list]"
+}

@@ -1,6 +1,6 @@
 {
     "type": "contract",
-    "name": "DPIA",
+    "name": "DPA",
     "template": "https://gdpr.eu/data-processing-agreement/",
     "parameters": [ 
         { "Company": "[Company]", "order": [ 1 ] },

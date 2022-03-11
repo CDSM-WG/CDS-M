@@ -1,0 +1,18 @@
+{
+    "type": "standards",
+    "name": "MDS",
+    "version": "[version]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "part": "GET /vehicles",
+    "fieldModifications": [
+        {
+            "field": "vehicles[].device_id",
+            "exception": "removed"
+        },
+        {
+            "field": "vehicles[].vehicle_id",
+            "exception": "removed"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "id": "availability-per-parkingspot",
+    "externalReference": "",
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine the distribution of assets",
+        "inOrderTo": "redistribute assets to create a more inclusive supply"
+    },
+    "termsAndConditions": [],
+    "contract": [],
+    "sharing": [],
+    "authentication": [],
+    "transport": [],
+    "storage": [],
+    "security": [],
+    "combinations": [
+        "publish-stations",
+        "publish-preferred-parking-zones"
+    ],
+    "tags": [
+        "public-space:distribution",
+        "assets:availability",
+        "mode:step",
+        "mode:scooter",
+        "mode:bike",
+        "mode:shared-bike",
+        "mode:car",
+        "mode:shared-car"
+    ]
+}
