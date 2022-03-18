@@ -3,9 +3,9 @@ button {
     bottom: 15px;
     left: 80px;
     z-index: 100;
-    background-color: #f44336;
+    background-color: white;
     border: none;
-    color: white;
+    color: #EC0000;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;

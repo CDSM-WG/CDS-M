@@ -55,8 +55,13 @@
   ],
   "standards": [
     "GBFS-free-bike-status",
+    "GBFS-free-bike-status-non-rotating-asset-id",
+    "GBFS-vehicle-status",
+    "GBFS-vehicle-status-non-rotating-asset-id",
     "TOMP-available-assets",
-    "MDS-provider-vehicles-without-ids"
+    "TOMP-available-assets-non-rotating-asset-id",
+    "MDS-provider-vehicles-without-ids",
+    "MDS-provider-vehicles"
   ],
   "termsAndConditions": [
     "BIO"
@@ -93,9 +98,141 @@
   ]
 }, 
 {
+    "id": "car-reduction-analysis",
+    "externalReference": "",
+    "tags": ["green-deal:sharing"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine if multi modal changes to roads lead to increased ridership",
+        "inOrderTo": "combine with other data to determine car traffic reductions"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-provider-trips-without-ids",
+        "MDS-provider-trips"
+    ]
+}, 
+{
+    "id": "daily-permit-fee",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rec6UoYGlA7nxjuaN",
+    "tags": ["inclusion:affordable", "assets:efficiency"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "calculate fees per scooter deployed/ridden per day",
+        "inOrderTo": "to find out whether inhabitants don't pay too much"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-provider-trips-without-ids",
+        "MDS-provider-trips"
+    ]
+}, 
+{
+    "id": "distribution-requirements",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recBL5EgkaAEPuxOU",
+    "tags": ["assets:distribution", "inclusion:distribution"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "ensure devices are distributed according to equity requirements",
+        "inOrderTo": "regulate inclusion"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-provider-vehicles-without-ids",
+        "MDS-provider-vehicles",
+        "GBFS-station-status",
+        "GBFS-vehicle-status",
+        "GBFS-free-bike-status",
+        "TOMP-API-available-assets"
+    ]
+}, 
+{
+    "id": "most-used-routes",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOEp2ybwC50OJHJ",
+    "tags": ["public-space:network-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine which routes are the most popular for riders",
+        "inOrderTo": "improve the usage of physical space (parking, capacity, etc.)"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-provider-trips-without-ids",
+        "MDS-provider-trips"
+    ]
+}, 
+{
+    "id": "parking-availability",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
+    "tags": ["public-space:parking-availability"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "see the performance of all designated parking areas",
+        "inOrderTo": "steer on inhabitant's needs"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "GBFS-station-status",
+        "SPDP-dynamic"
+    ]
+}, 
+{
+    "id": "publish-event-areas",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recsQ89oZGG1CRmJA",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish beforehand or in realtime rules for providers to implement temporary planned events, such as concerts, slow streets, festivals",
+        "inOrderTo": "to help the events to keep their users and contractors informed and for better route planning and re-balancing efforts."
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-policy-rules",
+        "TOMP-API-regions"
+    ]
+}, 
+{
+    "id": "publish-no-parking-zones",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recD2q6FSp1gMCUww",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish no parking areas for providers ",
+        "inOrderTo": "to prohibit parking."
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-policy-rules",
+        "TOMP-API-regions"
+    ]
+}, 
+{
+    "id": "publish-no-ride-zones",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rec3rXhqSoIV35zcz",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish no ride areas for providers ",
+        "inOrderTo": "to be used by the end users"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-policy-rules",
+        "TOMP-API-regions"
+    ]
+}, 
+{
     "id": "operating-area",
     "externalReference": "",
-    "tags": ["public-space:distribution"],
+    "tags": ["public-space:usage"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish the operational area for transport operators",
@@ -115,6 +252,24 @@
         "iWouldLikeTo": "publish the preferred parking zones",
         "inOrderTo": "manage the usage of public space"
     }
+}, 
+{
+    "id": "publish-slow-speed-zones",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
+    "tags": [
+        "public-space:usage"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish slower speed areas for providers",
+        "inOrderTo": "to use and reducing speeds, below the vehicle max speed."
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-policy-rules",
+        "TOMP-API-regions"
+    ]
 }, 
 {
     "id": "publish-stations",

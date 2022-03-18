@@ -41,8 +41,8 @@ export class UseCaseTileComponent implements OnInit {
 
   getRandomColor() {
     //var c = '#';
-    var colors = ['#B0E0E6','#ADD8E6','#87CEFA','#87CEEB','#00BFFF','#1E90FF','#6495ED','#4682B4','#5F9EA0','#4169E1','#0000FF',
-      '#0000CD','#00008B','#000080'];
+    var colors = ['#ce3220','#c12e1e','#b32b1c','#a52819','#972417','#8a2115','#7c1e13','#6e1a11','#60170f','#53140d','#45110b',
+      '#370d08','#290a06','#1c0704'];
     var index = Math.floor(Math.random() * colors.length);
 
     /*for (var i = 0; i < 6; i++) {
