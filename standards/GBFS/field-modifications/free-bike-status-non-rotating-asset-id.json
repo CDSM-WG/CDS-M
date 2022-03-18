@@ -1,7 +1,7 @@
 {
     "type": "standards",
     "name": "GBFS",
-    "part": "free_bike_status.json",
+    "part": "free_bike_status",
     "fieldModifications": [
         {
             "field": "bike_id",

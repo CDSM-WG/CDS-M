@@ -1,0 +1,16 @@
+{
+    "id": "publish-no-parking-zones",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recD2q6FSp1gMCUww",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish no parking areas for providers ",
+        "inOrderTo": "to prohibit parking."
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-policy-rules",
+        "TOMP-API-regions"
+    ]
+}

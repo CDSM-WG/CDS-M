@@ -1,0 +1,7 @@
+{
+    "type": "standards",
+    "name": "OD-Matrix",
+    "part": "geojson",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "json"
+}

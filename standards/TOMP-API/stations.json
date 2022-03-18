@@ -1,6 +1,7 @@
 {
     "name": "TOMP-API",
     "part": "/operator/stations",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Stations",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": 0,

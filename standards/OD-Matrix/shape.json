@@ -1,0 +1,7 @@
+{
+    "type": "standards",
+    "name": "OD-Matrix",
+    "part": "shape-file",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "ESRI-shapefile"
+}

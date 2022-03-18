@@ -1,6 +1,7 @@
 {
     "name": "TOMP-API",
     "part": "/operator/operator-calendar",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Pricing-information",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": 0,

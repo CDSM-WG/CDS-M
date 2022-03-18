@@ -1,0 +1,16 @@
+{
+    "id": "car-reduction-analysis",
+    "externalReference": "",
+    "tags": ["green-deal:sharing"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine if multi modal changes to roads lead to increased ridership",
+        "inOrderTo": "combine with other data to determine car traffic reductions"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        "MDS-provider-trips-without-ids",
+        "MDS-provider-trips"
+    ]
+}

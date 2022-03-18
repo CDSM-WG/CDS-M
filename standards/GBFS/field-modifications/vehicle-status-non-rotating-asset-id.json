@@ -1,0 +1,19 @@
+{
+    "type": "standards",
+    "name": "GBFS",
+    "part": "vehicle_status",
+    "fieldModifications": [
+        {
+            "field": "bike_id",
+            "exception": "non-rotating",
+            "consequences": [
+                {
+                    "type": "privacy",
+                    "dimension": "tailored to the people",
+                    "penalty": "=0",
+                    "explanation": "this facilitates derival of personal movements"
+                }
+            ]
+        }
+    ]
+}

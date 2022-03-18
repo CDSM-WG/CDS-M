@@ -1,0 +1,11 @@
+{
+    "id": "public-availibility-devices",
+    "reject-reason": "Duplicate with `availibility`",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
+    "tags": ["assets:availability"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "",
+        "inOrderTo": ""
+    }
+}

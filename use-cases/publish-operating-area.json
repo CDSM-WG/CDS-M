@@ -1,7 +1,7 @@
 {
     "id": "operating-area",
     "externalReference": "",
-    "tags": ["public-space:distribution"],
+    "tags": ["public-space:usage"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish the operational area for transport operators",

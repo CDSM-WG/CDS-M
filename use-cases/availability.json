@@ -24,8 +24,13 @@
   ],
   "standards": [
     "GBFS-free-bike-status",
+    "GBFS-free-bike-status-non-rotating-asset-id",
+    "GBFS-vehicle-status",
+    "GBFS-vehicle-status-non-rotating-asset-id",
     "TOMP-available-assets",
-    "MDS-provider-vehicles-without-ids"
+    "TOMP-available-assets-non-rotating-asset-id",
+    "MDS-provider-vehicles-without-ids",
+    "MDS-provider-vehicles"
   ],
   "termsAndConditions": [
     "BIO"
