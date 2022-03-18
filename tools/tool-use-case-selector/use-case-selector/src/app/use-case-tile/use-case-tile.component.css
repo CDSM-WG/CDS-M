@@ -16,13 +16,21 @@ body {
 
 .use-case-checkbox {
     margin-left: 3px;
-    margin-top: 33%;
+    margin-top: 31%;
     border-width: 2px;
     border-color: black;
 }
 
 .use-case-text {
     text-align: center;
+    transform: translate(-50%, -50%);
     margin: auto;
     font-weight: bold;
+    font-size: 16pt;
+    color: white;
+    margin-left: 48%;
+    margin-top: 13%;
+    mix-blend-mode: difference;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: darkblue;
 }

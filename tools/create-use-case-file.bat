@@ -5,7 +5,7 @@ SET COUNT=0
 
 CD ..\use-cases\
 
-FOR /R %%I in (*.json) do (
+FOR %%I in (*.json) do (
     IF !COUNT! == 0 (echo [ > %OUTPUTFILE%) ELSE (echo , >> %OUTPUTFILE%)
     
     SET COUNT=1

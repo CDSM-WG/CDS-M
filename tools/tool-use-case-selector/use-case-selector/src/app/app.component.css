@@ -31,7 +31,9 @@ left: 0;
 width: 200px;
 height: 100%;
 float: left;
-background-color: #1976d2;
+/*background-color: #1976d2;*/
+background: rgb(20,60,115);
+background: linear-gradient(90deg, rgba(20,60,115,1) 0%, rgba(9,53,121,1) 10%, rgba(0,31,255,1) 100%);
 color: white;
 font-weight: 600;
 }
@@ -40,6 +42,13 @@ font-weight: 600;
     position: absolute;
     left: 210px;
     width: 90%;
+}
+
+.content-background {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(224,245,250,1) 90%, rgba(202,221,226,1) 100%);
+    width:100%;
+    height: 100vh;
 }
 
 svg.material-icons {
