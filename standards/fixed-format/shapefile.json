@@ -1,9 +1,0 @@
-{
-    "type": "standards",
-    "name": "shapefile",
-    "part": "[complete url]",
-    "version": "[version]",
-    "refreshRate": "[refresh rate]",
-    "mediumType": "shapefile",
-    "schema": "[comma delimited field list]"
-}

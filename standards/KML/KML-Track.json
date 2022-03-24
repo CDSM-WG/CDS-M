@@ -1,0 +1,9 @@
+{
+    "type": "standards",
+    "name": "KML", 
+    "part": "Track",
+    "version": "2.2",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "xml-file",
+    "schema": "https://developers.google.com/kml/documentation/kmlreference#gx:track"
+}

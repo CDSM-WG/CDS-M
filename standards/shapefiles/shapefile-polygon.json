@@ -1,0 +1,10 @@
+{
+    "type": "standards",
+    "name": "shapefile-polygon",
+    "part": "[complete url]",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "shapefile",
+    "schema": "[comma delimited extra field list]",
+    "description": "Shapefile should countain (multi)polygons only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+}

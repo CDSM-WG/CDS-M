@@ -17,7 +17,7 @@
     } ],
     "termsAndConditions": ["BIO"],
     "contract": [
-      { "name": "DPIA", 
+      { "name": "DPA", 
         "parameters": [ 
             { "Company": "City 1", "order": [ 1 ] },
             { "Data Processor": "[Data Processor and parties]", "order": [ 2 ] },
