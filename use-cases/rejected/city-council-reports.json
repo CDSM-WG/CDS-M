@@ -1,0 +1,12 @@
+{
+    "id": "city-council-reports",
+    "reject-reason": "Too fague",
+    "actions": "make the reports more concrete, so actual data can be related",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recf89cnSDPon0KZp",
+    "tags": [""],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "use data to communicate the value, successes, and issues of a mobility policy",
+        "inOrderTo": "and allow guidance on safe operations and approval"
+    }
+}

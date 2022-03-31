@@ -1,0 +1,17 @@
+{
+    "id": "street-condition-improvement",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recz55sgUPlS6o6S5",
+    "tags": ["public-space:usage", "mode:bike", "mode:car", "mode:scooter", "mode:pedestrian"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "find out popular trips",
+        "inOrderTo": "prioritize street paving by using Street Condition Index values and popular trips for safer rides"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids", 
+        "KML-Points",
+        "GPX",
+        "shapefile-points"
+    ]
+}

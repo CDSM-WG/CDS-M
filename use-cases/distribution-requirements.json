@@ -12,6 +12,7 @@
     "standards": [
         "MDS-provider-vehicles-without-ids",
         "MDS-provider-vehicles",
+        "MDS-provider-stops",
         "GBFS-station-status",
         "GBFS-vehicle-status",
         "GBFS-free-bike-status",

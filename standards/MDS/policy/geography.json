@@ -1,0 +1,9 @@
+{
+    "type": "standards",
+    "name": "MDS",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#geography",
+    "part": "/geographies",
+    "version": "[version]",
+    "mediumType": "API",
+    "refreshRate": "0"
+}

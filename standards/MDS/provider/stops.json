@@ -1,0 +1,8 @@
+{
+    "type": "standards",
+    "name": "MDS",
+    "part": "/stops",
+    "version": "[version]",
+    "mediumType": "API",
+    "refreshRate": "0"
+}

@@ -1,5 +1,6 @@
 {
-    "id": "origin-destination-demand",
+    "id": "incidents",
+    "reject-reason": "duplicate with vandalism-incidents and crash-reports",
     "externalReference": "",
     "tags": [""],
     "story": {

@@ -11,6 +11,7 @@
     "problemsSolved": [],
     "standards": [
         "GBFS-station-status",
+        "MDS-provider-stops",
         "SPDP-dynamic"
     ]
 }

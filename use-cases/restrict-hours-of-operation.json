@@ -1,0 +1,14 @@
+{
+    "id": "restrict-hours-of-operation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
+    "tags": ["assets:policy"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "ensure operating hours are being followed, like no riding late at night for safety in some cities.",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids"
+    ]
+}

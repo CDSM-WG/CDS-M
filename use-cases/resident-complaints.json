@@ -1,0 +1,16 @@
+{
+    "id": "resident-complaints",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRS7suODr8A3DZI",
+    "tags": ["public-space:complaints"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "investigate and validate complaints from residents about operations, parking, riding, speed, etc",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-status_change",
+        "MDS-provider-status_change-without-ids",
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids"
+    ]
+}

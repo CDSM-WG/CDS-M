@@ -1,0 +1,22 @@
+{
+    "id": "impact-on-transit",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKjAEob7RRBXf1P",
+    "tags": ["assets:connections"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "provide visibility into the relationship between micromobility and other modes, such as public transit",
+        "inOrderTo": ""
+    },
+    "standards": [
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "MDS-provider-trips",
+        "MDS-provider-trips-withoud_ids",
+        "MDS-provider-status_changes",
+        "MDS-provider-status_changes-withoud_ids"
+      ]
+}

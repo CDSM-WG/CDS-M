@@ -1,0 +1,7 @@
+{
+    "type": "standards",
+    "name": "OD-Matrix-ODZ",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "odz-file",
+    "schema": "https://github.com/TOMP-WG/OD-MATRIX-SPECIFICATION"
+}

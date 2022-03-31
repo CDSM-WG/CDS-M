@@ -1,0 +1,20 @@
+{
+    "id": "origin-destination-demand",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "provice a key tool for transportation planners, learn areas where people are riding to and from (campus, entertainment district, business core, etc), and how they get there",
+        "inOrderTo": "change policy to match"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids",
+        "OD-Matrix-odz",
+        "OD-Matrix-matrix",
+        "KML-Track",
+        "KML-Point-and-timestamp",
+        "GPX",
+        "shapefile-tracks"
+    ]
+}

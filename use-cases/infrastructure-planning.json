@@ -1,0 +1,24 @@
+{
+    "id": "infrastructure-planning",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
+    "tags": ["public-space:planning", "public-space:usage", "mode:bike", "mode:scooter", "mode:step"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "retrieve usage and demand, start and end points, and trips taken",
+        "inOrderTo": "determine where to place new bike/scooter lanes and drop zones"
+    },
+    "standards": [
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-stations",
+        "TOMP-available-assets",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "MDS-provider-stops",
+        "MDS-provider-trips",
+        "MDS-provider-trips-withoud_ids",
+        "MDS-provider-status_changes",
+        "MDS-provider-status_changes-withoud_ids"
+      ]
+}
