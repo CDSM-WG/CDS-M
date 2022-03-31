@@ -1,0 +1,15 @@
+{
+    "id": "right-of-way-management",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recgAJ2lc0Hg2vSCM",
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get alerts where issues occur",
+        "inOrderTo": "remove devices from public right of way or create plans to fix these issues"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-withoud_ids",
+        "MDS-provider-status_changes",
+        "MDS-provider-status_changes-withoud_ids"
+    ]
+}

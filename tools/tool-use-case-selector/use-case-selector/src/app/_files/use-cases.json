@@ -9,6 +9,19 @@
     },
     "termsAndConditions": [],
     "contract": [],
+    "standards": [
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "MDS-provider-stops",
+        "MDS-provider-trips",
+        "MDS-provider-trips-withoud_ids",
+        "MDS-provider-status_changes",
+        "MDS-provider-status_changes-withoud_ids"
+      ],
     "sharing": [],
     "authentication": [],
     "transport": [],
@@ -60,8 +73,11 @@
     "GBFS-vehicle-status-non-rotating-asset-id",
     "TOMP-available-assets",
     "TOMP-available-assets-non-rotating-asset-id",
-    "MDS-provider-vehicles-without-ids",
-    "MDS-provider-vehicles"
+    "MDS-provider-stops",
+    "MDS-provider-trips",
+    "MDS-provider-trips-withoud_ids",
+    "MDS-provider-status_changes",
+    "MDS-provider-status_changes-withoud_ids"
   ],
   "termsAndConditions": [
     "BIO"
@@ -98,6 +114,43 @@
   ]
 }, 
 {
+    "id": "average-km-per-trip",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recavl7mrhNVCYU76",
+    "tags": ["assets:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get an insight in the length of executed trips",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids",
+        "OD-Matrix-odz",
+        "OD-Matrix-matrix",
+        "KML-Track",
+        "KML-Point-and-timestamp",
+        "GPX",
+        "shapefile-tracks"
+    ]
+}, 
+{
+    "id": "average-time-per-trip",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recqgvXE68b4l77mw",
+    "tags": ["assets:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get an insight in the duration of executed trips",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids",
+        "OD-Matrix-odz",
+        "KML-Point-and-timestamp",
+        "GPX"
+    ]
+}, 
+{
     "id": "car-reduction-analysis",
     "externalReference": "",
     "tags": ["green-deal:sharing"],
@@ -111,6 +164,20 @@
     "standards": [
         "MDS-provider-trips-without-ids",
         "MDS-provider-trips"
+    ]
+}, 
+{
+    "id": "crash-reports",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recHKsRyMKXFwFom3",
+    "tags": ["assets:safety"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "investigate crashes of vehicles reported by riders, public, or operators",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-status_change",
+        "MDS-provider-status_change-without-ids"
     ]
 }, 
 {
@@ -143,10 +210,91 @@
     "standards": [
         "MDS-provider-vehicles-without-ids",
         "MDS-provider-vehicles",
+        "MDS-provider-stops",
         "GBFS-station-status",
         "GBFS-vehicle-status",
         "GBFS-free-bike-status",
         "TOMP-API-available-assets"
+    ]
+}, 
+{
+    "id": "hourly-utilisation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
+    "tags": ["assets:efficiency"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get insight in hourly fleet utilization with origin/destination locations",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids",
+        "OD-Matrix-odz",
+        "OD-Matrix-matrix",
+        "KML-Track",
+        "KML-Point-and-timestamp",
+        "GPX",
+        "shapefile-tracks"
+    ]
+}, 
+{
+    "id": "impact-on-transit",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKjAEob7RRBXf1P",
+    "tags": ["assets:connections"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "provide visibility into the relationship between micromobility and other modes, such as public transit",
+        "inOrderTo": ""
+    },
+    "standards": [
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "MDS-provider-trips",
+        "MDS-provider-trips-withoud_ids",
+        "MDS-provider-status_changes",
+        "MDS-provider-status_changes-withoud_ids"
+      ]
+}, 
+{
+    "id": "infrastructure-planning",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
+    "tags": ["public-space:planning", "public-space:usage", "mode:bike", "mode:scooter", "mode:step"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "retrieve usage and demand, start and end points, and trips taken",
+        "inOrderTo": "determine where to place new bike/scooter lanes and drop zones"
+    },
+    "standards": [
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-stations",
+        "TOMP-available-assets",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "MDS-provider-stops",
+        "MDS-provider-trips",
+        "MDS-provider-trips-withoud_ids",
+        "MDS-provider-status_changes",
+        "MDS-provider-status_changes-withoud_ids"
+      ]
+}, 
+{
+    "id": "injury-investigation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recqUqEewxLgenFTz",
+    "tags": ["public-space:safety"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "investigate injuries and collisions with other objects and cars",
+        "inOrderTo": "to determine roadway accident causes"
+    },
+    "standards": [
+        "MDS-provider-status_change",
+        "MDS-provider-status_change-without-ids"
     ]
 }, 
 {
@@ -166,6 +314,48 @@
     ]
 }, 
 {
+    "id": "origin-destination-demand",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "provice a key tool for transportation planners, learn areas where people are riding to and from (campus, entertainment district, business core, etc), and how they get there",
+        "inOrderTo": "change policy to match"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids",
+        "OD-Matrix-odz",
+        "OD-Matrix-matrix",
+        "KML-Track",
+        "KML-Point-and-timestamp",
+        "GPX",
+        "shapefile-tracks"
+    ]
+}, 
+{
+    "id": "parking-area-performance",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
+    "tags": ["public-space:parking-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get insights in the location and performance of all designated parking areas",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-status_changes",
+        "MDS-provider-status_changes-without-ids",
+        "GBFS-station_information",
+        "GBFS-station_status",
+        "GBFS-free-bike-status",
+        "GBFS-vehicle-status",
+        "TOMP-stations",
+        "TOMP-available-assets",
+        "SPDP-dynamic",
+        "SPDP-static"
+    ]
+}, 
+{
     "id": "parking-availability",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
     "tags": ["public-space:parking-availability"],
@@ -178,7 +368,22 @@
     "problemsSolved": [],
     "standards": [
         "GBFS-station-status",
+        "MDS-provider-stops",
         "SPDP-dynamic"
+    ]
+}, 
+{
+    "id": "publish-emergency-guidance",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recPIbfFLib0KAgj7",
+    "tags": ["public-space:events"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish unplanned events beforehand or in realtime rules for providers to implement, such as emergency road closures, water main breaks, etc",
+        "inOrderTo": "to help them keep their users and contractors informed and safe."
+    },
+    "standards": [
+        "MDS-policy-geography",
+        "MDS-policy-rules"
     ]
 }, 
 {
@@ -195,6 +400,19 @@
     "standards": [
         "MDS-policy-rules",
         "TOMP-API-regions"
+    ]
+}, 
+{
+    "id": "publish-fleet-caps",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
+    "tags": ["assets:policy"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish vehicle caps per provider",
+        "inOrderTo": "allow dynamic fleet size adjustment based on policy"
+    },
+    "standards": [
+        "MDS-policy-rules"
     ]
 }, 
 {
@@ -280,4 +498,102 @@
         "iWouldLikeTo": "publish the assigned station locations for transport operators",
         "inOrderTo": "maintain the order"
     }
+}, 
+{
+    "id": "resident-complaints",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRS7suODr8A3DZI",
+    "tags": ["public-space:complaints"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "investigate and validate complaints from residents about operations, parking, riding, speed, etc",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-status_change",
+        "MDS-provider-status_change-without-ids",
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids"
+    ]
+}, 
+{
+    "id": "restrict-hours-of-operation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
+    "tags": ["assets:policy"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "ensure operating hours are being followed, like no riding late at night for safety in some cities.",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids"
+    ]
+}, 
+{
+    "id": "restricted-area-rides",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
+    "tags": ["assets:policy"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "find locations where devices are operating or passing through restricted areas",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids",
+        "MDS-policy-rules",
+        "GBFS-system_regions",
+        "TOMP-regions"
+    ]
+}, 
+{
+    "id": "road-improvement-effects",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recUQ9z25tWaCzlaB",
+    "tags": ["public-space:network-usage", "mode:bike", "mode:scooter", "mode:car", "mode:shared-car"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine road usage by riders",
+        "inOrderTo": "get insights in before and after implementing road changes, improvements, signal retimings, etc."
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids",
+        "KML-Points",
+        "GPX",
+        "shapefile-points"
+    ]    
+}, 
+{
+    "id": "street-condition-improvement",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recz55sgUPlS6o6S5",
+    "tags": ["public-space:usage", "mode:bike", "mode:car", "mode:scooter", "mode:pedestrian"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "find out popular trips",
+        "inOrderTo": "prioritize street paving by using Street Condition Index values and popular trips for safer rides"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids", 
+        "KML-Points",
+        "GPX",
+        "shapefile-points"
+    ]
+}, 
+{
+    "id": "street-lighting-improvement",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recz55sgUPlS6o6S5",
+    "tags": ["public-space:usage", "mode:bike", "mode:car", "mode:scooter", "mode:pedestrian"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "look at popular trips and rides past sunset",
+        "inOrderTo": "prioritize street lighting upgrades (new lights, brighter more frequent lights) for safety improvements."
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-without-ids", 
+        "KML-Points",
+        "GPX",
+        "shapefile-points"
+    ]
 }] 

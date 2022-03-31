@@ -1,8 +1,18 @@
 #grid {
     position: relative;
-    width: 60%;
+    width: 750px;
+    /* height: 99vh; */
     margin: 0 auto;
     padding: 0; /* Clears unordered list default of 40px */
+/*    padding-right: 40px;
+    overflow-y: auto;
+    overflow-x: hidden; */
+}
+
+body {
+    height: 99vh;
+    width: 160vh;
+    overflow-y: auto;
 }
 
 .clear:after {
