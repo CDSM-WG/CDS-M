@@ -1,10 +1,14 @@
 {
     "id": "most-often-used-parkings",
     "externalReference": "",
-    "tags": [""],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "",
-        "inOrderTo": ""
-    }
+        "iWouldLikeTo": "see which parking spaces are used most often",
+        "inOrderTo": "detect potential shortages and surpluses of parking space in different parts of the city"
+    },
+    "tags": [
+        "public-space:distribution",
+        "mode:car",
+        "mode:shared-car"
+    ]
 }

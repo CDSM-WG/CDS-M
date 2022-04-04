@@ -1,0 +1,18 @@
+{
+    "id": "vehicle-caps",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRcMuvCOD8CAXhh",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "determine total number of devices per operator in the right of way"
+    },  
+    "tags": [
+      "public-space:distribution",
+      "public-space:usage"
+    ],
+    "standards": [
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id"
+    ]
+  }

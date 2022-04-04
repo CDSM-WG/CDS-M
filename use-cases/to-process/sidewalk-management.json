@@ -1,0 +1,19 @@
+{
+    "id": "sidewalk-management",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recvHs81SsiDlU7de",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "use date to check whether devices are not using or riding on sidewalks",
+      "inOrderTo": "validate resident reports of these incidents"
+    },  
+    "tags": [
+      "public-space:distribution",
+      "public-space:parking-usage",
+      "mode:car",
+      "mode:shared-car"
+    ],
+    "standards": [
+        "MDS-provider-status_change",
+        "MDS-provider-status_change-without-ids"
+    ]
+  }
