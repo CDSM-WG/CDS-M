@@ -1,10 +1,14 @@
 {
     "type": "standards",
     "name": "SPDP",
+    "exchangeType": "file-based", 
     "externalReference": "https://data.openparking.nl/downloads/Standard_for_the_Publication_of_Dynamic_Parking_Data_v2.0.pdf",
     "part": "static",
     "version": "2.0",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "B", 
+    "reusability":"B", 
+    "interoperability": "B",
     "fieldModifications": []
 }

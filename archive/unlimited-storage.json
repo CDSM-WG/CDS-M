@@ -1,0 +1,4 @@
+{
+    "name": "unlimited-storage",
+    "conflicts": [ "unlimited_storage_in_process" ]
+}

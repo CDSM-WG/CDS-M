@@ -1,0 +1,26 @@
+{
+    "id": "rentals",
+    "externalReference": "",
+    "tags": [
+        "business:monitor"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "find out transport organisations performance",
+        "inOrderTo": "adjust subsidies"
+    },
+    "standards": [
+        "MDS-provider-trips",
+        "MDS-provider-trips-withoud_ids",
+        "MDS-provider-status_changes",
+        "MDS-provider-status_changes-withoud_ids",
+        "OD-Matrix-odz",
+        "OD-Matrix-matrix",
+        "KML-Track",
+        "KML-Point-and-timestamp",
+        "GPX",
+        "shapefile-tracks",
+        "TOMP-available-assets",
+        "TOMP-available-assets-non-rotating-asset-id"
+    ]
+}

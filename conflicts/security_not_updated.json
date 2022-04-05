@@ -1,0 +1,6 @@
+{
+    "reason": "outdated security mechanisms used",
+    "breach": "privacy_in_design_purpose_limitation",
+    "requiredEncryption": [ "sha256-encrypted" ],
+    "requiredTransportProtection": [ "TLS-1.2", "TLS-1.3", "content-PKI-encrypted" ]
+}

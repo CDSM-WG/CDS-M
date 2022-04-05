@@ -1,9 +1,13 @@
 {
     "name": "TOMP-API",
+    "exchangeType": "API", 
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": 0,
+    "implementationEffort": "D", 
+    "reusability":"B", 
+    "interoperability": "B",
     "fieldModifications": []
 }

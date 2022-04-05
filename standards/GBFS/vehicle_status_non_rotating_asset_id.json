@@ -1,0 +1,18 @@
+{
+    "type": "standards",
+    "name": "GBFS",
+    "exchangeType": "file-based", 
+    "part": "vehicle_status",
+    "implementationEffort": "B", 
+    "reusability":"B", 
+    "interoperability": "B",
+    "fieldModifications": [
+        {
+            "field": "bike_id",
+            "exception": "non-rotating"            
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "type": "processing",
+    "name": "remove-raw-data-after-aggregate",
+    "conflicts": [ "reveals_personal_trip_data" ]
+}

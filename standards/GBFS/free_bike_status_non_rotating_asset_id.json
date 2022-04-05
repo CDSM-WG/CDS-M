@@ -1,0 +1,18 @@
+{
+    "type": "standards",
+    "name": "GBFS",
+    "part": "free_bike_status.json",
+    "exchangeType": "file-based",
+    "implementationEffort": "B", 
+    "reusability":"A", 
+    "interoperability": "B",
+    "fieldModifications": [
+        {
+            "field": "bike_id",
+            "exception": "non-rotating"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ]
+}

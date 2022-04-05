@@ -1,9 +1,13 @@
 {
     "type": "standards",
-    "name": "comma-csv",
+    "exchangeType": "file-based",
+    "name":"comma-csv",
     "part": "[complete url]",
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "comma-delimited-csv-file",
+    "implementationEffort": "A", 
+    "reusability":"E", 
+    "interoperability": "E",
     "schema": "[comma seperated field list]"
 }

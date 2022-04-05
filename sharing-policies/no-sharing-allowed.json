@@ -1,8 +1,0 @@
-{
-    "type": "sharing-policy",
-    "name": "no-sharing-allowed",
-    "canBeSharedWith": [],
-    "cannotBeSharedWith": [
-        "EVERYONE"
-    ]
-}

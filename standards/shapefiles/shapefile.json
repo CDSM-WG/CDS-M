@@ -1,10 +1,14 @@
 {
     "type": "standards",
     "name": "shapefile",
+    "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "B",
     "description": "https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
 }

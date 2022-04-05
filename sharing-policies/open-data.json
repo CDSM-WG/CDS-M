@@ -1,6 +1,0 @@
-{
-    "type": "sharing-policy",
-    "name": "open-data",
-    "canBeSharedWith": [ "EVERYONE" ],
-    "cannotBeSharedWith": [ ]
-}

@@ -1,9 +1,13 @@
 {
     "type": "standards",
     "name": "pipe-csv",
+    "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "pipe-delimited-csv-file",
+    "implementationEffort": "A", 
+    "reusability":"E", 
+    "interoperability": "E",
     "schema": "[pipe seperated field list]"
 }

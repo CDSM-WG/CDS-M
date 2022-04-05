@@ -1,0 +1,16 @@
+{
+    "type": "standards",
+    "name": "TOMP-API",
+    "exchangeType": "API", 
+    "part": "/operator/available-assets",
+    "implementationEffort": "C", 
+    "reusability":"E", 
+    "interoperability": "B",
+    "fieldModifications": [
+        {
+            "field": "assets[].licensePlate",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [ "reveals_personal_trip_data" ]
+}

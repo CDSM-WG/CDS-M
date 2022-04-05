@@ -1,8 +1,20 @@
 {
     "type": "standards",
     "name": "GPX",
+    "exchangeType": "file-based", 
     "version": "1.1",
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",
-    "schema": "https://www.topografix.com/gpx/1/1/gpx.xsd"
+    "implementationEffort": "C", 
+    "reusability":"C", 
+    "interoperability": "E",
+    "schema": "https://www.topografix.com/gpx/1/1/gpx.xsd",
+    "fieldModifications": [
+        {
+            "field": "geometry"            
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ]
 }

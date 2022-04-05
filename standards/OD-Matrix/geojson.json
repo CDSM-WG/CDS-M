@@ -1,7 +1,11 @@
 {
     "type": "standards",
     "name": "OD-Matrix",
+    "exchangeType": "file-based", 
     "part": "geojson",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "B", 
+    "reusability":"E", 
+    "interoperability": "B",
     "mediumType": "json"
 }

@@ -1,4 +1,5 @@
 {
     "type": "authentication",
-    "name": "none"
+    "name": "none",
+    "allowedExchangeTypes": [ "API", "file-based" ]
 }

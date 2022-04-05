@@ -1,9 +1,13 @@
 {
     "type": "standards",
     "name": "GBFS",
+    "exchangeType": "file-based", 
     "part": "system_calendar.json",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "A", 
+    "reusability":"B", 
+    "interoperability": "B",
     "fieldModifications": []
 }

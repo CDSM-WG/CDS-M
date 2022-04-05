@@ -1,9 +1,13 @@
 {
     "type": "standards",
     "name": "GTFS",
+    "exchangeType": "file-based", 
     "part": "frequencies.txt",
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "B", 
+    "reusability":"A", 
+    "interoperability": "B",
     "fieldModifications": []
 }

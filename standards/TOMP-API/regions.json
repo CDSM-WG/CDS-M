@@ -1,9 +1,13 @@
 {
     "name": "TOMP-API",
+    "exchangeType": "API", 
     "part": "/operator/regions",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Regions",
     "version": "[version]",
     "mediumType": "API",
+    "implementationEffort": "B", 
+    "reusability":"B", 
+    "interoperability": "B",
     "refreshRate": 0,
     "fieldModifications": []
 }

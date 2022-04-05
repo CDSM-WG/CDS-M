@@ -1,8 +1,12 @@
 {
     "type": "standards",
     "name": "MDS",
+    "exchangeType": "API", 
     "part": "/stops",
     "version": "[version]",
     "mediumType": "API",
+    "implementationEffort": "C", 
+    "reusability":"C", 
+    "interoperability": "B",
     "refreshRate": "0"
 }

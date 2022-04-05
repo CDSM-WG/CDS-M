@@ -1,9 +1,13 @@
 {
     "type": "standards",
     "name": "GTFS",
+    "exchangeType": "file-based", 
     "part": "stops.txt",
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "A", 
+    "reusability":"A", 
+    "interoperability": "A",
     "fieldModifications": []
 }

@@ -1,9 +1,13 @@
 {
     "type": "standards",
     "name": "GTFS",
+    "exchangeType": "file-based", 
     "part": "calendar_dates.txt",
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "A", 
+    "reusability":"B", 
+    "interoperability": "B",
     "fieldModifications": []
 }

@@ -29,6 +29,7 @@
     "GBFS-vehicle-status-non-rotating-asset-id",
     "TOMP-available-assets",
     "TOMP-available-assets-non-rotating-asset-id",
+    "MDS-provider-vehicles",
     "MDS-provider-stops",
     "MDS-provider-trips",
     "MDS-provider-trips-withoud_ids",
@@ -38,34 +39,29 @@
   "termsAndConditions": [
     "BIO"
   ],
-  "contract": [
+  "agreements": [
     "DPA"
   ],
-  "sharing": [],
-  "authentication": [],
-  "transport": [],
-  "storage": [],
-  "security": [
+  "transport": [
+    "TLS-1.1",
+    "TLS-1.2",
+    "TLS-1.3"
+  ],
+  "processing": [
+    "max-time-before-processing",
+    "remove-raw-data-after-aggregate",
+    "max-storage",
+    "unlimited-storage"
+  ],
+  "archive": [],
+  "certificates": [
     "iso-27001.json"
   ],
-  "combinations": [],
   "tags": [
     "public-space:distribution",
     "assets:availability",
     "mode:bike",
     "mode:car",
     "mode:shared-car"
-  ],
-  "not-used-tags": [
-    "public-space:parking-pressure",
-    "public-space:nuisances",
-    "assets:demand",
-    "assets:usage",
-    "assets:trips",
-    "safety:accidents",
-    "safety:vandalism",
-    "environmental:green-deal-goals",
-    "environmental:emissions",
-    "environmental:noise-pollution"
   ]
 }

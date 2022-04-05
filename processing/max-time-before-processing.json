@@ -1,0 +1,5 @@
+{
+    "type": "processing",
+    "name": "max-time-before-processing",
+    "days": "[days]"
+}

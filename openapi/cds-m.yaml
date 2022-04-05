@@ -3,7 +3,7 @@ info:
   title: CDS-M API
   description:
     bladibla
-  version: "0.1.1"
+  version: "0.1.2"
   license:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
@@ -23,6 +23,7 @@ security:
 tags:
   - name: use-cases
   - name: building-blocks
+  - name: support
 
 paths:
   /use-cases/{useCaseId}:
@@ -37,7 +38,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/template"
+                $ref: "#/components/schemas/useCase"
   /use-cases/:
     get:
       tags:
@@ -50,8 +51,89 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/template"
+                  $ref: "#/components/schemas/useCase"
 
+  /aggregation/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific aggregation building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/aggregationDefinition"
+                
+  /aggregation/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all aggregation building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/aggregationDefinition"
+  /agreement/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific contract building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agreementDefinition"
+  /agreement/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all contract building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/agreementDefinition"
+
+  /archive/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific storage building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/storageDefinition"
+  /archive/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all storage building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/storageDefinition"
+                  
   /authentication/{name}:
     get:
       tags:
@@ -78,33 +160,6 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/authenticationDefinition"
-
-  /aggregation/{name}:
-    get:
-      tags:
-      - building-blocks
-      parameters:
-      - $ref: "#/components/parameters/name"
-      responses:
-        "200":
-          description: a specific aggregation building-block
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/aggregationDefinition"
-  /aggregation/:
-    get:
-      tags:
-      - building-blocks
-      responses:
-        "200":
-          description: all aggregation building-blocks
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/aggregationDefinition"
 
   /certificates/{name}:
     get:
@@ -133,7 +188,7 @@ paths:
                 items:
                   $ref: "#/components/schemas/certificatesDefinition"
 
-  /contract/{name}:
+  /processing/{name}:
     get:
       tags:
       - building-blocks
@@ -141,51 +196,24 @@ paths:
       - $ref: "#/components/parameters/name"
       responses:
         "200":
-          description: a specific contract building-block
+          description: a specific processing aspect
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/contractDefinition"
-  /contract/:
+                $ref: "#/components/schemas/processingDefinition"
+  /processing/:
     get:
       tags:
       - building-blocks
       responses:
         "200":
-          description: all contract building-blocks
+          description: complete overview of the processing aspects
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/contractDefinition"
-
-  /sharing-policies/{name}:
-    get:
-      tags:
-      - building-blocks
-      parameters:
-      - $ref: "#/components/parameters/name"
-      responses:
-        "200":
-          description: a specific sharing-policies building-block
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/sharingDefinition"
-  /sharing-policies/:
-    get:
-      tags:
-      - building-blocks
-      responses:
-        "200":
-          description: all sharing-policies building-blocks
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/sharingDefinition"
+                  $ref: "#/components/schemas/processingDefinition"
 
   /standards/{name}:
     get:
@@ -213,33 +241,6 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/standardsDefinition"
-
-  /storage/{name}:
-    get:
-      tags:
-      - building-blocks
-      parameters:
-      - $ref: "#/components/parameters/name"
-      responses:
-        "200":
-          description: a specific storage building-block
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/storageDefinition"
-  /storage/:
-    get:
-      tags:
-      - building-blocks
-      responses:
-        "200":
-          description: all storage building-blocks
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/storageDefinition"
 
   /terms-and-conditions/{name}:
     get:
@@ -294,24 +295,73 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/transportDefinition"
+                  
+  /breaches/{name}:
+    get:
+      tags:
+      - support
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific breach
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/breach"
+  /breaches/:
+    get:
+      tags:
+      - support
+      responses:
+        "200":
+          description: complete overview of the breaches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/breach"                  
 
+  /conflicts/{name}:
+    get:
+      tags:
+      - support
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific conflict
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/conflict"
+  /conflicts/:
+    get:
+      tags:
+      - support
+      responses:
+        "200":
+          description: complete overview of conflicts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/conflict"
+                  
 components:
   schemas:
-    template:
+    useCase:
       type: object
+      required:
+      - id
+      - story
+      - benefits
+      - problemsSolved
       properties:
         id:
           type: string
-        tags:
-          type: array
-          items:
-            type: object
-            properties:
-              dimension:
-                type: string
-                enum: [availability, asset-usage, safety, contract-management, public-space-usage, green-deel]
-              value:
-                type: string
         externalReference:
           type: string
           format: URL
@@ -321,48 +371,62 @@ components:
           $ref: "#/components/schemas/prosAndCons"
         problemsSolved:
           $ref: "#/components/schemas/prosAndCons"
+        standards:
+          $ref: "#/components/schemas/referenceArray"
         termsAndConditions:
           $ref: "#/components/schemas/referenceArray"
-        contract:
-          type: array
-          items:
-            $ref: "#/components/schemas/contract"
-        standards:
-          type: array
-          items:
-            $ref: "#/components/schemas/standard"
-        sharing:
-          $ref: "#/components/schemas/referenceArray"
-        authentication:
+        agreements:
           $ref: "#/components/schemas/referenceArray"
         transport:
           $ref: "#/components/schemas/referenceArray"
-        storage:
+        processing:
+          $ref: "#/components/schemas/referenceArray"
+        archive:
           $ref: "#/components/schemas/referenceArray"
         certificates:
           $ref: "#/components/schemas/referenceArray"
-        aggregation:
-          $ref: "#/components/schemas/referenceArray"
-        customDefinitions:
+        tags:
           type: array
           items:
-            discriminator:
-              propertyName: type
-            oneOf:
-              -  $ref: "#/components/schemas/aggregationDefinition"
-              -  $ref: "#/components/schemas/authenticationDefinition"
-              -  $ref: "#/components/schemas/contractDefinition"
-              -  $ref: "#/components/schemas/certificatesDefinition"
-              -  $ref: "#/components/schemas/sharingDefinition"
-              -  $ref: "#/components/schemas/standardsDefinition"
-              -  $ref: "#/components/schemas/storageDefinition"
-              -  $ref: "#/components/schemas/termsAndConditionDefinition"
-              -  $ref: "#/components/schemas/transportDefinition"
-        combinations:
-          type: array
-          items:
-            $ref: "#/components/schemas/combination"
+            type: string
+            description: a dimension with a value, seperated by a semicolon e.g. mode:car
 
+    conflict:
+      type: object
+      properties:
+        reason:
+          type: string
+        breach:
+          type: string
+        notApplicableWhenInCombinationWith:
+          type: array
+          items:
+            type: string
+        requiredAgreements:
+          type: array
+          items:
+            type: string
+        requiredCertificates:
+          type: array
+          items:
+            type: string
+        requiredAuthentication:
+          type: array
+          items:
+            type: string
+        requiredTransport:
+          type: array
+          items:
+            type: string
+            
+    breach:
+      type: object
+      properties:
+        name:
+          type: string
+        externalReference:
+          type: string
+      
     contract:
       type: object
       properties:
@@ -387,25 +451,14 @@ components:
           items:
             type: number
 
-    combination:
-      type: object
-      example: { "template": "PLA-UC-007-1-alpha", "combinationAllowed": true }
-      properties:
-        template:
-          type: string
-        combinationAllowed:
-          type: boolean
-
     definition:
       properties:
         type:
           type: string
         name:
           type: string
-        consequences:
-          type: array
-          items:
-            $ref: "#/components/schemas/consequence"
+        conflicts:
+          $ref: "#/components/schemas/referenceArray"
 
     aggregationDefinition:
       type: object
@@ -440,19 +493,10 @@ components:
         issuer:
           type: string
 
-    sharingDefinition:
+    processingDefinition:
       type: object
       allOf:
       - $ref: "#/components/schemas/definition"
-      properties:
-        canBeSharedWith:
-          type: array
-          items:
-            type: string
-        cannotBeSharedWith:
-          type: array
-          items:
-            type: string
 
     standardsDefinition:
       allOf:
@@ -467,7 +511,7 @@ components:
         reference:
           type: string
 
-    contractDefinition:
+    agreementDefinition:
       allOf:
       - $ref: "#/components/schemas/definition"    
       - $ref: "#/components/schemas/contract"
@@ -491,10 +535,6 @@ components:
         encryption:
           type: string
         
-    role:
-      type: string
-      enum: [ "RESEARCH_PROVIDERS", "OTHER_CITIES", "TRANSPORT_OPERATORS", "EXTERNAL_DATA_PARTIES" ]
-            
     standard:
       type: object
       properties:
@@ -504,6 +544,21 @@ components:
           type: string
         version:
           type: string
+        exchangeType:
+          type: string
+          enum: [API, file-based]
+        sustainability:
+          type: string
+          enum: [A,B,C,D,E]
+        implementationEffort:
+          type: string
+          enum: [A,B,C,D,E]
+        reusability:
+          type: string
+          enum: [A,B,C,D,E]
+        interoperability:
+          type: string
+          enum: [A,B,C,D,E]
         mediumType: 
           type: string
           enum: [xml-file, json-file, comma-delimited-csv-file, semicolon-delimited-csv-file, pipe-delimited-csv-file, shapefile, API]
@@ -512,6 +567,7 @@ components:
         refreshRate:
           type: number
           description: the number of minutes between 2 refreshes. When it is a real-time connection or API, this should be considered as 0 (always up-to-date). When it's obsolete, it is not specified.
+        
         fieldModifications: 
           type: array
           items:
@@ -524,26 +580,12 @@ components:
           type: string
         exception: 
           type: string
+          enum: [non-rotating, removed, exposed]
         consequences: 
           type: array
           items:
             $ref: "#/components/schemas/consequence"            
     
-    consequence:
-      type: object
-      properties:
-        type:
-          type: string
-          enum: ["ethical", "security", "interoperability"]
-        dimensions:
-          type: string
-          enum: [""]
-        penalty: 
-          type: string
-          enum: ["-1", "=0", "+1"]
-        explanation:
-          type: string
-
     story:
       type: object
       properties:
@@ -615,14 +657,6 @@ components:
       openIdConnectUrl: https://unknownserver/.well-known/openid-configuration
 
   responses:
-    202Accepted:
-      description: Request was successfully accepted for processing but has not yet completed.
-      headers:
-        Location:
-          schema:
-            type: string
-          description: The URI where the created or updated resource will eventually be found.
-          example: "/bookings/1234"
     204NoContent:
       description: Request was successful, no content to return.
     400BadRequest:

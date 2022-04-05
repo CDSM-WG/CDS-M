@@ -1,0 +1,5 @@
+{
+    "type": "transport",
+    "name": "content-PKI-encrypted",
+    "encryption": "PKI"
+}

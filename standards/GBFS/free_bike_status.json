@@ -1,10 +1,14 @@
 {
     "type": "standards",
     "name": "GBFS",
+    "exchangeType": "file-based", 
     "part": "free_bike_status.json",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "version": "[version < 3.0]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "B", 
+    "reusability":"A", 
+    "interoperability": "B",
     "fieldModifications": []
 }

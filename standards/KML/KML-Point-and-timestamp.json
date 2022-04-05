@@ -1,9 +1,21 @@
 {
     "type": "standards",
     "name": "KML", 
+    "exchangeType": "file-based", 
     "part": "Points+Timestamp",
     "version": "2.2",
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",
-    "schema": "https://developers.google.com/kml/documentation/time#example:-showing-movement-of-a-point-along-a-path"
+    "implementationEffort": "C", 
+    "reusability":"D", 
+    "interoperability": "D",
+    "schema": "https://developers.google.com/kml/documentation/time#example:-showing-movement-of-a-point-along-a-path",
+    "fieldModifications": [
+        {
+            "field": "geometry"            
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ]
 }

@@ -1,9 +1,13 @@
 {
     "type": "standards",
     "name": "GTFS",
+    "exchangeType": "file-based", 
     "part": "trips.txt",
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "C", 
+    "reusability":"A", 
+    "interoperability": "B",
     "fieldModifications": []
 }

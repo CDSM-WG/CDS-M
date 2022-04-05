@@ -1,9 +1,13 @@
 {
     "type": "standards",
     "name": "GBFS",
+    "exchangeType": "file-based", 
     "part": "gbfs_versions.json",
     "version": "[version >= 1.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "B", 
+    "reusability":"A", 
+    "interoperability": "B",
     "fieldModifications": []
 }

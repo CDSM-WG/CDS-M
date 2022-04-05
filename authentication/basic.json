@@ -1,5 +1,6 @@
 {
     "type": "authentication",
     "name": "basic",
-    "annotation": "username/password authentication"
+    "annotation": "username/password authentication",
+    "allowedExchangeTypes": [ "API", "file-based" ]
 }

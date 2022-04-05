@@ -1,0 +1,5 @@
+{
+    "type": "processing",
+    "name": "pseudonymization",
+    "conflicts": [ "reveals_personal_trip_data" ]
+}

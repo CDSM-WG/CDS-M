@@ -1,7 +1,11 @@
 {
     "type": "standards",
     "name": "OD-Matrix-ODZ",
+    "exchangeType": "file-based", 
     "refreshRate": "[refresh rate]",
     "mediumType": "odz-file",
+    "implementationEffort": "D", 
+    "reusability":"C", 
+    "interoperability": "A",
     "schema": "https://github.com/TOMP-WG/OD-MATRIX-SPECIFICATION"
 }

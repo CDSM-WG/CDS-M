@@ -1,35 +1,23 @@
 {
     "type": "standards",
     "name": "MDS",
+    "exchangeType": "API", 
     "part": "/vehicles",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
+    "implementationEffort": "C", 
+    "reusability":"C", 
+    "interoperability": "B",
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
-            "exception": "exposed",
-            "consequences": [
-                {
-                    "type": "ethical",
-                    "dimension": "tailored to the people",
-                    "penalty": "=0",
-                    "explanation": "this facilitates derival of personal movements"
-                }
-            ]
+            "exception": "exposed"
         },
         {
             "field": "vehicles[].vehicle_id",
-            "exception": "exposed",
-            "consequences": [
-                {
-                    "type": "ethical",
-                    "dimension": "tailored to the people",
-                    "penalty": "=0",
-                    "explanation": "this facilitates derival of personal movements"
-                }
-            ]
+            "exception": "exposed"
         }
-    ]
-
+    ],
+    "conflicts": [ "reveals_personal_trip_data" ]
 }

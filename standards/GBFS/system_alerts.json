@@ -1,9 +1,13 @@
 {
     "type": "standards",
     "name": "GBFS",
+    "exchangeType": "file-based", 
     "part": "system_alerts.json",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
+    "implementationEffort": "B", 
+    "reusability":"A", 
+    "interoperability": "B",
     "fieldModifications": []
 }

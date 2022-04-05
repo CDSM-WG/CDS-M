@@ -1,9 +1,13 @@
 {
     "name": "TOMP-API",
     "part": "/operator/alerts",
+    "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Alerts",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": 0,
+    "implementationEffort": "C", 
+    "reusability":"B", 
+    "interoperability": "B",
     "fieldModifications": []
 }

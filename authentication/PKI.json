@@ -1,5 +1,6 @@
 {
     "type": "authentication",
     "name": "PKI", 
-    "annotation": "The delivering party must generate a certificate and hand over the public key to the requesting party"
+    "annotation": "The delivering party must generate a certificate and hand over the public key to the requesting party",
+    "allowedExchangeTypes": [ "API", "file-based" ]
 }

@@ -1,0 +1,12 @@
+{
+    "type": "standards",
+    "exchangeType": "file-based",
+    "name":"DATEX",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "xml-file",
+    "implementationEffort": "E", 
+    "reusability":"B", 
+    "interoperability": "B",
+    "schema": "https://www.datex2.eu/node/261"
+}

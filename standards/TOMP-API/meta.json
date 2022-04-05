@@ -1,9 +1,13 @@
 {
     "name": "TOMP-API",
+    "exchangeType": "API", 
     "part": "/operator/meta",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Meta-Information",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": 0,
+    "implementationEffort": "B", 
+    "reusability":"C", 
+    "interoperability": "B",
     "fieldModifications": []
 }

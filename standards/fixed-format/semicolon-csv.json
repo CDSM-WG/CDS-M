@@ -1,9 +1,13 @@
 {
     "type": "standards",
     "name": "semicolon-csv",
+    "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "semicolon-delimited-csv-file",
+    "implementationEffort": "A", 
+    "reusability":"E", 
+    "interoperability": "E",
     "schema": "[semicolon seperated field list]"
 }
