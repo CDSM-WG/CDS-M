@@ -1,0 +1,18 @@
+{
+    "id": "starting-trip-per-parkingspot",
+    "externalReference": "",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "",
+      "inOrderTo": ""
+    },  
+    "tags": [
+      "public-space:parking-usage",
+      "mode:car",
+      "mode:shared-car"
+    ],
+    "standards": [
+        "MDS-provider-status_change",
+        "MDS-provider-status_change-without-ids"
+    ]
+  }

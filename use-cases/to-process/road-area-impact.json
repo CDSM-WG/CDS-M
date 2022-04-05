@@ -1,0 +1,20 @@
+{
+    "id": "road-area-impact",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recdmr2ZA1n9w3VUK",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "see which trips across a city touched certain roads",
+      "inOrderTo": "to view how work, closures, or improvements may impact this"
+    },  
+    "tags": [
+        "public-space:distribution",
+        "assets:availability",
+        "mode:bike",
+        "mode:car",
+        "mode:shared-car"
+      ],
+    "standards": [
+        "MDS-provider-status_change",
+        "MDS-provider-status_change-without-ids"
+    ]
+  }
