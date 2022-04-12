@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-vehicle-status-non-rotating-asset-id",
     "exchangeType": "file-based", 
     "part": "vehicle_status",
     "implementationEffort": "B", 

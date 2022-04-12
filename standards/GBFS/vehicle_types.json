@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-vehicle-types",
     "exchangeType": "file-based", 
     "part": "vehicle_types.json",
     "version": "[version >= 2.1]",

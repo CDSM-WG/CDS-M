@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-versions",
     "exchangeType": "file-based", 
     "part": "gbfs_versions.json",
     "version": "[version >= 1.1]",

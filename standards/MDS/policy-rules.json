@@ -1,0 +1,13 @@
+{
+    "type": "standards",
+    "name": "MDS-policy-rules",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
+    "part": "/rules/",
+    "version": "[version]",
+    "implementationEffort": "C", 
+    "reusability":"D", 
+    "interoperability": "A",
+    "mediumType": "API",
+    "refreshRate": "0"
+}

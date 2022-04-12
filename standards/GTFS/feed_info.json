@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-feed-info",
     "exchangeType": "file-based", 
     "part": "feed_info.txt",
     "version": "[version]",

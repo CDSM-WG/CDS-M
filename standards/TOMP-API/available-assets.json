@@ -1,5 +1,5 @@
 {
-    "name": "TOMP-API",
+    "name": "TOMP-available-assets",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",

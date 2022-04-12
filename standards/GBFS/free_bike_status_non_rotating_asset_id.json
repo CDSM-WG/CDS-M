@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-free-bike-status-non-rotating-asset-id",
     "part": "free_bike_status.json",
     "exchangeType": "file-based",
     "implementationEffort": "B", 

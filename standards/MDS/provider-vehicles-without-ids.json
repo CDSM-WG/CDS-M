@@ -1,0 +1,22 @@
+{
+    "type": "standards",
+    "name": "MDS-provider-vehicles-without-ids",
+    "exchangeType": "API", 
+    "version": "[version]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "implementationEffort": "C", 
+    "reusability":"E", 
+    "interoperability": "B",
+    "part": "vehicles",
+    "fieldModifications": [
+        {
+            "field": "vehicles[].device_id",
+            "exception": "removed"
+        },
+        {
+            "field": "vehicles[].vehicle_id",
+            "exception": "removed"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-trips",
     "exchangeType": "file-based", 
     "part": "trips.txt",
     "version": "[version]",

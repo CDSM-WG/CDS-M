@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "KML", 
+    "name": "KML-Point-and-timestamp", 
     "exchangeType": "file-based", 
     "part": "Points+Timestamp",
     "version": "2.2",

@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-geofencing-zones",
     "exchangeType": "file-based", 
     "part": "geofencing_zones.json",
     "version": "[version >= 2.1]",

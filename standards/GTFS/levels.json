@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-levels",
     "exchangeType": "file-based", 
     "part": "levels.txt",
     "version": "[version]",

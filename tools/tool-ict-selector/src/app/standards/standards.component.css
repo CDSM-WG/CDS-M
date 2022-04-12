@@ -1,0 +1,75 @@
+.mat-expansion-panel-content {
+    background: rgb(174, 223, 209);
+    margin-left: 22vh;
+    margin-right: 22vh;
+}
+
+th.rotate {
+    /* Something you can count on */
+    height: 160px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+th.rotate>div {
+    transform:
+        /* Magic Numbers */
+        translate(25px, 51px)
+        /* 45 is really 360 - 45 */
+        rotate(315deg);
+    width: 30px;
+    padding-bottom: 20px;
+}
+
+th.rotate>div>span {
+    border-bottom: 1px solid #ccc;
+    margin-left: -20px;
+}
+
+td[ng-reflect-ng-class='E'] {
+    /* background-color: red; */
+    background-color: rgba(255, 0, 0, 0.5);
+    text-align:center
+}
+
+td[ng-reflect-ng-class='D'] {
+    background-color: rgba(255, 165, 0, 0.5);
+    text-align:center
+}
+
+td[ng-reflect-ng-class='C'] {
+    background-color: rgba(184, 143, 11, 0.5);
+    text-align:center
+}
+
+td[ng-reflect-ng-class='B'] {
+    background-color: rgba(144, 238, 144, 0.5);
+    text-align:center
+}
+
+td[ng-reflect-ng-class='A'] {
+    background-color: rgba(0, 128, 0, 0.5);
+    text-align:center
+}
+
+td.mat-cell:last-of-type {
+    padding-right: 0px !important;
+}
+
+td.mat-cell:first-of-type {
+    white-space: nowrap;
+    min-width: 300px;
+}
+
+.initialHeader {
+    vertical-align: bottom;
+}
+
+tr.mat-row {
+    height: 30px;
+    vertical-align: middle;
+}
+
+input.invisible {
+    visibility: hidden;
+}

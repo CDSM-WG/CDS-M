@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-attributions",
     "exchangeType": "file-based", 
     "part": "attributions.txt",
     "version": "[version]",

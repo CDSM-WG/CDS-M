@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-system-regions",
     "exchangeType": "file-based", 
     "part": "system_regions.json",
     "version": "[version]",

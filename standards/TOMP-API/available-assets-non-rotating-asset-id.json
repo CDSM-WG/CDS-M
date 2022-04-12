@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "TOMP-API",
+    "name": "TOMP-available-assets-non-rotating-asset-id",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "implementationEffort": "C", 

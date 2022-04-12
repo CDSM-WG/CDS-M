@@ -1,5 +1,5 @@
 {
-    "name": "TOMP-API",
+    "name": "TOMP-API-alerts",
     "part": "/operator/alerts",
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Alerts",

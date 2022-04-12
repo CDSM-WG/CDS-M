@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-system-hours",
     "exchangeType": "file-based", 
     "part": "system_hours.json",
     "version": "[version]",

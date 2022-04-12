@@ -1,0 +1,91 @@
+<mat-tab-group>
+    <mat-tab label="Use cases">
+        <mat-table mat-table [dataSource]="datasource">
+            <ng-container matColumnDef="name">
+                <th mat-header-row *matHeaderCellDef class="initialHeader firstColumn"> Name </th>
+                <td mat-cell *matCellDef="let element">{{element.name}} </td>
+            </ng-container>
+            <ng-container matColumnDef="part">
+                <th mat-header-row *matHeaderCellDef class="initialHeader"> Part </th>
+                <td mat-cell *matCellDef="let element">{{element.part}} </td>
+            </ng-container>
+            <ng-container matColumnDef="selected">
+                <th mat-header-row *matHeaderCellDef class="initialHeader">check</th>
+                <td mat-cell *matCellDef="let element">
+                    <input type="checkbox" [(checked)]="element['selected']" (change)="onSelect($event,element)">
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="privacy">
+                <th mat-header-row *matHeaderCellDef class="rotate">
+                    <div><span>Privacy</span></div>
+                </th>
+                <td mat-cell *matCellDef="let element" [ngClass]="element.privacy">{{element.privacy}} </td>
+            </ng-container>
+            <ng-container matColumnDef="implE">
+                <th mat-header-row *matHeaderCellDef class="rotate">
+                    <div><span>Implementation</span></div>
+                </th>
+                <td mat-cell *matCellDef="let element" [ngClass]="element.implementationEffort">
+                    {{element.implementationEffort}} </td>
+            </ng-container>
+            <ng-container matColumnDef="reuse">
+                <th mat-header-row *matHeaderCellDef class="rotate">
+                    <div><span>Reusability</span></div>
+                </th>
+                <td mat-cell *matCellDef="let element" [ngClass]="element.reusability">{{element.reusability}}</td>
+            </ng-container>
+            <ng-container matColumnDef="interop">
+                <th mat-header-row *matHeaderCellDef class="rotate">
+                    <div><span>Interopability</span></div>
+                </th>
+                <td mat-cell *matCellDef="let element" [ngClass]="element.interoperability">{{element.interoperability}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="space">
+                <th mat-header-row *matHeaderCellDef class="rotate">
+                    <div><span>  </span></div>
+                </th>
+                <td mat-cell *matCellDef="let element">&nbsp;</td>
+            </ng-container>
+            <ng-container [matColumnDef]="column" *ngFor="let column of useCases">
+                <th mat-header-cell *matHeaderCellDef class="rotate">
+                    <div><span (click)="filterColumn($event)">{{column}}</span></div>
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </mat-table>
+    </mat-tab>
+    <mat-tab label="Authentication">
+        <mat-table mat-table [dataSource]="datasourceAuthentication">
+            <ng-container matColumnDef="name">
+                <th mat-header-row *matHeaderCellDef class="initialHeader firstColumn"> Name </th>
+                <td mat-cell *matCellDef="let element">{{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="selected">
+                <th mat-header-row *matHeaderCellDef class="initialHeader">check</th>
+                <td mat-cell *matCellDef="let element"><input type="checkbox" [value]="element['selected']"></td>
+            </ng-container>
+            
+            <ng-container matColumnDef="space">
+                <th mat-header-row *matHeaderCellDef class="rotate">
+                    <div><span>  </span></div>
+                </th>
+                <td mat-cell *matCellDef="let element">&nbsp;&nbsp;</td>
+            </ng-container>
+
+            <ng-container [matColumnDef]="column" *ngFor="let column of authentications">
+                <th mat-header-cell *matHeaderCellDef class="rotate">
+                    <div><span>{{column}}</span></div>
+                </th>
+                <td mat-cell *matCellDef="let element"> <input type='checkbox' [(checked)]=element[column] [class]="element[column]==null?'invisible':'visible'"> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsAuthentication"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsAuthentication;"></tr>
+        </mat-table>
+    </mat-tab>
+</mat-tab-group>

@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "TOMP-API",
+    "name": "TOMP-API-available-assets-with-license-plate",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "implementationEffort": "C", 

@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-fare-rules",
     "exchangeType": "file-based", 
     "part": "fare_rules.txt",
     "version": "[version]",

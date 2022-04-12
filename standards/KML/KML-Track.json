@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "KML", 
+    "name": "KML-track", 
     "exchangeType": "file-based", 
     "part": "Track",
     "version": "2.2",

@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "KML", 
+    "name": "KML-Points", 
     "exchangeType": "file-based", 
     "part": "Points",
     "version": "2.2",

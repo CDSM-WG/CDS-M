@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-system-calendar",
     "exchangeType": "file-based", 
     "part": "system_calendar.json",
     "version": "[version]",

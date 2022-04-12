@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-system-alerts",
     "exchangeType": "file-based", 
     "part": "system_alerts.json",
     "version": "[version]",

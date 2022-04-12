@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-translations",
     "exchangeType": "file-based", 
     "part": "translations.txt",
     "version": "[version]",

@@ -1,5 +1,5 @@
 {
-    "name": "TOMP-API",
+    "name": "TOMP-API-information",
     "exchangeType": "API", 
     "part": "/operator/information",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Information",

@@ -1,4 +1,5 @@
 {
+    "name": "security_not_updated",
     "reason": "outdated security mechanisms used",
     "breach": "privacy_in_design_purpose_limitation",
     "requiredEncryption": [ "sha256-encrypted" ],

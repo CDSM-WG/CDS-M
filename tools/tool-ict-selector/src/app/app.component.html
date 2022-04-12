@@ -1,0 +1,39 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <app-ex-import-button></app-ex-import-button>
+  <cdk-accordion class="example-headers-align" multi>
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Standards
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-standards></app-standards>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Transport conditions
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-transport></app-transport>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Processing conditions
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-processing></app-processing>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Archiving conditions
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-archiving></app-archiving>
+    </mat-expansion-panel>
+  </cdk-accordion>
+</body>
+
+</html>

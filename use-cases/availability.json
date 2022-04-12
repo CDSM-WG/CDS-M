@@ -37,7 +37,8 @@
     "MDS-provider-status_changes-withoud_ids"
   ],
   "termsAndConditions": [
-    "BIO"
+    "BIO", 
+    "privacy-by-design"
   ],
   "agreements": [
     "DPA"

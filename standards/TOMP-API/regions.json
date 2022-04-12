@@ -1,5 +1,5 @@
 {
-    "name": "TOMP-API",
+    "name": "TOMP-API-regions",
     "exchangeType": "API", 
     "part": "/operator/regions",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Regions",

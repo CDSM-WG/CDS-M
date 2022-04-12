@@ -1,0 +1,12 @@
+{
+    "type": "standards",
+    "name": "SIRI",
+    "exchangeType": "file-based", 
+    "part": "[complete url]",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "shapefile",
+    "implementationEffort": "E", 
+    "reusability":"B", 
+    "interoperability": "B"
+}

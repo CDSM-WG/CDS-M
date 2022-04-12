@@ -1,0 +1,26 @@
+{
+    "type": "standards",
+    "name": "MDS-provider-trips-withoud_ids",
+    "exchangeType": "API", 
+    "version": "[version]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "implementationEffort": "C", 
+    "reusability":"E", 
+    "interoperability": "B",
+    "part": "trips",
+    "fieldModifications": [
+        {
+            "field": "trips[].device_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].vehicle_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].route",
+            "exception": "contains only blurred start and end location (30m)"
+        }
+    ]
+}

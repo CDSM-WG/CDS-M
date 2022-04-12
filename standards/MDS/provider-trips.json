@@ -1,0 +1,28 @@
+{
+    "type": "standards",
+    "name": "MDS-provider-trips",
+    "exchangeType": "API", 
+    "part": "/trips",
+    "version": "[version]",
+    "mediumType": "API",
+
+    "implementationEffort": "C", 
+    "reusability":"C", 
+    "interoperability": "B",
+    "privacy": "E",
+    
+    "refreshRate": "0",
+    "fieldModifications": [
+        {
+            "field": "trips[].device_id",
+            "exception": "exposed"
+        },
+        {
+            "field": "trips[].vehicle_id",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ]
+}

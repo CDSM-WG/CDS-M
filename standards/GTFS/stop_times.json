@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-stop-times",
     "exchangeType": "file-based", 
     "part": "stop_times.txt",
     "version": "[version]",

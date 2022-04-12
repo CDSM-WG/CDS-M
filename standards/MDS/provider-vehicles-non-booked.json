@@ -1,0 +1,18 @@
+{
+    "type": "standards",
+    "name": "MDS-provider-vehicles-non-booked",
+    "exchangeType": "API", 
+    "part": "vehicles",
+    "version": "[version]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "implementationEffort": "C", 
+    "reusability":"C", 
+    "interoperability": "D",
+    "fieldModifications": [
+        {
+            "field": "vehicles",
+            "exception": "only non-booked"
+        }
+    ]
+}

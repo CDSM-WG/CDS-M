@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-pathways",
     "exchangeType": "file-based", 
     "part": "pathways.txt",
     "version": "[version]",

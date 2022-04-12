@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-frequencies",
     "exchangeType": "file-based", 
     "part": "frequencies.txt",
     "version": "[version]",

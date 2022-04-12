@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-routes",
     "exchangeType": "file-based", 
     "part": "routes.txt",
     "version": "[version]",

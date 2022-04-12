@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-station-status",
     "exchangeType": "file-based", 
     "part": "station_status.json",
     "version": "[version]",

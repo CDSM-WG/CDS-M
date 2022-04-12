@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-agency",
     "exchangeType": "file-based", 
     "part": "agency.txt",
     "version": "[version]",

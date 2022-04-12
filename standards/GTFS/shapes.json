@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-shapes",
     "exchangeType": "file-based", 
     "part": "shapes.txt",
     "version": "[version]",

@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-system-pricing-plans",
     "exchangeType": "file-based", 
     "part": "system_pricing_plans.json",
     "version": "[version]",

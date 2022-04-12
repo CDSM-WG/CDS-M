@@ -1,5 +1,5 @@
 {
-    "name": "TOMP-API",
+    "name": "TOMP-API-operating-calendar",
     "exchangeType": "API", 
     "part": "/operator/operating-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Operating-hours-and-calendar",

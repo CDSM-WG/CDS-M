@@ -373,6 +373,10 @@ components:
           $ref: "#/components/schemas/prosAndCons"
         standards:
           $ref: "#/components/schemas/referenceArray"
+        authorisation:
+          type: array
+          items:
+            $ref: "#/components/schemas/authenticationDefinition"
         termsAndConditions:
           $ref: "#/components/schemas/referenceArray"
         agreements:
@@ -477,11 +481,13 @@ components:
 
     authenticationDefinition:
       type: object
-      allOf:
-      - $ref: "#/components/schemas/definition"
       properties:
-        annotation:
+        standard:
           type: string
+        authentications:
+          type: array
+          items:
+            type: string
 
     certificatesDefinition:
       type: object
@@ -499,41 +505,46 @@ components:
       - $ref: "#/components/schemas/definition"
 
     standardsDefinition:
+      type: object
       allOf:
       - $ref: "#/components/schemas/definition"
       - $ref: "#/components/schemas/standard"
 
     termsAndConditionDefinition:
+      type: object
       allOf:
         - $ref: "#/components/schemas/definition"
-      type: object
-      properties:
-        reference:
-          type: string
+        - type: object
+          properties:
+            externalReference:
+              type: string
 
     agreementDefinition:
+      type: object
       allOf:
       - $ref: "#/components/schemas/definition"    
       - $ref: "#/components/schemas/contract"
 
     storageDefinition:
-      allOf:
-      - $ref: "#/components/schemas/definition"      
       type: object
-      properties:
-        unit:
-          type: string
-          enum: [hours, days, weeks, months, years]
-        value:
-          type: number
+      allOf:
+      - $ref: "#/components/schemas/definition" 
+      - type: object
+        properties:
+          unit:
+            type: string
+            enum: [hours, days, weeks, months, years]
+          value:
+            type: number      
 
     transportDefinition:
-      allOf:
-      - $ref: "#/components/schemas/definition"    
       type: object
-      properties:
-        encryption:
-          type: string
+      allOf:
+      - $ref: "#/components/schemas/definition"
+      - type: object
+        properties:
+          encryption:
+           type: string
         
     standard:
       type: object
@@ -548,6 +559,9 @@ components:
           type: string
           enum: [API, file-based]
         sustainability:
+          type: string
+          enum: [A,B,C,D,E]
+        privacySensitivity:
           type: string
           enum: [A,B,C,D,E]
         implementationEffort:

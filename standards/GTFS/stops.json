@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-stops",
     "exchangeType": "file-based", 
     "part": "stops.txt",
     "version": "[version]",

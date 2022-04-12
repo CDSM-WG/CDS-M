@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GBFS",
+    "name": "GBFS-system-information",
     "exchangeType": "file-based", 
     "part": "system_information.json",
     "version": "[version]",

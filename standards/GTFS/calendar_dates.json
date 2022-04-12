@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "GTFS",
+    "name": "GTFS-calendar-dates",
     "exchangeType": "file-based", 
     "part": "calendar_dates.txt",
     "version": "[version]",

@@ -1,0 +1,28 @@
+[ 
+{
+    "type": "transport",
+    "name": "content-PKI-encrypted",
+    "encryption": "PKI"
+}, 
+{
+    "type": "transport",
+    "name": "TLS-1.1",
+    "encryption": "TLS",
+    "version": "1.1",
+    "conflicts": [
+        "security_not_updated"
+    ]
+}, 
+{
+    "type": "transport",
+    "name": "TLS-1.2",
+    "encryption": "TLS",
+    "version": "1.2"
+}
+, 
+{
+    "type": "transport",
+    "name": "TLS-1.3",
+    "encryption": "TLS",
+    "version": "1.3"
+}] 
