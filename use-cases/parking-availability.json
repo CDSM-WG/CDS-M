@@ -10,8 +10,8 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "GBFS-station-status",
-        "MDS-provider-stops",
-        "SPDP-dynamic"
+        { "name": "GBFS-station-status" },
+        { "name": "MDS-provider-stops" },
+        { "name": "SPDP-dynamic" }
     ]
 }

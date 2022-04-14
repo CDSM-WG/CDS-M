@@ -10,7 +10,7 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-policy-rules",
-        "TOMP-API-regions"
+        { "name": "MDS-policy-rules" },
+        { "name": "TOMP-API-regions" }
     ]
 }

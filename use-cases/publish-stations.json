@@ -6,5 +6,7 @@
         "asA": "city",
         "iWouldLikeTo": "publish the assigned station locations for transport operators",
         "inOrderTo": "maintain the order"
-    }
+    },
+    "standards": [
+    ]
 }

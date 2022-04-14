@@ -5,16 +5,17 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get an insight in the length of executed trips",
-        "inOrderTo": "?"
+        "inOrderTo": "to (partly) determine for what travel purposes shared mobility is used."
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "OD-Matrix-odz",
-        "OD-Matrix-matrix",
-        "KML-Track",
-        "KML-Point-and-timestamp",
-        "GPX",
-        "shapefile-tracks"
+        { "name": "MDS-provider-trips", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
     ]
 }

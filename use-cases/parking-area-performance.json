@@ -8,15 +8,15 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-without-ids",
-        "GBFS-station_information",
-        "GBFS-station_status",
-        "GBFS-free-bike-status",
-        "GBFS-vehicle-status",
-        "TOMP-stations",
-        "TOMP-available-assets",
-        "SPDP-dynamic",
-        "SPDP-static"
-    ]
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "GBFS-station-information" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "TOMP-stations" },
+        { "name": "TOMP-available-assets" },
+        { "name": "SPDP-dynamic" },
+        { "name": "SPDP-static" }
+    ] 
 }

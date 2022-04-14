@@ -7,8 +7,10 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "semicolon-delimited-csv-file",
     "schema": "[url of area file]",
-    "implementationEffort": "C", 
-    "reusability":"D", 
+    "privacy": "A",
+    "implementationEffort": "B", 
+    "reusability":"E", 
     "interoperability": "E",
+    "domain": "B",
     "explanation": "cell 0:0 contains unit (e.g. number of trips). First row and column contain area ids from schema. The other cell contain data FROM row x TO column y, like number of trips"
 }

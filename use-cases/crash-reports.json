@@ -5,10 +5,10 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "investigate crashes of vehicles reported by riders, public, or operators",
-        "inOrderTo": "?"
+        "inOrderTo": "enhance the infrastructure and make areas safer and to enable a public debate on this topic."
     },
     "standards": [
-        "MDS-provider-status_change",
-        "MDS-provider-status_change-without-ids"
+        { "name": "MDS-provider-status-change", "privacy": "D" },
+        { "name": "MDS-provider-status-change-without-ids", "privacy": "B" }
     ]
 }

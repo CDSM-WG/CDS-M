@@ -74,33 +74,35 @@ export class SelectionComponent implements OnInit {
   ngOnInit(): void {    
     for( let i = 0; i < this.useCases.length; ++i ){
       let usecase=this.useCases[i];
-      for( let t = 0; t < usecase.data.tags.length; ++t ){
-        let tag = usecase.data.tags[t];
-        let t1:string = tag.split(':',1)[0];
-        //let t2:string = tag.split(':',2)[1];
-        let available = this.result.filter( x => x.name == t1 );
-        if ( available.length > 0 ){
-          let found = false;
-          for ( let j = 0; j < available[0].children!.length; ++j) {
-            if (available[0].children![j].tag == tag ){
-              found = true;
-              break;
+      if (usecase.data.tags != null) {
+        for( let t = 0; t < usecase.data.tags.length; ++t ){
+          let tag = usecase.data.tags[t];
+          let t1:string = tag.split(':',1)[0];
+          //let t2:string = tag.split(':',2)[1];
+          let available = this.result.filter( x => x.name == t1 );
+          if ( available.length > 0 ){
+            let found = false;
+            for ( let j = 0; j < available[0].children!.length; ++j) {
+              if (available[0].children![j].tag == tag ){
+                found = true;
+                break;
+              }
+            }
+            if( !found ){
+              let n = new SelectionNode();
+              n.setName(tag);
+              available[0].children!.push( n ) ;
             }
           }
-          if( !found ){
+          else {
             let n = new SelectionNode();
-            n.setName(tag);
-            available[0].children!.push( n ) ;
-          }
-        }
-        else {
-          let n = new SelectionNode();
-          n.setName(t1);
+            n.setName(t1);
 
-          let m = new SelectionNode();
-          m.setName(tag);
-          n.children = [m]; 
-          this.result.push( n );
+            let m = new SelectionNode();
+            m.setName(tag);
+            n.children = [m]; 
+            this.result.push( n );
+          }
         }
       }
     }

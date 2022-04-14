@@ -7,5 +7,5 @@
     "requiredAgreements": [ "DPIA", "DPA", "BIO" ],
     "requiredCertificates": [ "iso-27001" ],
     "requiredAuthentication": [ "basic", "whitelisting", "basic-enhanced", "PKI" ],
-    "requiredTransport": [ "TLS-1.1", "TLS-1.2", "TLS-1.3", "content-PKI-encrypted" ]
+    "requiredTransport": [ "TLS-1.2", "TLS-1.3", "content-PKI-encrypted" ]
 }

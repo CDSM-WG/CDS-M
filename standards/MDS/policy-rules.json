@@ -5,9 +5,11 @@
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
     "part": "/rules/",
     "version": "[version]",
-    "implementationEffort": "C", 
-    "reusability":"D", 
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"E", 
     "interoperability": "A",
+    "domain": "A",
     "mediumType": "API",
     "refreshRate": "0"
 }

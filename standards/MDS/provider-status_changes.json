@@ -1,14 +1,16 @@
 {
     "type": "standards",
-    "name": "MDS-provider-status_changes",
+    "name": "MDS-provider-status-changes",
     "exchangeType": "API", 
     "part": "/status_changes",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
+    "privacy": "E",
+    "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "A",
     "fieldModifications": [
         {
             "field": "status_changes[].device_id",

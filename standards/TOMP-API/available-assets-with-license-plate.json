@@ -3,9 +3,11 @@
     "name": "TOMP-API-available-assets-with-license-plate",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
-    "implementationEffort": "C", 
+    "privacy": "C",
+    "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "B",
+    "domain": "B",
     "fieldModifications": [
         {
             "field": "assets[].licensePlate",

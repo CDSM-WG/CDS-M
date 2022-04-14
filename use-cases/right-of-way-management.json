@@ -7,9 +7,9 @@
         "inOrderTo": "remove devices from public right of way or create plans to fix these issues"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" }
     ]
 }

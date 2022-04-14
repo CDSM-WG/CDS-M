@@ -1,13 +1,15 @@
 {
     "type": "standards",
     "exchangeType": "file-based",
-    "name":"comma-csv",
+    "name":"geojson",
     "part": "[complete url]",
     "version": "[version]",
     "refreshRate": "[refresh rate]",
-    "mediumType": "comma-delimited-csv-file",
-    "implementationEffort": "A", 
+    "mediumType": "json-file",
+    "privacy": "?",
+    "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "E",
-    "schema": "[comma seperated field list]"
+    "domain": "E",
+    "schema": "[comma seperated attribute list]"
 }

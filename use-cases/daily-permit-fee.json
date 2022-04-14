@@ -10,7 +10,10 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-provider-trips-without-ids",
-        "MDS-provider-trips"
+        { "name": "TOMP-journal-entries", "privacy": "E" },
+        { "name": "TOMP-journal-entries-without-bankaccount", "privacy": "D" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "E" },
+        { "name": "MDS-provider-trips", "privacy": "E" }
     ]
 }

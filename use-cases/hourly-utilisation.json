@@ -8,13 +8,13 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "OD-Matrix-odz",
-        "OD-Matrix-matrix",
-        "KML-Track",
-        "KML-Point-and-timestamp",
-        "GPX",
-        "shapefile-tracks"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
     ]
 }

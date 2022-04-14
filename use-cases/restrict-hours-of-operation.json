@@ -8,7 +8,7 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" }
     ]
 }

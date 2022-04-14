@@ -6,9 +6,11 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "privacy": "E",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",

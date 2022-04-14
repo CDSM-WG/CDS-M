@@ -5,9 +5,11 @@
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/geography",
     "part": "/geographies/",
     "version": "[version]",
-    "implementationEffort": "C", 
-    "reusability":"B", 
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"D", 
     "interoperability": "A",
+    "domain": "A",
     "mediumType": "API",
     "refreshRate": "0"
 }

@@ -77,3 +77,11 @@ input.invisible {
 input.visible {
     width: 50px;
 }
+
+i.invisible {
+    visibility: hidden;
+}
+
+i.visible {
+    visibility: visible;
+}

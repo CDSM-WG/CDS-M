@@ -6,8 +6,10 @@
     "version": "[version]",
     "mediumType": "xml-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "?",
     "implementationEffort": "C", 
     "reusability":"E", 
     "interoperability": "E",
+    "domain": "E",
     "schema": "[complete url of XSD]"
 }

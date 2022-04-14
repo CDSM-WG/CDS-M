@@ -5,8 +5,10 @@
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",
+    "privacy": "A",
     "implementationEffort": "E", 
-    "reusability":"B", 
+    "reusability":"D", 
     "interoperability": "B",
+    "domain": "B",
     "schema": "https://www.datex2.eu/node/261"
 }

@@ -4,13 +4,14 @@
     "tags": ["green-deal:sharing"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "determine if multi modal changes to roads lead to increased ridership",
-        "inOrderTo": "combine with other data to determine car traffic reductions"
+        "iWouldLikeTo": "know the origin-destination of individual trips to subsequently ingest the data into a traffic model and perform a car-reduction-analysis",
+        "inOrderTo": "make informed decisions about the deployment of shared mobility in different areas in the city to reduce (private) car journeys."
     },
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-provider-trips-without-ids",
-        "MDS-provider-trips"
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B"},
+        { "name": "MDS-provider-trips", "privacy": "E" }
     ]
 }

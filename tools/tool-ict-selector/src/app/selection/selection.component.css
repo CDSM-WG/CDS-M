@@ -1,0 +1,22 @@
+.mat-expansion-panel-header, .mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header.mat-expanded:hover, .mat-expansion-panel-header:hover {
+    color: white;
+    background: rgb(250,235,235);
+    background: linear-gradient(0deg, rgb(248, 70, 70) 0%, rgba(255,35,35,1) 59%, rgba(231, 2, 2, 0.2) 100%);
+    height: 40px;
+    margin-top: 5px;
+}
+
+
+
+.mat-expansion-panel {
+    margin-top: 5px !important;
+}
+
+.mat-expansion-panel-header-title {
+    font-weight: bold;
+    font-size: 14pt;
+    color: white;
+    /*-webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: red;*/
+    mix-blend-mode: color-dodge;
+}

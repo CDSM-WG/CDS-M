@@ -1,6 +1,6 @@
 {
     "type": "standards",
-    "name": "MDS-provider-vehicles-without-ids-non-booked",
+    "name": "MDS-provider-trips-without-ids-and-route",
     "exchangeType": "API", 
     "version": "[version]",
     "mediumType": "API",
@@ -10,19 +10,19 @@
     "reusability":"E", 
     "interoperability": "A",
     "domain": "A",
-    "part": "vehicles",
+    "part": "trips",
     "fieldModifications": [
         {
-            "field": "vehicles[].device_id",
+            "field": "trips[].device_id",
             "exception": "removed"
         },
         {
-            "field": "vehicles[].vehicle_id",
+            "field": "trips[].vehicle_id",
             "exception": "removed"
         },
         {
-            "field": "vehicles",
-            "exception": "only non-booked"
+            "field": "trips[].route",
+            "exception": "removed"
         }
     ]
 }

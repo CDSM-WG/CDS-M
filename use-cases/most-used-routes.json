@@ -10,7 +10,7 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-provider-trips-without-ids",
-        "MDS-provider-trips"
-    ]
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-trips" }
+        ]
 }

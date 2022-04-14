@@ -8,10 +8,11 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "OD-Matrix-odz",
-        "KML-Point-and-timestamp",
-        "GPX"
+        { "name": "MDS-provider-trips", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" }
     ]
 }

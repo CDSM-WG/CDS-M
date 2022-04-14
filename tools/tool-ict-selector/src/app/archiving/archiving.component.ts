@@ -20,44 +20,56 @@ export class ArchivingComponent implements OnInit {
   ngOnInit(): void {
     ArchivingJson.forEach( (x:any) => 
       { 
-        x['selected'] = false;
-        x['conflict'] = false;
-
+        x['selected'] = false; 
         Object.keys(x).forEach( (property:any) => {
-          if (property == 'conflicts') {
-            let s = x['conflicts'][0];
-            let foundConflict = null;
-            ConflictJson.forEach( conflict => 
-              { 
-                if (conflict.name === s) 
-                { 
-                  foundConflict = conflict;
-                } 
-              } 
-            )
-            if (foundConflict != null ){
-              if( !('conflictReason' in x)) {
-                // x['conflictReason'] = JSON.stringify(foundConflict, null, 2).replace(',', ',\n');                                             
-              }
-              x['conflict'] = true;              
-            }
-          }
-        })
-
-        Object.keys(x).forEach( (property:any) => {
-          if (typeof x[property] === 'string') {
-            let s: string = x[property]
-            if (s.indexOf('[') >= 0 && s.indexOf(']') > 0) {
-              this.displayedColumns.push(property)
-              this.arguments.push(property)
-            }
-          }
-        })
+          this.processConflicts(x, property);
+          this.findArguments(x, property);
+        });    
       }
     )  
-    if (!('conflict' in this.displayedColumns)){
-      this.displayedColumns.push('conflict');
+    this.displayedColumns = this.displayedColumns.concat(this.conflicts);   
+    this.displayedColumns = this.displayedColumns.concat(this.arguments);
+}
+
+  private processConflicts(x: any, property: any) {
+    if (property == 'conflicts') {
+      let s = x['conflicts'][0];
+      let foundConflict: any;
+      ConflictJson.forEach(conflict => {
+        if (conflict.name === s) {
+          foundConflict = conflict;
+        }
+      }
+      );
+      if (foundConflict != null) {
+        x[foundConflict.name] = true;
+        if (this.conflicts.indexOf(foundConflict.name) === -1) {
+          this.conflicts.push(foundConflict.name);
+        }
+      }
     }
-    this.conflicts.push('conflict');
+  }
+
+  private findArguments(x: any, property: any) {
+    if (typeof x[property] === 'string') {
+      let s: string = x[property];
+      if (s.indexOf('[') >= 0 && s.indexOf(']') > 0) {
+        this.arguments.push(property);
+      }
+    }
+  }
+
+  onSelect(event: Event, element: any) {
+    let archivingCondition: any = ArchivingJson.find( x => x.name == element.name );
+    if (archivingCondition != null) {
+      archivingCondition['selected'] = !archivingCondition['selected'];
+    }
+  }
+
+  onValueChanged(event: any, field: string, element: any) {
+    let archivingCondition: any = ArchivingJson.find( x => x.name == element.name );
+    if (archivingCondition != null) {
+      archivingCondition[field] = event.target.value;
+    }
   }
 }

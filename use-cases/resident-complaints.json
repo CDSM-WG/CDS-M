@@ -8,9 +8,10 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-status_change",
-        "MDS-provider-status_change-without-ids",
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids"
+        { "name": "MDS-provider-status-change" },
+        { "name": "MDS-provider-status-change-without-ids" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids-and-route" },
+        { "name": "MDS-provider-trips-without-ids" }
     ]
 }

@@ -8,15 +8,16 @@
         "inOrderTo": ""
     },
     "standards": [
-        "GBFS-free-bike-status",
-        "GBFS-free-bike-status-non-rotating-asset-id",
-        "GBFS-vehicle-status",
-        "GBFS-vehicle-status-non-rotating-asset-id",
-        "TOMP-available-assets",
-        "TOMP-available-assets-non-rotating-asset-id",
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids"
+        { "name": "GBFS-free-bike-status" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id" },
+        { "name": "TOMP-available-assets" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-trips-without-ids-and-route" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" }
       ]
 }

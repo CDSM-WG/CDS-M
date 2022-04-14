@@ -1,14 +1,24 @@
-.mat-expansion-panel-header, .mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header.mat-expanded:hover {
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    float: left;
+
+    background-color: #EC0000;
     color: white;
-    background: rgb(174,223,209);
-    background: linear-gradient(180deg, rgba(174,223,209,1) 0%, rgba(5,82,102,1) 100%);
-    height: 40px;
-    margin-top: 5px;
+    font-weight: 600;
 }
 
-.mat-expansion-panel {
-    background: rgb(174,223,209) !important; 
-    margin-left: 20vh;
-    margin-right: 20vh;
-    margin-top: 5px !important;
+.content {
+    position: absolute;
+    left: 210px;
+    overflow-y: auto;
+    width: 140vh;
+    height: 100%;
+}
+
+body {
+    background-color: rgba(202,221,226,1);
 }

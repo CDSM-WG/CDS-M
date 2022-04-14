@@ -6,9 +6,8 @@ import { BehaviorSubject } from 'rxjs';
 export class UseCaseService {
 
     useCases = new BehaviorSubject<any>(null);
-
+    
     filterUseCases( useCases : any ) {
         this.useCases.next( useCases );
-    }
-    
+    }    
 }

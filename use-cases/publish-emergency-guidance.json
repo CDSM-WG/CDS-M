@@ -8,7 +8,7 @@
         "inOrderTo": "to help them keep their users and contractors informed and safe."
     },
     "standards": [
-        "MDS-policy-geography",
-        "MDS-policy-rules"
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" }
     ]
 }

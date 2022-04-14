@@ -6,23 +6,42 @@
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",
+    "privacy": "A",
     "implementationEffort": "E", 
-    "reusability":"B", 
+    "reusability":"D", 
     "interoperability": "B",
+    "domain": "B",
     "schema": "https://www.datex2.eu/node/261"
 }, 
 {
     "type": "standards",
     "exchangeType": "file-based",
-    "name":"comma-csv",
+    "name":"csv",
     "part": "[complete url]",
     "version": "[version]",
     "refreshRate": "[refresh rate]",
-    "mediumType": "comma-delimited-csv-file",
+    "mediumType": "csv-file",
+    "privacy": "?",
     "implementationEffort": "A", 
+    "reusability":"E",
+    "interoperability": "E",
+    "domain": "E",
+    "schema": "[comma seperated field list]"
+}, 
+{
+    "type": "standards",
+    "exchangeType": "file-based",
+    "name":"geojson",
+    "part": "[complete url]",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "json-file",
+    "privacy": "?",
+    "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "E",
-    "schema": "[comma seperated field list]"
+    "domain": "E",
+    "schema": "[comma seperated attribute list]"
 }, 
 {
     "type": "standards",
@@ -32,36 +51,12 @@
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "json-file",
+    "privacy": "?",
     "implementationEffort": "B", 
-    "reusability":"E", 
+    "reusability":"E",
     "interoperability": "E",
+    "domain": "E",
     "schema": "[complete url of JSON scheme]"
-}, 
-{
-    "type": "standards",
-    "name": "pipe-csv",
-    "exchangeType": "file-based", 
-    "part": "[complete url]",
-    "version": "[version]",
-    "refreshRate": "[refresh rate]",
-    "mediumType": "pipe-delimited-csv-file",
-    "implementationEffort": "A", 
-    "reusability":"E", 
-    "interoperability": "E",
-    "schema": "[pipe seperated field list]"
-}, 
-{
-    "type": "standards",
-    "name": "semicolon-csv",
-    "exchangeType": "file-based", 
-    "part": "[complete url]",
-    "version": "[version]",
-    "refreshRate": "[refresh rate]",
-    "mediumType": "semicolon-delimited-csv-file",
-    "implementationEffort": "A", 
-    "reusability":"E", 
-    "interoperability": "E",
-    "schema": "[semicolon seperated field list]"
 }, 
 {
     "type": "standards",
@@ -72,9 +67,11 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "semicolon-delimited-csv-file",
     "schema": "[url of area file]",
-    "implementationEffort": "C", 
-    "reusability":"D", 
+    "privacy": "A",
+    "implementationEffort": "B", 
+    "reusability":"E", 
     "interoperability": "E",
+    "domain": "B",
     "explanation": "cell 0:0 contains unit (e.g. number of trips). First row and column contain area ids from schema. The other cell contain data FROM row x TO column y, like number of trips"
 }, 
 {
@@ -85,9 +82,11 @@
     "version": "[version]",
     "mediumType": "xml-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "?",
     "implementationEffort": "C", 
     "reusability":"E", 
     "interoperability": "E",
+    "domain": "E",
     "schema": "[complete url of XSD]"
 }, 
 {
@@ -99,9 +98,11 @@
     "version": "[version < 3.0]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }, 
 {
@@ -109,9 +110,11 @@
     "name": "GBFS-free-bike-status-non-rotating-asset-id",
     "part": "free_bike_status.json",
     "exchangeType": "file-based",
-    "implementationEffort": "B", 
-    "reusability":"A", 
-    "interoperability": "B",
+    "privacy": "C",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": [
         {
             "field": "bike_id",
@@ -130,9 +133,11 @@
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }, 
 {
@@ -143,9 +148,11 @@
     "version": "[version >= 1.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }
 , 
@@ -157,9 +164,11 @@
     "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }
 , 
@@ -171,9 +180,11 @@
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }, 
 {
@@ -184,9 +195,11 @@
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }
 , 
@@ -198,9 +211,11 @@
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }
 , 
@@ -212,9 +227,11 @@
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"A", 
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }, 
 {
@@ -225,9 +242,11 @@
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"A", 
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }
 , 
@@ -239,9 +258,11 @@
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }
 , 
@@ -253,9 +274,11 @@
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"A", 
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }
 , 
@@ -267,9 +290,11 @@
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"A", 
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }, 
 {
@@ -281,9 +306,11 @@
     "version": "[version >= 3.0]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }, 
 {
@@ -291,9 +318,11 @@
     "name": "GBFS-vehicle-status-non-rotating-asset-id",
     "exchangeType": "file-based", 
     "part": "vehicle_status",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "privacy": "C",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": [
         {
             "field": "bike_id",
@@ -312,9 +341,11 @@
     "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"A", 
     "interoperability": "A",
+    "domain": "B",
     "fieldModifications": []
 }
 , 
@@ -638,9 +669,11 @@
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/geography",
     "part": "/geographies/",
     "version": "[version]",
-    "implementationEffort": "C", 
-    "reusability":"B", 
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"D", 
     "interoperability": "A",
+    "domain": "A",
     "mediumType": "API",
     "refreshRate": "0"
 }, 
@@ -651,9 +684,11 @@
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#geography",
     "part": "/geographies",
     "version": "[version]",
-    "implementationEffort": "C", 
-    "reusability":"B", 
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"D", 
     "interoperability": "A",
+    "domain": "A",
     "mediumType": "API",
     "refreshRate": "0"
 }, 
@@ -664,23 +699,27 @@
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
     "part": "/rules/",
     "version": "[version]",
-    "implementationEffort": "C", 
-    "reusability":"D", 
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"E", 
     "interoperability": "A",
+    "domain": "A",
     "mediumType": "API",
     "refreshRate": "0"
 }, 
 {
     "type": "standards",
-    "name": "MDS-provider-status_changes-withoud_ids",
+    "name": "MDS-provider-status_changes-without-ids",
     "exchangeType": "API", 
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "C",
+    "privacy": "E",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
     "fieldModifications": [
         {
             "field": "status_changes[].device_id",
@@ -695,15 +734,17 @@
 , 
 {
     "type": "standards",
-    "name": "MDS-provider-status_changes",
+    "name": "MDS-provider-status-changes",
     "exchangeType": "API", 
     "part": "/status_changes",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
+    "privacy": "E",
+    "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "A",
     "fieldModifications": [
         {
             "field": "status_changes[].device_id",
@@ -726,21 +767,54 @@
     "part": "/stops",
     "version": "[version]",
     "mediumType": "API",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
     "refreshRate": "0"
 }, 
 {
     "type": "standards",
-    "name": "MDS-provider-trips-withoud_ids",
+    "name": "MDS-provider-trips-without-ids-and-route",
     "exchangeType": "API", 
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "A",
+    "part": "trips",
+    "fieldModifications": [
+        {
+            "field": "trips[].device_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].vehicle_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].route",
+            "exception": "removed"
+        }
+    ]
+}
+, 
+{
+    "type": "standards",
+    "name": "MDS-provider-trips-without-ids",
+    "exchangeType": "API", 
+    "version": "[version]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "privacy": "E",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
     "part": "trips",
     "fieldModifications": [
         {
@@ -766,22 +840,13 @@
     "version": "[version]",
     "mediumType": "API",
 
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "B",
     "privacy": "E",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
     
     "refreshRate": "0",
-    "fieldModifications": [
-        {
-            "field": "trips[].device_id",
-            "exception": "exposed"
-        },
-        {
-            "field": "trips[].vehicle_id",
-            "exception": "exposed"
-        }
-    ],
     "conflicts": [
         "reveals_personal_trip_data"
     ]
@@ -794,9 +859,13 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "D",
+
+    "privacy": "C",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
+
     "fieldModifications": [
         {
             "field": "vehicles",
@@ -811,9 +880,11 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
+    "privacy": "A",
+    "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "D",
+    "interoperability": "A",
+    "domain": "A",
     "part": "vehicles",
     "fieldModifications": [
         {
@@ -838,9 +909,11 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
+    "privacy": "C",
+    "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "A",
     "part": "vehicles",
     "fieldModifications": [
         {
@@ -862,9 +935,11 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "privacy": "E",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
@@ -1052,9 +1127,11 @@
     "name": "TOMP-available-assets-non-rotating-asset-id",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
-    "implementationEffort": "C", 
+    "privacy": "C",
+    "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "B",
+    "domain": "B",
     "fieldModifications": [
         {
             "field": "assets[].id",
@@ -1069,9 +1146,11 @@
     "name": "TOMP-API-available-assets-with-asset-name",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
-    "implementationEffort": "C", 
+    "privacy": "C",
+    "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "B",
+    "domain": "B",
     "fieldModifications": [
         {
             "field": "assets[].name",
@@ -1086,9 +1165,11 @@
     "name": "TOMP-API-available-assets-with-license-plate",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
-    "implementationEffort": "C", 
+    "privacy": "C",
+    "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "B",
+    "domain": "B",
     "fieldModifications": [
         {
             "field": "assets[].licensePlate",
@@ -1106,9 +1187,11 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": 0,
+    "privacy": "A",
     "implementationEffort": "D", 
-    "reusability":"B", 
+    "reusability":"A", 
     "interoperability": "B",
+    "domain": "B",
     "fieldModifications": []
 }, 
 {

@@ -10,12 +10,12 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-provider-vehicles-without-ids",
-        "MDS-provider-vehicles",
-        "MDS-provider-stops",
-        "GBFS-station-status",
-        "GBFS-vehicle-status",
-        "GBFS-free-bike-status",
-        "TOMP-API-available-assets"
+        { "name": "MDS-provider-vehicles-without-ids" },
+        { "name": "MDS-provider-vehicles" },
+        { "name": "MDS-provider-stops" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "GBFS-free-bike-status" },
+        { "name": "TOMP-API-available-assets" }
     ]
 }

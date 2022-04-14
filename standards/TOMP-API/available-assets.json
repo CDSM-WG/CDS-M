@@ -6,8 +6,10 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": 0,
+    "privacy": "A",
     "implementationEffort": "D", 
-    "reusability":"B", 
+    "reusability":"A", 
     "interoperability": "B",
+    "domain": "B",
     "fieldModifications": []
 }

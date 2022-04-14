@@ -1,15 +1,15 @@
 {
     "type": "standards",
-    "name": "json",
-    "exchangeType": "file-based", 
+    "exchangeType": "file-based",
+    "name":"csv",
     "part": "[complete url]",
     "version": "[version]",
     "refreshRate": "[refresh rate]",
-    "mediumType": "json-file",
+    "mediumType": "csv-file",
     "privacy": "?",
-    "implementationEffort": "B", 
+    "implementationEffort": "A", 
     "reusability":"E",
     "interoperability": "E",
     "domain": "E",
-    "schema": "[complete url of JSON scheme]"
+    "schema": "[comma seperated field list]"
 }

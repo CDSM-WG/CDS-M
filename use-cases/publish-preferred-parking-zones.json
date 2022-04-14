@@ -10,5 +10,9 @@
         "asA": "city",
         "iWouldLikeTo": "publish the preferred parking zones",
         "inOrderTo": "manage the usage of public space"
-    }
+    },
+    "standards": [
+        { "name": "MDS-policy-rules" },
+        { "name": "TOMP-API-regions" }
+    ]
 }

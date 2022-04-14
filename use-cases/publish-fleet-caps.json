@@ -8,6 +8,6 @@
         "inOrderTo": "allow dynamic fleet size adjustment based on policy"
     },
     "standards": [
-        "MDS-policy-rules"
+        { "name": "MDS-policy-rules" }
     ]
 }

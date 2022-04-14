@@ -1,14 +1,16 @@
 {
     "type": "standards",
-    "name": "MDS-provider-status_changes-withoud_ids",
+    "name": "MDS-provider-status_changes-without-ids",
     "exchangeType": "API", 
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "C",
+    "privacy": "E",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
     "fieldModifications": [
         {
             "field": "status_changes[].device_id",

@@ -5,8 +5,10 @@
     "part": "/stops",
     "version": "[version]",
     "mediumType": "API",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
     "refreshRate": "0"
 }

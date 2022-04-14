@@ -8,7 +8,7 @@
         "inOrderTo": "to determine roadway accident causes"
     },
     "standards": [
-        "MDS-provider-status_change",
-        "MDS-provider-status_change-without-ids"
+        { "name": "MDS-provider-status-change" },
+        { "name": "MDS-provider-status-change-without-ids" }
     ]
 }

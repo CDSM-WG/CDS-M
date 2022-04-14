@@ -1,13 +1,15 @@
 {
     "type": "standards",
-    "name": "MDS-provider-trips-withoud_ids",
+    "name": "MDS-provider-trips-without-ids",
     "exchangeType": "API", 
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
+    "privacy": "E",
+    "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "A",
     "part": "trips",
     "fieldModifications": [
         {

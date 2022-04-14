@@ -3,9 +3,11 @@
     "name": "GBFS-vehicle-status-non-rotating-asset-id",
     "exchangeType": "file-based", 
     "part": "vehicle_status",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "privacy": "C",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "B",
     "fieldModifications": [
         {
             "field": "bike_id",

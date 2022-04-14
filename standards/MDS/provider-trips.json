@@ -6,22 +6,13 @@
     "version": "[version]",
     "mediumType": "API",
 
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "B",
     "privacy": "E",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
     
     "refreshRate": "0",
-    "fieldModifications": [
-        {
-            "field": "trips[].device_id",
-            "exception": "exposed"
-        },
-        {
-            "field": "trips[].vehicle_id",
-            "exception": "exposed"
-        }
-    ],
     "conflicts": [
         "reveals_personal_trip_data"
     ]

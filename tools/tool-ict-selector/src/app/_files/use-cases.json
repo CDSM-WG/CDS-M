@@ -10,20 +10,24 @@
     "termsAndConditions": [],
     "contract": [],
     "standards": [
-        "GBFS-free-bike-status",
-        "GBFS-free-bike-status-non-rotating-asset-id",
-        "GBFS-vehicle-status",
-        "GBFS-vehicle-status-non-rotating-asset-id",
-        "TOMP-available-assets",
-        "TOMP-available-assets-non-rotating-asset-id",
-        "MDS-provider-stops",
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids"
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-free-bike-status", "privacy": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
+        { "name": "GBFS-vehicle-status", "privacy": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "privacy": "C" },
+        { "name": "TOMP-available-assets", "privacy": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" },
+        { "name": "MDS-provider-stops", "privacy": "A" },
+        { "name": "MDS-provider-trips", "privacy": "E" },
+        { "name": "MDS-provider-vehicles", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-status-changes", "privacy": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" } 
       ],
     "sharing": [],
-    "authentication": [],
     "transport": [],
     "storage": [],
     "security": [],
@@ -67,18 +71,23 @@
     }
   ],
   "standards": [
-    "GBFS-free-bike-status",
-    "GBFS-free-bike-status-non-rotating-asset-id",
-    "GBFS-vehicle-status",
-    "GBFS-vehicle-status-non-rotating-asset-id",
-    "TOMP-available-assets",
-    "TOMP-available-assets-non-rotating-asset-id",
-    "MDS-provider-vehicles",
-    "MDS-provider-stops",
-    "MDS-provider-trips",
-    "MDS-provider-trips-withoud_ids",
-    "MDS-provider-status_changes",
-    "MDS-provider-status_changes-withoud_ids"
+    { "name": "csv" },
+    { "name": "geojson" },
+    { "name": "json" },
+    { "name": "xml" },
+    { "name": "GBFS-free-bike-status" },
+    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
+    { "name": "GBFS-vehicle-status" },
+    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "privacy": "C" },
+    { "name": "GBFS-station-status" },
+    { "name": "TOMP-available-assets" },
+    { "name": "TOMP-available-assets-with-asset-name", "privacy": "C" },
+    { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" },
+    { "name": "MDS-provider-vehicles", "privacy": "E" },
+    { "name": "MDS-provider-stops" },
+    { "name": "MDS-provider-status-changes", "privacy": "E" },
+    { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
+    { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" }
   ],
   "termsAndConditions": [
     "BIO", 
@@ -117,17 +126,18 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get an insight in the length of executed trips",
-        "inOrderTo": "?"
+        "inOrderTo": "to (partly) determine for what travel purposes shared mobility is used."
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "OD-Matrix-odz",
-        "OD-Matrix-matrix",
-        "KML-Track",
-        "KML-Point-and-timestamp",
-        "GPX",
-        "shapefile-tracks"
+        { "name": "MDS-provider-trips", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
     ]
 }, 
 {
@@ -140,11 +150,12 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "OD-Matrix-odz",
-        "KML-Point-and-timestamp",
-        "GPX"
+        { "name": "MDS-provider-trips", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" }
     ]
 }, 
 {
@@ -153,14 +164,15 @@
     "tags": ["green-deal:sharing"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "determine if multi modal changes to roads lead to increased ridership",
-        "inOrderTo": "combine with other data to determine car traffic reductions"
+        "iWouldLikeTo": "know the origin-destination of individual trips to subsequently ingest the data into a traffic model and perform a car-reduction-analysis",
+        "inOrderTo": "make informed decisions about the deployment of shared mobility in different areas in the city to reduce (private) car journeys."
     },
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-provider-trips-without-ids",
-        "MDS-provider-trips"
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B"},
+        { "name": "MDS-provider-trips", "privacy": "E" }
     ]
 }, 
 {
@@ -170,11 +182,11 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "investigate crashes of vehicles reported by riders, public, or operators",
-        "inOrderTo": "?"
+        "inOrderTo": "enhance the infrastructure and make areas safer and to enable a public debate on this topic."
     },
     "standards": [
-        "MDS-provider-status_change",
-        "MDS-provider-status_change-without-ids"
+        { "name": "MDS-provider-status-change", "privacy": "D" },
+        { "name": "MDS-provider-status-change-without-ids", "privacy": "B" }
     ]
 }, 
 {
@@ -189,8 +201,11 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-provider-trips-without-ids",
-        "MDS-provider-trips"
+        { "name": "TOMP-journal-entries", "privacy": "E" },
+        { "name": "TOMP-journal-entries-without-bankaccount", "privacy": "D" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "E" },
+        { "name": "MDS-provider-trips", "privacy": "E" }
     ]
 }, 
 {
@@ -205,24 +220,24 @@
         "inOrderTo": "change policy to match"
     },
     "standards": [
-        "MDS-provider-vehicles",
-        "MDS-provider-stops",
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids",
-        "OD-Matrix-odz",
-        "OD-Matrix-matrix",
-        "KML-Track",
-        "KML-Point-and-timestamp",
-        "GPX",
-        "shapefile-tracks",
-        "GBFS-free-bike-status",
-        "GBFS-free-bike-status-non-rotating-asset-id",
-        "GBFS-vehicle-status",
-        "GBFS-vehicle-status-non-rotating-asset-id",
-        "TOMP-available-assets",
-        "TOMP-available-assets-non-rotating-asset-id"
+        { "name": "MDS-provider-vehicles", "privacy": "E" },
+        { "name": "MDS-provider-stops", "privacy": "A" },
+        { "name": "MDS-provider-trips", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-status-changes", "privacy": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" },
+        { "name": "GBFS-free-bike-status", "privacy": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
+        { "name": "GBFS-vehicle-status", "privacy": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "privacy": "C" },
+        { "name": "TOMP-available-assets", "privacy": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" }
     ]
 }, 
 {
@@ -237,13 +252,13 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-provider-vehicles-without-ids",
-        "MDS-provider-vehicles",
-        "MDS-provider-stops",
-        "GBFS-station-status",
-        "GBFS-vehicle-status",
-        "GBFS-free-bike-status",
-        "TOMP-API-available-assets"
+        { "name": "MDS-provider-vehicles-without-ids" },
+        { "name": "MDS-provider-vehicles" },
+        { "name": "MDS-provider-stops" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "GBFS-free-bike-status" },
+        { "name": "TOMP-API-available-assets" }
     ]
 }, 
 {
@@ -256,14 +271,14 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "OD-Matrix-odz",
-        "OD-Matrix-matrix",
-        "KML-Track",
-        "KML-Point-and-timestamp",
-        "GPX",
-        "shapefile-tracks"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
     ]
 }, 
 {
@@ -276,16 +291,17 @@
         "inOrderTo": ""
     },
     "standards": [
-        "GBFS-free-bike-status",
-        "GBFS-free-bike-status-non-rotating-asset-id",
-        "GBFS-vehicle-status",
-        "GBFS-vehicle-status-non-rotating-asset-id",
-        "TOMP-available-assets",
-        "TOMP-available-assets-non-rotating-asset-id",
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids"
+        { "name": "GBFS-free-bike-status" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id" },
+        { "name": "TOMP-available-assets" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-trips-without-ids-and-route" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" }
       ]
 }, 
 {
@@ -298,18 +314,19 @@
         "inOrderTo": "determine where to place new bike/scooter lanes and drop zones"
     },
     "standards": [
-        "GBFS-free-bike-status",
-        "GBFS-free-bike-status-non-rotating-asset-id",
-        "GBFS-vehicle-status",
-        "GBFS-vehicle-status-non-rotating-asset-id",
-        "TOMP-stations",
-        "TOMP-available-assets",
-        "TOMP-available-assets-non-rotating-asset-id",
-        "MDS-provider-stops",
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids"
+        { "name": "GBFS-free-bike-status" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id" },
+        { "name": "TOMP-stations" },
+        { "name": "TOMP-available-assets" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id" },
+        { "name": "MDS-provider-stops" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-trips-without-ids-and-route" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" }
       ]
 }, 
 {
@@ -322,8 +339,8 @@
         "inOrderTo": "to determine roadway accident causes"
     },
     "standards": [
-        "MDS-provider-status_change",
-        "MDS-provider-status_change-without-ids"
+        { "name": "MDS-provider-status-change" },
+        { "name": "MDS-provider-status-change-without-ids" }
     ]
 }, 
 {
@@ -338,9 +355,9 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-provider-trips-without-ids",
-        "MDS-provider-trips"
-    ]
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-trips" }
+        ]
 }, 
 {
     "id": "open-data",
@@ -352,31 +369,31 @@
         "inOrderTo": "facilitate analysis and accountability by anyone, and fulfill open records requests"
     },
     "standards": [
-      "GBFS-free-bike-status",
-      "GBFS-vehicle-status",
-      "GBFS-versions",
-      "GBFS-gbfs",
-      "GBFS-geofencing_zones",
-      "GBFS-station_information",
-      "GBFS-station_status",
-      "GBFS-system_alerts",
-      "GBFS-system_calendar",
-      "GBFS-system_hours",
-      "GBFS-system_information",
-      "GBFS-system_pricing_plans",
-      "GBFS-system_regions",
-      "GBFS-vehicle_types",
-      "TOMP-available-assets",
-      "TOMP-regions",
-      "TOMP-alerts",
-      "TOMP-information",
-      "TOMP-meta",
-      "TOMP-operating-calendar",
-      "TOMP-operating-hours",
-      "TOMP-pricing-plans",
-      "TOMP-stations",
-      "MDS-provider-events",
-      "MDS-policy-events"
+      { "name": "GBFS-free-bike-status" },
+      { "name": "GBFS-vehicle-status" },
+      { "name": "GBFS-versions" },
+      { "name": "GBFS-gbfs" },
+      { "name": "GBFS-geofencing-zones" },
+      { "name": "GBFS-station-information" },
+      { "name": "GBFS-station-status" },
+      { "name": "GBFS-system-alerts" },
+      { "name": "GBFS-system-calendar" },
+      { "name": "GBFS-system-hours" },
+      { "name": "GBFS-system-information" },
+      { "name": "GBFS-system-pricing_plans" },
+      { "name": "GBFS-system-regions" },
+      { "name": "GBFS-vehicle-types" },
+      { "name": "TOMP-available-assets" },
+      { "name": "TOMP-regions" },
+      { "name": "TOMP-alerts" },
+      { "name": "TOMP-information" },
+      { "name": "TOMP-meta" },
+      { "name": "TOMP-operating-calendar" },
+      { "name": "TOMP-operating-hours" },
+      { "name": "TOMP-pricing-plans" },
+      { "name": "TOMP-stations" },
+      { "name": "MDS-provider-events" },
+      { "name": "MDS-policy-events" }
     ],
     "termsAndConditions": [],
     "agreements": [],
@@ -397,14 +414,16 @@
         "inOrderTo": "change policy to match"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "OD-Matrix-odz",
-        "OD-Matrix-matrix",
-        "KML-Track",
-        "KML-Point-and-timestamp",
-        "GPX",
-        "shapefile-tracks"
+        { "name": "MDS-provider-vehicles" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
     ]
 }, 
 {
@@ -419,24 +438,24 @@
         "inOrderTo": "change policy to match"
     },
     "standards": [
-        "MDS-provider-vehicles",
-        "MDS-provider-stops",
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids",
-        "OD-Matrix-odz",
-        "OD-Matrix-matrix",
-        "KML-Track",
-        "KML-Point-and-timestamp",
-        "GPX",
-        "shapefile-tracks",
-        "GBFS-free-bike-status",
-        "GBFS-free-bike-status-non-rotating-asset-id",
-        "GBFS-vehicle-status",
-        "GBFS-vehicle-status-non-rotating-asset-id",
-        "TOMP-available-assets",
-        "TOMP-available-assets-non-rotating-asset-id"
+        { "name": "MDS-provider-vehicles" },
+        { "name": "MDS-provider-stops" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" },
+        { "name": "GBFS-free-bike-status" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id" },
+        { "name": "TOMP-available-assets" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id" }
     ]
 }, 
 {
@@ -449,17 +468,17 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-without-ids",
-        "GBFS-station_information",
-        "GBFS-station_status",
-        "GBFS-free-bike-status",
-        "GBFS-vehicle-status",
-        "TOMP-stations",
-        "TOMP-available-assets",
-        "SPDP-dynamic",
-        "SPDP-static"
-    ]
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "GBFS-station-information" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "TOMP-stations" },
+        { "name": "TOMP-available-assets" },
+        { "name": "SPDP-dynamic" },
+        { "name": "SPDP-static" }
+    ] 
 }, 
 {
     "id": "parking-availability",
@@ -473,9 +492,9 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "GBFS-station-status",
-        "MDS-provider-stops",
-        "SPDP-dynamic"
+        { "name": "GBFS-station-status" },
+        { "name": "MDS-provider-stops" },
+        { "name": "SPDP-dynamic" }
     ]
 }, 
 {
@@ -503,15 +522,15 @@
       }
     ],
     "standards": [
-      "GBFS-free-bike-status",
-      "GBFS-free-bike-status-non-rotating-asset-id",
-      "GBFS-vehicle-status",
-      "GBFS-vehicle-status-non-rotating-asset-id",
-      "TOMP-available-assets",
-      "TOMP-available-assets-non-rotating-asset-id",
-      "MDS-provider-vehicles",
-      "MDS-provider-status_changes",
-      "MDS-provider-status_changes-withoud_ids"
+      { "name": "GBFS-free-bike-status" },
+      { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
+      { "name": "GBFS-vehicle-status" },
+      { "name": "GBFS-vehicle-status-non-rotating-asset-id" },
+      { "name": "TOMP-available-assets" },
+      { "name": "TOMP-available-assets-non-rotating-asset-id" },
+      { "name": "MDS-provider-vehicles" },
+      { "name": "MDS-provider-status-changes" },
+      { "name": "MDS-provider-status-changes-without-ids" }
     ],
     "termsAndConditions": [],
     "agreements": [ "DPA" ],
@@ -537,8 +556,8 @@
         "inOrderTo": "to help them keep their users and contractors informed and safe."
     },
     "standards": [
-        "MDS-policy-geography",
-        "MDS-policy-rules"
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" }
     ]
 }, 
 {
@@ -553,8 +572,8 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-policy-rules",
-        "TOMP-API-regions"
+        { "name": "MDS-policy-rules" }, 
+        { "name": "TOMP-API-regions" }
     ]
 }, 
 {
@@ -567,7 +586,7 @@
         "inOrderTo": "allow dynamic fleet size adjustment based on policy"
     },
     "standards": [
-        "MDS-policy-rules"
+        { "name": "MDS-policy-rules" }
     ]
 }, 
 {
@@ -582,8 +601,8 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-policy-rules",
-        "TOMP-API-regions"
+        { "name": "MDS-policy-rules" },
+        { "name": "TOMP-API-regions" }
     ]
 }, 
 {
@@ -598,8 +617,8 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-policy-rules",
-        "TOMP-API-regions"
+        { "name": "MDS-policy-rules" },
+        { "name": "TOMP-API-regions" }
     ]
 }, 
 {
@@ -610,7 +629,11 @@
         "asA": "city",
         "iWouldLikeTo": "publish the operational area for transport operators",
         "inOrderTo": "maintain the order"
-    }
+    },
+    "standards": [
+        { "name": "MDS-policy-rules" },
+        { "name": "TOMP-API-regions" }
+    ]
 }, 
 {
     "id": "publish-preferred-parking-zones",
@@ -624,7 +647,11 @@
         "asA": "city",
         "iWouldLikeTo": "publish the preferred parking zones",
         "inOrderTo": "manage the usage of public space"
-    }
+    },
+    "standards": [
+        { "name": "MDS-policy-rules" },
+        { "name": "TOMP-API-regions" }
+    ]
 }, 
 {
     "id": "publish-slow-speed-zones",
@@ -640,8 +667,8 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        "MDS-policy-rules",
-        "TOMP-API-regions"
+        { "name": "MDS-policy-rules" },
+        { "name": "TOMP-API-regions" }
     ]
 }, 
 {
@@ -652,7 +679,9 @@
         "asA": "city",
         "iWouldLikeTo": "publish the assigned station locations for transport operators",
         "inOrderTo": "maintain the order"
-    }
+    },
+    "standards": [
+    ]
 }, 
 {
     "id": "rentals",
@@ -666,18 +695,18 @@
         "inOrderTo": "adjust subsidies"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids",
-        "OD-Matrix-odz",
-        "OD-Matrix-matrix",
-        "KML-Track",
-        "KML-Point-and-timestamp",
-        "GPX",
-        "shapefile-tracks",
-        "TOMP-available-assets",
-        "TOMP-available-assets-non-rotating-asset-id"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" },
+        { "name": "TOMP-available-assets" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id" }
     ]
 }, 
 {
@@ -690,10 +719,11 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-status_change",
-        "MDS-provider-status_change-without-ids",
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids"
+        { "name": "MDS-provider-status-change" },
+        { "name": "MDS-provider-status-change-without-ids" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids-and-route" },
+        { "name": "MDS-provider-trips-without-ids" }
     ]
 }, 
 {
@@ -706,8 +736,8 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" }
     ]
 }, 
 {
@@ -720,11 +750,11 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "MDS-policy-rules",
-        "GBFS-system_regions",
-        "TOMP-regions"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-policy-rules" },
+        { "name": "GBFS-system-regions" },
+        { "name": "TOMP-regions" }
     ]
 }, 
 {
@@ -736,10 +766,10 @@
         "inOrderTo": "remove devices from public right of way or create plans to fix these issues"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" }
     ]
 }, 
 {
@@ -752,11 +782,11 @@
         "inOrderTo": "get insights in before and after implementing road changes, improvements, signal retimings, etc."
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "KML-Points",
-        "GPX",
-        "shapefile-points"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "KML-Points" },
+        { "name": "GPX" },
+        { "name": "shapefile-points" }
     ]    
 }, 
 {
@@ -769,11 +799,11 @@
         "inOrderTo": "prioritize street paving by using Street Condition Index values and popular trips for safer rides"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids", 
-        "KML-Points",
-        "GPX",
-        "shapefile-points"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" }, 
+        { "name": "KML-Points" },
+        { "name": "GPX" },
+        { "name": "shapefile-points" }
     ]
 }, 
 {
@@ -786,10 +816,10 @@
         "inOrderTo": "prioritize street lighting upgrades (new lights, brighter more frequent lights) for safety improvements."
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids", 
-        "KML-Points",
-        "GPX",
-        "shapefile-points"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" }, 
+        { "name": "KML-Points" },
+        { "name": "GPX" },
+        { "name": "shapefile-points" }
     ]
 }] 

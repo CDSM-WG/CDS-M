@@ -10,17 +10,17 @@
         "inOrderTo": "adjust subsidies"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-withoud_ids",
-        "MDS-provider-status_changes",
-        "MDS-provider-status_changes-withoud_ids",
-        "OD-Matrix-odz",
-        "OD-Matrix-matrix",
-        "KML-Track",
-        "KML-Point-and-timestamp",
-        "GPX",
-        "shapefile-tracks",
-        "TOMP-available-assets",
-        "TOMP-available-assets-non-rotating-asset-id"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" },
+        { "name": "TOMP-available-assets" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id" }
     ]
 }

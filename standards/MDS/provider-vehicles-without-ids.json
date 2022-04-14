@@ -5,9 +5,11 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "implementationEffort": "C", 
+    "privacy": "C",
+    "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "B",
+    "interoperability": "A",
+    "domain": "A",
     "part": "vehicles",
     "fieldModifications": [
         {

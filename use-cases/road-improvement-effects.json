@@ -8,10 +8,10 @@
         "inOrderTo": "get insights in before and after implementing road changes, improvements, signal retimings, etc."
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "KML-Points",
-        "GPX",
-        "shapefile-points"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "KML-Points" },
+        { "name": "GPX" },
+        { "name": "shapefile-points" }
     ]    
 }

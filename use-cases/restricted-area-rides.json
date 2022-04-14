@@ -8,10 +8,10 @@
         "inOrderTo": "?"
     },
     "standards": [
-        "MDS-provider-trips",
-        "MDS-provider-trips-without-ids",
-        "MDS-policy-rules",
-        "GBFS-system_regions",
-        "TOMP-regions"
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-policy-rules" },
+        { "name": "GBFS-system-regions" },
+        { "name": "TOMP-regions" }
     ]
 }

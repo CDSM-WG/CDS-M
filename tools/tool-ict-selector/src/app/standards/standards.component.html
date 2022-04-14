@@ -3,11 +3,7 @@
         <mat-table mat-table [dataSource]="datasource">
             <ng-container matColumnDef="name">
                 <th mat-header-row *matHeaderCellDef class="initialHeader firstColumn"> Name </th>
-                <td mat-cell *matCellDef="let element">{{element.name}} </td>
-            </ng-container>
-            <ng-container matColumnDef="part">
-                <th mat-header-row *matHeaderCellDef class="initialHeader"> Part </th>
-                <td mat-cell *matCellDef="let element">{{element.part}} </td>
+                <td mat-cell *matCellDef="let element">{{element.name}}</td>
             </ng-container>
             <ng-container matColumnDef="selected">
                 <th mat-header-row *matHeaderCellDef class="initialHeader">check</th>
@@ -15,30 +11,41 @@
                     <input type="checkbox" [(checked)]="element['selected']" (change)="onSelect($event,element)">
                 </td>
             </ng-container>
+            <ng-container matColumnDef="sortValue">
+                <th mat-header-row *matHeaderCellDef class="initialHeader">value</th>
+                <td mat-cell *matCellDef="let element">{{element.sortValue}} </td>
+            </ng-container>
             <ng-container matColumnDef="privacy">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div><span>Privacy</span></div>
+                    <div [title]="getTitle('privacy')"><span>Privacy</span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.privacy">{{element.privacy}} </td>
             </ng-container>
             <ng-container matColumnDef="implE">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div><span>Implementation</span></div>
+                    <div [title]="getTitle('implementation')"><span>Costs</span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.implementationEffort">
                     {{element.implementationEffort}} </td>
             </ng-container>
             <ng-container matColumnDef="reuse">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div><span>Reusability</span></div>
+                    <div [title]="getTitle('reuse')"><span>Reusability</span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.reusability">{{element.reusability}}</td>
             </ng-container>
             <ng-container matColumnDef="interop">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div><span>Interopability</span></div>
+                    <div [title]="getTitle('interop')"><span>Interopability</span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.interoperability">{{element.interoperability}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="domain">
+                <th mat-header-row *matHeaderCellDef class="rotate">
+                    <div [title]="getTitle('domain')"><span>Domain specific</span></div>
+                </th>
+                <td mat-cell *matCellDef="let element" [ngClass]="element.domain">{{element.domain}}
                 </td>
             </ng-container>
             <ng-container matColumnDef="space">
@@ -81,7 +88,7 @@
                 <th mat-header-cell *matHeaderCellDef class="rotate">
                     <div><span>{{column}}</span></div>
                 </th>
-                <td mat-cell *matCellDef="let element"> <input type='checkbox' [(checked)]=element[column] [class]="element[column]==null?'invisible':'visible'"> </td>
+                <td mat-cell *matCellDef="let element"> <input type='checkbox' [id]="column" (change)="onSelectAuthentication($event,element)" [class]="element[column]==null?'invisible':'visible'"> </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsAuthentication"></tr>

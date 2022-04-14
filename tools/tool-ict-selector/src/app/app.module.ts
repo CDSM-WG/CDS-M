@@ -21,6 +21,8 @@ import { ProcessingComponent } from './processing/processing.component';
 import { ArchivingComponent } from './archiving/archiving.component';
 import { ExImportButtonComponent } from './ex-import-button/ex-import-button.component';
 import { UseCaseService } from '../services/use-case.service';
+import { ExportService } from '../services/export.service';
+import { SelectionComponent } from './selection/selection.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { UseCaseService } from '../services/use-case.service';
     CertificatesComponent,
     ProcessingComponent,
     ArchivingComponent,
-    ExImportButtonComponent
+    ExImportButtonComponent,
+    SelectionComponent
   ],
   exports: [
   ],
@@ -45,7 +48,7 @@ import { UseCaseService } from '../services/use-case.service';
     MatSortModule,
     MatTooltipModule
   ],
-  providers: [UseCaseService],
+  providers: [UseCaseService, ExportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
