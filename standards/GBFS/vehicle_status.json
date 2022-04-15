@@ -4,6 +4,7 @@
     "exchangeType": "file-based", 
     "part": "vehicle_status.json",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
+    "baseUrl": "[baseUrl]",
     "version": "[version >= 3.0]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",

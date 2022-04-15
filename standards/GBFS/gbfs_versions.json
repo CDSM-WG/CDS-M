@@ -4,6 +4,7 @@
     "exchangeType": "file-based", 
     "part": "gbfs_versions.json",
     "version": "[version >= 1.1]",
+    "baseUrl": "[baseUrl]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",

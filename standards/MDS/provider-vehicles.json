@@ -4,6 +4,7 @@
     "exchangeType": "API", 
     "part": "vehicles",
     "version": "[version]",
+    "baseUrl": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",

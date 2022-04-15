@@ -3,6 +3,7 @@
     "name": "GBFS-station-status",
     "exchangeType": "file-based", 
     "part": "station_status.json",
+    "baseUrl": "[baseUrl]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",

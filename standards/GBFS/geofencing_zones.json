@@ -3,6 +3,7 @@
     "name": "GBFS-geofencing-zones",
     "exchangeType": "file-based", 
     "part": "geofencing_zones.json",
+    "baseUrl": "[baseUrl]",
     "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",

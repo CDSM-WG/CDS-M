@@ -13,11 +13,13 @@ export class ExportService {
     transportConditions: any[] = [];
     processingConditions: any[] = [];
     archivingConditions: any[] = [];
+    attributes: any[] = [];
 
     export() {
         this.applyStandardsSelectionToUseCases();
         this.applyTransportConditions();
         this.applyProcessingConditions();
+        this.applyArchivingConditions();
         this.deleteTags();
 
         var json = JSON.stringify(this.useCases.filter( u => { 
@@ -25,6 +27,16 @@ export class ExportService {
         })); 
         const data: Blob = new Blob([json], { type: "text/json" });
         FileSaver.saveAs(data, "CDS-M-ICT-" + new Date().getTime() + ".json");
+    }
+
+    private applyArchivingConditions() {
+        this.archivingConditions.forEach( t => {
+            delete t.selected;
+        } ); 
+
+        this.useCases.forEach( (useCase: any) => {
+            useCase.archive = this.archivingConditions;
+        })
     }
 
     deleteTags(){
@@ -68,6 +80,13 @@ export class ExportService {
                                 aut.push(a);
                             }
                         });
+
+                        this.attributes.forEach( (a) => {
+                            if (a in selected) {
+                                standard[a] = selected[a];
+                            }
+                        });
+
                         gatheredStandards.push(standard);
                     }
                 });

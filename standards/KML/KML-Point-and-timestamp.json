@@ -6,9 +6,11 @@
     "version": "2.2",
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",
+    "privacy": "D",
     "implementationEffort": "C", 
     "reusability":"D", 
     "interoperability": "D",
+    "domain": "E",
     "schema": "https://developers.google.com/kml/documentation/time#example:-showing-movement-of-a-point-along-a-path",
     "fieldModifications": [
         {

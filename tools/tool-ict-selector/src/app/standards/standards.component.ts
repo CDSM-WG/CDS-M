@@ -23,9 +23,13 @@ export class StandardsComponent implements OnInit {
   displayedColumnsAuthentication : any[] = ['name'];
   authentications : any[] = [];
 
+  displayedColumnsAttributes : any[] = ['name'];
+  attributes : any[] = [];
+
   standards = StandardsJson;
   datasource = new MatTableDataSource(this.standards);
   datasourceAuthentication = new MatTableDataSource(this.standards);
+  datasourceAttributes = new MatTableDataSource(this.standards);
 
   useCasesToExport = UseCasesJson;
 
@@ -38,6 +42,7 @@ export class StandardsComponent implements OnInit {
         exportService.useCases = this.useCasesToExport;
         exportService.standards = this.standards;
         exportService.authentications = this.authentications;
+        exportService.attributes = this.displayedColumnsAttributes;
       }
     });
   }
@@ -63,9 +68,11 @@ export class StandardsComponent implements OnInit {
     this.configureUseCases();
     this.collectUseCaseColumns();
     this.collectAuthenticationColumns();
+    this.collectAttributeColumns();
     this.filterUsedStandards();
     this.configureStandardsDataSource();
     this.configureAuthenticationDataSource();
+    this.configureAttributeDataSource();
 
     this.standards = this.sortDataSource(this.standards);
   }
@@ -121,6 +128,32 @@ export class StandardsComponent implements OnInit {
     })
   }
 
+  private collectAttributeColumns() {
+    this.standards.forEach((s: any) => {
+      
+      Object.keys(s).forEach( (property: any) => {
+        let value = s[property];
+        if ( typeof value === 'string' ) {
+          if (value.indexOf('[') >= 0 ){
+            if (this.attributes.indexOf(property) === -1) {
+              this.attributes.push(property);
+            }
+            if (this.displayedColumnsAttributes.indexOf(property) === -1) {
+              this.displayedColumnsAttributes.push(property);
+            }
+          }
+        }
+      })
+    })
+  }
+
+  getVisibilityClass(value: any, column: string, element: any){
+    if ('org_' + column in element) return 'visible';
+    if( value == null ) return 'invisible';
+    if( typeof value === 'string' && value.indexOf('[') == -1) return 'invisible';
+    return 'visible';
+  }
+
   private filterUsedStandards() {
     let usedStandards = this.standards.filter((standard: any) => {
       let items = this.useCases.filter((usecase: any) => {
@@ -145,6 +178,14 @@ export class StandardsComponent implements OnInit {
       return data['selected'] == true;
     };
     this.datasourceAuthentication.filter = 'true';
+  }
+
+  private configureAttributeDataSource() {
+    this.datasourceAttributes = new MatTableDataSource(this.standards);  
+    this.datasourceAttributes.filterPredicate = function(data: any, filter: string): boolean {
+      return data['selected'] == true;
+    };
+    this.datasourceAttributes.filter = 'true';
   }
 
   private sortDataSource(source: any[]) {
@@ -212,6 +253,7 @@ export class StandardsComponent implements OnInit {
       }
     })
     this.datasourceAuthentication.filter = 'true';
+    this.datasourceAttributes.filter = 'true';
   }
 
   filterColumn(e: Event) {
@@ -259,5 +301,13 @@ export class StandardsComponent implements OnInit {
         'E	Completely generic';
     }
     return '';
+  }
+
+  onAttributeChanged(event: any, field: string, element: any) {
+    let standard: any = this.standards.find( x => x.name == element.name );
+    if (standard != null) {
+      standard['org_' + field] = standard[field];
+      standard[field] = event.target.value;
+    }
   }
 }

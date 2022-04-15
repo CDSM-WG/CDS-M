@@ -95,4 +95,34 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumnsAuthentication;"></tr>
         </mat-table>
     </mat-tab>
+    <mat-tab label="Configuration">
+        <mat-table mat-table [dataSource]="datasourceAttributes">
+            <ng-container matColumnDef="name">
+                <th mat-header-row *matHeaderCellDef class="initialHeader firstColumn"> Name </th>
+                <td mat-cell *matCellDef="let element">{{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="selected">
+                <th mat-header-row *matHeaderCellDef class="initialHeader">check</th>
+                <td mat-cell *matCellDef="let element"><input type="checkbox" [value]="element['selected']"></td>
+            </ng-container>
+            
+            <ng-container matColumnDef="space">
+                <th mat-header-row *matHeaderCellDef class="rotate">
+                    <div><span>  </span></div>
+                </th>
+                <td mat-cell *matCellDef="let element">&nbsp;&nbsp;</td>
+            </ng-container>
+
+            <ng-container [matColumnDef]="column" *ngFor="let column of attributes">
+                <th mat-header-cell *matHeaderCellDef class="rotate">
+                    <div><span>{{column}}</span></div>
+                </th>
+                <td mat-cell *matCellDef="let element"> <input type='text' [id]="column" [value]="element[column]" (change)="onAttributeChanged($event,column,element)" [class]="getVisibilityClass(element[column], column, element)"> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsAttributes"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsAttributes;"></tr>
+        </mat-table>
+    </mat-tab>
 </mat-tab-group>

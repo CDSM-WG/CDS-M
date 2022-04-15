@@ -59,10 +59,7 @@
     "max-storage",
     "unlimited-storage"
   ],
-  "archive": [],
-  "certificates": [
-    "iso-27001.json"
-  ],
+  "archive": [], 
   "tags": [
     "public-space:distribution",
     "assets:availability",

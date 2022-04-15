@@ -3,6 +3,7 @@
     "name": "GBFS-system-calendar",
     "exchangeType": "file-based", 
     "part": "system_calendar.json",
+    "baseUrl": "[baseUrl]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",

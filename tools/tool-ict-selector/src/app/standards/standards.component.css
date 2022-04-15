@@ -73,3 +73,7 @@ tr.mat-row {
 input.invisible {
     visibility: hidden;
 }
+
+input[type='text'] {
+    width: 80px;
+}

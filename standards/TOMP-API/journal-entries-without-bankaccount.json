@@ -4,11 +4,14 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
     "version": "[version]",
-    "mediumType": "API",
+    "baseUrl": "[baseUrl]",
+    "mediumType": "json-file",
     "refreshRate": 0,
+    "privacy": "B",
     "implementationEffort": "C", 
     "reusability":"D", 
     "interoperability": "B",
+    "domain": "B",
     "fieldModifications": [
         {
             "field": "bankaccount",

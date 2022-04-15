@@ -7,9 +7,11 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
+    "privacy": "D",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "B",
+    "domain": "D",
     "description": "shapefile should contain (multi)linestrings. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
     "conflicts": [ "reveals_personal_trip_data" ]
 }

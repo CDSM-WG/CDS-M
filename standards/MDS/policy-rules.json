@@ -4,6 +4,7 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
     "part": "/rules/",
+    "baseUrl": "[baseUrl]",
     "version": "[version]",
     "privacy": "A",
     "implementationEffort": "D", 

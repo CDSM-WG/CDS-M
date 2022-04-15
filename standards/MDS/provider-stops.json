@@ -3,6 +3,7 @@
     "name": "MDS-provider-stops",
     "exchangeType": "API", 
     "part": "/stops",
+    "baseUrl": "[baseUrl]",
     "version": "[version]",
     "mediumType": "API",
     "privacy": "A",

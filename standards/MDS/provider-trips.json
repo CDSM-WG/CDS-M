@@ -3,6 +3,7 @@
     "name": "MDS-provider-trips",
     "exchangeType": "API", 
     "part": "/trips",
+    "baseUrl": "[baseUrl]",
     "version": "[version]",
     "mediumType": "API",
 

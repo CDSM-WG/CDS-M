@@ -4,6 +4,7 @@
     "exchangeType": "API", 
     "part": "/status_changes",
     "version": "[version]",
+    "baseUrl": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",

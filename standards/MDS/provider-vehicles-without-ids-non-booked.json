@@ -3,6 +3,7 @@
     "name": "MDS-provider-vehicles-without-ids-non-booked",
     "exchangeType": "API", 
     "version": "[version]",
+    "baseUrl": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "A",

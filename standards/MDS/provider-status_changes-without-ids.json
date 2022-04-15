@@ -3,6 +3,7 @@
     "name": "MDS-provider-status_changes-without-ids",
     "exchangeType": "API", 
     "version": "[version]",
+    "baseUrl": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",

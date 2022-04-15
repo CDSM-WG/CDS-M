@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import ArchivingJson from '../../app/_files/archiving.json'
 import ConflictJson from '../../app/_files/conflicts.json'
 import { MatTableDataSource } from '@angular/material/table'
+import { ExportService } from '../../services/export.service';
 
 @Component({
   selector: 'app-archiving',
@@ -14,8 +15,18 @@ export class ArchivingComponent implements OnInit {
   displayedColumns : any[] = ['name', 'selected']
   arguments: any[] = []
   conflicts : any[] = []
+  exportService: ExportService;
 
-  constructor() { }
+  constructor(exportService: ExportService) {
+    this.exportService = exportService;
+    this.exportService.signalExport.subscribe( signal => 
+      { 
+        exportService.archivingConditions = ArchivingJson.filter( (t:any) => 
+        { 
+          return t['selected']; 
+        }); 
+      });
+  }
 
   ngOnInit(): void {
     ArchivingJson.forEach( (x:any) => 

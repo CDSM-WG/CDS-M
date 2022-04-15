@@ -3,6 +3,7 @@
     "name": "MDS-provider-trips-without-ids",
     "exchangeType": "API", 
     "version": "[version]",
+    "baseUrl": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",

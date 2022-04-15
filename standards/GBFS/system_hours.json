@@ -3,6 +3,7 @@
     "name": "GBFS-system-hours",
     "exchangeType": "file-based", 
     "part": "system_hours.json",
+    "baseUrl": "[baseUrl]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
