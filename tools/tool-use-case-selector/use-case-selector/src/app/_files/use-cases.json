@@ -14,6 +14,7 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
+        { "name": "GBFS-station-status" },
         { "name": "GBFS-free-bike-status", "privacy": "A" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
         { "name": "GBFS-vehicle-status", "privacy": "A" },
@@ -21,11 +22,12 @@
         { "name": "TOMP-available-assets", "privacy": "A" },
         { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" },
         { "name": "MDS-provider-stops", "privacy": "A" },
-        { "name": "MDS-provider-trips", "privacy": "E" },
-        { "name": "MDS-provider-vehicles", "privacy": "E" },
-        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-vehicles", "privacy": "D" },
+        { "name": "MDS-provider-vehicles-without-ids", "privacy": "D"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" },
         { "name": "MDS-provider-status-changes", "privacy": "E" },
-        { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" } 
+        { "name": "MDS-provider-status-changes-without-ids", "privacy": "D" },
+        { "name": "SPDP-dynamic" }
       ],
     "sharing": [],
     "transport": [],
@@ -84,10 +86,14 @@
     { "name": "TOMP-available-assets-with-asset-name", "privacy": "C" },
     { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" },
     { "name": "MDS-provider-vehicles", "privacy": "E" },
+    { "name": "MDS-provider-vehicles-without-ids" },
     { "name": "MDS-provider-stops" },
     { "name": "MDS-provider-status-changes", "privacy": "E" },
     { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
-    { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" }
+    { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" },
+    { "name": "shapefile-points" },
+    { "name": "KML-points" },
+    { "name": "SPDP-dynamic" }
   ],
   "termsAndConditions": [
     "BIO", 
@@ -126,9 +132,15 @@
         "inOrderTo": "to (partly) determine for what travel purposes shared mobility is used."
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips", "privacy": "E" },
         { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
         { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B" },
+        { "name": "TOMP-API-journal-entries" },
+        { "name": "TOMP-API-journal-entries-without-bankaccount" },
         { "name": "OD-Matrix-odz" },
         { "name": "OD-Matrix-matrix" },
         { "name": "KML-Track" },
@@ -147,12 +159,21 @@
         "inOrderTo": "?"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips", "privacy": "E" },
         { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
         { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B" },
+        { "name": "TOMP-API-journal-entries" },
+        { "name": "TOMP-API-journal-entries-without-bankaccount" },
         { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
         { "name": "KML-Point-and-timestamp" },
-        { "name": "GPX" }
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
     ]
 }, 
 {
@@ -167,8 +188,12 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
-        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B"},
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "A"},
         { "name": "MDS-provider-trips", "privacy": "E" }
     ]
 }, 
@@ -182,8 +207,12 @@
         "inOrderTo": "enhance the infrastructure and make areas safer and to enable a public debate on this topic."
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-status-change", "privacy": "D" },
-        { "name": "MDS-provider-status-change-without-ids", "privacy": "B" }
+        { "name": "MDS-provider-status-change-without-ids", "privacy": "A" }
     ]
 }, 
 {
@@ -198,8 +227,12 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "TOMP-journal-entries", "privacy": "E" },
-        { "name": "TOMP-journal-entries-without-bankaccount", "privacy": "D" },
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "TOMP-API-journal-entries" },
+        { "name": "TOMP-API-journal-entries-without-bankaccount" },
         { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
         { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "E" },
         { "name": "MDS-provider-trips", "privacy": "E" }
@@ -218,23 +251,34 @@
     },
     "standards": [
         { "name": "MDS-provider-vehicles", "privacy": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "privacy": "A" },
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" },
+        { "name": "MDS-provider-vehicles-without-ids", "privacy": "B" },
         { "name": "MDS-provider-stops", "privacy": "A" },
         { "name": "MDS-provider-trips", "privacy": "E" },
-        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "D" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "A" },
         { "name": "MDS-provider-status-changes", "privacy": "E" },
         { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
         { "name": "OD-Matrix-odz" },
         { "name": "OD-Matrix-matrix" },
-        { "name": "KML-Track" },
-        { "name": "KML-Point-and-timestamp" },
-        { "name": "GPX" },
-        { "name": "shapefile-tracks" },
-        { "name": "GBFS-free-bike-status", "privacy": "A" },
+        { "name": "KML-Track", "privacy": "E" },
+        { "name": "KML-Point-and-timestamp", "privacy": "E" },
+        { "name": "GPX", "privacy": "E" },
+        { "name": "shapefile-tracks", "privacy": "E" },
+        { "name": "GBFS-free-bike-status", "privacy": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
-        { "name": "GBFS-vehicle-status", "privacy": "A" },
+        { "name": "GBFS-vehicle-status", "privacy": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
         { "name": "GBFS-vehicle-status-non-rotating-asset-id", "privacy": "C" },
-        { "name": "TOMP-available-assets", "privacy": "A" },
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" }
+        { "name": "TOMP-available-assets", "privacy": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "TOMP-available-assets-with-asset-name", "privacy": "C" },
+        { "name": "TOMP-available-assets-with-asset-license-plate", "privacy": "C" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" }, 
+        { "name": "csv" }, 
+        { "name": "geojson" }, 
+        { "name": "json" }, 
+        { "name": "xml" }
+
     ]
 }, 
 {
@@ -249,6 +293,10 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-vehicles-without-ids" },
         { "name": "MDS-provider-vehicles" },
         { "name": "MDS-provider-stops" },
@@ -268,6 +316,10 @@
         "inOrderTo": "?"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" },
         { "name": "OD-Matrix-odz" },
@@ -288,6 +340,10 @@
         "inOrderTo": ""
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "GBFS-free-bike-status" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
         { "name": "GBFS-vehicle-status" },
@@ -311,6 +367,10 @@
         "inOrderTo": "determine where to place new bike/scooter lanes and drop zones"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "GBFS-free-bike-status" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
         { "name": "GBFS-vehicle-status" },
@@ -336,6 +396,10 @@
         "inOrderTo": "to determine roadway accident causes"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-status-change" },
         { "name": "MDS-provider-status-change-without-ids" }
     ]
@@ -352,6 +416,10 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips-without-ids" },
         { "name": "MDS-provider-trips" }
         ]
@@ -366,6 +434,10 @@
         "inOrderTo": "facilitate analysis and accountability by anyone, and fulfill open records requests"
     },
     "standards": [
+      { "name": "csv" },
+      { "name": "json" },
+      { "name": "geojson" },
+      { "name": "xml" },
       { "name": "GBFS-free-bike-status" },
       { "name": "GBFS-vehicle-status" },
       { "name": "GBFS-versions" },
@@ -411,6 +483,10 @@
         "inOrderTo": "change policy to match"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-vehicles" },
         { "name": "MDS-provider-status-changes" },
         { "name": "MDS-provider-trips" },
@@ -441,6 +517,10 @@
         "inOrderTo": "change policy to match"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-vehicles" },
         { "name": "MDS-provider-stops" },
         { "name": "MDS-provider-trips" },
@@ -471,6 +551,10 @@
         "inOrderTo": "?"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-status-changes" },
         { "name": "MDS-provider-status-changes-without-ids" },
         { "name": "GBFS-station-information" },
@@ -495,6 +579,10 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "GBFS-station-status" },
         { "name": "MDS-provider-stops" },
         { "name": "SPDP-dynamic" }
@@ -525,6 +613,10 @@
       }
     ],
     "standards": [
+      { "name": "csv" },
+      { "name": "json" },
+      { "name": "geojson" },
+      { "name": "xml" },
       { "name": "GBFS-free-bike-status" },
       { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
       { "name": "GBFS-vehicle-status" },
@@ -559,6 +651,10 @@
         "inOrderTo": "to help them keep their users and contractors informed and safe."
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-rules" }
     ]
@@ -575,6 +671,10 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-rules" }, 
         { "name": "TOMP-API-regions" }
     ]
@@ -589,6 +689,10 @@
         "inOrderTo": "allow dynamic fleet size adjustment based on policy"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-rules" }
     ]
 }, 
@@ -604,6 +708,10 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-rules" },
         { "name": "TOMP-API-regions" }
     ]
@@ -620,6 +728,10 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-rules" },
         { "name": "TOMP-API-regions" }
     ]
@@ -634,6 +746,10 @@
         "inOrderTo": "maintain the order"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-rules" },
         { "name": "TOMP-API-regions" }
     ]
@@ -652,6 +768,10 @@
         "inOrderTo": "manage the usage of public space"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-rules" },
         { "name": "TOMP-API-regions" }
     ]
@@ -670,6 +790,10 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-rules" },
         { "name": "TOMP-API-regions" }
     ]
@@ -684,6 +808,10 @@
         "inOrderTo": "maintain the order"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" }
     ]
 }, 
 {
@@ -698,6 +826,10 @@
         "inOrderTo": "adjust subsidies"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" },
         { "name": "MDS-provider-status-changes" },
@@ -722,6 +854,10 @@
         "inOrderTo": "?"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-status-change" },
         { "name": "MDS-provider-status-change-without-ids" },
         { "name": "MDS-provider-trips" },
@@ -739,6 +875,10 @@
         "inOrderTo": "?"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" }
     ]
@@ -753,6 +893,10 @@
         "inOrderTo": "?"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" },
         { "name": "MDS-policy-rules" },
@@ -769,6 +913,10 @@
         "inOrderTo": "remove devices from public right of way or create plans to fix these issues"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" },
         { "name": "MDS-provider-status-changes" },
@@ -785,6 +933,10 @@
         "inOrderTo": "get insights in before and after implementing road changes, improvements, signal retimings, etc."
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" },
         { "name": "KML-Points" },
@@ -802,6 +954,10 @@
         "inOrderTo": "prioritize street paving by using Street Condition Index values and popular trips for safer rides"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" }, 
         { "name": "KML-Points" },
@@ -819,6 +975,10 @@
         "inOrderTo": "prioritize street lighting upgrades (new lights, brighter more frequent lights) for safety improvements."
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" }, 
         { "name": "KML-Points" },

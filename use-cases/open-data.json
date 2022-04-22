@@ -8,6 +8,10 @@
         "inOrderTo": "facilitate analysis and accountability by anyone, and fulfill open records requests"
     },
     "standards": [
+      { "name": "csv" },
+      { "name": "json" },
+      { "name": "geojson" },
+      { "name": "xml" },
       { "name": "GBFS-free-bike-status" },
       { "name": "GBFS-vehicle-status" },
       { "name": "GBFS-versions" },

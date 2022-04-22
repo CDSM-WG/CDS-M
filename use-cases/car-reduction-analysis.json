@@ -10,8 +10,12 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
-        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B"},
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "A"},
         { "name": "MDS-provider-trips", "privacy": "E" }
     ]
 }

@@ -7,8 +7,10 @@
     "version": "2.0",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"D",
+    "interoperability": "C",
+    "domain": "B",
     "fieldModifications": []
 }

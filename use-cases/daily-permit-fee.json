@@ -10,8 +10,12 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "TOMP-journal-entries", "privacy": "E" },
-        { "name": "TOMP-journal-entries-without-bankaccount", "privacy": "D" },
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "TOMP-API-journal-entries" },
+        { "name": "TOMP-API-journal-entries-without-bankaccount" },
         { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
         { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "E" },
         { "name": "MDS-provider-trips", "privacy": "E" }

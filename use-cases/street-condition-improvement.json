@@ -8,6 +8,10 @@
         "inOrderTo": "prioritize street paving by using Street Condition Index values and popular trips for safer rides"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" }, 
         { "name": "KML-Points" },

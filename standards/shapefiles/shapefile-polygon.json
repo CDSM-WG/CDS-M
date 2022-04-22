@@ -7,8 +7,10 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
+    "privacy": "A",
     "implementationEffort": "D", 
-    "reusability":"E", 
+    "reusability":"E",
     "interoperability": "B",
+    "domain": "D",
     "description": "Shapefile should countain (multi)polygons only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
 }

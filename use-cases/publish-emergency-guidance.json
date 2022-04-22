@@ -8,6 +8,10 @@
         "inOrderTo": "to help them keep their users and contractors informed and safe."
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-rules" }
     ]

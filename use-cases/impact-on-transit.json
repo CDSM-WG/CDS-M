@@ -8,6 +8,10 @@
         "inOrderTo": ""
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "GBFS-free-bike-status" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
         { "name": "GBFS-vehicle-status" },

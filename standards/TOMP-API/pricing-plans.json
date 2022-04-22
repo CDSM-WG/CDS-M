@@ -6,9 +6,11 @@
     "version": "[version]",
     "baseUrl": "[baseUrl]",
     "mediumType": "json-file",
+    "privacy": "A",
     "implementationEffort": "C", 
-    "reusability":"D", 
+    "reusability":"D",
     "interoperability": "B",
+    "domain": "B",
     "refreshRate": 0,
     "fieldModifications": []
 }

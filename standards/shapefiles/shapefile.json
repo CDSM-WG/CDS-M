@@ -7,8 +7,10 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
+    "privacy": "?",
     "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "B",
+    "reusability":"E",
+    "interoperability": "D",
+    "domain": "D",
     "description": "https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
 }

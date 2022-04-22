@@ -8,11 +8,20 @@
         "inOrderTo": "?"
     },
     "standards": [
-        { "name": "MDS-provider-trips", "privacy": "E" },
-        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
-        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B" },
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-trips-without-ids-and-route" },
+        { "name": "TOMP-API-journal-entries" },
+        { "name": "TOMP-API-journal-entries-without-bankaccount" },
         { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
         { "name": "KML-Point-and-timestamp" },
-        { "name": "GPX" }
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
     ]
 }

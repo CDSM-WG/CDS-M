@@ -10,6 +10,10 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "GBFS-station-status" },
         { "name": "MDS-provider-stops" },
         { "name": "SPDP-dynamic" }

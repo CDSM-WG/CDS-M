@@ -8,6 +8,10 @@
         "inOrderTo": "allow dynamic fleet size adjustment based on policy"
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-policy-rules" }
     ]
 }

@@ -8,7 +8,11 @@
         "inOrderTo": "enhance the infrastructure and make areas safer and to enable a public debate on this topic."
     },
     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
         { "name": "MDS-provider-status-change", "privacy": "D" },
-        { "name": "MDS-provider-status-change-without-ids", "privacy": "B" }
+        { "name": "MDS-provider-status-change-without-ids", "privacy": "A" }
     ]
 }

@@ -36,10 +36,14 @@
     { "name": "TOMP-available-assets-with-asset-name", "privacy": "C" },
     { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" },
     { "name": "MDS-provider-vehicles", "privacy": "E" },
+    { "name": "MDS-provider-vehicles-without-ids" },
     { "name": "MDS-provider-stops" },
     { "name": "MDS-provider-status-changes", "privacy": "E" },
     { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
-    { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" }
+    { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" },
+    { "name": "shapefile-points" },
+    { "name": "KML-points" },
+    { "name": "SPDP-dynamic" }
   ],
   "termsAndConditions": [
     "BIO", 

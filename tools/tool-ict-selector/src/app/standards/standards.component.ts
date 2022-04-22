@@ -5,7 +5,6 @@ import { MatTableDataSource } from '@angular/material/table'
 import AuthenticationJson from '../../app/_files/authentications.json'
 import { UseCaseService } from '../../services/use-case.service';
 import { ExportService } from 'src/services/export.service'
-import { MatSort } from '@angular/material/sort'
 
 @Component({
   selector: 'app-standards',
@@ -102,6 +101,14 @@ export class StandardsComponent implements OnInit {
       if (standard != undefined) {
         standard[useCase.id] = 'X'
 
+        if( 'mark' in s ) {
+          standard[useCase.id] = s['mark']  
+        }
+
+        if ( 'explanation' in s ) {
+          standard[useCase.id + '_expl'] = s['explanation']
+        }
+
         if ('privacy' in s) {
           let defaultPrivacy = standard['privacy']
           if (this.less(s['privacy'], defaultPrivacy)) {
@@ -117,6 +124,13 @@ export class StandardsComponent implements OnInit {
     )
 
     this.displayedColumns = this.displayedColumns.concat(this.useCases)
+  }
+
+  getExplanation(label: string, element: any){
+    if (label + '_expl' in element){
+      return element[label + '_expl'];
+    }
+    return '';
   }
 
   private collectAuthenticationColumns() {
@@ -210,13 +224,15 @@ export class StandardsComponent implements OnInit {
       + this.getFieldValue(a,'interoperability')
       + this.getFieldValue(a,'domain');
 
-    this.useCases.forEach( u => {
-      if (u in a) {
-        if ( a[u] != '' ) {
-          score = score + 10;
+    if (a['interoperability'] != 'E' && a['interoperability'] != 'D') {
+      this.useCases.forEach( u => {
+        if (u in a) {
+          if ( a[u] != '' ) {
+            score = score + 10;
+          }
         }
-      }
-    } );
+      } );
+    }
 
     a['sortValue'] = score;
     return score;
@@ -300,7 +316,14 @@ export class StandardsComponent implements OnInit {
         'D	Generic domain\n' +
         'E	Completely generic';
     }
-    return '';
+    let result = '';
+    this.useCasesToExport.forEach( x => { if ( x.id === category ) 
+      { 
+        result = 'As a ' + x.story.asA + '\nI would like to ' + x.story.iWouldLikeTo + '\nin order to ' + x.story.inOrderTo; 
+      } 
+    } );
+
+    return result;
   }
 
   onAttributeChanged(event: any, field: string, element: any) {
