@@ -1,5 +1,12 @@
 <mat-tab-group>
     <mat-tab label="Use cases">
+        <div>
+            <label for="privacyOnly">Best privacy choice</label>
+            <input type="checkbox" id="privacyOnly" [checked]="this.privacyOnly" (change)="onChangePrivacyOnly($event)">
+            <br>
+            <label for="allUseCases">Best coverage</label>
+            <input type="checkbox" id="allUseCases" [checked]="this.useAllUseCases" (change)="onChangeAllUsecases($event)">
+        </div>
         <mat-table mat-table [dataSource]="datasource">
             <ng-container matColumnDef="name">
                 <th mat-header-row *matHeaderCellDef class="initialHeader firstColumn"> Name </th>
@@ -17,7 +24,7 @@
             </ng-container>
             <ng-container matColumnDef="privacy">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div [title]="getTitle('privacy')"><span>Privacy</span></div>
+                    <div [title]="getTitle('privacy')"><span>Personal data protection</span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.privacy">{{element.privacy}} </td>
             </ng-container>

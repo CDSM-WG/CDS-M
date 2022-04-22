@@ -6,7 +6,7 @@
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "json-file",
-    "privacy": "?",
+    "privacy": "*",
     "implementationEffort": "B", 
     "reusability":"E",
     "interoperability": "E",

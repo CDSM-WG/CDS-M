@@ -35,7 +35,8 @@
       { "name": "TOMP-available-assets-non-rotating-asset-id" },
       { "name": "MDS-provider-vehicles" },
       { "name": "MDS-provider-status-changes" },
-      { "name": "MDS-provider-status-changes-without-ids" }
+      { "name": "MDS-provider-status-changes-without-ids" },
+      { "name": "MDS-provider-vehicles-without-ids" }
     ],
     "termsAndConditions": [],
     "agreements": [ "DPA" ],

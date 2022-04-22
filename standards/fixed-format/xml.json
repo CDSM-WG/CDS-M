@@ -6,7 +6,7 @@
     "version": "[version]",
     "mediumType": "xml-file",
     "refreshRate": "[refresh rate]",
-    "privacy": "?",
+    "privacy": "*",
     "implementationEffort": "C", 
     "reusability":"E", 
     "interoperability": "E",

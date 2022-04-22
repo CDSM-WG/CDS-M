@@ -20,6 +20,7 @@
         { "name": "MDS-provider-trips-without-ids" },
         { "name": "MDS-provider-status-changes" },
         { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "MDS-provider-vehicles-without-ids" },
         { "name": "OD-Matrix-odz" },
         { "name": "OD-Matrix-matrix" },
         { "name": "KML-Track" },

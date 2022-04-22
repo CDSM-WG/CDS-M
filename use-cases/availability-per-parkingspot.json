@@ -14,7 +14,7 @@
         { "name": "geojson" },
         { "name": "xml" },
         { "name": "GBFS-station-status" },
-        { "name": "GBFS-free-bike-status", "privacy": "A" },
+        { "name": "GBFS-free-bike-status", "data-protection": "A" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
         { "name": "GBFS-vehicle-status", "privacy": "A" },
         { "name": "GBFS-vehicle-status-non-rotating-asset-id", "privacy": "C" },

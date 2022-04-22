@@ -13,7 +13,7 @@ import { ExportService } from 'src/services/export.service'
 })
 export class StandardsComponent implements OnInit {
 
-  static DISP_COLUMNS: any = ['name', 'selected', 'sortValue', 'privacy', 'implE', 'reuse', 'interop', 'domain', 'space'];
+  static DISP_COLUMNS: any = ['name', 'selected', 'sortValue', 'privacy', 'space'];
   static DISP_COLUMNS_AUTH: any = ['name'];
 
   displayedColumns : any[] = ['name', 'selected', 'sortValue', 'privacy', 'implE', 'reuse', 'interop', 'domain', 'space'];
@@ -31,6 +31,9 @@ export class StandardsComponent implements OnInit {
   datasourceAttributes = new MatTableDataSource(this.standards);
 
   useCasesToExport = UseCasesJson;
+
+  useAllUseCases: boolean = true;
+  privacyOnly: boolean = true;
 
   constructor(useCaseService : UseCaseService, exportService: ExportService) {
     useCaseService.useCases.subscribe( (useCaseJson) => {
@@ -74,6 +77,16 @@ export class StandardsComponent implements OnInit {
     this.configureAttributeDataSource();
 
     this.standards = this.sortDataSource(this.standards);
+
+    this.datasource.filterPredicate =
+      (data: any, filter: string) => {
+        let checked = filter==="true";
+        if (checked) {
+          return this.allUseCasesChecked(data);
+        }
+        return true;
+      }
+    this.datasource.filter = "true";
   }
 
   private configureUseCases() {
@@ -109,10 +122,10 @@ export class StandardsComponent implements OnInit {
           standard[useCase.id + '_expl'] = s['explanation']
         }
 
-        if ('privacy' in s) {
+        if ('data-protection' in s) {
           let defaultPrivacy = standard['privacy']
-          if (this.less(s['privacy'], defaultPrivacy)) {
-            standard['privacy'] = s['privacy']
+          if (this.less(s['data-protection'], defaultPrivacy)) {
+            standard['privacy'] = s['data-protection']
           }
         }
 
@@ -218,17 +231,20 @@ export class StandardsComponent implements OnInit {
   }
 
   private evaluateStandard(a: any) {
-    let score = this.getFieldValue(a,'privacy')
-      + this.getFieldValue(a,'implementationEffort')
+    let score = this.getFieldValue(a,'privacy');
+
+    if (!this.privacyOnly) {
+      score = score + this.getFieldValue(a,'implementationEffort')
       + this.getFieldValue(a,'reusability')
       + this.getFieldValue(a,'interoperability')
       + this.getFieldValue(a,'domain');
+    }
 
     if (a['interoperability'] != 'E' && a['interoperability'] != 'D') {
       this.useCases.forEach( u => {
         if (u in a) {
           if ( a[u] != '' ) {
-            score = score + 10;
+            score = score + 2;
           }
         }
       } );
@@ -240,7 +256,16 @@ export class StandardsComponent implements OnInit {
 
   private getFieldValue(a: any, field: string) {
     if (field in a) {
-      return 70 - a[field].charCodeAt(0);
+      let value = a[field];
+      let bonus = 0;
+      if (value === 'A' || value === 'B') {
+        bonus = 10;
+      }
+      let charValue = 70 - a[field].charCodeAt(0);
+      if (!(value in ['A','B','C','D', 'E'])){
+        charValue = 0;
+      }
+      return charValue + bonus;
     }
     return 0;
   }
@@ -333,4 +358,51 @@ export class StandardsComponent implements OnInit {
       standard[field] = event.target.value;
     }
   }
+
+  onChangeAllUsecases(event: any) {
+    this.useAllUseCases = event.target.checked;
+    this.datasource.filter = String(this.useAllUseCases);
+  }
+
+  onChangePrivacyOnly(event: any) {
+    this.privacyOnly = event.target.checked;
+    if( this.privacyOnly ) {
+      this.removeColumn('implE');
+      this.removeColumn('reuse');
+      this.removeColumn('interop');
+      this.removeColumn('domain');
+    }
+    else {
+      this.displayedColumns.splice(4, 0, 'domain');
+      this.displayedColumns.splice(4, 0, 'interop');
+      this.displayedColumns.splice(4, 0, 'reuse');
+      this.displayedColumns.splice(4, 0, 'implE');
+    }
+  }
+
+  removeColumn(columnId: string){
+
+    let index = this.displayedColumns.indexOf(columnId);
+    if ( index >= 0 ) {
+      this.displayedColumns.splice(index, 1);
+    }
+
+  }
+
+  allUseCasesChecked(data: any): boolean {
+    let allFound = true;
+    this.useCases.forEach( s => 
+      {
+        if ( s in data ){
+          if ( data[s] == '' ){
+            allFound = false;
+          }
+        }
+        else {
+          allFound = false;
+        }
+      });
+    return allFound;
+  }
 }
+
