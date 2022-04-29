@@ -1,5 +1,6 @@
 {
-    "type": "processing",
-    "name": "pseudonymization",
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "type": "processingCondition",
+    "name": "pseudonymization", 
+    "conflictsWhenNotMet": [ "reveals_personal_trip_data" ],
+    "description": "the incoming data must be pseudonymized, but with replacing personal related information, the personal movements can be distracted after all."
 }

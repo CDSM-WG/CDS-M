@@ -1,5 +1,5 @@
 {
-    "type": "standards",
+    "type": "file",
     "name": "GPX",
     "exchangeType": "file-based", 
     "version": "1.1",

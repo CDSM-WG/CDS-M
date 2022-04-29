@@ -1,10 +1,11 @@
 {
+    "type": "standard",
     "name": "TOMP-API-operating-calendar",
     "exchangeType": "API", 
     "part": "/operator/operating-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Operating-hours-and-calendar",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "json-file",
     "privacy": "A",
     "implementationEffort": "C", 

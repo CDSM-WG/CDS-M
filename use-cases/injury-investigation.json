@@ -14,5 +14,10 @@
         { "name": "xml" },
         { "name": "MDS-provider-status-change" },
         { "name": "MDS-provider-status-change-without-ids" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

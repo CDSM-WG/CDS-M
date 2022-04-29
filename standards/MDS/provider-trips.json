@@ -1,9 +1,9 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-trips",
     "exchangeType": "API", 
     "part": "/trips",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "version": "[version]",
     "mediumType": "API",
 

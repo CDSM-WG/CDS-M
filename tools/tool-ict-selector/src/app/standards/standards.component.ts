@@ -1,5 +1,6 @@
 import { Component, ContentChild, HostListener, OnInit } from '@angular/core'
 import StandardsJson from '../../app/_files/standards.json'
+import ConflictJson from '../../app/_files/conflicts.json'
 import UseCasesJson from '../../app/_files/use-cases.json'
 import { MatTableDataSource } from '@angular/material/table'
 import AuthenticationJson from '../../app/_files/authentications.json'
@@ -13,10 +14,10 @@ import { ExportService } from 'src/services/export.service'
 })
 export class StandardsComponent implements OnInit {
 
-  static DISP_COLUMNS: any = ['name', 'selected', 'sortValue', 'privacy', 'space'];
+  static DISP_COLUMNS: any = ['name', 'selected', 'conflict', 'sortValue', 'privacy', 'space'];
   static DISP_COLUMNS_AUTH: any = ['name'];
 
-  displayedColumns : any[] = ['name', 'selected', 'sortValue', 'privacy', 'implE', 'reuse', 'interop', 'domain', 'space'];
+  displayedColumns : any[] = ['name', 'selected', 'conflict', 'sortValue', 'privacy', 'implE', 'reuse', 'interop', 'domain', 'space'];
   useCases : any[] = [];
 
   displayedColumnsAuthentication : any[] = ['name'];
@@ -34,6 +35,8 @@ export class StandardsComponent implements OnInit {
 
   useAllUseCases: boolean = true;
   privacyOnly: boolean = true;
+
+  conflicts = ConflictJson;
 
   constructor(useCaseService : UseCaseService, exportService: ExportService) {
     useCaseService.useCases.subscribe( (useCaseJson) => {
@@ -94,13 +97,17 @@ export class StandardsComponent implements OnInit {
       this.useCasesToExport.forEach((useCase: any) => {
         standard[useCase.id] = ''
         standard['selected'] = false
+        standard['conflict'] = false
+        if ('conflicts' in standard) {
+          standard['conflict'] = true
+        }
       })
 
       let exchangeType = standard.exchangeType
 
       AuthenticationJson.forEach((auth: any) => {
         auth.allowedExchangeTypes.forEach((element: any) => {
-          if (element == exchangeType) {
+          if (exchangeType.indexOf(element) >= 0) {
             standard[auth.name] = false
           }
         })
@@ -122,10 +129,10 @@ export class StandardsComponent implements OnInit {
           standard[useCase.id + '_expl'] = s['explanation']
         }
 
-        if ('data-protection' in s) {
+        if ('dataProtection' in s) {
           let defaultPrivacy = standard['privacy']
-          if (this.less(s['data-protection'], defaultPrivacy)) {
-            standard['privacy'] = s['data-protection']
+          if (this.less(s['dataProtection'], defaultPrivacy)) {
+            standard['privacy'] = s['dataProtection']
           }
         }
 
@@ -348,6 +355,11 @@ export class StandardsComponent implements OnInit {
       } 
     } );
 
+    this.standards.forEach( s => { 
+      if (s.name === category && ('description' in s)) { 
+        result = String(s['description']); 
+      } } );
+
     return result;
   }
 
@@ -362,6 +374,7 @@ export class StandardsComponent implements OnInit {
   onChangeAllUsecases(event: any) {
     this.useAllUseCases = event.target.checked;
     this.datasource.filter = String(this.useAllUseCases);
+    this.standards = this.sortDataSource(this.standards);
   }
 
   onChangePrivacyOnly(event: any) {
@@ -378,6 +391,7 @@ export class StandardsComponent implements OnInit {
       this.displayedColumns.splice(4, 0, 'reuse');
       this.displayedColumns.splice(4, 0, 'implE');
     }
+    this.standards = this.sortDataSource(this.standards);
   }
 
   removeColumn(columnId: string){
@@ -403,6 +417,49 @@ export class StandardsComponent implements OnInit {
         }
       });
     return allFound;
+  }
+
+  getConflictDescription(data: any) {
+    let description = "";
+    if (data.conflict) {
+      this.conflicts.forEach( (c) => {
+          if( data.conflicts.indexOf(c.name) === 0 ){
+            description = description + "Conflict: " + c.reason + 
+              "\nMitigation using agreements: " + this.formatMitigation(c.agreements) +
+              "\nMitigation using authentication: " + this.formatMitigation(c.authenticationMethods) +
+              "\nMitigation using transport conditions: " + this.formatMitigation(c.transportConditions) +
+              "\n* = Required";
+          }
+        }
+      );
+    };
+    return description;
+  }
+
+  formatMitigation(mitigationActions: any) {
+    let foundRequiredOnes = false;
+    let result = "\n";
+
+    mitigationActions.forEach( (m: any) => {
+      let r = (('isRequired' in m && m.isRequired)?"*":"");
+      result = result + " - " + m.buildingBlock + r + "\n";
+      if ( r != "") {
+        foundRequiredOnes = true;
+      }
+    });
+
+    if( !foundRequiredOnes ) {
+      result = "\n(at least one of these)" + result;
+    }
+    return result;
+  }
+
+  getHeader(standard: any){
+    let result = standard.name;
+    if ('externalReference' in standard) {
+      result = "<a href='" + String(standard['externalReference']) + "'>" + standard.name + "</a>";
+    }
+    return result;
   }
 }
 

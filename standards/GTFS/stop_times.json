@@ -6,6 +6,7 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",

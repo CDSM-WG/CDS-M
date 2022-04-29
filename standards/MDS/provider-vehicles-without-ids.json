@@ -1,9 +1,10 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-vehicles-without-ids",
+    "description": "MDS provider vehicles endpoint with one adjustment: the device_id and vehicle_id are removed from the result",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "C",

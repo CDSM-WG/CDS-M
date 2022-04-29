@@ -14,5 +14,10 @@
         { "name": "xml" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-rules" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

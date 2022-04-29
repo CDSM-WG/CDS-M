@@ -1,9 +1,10 @@
 {
-    "type": "standards",
-    "name": "MDS-provider-trips-without-ids",
+    "type": "standard",
+    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+    "description": "MDS provider trips endpoint with one adjustment: the results don't contain device_id and vehicle_id, secondly, the route's start and end locations are blurred",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",

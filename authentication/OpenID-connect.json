@@ -1,6 +1,6 @@
 {
-    "type": "authentication",
+    "type": "authenticationCondition",
     "name": "OpenID-connect",
-    "annotation": "OpenID authentication",
+    "description": "OpenID authentication",
     "allowedExchangeTypes": [ "API" ]
 }

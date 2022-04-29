@@ -14,5 +14,10 @@
         { "name": "xml" },
         { "name": "MDS-policy-rules" },
         { "name": "TOMP-API-regions" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

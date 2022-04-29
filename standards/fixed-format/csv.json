@@ -1,15 +1,17 @@
 {
-    "type": "standards",
+    "type": "file",
     "exchangeType": "file-based",
-    "name":"csv",
-    "part": "[complete url]",
-    "version": "[version]",
-    "refreshRate": "[refresh rate]",
     "mediumType": "csv-file",
+
+    "name":"csv",
+    "schema": "[comma seperated field list]",
+
+    "url": "[complete url]",
+    "refreshRate": "[refresh rate]",
+
     "privacy": "*",
     "implementationEffort": "A", 
     "reusability":"E",
     "interoperability": "E",
-    "domain": "E",
-    "schema": "[comma seperated field list]"
+    "domain": "E"
 }

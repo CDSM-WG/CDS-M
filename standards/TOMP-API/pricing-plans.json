@@ -1,10 +1,11 @@
 {
+    "type": "standard",
     "name": "TOMP-API-pricing-plans",
     "exchangeType": "API", 
     "part": "/operator/operator-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Pricing-information",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "json-file",
     "privacy": "A",
     "implementationEffort": "C", 

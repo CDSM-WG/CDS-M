@@ -15,5 +15,10 @@
         { "name": "MDS-provider-trips-without-ids" },
         { "name": "MDS-provider-status-changes" },
         { "name": "MDS-provider-status-changes-without-ids" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

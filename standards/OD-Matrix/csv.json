@@ -1,6 +1,6 @@
 {
-    "type": "standards",
-    "name": "OD-Matrix",
+    "type": "standard",
+    "name": "OD-Matrix-csv",
     "exchangeType": "file-based", 
     "part": "semicolon-csv",
     "refreshRate": "[refresh rate]",
@@ -8,5 +8,6 @@
     "implementationEffort": "C", 
     "reusability":"D", 
     "interoperability": "B",
-    "schema": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... "
+    "schema": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... ",
+    "url": "[url]"
 }

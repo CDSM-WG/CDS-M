@@ -14,8 +14,13 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
-        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "A"},
-        { "name": "MDS-provider-trips", "privacy": "E" }
-    ]
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A"},
+        { "name": "MDS-provider-trips", "dataProtection": "E" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

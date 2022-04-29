@@ -39,12 +39,10 @@
       { "name": "MDS-provider-vehicles-without-ids" }
     ],
     "termsAndConditions": [],
-    "agreements": [ "DPA" ],
-    "sharing": [ ],
-    "transport": [ "TLS-1.1", "TLS-1.2", "TLS-1.3" ],
-    "processing": [ "max-time-before-processing", "remove-raw-data-after-aggregate", "max-storage", "unlimited-storage" ],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
     "archive": [],
-    "certificates": [],
     "tags": [
       "public-space:noisance",
       "mode:bike",

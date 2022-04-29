@@ -1,6 +1,6 @@
 {
-    "type": "authentication",
+    "type": "authenticationCondition",
     "name": "OAuth",
-    "annotation": "OAuth authentication",
+    "description": "OAuth authentication",
     "allowedExchangeTypes": [ "API" ]
 }

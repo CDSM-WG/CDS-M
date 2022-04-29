@@ -1,5 +1,0 @@
-{
-    "name": "md5-encrypted",
-    "encryption": "MD5", 
-    "conflicts": [ "security_not_updated" ]
-}

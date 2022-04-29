@@ -77,3 +77,21 @@ input.invisible {
 input[type='text'] {
     width: 80px;
 }
+
+i.invisible {
+    visibility: hidden;
+}
+
+i.visible {
+    visibility: visible;
+}
+
+.cdsm-selection {
+    position: absolute;
+    z-index: 100;
+    left: 20px;
+    top: 28px;
+    background-color: red;
+    border-radius: 8px;
+    padding: 5px;
+}

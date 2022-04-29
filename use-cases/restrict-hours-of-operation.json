@@ -14,5 +14,10 @@
         { "name": "xml" },
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

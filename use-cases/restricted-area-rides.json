@@ -17,5 +17,10 @@
         { "name": "MDS-policy-rules" },
         { "name": "GBFS-system-regions" },
         { "name": "TOMP-regions" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

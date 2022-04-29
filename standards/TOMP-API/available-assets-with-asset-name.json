@@ -1,10 +1,10 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "TOMP-API-available-assets-with-asset-name",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "json-file",
     "privacy": "C",
     "implementationEffort": "D", 

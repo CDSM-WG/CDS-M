@@ -1,15 +1,17 @@
 {
-    "type": "standards",
-    "name": "json",
+    "type": "file",
     "exchangeType": "file-based", 
-    "part": "[complete url]",
-    "version": "[version]",
-    "refreshRate": "[refresh rate]",
     "mediumType": "json-file",
+
+    "name": "json",
+    "schema": "[complete url of JSON scheme]",
+
+    "url": "[complete url]",
+    "refreshRate": "[refresh rate]",
+
     "privacy": "*",
     "implementationEffort": "B", 
     "reusability":"E",
     "interoperability": "E",
-    "domain": "E",
-    "schema": "[complete url of JSON scheme]"
+    "domain": "E"
 }

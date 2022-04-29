@@ -1,5 +1,5 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "shapefile-points",
     "exchangeType": "file-based", 
     "part": "[complete url]",

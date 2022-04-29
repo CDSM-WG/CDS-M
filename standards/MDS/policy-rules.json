@@ -1,10 +1,10 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-policy-rules",
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
     "part": "/rules/",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "version": "[version]",
     "privacy": "A",
     "implementationEffort": "D", 

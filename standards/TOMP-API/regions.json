@@ -1,10 +1,11 @@
 {
+    "type": "standard",
     "name": "TOMP-API-regions",
     "exchangeType": "API", 
     "part": "/operator/regions",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Regions",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "json-file",
     "privacy": "A",
     "implementationEffort": "C", 

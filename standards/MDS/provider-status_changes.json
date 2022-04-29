@@ -1,10 +1,10 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-status-changes",
     "exchangeType": "API", 
     "part": "/status_changes",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",

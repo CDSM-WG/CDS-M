@@ -1,4 +1,8 @@
 {
+    "type": "archiveCondition",
+    "description": "specifies when the data has to be removed from the processor",
     "name": "storage-max",
-    "days": "[days]"
+    "unit": "[unit: hours|days|weeks|months|years]",
+    "value": "[number of units]",
+    "returnToSender": "[Return data to source: true|false]"
 }

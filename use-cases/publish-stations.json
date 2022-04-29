@@ -12,5 +12,10 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

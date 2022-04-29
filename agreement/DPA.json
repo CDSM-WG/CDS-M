@@ -1,7 +1,7 @@
 {
-    "type": "contract",
+    "type": "agreement",
     "name": "DPA",
-    "template": "https://gdpr.eu/data-processing-agreement/",
+    "externalReference": "https://gdpr.eu/data-processing-agreement/",
     "parameters": [ 
         { "Company": "[Company]", "order": [ 1 ] },
         { "Data Processor": "[Data Processor and parties]", "order": [ 2 ] },

@@ -13,5 +13,10 @@
         { "name": "geojson" },
         { "name": "xml" },
         { "name": "MDS-policy-rules" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

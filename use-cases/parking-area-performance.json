@@ -22,5 +22,10 @@
         { "name": "TOMP-available-assets" },
         { "name": "SPDP-dynamic" },
         { "name": "SPDP-static" }
-    ] 
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

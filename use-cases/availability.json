@@ -28,42 +28,28 @@
     { "name": "json" },
     { "name": "xml" },
     { "name": "GBFS-free-bike-status" },
-    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
+    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
     { "name": "GBFS-vehicle-status" },
-    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "privacy": "C" },
+    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
     { "name": "GBFS-station-status" },
     { "name": "TOMP-available-assets" },
-    { "name": "TOMP-available-assets-with-asset-name", "privacy": "C" },
-    { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" },
-    { "name": "MDS-provider-vehicles", "privacy": "E" },
+    { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+    { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles", "dataProtection": "E" },
     { "name": "MDS-provider-vehicles-without-ids" },
     { "name": "MDS-provider-stops" },
-    { "name": "MDS-provider-status-changes", "privacy": "E" },
-    { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
-    { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" },
+    { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+    { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
     { "name": "shapefile-points" },
     { "name": "KML-points" },
     { "name": "SPDP-dynamic" }
   ],
-  "termsAndConditions": [
-    "BIO", 
-    "privacy-by-design"
-  ],
-  "agreements": [
-    "DPA"
-  ],
-  "transport": [
-    "TLS-1.1",
-    "TLS-1.2",
-    "TLS-1.3"
-  ],
-  "processing": [
-    "max-time-before-processing",
-    "remove-raw-data-after-aggregate",
-    "max-storage",
-    "unlimited-storage"
-  ],
-  "archive": [], 
+  "termsAndConditions": [],
+  "agreements": [],
+  "transport": [],
+  "processing": [],
+  "archive": [],
   "tags": [
     "public-space:distribution",
     "assets:availability",

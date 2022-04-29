@@ -21,5 +21,10 @@
         { "name": "GBFS-vehicle-status" },
         { "name": "GBFS-free-bike-status" },
         { "name": "TOMP-API-available-assets" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

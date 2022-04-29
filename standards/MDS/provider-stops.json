@@ -1,9 +1,9 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-stops",
     "exchangeType": "API", 
     "part": "/stops",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "version": "[version]",
     "mediumType": "API",
     "privacy": "A",

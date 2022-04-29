@@ -17,5 +17,10 @@
         { "name": "KML-Points" },
         { "name": "GPX" },
         { "name": "shapefile-points" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

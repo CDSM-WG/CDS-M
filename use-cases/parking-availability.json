@@ -17,5 +17,10 @@
         { "name": "GBFS-station-status" },
         { "name": "MDS-provider-stops" },
         { "name": "SPDP-dynamic" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

@@ -16,8 +16,13 @@
         { "name": "xml" },
         { "name": "TOMP-API-journal-entries" },
         { "name": "TOMP-API-journal-entries-without-bankaccount" },
-        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
-        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "E" },
-        { "name": "MDS-provider-trips", "privacy": "E" }
-    ]
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "E" },
+        { "name": "MDS-provider-trips", "dataProtection": "E" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

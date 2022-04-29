@@ -21,8 +21,10 @@
         { "name": "MDS-provider-status-changes" },
         { "name": "MDS-provider-status-changes-without-ids" },
         { "name": "MDS-provider-vehicles-without-ids" },
-        { "name": "OD-Matrix-odz" },
+        { "name": "ODyZee" },
         { "name": "OD-Matrix-matrix" },
+        { "name": "OD-Matrix-csv" },
+        { "name": "OD-Matrix-geojson" },
         { "name": "KML-Track" },
         { "name": "KML-Point-and-timestamp" },
         { "name": "GPX" },
@@ -33,5 +35,10 @@
         { "name": "GBFS-vehicle-status-non-rotating-asset-id" },
         { "name": "TOMP-available-assets" },
         { "name": "TOMP-available-assets-non-rotating-asset-id" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

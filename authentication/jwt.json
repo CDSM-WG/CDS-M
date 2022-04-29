@@ -1,6 +1,6 @@
 {
-    "type": "authentication",
+    "type": "authenticationCondition",
     "name": "jwt",
-    "annotation": "Java Web Token authentication",
+    "description": "Java Web Token authentication",
     "allowedExchangeTypes": [ "API" ]
 }

@@ -1,5 +1,5 @@
 {
-    "type": "transport",
+    "type": "transportCondition",
     "name": "TLS-1.3",
     "encryption": "TLS",
     "version": "1.3"

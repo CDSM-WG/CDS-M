@@ -1,0 +1,30 @@
+{
+    "type": "standard",
+    "name": "MDS-provider-trips-without-ids-only-start-end",
+    "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is contains only start and endpoint",
+    "exchangeType": "API", 
+    "version": "[version]",
+    "url": "[baseUrl]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
+    "part": "trips",
+    "fieldModifications": [
+        {
+            "field": "trips[].device_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].vehicle_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].route",
+            "exception": "limited"
+        }
+    ]
+}

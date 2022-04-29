@@ -1,10 +1,10 @@
 {
-    "name": "TOMP-API-alerts",
+    "name": "TOMP-API-alert",
     "part": "/operator/alerts",
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Alerts",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "A",

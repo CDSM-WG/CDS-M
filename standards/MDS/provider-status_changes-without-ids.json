@@ -1,9 +1,10 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-status_changes-without-ids",
+    "description": "MDS provider status_changes endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",

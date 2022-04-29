@@ -26,5 +26,10 @@
         { "name": "shapefile-tracks" },
         { "name": "TOMP-available-assets" },
         { "name": "TOMP-available-assets-non-rotating-asset-id" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

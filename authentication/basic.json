@@ -1,6 +1,6 @@
 {
-    "type": "authentication",
+    "type": "authenticationCondition",
     "name": "basic",
-    "annotation": "username/password authentication",
-    "allowedExchangeTypes": [ "API", "file-based" ]
+    "description": "username/password authentication",
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ]
 }

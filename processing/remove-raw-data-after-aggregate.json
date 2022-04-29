@@ -1,5 +1,6 @@
 {
-    "type": "processing",
+    "type": "processingCondition",
     "name": "remove-raw-data-after-aggregate",
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "description": "the data must be aggregated during the processing",
+    "conflictsWhenNotMet": [ "unlimited_storage_in_process" ]
 }

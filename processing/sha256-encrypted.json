@@ -1,0 +1,7 @@
+{
+    "type": "processingCondition",
+    "name": "sha256-encrypted",
+    "encryption": "SHA256",
+    "description": "The stored personal related data must be encrypted with SHA256",
+    "conflictsWhenNotMet": [ "security_not_updated" ]
+}

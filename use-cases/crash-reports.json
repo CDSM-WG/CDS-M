@@ -12,7 +12,12 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-provider-status-change", "privacy": "D" },
-        { "name": "MDS-provider-status-change-without-ids", "privacy": "A" }
-    ]
+        { "name": "MDS-provider-status-change", "dataProtection": "D" },
+        { "name": "MDS-provider-status-change-without-ids", "dataProtection": "A" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

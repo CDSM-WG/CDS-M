@@ -1,5 +1,5 @@
 {
-    "type": "transport",
+    "type": "transportCondition",
     "name": "content-PKI-encrypted",
     "encryption": "PKI"
 }

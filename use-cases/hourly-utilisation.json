@@ -20,5 +20,10 @@
         { "name": "KML-Point-and-timestamp" },
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

@@ -1,11 +1,12 @@
 {
-    "type": "standards",
-    "name": "OD-Matrix",
+    "type": "standard",
+    "name": "OD-Matrix-geojson",
     "exchangeType": "file-based", 
     "part": "geojson",
     "refreshRate": "[refresh rate]",
     "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "B",
-    "mediumType": "json"
+    "mediumType": "json",
+    "url": "[url]"
 }

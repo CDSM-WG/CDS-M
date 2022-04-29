@@ -1,5 +1,7 @@
 {
-    "type": "processing",
+    "type": "processingCondition",
     "name": "max-time-before-processing",
-    "days": "[days]"
+    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+    "days": "[days]", 
+    "conflictsWhenNotMet": [ "unlimited_storage_in_process" ]
 }

@@ -17,5 +17,10 @@
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids-and-route" },
         { "name": "MDS-provider-trips-without-ids" }
-    ]
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

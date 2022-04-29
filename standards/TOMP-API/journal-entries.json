@@ -1,10 +1,11 @@
 {
+    "type": "standard",
     "name": "TOMP-API-journal-entries",
     "part": "/payment/journal-entry",
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[baseUrl]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "C",
