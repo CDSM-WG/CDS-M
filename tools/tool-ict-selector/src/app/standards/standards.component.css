@@ -95,3 +95,11 @@ i.visible {
     border-radius: 8px;
     padding: 5px;
 }
+
+.weight {
+    width: 20px !important;
+    vertical-align: bottom;
+    border-width: 0px;
+    background-color: lightgray;
+    margin-right: 2px;
+}

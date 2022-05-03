@@ -4,8 +4,10 @@
     "exchangeType": "file-based", 
     "part": "geojson",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
-    "reusability":"E", 
+    "privacy": "A",
+    "domain": "B",
+    "implementationEffort": "C", 
+    "reusability":"C", 
     "interoperability": "B",
     "mediumType": "json",
     "url": "[url]"

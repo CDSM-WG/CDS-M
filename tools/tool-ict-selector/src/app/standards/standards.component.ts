@@ -38,6 +38,12 @@ export class StandardsComponent implements OnInit {
 
   conflicts = ConflictJson;
 
+  privacyWeight = 1;
+  costsWeight = 1;
+  reusabilityWeight = 1;
+  interoperabilityWeight = 1;
+  domainWeight = 1;
+
   constructor(useCaseService : UseCaseService, exportService: ExportService) {
     useCaseService.useCases.subscribe( (useCaseJson) => {
       this.init(useCaseJson);
@@ -60,6 +66,9 @@ export class StandardsComponent implements OnInit {
     if (useCaseJson == null) {
       return;
     }
+
+    this.useAllUseCases = true;
+    this.privacyOnly = true;
 
     this.useCasesToExport = useCaseJson;
     this.standards = StandardsJson;
@@ -238,13 +247,15 @@ export class StandardsComponent implements OnInit {
   }
 
   private evaluateStandard(a: any) {
-    let score = this.getFieldValue(a,'privacy');
+    console.log(a);
+    let score = this.privacyWeight * this.getFieldValue(a,'privacy');
 
     if (!this.privacyOnly) {
-      score = score + this.getFieldValue(a,'implementationEffort')
-      + this.getFieldValue(a,'reusability')
-      + this.getFieldValue(a,'interoperability')
-      + this.getFieldValue(a,'domain');
+      score = score 
+      + this.costsWeight * this.getFieldValue(a,'implementationEffort')
+      + this.reusabilityWeight * this.getFieldValue(a,'reusability')
+      + this.interoperabilityWeight * this.getFieldValue(a,'interoperability')
+      + this.domainWeight * this.getFieldValue(a,'domain');
     }
 
     if (a['interoperability'] != 'E' && a['interoperability'] != 'D') {
@@ -264,15 +275,11 @@ export class StandardsComponent implements OnInit {
   private getFieldValue(a: any, field: string) {
     if (field in a) {
       let value = a[field];
-      let bonus = 0;
-      if (value === 'A' || value === 'B') {
-        bonus = 10;
-      }
       let charValue = 70 - a[field].charCodeAt(0);
-      if (!(value in ['A','B','C','D', 'E'])){
+      if ('ABCDE'.indexOf(value) === -1) {
         charValue = 0;
       }
-      return charValue + bonus;
+      return charValue;
     }
     return 0;
   }
@@ -386,21 +393,19 @@ export class StandardsComponent implements OnInit {
       this.removeColumn('domain');
     }
     else {
-      this.displayedColumns.splice(4, 0, 'domain');
-      this.displayedColumns.splice(4, 0, 'interop');
-      this.displayedColumns.splice(4, 0, 'reuse');
-      this.displayedColumns.splice(4, 0, 'implE');
+      this.displayedColumns.splice(5, 0, 'domain');
+      this.displayedColumns.splice(5, 0, 'interop');
+      this.displayedColumns.splice(5, 0, 'reuse');
+      this.displayedColumns.splice(5, 0, 'implE');
     }
     this.standards = this.sortDataSource(this.standards);
   }
 
   removeColumn(columnId: string){
-
     let index = this.displayedColumns.indexOf(columnId);
     if ( index >= 0 ) {
       this.displayedColumns.splice(index, 1);
     }
-
   }
 
   allUseCasesChecked(data: any): boolean {
@@ -454,12 +459,45 @@ export class StandardsComponent implements OnInit {
     return result;
   }
 
-  getHeader(standard: any){
-    let result = standard.name;
-    if ('externalReference' in standard) {
-      result = "<a href='" + String(standard['externalReference']) + "'>" + standard.name + "</a>";
+  privacyChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.privacyWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
     }
-    return result;
+  }
+  costsChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.costsWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
+    }
+  }
+  reusabilityChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.reusabilityWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
+    }
+  }
+  interoperabilityChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.interoperabilityWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
+    }
+  }
+  domainChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.domainWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
+    }
   }
 }
 

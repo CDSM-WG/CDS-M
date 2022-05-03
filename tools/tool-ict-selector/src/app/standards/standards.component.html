@@ -12,7 +12,8 @@
             <ng-container matColumnDef="name">
                 <th mat-header-row *matHeaderCellDef class="initialHeader firstColumn"> Name </th>
                 <td mat-cell *matCellDef="let element" [title]="getTitle(element.name)">
-                    <a href="{{element.externalReference}}">{{element.name}}</a>
+                    <a *ngIf="!!element.externalReference" target="_new" href="{{element.externalReference}}">{{element.name}}</a>
+                    <div *ngIf="!element.externalReference">{{element.name}}</div>
                 </td>
             </ng-container>
             <ng-container matColumnDef="selected">
@@ -22,7 +23,7 @@
                 </td>
             </ng-container>
             <ng-container matColumnDef="conflict">
-                <th mat-header-row *matHeaderCellDef class="initialHeader">&nbsp;</th>
+                <th mat-header-row *matHeaderCellDef class="initialHeader">&nbsp;&nbsp;</th>
                 <td mat-cell *matCellDef="let element" [title]="getConflictDescription(element)">
                     <i class="fa fa-exclamation-triangle" [class]="element['conflict']?'visible':'invisible'"></i>
                 </td>
@@ -33,33 +34,33 @@
             </ng-container>
             <ng-container matColumnDef="privacy">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div [title]="getTitle('privacy')"><span>Personal data protection</span></div>
+                    <div [title]="getTitle('privacy')"><span><input type="text" class="weight" [value]="privacyWeight" (change)="privacyChanged($event)">Personal data protection</span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.privacy">{{element.privacy}} </td>
             </ng-container>
             <ng-container matColumnDef="implE">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div [title]="getTitle('implementation')"><span>Costs</span></div>
+                    <div [title]="getTitle('implementation')"><span><input type="text" class="weight" [value]="costsWeight"  (change)="costsChanged($event)">Costs </span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.implementationEffort">
                     {{element.implementationEffort}} </td>
             </ng-container>
             <ng-container matColumnDef="reuse">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div [title]="getTitle('reuse')"><span>Reusability</span></div>
+                    <div [title]="getTitle('reuse')"><span><input type="text" class="weight" [value]="reusabilityWeight" (change)="reusabilityChanged($event)">Reusability </span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.reusability">{{element.reusability}}</td>
             </ng-container>
             <ng-container matColumnDef="interop">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div [title]="getTitle('interop')"><span>Interopability</span></div>
+                    <div [title]="getTitle('interop')"><span><input type="text" class="weight" [value]="interoperabilityWeight" (change)="interoperabilityChanged($event)">Interopability </span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.interoperability">{{element.interoperability}}
                 </td>
             </ng-container>
             <ng-container matColumnDef="domain">
                 <th mat-header-row *matHeaderCellDef class="rotate">
-                    <div [title]="getTitle('domain')"><span>Domain specific</span></div>
+                    <div [title]="getTitle('domain')"><span><input type="text" class="weight" [value]="domainWeight" (change)="domainChanged($event)">Domain specific </span></div>
                 </th>
                 <td mat-cell *matCellDef="let element" [ngClass]="element.domain">{{element.domain}}
                 </td>
