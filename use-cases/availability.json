@@ -40,6 +40,8 @@
     { "name": "MDS-provider-stops" },
     { "name": "MDS-provider-status-changes", "dataProtection": "E" },
     { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
     { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
     { "name": "shapefile-points" },
     { "name": "KML-points" },

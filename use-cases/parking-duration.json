@@ -36,7 +36,7 @@
       { "name": "MDS-provider-vehicles" },
       { "name": "MDS-provider-status-changes" },
       { "name": "MDS-provider-status-changes-without-ids" },
-      { "name": "MDS-provider-vehicles-without-ids" }
+      { "name": "MDS-provider-vehicles-non-booked" }
     ],
     "termsAndConditions": [],
     "agreements": [],

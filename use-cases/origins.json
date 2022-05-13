@@ -21,6 +21,7 @@
         { "name": "MDS-provider-status-changes" },
         { "name": "MDS-provider-status-changes-without-ids" },
         { "name": "MDS-provider-vehicles-without-ids" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
         { "name": "MDS-provider-vehicles-without-ids-non-booked"},
         { "name": "ODyZee" },
         { "name": "OD-Matrix-matrix" },

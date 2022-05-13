@@ -1019,7 +1019,7 @@
     "url": "[baseUrl]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "C",
+    "privacy": "A",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -1117,7 +1117,7 @@
     "implementationEffort": "C", 
     "reusability":"C", 
     "interoperability": "A",
-    "externalReference": "https://github.com/TOMP-WG/OD-MATRIX-SPECIFICATION",
+    "externalReference": "https://github.com/TOMP-WG/ODyZee",
     "url": "[url]"
 }, 
 {
@@ -1268,7 +1268,7 @@
     "version": "[version]",
     "url": "[baseUrl]",
     "mediumType": "json-file",
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "B",

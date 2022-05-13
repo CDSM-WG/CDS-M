@@ -22,6 +22,7 @@
         { "name": "TOMP-API-journal-entries", "dataProtection": "E" },
         { "name": "TOMP-API-journal-entries-without-bankaccount", "dataProtection": "D" },        
         { "name": "MDS-provider-vehicles-without-ids-non-booked" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
         { "name": "ODyZee" },
         { "name": "OD-Matrix-matrix" },
         { "name": "OD-Matrix-csv" },
