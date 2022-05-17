@@ -7,8 +7,8 @@
 
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "description": "Standard GBFS json file",
-    "version": "[1.1 < version < 3.0]",
-    "url": "[baseUrl]",
+    "version": "[1.1 < version < 2.1]",
+    "url": "[url]",
     "refreshRate": "[refresh rate]",
 
     "privacy": "A",
@@ -17,5 +17,6 @@
     "interoperability": "A",
     "domain": "B",
 
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }

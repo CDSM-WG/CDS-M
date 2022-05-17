@@ -4,7 +4,7 @@
     "description": "MDS provider status_changes endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.",
     "exchangeType": "API", 
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",
@@ -22,5 +22,7 @@
             "field": "status_changes[].vehicle_id",
             "exception": "removed"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }

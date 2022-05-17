@@ -4,7 +4,7 @@
     "exchangeType": "API", 
     "part": "/status_changes",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",
@@ -24,6 +24,7 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
-
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }

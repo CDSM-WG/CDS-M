@@ -4,7 +4,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "system_alerts.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -13,5 +13,7 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }

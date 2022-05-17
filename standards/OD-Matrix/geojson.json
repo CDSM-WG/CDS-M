@@ -10,5 +10,6 @@
     "reusability":"C", 
     "interoperability": "B",
     "mediumType": "json",
-    "url": "[url]"
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]"
 }

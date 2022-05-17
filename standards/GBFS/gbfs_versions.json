@@ -5,7 +5,7 @@
     "part": "gbfs_versions.json",
     "description": "Standard GBFS json file",
     "version": "[version >= 1.1]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -13,5 +13,7 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }

@@ -11,5 +11,6 @@
     "reusability":"C", 
     "interoperability": "A",
     "externalReference": "https://github.com/TOMP-WG/ODyZee",
-    "url": "[url]"
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]"
 }

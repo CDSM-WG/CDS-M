@@ -11,5 +11,6 @@
     "domain": "B",
     "interoperability": "B",
     "schema": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... ",
-    "url": "[url]"
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]"
 }

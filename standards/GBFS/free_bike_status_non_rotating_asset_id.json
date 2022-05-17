@@ -7,9 +7,9 @@
 
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "description": "Standard GBFS json file with one adjustment: the bike_id doesn't rotate (causing GDPR issues).",
-    "version": "[version < 3.0]",
+    "version": "[version < 2.1]",
 
-    "url": "[baseUrl]",
+    "url": "[url]",
     "refreshRate": "[refresh rate]",
 
     "privacy": "C",
@@ -26,5 +26,6 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]"
 }

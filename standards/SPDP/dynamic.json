@@ -12,5 +12,6 @@
     "reusability":"D",
     "interoperability": "C",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }

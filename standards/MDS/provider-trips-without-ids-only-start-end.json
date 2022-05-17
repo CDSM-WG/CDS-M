@@ -4,7 +4,7 @@
     "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is contains only start and endpoint",
     "exchangeType": "API", 
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "A",
@@ -26,5 +26,7 @@
             "field": "trips[].route",
             "exception": "limited"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }

@@ -10,5 +10,6 @@
     "domain": "B",
     "interoperability": "B",
     "mediumType": "ESRI-shapefile",
-    "url": "[url]"
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]"
 }

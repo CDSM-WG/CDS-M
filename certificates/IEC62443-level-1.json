@@ -1,0 +1,7 @@
+{
+  "type": "certificates",
+  "name": "IEC62443 - level 1",
+  "requiredCertificate": "IEC62443",
+  "issuer": "ISO", 
+  "externalReference": "https://" 
+}

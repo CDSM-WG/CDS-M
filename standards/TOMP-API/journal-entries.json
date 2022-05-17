@@ -5,7 +5,7 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "C",
@@ -19,5 +19,6 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]"
 }

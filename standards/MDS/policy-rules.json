@@ -4,7 +4,7 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
     "part": "/rules/",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "privacy": "A",
     "implementationEffort": "D", 
@@ -12,5 +12,6 @@
     "interoperability": "A",
     "domain": "A",
     "mediumType": "API",
-    "refreshRate": "0"
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]"
 }

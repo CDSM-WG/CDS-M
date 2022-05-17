@@ -7,7 +7,7 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "privacy": "C",
     "implementationEffort": "D", 
     "reusability":"E", 
@@ -19,5 +19,7 @@
             "field": "vehicles",
             "exception": "only non-booked"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }

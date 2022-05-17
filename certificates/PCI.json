@@ -1,0 +1,7 @@
+{
+  "type": "certificates",
+  "name": "PCI",
+  "requiredCertificate": "PCI",
+  "issuer": "", 
+  "externalReference": "https://" 
+}

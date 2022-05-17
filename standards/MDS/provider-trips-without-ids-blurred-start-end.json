@@ -4,7 +4,7 @@
     "description": "MDS provider trips endpoint with one adjustment: the results don't contain device_id and vehicle_id, secondly, the route's start and end locations are blurred",
     "exchangeType": "API", 
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",
@@ -26,5 +26,7 @@
             "field": "trips[].route",
             "exception": "contains only blurred start and end location (30m)"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }

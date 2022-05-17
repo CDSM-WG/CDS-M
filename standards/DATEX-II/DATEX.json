@@ -10,5 +10,6 @@
     "reusability":"D", 
     "interoperability": "B",
     "domain": "B",
-    "externalReference": "https://www.datex2.eu/node/261"
+    "externalReference": "https://www.datex2.eu/node/261",
+    "retentionPeriod": "[ISO8601 duration]"
 }

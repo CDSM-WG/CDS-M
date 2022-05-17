@@ -1,0 +1,7 @@
+{
+  "type": "certificates",
+  "name": "OWASP",
+  "requiredCertificate": "OWASP",
+  "issuer": "NIST", 
+  "externalReference": "https://owasp.org/#" 
+}

@@ -8,5 +8,6 @@
     "mediumType": "shapefile",
     "implementationEffort": "E", 
     "reusability":"B", 
-    "interoperability": "B"
+    "interoperability": "B",
+    "retentionPeriod": "[ISO8601 duration]"
 }

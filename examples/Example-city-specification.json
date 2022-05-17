@@ -16,7 +16,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             },
@@ -28,7 +28,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             }
@@ -113,7 +113,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             },
@@ -124,7 +124,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             }
@@ -196,7 +196,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             },
@@ -210,7 +210,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             }
@@ -281,7 +281,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             },
@@ -292,7 +292,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             }
@@ -361,7 +361,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             },
@@ -372,7 +372,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             }
@@ -441,7 +441,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             },
@@ -452,7 +452,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             }
@@ -521,7 +521,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             },
@@ -532,7 +532,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             }
@@ -601,7 +601,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             },
@@ -612,7 +612,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             }
@@ -681,7 +681,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             },
@@ -692,7 +692,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             }
@@ -777,7 +777,7 @@
                 ],
                 "version": "[1.1 < version < 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "free_bike_status.json"
             },
@@ -788,7 +788,7 @@
                 ],
                 "version": "[version >= 3.0]",
                 "refreshRate": "0",
-                "url": "[baseUrl]",
+                "url": "[url]",
                 "exchangeType": "API",
                 "part": "vehicle_status.json"
             }

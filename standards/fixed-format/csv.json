@@ -13,5 +13,6 @@
     "implementationEffort": "A", 
     "reusability":"E",
     "interoperability": "E",
-    "domain": "E"
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 duration]"
 }

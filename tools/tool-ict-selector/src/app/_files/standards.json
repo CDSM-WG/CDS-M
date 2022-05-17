@@ -11,7 +11,8 @@
     "reusability":"D", 
     "interoperability": "B",
     "domain": "B",
-    "externalReference": "https://www.datex2.eu/node/261"
+    "externalReference": "https://www.datex2.eu/node/261",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "file",
@@ -28,7 +29,8 @@
     "implementationEffort": "A", 
     "reusability":"E",
     "interoperability": "E",
-    "domain": "E"
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "file",
@@ -45,7 +47,8 @@
     "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "E",
-    "domain": "E"
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "file",
@@ -62,7 +65,8 @@
     "implementationEffort": "B", 
     "reusability":"E",
     "interoperability": "E",
-    "domain": "E"
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "file",
@@ -79,7 +83,8 @@
     "implementationEffort": "C", 
     "reusability":"E", 
     "interoperability": "E",
-    "domain": "E"
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -90,8 +95,8 @@
 
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "description": "Standard GBFS json file",
-    "version": "[1.1 < version < 3.0]",
-    "url": "[baseUrl]",
+    "version": "[1.1 < version < 2.1]",
+    "url": "[url]",
     "refreshRate": "[refresh rate]",
 
     "privacy": "A",
@@ -100,7 +105,8 @@
     "interoperability": "A",
     "domain": "B",
 
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -111,9 +117,9 @@
 
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "description": "Standard GBFS json file with one adjustment: the bike_id doesn't rotate (causing GDPR issues).",
-    "version": "[version < 3.0]",
+    "version": "[version < 2.1]",
 
-    "url": "[baseUrl]",
+    "url": "[url]",
     "refreshRate": "[refresh rate]",
 
     "privacy": "C",
@@ -130,7 +136,8 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -138,7 +145,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "gbfs.json",    
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -147,7 +154,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }, 
 {
     "type": "standard",
@@ -156,7 +165,7 @@
     "part": "gbfs_versions.json",
     "description": "Standard GBFS json file",
     "version": "[version >= 1.1]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -164,7 +173,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }
 , 
 {
@@ -173,7 +184,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "geofencing_zones.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -182,7 +193,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }
 , 
 {
@@ -191,7 +204,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "station_information.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -200,7 +213,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }, 
 {
     "type": "standard",
@@ -208,7 +223,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "station_status.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -217,7 +232,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }
 , 
 {
@@ -226,7 +243,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "system_alerts.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -235,7 +252,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }
 , 
 {
@@ -244,7 +263,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "system_calendar.json",    
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -253,7 +272,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }, 
 {
     "type": "standard",
@@ -261,7 +282,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "system_hours.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -270,7 +291,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }
 , 
 {
@@ -279,7 +302,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "system_information.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -288,7 +311,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }
 , 
 {
@@ -297,7 +322,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "system_pricing_plans.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -306,7 +331,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }
 , 
 {
@@ -315,7 +342,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "system_regions.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -324,7 +351,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }, 
 {
     "type": "standard",
@@ -333,8 +362,8 @@
     "part": "vehicle_status.json",
     "description": "Standard GBFS json file",    
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
-    "url": "[baseUrl]",
-    "version": "[version >= 3.0]",
+    "url": "[url]",
+    "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -342,18 +371,20 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
     "name": "GBFS-vehicle-status-non-rotating-asset-id",
     "exchangeType": "[API|file-based]", 
     "part": "vehicle_status",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "description": "Standard GBFS json file, with one adjustment: the vehicle_id doesn't rotate (causing GDPR issues).",
-    "version": "[version < 3.0]",
+    "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",    
-    "url": "[baseUrl]",
+    "url": "[url]",
     "privacy": "C",
     "implementationEffort": "B", 
     "reusability":"E", 
@@ -367,7 +398,8 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -375,7 +407,7 @@
     "exchangeType": "[API|file-based]", 
     "part": "vehicle_types.json",
     "description": "Standard GBFS json file",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -384,7 +416,9 @@
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
 }
 , 
 {
@@ -407,7 +441,8 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -421,7 +456,8 @@
     "implementationEffort": "A", 
     "reusability":"B", 
     "interoperability": "A",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standards",
@@ -435,7 +471,8 @@
     "implementationEffort": "A", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -450,7 +487,8 @@
     "privacy": "A",
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -465,7 +503,8 @@
     "privacy": "A",
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -480,7 +519,8 @@
     "privacy": "A",
     "reusability":"B", 
     "interoperability": "A",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -495,7 +535,8 @@
     "privacy": "A",
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -510,7 +551,8 @@
     "privacy": "A",
     "reusability":"B", 
     "interoperability": "A",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -525,7 +567,8 @@
     "privacy": "A",
     "reusability":"A", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -540,7 +583,8 @@
     "privacy": "A",
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -555,7 +599,8 @@
     "implementationEffort": "B", 
     "reusability":"C", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -570,7 +615,8 @@
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -585,7 +631,8 @@
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -600,7 +647,8 @@
     "implementationEffort": "A", 
     "reusability":"A", 
     "interoperability": "A",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -615,7 +663,8 @@
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -630,7 +679,8 @@
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -645,7 +695,8 @@
     "implementationEffort": "C", 
     "reusability":"C", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -660,7 +711,8 @@
     "implementationEffort": "C", 
     "reusability":"A", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -684,7 +736,9 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference"
 }, 
 {
     "type": "file",
@@ -699,7 +753,9 @@
     "interoperability": "C",
     "domain": "D",
     "mediumType": "xml-file",
-    "schema": "https://developers.google.com/kml/documentation/kmlreference#point"
+    "schema": "https://developers.google.com/kml/documentation/kmlreference#point",
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference"
 }, 
 {
     "type": "file",
@@ -722,7 +778,9 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference"
 }, 
 {
     "type": "standard",
@@ -730,7 +788,7 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/geography",
     "part": "/geographies/",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "privacy": "A",
     "implementationEffort": "D", 
@@ -738,7 +796,8 @@
     "interoperability": "A",
     "domain": "A",
     "mediumType": "API",
-    "refreshRate": "0"
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -746,7 +805,7 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#geography",
     "part": "/geographies",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "privacy": "A",
     "implementationEffort": "D", 
@@ -754,7 +813,8 @@
     "interoperability": "A",
     "domain": "A",
     "mediumType": "API",
-    "refreshRate": "0"
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -762,7 +822,7 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
     "part": "/rules/",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "privacy": "A",
     "implementationEffort": "D", 
@@ -770,7 +830,8 @@
     "interoperability": "A",
     "domain": "A",
     "mediumType": "API",
-    "refreshRate": "0"
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -778,7 +839,7 @@
     "description": "MDS provider status_changes endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.",
     "exchangeType": "API", 
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",
@@ -796,7 +857,9 @@
             "field": "status_changes[].vehicle_id",
             "exception": "removed"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }
 , 
 {
@@ -805,7 +868,7 @@
     "exchangeType": "API", 
     "part": "/status_changes",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",
@@ -825,15 +888,16 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
-
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }, 
 {
     "type": "standard",
     "name": "MDS-provider-stops",
     "exchangeType": "API", 
     "part": "/stops",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "API",
     "privacy": "A",
@@ -841,7 +905,9 @@
     "reusability":"E", 
     "interoperability": "A",
     "domain": "A",
-    "refreshRate": "0"
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }, 
 {
     "type": "standard",
@@ -849,7 +915,7 @@
     "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is empty/not available",
     "exchangeType": "API", 
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "A",
@@ -871,7 +937,9 @@
             "field": "trips[].route",
             "exception": "removed"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }
 , 
 {
@@ -880,7 +948,7 @@
     "description": "MDS provider trips endpoint with one adjustment: the results don't contain device_id and vehicle_id, secondly, the route's start and end locations are blurred",
     "exchangeType": "API", 
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",
@@ -902,7 +970,9 @@
             "field": "trips[].route",
             "exception": "contains only blurred start and end location (30m)"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }
 , 
 {
@@ -911,7 +981,7 @@
     "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is contains only start and endpoint",
     "exchangeType": "API", 
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "A",
@@ -933,7 +1003,9 @@
             "field": "trips[].route",
             "exception": "limited"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }
 , 
 {
@@ -941,7 +1013,7 @@
     "name": "MDS-provider-trips",
     "exchangeType": "API", 
     "part": "/trips",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "API",
 
@@ -954,7 +1026,9 @@
     "refreshRate": "0",
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }, 
 {
     "type": "standard",
@@ -965,7 +1039,7 @@
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "privacy": "C",
     "implementationEffort": "D", 
     "reusability":"E", 
@@ -977,7 +1051,9 @@
             "field": "vehicles",
             "exception": "only non-booked"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }, 
 {
     "type": "standard",
@@ -985,7 +1061,7 @@
     "description": "MDS provider vehicles endpoint with two adjustments: the results are filtered, only non-booked assets are exposed AND the device_id and vehicle_id are removed",
     "exchangeType": "API", 
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "A",
@@ -1007,7 +1083,9 @@
             "field": "vehicles",
             "exception": "only non-booked"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }
 , 
 {
@@ -1016,7 +1094,7 @@
     "description": "MDS provider vehicles endpoint with one adjustment: the device_id and vehicle_id are removed from the result",
     "exchangeType": "API", 
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "A",
@@ -1034,7 +1112,9 @@
             "field": "vehicles[].vehicle_id",
             "exception": "removed"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }
 , 
 {
@@ -1043,7 +1123,7 @@
     "exchangeType": "API", 
     "part": "vehicles",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "E",
@@ -1061,7 +1141,9 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
 }, 
 {
     "type": "standard",
@@ -1074,7 +1156,8 @@
     "implementationEffort": "E", 
     "reusability":"B", 
     "interoperability": "C",
-    "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd"
+    "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1089,7 +1172,8 @@
     "domain": "B",
     "interoperability": "B",
     "schema": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... ",
-    "url": "[url]"
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1103,7 +1187,8 @@
     "reusability":"C", 
     "interoperability": "B",
     "mediumType": "json",
-    "url": "[url]"
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1118,7 +1203,8 @@
     "reusability":"C", 
     "interoperability": "A",
     "externalReference": "https://github.com/TOMP-WG/ODyZee",
-    "url": "[url]"
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standards",
@@ -1132,7 +1218,8 @@
     "domain": "B",
     "interoperability": "B",
     "mediumType": "ESRI-shapefile",
-    "url": "[url]"
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1148,7 +1235,8 @@
     "reusability":"E",
     "interoperability": "B",
     "domain": "D",
-    "description": "Shapefile should contain points only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+    "description": "Shapefile should contain points only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1164,7 +1252,8 @@
     "reusability":"E",
     "interoperability": "B",
     "domain": "D",
-    "description": "Shapefile should countain (multi)polygons only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+    "description": "Shapefile should countain (multi)polygons only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1181,7 +1270,8 @@
     "interoperability": "B",
     "domain": "C",
     "description": "shapefile should contain (multi)linestrings. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1197,7 +1287,8 @@
     "reusability":"E",
     "interoperability": "D",
     "domain": "D",
-    "description": "https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+    "description": "https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1209,7 +1300,8 @@
     "mediumType": "shapefile",
     "implementationEffort": "E", 
     "reusability":"B", 
-    "interoperability": "B"
+    "interoperability": "B",
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1225,7 +1317,8 @@
     "reusability":"D",
     "interoperability": "C",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1242,7 +1335,8 @@
     "reusability":"D",
     "interoperability": "B",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1251,22 +1345,24 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Alerts",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "A",
     "implementationEffort": "C", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
     "name": "TOMP-available-assets-non-rotating-asset-id",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "B",
     "implementationEffort": "D", 
@@ -1279,7 +1375,8 @@
             "exception": "non-rotating"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1287,8 +1384,9 @@
     "name": "TOMP-API-available-assets-with-asset-name",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "C",
     "implementationEffort": "D", 
@@ -1301,7 +1399,8 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1309,8 +1408,9 @@
     "name": "TOMP-API-available-assets-with-license-plate",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "C",
     "implementationEffort": "D", 
@@ -1323,7 +1423,8 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1333,7 +1434,7 @@
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "A",
@@ -1341,7 +1442,8 @@
     "reusability":"A", 
     "interoperability": "B",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1350,13 +1452,14 @@
     "part": "/operator/information",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Information",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "implementationEffort": "B", 
     "reusability":"C", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1366,7 +1469,7 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "B",
@@ -1379,7 +1482,8 @@
             "field": "bankaccount",
             "exception": "removed"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1388,7 +1492,7 @@
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "C",
@@ -1402,7 +1506,8 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1411,7 +1516,7 @@
     "part": "/operator/meta",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Meta-Information",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "A",
@@ -1419,7 +1524,8 @@
     "reusability":"E", 
     "interoperability": "B",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1429,7 +1535,7 @@
     "part": "/operator/operating-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Operating-hours-and-calendar",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
     "implementationEffort": "C", 
@@ -1437,7 +1543,8 @@
     "interoperability": "B",
     "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1447,7 +1554,7 @@
     "part": "/operator/operating-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Operating-hours-and-calendar",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
     "implementationEffort": "C", 
@@ -1455,7 +1562,8 @@
     "interoperability": "B",
     "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1465,7 +1573,7 @@
     "part": "/operator/operator-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Pricing-information",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
     "implementationEffort": "C", 
@@ -1473,7 +1581,8 @@
     "interoperability": "B",
     "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }, 
 {
     "type": "standard",
@@ -1482,7 +1591,7 @@
     "part": "/operator/regions",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Regions",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
     "implementationEffort": "C", 
@@ -1490,7 +1599,8 @@
     "interoperability": "B",
     "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
 , 
 {
@@ -1500,7 +1610,7 @@
     "part": "/operator/stations",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Stations",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
     "implementationEffort": "C", 
@@ -1508,5 +1618,6 @@
     "interoperability": "B",
     "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }] 

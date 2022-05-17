@@ -10,5 +10,6 @@
     "privacy": "A",
     "reusability":"B", 
     "interoperability": "A",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }

@@ -13,5 +13,6 @@
     "interoperability": "B",
     "domain": "C",
     "description": "shapefile should contain (multi)linestrings. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]"
 }

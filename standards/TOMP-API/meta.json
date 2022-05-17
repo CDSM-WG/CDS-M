@@ -5,7 +5,7 @@
     "part": "/operator/meta",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Meta-Information",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "A",
@@ -13,5 +13,6 @@
     "reusability":"E", 
     "interoperability": "B",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }

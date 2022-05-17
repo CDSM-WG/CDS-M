@@ -12,5 +12,6 @@
     "reusability":"E",
     "interoperability": "B",
     "domain": "D",
-    "description": "Shapefile should contain points only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+    "description": "Shapefile should contain points only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "retentionPeriod": "[ISO8601 duration]"
 }

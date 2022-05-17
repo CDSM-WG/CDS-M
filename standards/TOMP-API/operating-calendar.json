@@ -5,7 +5,7 @@
     "part": "/operator/operating-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Operating-hours-and-calendar",
     "version": "[version]",
-    "url": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
     "implementationEffort": "C", 
@@ -13,5 +13,6 @@
     "interoperability": "B",
     "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }

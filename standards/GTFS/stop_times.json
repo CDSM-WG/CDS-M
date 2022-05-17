@@ -10,5 +10,6 @@
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]"
 }
