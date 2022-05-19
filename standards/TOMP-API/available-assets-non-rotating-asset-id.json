@@ -7,7 +7,7 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "json-file",
-    "privacy": "B",
+    "privacy": "C",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "B",
