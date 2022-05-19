@@ -14,6 +14,7 @@
         { "name": "xml" },
         { "name": "MDS-provider-trips", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
         { "name": "KML-Points" },
         { "name": "GPX" },
         { "name": "shapefile-points" }
