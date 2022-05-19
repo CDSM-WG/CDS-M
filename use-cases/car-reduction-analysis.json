@@ -26,6 +26,8 @@
         { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
         { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
         { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
     ],
     "termsAndConditions": [],
     "agreements": [],
