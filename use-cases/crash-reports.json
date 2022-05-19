@@ -13,7 +13,7 @@
         { "name": "geojson" },
         { "name": "xml" },
         { "name": "MDS-provider-status-change", "dataProtection": "D" },
-        { "name": "MDS-provider-status-change-without-ids", "dataProtection": "A" }
+        { "name": "MDS-provider-status-change-without-ids", "dataProtection": "B" }
     ],
     "termsAndConditions": [],
     "agreements": [],
