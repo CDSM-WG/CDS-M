@@ -14,8 +14,9 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-provider-trips-without-ids" },
-        { "name": "MDS-provider-trips" }
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B","mark": "X*", "explanation": "assumption: the fastest route is probably the most used route from A to B and can be derived with the use of a conventinional route planner"},
+        { "name": "MDS-provider-trips", "dataProtection": "D" }
         ],
     "termsAndConditions": [],
     "agreements": [],
