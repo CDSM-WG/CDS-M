@@ -14,6 +14,11 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
         { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B"},
         { "name": "MDS-provider-trips", "dataProtection": "E" }
