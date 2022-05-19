@@ -11,10 +11,9 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-provider-trips" },
-        { "name": "MDS-provider-trips-without-ids" },
-        { "name": "MDS-provider-status-changes" },
-        { "name": "MDS-provider-status-changes-without-ids" }
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "B" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "D"},
+        { "name": "MDS-provider-status-changes", "dataProtection": "B" },
     ],
     "termsAndConditions": [],
     "agreements": [],
