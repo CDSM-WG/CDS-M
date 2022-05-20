@@ -152,7 +152,7 @@
     "url": "[url]",
     "refreshRate": "[refresh rate]",
 
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "D",
@@ -169,7 +169,8 @@
     ],
     "retentionPeriod": "[ISO8601 duration]",
     "bbversion": 1
-}, 
+}
+, 
 {
     "type": "standard",
     "name": "GBFS",
@@ -428,7 +429,7 @@
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",    
     "url": "[url]",
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "D",
@@ -444,7 +445,8 @@
     ],
     "retentionPeriod": "[ISO8601 duration]",
     "bbversion": 1
-}, 
+}
+, 
 {
     "type": "standard",
     "name": "GBFS-vehicle-types",
@@ -912,7 +914,7 @@
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -941,7 +943,7 @@
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -962,7 +964,8 @@
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
-}, 
+}
+, 
 {
     "type": "standard",
     "name": "MDS-provider-stops",
@@ -1024,7 +1027,7 @@
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -1058,7 +1061,7 @@
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "A",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -1092,7 +1095,7 @@
     "version": "[version]",
     "mediumType": "API",
 
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -1105,7 +1108,8 @@
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
-}, 
+}
+, 
 {
     "type": "standard",
     "name": "MDS-provider-vehicles-non-booked",
@@ -1116,7 +1120,7 @@
     "mediumType": "API",
     "refreshRate": "0",
     "url": "[url]",
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "D",
@@ -1131,7 +1135,8 @@
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
-}, 
+}
+, 
 {
     "type": "standard",
     "name": "MDS-provider-vehicles-without-ids-non-booked",
@@ -1141,7 +1146,7 @@
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "A",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -1175,7 +1180,7 @@
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "A",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -1205,7 +1210,7 @@
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -1224,7 +1229,8 @@
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
-}, 
+}
+, 
 {
     "type": "standard",
     "name": "NeTEx",
