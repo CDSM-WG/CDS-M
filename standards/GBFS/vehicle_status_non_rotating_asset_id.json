@@ -9,7 +9,7 @@
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",    
     "url": "[url]",
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "D",

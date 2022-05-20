@@ -8,7 +8,7 @@
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",

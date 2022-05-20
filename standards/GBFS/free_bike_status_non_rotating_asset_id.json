@@ -12,7 +12,7 @@
     "url": "[url]",
     "refreshRate": "[refresh rate]",
 
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "D",

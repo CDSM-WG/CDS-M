@@ -4,7 +4,7 @@
     "story": {
       "asA": "city",
       "iWouldLikeTo": "get insight in duration of the parked assets",
-      "inOrderTo": "act when certain thresholds are passed"
+      "inOrderTo": "act when certain thresholds for idle time are passed"
     },
     "benefits": [
       {
@@ -23,21 +23,26 @@
       }
     ],
     "standards": [
-      { "name": "csv" },
-      { "name": "json" },
-      { "name": "geojson" },
-      { "name": "xml" },
-      { "name": "GBFS-free-bike-status" },
-      { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
-      { "name": "GBFS-vehicle-status" },
-      { "name": "GBFS-vehicle-status-non-rotating-asset-id" },
-      { "name": "TOMP-available-assets" },
-      { "name": "TOMP-available-assets-non-rotating-asset-id" },
-      { "name": "MDS-provider-vehicles" },
-      { "name": "MDS-provider-status-changes" },
-      { "name": "MDS-provider-status-changes-without-ids" },
-      { "name": "MDS-provider-vehicles-non-booked" }
-    ],
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "MDS-provider-stops", "dataProtection": "A" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+        { "name": "SPDP-dynamic" }
+      ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
