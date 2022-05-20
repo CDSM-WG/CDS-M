@@ -1,0 +1,18 @@
+{
+    "id": "transit-information-for-modal-split",
+    "tags": ["assets:connections"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the number of transit assets arriving and departing from a public transport hub",
+        "inOrderTo": "use this information for modelling the modal splt"
+       },
+    "standards": [
+       { "name": "GTFS"},
+       { "name": "NeTEx"},
+      ],
+      "termsAndConditions": [],
+      "agreements": [],
+      "transport": [],
+      "processing": [],
+      "archive": []
+}
