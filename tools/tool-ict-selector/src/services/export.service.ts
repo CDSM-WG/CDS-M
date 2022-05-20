@@ -15,6 +15,23 @@ export class ExportService {
     archivingConditions: any[] = [];
     attributes: any[] = [];
 
+    specification: any = {            
+        metaData: {
+          versionNumber: 1,
+          contractor1: "",
+          contractor2: "",
+          role1: "BOTH",
+          role2: "BOTH"
+        },
+        useCases: [],
+        standards: [],
+        contractParts: [],
+        termsAndConditions: [],
+        transport: [],
+        processing: [],
+        archive: []
+      };
+
     export() {
         this.applyStandardsSelectionToUseCases();
         this.applyTransportConditions();
@@ -22,9 +39,7 @@ export class ExportService {
         this.applyArchivingConditions();
         this.deleteTags();
 
-        var json = JSON.stringify(this.useCases.filter( u => { 
-            return u.standards.length > 0;
-        })); 
+        var json = JSON.stringify(this.specification); 
         const data: Blob = new Blob([json], { type: "text/json" });
         FileSaver.saveAs(data, "CDS-M-ICT-" + new Date().getTime() + ".json");
     }
@@ -34,9 +49,7 @@ export class ExportService {
             delete t.selected;
         } ); 
 
-        this.useCases.forEach( (useCase: any) => {
-            useCase.archive = this.archivingConditions;
-        })
+        this.specification.archive = this.archivingConditions;
     }
 
     deleteTags(){
@@ -49,9 +62,7 @@ export class ExportService {
             delete t.type;
         } );
 
-        this.useCases.forEach( (useCase: any) => {
-            useCase.processing = this.processingConditions;
-        })
+        this.specification.processing = this.processingConditions;
     }
 
     applyTransportConditions() {
@@ -60,38 +71,49 @@ export class ExportService {
             toExport.push( { "name": t.name, "encryption": t.encryption, "version": t.version } );
         } ); 
 
-        this.useCases.forEach( (useCase: any) => {
-            useCase.transport = toExport;
-        })
+        this.specification.transport = toExport;
     }
 
     applyStandardsSelectionToUseCases() {
         let selectedStandards = this.standards.filter( (s:any) => { return s['selected']; } );
+        let gatheredStandards: any[] = []
         this.useCases.forEach( (useCase: any) => 
         {
-            let gatheredStandards: any[] = []
+            let names: any[] = [];
             useCase.standards.forEach( (standard: any) => {
                 selectedStandards.forEach( (selected: any) => {
                     if(selected.name === standard.name){
-                        let aut: any[] = [];
-                        standard['authentications'] = aut;
-                        this.authentications.forEach( (a) => {
-                            if (selected[a]) {
-                                aut.push(a);
-                            }
-                        });
-
-                        this.attributes.forEach( (a) => {
-                            if (a in selected) {
-                                standard[a] = selected[a];
-                            }
-                        });
-
-                        gatheredStandards.push(standard);
+                        names.push(selected.name);
+                        if (this.standardNotRegistered(gatheredStandards, selected) ){                        
+                            this.gatherStandard(standard, selected, gatheredStandards);
+                        }
                     }
                 });
             });
-            useCase.standards = gatheredStandards;
+            useCase.standards = names;
         });
+        this.specification.standards = gatheredStandards;
+    }
+
+    private gatherStandard(standard: any, selected: any, gatheredStandards: any[]) {
+        let aut: any[] = [];
+        standard['authentications'] = aut;
+        this.authentications.forEach((a) => {
+            if (selected[a]) {
+                aut.push(a);
+            }
+        });
+
+        this.attributes.forEach((a) => {
+            if (a in selected) {
+                standard[a] = selected[a];
+            }
+        });
+
+        gatheredStandards.push(standard);
+    }
+
+    private standardNotRegistered(gatheredStandards: any[], selected: any) {
+        return gatheredStandards.findIndex((g) => { return g.name === selected.name; }) == -1;
     }
 }

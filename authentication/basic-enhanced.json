@@ -2,5 +2,6 @@
     "type": "authenticationCondition",
     "name": "basic-enhanced",
     "description": "username/password authentication, password complies to these rules: a)_Length >= 6 characters, b) contains characters from three of the following four categories: - English uppercase characters (A through Z), - English lowercase characters (a through z) - Base 10 digits (0 through 9) - Non-alphabetic characters (for example, !, $, #, %)",
-    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ]
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
 }

@@ -3,7 +3,7 @@ info:
   title: CDS-M API
   description:
     This OpenAPI specification is used to describe the object model of the JSON.
-  version: "0.1.3"
+  version: "0.2.0"
   license:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
@@ -360,6 +360,59 @@ paths:
                   
 components:
   schemas:
+    specification:
+      type: object
+      description: a complete specification
+      properties:
+        metaData:
+          type: object
+          properties:
+            specificationVersion: 
+              type: string
+              description: version number, first number = use case selection, second = ict configuration, third = contract configuration
+            contractor1:
+              type: string
+            contractor2:
+              type: string
+            role1:
+              type: string
+              enum: [SUPPLIER, CONSUMER, BOTH]
+            role2:
+              type: string
+              enum: [SUPPLIER, CONSUMER, BOTH]        
+        useCases:
+          type: array
+          items:
+            $ref: "#/components/schemas/useCase"
+        standards:
+          type: array
+          items:
+            oneOf:
+              - $ref: "#/components/schemas/standard"
+              - $ref: "#/components/schemas/file"
+            discriminator:
+              propertyName: type
+        contractParts:
+          type: array
+          items:
+            $ref: "#/components/schemas/agreement"
+        termsAndConditions:
+          type: array
+          items:
+            $ref: "#/components/schemas/termsAndCondition"
+        transport:
+          type: array
+          items:
+            $ref: "#/components/schemas/transportCondition"
+        processing:
+          type: array
+          items:
+            $ref: "#/components/schemas/processingCondition"
+        archive: 
+          type: array
+          items:
+            $ref: "#/components/schemas/archiveCondition"
+
     useCase:
       type: object
       description: use cases can be selected by cities to implicitly select the appropriate exchange data methods (standards/files).
@@ -418,7 +471,7 @@ components:
             description: a dimension with a value, seperated by a semicolon e.g. mode:car
 
     buildingBlockReference:
-      description: refers to a building block
+      description: refers to a building block, format = name.bbversion
       type: string
       default: someBuildingBlock
       
@@ -435,9 +488,6 @@ components:
         mark:
           type: string
           description: the mark for the ICT tool. If not provided, it is 'X'
-        explanation:
-          type: string
-          description: optional explanation for the ICT tool
 
     mitigationPossibility:
       type: array
@@ -540,11 +590,16 @@ components:
       required:
         - type
         - name
+        - bbversion
       properties:
         type:
           type: string
         name:
           type: string
+        bbversion:
+          type: integer
+          description: the version number of the building block
+          default: 1
         description:
           type: string
         conflicts:
@@ -702,6 +757,10 @@ components:
               type: array
               items:
                 $ref: "#/components/schemas/buildingBlockReference"
+                
+            explanation:
+              type: string
+              description: optional explanation for the standard
 
             privacy:
               type: string

@@ -3,5 +3,6 @@
   "name": "OWASP",
   "requiredCertificate": "OWASP",
   "issuer": "NIST", 
-  "externalReference": "https://owasp.org/#" 
+  "externalReference": "https://owasp.org/#" ,
+  "bbversion": 1
 }

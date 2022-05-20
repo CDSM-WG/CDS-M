@@ -2,5 +2,6 @@
     "type": "processingCondition",
     "name": "anonymization", 
     "description": "the data must be anonymized before it can be analyzed", 
-    "conflictsWhenNotMet": [ "reveals_personal_trip_data" ]
+    "conflictsWhenNotMet": [ "reveals_personal_trip_data" ],
+    "bbversion": 1
 }

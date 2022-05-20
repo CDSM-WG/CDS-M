@@ -11,7 +11,7 @@
     "privacy": "C",
     "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "A",
+    "interoperability": "D",
     "domain": "A",
 
     "fieldModifications": [
@@ -21,5 +21,6 @@
         }
     ],
     "retentionPeriod": "[ISO8601 duration]",
-    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider"
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }

@@ -20,5 +20,6 @@
         }
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

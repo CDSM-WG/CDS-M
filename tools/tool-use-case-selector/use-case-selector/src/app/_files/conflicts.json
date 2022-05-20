@@ -19,7 +19,8 @@
         { "buildingBlock": "OpenID-connect" } ],
     "transportConditions": [ { "buildingBlock": "TLS-1.2" }, 
         { "buildingBlock": "TLS-1.3" }, 
-        { "buildingBlock": "content-PKI-encrypted" } ]
+        { "buildingBlock": "content-PKI-encrypted" } ],
+    "bbversion": 1
 }, 
 {
     "name": "security_not_updated",
@@ -31,10 +32,12 @@
         { "buildingBlock": "TLS-1.2" }, 
         { "buildingBlock": "TLS-1.3" }, 
         { "buildingBlock": "content-PKI-encrypted" } 
-    ]
+    ],
+    "bbversion": 1
 }, 
 {
     "name": "unlimited_storage_in_process",
     "reason": "time unspecified how long it will be visible in analysis/processing step",
-    "breach": "privacy_in_design_storage_restriction"
+    "breach": "privacy_in_design_storage_restriction",
+    "bbversion": 1
 }] 

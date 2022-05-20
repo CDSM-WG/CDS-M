@@ -5,5 +5,6 @@
     "parameters": [ 
         { "MaaS Service provider name": "[name MP Company]", "order": [ 1, 3 ] },
         { "Mobility service provider name ": "[name TO Company]", "order": [ 2, 12 ] }
-    ]
+    ],
+    "bbversion": 1
 }

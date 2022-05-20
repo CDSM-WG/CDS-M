@@ -11,5 +11,6 @@
     "interoperability": "B",
     "mediumType": "json",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

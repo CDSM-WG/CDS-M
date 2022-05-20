@@ -11,5 +11,6 @@
     "interoperability": "B",
     "mediumType": "ESRI-shapefile",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

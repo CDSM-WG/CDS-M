@@ -18,5 +18,6 @@
     "domain": "B",
 
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

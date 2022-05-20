@@ -4,9 +4,8 @@ import ConflictJson from '../../app/_files/conflicts.json'
 import UseCasesJson from '../../app/_files/use-cases.json'
 import { MatTableDataSource } from '@angular/material/table'
 import AuthenticationJson from '../../app/_files/authentications.json'
-import { UseCaseService } from '../../services/use-case.service';
+import { UseCaseService } from '../../services/use-case.service'
 import { ExportService } from 'src/services/export.service'
-import { PropertyRead } from '@angular/compiler'
 
 @Component({
   selector: 'app-standards',
@@ -39,7 +38,7 @@ export class StandardsComponent implements OnInit {
 
   conflicts = ConflictJson;
 
-  privacyWeight = 1;
+  privacyWeight = 10;
   costsWeight = 1;
   reusabilityWeight = 1;
   interoperabilityWeight = 1;
@@ -47,7 +46,9 @@ export class StandardsComponent implements OnInit {
 
   constructor(useCaseService : UseCaseService, exportService: ExportService) {
     useCaseService.useCases.subscribe( (useCaseJson) => {
-      this.init(useCaseJson);
+      if ( useCaseJson != null ) {
+        this.init(useCaseJson);
+      }
     });
     exportService.signalExport.subscribe( signal => {
       if (signal === "export") {

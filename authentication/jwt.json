@@ -2,5 +2,6 @@
     "type": "authenticationCondition",
     "name": "jwt",
     "description": "Java Web Token authentication",
-    "allowedExchangeTypes": [ "API" ]
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
 }

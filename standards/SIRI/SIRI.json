@@ -9,5 +9,6 @@
     "implementationEffort": "E", 
     "reusability":"B", 
     "interoperability": "B",
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

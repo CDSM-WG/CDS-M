@@ -19,5 +19,6 @@
             "exception": "removed"
         }
     ],
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

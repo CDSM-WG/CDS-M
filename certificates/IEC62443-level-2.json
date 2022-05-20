@@ -3,5 +3,6 @@
   "name": "IEC62443 - level 2",
   "requiredCertificate": "IEC62443",
   "issuer": "ISO", 
-  "externalReference": "https://" 
+  "externalReference": "https://" ,
+  "bbversion": 1
 }

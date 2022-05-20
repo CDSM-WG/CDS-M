@@ -3,5 +3,6 @@
   "name": "ISO27002",
   "requiredCertificate": "ISO 27002",
   "issuer": "ISO", 
-  "externalReference": "https://" 
+  "externalReference": "https://" ,
+  "bbversion": 1
 }

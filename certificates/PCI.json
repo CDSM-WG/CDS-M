@@ -3,5 +3,6 @@
   "name": "PCI",
   "requiredCertificate": "PCI",
   "issuer": "", 
-  "externalReference": "https://" 
+  "externalReference": "https://" ,
+  "bbversion": 1
 }

@@ -1,5 +1,6 @@
 {
     "name": "privacy_in_design_purpose_limitation",
     "externalReference": "",
-    "description": "Personal data may only be collected for specific and explicitly defined purposes"
+    "description": "Personal data may only be collected for specific and explicitly defined purposes",
+    "bbversion": 1
 }

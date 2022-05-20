@@ -2,5 +2,6 @@
     "type": "authenticationCondition",
     "name": "fixed-X-API-key", 
     "description": "The delivering party must generate a x-api-key and hand it over to the requesting party",
-    "allowedExchangeTypes": [ "API" ]
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
 }

@@ -2,5 +2,6 @@
     "type": "authenticationCondition",
     "name": "OpenID-connect",
     "description": "OpenID authentication",
-    "allowedExchangeTypes": [ "API" ]
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
 }

@@ -21,5 +21,6 @@
         "reveals_personal_trip_data"
     ],
     "retentionPeriod": "[ISO8601 duration]",
-    "externalReference": "https://developers.google.com/kml/documentation/kmlreference"
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
+    "bbversion": 1
 }

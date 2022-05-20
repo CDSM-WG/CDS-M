@@ -2,5 +2,6 @@
     "type": "processingCondition",
     "name": "remove-raw-data-after-aggregate",
     "description": "the data must be aggregated during the processing",
-    "conflictsWhenNotMet": [ "unlimited_storage_in_process" ]
+    "conflictsWhenNotMet": [ "unlimited_storage_in_process" ],
+    "bbversion": 1
 }

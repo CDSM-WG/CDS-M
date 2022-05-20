@@ -13,5 +13,6 @@
     "domain": "A",
     "mediumType": "API",
     "refreshRate": "0",
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

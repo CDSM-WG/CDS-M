@@ -2,5 +2,6 @@
     "type": "authenticationCondition",
     "name": "whitelisting",
     "description": "The delivering party must whitelist the requesting party's server based on IP",
-    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ]
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
 }

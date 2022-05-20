@@ -12,7 +12,7 @@
     "privacy": "C",
     "implementationEffort": "B", 
     "reusability":"E", 
-    "interoperability": "A",
+    "interoperability": "D",
     "domain": "B",
     "fieldModifications": [
         {
@@ -23,5 +23,6 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

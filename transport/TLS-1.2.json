@@ -2,5 +2,6 @@
     "type": "transportCondition",
     "name": "TLS-1.2",
     "encryption": "TLS",
-    "version": "1.2"
+    "version": "1.2",
+    "bbversion": 1
 }

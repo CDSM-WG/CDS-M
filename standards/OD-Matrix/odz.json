@@ -12,5 +12,6 @@
     "interoperability": "A",
     "externalReference": "https://github.com/TOMP-WG/ODyZee",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

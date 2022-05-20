@@ -14,5 +14,12 @@
     "reusability":"E",
     "interoperability": "E",
     "domain": "E",
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+    "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
+    "timeAmount": "[time amount]",
+    "geoUnit": "[postal, postal1_4, district, city, region, custom]",
+    "geoUnitCustomSpecification": "[URL]"
 }

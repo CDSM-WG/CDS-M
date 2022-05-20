@@ -44,14 +44,6 @@ FOR %%I in (*.json) do (
     type %%I >> %OUTPUTFILE%
 )
 
-CD ..\aggregation\
-
-FOR %%I in (*.json) do (    
-    IF !COUNT! == 0 (echo [ > %OUTPUTFILE%) ELSE (echo , >> %OUTPUTFILE%)
-    SET COUNT=1
-    type %%I >> %OUTPUTFILE%
-)
-
 CD ..\certificates\
 
 FOR %%I in (*.json) do (    

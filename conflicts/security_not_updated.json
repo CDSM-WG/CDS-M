@@ -8,5 +8,6 @@
         { "buildingBlock": "TLS-1.2" }, 
         { "buildingBlock": "TLS-1.3" }, 
         { "buildingBlock": "content-PKI-encrypted" } 
-    ]
+    ],
+    "bbversion": 1
 }

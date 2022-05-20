@@ -3,5 +3,6 @@
   "name": "NCSC",
   "requiredCertificate": "NCSC",
   "issuer": "Nederlands Cyber Security Centrum", 
-  "externalReference": "https://" 
+  "externalReference": "https://" ,
+  "bbversion": 1
 }

@@ -15,5 +15,6 @@
     "domain": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md"
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }

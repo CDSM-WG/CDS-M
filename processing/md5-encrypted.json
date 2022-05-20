@@ -3,5 +3,6 @@
     "name": "md5-encrypted",
     "description": "The stored personal related data must be encrypted with MD5",
     "encryption": "MD5", 
-    "conflicts": [ "security_not_updated" ]
+    "conflicts": [ "security_not_updated" ],
+    "bbversion": 1
 }

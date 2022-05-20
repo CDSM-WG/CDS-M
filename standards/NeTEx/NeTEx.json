@@ -10,5 +10,6 @@
     "reusability":"B", 
     "interoperability": "C",
     "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd",
-    "retentionPeriod": "[ISO8601 duration]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
