@@ -10,8 +10,7 @@
         "public-space:safety",
         "public-space:nuisances",
         "public-space:complaints"
-    ]
-  },
+],
    "standards": [
         { "name": "csv" },
         { "name": "json" },
