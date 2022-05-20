@@ -1,10 +1,10 @@
 {
-    "id": "car-reduction-analysis",
+    "id": "modal-split-and-car-reduction-analysis",
     "externalReference": "",
     "tags": ["green-deal:sharing"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "know the origin-destination of individual trips to subsequently ingest the data into a traffic model and perform a car-reduction-analysis",
+        "iWouldLikeTo": "know the origin-destination of individual trips to subsequently ingest the data into a traffic model and perform a modal-split or car-reduction-analysis",
         "inOrderTo": "make informed decisions about the deployment of shared mobility in different areas in the city to reduce (private) car journeys."
     },
     "benefits": [],
