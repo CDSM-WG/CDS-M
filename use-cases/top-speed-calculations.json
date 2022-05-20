@@ -1,0 +1,27 @@
+{
+    "id": "top-speed-calculations",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrlizdu3b8qq3SY",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "determine the average speed of a trip",
+      "inOrderTo": "and ensure it meets requirements of top speed and slow area requirements"
+    },  
+    "tags": [
+        "public-space:safety",
+        "publis-space:usage"
+    ],
+    "standards": [
+        { "name": "MDS-provider-vehicles", "dataProtection": "E", "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E", "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
+        { "name": "MDS-provider-status-changes", "dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
+        { "name": "MDS-provider-trips", "dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
+      ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
