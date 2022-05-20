@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the number of assets arriving and departing from a public transport hub",
-        "inOrderTo": ""
+        "inOrderTo": "investigate shared mobility as a stratgey for last mile solutions"
     },
     "standards": [
         { "name": "MDS-provider-vehicles", "dataProtection": "E" },
