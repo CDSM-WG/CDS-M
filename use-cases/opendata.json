@@ -6,9 +6,7 @@
         "asA": "city",
         "iWouldLikeTo": "Communicate to the public what data is collected. Data is from everybody and for everybody.",
         "inOrderTo": "Build trust between citizens, car operators and the government and share knowledge."
-     ]
-    }
-  ],
+    },
   "standards": [
     { "name": "csv" },
     { "name": "geojson" },
