@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "investigate and validate complaints from residents about operations, parking, riding, speed, etc",
-        "inOrderTo": "?"
+        "inOrderTo": "apply prevention in the right places."
     },
     "standards": [
         { "name": "csv" },
