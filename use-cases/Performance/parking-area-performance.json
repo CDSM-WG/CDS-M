@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get insights in the usage and performance of all designated parking areas",
-        "inOrderTo": "to improve the location, size and visibility of parking spaces and to monitor operator performance."
+        "inOrderTo": "to monitor the performance and compliance of operators per parking spot and to improve the location, size and visibility of parking spaces."
     },
    "standards": [
         { "name": "csv" },
