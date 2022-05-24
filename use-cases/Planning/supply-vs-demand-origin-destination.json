@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the if the supply of assets matches the demand of users",
-        "inOrderTo": "stimulate the use of new mobility services and tailor the offer to the travel behavior of users"
+        "inOrderTo": "stimulate the use of new mobility services by planning and tailoring the numbers/locatios of these services to the demands of users"
     },
     "standards": [
         { "name": "csv" },
