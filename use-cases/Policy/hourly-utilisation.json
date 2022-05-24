@@ -4,7 +4,7 @@
     "tags": ["assets:efficiency"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "get insight in hourly fleet utilization with origin/destination matrices on a district level",
+        "iWouldLikeTo": "get insight in hourly fleet utilization with origin/destination matrices on a district level in the city and neigbouring regions",
         "inOrderTo": "use this information in traffic modelling for modal split"
     },
     "standards": [
