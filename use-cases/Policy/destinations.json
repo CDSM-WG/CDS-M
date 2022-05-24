@@ -7,7 +7,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get insight in location of the destination of assets",
-        "inOrderTo": "investigate if and where cluttering occurs during the day"
+        "inOrderTo": "investigate what are popular destinations for specific modalities to subsequently form policy around this. Use this information to create new parking zones."
     },
     "standards": [
         { "name": "MDS-provider-vehicles", "dataProtection": "E" },
