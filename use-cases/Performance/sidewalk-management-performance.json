@@ -4,7 +4,7 @@
     "story": {
       "asA": "city",
       "iWouldLikeTo": "use data to check whether devices are not parked on sidewalks",
-      "inOrderTo": "validate resident reports of these incidents"
+      "inOrderTo": "monitor the compliance of operators with the service area."
     },
    "standards": [
         { "name": "csv" },
