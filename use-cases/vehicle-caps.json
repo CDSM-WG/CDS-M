@@ -3,7 +3,8 @@
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRcMuvCOD8CAXhh",
     "story": {
       "asA": "city",
-      "iWouldLikeTo": "determine total number of devices per operator in the city boundries and in adjacent municipalities/regions"
+      "iWouldLikeTo": "know the total number of devices and the usage per operator in the city and in adjacent municipalities/regions"
+      "inOrderTo": "determine the vehicle cap"
     },  
     "tags": [
       "public-space:distribution",
