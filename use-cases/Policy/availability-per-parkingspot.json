@@ -3,8 +3,8 @@
     "externalReference": "",
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "determine the distribution and idle time of assets",
-        "inOrderTo": "determine if and what kind of distribution requirements are needed for parking spots, to achive an efficient and inclusive supply"
+        "iWouldLikeTo": "determine the distribution and idle time of assets per parking spot",
+        "inOrderTo": "determine if and what kind of distribution requirements are needed for parking spots, and research how to improve the location, size and visibility of parking spaces. Achieve an efficient and inclusive supply"
     },
     "standards": [
         { "name": "csv" },
