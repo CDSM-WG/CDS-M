@@ -1,11 +1,11 @@
 {
-    "id": "origin-destination-demand",
+    "id": "supply-vs-demand-origin-destination",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
     "tags": ["public-space:usage"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "know the if the sypply of assets matches the demand of user",
-        "inOrderTo": "change the offer in a targeted manner and stimulate the mobility service"
+        "iWouldLikeTo": "know the if the supply of assets matches the demand of users",
+        "inOrderTo": "stimulate the use of new mobility services and tailor the offer to the travel behavior of users"
     },
     "standards": [
         { "name": "csv" },
