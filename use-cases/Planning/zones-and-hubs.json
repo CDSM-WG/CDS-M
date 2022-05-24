@@ -4,8 +4,8 @@
     "tags": ["public-space:parking-availability"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "see the performance of all designated parking areas",
-        "inOrderTo": "to improve the location, size and visibility of parking spaces."
+        "iWouldLikeTo": "see the usage of mobility services at different zones and hubs",
+        "inOrderTo": "to improve the location, size, visibility and attractiveness of the zones and hubs."
     },
     "benefits": [],
     "problemsSolved": [],
