@@ -4,7 +4,7 @@
     "tags": ["public-space:complaints"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "investigate and validate complaints from residents about operations, parking, riding, speed, etc",
+        "iWouldLikeTo": "investigate and validate complaints from residents about parking.",
         "inOrderTo": "apply prevention in the right places."
     },
     "standards": [
