@@ -1,11 +1,11 @@
 {
-    "id": "crash-reports",
+    "id": "crash-reports-planning",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recHKsRyMKXFwFom3",
     "tags": ["assets:safety"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "investigate crashes of vehicles reported by riders, public, or operators",
-        "inOrderTo": "enhance the infrastructure and make areas safer and to enable a public debate on this topic."
+        "inOrderTo": "improve the infrastructure and make areas safer. Enable public debate on this topic."
     },
     "standards": [
         { "name": "csv" },
