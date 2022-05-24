@@ -4,7 +4,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "determine the distribution and idle time of assets",
-        "inOrderTo": "redistribute assets to create a more efficient and inclusive supply"
+        "inOrderTo": "determine if and what kind of distribution requirements are needed for parking spots, to achive an efficient and inclusive supply"
     },
     "standards": [
         { "name": "csv" },
