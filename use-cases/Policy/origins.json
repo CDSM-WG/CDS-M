@@ -7,7 +7,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "find out where high demand is located",
-        "inOrderTo": "I can change the offer in a targeted manner to stimulate the use of the mobility service"
+        "inOrderTo": "determine where new mobility services are currently being used. To then make policy that specifically stimulates the use of new mobility services in certain parts of the city."
     },
     "standards": [
         { "name": "MDS-provider-vehicles", "dataProtection": "E" },
