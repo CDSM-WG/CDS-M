@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get an insight in the duration of executed trips",
-        "inOrderTo": "?"
+        "inOrderTo": "use this information for the modal split analyses"
     },
     "standards": [
         { "name": "csv" },
