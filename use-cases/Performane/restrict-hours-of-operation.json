@@ -4,8 +4,8 @@
     "tags": ["assets:policy"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "ensure operating hours are being followed, like no riding late at night for safety in some cities.",
-        "inOrderTo": "?"
+        "iWouldLikeTo": "ensure operating hours are being followed, like no riding late at night.",
+        "inOrderTo": "ensure safety for the users of the mobility services."
     },
     "standards": [
         { "name": "csv" },
