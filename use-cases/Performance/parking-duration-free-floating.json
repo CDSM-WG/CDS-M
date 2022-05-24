@@ -1,9 +1,9 @@
 {
-    "id": "parking-duration",
+    "id": "parking-duration-free-floating",
     "externalReference": "",
     "story": {
       "asA": "city",
-      "iWouldLikeTo": "get insight in duration of the parked assets",
+      "iWouldLikeTo": "get insight in duration of the all free floating assets",
       "inOrderTo": "act when certain thresholds for idle time are passed"
     },
     "benefits": [
@@ -33,8 +33,7 @@
         { "name": "GBFS-vehicle-status", "dataProtection": "A" },
         { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
         { "name": "TOMP-available-assets", "dataProtection": "A" },
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
-        { "name": "MDS-provider-stops", "dataProtection": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" }
         { "name": "MDS-provider-vehicles", "dataProtection": "E" },
         { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
         { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
