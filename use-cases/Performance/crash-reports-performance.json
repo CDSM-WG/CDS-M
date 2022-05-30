@@ -4,7 +4,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "investigate crashes of vehicles reported by riders, public, or operators",
-        "inOrderTo": "improve the safety of new mobility services. Enable public debate on this topic."
+        "inOrderTo": "be able to assess whether the assets and driving behavior are safe. To improve the safety of new mobility services. Enable public debate on this topic."
     },
     "standards": [
         { "name": "csv" },
