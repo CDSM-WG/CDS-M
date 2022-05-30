@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "determine which routes are the most popular for riders",
-        "inOrderTo": "improve the usage of physical space (parking, capacity, etc.)"
+        "inOrderTo": "improve the roads of these popular routes for a specific modality/user"
     },
     "benefits": [],
     "problemsSolved": [],
@@ -16,6 +16,7 @@
         { "name": "xml" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
         { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B","mark": "X*", "explanation": "assumption: the fastest route is probably the most used route from A to B and can be derived with the use of a conventinional route planner"},
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
         { "name": "MDS-provider-trips", "dataProtection": "D" }
         ],
     "termsAndConditions": [],
