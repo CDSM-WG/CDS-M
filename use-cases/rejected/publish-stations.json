@@ -1,5 +1,6 @@
 {
     "id": "publish-stations",
+    "reject-reason": "similar to publish-zones use case",
     "externalReference": "",
     "tags": ["public-space:distribution", "public-space:parking-pressure"],
     "story": {
