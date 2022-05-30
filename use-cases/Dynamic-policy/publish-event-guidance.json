@@ -13,7 +13,8 @@
         { "name": "geojson" },
         { "name": "xml" },
         { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-rules" }
+        { "name": "MDS-policy-rules" },
+        { "name": "DATEX-2" },
     ],
     "termsAndConditions": [],
     "agreements": [],
