@@ -1,9 +1,9 @@
 {
-    "id": "idle-time-free-floating-assets",
+    "id": "idle-time-and-vehicle-rotation",
     "externalReference": "",
     "story": {
       "asA": "city",
-      "iWouldLikeTo": "get insight in parking duration of all free floating assets",
+      "iWouldLikeTo": "get insight in parking duration and vehicle rotation of all assets",
       "inOrderTo": "act when certain thresholds for idle time are passed"
     },
     "benefits": [
