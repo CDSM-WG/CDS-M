@@ -1,11 +1,11 @@
 {
-    "id": "supply-vs-demand-origin-destination",
+    "id": "better-plan-supply",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
     "tags": ["public-space:usage"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the if the supply of assets matches the demand of users",
-        "inOrderTo": "stimulate the use of new mobility services by planning and tailoring the numbers/locatios of these services to the demands of users"
+        "inOrderTo": "stimulate the use of new mobility services by tailoring the numbers/locations of these services to the demands of users"
     },
     "standards": [
         { "name": "csv" },
