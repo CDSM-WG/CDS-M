@@ -1,6 +1,6 @@
 {
     "id": "street-condition-improvement",
-    "reject-reason": "duplicate road-improvement-effects"
+    "reject-reason": "duplicate road-improvement-effects",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recz55sgUPlS6o6S5",
     "tags": ["public-space:usage", "mode:bike", "mode:car", "mode:scooter", "mode:pedestrian"],
     "story": {
