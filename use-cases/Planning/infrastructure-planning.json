@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know current offer and demand; location non-booked assets and trips taken",
-        "inOrderTo": "determine where to place new lane, mobility hubs and drop zones"
+        "inOrderTo": "determine where to place new lanes, mobility hubs and drop zones"
     },
         "standards": [
         { "name": "csv" },
