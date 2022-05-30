@@ -1,5 +1,6 @@
 {
     "id": "publish-preferred-parking-zones",
+    "reject-reason": "similar to publish-zones use case",
     "externalReference": "",
     "tags": [
         "public-space:parking-pressure",
