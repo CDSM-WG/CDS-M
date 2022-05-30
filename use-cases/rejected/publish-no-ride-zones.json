@@ -1,5 +1,6 @@
 {
     "id": "publish-no-ride-zones",
+    "reject-reason": "similar to publish-zones use case",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rec3rXhqSoIV35zcz",
     "tags": ["public-space:usage"],
     "story": {
