@@ -1,5 +1,6 @@
 {
     "id": "service-area",
+    "reject-reason": "similar to publish-zones use case",
     "externalReference": "",
     "tags": ["public-space:usage"],
     "story": {
