@@ -9,12 +9,15 @@
     },
     "benefits": [],
     "problemsSolved": [],
+    },
     "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-policy-rules" }, 
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" },
+        { "name": "DATEX-2" },
         { "name": "TOMP-API-regions" }
     ],
     "termsAndConditions": [],
