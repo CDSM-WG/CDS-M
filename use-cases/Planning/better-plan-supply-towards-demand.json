@@ -1,7 +1,7 @@
 {
     "id": "better-plan-supply-towards-demand",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
-    "tags": ["public-space:usage"],
+    "tags": ["planning:supply"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the if the supply of assets matches the demand of users",

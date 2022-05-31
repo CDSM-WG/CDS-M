@@ -2,7 +2,7 @@
     "id": "destinations",
     "externalReference": "",
     "tags": [
-        "business:overload"
+        "policy:origin-destination"
     ],
     "story": {
         "asA": "city",

@@ -1,7 +1,7 @@
 {
     "id": "commute-neighbouring-regions",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
-    "tags": ["assets:efficiency"],
+    "tags": ["policy:origin-destination"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get insight in origin/destinations of trips on a district level in and outside the city",

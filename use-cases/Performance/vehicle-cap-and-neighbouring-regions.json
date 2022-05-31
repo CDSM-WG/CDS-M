@@ -1,7 +1,7 @@
 {
     "id": "vehicle-cap-and-neighbouring-regions",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
-    "tags": ["assets:efficiency"],
+    "tags": ["performance:vehicle-counts"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get insight in origin/destinations of trips in and outside the city",
@@ -26,8 +26,10 @@
         { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
-        { "name": "OD-Matrix-odz" },
-        { "name": "OD-Matrix-matrix" },
+        { "name": "ODyzee" },
+        { "name": "OD-Matrix-csv" },
+        { "name": "OD-Matrix-geojson" },
+        { "name": "OD-Matrix-shape" },
         { "name": "KML-Track" },
         { "name": "KML-Point-and-timestamp" },
         { "name": "GPX" },

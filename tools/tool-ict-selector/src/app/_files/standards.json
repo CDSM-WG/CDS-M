@@ -1013,6 +1013,9 @@
             "exception": "removed"
         }
     ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
@@ -1027,7 +1030,7 @@
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "B",
+    "privacy": "A",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -1081,6 +1084,9 @@
             "exception": "limited"
         }
     ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
@@ -1125,6 +1131,9 @@
     "reusability":"E", 
     "interoperability": "D",
     "domain": "A",
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
 
     "fieldModifications": [
         {
@@ -1186,6 +1195,9 @@
     "interoperability": "A",
     "domain": "A",
     "part": "vehicles",
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
@@ -1586,6 +1598,9 @@
             "field": "bankaccount",
             "exception": "removed"
         }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
     ],
     "retentionPeriod": "[ISO8601 duration]",
     "bbversion": 1

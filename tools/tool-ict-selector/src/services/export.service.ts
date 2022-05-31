@@ -110,6 +110,8 @@ export class ExportService {
             }
         });
 
+        standard['bbversion'] = selected['bbversion'];
+
         gatheredStandards.push(standard);
     }
 

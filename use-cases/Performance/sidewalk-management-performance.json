@@ -6,7 +6,10 @@
       "iWouldLikeTo": "use data to check whether devices are not parked on sidewalks",
       "inOrderTo": "monitor the compliance of operators with the service area."
     },
-   "standards": [
+    "tags": [
+      "performance:curb-usage"        
+    ],
+    "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },

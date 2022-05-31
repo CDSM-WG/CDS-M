@@ -23,13 +23,15 @@
                 </td>
             </ng-container>
             <ng-container matColumnDef="conflict">
-                <th mat-header-row *matHeaderCellDef class="initialHeader">&nbsp;&nbsp;</th>
+                <th mat-header-row *matHeaderCellDef class="rotate">
+                    <div><span>privacy score</span></div>
+                </th>
                 <td mat-cell *matCellDef="let element" [title]="getConflictDescription(element)">
                     <i class="fa fa-exclamation-triangle" [class]="element['conflict']?'visible':'invisible'"></i>
                 </td>
             </ng-container>
             <ng-container matColumnDef="sortValue">
-                <th mat-header-row *matHeaderCellDef class="initialHeader">value</th>
+                <th mat-header-row *matHeaderCellDef class="rotate"><div><span>value</span></div></th>
                 <td mat-cell *matCellDef="let element">{{element.sortValue}} </td>
             </ng-container>
             <ng-container matColumnDef="privacy">

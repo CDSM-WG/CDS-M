@@ -1,7 +1,7 @@
 {
     "id": "infrastructure-planning",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
-    "tags": ["public-space:planning", "public-space:usage", "mode:bike", "mode:scooter", "mode:step"],
+    "tags": ["planning:offer-and-demand"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know current offer and demand; location non-booked assets and trips taken",

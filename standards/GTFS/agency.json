@@ -4,6 +4,7 @@
     "exchangeType": "file-based", 
     "part": "agency.txt",
     "version": "[version]",
+    "url": "[url]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",

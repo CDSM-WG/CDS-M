@@ -6,6 +6,9 @@
         "iWouldLikeTo": "get alerts where issues occur",
         "inOrderTo": "remove devices from public right of way or create plans to fix these issues"
     },
+    "tags": [
+        "dynamic-policy:events"
+    ], 
     "standards": [
         { "name": "csv" },
         { "name": "json" },

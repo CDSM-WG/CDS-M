@@ -1,7 +1,7 @@
 {
     "id": "improve-most-popular-routes",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOEp2ybwC50OJHJ",
-    "tags": ["public-space:network-usage"],
+    "tags": ["planning:popular-routes"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "determine which routes are the most popular for riders",

@@ -7,11 +7,9 @@
       "inOrderTo": "take action against this and prevent further vandalistic actions"
     },  
     "tags": [
-        "public-space:safety",
-        "public-space:nuisances",
-        "public-space:complaints"
-],
-   "standards": [
+        "dynamic-policy:vandalism"
+    ],
+    "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },

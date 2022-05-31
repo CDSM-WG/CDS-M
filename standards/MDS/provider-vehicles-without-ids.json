@@ -13,6 +13,9 @@
     "interoperability": "A",
     "domain": "A",
     "part": "vehicles",
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",

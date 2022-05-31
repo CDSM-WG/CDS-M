@@ -2,7 +2,7 @@
     "id": "cluttering-performance",
     "externalReference": "",
     "tags": [
-        "business:overload"
+        "performance:idle-assets"
     ],
     "story": {
         "asA": "city",

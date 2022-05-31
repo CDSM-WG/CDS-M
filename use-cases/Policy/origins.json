@@ -2,7 +2,7 @@
     "id": "origins",
     "externalReference": "",
     "tags": [
-        "business:demand"
+        "policy:origin-destination"
     ],
     "story": {
         "asA": "city",

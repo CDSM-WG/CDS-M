@@ -1,7 +1,7 @@
 {
     "id": "distribution-requirements",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recBL5EgkaAEPuxOU",
-    "tags": ["assets:distribution", "inclusion:distribution"],
+    "tags": ["performance:distribution"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "ensure devices are distributed according to equity requirements",

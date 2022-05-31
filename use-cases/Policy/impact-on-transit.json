@@ -1,7 +1,7 @@
 {
     "id": "impact-on-transit",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKjAEob7RRBXf1P",
-    "tags": ["assets:connections"],
+    "tags": ["policy:transit"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the number of assets arriving and departing from a public transport hub",

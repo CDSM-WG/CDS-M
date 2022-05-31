@@ -1,6 +1,6 @@
 {
     "id": "transit-information",
-    "tags": ["assets:connections"],
+    "tags": ["policy:transit"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the number of transit assets arriving and departing from a public transport hub",

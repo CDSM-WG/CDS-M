@@ -13,6 +13,9 @@
     "reusability":"E", 
     "interoperability": "D",
     "domain": "A",
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
 
     "fieldModifications": [
         {

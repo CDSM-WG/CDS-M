@@ -1,7 +1,7 @@
 {
     "id": "parking-area-performance",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
-    "tags": ["public-space:parking-usage"],
+    "tags": ["performance:usage"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get insights in the usage and performance of all designated parking areas",

@@ -14,10 +14,10 @@ import { ExportService } from 'src/services/export.service'
 })
 export class StandardsComponent implements OnInit {
 
-  static DISP_COLUMNS: any = ['name', 'selected', 'conflict', 'sortValue', 'privacy', 'space'];
+  static DISP_COLUMNS: any = ['name', 'selected', 'conflict', 'privacy', 'space'];
   static DISP_COLUMNS_AUTH: any = ['name'];
 
-  displayedColumns : any[] = ['name', 'selected', 'conflict', 'sortValue', 'privacy', 'implE', 'reuse', 'interop', 'domain', 'space'];
+  displayedColumns : any[] = ['name', 'selected', 'conflict', 'privacy', 'implE', 'reuse', 'interop', 'domain', 'space'];
   useCases : any[] = [];
 
   displayedColumnsAuthentication : any[] = ['name'];
@@ -101,9 +101,6 @@ export class StandardsComponent implements OnInit {
         return true;
       }
     this.datasource.filter = "true";
-    if (this.datasource.filteredData.entries.length === 0 ) {
-      confirm("No standards with privacy protection score A covering all use cases.\nPlease combine standards or reduce privacy protection level.");
-    }
   }
 
   private configureUseCases() {
@@ -149,9 +146,9 @@ export class StandardsComponent implements OnInit {
 
         if ('dataProtection' in s) {
           let defaultPrivacy = standard['privacy']
-          if (this.less(s['dataProtection'], defaultPrivacy)) {
-            standard['privacy'] = s['dataProtection']
-          }
+          // if (this.less(s['dataProtection'], defaultPrivacy)) {
+          standard['privacy'] = s['dataProtection']
+          //}
         }
 
         if (this.useCases.find(x => x == useCase.id) == undefined) {
@@ -181,8 +178,7 @@ export class StandardsComponent implements OnInit {
   }
 
   private collectAttributeColumns() {
-    this.standards.forEach((s: any) => {
-      
+    this.standards.forEach((s: any) => {      
       Object.keys(s).forEach( (property: string) => {
         if (!property.startsWith("org_")) {
           let value = s[property];
@@ -201,7 +197,7 @@ export class StandardsComponent implements OnInit {
     })
   }
 
-  getVisibilityClass(value: any, column: string, element: any){
+  getVisibilityClass(value: any, column: string, element: any) {
     if ('org_' + column in element) return 'visible';
     if( value == null ) return 'invisible';
     if( typeof value === 'string' && value.indexOf('[') == -1) return 'invisible';
@@ -311,12 +307,11 @@ export class StandardsComponent implements OnInit {
   }
 
   onSelect(e: Event, element: any) {
-    console.log(e);
     this.standards.forEach( (s:any) => {
       if (s.name === element.name) {
         s.selected = !element.selected;
       }
-    })
+    } );
     this.datasourceAuthentication.filter = 'true';
     this.datasourceAttributes.filter = 'true';
   }
@@ -429,17 +424,17 @@ export class StandardsComponent implements OnInit {
 
   onChangePrivacyOnly(event: any) {
     this.privacyOnly = event.target.checked;
-    if( this.privacyOnly ) {
+    if ( this.privacyOnly ) {
       this.removeColumn('implE');
       this.removeColumn('reuse');
       this.removeColumn('interop');
       this.removeColumn('domain');
     }
     else {
-      this.displayedColumns.splice(5, 0, 'domain');
-      this.displayedColumns.splice(5, 0, 'interop');
-      this.displayedColumns.splice(5, 0, 'reuse');
-      this.displayedColumns.splice(5, 0, 'implE');
+      this.displayedColumns.splice(4, 0, 'domain');
+      this.displayedColumns.splice(4, 0, 'interop');
+      this.displayedColumns.splice(4, 0, 'reuse');
+      this.displayedColumns.splice(4, 0, 'implE');
     }
     this.standards = this.sortDataSource(this.standards);
   }
@@ -455,9 +450,9 @@ export class StandardsComponent implements OnInit {
     let allFound = true;
     this.useCases.forEach( s => 
       {
-        if (!data['selected']) {
-          if ( s in data ){
-            if ( data[s] == '' ){
+        if ( !data['selected'] ) {
+          if ( s in data ) {
+            if ( data[s] == '' ) {
               allFound = false;
             }
           }
@@ -466,7 +461,7 @@ export class StandardsComponent implements OnInit {
           }
         }
       });
-    return allFound && data['privacy'] === 'A';
+    return allFound && (data['privacy'] === 'A' || data['privacy'] === 'B');
   }
 
   getConflictDescription(data: any) {

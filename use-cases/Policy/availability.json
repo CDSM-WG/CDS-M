@@ -53,10 +53,6 @@
   "processing": [],
   "archive": [],
   "tags": [
-    "public-space:distribution",
-    "assets:availability",
-    "mode:bike",
-    "mode:car",
-    "mode:shared-car"
+    "policy:availability"
   ]
 }

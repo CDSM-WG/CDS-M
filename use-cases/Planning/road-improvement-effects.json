@@ -1,7 +1,7 @@
 {
     "id": "road-improvement-effects",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recUQ9z25tWaCzlaB",
-    "tags": ["public-space:network-usage", "mode:bike", "mode:scooter", "mode:car", "mode:shared-car"],
+    "tags": ["planning:road-usage"],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "determine road usage by riders",

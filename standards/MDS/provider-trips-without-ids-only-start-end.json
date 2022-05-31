@@ -27,6 +27,9 @@
             "exception": "limited"
         }
     ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
