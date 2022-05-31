@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get insight in origin/destinations of trips on a district level in and outside the city",
-        "inOrderTo": "find out how shared mobility is used to travel to and from the city, commuting for example. Use this information for modal split analyses",
+        "inOrderTo": "find out how shared mobility is used to travel to and from the city, commuting for example. Use this information for modal split analyses"
     },
     "standards": [
         { "name": "csv" },

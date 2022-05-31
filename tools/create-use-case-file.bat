@@ -1,19 +1,43 @@
 @echo off
 setlocal enabledelayedexpansion
-SET OUTPUTFILE="..\tools\tool-use-case-selector\use-case-selector\src\app\_files\use-cases.json"
+
+SET OUTPUTDIR=%CD%
+
+SET OUTPUTFILE="%OUTPUTDIR%\tool-use-case-selector\use-case-selector\src\app\_files\use-cases.json"
 SET COUNT=0
 
 :use-cases
 CD ..\use-cases\
 
-FOR %%I in (*.json) do (    
+REM FOR %%I in (*.json) do (    
+REM     IF !COUNT! == 0 (echo [ > %OUTPUTFILE%) ELSE (echo , >> %OUTPUTFILE%)
+REM     SET COUNT=1
+REM     echo %OUTPUTFILE%
+REM     type %%I >> %OUTPUTFILE%
+REM )
+
+REM echo ] >> %OUTPUTFILE%
+
+call :processTreeUC
+echo ] >> %OUTPUTFILE%
+goto :eofUC
+
+:processTreeUC
+FOR %%I in (*.json) do (
+    REM echo %%I
     IF !COUNT! == 0 (echo [ > %OUTPUTFILE%) ELSE (echo , >> %OUTPUTFILE%)
     SET COUNT=1
     type %%I >> %OUTPUTFILE%
 )
+for /D %%d in (*) do (
+    echo %%d
+    cd %%d
+    IF %%d NEQ rejected call :processTreeUC
+    cd ..
+)
+exit /b
 
-echo ] >> %OUTPUTFILE%
-
+:eofUC
 copy %OUTPUTFILE% "C:\sources\CDS-M\CDS-M\tools\tool-ict-selector\src\app\_files\
 
 :authentications

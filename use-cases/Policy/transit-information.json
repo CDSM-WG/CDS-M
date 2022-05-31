@@ -8,11 +8,11 @@
        },
     "standards": [
        { "name": "GTFS"},
-       { "name": "NeTEx"},
+       { "name": "NeTEx"}
       ],
-      "termsAndConditions": [],
-      "agreements": [],
-      "transport": [],
-      "processing": [],
-      "archive": []
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

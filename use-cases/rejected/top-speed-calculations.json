@@ -18,7 +18,7 @@
         { "name": "MDS-provider-status-changes", "dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
         { "name": "MDS-provider-trips", "dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
-        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"},
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "E" , "mark": "X*", "explanation": "breaches data protection principle of lawfullness, fairness and transparency. Necessity and proportionality specifically"}
       ],
     "termsAndConditions": [],
     "agreements": [],

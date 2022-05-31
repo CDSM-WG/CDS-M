@@ -9,7 +9,6 @@
     },
     "benefits": [],
     "problemsSolved": [],
-    },
     "standards": [
         { "name": "csv" },
         { "name": "json" },

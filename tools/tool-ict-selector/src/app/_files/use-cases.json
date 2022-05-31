@@ -1,11 +1,265 @@
 [ 
 {
-    "id": "availability-per-parkingspot",
+    "id": "cluttering-performance",
+    "externalReference": "",
+    "tags": [
+        "business:overload"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get insight in the location of non-booked assets",
+        "inOrderTo": "investigate where cluttering often occurs and if operators perform strong enough to prevent this. Use this information to create new parking zones or alter the service area."
+    },
+    "standards": [
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-stops", "dataProtection": "A" },
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B" },
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "ODyZee" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "OD-Matrix-csv" },
+        { "name": "OD-Matrix-geojson" },
+        { "name": "KML-Track", "dataProtection": "E" },
+        { "name": "KML-Point-and-timestamp", "dataProtection": "E" },
+        { "name": "GPX", "dataProtection": "E" },
+        { "name": "shapefile-tracks", "dataProtection": "E" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+        { "name": "TOMP-available-assets-with-asset-license-plate", "dataProtection": "C" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" }, 
+        { "name": "csv" }, 
+        { "name": "geojson" }, 
+        { "name": "json" }, 
+        { "name": "xml" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+ {
+    "id": "crash-reports-performance",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recHKsRyMKXFwFom3",
+    "tags": ["assets:safety"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "investigate crashes of vehicles reported by riders, public, or operators",
+        "inOrderTo": "be able to assess whether the assets and driving behavior are safe. To improve the safety of new mobility services. Enable public debate on this topic."
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-status-change", "dataProtection": "D" },
+        { "name": "MDS-provider-status-change-without-ids", "dataProtection": "B" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "distribution-requirements",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recBL5EgkaAEPuxOU",
+    "tags": ["assets:distribution", "inclusion:distribution"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "ensure devices are distributed according to equity requirements",
+        "inOrderTo": "facillitate an inclusive and accessible supply of mobility services."
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+    { "name": "csv" },
+    { "name": "geojson" },
+    { "name": "json" },
+    { "name": "xml" },
+    { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "GBFS-station-status", "dataProtection": "A" },
+    { "name": "TOMP-available-assets", "dataProtection": "A" },
+    { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+    { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-stops", "dataProtection": "A" },
+    { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+    { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+    { "name": "shapefile-points" },
+    { "name": "KML-points" },
+    { "name": "SPDP-dynamic" }
+  ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "hours-of-operation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
+    "tags": ["assets:policy"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "ensure operating hours are being followed, like no riding late at night.",
+        "inOrderTo": "ensure safety for the users of the mobility services."
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B"},
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "idle-time-and-vehicle-rotation",
+    "externalReference": "",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "get insight in parking duration and vehicle rotation of all assets",
+      "inOrderTo": "act when certain thresholds for idle time are passed"
+    },
+    "benefits": [
+      {
+        "to": "cities",
+        "items": [
+          "The citizens aren't annoyed about too long parked assets"
+        ]
+      }
+    ],
+    "problemsSolved": [
+      {
+        "to": "cities",
+        "items": [
+          "Shortage by mispositioning of mobility assets"
+        ]
+      }
+    ],
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+        { "name": "SPDP-dynamic" }
+      ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "tags": [
+      "public-space:noisance",
+      "mode:bike",
+      "mode:scooter",
+      "mode:step"
+    ]
+  }
+, 
+{
+    "id": "parking-area-performance",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
+    "tags": ["public-space:parking-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get insights in the usage and performance of all designated parking areas",
+        "inOrderTo": "to monitor the operators' performance and compliance with offer requirements per parking area."
+    },
+   "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "MDS-provider-stops", "dataProtection": "A" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+        { "name": "SPDP-dynamic" }
+      ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "performance-per-mobility-hub",
     "externalReference": "",
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "determine the distribution and idle time of assets",
-        "inOrderTo": "redistribute assets to create a more efficient and inclusive supply"
+        "iWouldLikeTo": "know the number of assets at mobility hubs",
+        "inOrderTo": "monitor operators' performance at mobility hubs and monitor if they comply with regulations around this topic"
     },
     "standards": [
         { "name": "csv" },
@@ -40,12 +294,296 @@
 }
 , 
 {
-  "id": "availability",
+    "id": "sidewalk-management",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recvHs81SsiDlU7de",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "use data to check whether devices are not parked on sidewalks",
+      "inOrderTo": "monitor the compliance of operators with the service area."
+    },
+   "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "MDS-provider-stops", "dataProtection": "A" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+        { "name": "SPDP-dynamic" }
+      ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "vehicle-cap-and-neighbouring-regions",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
+    "tags": ["assets:efficiency"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get insight in origin/destinations of trips in and outside the city",
+        "inOrderTo": "find out if there is an imbalance of trips in/out of the city, investigate if vehicle caps are breached."
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B"},
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "better-plan-supply-towards-demand",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the if the supply of assets matches the demand of users",
+        "inOrderTo": "stimulate the use of new mobility services by tailoring the numbers/locations of these services to the demands of users"
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "OD-Matrix-csv" },
+        { "name": "ODyZee" },        
+        { "name": "OD-Matrix-geojson" },
+        { "name": "OD-Matrix-shape" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "crash-reports-safety-planning",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recHKsRyMKXFwFom3",
+    "tags": ["assets:safety"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "investigate crashes of vehicles reported by riders, public, or operators",
+        "inOrderTo": "improve the infrastructure and make areas safer. Enable public debate on this topic."
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-status-change", "dataProtection": "D" },
+        { "name": "MDS-provider-status-change-without-ids", "dataProtection": "B" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "improve-most-popular-routes",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOEp2ybwC50OJHJ",
+    "tags": ["public-space:network-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine which routes are the most popular for riders",
+        "inOrderTo": "improve the roads of these popular routes for a specific modality/user"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B","mark": "X*", "explanation": "assumption: the fastest route is probably the most used route from A to B and can be derived with the use of a conventinional route planner"},
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
+        { "name": "MDS-provider-trips", "dataProtection": "D" }
+        ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "improve-zones-and-hubs",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
+    "tags": ["public-space:parking-availability"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "see the usage of mobility services at different zones and hubs",
+        "inOrderTo": "to improve the location, size, visibility and attractiveness of the zones and hubs."
+    },
+    "benefits": [],
+    "problemsSolved": [],
+   "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "MDS-provider-stops", "dataProtection": "A" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+        { "name": "SPDP-dynamic" }
+      ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "infrastructure-planning",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
+    "tags": ["public-space:planning", "public-space:usage", "mode:bike", "mode:scooter", "mode:step"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know current offer and demand; location non-booked assets and trips taken",
+        "inOrderTo": "determine where to place new lanes, mobility hubs and drop zones"
+    },
+        "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B"},
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
+    ],
+      "termsAndConditions": [],
+      "agreements": [],
+      "transport": [],
+      "processing": [],
+      "archive": []
+}
+, 
+{
+    "id": "road-improvement-effects",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recUQ9z25tWaCzlaB",
+    "tags": ["public-space:network-usage", "mode:bike", "mode:scooter", "mode:car", "mode:shared-car"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine road usage by riders",
+        "inOrderTo": "get insights in before and after implementing road changes, improvements, signal retimings, etc."
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B","mark": "X*", "explanation": "assumption: the fastest route is probably the most popular route from A to B and can be derived with the use of a conventinional route planner"},
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
+        { "name": "KML-Points" },
+        { "name": "GPX" },
+        { "name": "shapefile-points" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "academic-research",
+    "action": "Research requires often tailor made data, and doesn't have clearly specified boundaries.",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recLc8L6mTQYe0w08",
+    "tags": [],
+    "story": {
+        "asA": "University researcher",
+        "iWouldLikeTo": "use the data for analysis, prediction, and modeling",
+        "inOrderTo": "inform policy makers"
+    }
+}
+, 
+{
+  "id": "distribution-requirements-availability",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
   "story": {
     "asA": "city",
     "iWouldLikeTo": "get insight in availability and idle time of mobility services",
-    "inOrderTo": "distribute and organize mobility services efficiently and inclusively"
+    "inOrderTo": "create policy around the efficient and inclusive distribution of mobility services"
   },
   "benefits": [
     {
@@ -133,7 +671,8 @@
     "processing": [],
     "archive": [],
     "tags": ["assets:usage"]
-}, 
+}
+, 
 {
     "id": "average-time-per-trip",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recqgvXE68b4l77mw",
@@ -141,7 +680,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get an insight in the duration of executed trips",
-        "inOrderTo": "?"
+        "inOrderTo": "use this information for the modal split analyses"
     },
     "standards": [
         { "name": "csv" },
@@ -168,16 +707,14 @@
 }
 , 
 {
-    "id": "car-reduction-analysis",
-    "externalReference": "",
-    "tags": ["green-deal:sharing"],
+    "id": "commute-neighbouring-regions",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
+    "tags": ["assets:efficiency"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "know the origin-destination of individual trips to subsequently ingest the data into a traffic model and perform a car-reduction-analysis",
-        "inOrderTo": "make informed decisions about the deployment of shared mobility in different areas in the city to reduce (private) car journeys."
+        "iWouldLikeTo": "get insight in origin/destinations of trips on a district level in and outside the city",
+        "inOrderTo": "find out how shared mobility is used to travel to and from the city, commuting for example. Use this information for modal split analyses"
     },
-    "benefits": [],
-    "problemsSolved": [],
     "standards": [
         { "name": "csv" },
         { "name": "json" },
@@ -196,7 +733,13 @@
         { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
         { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
     ],
     "termsAndConditions": [],
     "agreements": [],
@@ -205,58 +748,6 @@
     "archive": []
 }
 , 
-{
-    "id": "crash-reports",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recHKsRyMKXFwFom3",
-    "tags": ["assets:safety"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "investigate crashes of vehicles reported by riders, public, or operators",
-        "inOrderTo": "enhance the infrastructure and make areas safer and to enable a public debate on this topic."
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-status-change", "dataProtection": "D" },
-        { "name": "MDS-provider-status-change-without-ids", "dataProtection": "B" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}
-, 
-{
-    "id": "daily-permit-fee",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rec6UoYGlA7nxjuaN",
-    "tags": ["inclusion:affordable", "assets:efficiency"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "calculate fees per scooter deployed/ridden per day",
-        "inOrderTo": "to find out whether inhabitants don't pay too much"
-    },
-    "benefits": [],
-    "problemsSolved": [],
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "TOMP-API-journal-entries" },
-        { "name": "TOMP-API-journal-entries-without-bankaccount" },
-        { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
-        { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "E" },
-        { "name": "MDS-provider-trips", "dataProtection": "E" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
 {
     "id": "destinations",
     "externalReference": "",
@@ -266,7 +757,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "get insight in location of the destination of assets",
-        "inOrderTo": "investigate if and where cluttering occurs during the day"
+        "inOrderTo": "determine for which travel purposes new mobility services are currently being used. In order to then make policy that develops and stimulates certain travel behaviour."
     },
     "standards": [
         { "name": "MDS-provider-vehicles", "dataProtection": "E" },
@@ -276,10 +767,10 @@
         { "name": "MDS-provider-stops", "dataProtection": "A" },
         { "name": "MDS-provider-trips", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
-        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "A" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B" },
         { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "A" },
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
         { "name": "OD-Matrix-csv" },
         { "name": "ODyZee" },        
         { "name": "OD-Matrix-geojson" },
@@ -309,55 +800,12 @@
 }
 , 
 {
-    "id": "distribution-requirements",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recBL5EgkaAEPuxOU",
-    "tags": ["assets:distribution", "inclusion:distribution"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "ensure devices are distributed according to equity requirements",
-        "inOrderTo": "regulate inclusion"
-    },
-    "benefits": [],
-    "problemsSolved": [],
-    "standards": [
-    { "name": "csv" },
-    { "name": "geojson" },
-    { "name": "json" },
-    { "name": "xml" },
-    { "name": "GBFS-free-bike-status", "dataProtection": "A" },
-    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
-    { "name": "GBFS-vehicle-status", "dataProtection": "A" },
-    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
-    { "name": "GBFS-station-status", "dataProtection": "A" },
-    { "name": "TOMP-available-assets", "dataProtection": "A" },
-    { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
-    { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
-    { "name": "MDS-provider-vehicles", "dataProtection": "E" },
-    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
-    { "name": "MDS-provider-stops", "dataProtection": "A" },
-    { "name": "MDS-provider-status-changes", "dataProtection": "E" },
-    { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
-    { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
-    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
-    { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-    { "name": "shapefile-points" },
-    { "name": "KML-points" },
-    { "name": "SPDP-dynamic" }
-  ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}
-, 
-{
     "id": "hourly-utilisation",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
     "tags": ["assets:efficiency"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "get insight in hourly fleet utilization with origin/destination matrices on a district level",
+        "iWouldLikeTo": "get insight in hourly fleet utilization with origin/destination matrices on a district level in the city and neigbouring regions",
         "inOrderTo": "use this information in traffic modelling for modal split"
     },
     "standards": [
@@ -400,7 +848,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the number of assets arriving and departing from a public transport hub",
-        "inOrderTo": ""
+        "inOrderTo": "investigate shared mobility as a stratgey for last mile solutions"
     },
     "standards": [
         { "name": "MDS-provider-vehicles", "dataProtection": "E" },
@@ -442,15 +890,17 @@
 }
 , 
 {
-    "id": "infrastructure-planning",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
-    "tags": ["public-space:planning", "public-space:usage", "mode:bike", "mode:scooter", "mode:step"],
+    "id": "modal-split-and-car-reduction-analysis",
+    "externalReference": "",
+    "tags": ["green-deal:sharing"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "know current offer and demand; location non-booked assets and trips taken",
-        "inOrderTo": "determine where to place new lanes or mobility hubs and drop zones"
+        "iWouldLikeTo": "know the origin-destination of individual trips to subsequently ingest the data into a traffic model and perform a modal-split or car-reduction-analysis",
+        "inOrderTo": "make informed decisions about the deployment of shared mobility in different areas in the city to reduce (private) car journeys."
     },
-        "standards": [
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },
@@ -470,57 +920,6 @@
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
     ],
-      "termsAndConditions": [],
-      "agreements": [],
-      "transport": [],
-      "processing": [],
-      "archive": []
-}
-, 
-{
-    "id": "injury-investigation",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recqUqEewxLgenFTz",
-    "tags": ["public-space:safety"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "investigate injuries and collisions with other objects and cars",
-        "inOrderTo": "to determine roadway accident causes"
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}
-, 
-{
-    "id": "most-used-routes",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOEp2ybwC50OJHJ",
-    "tags": ["public-space:network-usage"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "determine which routes are the most popular for riders",
-        "inOrderTo": "improve the usage of physical space (parking, capacity, etc.)"
-    },
-    "benefits": [],
-    "problemsSolved": [],
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
-        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B","mark": "X*", "explanation": "assumption: the fastest route is probably the most used route from A to B and can be derived with the use of a conventinional route planner"},
-        { "name": "MDS-provider-trips", "dataProtection": "D" }
-        ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -530,14 +929,18 @@
 , 
 {
     "id": "open-data",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recnWXRAtSaugYHjN",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOhqaFsHNlxVFn3",
     "tags": [""],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "publish a subset of raw data to open data websites",
-        "inOrderTo": "facilitate analysis and accountability by anyone, and fulfill open records requests"
+        "iWouldLikeTo": "Communicate to the public what data is collected. Data is from everybody and for everybody.",
+        "inOrderTo": "Build trust between citizens, car operators and the government and share knowledge."
     },
     "standards": [
+      { "name": "csv" },
+      { "name": "geojson" },
+      { "name": "json" },
+      { "name": "xml" },
       { "name": "csv" },
       { "name": "json" },
       { "name": "geojson" },
@@ -566,44 +969,27 @@
       { "name": "TOMP-pricing-plans" },
       { "name": "TOMP-stations" },
       { "name": "MDS-provider-events" },
-      { "name": "MDS-policy-events" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
-{
-    "id": "origin-destination-demand",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
-    "tags": ["public-space:usage"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "know the if the sypply of assets matches the demand of user",
-        "inOrderTo": "change the offer in a targeted manner and stimulate the mobility service"
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
-        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-trips", "dataProtection": "E" },
-        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
-        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "OD-Matrix-csv" },
-        { "name": "ODyZee" },        
-        { "name": "OD-Matrix-geojson" },
-        { "name": "OD-Matrix-shape" },
-        { "name": "KML-Track" },
-        { "name": "KML-Point-and-timestamp" },
-        { "name": "GPX" },
-        { "name": "shapefile-tracks" }
+      { "name": "MDS-policy-events" },
+      { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+      { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+      { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "GBFS-station-status", "dataProtection": "A" },
+      { "name": "TOMP-available-assets", "dataProtection": "A" },
+      { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+      { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-stops", "dataProtection": "A" },
+      { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+      { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+      { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+      { "name": "shapefile-points" },
+      { "name": "KML-points" },
+      { "name": "SPDP-dynamic" },
+      { "name": "OD-Matrix-odz", "mark": "X*", "explanation": "the data has to be aggregated per mode, not per operator, as no commercial sensitive data may be shared"}
     ],
     "termsAndConditions": [],
     "agreements": [],
@@ -621,7 +1007,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "find out where high demand is located",
-        "inOrderTo": "I can change the offer in a targeted manner to stimulate the use of the mobility service"
+        "inOrderTo": "determine where new mobility services are currently being used. To then make policy that specifically stimulates the use of new mobility services in certain parts of the city."
     },
     "standards": [
         { "name": "MDS-provider-vehicles", "dataProtection": "E" },
@@ -631,10 +1017,10 @@
         { "name": "MDS-provider-stops", "dataProtection": "A" },
         { "name": "MDS-provider-trips", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
-        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "A" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B" },
         { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "A" },
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
         { "name": "OD-Matrix-csv" },
         { "name": "ODyZee" },        
         { "name": "OD-Matrix-geojson" },
@@ -664,105 +1050,13 @@
 }
 , 
 {
-    "id": "parking-area-performance",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
-    "tags": ["public-space:parking-usage"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "get insights in the location and performance of all designated parking areas",
-        "inOrderTo": "to improve the location, size and visibility of parking spaces and to monitor operator performance."
-    },
-   "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "GBFS-station-status" },
-        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
-        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
-        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
-        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
-        { "name": "TOMP-available-assets", "dataProtection": "A" },
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
-        { "name": "MDS-provider-stops", "dataProtection": "A" },
-        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
-        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
-        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
-        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
-        { "name": "SPDP-dynamic" }
-      ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}
-, 
-{
-    "id": "parking-availability",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
-    "tags": ["public-space:parking-availability"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "see the performance of all designated parking areas",
-        "inOrderTo": "to improve the location, size and visibility of parking spaces."
-    },
-    "benefits": [],
-    "problemsSolved": [],
-   "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "GBFS-station-status" },
-        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
-        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
-        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
-        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
-        { "name": "TOMP-available-assets", "dataProtection": "A" },
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
-        { "name": "MDS-provider-stops", "dataProtection": "A" },
-        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
-        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
-        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
-        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
-        { "name": "SPDP-dynamic" }
-      ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}
-, 
-{
-    "id": "parking-duration",
+    "id": "parking-zones-availability",
     "externalReference": "",
     "story": {
-      "asA": "city",
-      "iWouldLikeTo": "get insight in duration of the parked assets",
-      "inOrderTo": "act when certain thresholds for idle time are passed"
+        "asA": "city",
+        "iWouldLikeTo": "determine the distribution and idle time of assets per parking spot",
+        "inOrderTo": "determine if and what kind of distribution requirements are needed for parking spots, and investigate how to improve the location, size and visibility of parking spaces. Achieve an efficient and inclusive supply"
     },
-    "benefits": [
-      {
-        "to": "cities",
-        "items": [
-          "The citizens aren't annoyed about too long parked assets"
-        ]
-      }
-    ],
-    "problemsSolved": [
-      {
-        "to": "cities",
-        "items": [
-          "Shortage by mispositioning of mobility assets"
-        ]
-      }
-    ],
     "standards": [
         { "name": "csv" },
         { "name": "json" },
@@ -790,36 +1084,150 @@
     "processing": [],
     "archive": [],
     "tags": [
-      "public-space:noisance",
-      "mode:bike",
-      "mode:scooter",
-      "mode:step"
+        "public-space:distribution",
+        "assets:availability"        
     ]
-  }
+}
 , 
 {
-    "id": "publish-emergency-guidance",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recPIbfFLib0KAgj7",
-    "tags": ["public-space:events"],
+    "id": "polution-mitigation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recyvf0rp2zV56E5x",
+    "tags": ["public-space:nuisances",
+        "public-space:safety",
+        "public-space:network-usage"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "digitally publish unplanned events beforehand or in realtime rules for providers to implement, such as emergency road closures, water main breaks, etc",
-        "inOrderTo": "to help them keep their users and contractors informed and safe."
+        "iWouldLikeTo": "collect trips along a corridor in conjunction with other vehicle data (eg, Waze)",
+        "inOrderTo": "reduce emissions over time"
     },
     "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-rules" }
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "B" },
+        { "name": "TOMP-API-journal-entries" },
+        { "name": "TOMP-API-journal-entries-without-bankaccount" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
     ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
     "processing": [],
     "archive": []
-}, 
+}
+, 
+{
+    "id": "resident-complaints",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRS7suODr8A3DZI",
+    "tags": ["public-space:complaints"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "investigate and validate complaints from residents about parking.",
+        "inOrderTo": "apply prevention in the right places."
+    },
+  "standards": [
+    { "name": "csv" },
+    { "name": "geojson" },
+    { "name": "json" },
+    { "name": "xml" },
+    { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "GBFS-station-status", "dataProtection": "A" },
+    { "name": "TOMP-available-assets", "dataProtection": "A" },
+    { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+    { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-stops", "dataProtection": "A" },
+    { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+    { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+    { "name": "shapefile-points" },
+    { "name": "KML-points" },
+    { "name": "SPDP-dynamic" }
+  ],
+  "termsAndConditions": [],
+  "agreements": [],
+  "transport": [],
+  "processing": [],
+  "archive": []
+}
+, 
+{
+    "id": "transit-information",
+    "tags": ["assets:connections"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the number of transit assets arriving and departing from a public transport hub",
+        "inOrderTo": "use this information for modelling the modal split or impact on transit"
+       },
+    "standards": [
+       { "name": "GTFS"},
+       { "name": "NeTEx"}
+      ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
+{
+    "id": "vehicle-caps",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRcMuvCOD8CAXhh",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "know the total number of devices and the usage per operator in the city and in adjacent municipalities/regions",
+      "inOrderTo": "determine the vehicle cap"
+    },  
+    "tags": [
+      "public-space:distribution",
+      "public-space:usage"
+    ],
+    "standards": [
+      { "name": "csv" },
+      { "name": "geojson" },
+      { "name": "json" },
+      { "name": "xml" },
+      { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+      { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+      { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "GBFS-station-status", "dataProtection": "A" },
+      { "name": "TOMP-available-assets", "dataProtection": "A" },
+      { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+      { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-stops", "dataProtection": "A" },
+      { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+      { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+      { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+      { "name": "shapefile-points" },
+      { "name": "KML-points" },
+      { "name": "SPDP-dynamic" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
 {
     "id": "publish-event-areas",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recsQ89oZGG1CRmJA",
@@ -836,7 +1244,9 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-policy-rules" }, 
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" },
+        { "name": "DATEX-2" },
         { "name": "TOMP-API-regions" }
     ],
     "termsAndConditions": [],
@@ -844,7 +1254,34 @@
     "transport": [],
     "processing": [],
     "archive": []
-}, 
+}
+, 
+{
+    "id": "publish-event-guidance",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recPIbfFLib0KAgj7",
+    "tags": ["public-space:events"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish unplanned events beforehand or in realtime rules for providers to implement, such as emergency road closures, water main breaks, etc",
+        "inOrderTo": "to help them keep their users and contractors informed and safe."
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" },
+        { "name": "DATEX-2" },
+        { "name": "TOMP-API-regions" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
+, 
 {
     "id": "publish-fleet-caps",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
@@ -866,24 +1303,25 @@
     "transport": [],
     "processing": [],
     "archive": []
-}, 
+}
+, 
 {
-    "id": "publish-no-parking-zones",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recD2q6FSp1gMCUww",
-    "tags": ["public-space:usage"],
+    "id": "publish-rules",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recPIbfFLib0KAgj7",
+    "tags": ["public-space:events"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "digitally publish no parking areas for providers ",
-        "inOrderTo": "to prohibit parking."
+        "iWouldLikeTo": "digitally publish rules for providers to implement, such as max speed, max weight of carriages, slow-speed zones, no ride zones, logistics timeslots, school zones etc.",
+        "inOrderTo": "to help them keep their users and contractors informed and safe."
     },
-    "benefits": [],
-    "problemsSolved": [],
     "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
+        { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-rules" },
+        { "name": "DATEX-2" },
         { "name": "TOMP-API-regions" }
     ],
     "termsAndConditions": [],
@@ -891,82 +1329,8 @@
     "transport": [],
     "processing": [],
     "archive": []
-}, 
-{
-    "id": "publish-no-ride-zones",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rec3rXhqSoIV35zcz",
-    "tags": ["public-space:usage"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "digitally publish no ride areas for providers ",
-        "inOrderTo": "to be used by the end users"
-    },
-    "benefits": [],
-    "problemsSolved": [],
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-policy-rules" },
-        { "name": "TOMP-API-regions" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
-{
-    "id": "operating-area",
-    "externalReference": "",
-    "tags": ["public-space:usage"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "publish the operational area for transport operators",
-        "inOrderTo": "maintain the order"
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-policy-rules" },
-        { "name": "TOMP-API-regions" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
-{
-    "id": "publish-preferred-parking-zones",
-    "externalReference": "",
-    "tags": [
-        "public-space:parking-pressure",
-        "public-space:nuisances",
-        "public-space:distribution"
-    ],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "publish the preferred parking zones",
-        "inOrderTo": "manage the usage of public space"
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-policy-rules" },
-        { "name": "TOMP-API-regions" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
+}
+, 
 {
     "id": "publish-slow-speed-zones",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
@@ -975,8 +1339,8 @@
     ],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "digitally publish slower speed areas for providers",
-        "inOrderTo": "to use and reducing speeds, below the vehicle max speed."
+        "iWouldLikeTo": "digitally publish zones, such as parking zones, preferred parking spaces, service area, mobility hubs, drop off zones etc.",
+        "inOrderTo": "to promote safety and liveability in the city"
     },
     "benefits": [],
     "problemsSolved": [],
@@ -985,7 +1349,9 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
+        { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-rules" },
+        { "name": "DATEX-2" },
         { "name": "TOMP-API-regions" }
     ],
     "termsAndConditions": [],
@@ -993,138 +1359,8 @@
     "transport": [],
     "processing": [],
     "archive": []
-}, 
-{
-    "id": "publish-stations",
-    "externalReference": "",
-    "tags": ["public-space:distribution", "public-space:parking-pressure"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "publish the assigned station locations for transport operators",
-        "inOrderTo": "maintain the order"
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
-{
-    "id": "rentals",
-    "externalReference": "",
-    "tags": [
-        "business:monitor"
-    ],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "find out transport organisations performance",
-        "inOrderTo": "adjust subsidies"
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-trips" },
-        { "name": "MDS-provider-trips-without-ids" },
-        { "name": "MDS-provider-status-changes" },
-        { "name": "MDS-provider-status-changes-without-ids" },
-        { "name": "OD-Matrix-odz" },
-        { "name": "OD-Matrix-matrix" },
-        { "name": "KML-Track" },
-        { "name": "KML-Point-and-timestamp" },
-        { "name": "GPX" },
-        { "name": "shapefile-tracks" },
-        { "name": "TOMP-available-assets" },
-        { "name": "TOMP-available-assets-non-rotating-asset-id" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
-{
-    "id": "resident-complaints",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRS7suODr8A3DZI",
-    "tags": ["public-space:complaints"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "investigate and validate complaints from residents about operations, parking, riding, speed, etc",
-        "inOrderTo": "?"
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-status-change" },
-        { "name": "MDS-provider-status-change-without-ids" },
-        { "name": "MDS-provider-trips" },
-        { "name": "MDS-provider-trips-without-ids-and-route" },
-        { "name": "MDS-provider-trips-without-ids" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
-{
-    "id": "restrict-hours-of-operation",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
-    "tags": ["assets:policy"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "ensure operating hours are being followed, like no riding late at night for safety in some cities.",
-        "inOrderTo": "?"
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-trips" },
-        { "name": "MDS-provider-trips-without-ids" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
-{
-    "id": "restricted-area-rides",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
-    "tags": ["assets:policy"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "find locations where devices are operating or passing through restricted areas",
-        "inOrderTo": "?"
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-trips" },
-        { "name": "MDS-provider-trips-without-ids" },
-        { "name": "MDS-policy-rules" },
-        { "name": "GBFS-system-regions" },
-        { "name": "TOMP-regions" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}, 
+}
+, 
 {
     "id": "right-of-way-management",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recgAJ2lc0Hg2vSCM",
@@ -1150,81 +1386,26 @@
 }
 , 
 {
-    "id": "road-improvement-effects",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recUQ9z25tWaCzlaB",
-    "tags": ["public-space:network-usage", "mode:bike", "mode:scooter", "mode:car", "mode:shared-car"],
+    "id": "vandalism-incidents",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rec1E550a36PtTcI6",
     "story": {
-        "asA": "city",
-        "iWouldLikeTo": "determine road usage by riders",
-        "inOrderTo": "get insights in before and after implementing road changes, improvements, signal retimings, etc."
-    },
-    "standards": [
+      "asA": "city",
+      "iWouldLikeTo": "get vandalism notifications from operators",
+      "inOrderTo": "take action against this and prevent further vandalistic actions"
+    },  
+    "tags": [
+        "public-space:safety",
+        "public-space:nuisances",
+        "public-space:complaints"
+],
+   "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-provider-trips", "dataProtection": "E" },
-        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
-        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
-        { "name": "KML-Points" },
-        { "name": "GPX" },
-        { "name": "shapefile-points" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}
-, 
-{
-    "id": "street-condition-improvement",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recz55sgUPlS6o6S5",
-    "tags": ["public-space:usage", "mode:bike", "mode:car", "mode:scooter", "mode:pedestrian"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "find out popular trips",
-        "inOrderTo": "prioritize street paving by using Street Condition Index values and popular trips for safer rides"
-    },
-     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-trips", "dataProtection": "E" },
-        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
-        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
-        { "name": "KML-Points" },
-        { "name": "GPX" },
-        { "name": "shapefile-points" }
-    ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
-}
-, 
-{
-    "id": "street-lighting-improvement",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recz55sgUPlS6o6S5",
-    "tags": ["public-space:usage", "mode:bike", "mode:car", "mode:scooter", "mode:pedestrian"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "look at popular trips and rides past sunset",
-        "inOrderTo": "prioritize street lighting upgrades (new lights, brighter more frequent lights) for safety improvements."
-    },
-    "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-trips", "dataProtection": "E" },
-        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
-        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
-        { "name": "KML-Points" },
-        { "name": "GPX" },
-        { "name": "shapefile-points" }
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "B" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "D"},
+        { "name": "MDS-provider-status-changes", "dataProtection": "B" }
     ],
     "termsAndConditions": [],
     "agreements": [],
