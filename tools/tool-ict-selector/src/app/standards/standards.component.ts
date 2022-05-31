@@ -101,6 +101,9 @@ export class StandardsComponent implements OnInit {
         return true;
       }
     this.datasource.filter = "true";
+    if (this.datasource.filteredData.entries.length === 0 ) {
+      confirm("No standards with privacy protection score A covering all use cases.\nPlease combine standards or reduce privacy protection level.");
+    }
   }
 
   private configureUseCases() {
@@ -463,7 +466,7 @@ export class StandardsComponent implements OnInit {
           }
         }
       });
-    return allFound;
+    return allFound && data['privacy'] === 'A';
   }
 
   getConflictDescription(data: any) {
