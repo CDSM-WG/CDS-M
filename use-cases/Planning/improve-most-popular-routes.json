@@ -1,0 +1,27 @@
+{
+    "id": "improve-most-popular-routes",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOEp2ybwC50OJHJ",
+    "tags": ["public-space:network-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine which routes are the most popular for riders",
+        "inOrderTo": "improve the roads of these popular routes for a specific modality/user"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B","mark": "X*", "explanation": "assumption: the fastest route is probably the most used route from A to B and can be derived with the use of a conventinional route planner"},
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
+        { "name": "MDS-provider-trips", "dataProtection": "D" }
+        ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

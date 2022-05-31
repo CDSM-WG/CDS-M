@@ -1,0 +1,56 @@
+{
+    "id": "vehicle-caps",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRcMuvCOD8CAXhh",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "know the total number of devices and the usage per operator in the city and in adjacent municipalities/regions"
+      "inOrderTo": "determine the vehicle cap"
+    },  
+    "tags": [
+      "public-space:distribution",
+      "public-space:usage"
+    ],
+    "standards": [
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id"
+    ],
+"standards": [
+    { "name": "csv" },
+    { "name": "geojson" },
+    { "name": "json" },
+    { "name": "xml" },
+    { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "GBFS-station-status", "dataProtection": "A" },
+    { "name": "TOMP-available-assets", "dataProtection": "A" },
+    { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+    { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-stops", "dataProtection": "A" },
+    { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+    { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+    { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+    { "name": "shapefile-points" },
+    { "name": "KML-points" },
+    { "name": "SPDP-dynamic" }
+  ],
+  "termsAndConditions": [],
+  "agreements": [],
+  "transport": [],
+  "processing": [],
+  "archive": [],
+  "tags": [
+    "public-space:distribution",
+    "assets:availability",
+    "mode:bike",
+    "mode:car",
+    "mode:shared-car"
+  ]
+}

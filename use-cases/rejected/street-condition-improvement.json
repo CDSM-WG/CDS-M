@@ -1,0 +1,28 @@
+{
+    "id": "street-condition-improvement",
+    "reject-reason": "duplicate road-improvement-effects",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recz55sgUPlS6o6S5",
+    "tags": ["public-space:usage", "mode:bike", "mode:car", "mode:scooter", "mode:pedestrian"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "find out popular trips",
+        "inOrderTo": "prioritize street paving by using Street Condition Index values and popular trips for safer rides"
+    },
+     "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
+        { "name": "KML-Points" },
+        { "name": "GPX" },
+        { "name": "shapefile-points" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

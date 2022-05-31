@@ -1,0 +1,56 @@
+{
+    "id": "idle-time-and-vehicle-rotation",
+    "externalReference": "",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "get insight in parking duration and vehicle rotation of all assets",
+      "inOrderTo": "act when certain thresholds for idle time are passed"
+    },
+    "benefits": [
+      {
+        "to": "cities",
+        "items": [
+          "The citizens aren't annoyed about too long parked assets"
+        ]
+      }
+    ],
+    "problemsSolved": [
+      {
+        "to": "cities",
+        "items": [
+          "Shortage by mispositioning of mobility assets"
+        ]
+      }
+    ],
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" }
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+        { "name": "SPDP-dynamic" }
+      ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "tags": [
+      "public-space:noisance",
+      "mode:bike",
+      "mode:scooter",
+      "mode:step"
+    ]
+  }

@@ -1,0 +1,25 @@
+{
+    "id": "publish-event-guidance",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recPIbfFLib0KAgj7",
+    "tags": ["public-space:events"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish unplanned events beforehand or in realtime rules for providers to implement, such as emergency road closures, water main breaks, etc",
+        "inOrderTo": "to help them keep their users and contractors informed and safe."
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" },
+        { "name": "DATEX-2" },
+        { "name": "TOMP-API-regions" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

@@ -1,0 +1,11 @@
+{
+    "id": "academic-research",
+    "action": "Research requires often tailor made data, and doesn't have clearly specified boundaries.",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recLc8L6mTQYe0w08",
+    "tags": [],
+    "story": {
+        "asA": "University researcher",
+        "iWouldLikeTo": "use the data for analysis, prediction, and modeling",
+        "inOrderTo": "inform policy makers"
+    }
+}

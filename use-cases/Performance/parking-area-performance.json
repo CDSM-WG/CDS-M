@@ -1,0 +1,36 @@
+{
+    "id": "parking-area-performance",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
+    "tags": ["public-space:parking-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get insights in the usage and performance of all designated parking areas",
+        "inOrderTo": "to monitor the operators' performance and compliance with offer requirements per parking area."
+    },
+   "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "MDS-provider-stops", "dataProtection": "A" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+        { "name": "SPDP-dynamic" }
+      ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

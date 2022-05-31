@@ -1,0 +1,26 @@
+{
+    "id": "restricted-area-rides",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
+    "tags": ["assets:policy"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "find locations where devices are operating or passing through restricted areas",
+        "inOrderTo": "?"
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-policy-rules" },
+        { "name": "GBFS-system-regions" },
+        { "name": "TOMP-regions" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
