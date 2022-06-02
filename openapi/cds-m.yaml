@@ -440,6 +440,11 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/standardOrFileReference"
+        metrics:
+          description: a list of possible metrics
+          type: array
+          items:
+            type: string
         termsAndConditions:
           type: array
           items:
