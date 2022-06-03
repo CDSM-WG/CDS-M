@@ -11,7 +11,7 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "GBFS-station-status" },
+        { "name": "GBFS-station-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
         { "name": "GBFS-vehicle-status", "dataProtection": "A" },
@@ -25,8 +25,10 @@
         { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
         { "name": "MDS-provider-status-changes", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
-        { "name": "SPDP-dynamic" }
-      ],
+        { "name": "SPDP-dynamic", "dataProtection": "A" }
+    ],
+    "metrics": [ "Average number of available assets per hub per hour",
+        "Average number of unavailable assets per hub" ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

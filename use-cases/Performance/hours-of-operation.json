@@ -26,12 +26,15 @@
         { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
-        { "name": "OD-Matrix-odz" },
-        { "name": "OD-Matrix-matrix" },
-        { "name": "KML-Track" },
-        { "name": "KML-Point-and-timestamp" },
-        { "name": "GPX" },
-        { "name": "shapefile-tracks" }
+        { "name": "KML-Track", "dataProtection": "D" },
+        { "name": "KML-Point-and-timestamp", "dataProtection": "D" },
+        { "name": "GPX", "dataProtection": "D" },
+        { "name": "shapefile-tracks", "dataProtection": "D" }
+    ],
+    "metrics": [
+        "Time of last returned assets per day",
+        "Time of earliest collected asset per day",
+        "Average number of returned assets per hour during the day per week"
     ],
     "termsAndConditions": [],
     "agreements": [],

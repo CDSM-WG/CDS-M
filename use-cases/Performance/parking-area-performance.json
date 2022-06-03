@@ -7,12 +7,12 @@
         "iWouldLikeTo": "get insights in the usage and performance of all designated parking areas",
         "inOrderTo": "to monitor the operators' performance and compliance with offer requirements per parking area."
     },
-   "standards": [
+    "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "GBFS-station-status" },
+        { "name": "GBFS-station-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
         { "name": "GBFS-vehicle-status", "dataProtection": "A" },
@@ -26,8 +26,13 @@
         { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
         { "name": "MDS-provider-status-changes", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
-        { "name": "SPDP-dynamic" }
+        { "name": "SPDP-dynamic", "dataProtection": "A" }
       ],
+    "metrics": [
+      "Average occupance (%) per parking area and hour",
+      "Minimum number of occupied parking slots per day",
+      "Maximum number of occupied parking slots per hour"
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

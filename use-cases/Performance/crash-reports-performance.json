@@ -15,6 +15,9 @@
         { "name": "MDS-provider-status-change", "dataProtection": "D" },
         { "name": "MDS-provider-status-change-without-ids", "dataProtection": "B" }
     ],
+    "metrics":["Top crash locations by time of day/day/week/month", 
+        "Top crash locations by contributing factor",
+        "Top crash locations by severity"],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

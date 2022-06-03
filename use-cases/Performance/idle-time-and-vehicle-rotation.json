@@ -40,8 +40,13 @@
         { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
         { "name": "MDS-provider-status-changes", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
-        { "name": "SPDP-dynamic" }
-      ],
+        { "name": "SPDP-dynamic", "dataProtection": "A" }
+    ],
+    "metrics": [
+      "Parked time per asset per day",
+      "Average parked time over all free-floating assets per district",
+      "Maximum parked time over all assets per station"
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
