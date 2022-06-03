@@ -7,7 +7,7 @@
         "iWouldLikeTo": "know current offer and demand; location non-booked assets and trips taken",
         "inOrderTo": "determine where to place new lanes, mobility hubs and drop zones"
     },
-        "standards": [
+    "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },
@@ -25,11 +25,17 @@
         { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
         { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }, 
+        { "name": "ODyzee" },
+        { "name": "OD-Matrix-csv" },
+        { "name": "OD-Matrix-geojson" },
+        { "name": "OD-Matrix-shape" }
     ],
-      "termsAndConditions": [],
-      "agreements": [],
-      "transport": [],
-      "processing": [],
-      "archive": []
+    "metrics": [ "Differences between origin and destination per district per hour",
+        "Differences between origin and destination numbers per hub per day" ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

@@ -9,7 +9,7 @@
     },
     "benefits": [],
     "problemsSolved": [],
-   "standards": [
+    "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },
@@ -28,8 +28,10 @@
         { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
         { "name": "MDS-provider-status-changes", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
-        { "name": "SPDP-dynamic" }
-      ],
+        { "name": "SPDP-dynamic", "dataProtection": "A" }
+    ],
+    "metrics": [ "Minimum/average number of collected assets per hub per hour",
+      "Departures of assets per free-floating area" ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

@@ -29,6 +29,8 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
+    "metrics": [ "Number of departing trips per district",
+        "Average number of origins per hour of the day over a month" ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
