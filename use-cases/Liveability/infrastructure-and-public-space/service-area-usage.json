@@ -1,13 +1,13 @@
 {
-    "id": "rentals",
+    "id": "service-area-usage",
     "externalReference": "",
     "tags": [
         "business:monitor"
     ],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "find out transport organisations performance",
-        "inOrderTo": "adjust subsidies"
+        "iWouldLikeTo": "find out how the service area is used",
+        "inOrderTo": "to adjust accordingly"
     },
     "standards": [
         { "name": "MDS-provider-trips" },
