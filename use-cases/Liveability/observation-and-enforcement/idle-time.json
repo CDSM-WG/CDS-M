@@ -3,7 +3,7 @@
     "externalReference": "",
     "story": {
       "asA": "city",
-      "iWouldLikeTo": "get insight in duration of the parked assets",
+      "iWouldLikeTo": "get insight in idle time of assets",
       "inOrderTo": "act when certain thresholds are passed"
     },
     "benefits": [
