@@ -4,7 +4,7 @@
     "tags": ["public-space:parking-usage"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "get insights in the performance of existing zones (hubs, parking, drop-off, no ride)",
+        "iWouldLikeTo": "get insights in the performance of existing zones (hubs, parking, drop-off, no ride etc.)",
         "inOrderTo": "determine which areas need to be improved or modified"
     },
     "standards": [
