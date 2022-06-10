@@ -4,7 +4,7 @@
     "tags": ["assets:usage"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "get an insight in the length of executed trips",
+        "iWouldLikeTo": "get an insight in the length of executed trips per operator and the energy efficiency",
         "inOrderTo": "to (partly) determine how shared mobility contributes to CO2 reduction and air pollution mitigation."
     },
     "standards": [
