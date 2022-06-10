@@ -1,5 +1,5 @@
 {
-    "id": "parking-duration",
+    "id": "idle-time",
     "externalReference": "",
     "story": {
       "asA": "city",
