@@ -62,6 +62,7 @@
       { "name": "SPDP-dynamic" },
       { "name": "OD-Matrix-odz", "mark": "X*", "explanation": "the data has to be aggregated per mode, not per operator, as no commercial sensitive data may be shared"}
     ],
+    "metrics": [],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

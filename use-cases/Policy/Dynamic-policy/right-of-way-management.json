@@ -18,6 +18,7 @@
         { "name": "MDS-provider-vehicles", "dataProtection": "D"},
         { "name": "MDS-provider-status-changes", "dataProtection": "B" }
     ],
+    "metrics": ["Number of alerts per city district, per type"],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

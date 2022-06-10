@@ -21,6 +21,7 @@
         { "name": "DATEX-2" },
         { "name": "TOMP-API-regions" }
     ],
+    "metrics": [],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

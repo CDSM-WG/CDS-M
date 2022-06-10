@@ -18,6 +18,7 @@
         { "name": "MDS-provider-vehicles", "dataProtection": "D"},
         { "name": "MDS-provider-status-changes", "dataProtection": "B" }
     ],
+    "metrics": ["Number of vandalism notifications per district and severity"],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

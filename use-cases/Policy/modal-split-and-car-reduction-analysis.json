@@ -29,6 +29,7 @@
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
     ],
+    "metrics": ["Number of moving vehicles between 2 regions per hour"],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

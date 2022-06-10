@@ -42,6 +42,7 @@
         { "name": "json" }, 
         { "name": "xml" }
     ],
+    "metrics": ["Arriving number of vehicles per hub and hour"],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

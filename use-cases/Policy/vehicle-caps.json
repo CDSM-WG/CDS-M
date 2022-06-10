@@ -34,6 +34,7 @@
       { "name": "KML-points" },
       { "name": "SPDP-dynamic" }
     ],
+    "metrics": [ "Total number of vehicles in the city per day", "Usage percentage per vehicle type and day" ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

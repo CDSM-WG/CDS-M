@@ -1,0 +1,17 @@
+{
+    "type": "standard",
+    "name": "OSDM-online-places",
+    "exchangeType": "API", 
+    "part": "places",
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "json-file",
+    "refreshRate": "[refresh rate]",
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"B", 
+    "interoperability": "B",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

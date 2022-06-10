@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the number of assets arriving and departing from a public transport hub",
-        "inOrderTo": "investigate shared mobility as a stratgey for last mile solutions"
+        "inOrderTo": "investigate shared mobility as a strategy for last mile solutions"
     },
     "standards": [
         { "name": "MDS-provider-vehicles", "dataProtection": "E" },
@@ -39,9 +39,12 @@
         { "name": "json" }, 
         { "name": "xml" }
     ],
-      "termsAndConditions": [],
-      "agreements": [],
-      "transport": [],
-      "processing": [],
-      "archive": []
+    "metrics": ["Average number of available vehicles per hub and hour",
+        "Average number of arriving vehicles per hub and hour",
+        "Average number of departing vehicles per hub and hour"],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }

@@ -23,6 +23,8 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
+    "metrics": ["Average number of kilometers per trip, starting at a specific hub",
+              "Maximum length of trips per hour"],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

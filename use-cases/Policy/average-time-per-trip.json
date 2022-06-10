@@ -24,6 +24,8 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
+    "metrics": ["Average duration in minutes per trip, starting at a specific hub",
+              "Maximum duration of trips per hour"],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
