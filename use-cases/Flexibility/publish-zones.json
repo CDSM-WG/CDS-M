@@ -1,0 +1,12 @@
+{
+    "id": "publish-zones",
+    "externalReference": "",
+    "tags": ["public-space:distribution", "public-space:parking-pressure"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish zones (parking, hubs, drop-off, school-zone etc.) to the transport operators",
+        "inOrderTo": "maintain the order and dynamically steer the public space."
+    },
+    "standards": [
+    ]
+}
