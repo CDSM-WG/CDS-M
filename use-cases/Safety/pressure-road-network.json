@@ -4,8 +4,8 @@
     "tags": ["public-space:planning", "public-space:usage", "mode:bike", "mode:scooter", "mode:step"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "retrieve usage and demand, start and end points, and trips taken",
-        "inOrderTo": "determine where to place new bike/scooter lanes and drop zones"
+        "iWouldLikeTo": "measure the pressure on the road network",
+        "inOrderTo": "determine where to imrpove the road network"
     },
     "standards": [
         { "name": "GBFS-free-bike-status" },
