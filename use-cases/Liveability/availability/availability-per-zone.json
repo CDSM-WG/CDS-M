@@ -3,7 +3,7 @@
     "externalReference": "",
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "determine the distribution of assets per zone (parking spot, mobility hub, specific area)",
+        "iWouldLikeTo": "determine the distribution of assets per zone (hubs, parking, drop-off, no ride, specific area etc.)",
         "inOrderTo": "redistribute assets to create a more inclusive supply"
     },
     "termsAndConditions": [],
