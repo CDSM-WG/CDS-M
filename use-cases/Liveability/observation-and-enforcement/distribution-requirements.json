@@ -4,8 +4,8 @@
     "tags": ["assets:distribution", "inclusion:distribution"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "ensure devices are distributed according to equity requirements",
-        "inOrderTo": "regulate inclusion"
+        "iWouldLikeTo": "monitor distribution requirements",
+        "inOrderTo": "regulate inclusion and act when thresholds are passed"
     },
     "benefits": [],
     "problemsSolved": [],
