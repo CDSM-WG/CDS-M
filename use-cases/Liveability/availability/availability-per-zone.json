@@ -1,9 +1,9 @@
 {
-    "id": "availability-per-parkingspot",
+    "id": "availability-per-zone",
     "externalReference": "",
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "determine the distribution of assets",
+        "iWouldLikeTo": "determine the distribution of assets per zone (parking spot, mobility hub, specific area)",
         "inOrderTo": "redistribute assets to create a more inclusive supply"
     },
     "termsAndConditions": [],
