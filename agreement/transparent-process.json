@@ -1,0 +1,6 @@
+{
+    "type": "agreement",
+    "name": "transparent-process",
+    "description": "The process of how the raw data is transformed into the output must be publically available",
+    "bbversion": 1
+}

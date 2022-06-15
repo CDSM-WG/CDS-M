@@ -1,8 +1,9 @@
 {
   "type": "certificates",
   "name": "IEC62443 - level 3",
-  "requiredCertificate": "IEC62443",
-  "issuer": "ISO", 
-  "externalReference": "https://" ,
+  "description":"Security Level 3: Protection against intentional misuse by sophisticated means with moderate resources, IACS-specific knowledge and moderate motivation.",
+  "requiredCertificate": "IEC62443-3-3, SL3",
+  "issuer": "IEC", 
+  "externalReference": "https://en.wikipedia.org/wiki/International_Electrotechnical_Commission" ,
   "bbversion": 1
 }

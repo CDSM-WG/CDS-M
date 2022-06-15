@@ -1,8 +1,9 @@
 {
   "type": "certificates",
   "name": "IEC62443 - level 4",
-  "requiredCertificate": "IEC62443",
-  "issuer": "ISO", 
-  "externalReference": "https://" ,
+  "description":"Security Level 4: Protection against intentional misuse using sophisticated means with extensive resources, IACS-specific knowledge and high motivation.",
+  "requiredCertificate": "IEC62443-3-3, SL4",
+  "issuer": "IEC", 
+  "externalReference": "https://en.wikipedia.org/wiki/International_Electrotechnical_Commission/" ,
   "bbversion": 1
 }

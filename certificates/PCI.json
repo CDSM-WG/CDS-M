@@ -2,7 +2,7 @@
   "type": "certificates",
   "name": "PCI",
   "requiredCertificate": "PCI",
-  "issuer": "", 
-  "externalReference": "https://" ,
+  "issuer": "PCI Security Standards Council", 
+  "externalReference": "https://www.pcisecuritystandards.org/pci_security/" ,
   "bbversion": 1
 }

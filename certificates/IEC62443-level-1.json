@@ -1,8 +1,9 @@
 {
   "type": "certificates",
   "name": "IEC62443 - level 1",
-  "requiredCertificate": "IEC62443",
-  "issuer": "ISO", 
-  "externalReference": "https://" ,
+  "description": "Security Level 1: Protection against unintentional or accidental misuse.",
+  "requiredCertificate": "IEC62443-3-3, SL1",
+  "issuer": "IEC", 
+  "externalReference": "https://en.wikipedia.org/wiki/International_Electrotechnical_Commission" ,
   "bbversion": 1
 }

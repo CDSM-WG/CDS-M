@@ -1,0 +1,6 @@
+{
+    "type": "agreement",
+    "name": "output-owner-is-supplier",
+    "description": "Any generated report or output belongs to the supplier of the data.",
+    "bbversion": 1
+}

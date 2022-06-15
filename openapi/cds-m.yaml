@@ -379,7 +379,13 @@ components:
               enum: [SUPPLIER, CONSUMER, BOTH]
             role2:
               type: string
-              enum: [SUPPLIER, CONSUMER, BOTH]        
+              enum: [SUPPLIER, CONSUMER, BOTH]      
+            startValidity:
+              type: string
+              format: date-time
+            endValidity:
+              type: string
+              format: date-time
         useCases:
           type: array
           items:
