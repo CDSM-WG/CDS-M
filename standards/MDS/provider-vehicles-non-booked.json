@@ -1,22 +1,29 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-vehicles-non-booked",
+    "description": "MDS provider vehicles endpoint with one adjustments: the results are filtered, only non-booked assets are exposed",
     "exchangeType": "API", 
     "part": "vehicles",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "baseUrl": "[baseUrl]",
-    "privacy": "C",
+    "url": "[url]",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "A",
+    "interoperability": "D",
     "domain": "A",
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
 
     "fieldModifications": [
         {
             "field": "vehicles",
             "exception": "only non-booked"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }

@@ -1,5 +1,5 @@
 {
-    "type": "standards",
+    "type": "file",
     "exchangeType": "file-based",
     "name":"DATEX",
     "version": "[version]",
@@ -10,5 +10,7 @@
     "reusability":"D", 
     "interoperability": "B",
     "domain": "B",
-    "schema": "https://www.datex2.eu/node/261"
+    "externalReference": "https://www.datex2.eu/node/261",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

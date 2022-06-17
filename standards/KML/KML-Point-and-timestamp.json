@@ -1,5 +1,5 @@
 {
-    "type": "standards",
+    "type": "file",
     "name": "KML-Point-and-timestamp", 
     "exchangeType": "file-based", 
     "part": "Points+Timestamp",
@@ -19,5 +19,8 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
+    "bbversion": 1
 }

@@ -1,0 +1,44 @@
+{
+    "id": "hours-of-operation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
+    "tags": ["performance:operation-hours"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "ensure operating hours are being followed, like no riding late at night.",
+        "inOrderTo": "ensure safety for the users of the mobility services."
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B"},
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "KML-Track", "dataProtection": "D" },
+        { "name": "KML-Point-and-timestamp", "dataProtection": "D" },
+        { "name": "GPX", "dataProtection": "D" },
+        { "name": "shapefile-tracks", "dataProtection": "D" }
+    ],
+    "metrics": [
+        "Time of last returned assets per day",
+        "Time of earliest collected asset per day",
+        "Average number of returned assets per hour during the day per week"
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

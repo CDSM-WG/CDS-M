@@ -1,16 +1,20 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-system-hours",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "system_hours.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }

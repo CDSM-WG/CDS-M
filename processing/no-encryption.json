@@ -1,0 +1,8 @@
+{
+    "type": "processingCondition",
+    "name": "no-encryption",
+    "description": "The stored personal related data is not encrypted",
+    "encryption": "None", 
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "bbversion": 1
+}

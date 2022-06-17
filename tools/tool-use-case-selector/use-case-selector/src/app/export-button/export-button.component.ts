@@ -33,9 +33,24 @@ export class ExportButtonComponent implements OnInit {
   }
 
   export(): void {
-    var json = JSON.stringify(this.jsons);
-   // var uri = this.domSanitizer.bypassSecurityTrustUrl("data:text/json;charset=UTF-8," + encodeURIComponent(json));
+    var specification = {
+      metaData: {
+        versionNumber: 1,
+        contractor1: "",
+        contractor2: "",
+        role1: "BOTH",
+        role2: "BOTH"
+      },
+      useCases: this.jsons,
+      standards: [],
+      contractParts: [],
+      termsAndConditions: [],
+      transport: [],
+      processing: [],
+      archive: []
+    }
 
+    var json = JSON.stringify(specification);
     const data: Blob = new Blob([json], { type: "text/json" });
     FileSaver.saveAs(data, "CDS-M-UC-" + new Date().getTime() + ".json");
   }

@@ -1,15 +1,16 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "TOMP-available-assets-non-rotating-asset-id",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "B",
+    "interoperability": "D",
     "domain": "B",
     "fieldModifications": [
         {
@@ -17,5 +18,7 @@
             "exception": "non-rotating"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

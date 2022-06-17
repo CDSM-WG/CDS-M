@@ -1,15 +1,25 @@
 {
-    "type": "standards",
-    "name": "xml",
+    "type": "file",
     "exchangeType": "file-based", 
-    "part": "[complete url]",
-    "version": "[version]",
     "mediumType": "xml-file",
+
+    "name": "xml",
+    "schema": "[complete url of XSD]",
+
+    "url": "[complete url]",
     "refreshRate": "[refresh rate]",
-    "privacy": "?",
+    
+    "privacy": "*",
     "implementationEffort": "C", 
     "reusability":"E", 
     "interoperability": "E",
     "domain": "E",
-    "schema": "[complete url of XSD]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+    "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
+    "timeAmount": "[time amount]",
+    "geoUnit": "[postal, postal1_4, district, city, region, custom]",
+    "geoUnitCustomSpecification": "[URL]"
 }

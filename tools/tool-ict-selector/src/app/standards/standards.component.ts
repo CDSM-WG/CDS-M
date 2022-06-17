@@ -1,11 +1,11 @@
 import { Component, ContentChild, HostListener, OnInit } from '@angular/core'
 import StandardsJson from '../../app/_files/standards.json'
+import ConflictJson from '../../app/_files/conflicts.json'
 import UseCasesJson from '../../app/_files/use-cases.json'
 import { MatTableDataSource } from '@angular/material/table'
 import AuthenticationJson from '../../app/_files/authentications.json'
-import { UseCaseService } from '../../services/use-case.service';
+import { UseCaseService } from '../../services/use-case.service'
 import { ExportService } from 'src/services/export.service'
-import { MatSort } from '@angular/material/sort'
 
 @Component({
   selector: 'app-standards',
@@ -14,10 +14,10 @@ import { MatSort } from '@angular/material/sort'
 })
 export class StandardsComponent implements OnInit {
 
-  static DISP_COLUMNS: any = ['name', 'selected', 'sortValue', 'privacy', 'implE', 'reuse', 'interop', 'domain', 'space'];
+  static DISP_COLUMNS: any = ['name', 'selected', 'conflict', 'privacy', 'space'];
   static DISP_COLUMNS_AUTH: any = ['name'];
 
-  displayedColumns : any[] = ['name', 'selected', 'sortValue', 'privacy', 'implE', 'reuse', 'interop', 'domain', 'space'];
+  displayedColumns : any[] = ['name', 'selected', 'conflict', 'privacy', 'implE', 'reuse', 'interop', 'domain', 'space'];
   useCases : any[] = [];
 
   displayedColumnsAuthentication : any[] = ['name'];
@@ -33,9 +33,22 @@ export class StandardsComponent implements OnInit {
 
   useCasesToExport = UseCasesJson;
 
+  useAllUseCases: boolean = true;
+  privacyOnly: boolean = true;
+
+  conflicts = ConflictJson;
+
+  privacyWeight = 10;
+  costsWeight = 1;
+  reusabilityWeight = 1;
+  interoperabilityWeight = 1;
+  domainWeight = 1;
+
   constructor(useCaseService : UseCaseService, exportService: ExportService) {
     useCaseService.useCases.subscribe( (useCaseJson) => {
-      this.init(useCaseJson);
+      if ( useCaseJson != null ) {
+        this.init(useCaseJson);
+      }
     });
     exportService.signalExport.subscribe( signal => {
       if (signal === "export") {
@@ -56,6 +69,9 @@ export class StandardsComponent implements OnInit {
       return;
     }
 
+    this.useAllUseCases = true;
+    this.privacyOnly = true;
+
     this.useCasesToExport = useCaseJson;
     this.standards = StandardsJson;
 
@@ -75,6 +91,16 @@ export class StandardsComponent implements OnInit {
     this.configureAttributeDataSource();
 
     this.standards = this.sortDataSource(this.standards);
+
+    this.datasource.filterPredicate =
+      (data: any, filter: string) => {
+        let checked = filter==="true";
+        if (checked) {
+          return this.allUseCasesChecked(data);
+        }
+        return true;
+      }
+    this.datasource.filter = "true";
   }
 
   private configureUseCases() {
@@ -82,13 +108,17 @@ export class StandardsComponent implements OnInit {
       this.useCasesToExport.forEach((useCase: any) => {
         standard[useCase.id] = ''
         standard['selected'] = false
+        standard['conflict'] = false
+        if ('conflicts' in standard) {
+          standard['conflict'] = true
+        }
       })
 
       let exchangeType = standard.exchangeType
 
       AuthenticationJson.forEach((auth: any) => {
         auth.allowedExchangeTypes.forEach((element: any) => {
-          if (element == exchangeType) {
+          if (exchangeType.indexOf(element) >= 0) {
             standard[auth.name] = false
           }
         })
@@ -102,11 +132,23 @@ export class StandardsComponent implements OnInit {
       if (standard != undefined) {
         standard[useCase.id] = 'X'
 
-        if ('privacy' in s) {
+        if( 'mark' in s ) {
+          standard[useCase.id] = s['mark']  
+        }
+
+        if ( 'privacy' in standard && standard['privacy']  === '*') {
+          standard[useCase.id] = '+'
+        }
+
+        if ( 'explanation' in s ) {
+          standard[useCase.id + '_expl'] = s['explanation']
+        }
+
+        if ('dataProtection' in s) {
           let defaultPrivacy = standard['privacy']
-          if (this.less(s['privacy'], defaultPrivacy)) {
-            standard['privacy'] = s['privacy']
-          }
+          // if (this.less(s['dataProtection'], defaultPrivacy)) {
+          standard['privacy'] = s['dataProtection']
+          //}
         }
 
         if (this.useCases.find(x => x == useCase.id) == undefined) {
@@ -119,6 +161,13 @@ export class StandardsComponent implements OnInit {
     this.displayedColumns = this.displayedColumns.concat(this.useCases)
   }
 
+  getExplanation(label: string, element: any){
+    if (label + '_expl' in element){
+      return element[label + '_expl'];
+    }
+    return '';
+  }
+
   private collectAuthenticationColumns() {
     AuthenticationJson.forEach((auth: any) => {
       this.authentications.push(auth.name)
@@ -129,17 +178,18 @@ export class StandardsComponent implements OnInit {
   }
 
   private collectAttributeColumns() {
-    this.standards.forEach((s: any) => {
-      
-      Object.keys(s).forEach( (property: any) => {
-        let value = s[property];
-        if ( typeof value === 'string' ) {
-          if (value.indexOf('[') >= 0 ){
-            if (this.attributes.indexOf(property) === -1) {
-              this.attributes.push(property);
-            }
-            if (this.displayedColumnsAttributes.indexOf(property) === -1) {
-              this.displayedColumnsAttributes.push(property);
+    this.standards.forEach((s: any) => {      
+      Object.keys(s).forEach( (property: string) => {
+        if (!property.startsWith("org_")) {
+          let value = s[property];
+          if ( typeof value === 'string' ) {
+            if (value.indexOf('[') >= 0 ){
+              if (this.attributes.indexOf(property) === -1) {
+                this.attributes.push(property);
+              }
+              if (this.displayedColumnsAttributes.indexOf(property) === -1) {
+                this.displayedColumnsAttributes.push(property);
+              }
             }
           }
         }
@@ -147,7 +197,7 @@ export class StandardsComponent implements OnInit {
     })
   }
 
-  getVisibilityClass(value: any, column: string, element: any){
+  getVisibilityClass(value: any, column: string, element: any) {
     if ('org_' + column in element) return 'visible';
     if( value == null ) return 'invisible';
     if( typeof value === 'string' && value.indexOf('[') == -1) return 'invisible';
@@ -157,18 +207,18 @@ export class StandardsComponent implements OnInit {
   private filterUsedStandards() {
     let usedStandards = this.standards.filter((standard: any) => {
       let items = this.useCases.filter((usecase: any) => {
-        return standard[usecase] != ''
+        return standard[usecase] != '';
       })
-      return items.length > 0
+      return items.length > 0;
     })
     this.standards = usedStandards
   }
 
   private configureStandardsDataSource() {
-    this.datasource = new MatTableDataSource(this.standards)
+    this.datasource = new MatTableDataSource(this.standards);
 
     this.datasource.filterPredicate = function (data: any, filter: string): boolean {
-      return data[filter] != '' || data['selected'] === true
+      return data[filter] != '' || data['selected'] === true;
     }
   }
 
@@ -204,19 +254,25 @@ export class StandardsComponent implements OnInit {
   }
 
   private evaluateStandard(a: any) {
-    let score = this.getFieldValue(a,'privacy')
-      + this.getFieldValue(a,'implementationEffort')
-      + this.getFieldValue(a,'reusability')
-      + this.getFieldValue(a,'interoperability')
-      + this.getFieldValue(a,'domain');
+    let score = this.privacyWeight * this.getFieldValue(a,'privacy');
 
-    this.useCases.forEach( u => {
-      if (u in a) {
-        if ( a[u] != '' ) {
-          score = score + 10;
+    if (!this.privacyOnly) {
+      score = score 
+      + this.costsWeight * this.getFieldValue(a,'implementationEffort')
+      + this.reusabilityWeight * this.getFieldValue(a,'reusability')
+      + this.interoperabilityWeight * this.getFieldValue(a,'interoperability')
+      + this.domainWeight * this.getFieldValue(a,'domain');
+    }
+
+    if (a['interoperability'] != 'E' && a['interoperability'] != 'D') {
+      this.useCases.forEach( u => {
+        if (u in a) {
+          if ( a[u] != '' ) {
+            score = score + 2;
+          }
         }
-      }
-    } );
+      } );
+    }
 
     a['sortValue'] = score;
     return score;
@@ -224,7 +280,12 @@ export class StandardsComponent implements OnInit {
 
   private getFieldValue(a: any, field: string) {
     if (field in a) {
-      return 70 - a[field].charCodeAt(0);
+      let value = a[field];
+      let charValue = 70 - a[field].charCodeAt(0);
+      if ('ABCDE'.indexOf(value) === -1) {
+        charValue = 0;
+      }
+      return charValue;
     }
     return 0;
   }
@@ -246,12 +307,11 @@ export class StandardsComponent implements OnInit {
   }
 
   onSelect(e: Event, element: any) {
-    console.log(e);
     this.standards.forEach( (s:any) => {
       if (s.name === element.name) {
         s.selected = !element.selected;
       }
-    })
+    } );
     this.datasourceAuthentication.filter = 'true';
     this.datasourceAttributes.filter = 'true';
   }
@@ -300,7 +360,52 @@ export class StandardsComponent implements OnInit {
         'D	Generic domain\n' +
         'E	Completely generic';
     }
-    return '';
+    let result = '';
+    this.useCasesToExport.forEach( x => { if ( x.id === category ) 
+      { 
+        result = 'As a ' + x.story.asA + '\nI would like to ' + x.story.iWouldLikeTo + '\nin order to ' + x.story.inOrderTo; 
+      } 
+    } );
+
+    this.standards.forEach( s => { 
+      if (s.name === category && ('description' in s)) { 
+        result = String(s['description']); 
+      } } );
+
+    if (category === "retentionPeriod") {
+      result = "How long the data can be stored;\n ISO 8601 Duration, see https://en.wikipedia.org/wiki/ISO_8601#Durations";
+    } else if (category === "refreshRate" ) {
+      result = "How often this data source is refreshed;\n ISO 8601 Duration, see https://en.wikipedia.org/wiki/ISO_8601#Durations";
+    } else if (category === "exchangeType" ) {
+      result = "What type of exchange this is (some interfaces can have multiple appearances).\nPossible values: API, file exchange";
+    }
+
+    return result;
+  }
+
+  formatColumnName(name: string){
+    var output:String = "";
+    var len:number = name.length;
+    var char:string;
+
+    for (var i: number = 0; i<len;i++) {
+        char = name.charAt(i);
+
+        if (i==0) {
+            output = output.concat(char.toUpperCase());
+        }
+        else if (char !== char.toLowerCase() && char === char.toUpperCase()) {
+            output = output.concat(" ",  char.toLowerCase());
+        }
+        else if (char == "-" || char == "_") {
+            output = output.concat(" ");
+        }
+        else {
+            output = output.concat(char);
+        }
+    }
+
+    return output;
   }
 
   onAttributeChanged(event: any, field: string, element: any) {
@@ -310,4 +415,154 @@ export class StandardsComponent implements OnInit {
       standard[field] = event.target.value;
     }
   }
+
+  onChangeAllUsecases(event: any) {
+    this.useAllUseCases = event.target.checked;
+    this.datasource.filter = String(this.useAllUseCases);
+    this.standards = this.sortDataSource(this.standards);
+  }
+
+  onChangePrivacyOnly(event: any) {
+    this.privacyOnly = event.target.checked;
+    if ( this.privacyOnly ) {
+      this.removeColumn('implE');
+      this.removeColumn('reuse');
+      this.removeColumn('interop');
+      this.removeColumn('domain');
+    }
+    else {
+      this.displayedColumns.splice(4, 0, 'domain');
+      this.displayedColumns.splice(4, 0, 'interop');
+      this.displayedColumns.splice(4, 0, 'reuse');
+      this.displayedColumns.splice(4, 0, 'implE');
+    }
+    this.standards = this.sortDataSource(this.standards);
+  }
+
+  removeColumn(columnId: string){
+    let index = this.displayedColumns.indexOf(columnId);
+    if ( index >= 0 ) {
+      this.displayedColumns.splice(index, 1);
+    }
+  }
+
+  allUseCasesChecked(data: any): boolean {
+    let allFound = true;
+    this.useCases.forEach( s => 
+      {
+        if ( !data['selected'] ) {
+          if ( s in data ) {
+            if ( data[s] == '' ) {
+              allFound = false;
+            }
+          }
+          else {
+            allFound = false;
+          }
+        }
+      });
+    return allFound && (data['privacy'] === 'A' || data['privacy'] === 'B');
+  }
+
+  getConflictDescription(data: any) {
+    let description = "";
+    if (data.conflict) {
+      this.conflicts.forEach( (c) => {
+          if( data.conflicts.indexOf(c.name) === 0 ){
+            description = description + "Conflict: " + c.reason + 
+              "\nMitigation using agreements: " + this.formatMitigation(c.agreements) +
+              "\nMitigation using authentication: " + this.formatMitigation(c.authenticationMethods) +
+              "\nMitigation using transport conditions: " + this.formatMitigation(c.transportConditions) +
+              "\n* = Required";
+          }
+        }
+      );
+    };
+    return description;
+  }
+
+  formatMitigation(mitigationActions: any) {
+    let foundRequiredOnes = false;
+    let result = "\n";
+
+    mitigationActions.forEach( (m: any) => {
+      let r = (('isRequired' in m && m.isRequired)?"*":"");
+      result = result + " - " + m.buildingBlock + r + "\n";
+      if ( r != "") {
+        foundRequiredOnes = true;
+      }
+    });
+
+    if( !foundRequiredOnes ) {
+      result = "\n(at least one of these)" + result;
+    }
+    return result;
+  }
+
+  privacyChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.privacyWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
+    }
+  }
+  costsChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.costsWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
+    }
+  }
+  reusabilityChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.reusabilityWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
+    }
+  }
+  interoperabilityChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.interoperabilityWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
+    }
+  }
+  domainChanged(event: Event){
+    if (event.currentTarget != null){
+      let input = event.currentTarget as HTMLInputElement;
+      this.domainWeight = Number(input.value);
+      this.standards = this.sortDataSource(this.standards);
+      this.datasource.data = this.standards;
+    }
+  }
+  addStandardRow(element: any, column: string){
+    let clone: any = JSON.parse(JSON.stringify(element));
+    clone['name'] = clone['name'] + '-' + column;
+    clone['selected'] = true;
+
+    Object.keys(clone).forEach( (property: any) => {
+      if ( clone[property] === '+' ) {
+        clone[property] = '';
+      }
+      if (property === column) {
+        clone[property] = 'X';
+      }
+    })
+
+    clone['domain'] = 'A';
+    clone['privacy'] = '[?]';
+
+    this.standards.push(clone);
+    this.standards = this.sortDataSource(this.standards);
+    this.datasource.data = this.standards;
+    this.datasourceAuthentication.filter = 'true';
+    this.datasourceAttributes.filter = 'true';
+    this.collectAttributeColumns();
+  }
+
 }
+

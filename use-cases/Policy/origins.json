@@ -1,0 +1,51 @@
+{
+    "id": "origins",
+    "externalReference": "",
+    "tags": [
+        "policy:origin-destination"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "find out where high demand is located",
+        "inOrderTo": "determine where new mobility services are currently being used. To then make policy that specifically stimulates the use of new mobility services in certain parts of the city."
+    },
+    "standards": [
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-stops", "dataProtection": "A" },
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B" },
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "A" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "OD-Matrix-csv" },
+        { "name": "ODyZee" },        
+        { "name": "OD-Matrix-geojson" },
+        { "name": "OD-Matrix-shape" },
+        { "name": "KML-Track", "dataProtection": "E" },
+        { "name": "KML-Point-and-timestamp", "dataProtection": "E" },
+        { "name": "GPX", "dataProtection": "E" },
+        { "name": "shapefile-tracks", "dataProtection": "E" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+        { "name": "TOMP-available-assets-with-asset-license-plate", "dataProtection": "C" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" }, 
+        { "name": "csv" }, 
+        { "name": "geojson" }, 
+        { "name": "json" }, 
+        { "name": "xml" }
+    ],
+    "metrics": ["Departing number of vehicles per hub and hour"],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

@@ -1,13 +1,13 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-trips",
     "exchangeType": "API", 
     "part": "/trips",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "API",
 
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -16,5 +16,8 @@
     "refreshRate": "0",
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }

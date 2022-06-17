@@ -1,17 +1,20 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-vehicle-status",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "vehicle_status.json",
+    "description": "Standard GBFS json file",    
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
-    "baseUrl": "[baseUrl]",
-    "version": "[version >= 3.0]",
+    "url": "[url]",
+    "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

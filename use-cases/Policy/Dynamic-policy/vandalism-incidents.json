@@ -1,0 +1,27 @@
+{
+    "id": "vandalism-incidents",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rec1E550a36PtTcI6",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "get vandalism notifications from operators",
+      "inOrderTo": "take action against this and prevent further vandalistic actions"
+    },  
+    "tags": [
+        "dynamic-policy:vandalism"
+    ],
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "B" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "D"},
+        { "name": "MDS-provider-status-changes", "dataProtection": "B" }
+    ],
+    "metrics": ["Number of vandalism notifications per district and severity"],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

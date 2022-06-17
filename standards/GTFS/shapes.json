@@ -6,8 +6,11 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

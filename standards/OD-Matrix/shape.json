@@ -1,11 +1,16 @@
 {
     "type": "standards",
-    "name": "OD-Matrix",
+    "name": "OD-Matrix-shape",
     "exchangeType": "file-based", 
     "part": "shape-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "D", 
-    "reusability":"E", 
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"C", 
+    "domain": "B",
     "interoperability": "B",
-    "mediumType": "ESRI-shapefile"
+    "mediumType": "ESRI-shapefile",
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

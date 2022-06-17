@@ -1,9 +1,10 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-trips-without-ids-and-route",
+    "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is empty/not available",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "A",
@@ -25,5 +26,11 @@
             "field": "trips[].route",
             "exception": "removed"
         }
-    ]
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }

@@ -1,13 +1,18 @@
 {
-    "type": "standards",
+    "type": "file",
     "name": "KML-Points", 
     "exchangeType": "file-based", 
     "part": "Points",
     "version": "2.2",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "C", 
-    "reusability":"E", 
-    "interoperability": "D",
+    "reusability":"E",
+    "interoperability": "C",
+    "domain": "D",
     "mediumType": "xml-file",
-    "schema": "https://developers.google.com/kml/documentation/kmlreference#point"
+    "schema": "https://developers.google.com/kml/documentation/kmlreference#point",
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
+    "bbversion": 1
 }

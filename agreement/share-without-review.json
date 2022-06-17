@@ -1,0 +1,6 @@
+{
+    "type": "agreement",
+    "name": "share-without-review",
+    "description": "It is allowed to share findings without review of the data supplier",
+    "bbversion": 1
+}

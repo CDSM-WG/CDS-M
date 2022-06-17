@@ -4,6 +4,19 @@
     margin-right: 22vh;
 }
 
+.mat-table {
+    height: 80vh;
+    margin-bottom: -120px;
+}
+
+.mat-header-row {
+    top: 0px;
+    background-color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 10;
+}
+
 th.rotate {
     /* Something you can count on */
     height: 160px;
@@ -76,4 +89,65 @@ input.invisible {
 
 input[type='text'] {
     width: 80px;
+}
+
+i.invisible {
+    visibility: hidden;
+}
+
+i.visible {
+    visibility: visible;
+}
+
+.cdsm-selection {
+    position: absolute;
+    z-index: 100;
+    left: 20px;
+    top: 28px;
+    background-color: red;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.weight {
+    width: 20px !important;
+    vertical-align: bottom;
+    border-width: 0px;
+    background-color: lightgray;
+    margin-right: 2px;
+}
+
+div.addButton {
+	box-shadow:inset 0px 0px 15px 3px #23395e;
+	background-color:#2e466e;
+	border-radius:7px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding-left:3px;
+    padding-right:3px;
+	text-decoration:none;
+}
+div.addButton:hover {
+	background-color:#415989;
+}
+div.addButton:active {
+	position:relative;
+	top:1px;
+}
+
+div.mark {
+    left: 13%;
+    position: relative;
+}
+
+table th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #fff;
 }

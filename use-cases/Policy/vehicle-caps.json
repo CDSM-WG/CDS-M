@@ -1,0 +1,43 @@
+{
+    "id": "vehicle-caps",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRcMuvCOD8CAXhh",
+    "story": {
+      "asA": "city",
+      "iWouldLikeTo": "know the total number of devices and the usage per operator in the city and in adjacent municipalities/regions",
+      "inOrderTo": "determine the vehicle cap"
+    },  
+    "tags": [
+      "policy:vehicle-count"
+    ],
+    "standards": [
+      { "name": "csv" },
+      { "name": "geojson" },
+      { "name": "json" },
+      { "name": "xml" },
+      { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+      { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+      { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "GBFS-station-status", "dataProtection": "A" },
+      { "name": "TOMP-available-assets", "dataProtection": "A" },
+      { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+      { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-stops", "dataProtection": "A" },
+      { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+      { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+      { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+      { "name": "shapefile-points" },
+      { "name": "KML-points" },
+      { "name": "SPDP-dynamic" }
+    ],
+    "metrics": [ "Total number of vehicles in the city per day", "Usage percentage per vehicle type and day" ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

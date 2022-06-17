@@ -34,7 +34,10 @@ export class ExImportButtonComponent implements OnInit {
     fileReader.onload = () => {
       if (fileReader.result != null) {
         this.jsonObj=(JSON.parse(fileReader.result.toString()));
-        this.service.useCases.next(this.jsonObj);
+        this.service.useCases.next(this.jsonObj.useCases);
+
+        this.jsonObj.metaData.versionNumber = this.jsonObj.metaData.versionNumber + 1;
+        this.exportService.specification = this.jsonObj;        
       }
     }
     fileReader.onerror = (error) => {

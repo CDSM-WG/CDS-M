@@ -1,13 +1,13 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-vehicles",
     "exchangeType": "API", 
     "part": "vehicles",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -22,5 +22,8 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }

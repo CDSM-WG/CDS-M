@@ -1,7 +1,7 @@
 {
-    "type": "contract",
+    "type": "agreement",
     "name": "DPA",
-    "template": "https://gdpr.eu/data-processing-agreement/",
+    "externalReference": "https://gdpr.eu/data-processing-agreement/",
     "parameters": [ 
         { "Company": "[Company]", "order": [ 1 ] },
         { "Data Processor": "[Data Processor and parties]", "order": [ 2 ] },
@@ -19,5 +19,6 @@
         { "Processor company - name": "[name]", "section": "Processor company", "order": [ 12 ] },
         { "Processor company - title": "[title]", "section": "Processor company", "order": [ 13 ] },
         { "Processor company - date signed": "[date signed]", "section": "Processor company", "order": [ 14 ] }
-    ]
+    ],
+    "bbVersion": 1
 }

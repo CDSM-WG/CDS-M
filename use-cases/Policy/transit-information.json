@@ -1,0 +1,20 @@
+{
+    "id": "transit-information",
+    "tags": ["policy:transit"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the number of transit assets arriving and departing from a public transport hub",
+        "inOrderTo": "use this information for modelling the modal split or impact on transit"
+       },
+    "standards": [
+       { "name": "GTFS" },
+       { "name": "NeTEx" },
+       { "name": "OSDM-offline-?" }
+    ],
+    "metrics": ["Maximum/minimum/average number of movements between 2 PT hubs per hour"],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

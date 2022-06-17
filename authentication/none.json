@@ -1,5 +1,7 @@
 {
-    "type": "authentication",
+    "type": "authenticationCondition",
     "name": "none",
-    "allowedExchangeTypes": [ "API", "file-based" ]
+    "description": "no authentication needed",
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
 }

@@ -1,6 +1,6 @@
 [ 
 {
-    "type": "standards",
+    "type": "file",
     "exchangeType": "file-based",
     "name":"DATEX",
     "version": "[version]",
@@ -11,116 +11,153 @@
     "reusability":"D", 
     "interoperability": "B",
     "domain": "B",
-    "schema": "https://www.datex2.eu/node/261"
+    "externalReference": "https://www.datex2.eu/node/261",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "file",
     "exchangeType": "file-based",
-    "name":"csv",
-    "part": "[complete url]",
-    "version": "[version]",
-    "refreshRate": "[refresh rate]",
     "mediumType": "csv-file",
-    "privacy": "?",
+
+    "name":"csv",
+    "schema": "[comma seperated field list]",
+
+    "url": "[complete url]",
+    "refreshRate": "[refresh rate]",
+
+    "privacy": "*",
     "implementationEffort": "A", 
     "reusability":"E",
     "interoperability": "E",
     "domain": "E",
-    "schema": "[comma seperated field list]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+    "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
+    "timeAmount": "[time amount]",
+    "geoUnit": "[postal, postal1_4, district, city, region, custom]",
+    "geoUnitCustomSpecification": "[URL]"
 }, 
 {
-    "type": "standards",
+    "type": "file",
     "exchangeType": "file-based",
-    "name":"geojson",
-    "part": "[complete url]",
-    "version": "[version]",
-    "refreshRate": "[refresh rate]",
     "mediumType": "json-file",
-    "privacy": "?",
+
+    "name":"geojson",
+    "schema": "[comma seperated attribute list OR json scheme]",
+
+    "url": "[complete url]",
+    "refreshRate": "[refresh rate]",
+
+    "privacy": "*",
     "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "E",
     "domain": "E",
-    "schema": "[comma seperated attribute list]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+    "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
+    "timeAmount": "[time amount]",
+    "geoUnit": "[postal, postal1_4, district, city, region, custom]",
+    "geoUnitCustomSpecification": "[URL]"
 }, 
 {
-    "type": "standards",
-    "name": "json",
+    "type": "file",
     "exchangeType": "file-based", 
-    "part": "[complete url]",
-    "version": "[version]",
-    "refreshRate": "[refresh rate]",
     "mediumType": "json-file",
-    "privacy": "?",
+
+    "name": "json",
+    "schema": "[complete url of JSON scheme]",
+
+    "url": "[complete url]",
+    "refreshRate": "[refresh rate]",
+
+    "privacy": "*",
     "implementationEffort": "B", 
     "reusability":"E",
     "interoperability": "E",
     "domain": "E",
-    "schema": "[complete url of JSON scheme]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+    "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
+    "timeAmount": "[time amount]",
+    "geoUnit": "[postal, postal1_4, district, city, region, custom]",
+    "geoUnitCustomSpecification": "[URL]"
 }, 
 {
-    "type": "standards",
-    "name": "skin",
+    "type": "file",
     "exchangeType": "file-based", 
-    "part": "[complete url]",
-    "version": "[version]",
-    "refreshRate": "[refresh rate]",
-    "mediumType": "semicolon-delimited-csv-file",
-    "schema": "[url of area file]",
-    "privacy": "A",
-    "implementationEffort": "B", 
-    "reusability":"E", 
-    "interoperability": "E",
-    "domain": "B",
-    "explanation": "cell 0:0 contains unit (e.g. number of trips). First row and column contain area ids from schema. The other cell contain data FROM row x TO column y, like number of trips"
-}, 
-{
-    "type": "standards",
-    "name": "xml",
-    "exchangeType": "file-based", 
-    "part": "[complete url]",
-    "version": "[version]",
     "mediumType": "xml-file",
+
+    "name": "xml",
+    "schema": "[complete url of XSD]",
+
+    "url": "[complete url]",
     "refreshRate": "[refresh rate]",
-    "privacy": "?",
+    
+    "privacy": "*",
     "implementationEffort": "C", 
     "reusability":"E", 
     "interoperability": "E",
     "domain": "E",
-    "schema": "[complete url of XSD]"
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+    "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
+    "timeAmount": "[time amount]",
+    "geoUnit": "[postal, postal1_4, district, city, region, custom]",
+    "geoUnitCustomSpecification": "[URL]"
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-free-bike-status",
-    "exchangeType": "file-based", 
-    "part": "free_bike_status.json",
-    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
-    "version": "[version < 3.0]",
-    "baseUrl": "[baseUrl]",
+    "exchangeType": "[API|file-based]", 
     "mediumType": "json-file",
+    "part": "free_bike_status.json",
+
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
+    "description": "Standard GBFS json file",
+    "version": "[1.1 < version < 2.1]",
+    "url": "[url]",
     "refreshRate": "[refresh rate]",
+
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-free-bike-status-non-rotating-asset-id",
-    "part": "free_bike_status.json",
-    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
-    "version": "[version < 3.0]",
-    "exchangeType": "file-based",
-    "baseUrl": "[baseUrl]",
+    "exchangeType": "[API|file-based]",
     "mediumType": "json-file",
+    "part": "free_bike_status.json",
+
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
+    "description": "Standard GBFS json file with one adjustment: the bike_id doesn't rotate (causing GDPR issues).",
+    "version": "[version < 2.1]",
+
+    "url": "[url]",
     "refreshRate": "[refresh rate]",
-    "privacy": "C",
-    "implementationEffort": "D", 
+
+    "privacy": "B",
+    "implementationEffort": "B", 
     "reusability":"E", 
-    "interoperability": "A",
+    "interoperability": "D",
     "domain": "B",
+
     "fieldModifications": [
         {
             "field": "bike_id",
@@ -129,221 +166,273 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
-}, 
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}
+, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS",
-    "exchangeType": "file-based", 
-    "part": "gbfs.json",
-    "baseUrl": "[baseUrl]",
+    "exchangeType": "[API|file-based]", 
+    "part": "gbfs.json",    
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-versions",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "gbfs_versions.json",
+    "description": "Standard GBFS json file",
     "version": "[version >= 1.1]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-geofencing-zones",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "geofencing_zones.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-station-information",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "station_information.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-station-status",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "station_status.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-system-alerts",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "system_alerts.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-system-calendar",
-    "exchangeType": "file-based", 
-    "part": "system_calendar.json",
-    "baseUrl": "[baseUrl]",
+    "exchangeType": "[API|file-based]", 
+    "part": "system_calendar.json",    
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-system-hours",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "system_hours.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-system-information",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "system_information.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-system-pricing-plans",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "system_pricing_plans.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-system-regions",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "system_regions.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-vehicle-status",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "vehicle_status.json",
+    "description": "Standard GBFS json file",    
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
-    "baseUrl": "[baseUrl]",
-    "version": "[version >= 3.0]",
+    "url": "[url]",
+    "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-vehicle-status-non-rotating-asset-id",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "vehicle_status",
-    "version": "[version < 3.0]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
+    "description": "Standard GBFS json file, with one adjustment: the vehicle_id doesn't rotate (causing GDPR issues).",
+    "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",    
-    "baseUrl": "[baseUrl]",
-    "privacy": "C",
-    "implementationEffort": "D", 
+    "url": "[url]",
+    "privacy": "B",
+    "implementationEffort": "B", 
     "reusability":"E", 
-    "interoperability": "A",
+    "interoperability": "D",
     "domain": "B",
     "fieldModifications": [
         {
@@ -353,27 +442,34 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
-}, 
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}
+, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-vehicle-types",
-    "exchangeType": "file-based", 
+    "exchangeType": "[API|file-based]", 
     "part": "vehicle_types.json",
-    "baseUrl": "[baseUrl]",
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version >= 2.1]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "file",
     "name": "GPX",
     "exchangeType": "file-based", 
     "version": "1.1",
@@ -392,22 +488,26 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GTFS-agency",
     "exchangeType": "file-based", 
     "part": "agency.txt",
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "A", 
     "reusability":"B", 
     "interoperability": "A",
-    "fieldModifications": []
-}
-, 
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}, 
 {
     "type": "standards",
     "name": "GTFS-attributions",
@@ -416,10 +516,13 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "A", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -431,9 +534,12 @@
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
     "implementationEffort": "B", 
+    "privacy": "A",
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -445,9 +551,12 @@
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
     "implementationEffort": "A", 
+    "privacy": "A",
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -459,9 +568,12 @@
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
     "implementationEffort": "A", 
+    "privacy": "A",
     "reusability":"B", 
     "interoperability": "A",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -473,9 +585,12 @@
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
     "implementationEffort": "A", 
+    "privacy": "A",
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -487,9 +602,12 @@
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
     "implementationEffort": "A", 
+    "privacy": "A",
     "reusability":"B", 
     "interoperability": "A",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -501,9 +619,12 @@
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
     "implementationEffort": "B", 
+    "privacy": "A",
     "reusability":"A", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -515,9 +636,12 @@
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
     "implementationEffort": "A", 
+    "privacy": "A",
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -528,10 +652,13 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "B", 
     "reusability":"C", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -542,10 +669,13 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -556,10 +686,13 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -570,10 +703,13 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "A", 
     "reusability":"A", 
     "interoperability": "A",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -584,10 +720,13 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -598,10 +737,13 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "B", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -612,10 +754,13 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "C", 
     "reusability":"C", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
@@ -626,14 +771,17 @@
     "version": "[version]",
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "C", 
     "reusability":"A", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "file",
     "name": "KML-Point-and-timestamp", 
     "exchangeType": "file-based", 
     "part": "Points+Timestamp",
@@ -653,32 +801,42 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "file",
     "name": "KML-Points", 
     "exchangeType": "file-based", 
     "part": "Points",
     "version": "2.2",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
     "implementationEffort": "C", 
-    "reusability":"E", 
-    "interoperability": "D",
+    "reusability":"E",
+    "interoperability": "C",
+    "domain": "D",
     "mediumType": "xml-file",
-    "schema": "https://developers.google.com/kml/documentation/kmlreference#point"
+    "schema": "https://developers.google.com/kml/documentation/kmlreference#point",
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "file",
     "name": "KML-track", 
     "exchangeType": "file-based", 
     "part": "Track",
     "version": "2.2",
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",
-    "implementationEffort": "C", 
-    "reusability":"D", 
-    "interoperability": "D",
+    "privacy": "C",
+    "implementationEffort": "D", 
+    "reusability":"E",
+    "interoperability": "B",
+    "domain": "D",
     "schema": "https://developers.google.com/kml/documentation/kmlreference#gx:track",
     "fieldModifications": [
         {
@@ -687,15 +845,18 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-base-geographies",
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/geography",
     "part": "/geographies/",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "privacy": "A",
     "implementationEffort": "D", 
@@ -703,15 +864,17 @@
     "interoperability": "A",
     "domain": "A",
     "mediumType": "API",
-    "refreshRate": "0"
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-policy-geography",
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#geography",
     "part": "/geographies",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "privacy": "A",
     "implementationEffort": "D", 
@@ -719,15 +882,17 @@
     "interoperability": "A",
     "domain": "A",
     "mediumType": "API",
-    "refreshRate": "0"
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-policy-rules",
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
     "part": "/rules/",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "privacy": "A",
     "implementationEffort": "D", 
@@ -735,18 +900,21 @@
     "interoperability": "A",
     "domain": "A",
     "mediumType": "API",
-    "refreshRate": "0"
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-status_changes-without-ids",
+    "description": "MDS provider status_changes endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -760,19 +928,22 @@
             "field": "status_changes[].vehicle_id",
             "exception": "removed"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-status-changes",
     "exchangeType": "API", 
     "part": "/status_changes",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -789,15 +960,18 @@
     ],
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
-
-}, 
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}
+, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-stops",
     "exchangeType": "API", 
     "part": "/stops",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "API",
     "privacy": "A",
@@ -805,14 +979,18 @@
     "reusability":"E", 
     "interoperability": "A",
     "domain": "A",
-    "refreshRate": "0"
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-trips-without-ids-and-route",
+    "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is empty/not available",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "A",
@@ -834,18 +1012,25 @@
             "field": "trips[].route",
             "exception": "removed"
         }
-    ]
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
-    "name": "MDS-provider-trips-without-ids",
+    "type": "standard",
+    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+    "description": "MDS provider trips endpoint with one adjustment: the results don't contain device_id and vehicle_id, secondly, the route's start and end locations are blurred",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "E",
+    "privacy": "A",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -864,19 +1049,59 @@
             "field": "trips[].route",
             "exception": "contains only blurred start and end location (30m)"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
+    "name": "MDS-provider-trips-without-ids-only-start-end",
+    "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is contains only start and endpoint",
+    "exchangeType": "API", 
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "privacy": "B",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
+    "part": "trips",
+    "fieldModifications": [
+        {
+            "field": "trips[].device_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].vehicle_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].route",
+            "exception": "limited"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}
+, 
+{
+    "type": "standard",
     "name": "MDS-provider-trips",
     "exchangeType": "API", 
     "part": "/trips",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "API",
 
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -885,39 +1110,52 @@
     "refreshRate": "0",
     "conflicts": [
         "reveals_personal_trip_data"
-    ]
-}, 
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}
+, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-vehicles-non-booked",
+    "description": "MDS provider vehicles endpoint with one adjustments: the results are filtered, only non-booked assets are exposed",
     "exchangeType": "API", 
     "part": "vehicles",
     "version": "[version]",
     "mediumType": "API",
     "refreshRate": "0",
-    "baseUrl": "[baseUrl]",
-    "privacy": "C",
+    "url": "[url]",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "A",
+    "interoperability": "D",
     "domain": "A",
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
 
     "fieldModifications": [
         {
             "field": "vehicles",
             "exception": "only non-booked"
         }
-    ]
-}, 
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}
+, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-vehicles-without-ids-non-booked",
+    "description": "MDS provider vehicles endpoint with two adjustments: the results are filtered, only non-booked assets are exposed AND the device_id and vehicle_id are removed",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "A",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -936,23 +1174,30 @@
             "field": "vehicles",
             "exception": "only non-booked"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-vehicles-without-ids",
+    "description": "MDS provider vehicles endpoint with one adjustment: the device_id and vehicle_id are removed from the result",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
     "domain": "A",
     "part": "vehicles",
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
@@ -962,19 +1207,22 @@
             "field": "vehicles[].vehicle_id",
             "exception": "removed"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-vehicles",
     "exchangeType": "API", 
     "part": "vehicles",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "E",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
@@ -989,10 +1237,14 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
-}, 
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}
+, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "NeTEx",
     "exchangeType": "file-based", 
     "part": "[complete url]",
@@ -1002,55 +1254,78 @@
     "implementationEffort": "E", 
     "reusability":"B", 
     "interoperability": "C",
-    "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd"
+    "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
-    "name": "OD-Matrix",
-    "exchangeType": "file-based", 
-    "part": "geojson",
-    "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
-    "reusability":"E", 
-    "interoperability": "B",
-    "mediumType": "json"
-}, 
-{
-    "type": "standards",
-    "name": "OD-Matrix",
+    "type": "standard",
+    "name": "OD-Matrix-csv",
     "exchangeType": "file-based", 
     "part": "semicolon-csv",
     "refreshRate": "[refresh rate]",
     "mediumType": "semicolon-delimited-csv-file",
-    "implementationEffort": "C", 
-    "reusability":"D", 
+    "privacy": "A",
+    "implementationEffort": "B", 
+    "reusability":"C", 
+    "domain": "B",
     "interoperability": "B",
-    "schema": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... "
+    "schema": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... ",
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
-    "name": "OD-Matrix-ODZ",
+    "type": "standard",
+    "name": "OD-Matrix-geojson",
     "exchangeType": "file-based", 
+    "part": "geojson",
+    "refreshRate": "[refresh rate]",
+    "privacy": "A",
+    "domain": "B",
+    "implementationEffort": "C", 
+    "reusability":"C", 
+    "interoperability": "B",
+    "mediumType": "json",
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}, 
+{
+    "type": "standard",
+    "name": "ODyZee",
+    "exchangeType": "file-based", 
+    "description": "Standard to exchange OD related data",
     "refreshRate": "[refresh rate]",
     "mediumType": "odz-file",
-    "implementationEffort": "D", 
+    "privacy": "A",
+    "domain": "B",
+    "implementationEffort": "C", 
     "reusability":"C", 
     "interoperability": "A",
-    "schema": "https://github.com/TOMP-WG/OD-MATRIX-SPECIFICATION"
+    "externalReference": "https://github.com/TOMP-WG/ODyZee",
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
     "type": "standards",
-    "name": "OD-Matrix",
+    "name": "OD-Matrix-shape",
     "exchangeType": "file-based", 
     "part": "shape-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "D", 
-    "reusability":"E", 
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"C", 
+    "domain": "B",
     "interoperability": "B",
-    "mediumType": "ESRI-shapefile"
+    "mediumType": "ESRI-shapefile",
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "shapefile-points",
     "exchangeType": "file-based", 
     "part": "[complete url]",
@@ -1058,13 +1333,17 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
+    "privacy": "A",
     "implementationEffort": "D", 
-    "reusability":"E", 
+    "reusability":"E",
     "interoperability": "B",
-    "description": "Shapefile should contain points only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+    "domain": "D",
+    "description": "Shapefile should contain points only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "shapefile-polygon",
     "exchangeType": "file-based", 
     "part": "[complete url]",
@@ -1072,13 +1351,17 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
+    "privacy": "A",
     "implementationEffort": "D", 
-    "reusability":"E", 
+    "reusability":"E",
     "interoperability": "B",
-    "description": "Shapefile should countain (multi)polygons only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+    "domain": "D",
+    "description": "Shapefile should countain (multi)polygons only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "shapefile-tracks",
     "exchangeType": "file-based", 
     "part": "[complete url]",
@@ -1090,12 +1373,14 @@
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "B",
-    "domain": "D",
+    "domain": "C",
     "description": "shapefile should contain (multi)linestrings. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "shapefile",
     "exchangeType": "file-based", 
     "part": "[complete url]",
@@ -1103,13 +1388,17 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
+    "privacy": "?",
     "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "B",
-    "description": "https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+    "reusability":"E",
+    "interoperability": "D",
+    "domain": "D",
+    "description": "https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "SIRI",
     "exchangeType": "file-based", 
     "part": "[complete url]",
@@ -1118,10 +1407,12 @@
     "mediumType": "shapefile",
     "implementationEffort": "E", 
     "reusability":"B", 
-    "interoperability": "B"
+    "interoperability": "B",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "SPDP-dynamic",
     "exchangeType": "file-based", 
     "externalReference": "https://data.openparking.nl/downloads/Standard_for_the_Publication_of_Dynamic_Parking_Data_v2.0.pdf",
@@ -1129,14 +1420,18 @@
     "version": "2.0",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
-    "fieldModifications": []
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"D",
+    "interoperability": "C",
+    "domain": "B",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "SPDP-static",
     "exchangeType": "file-based", 
     "externalReference": "https://data.openparking.nl/downloads/Standard_for_the_Publication_of_Dynamic_Parking_Data_v2.0.pdf",
@@ -1144,39 +1439,46 @@
     "version": "2.0",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
-    "reusability":"B", 
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"D",
     "interoperability": "B",
-    "fieldModifications": []
+    "domain": "B",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
-    "name": "TOMP-API-alerts",
+    "name": "TOMP-API-alert",
     "part": "/operator/alerts",
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Alerts",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "A",
     "implementationEffort": "C", 
     "reusability":"B", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "TOMP-available-assets-non-rotating-asset-id",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
-    "interoperability": "B",
+    "interoperability": "D",
     "domain": "B",
     "fieldModifications": [
         {
@@ -1184,16 +1486,19 @@
             "exception": "non-rotating"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "TOMP-API-available-assets-with-asset-name",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "C",
     "implementationEffort": "D", 
@@ -1206,16 +1511,19 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
-    "type": "standards",
+    "type": "standard",
     "name": "TOMP-API-available-assets-with-license-plate",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "privacy": "C",
     "implementationEffort": "D", 
@@ -1228,16 +1536,19 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
+    "type": "standard",
     "name": "TOMP-available-assets",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "A",
@@ -1245,30 +1556,36 @@
     "reusability":"A", 
     "interoperability": "B",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
+    "type": "standard",
     "name": "TOMP-API-information",
     "exchangeType": "API", 
     "part": "/operator/information",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Information",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "implementationEffort": "B", 
     "reusability":"C", 
     "interoperability": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
+    "type": "standard",
     "name": "TOMP-API-journal-entries-without-bankaccount",
     "part": "/payment/journal-entry",
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "B",
@@ -1281,15 +1598,21 @@
             "field": "bankaccount",
             "exception": "removed"
         }
-    ]
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
+    "type": "standard",
     "name": "TOMP-API-journal-entries",
     "part": "/payment/journal-entry",
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "C",
@@ -1303,93 +1626,125 @@
             "exception": "exposed"
         }
     ],
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
+    "type": "standard",
     "name": "TOMP-API-meta",
     "exchangeType": "API", 
     "part": "/operator/meta",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Meta-Information",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
-    "implementationEffort": "B", 
-    "reusability":"C", 
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"E", 
     "interoperability": "B",
-    "fieldModifications": []
+    "domain": "B",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
+    "type": "standard",
     "name": "TOMP-API-operating-calendar",
     "exchangeType": "API", 
     "part": "/operator/operating-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Operating-hours-and-calendar",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
-    "implementationEffort": "B", 
-    "reusability":"C", 
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"D",
     "interoperability": "B",
+    "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
+    "type": "standard",
     "name": "TOMP-API-operating-hours",
     "exchangeType": "API", 
     "part": "/operator/operating-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Operating-hours-and-calendar",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
-    "implementationEffort": "B", 
-    "reusability":"C", 
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"D",
     "interoperability": "B",
+    "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
+    "type": "standard",
     "name": "TOMP-API-pricing-plans",
     "exchangeType": "API", 
     "part": "/operator/operator-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Pricing-information",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
+    "privacy": "A",
     "implementationEffort": "C", 
-    "reusability":"D", 
+    "reusability":"D",
     "interoperability": "B",
+    "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }, 
 {
+    "type": "standard",
     "name": "TOMP-API-regions",
     "exchangeType": "API", 
     "part": "/operator/regions",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Regions",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
-    "implementationEffort": "B", 
-    "reusability":"B", 
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"D",
     "interoperability": "B",
+    "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
 , 
 {
+    "type": "standard",
     "name": "TOMP-API-stations",
     "exchangeType": "API", 
     "part": "/operator/stations",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Stations",
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "json-file",
-    "implementationEffort": "B", 
-    "reusability":"B", 
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"D",
     "interoperability": "B",
+    "domain": "B",
     "refreshRate": 0,
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }] 

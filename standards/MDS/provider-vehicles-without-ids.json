@@ -1,17 +1,21 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "MDS-provider-vehicles-without-ids",
+    "description": "MDS provider vehicles endpoint with one adjustment: the device_id and vehicle_id are removed from the result",
     "exchangeType": "API", 
     "version": "[version]",
-    "baseUrl": "[baseUrl]",
+    "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "privacy": "C",
+    "privacy": "B",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",
     "domain": "A",
     "part": "vehicles",
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
@@ -21,5 +25,8 @@
             "field": "vehicles[].vehicle_id",
             "exception": "removed"
         }
-    ]
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
 }

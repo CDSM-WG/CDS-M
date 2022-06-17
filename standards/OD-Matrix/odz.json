@@ -1,11 +1,17 @@
 {
-    "type": "standards",
-    "name": "OD-Matrix-ODZ",
+    "type": "standard",
+    "name": "ODyZee",
     "exchangeType": "file-based", 
+    "description": "Standard to exchange OD related data",
     "refreshRate": "[refresh rate]",
     "mediumType": "odz-file",
-    "implementationEffort": "D", 
+    "privacy": "A",
+    "domain": "B",
+    "implementationEffort": "C", 
     "reusability":"C", 
     "interoperability": "A",
-    "schema": "https://github.com/TOMP-WG/OD-MATRIX-SPECIFICATION"
+    "externalReference": "https://github.com/TOMP-WG/ODyZee",
+    "url": "[url]",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }

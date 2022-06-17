@@ -1,0 +1,32 @@
+{
+    "id": "polution-mitigation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recyvf0rp2zV56E5x",
+    "tags": ["policy:polution"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "collect trips along a corridor in conjunction with other vehicle data (eg, Waze)",
+        "inOrderTo": "reduce emissions over time"
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "B" },
+        { "name": "TOMP-API-journal-entries", "dataProtection": "E" },
+        { "name": "TOMP-API-journal-entries-without-bankaccount", "dataProtection": "D" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
+    ],
+    "metrics": ["Emission of CO2 per road segment",
+        "Emission of CO2/NOx per district" ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

@@ -1,4 +1,7 @@
 {
+    "type": "archiveCondition",
     "name": "unlimited-storage",
-    "conflicts": [ "unlimited_storage_in_process" ]
+    "conflicts": [ "unlimited_storage_in_process" ],
+    "description": "No specified limit on length of data usage",
+    "bbversion": 1
 }

@@ -1,16 +1,20 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "GBFS-system-calendar",
-    "exchangeType": "file-based", 
-    "part": "system_calendar.json",
-    "baseUrl": "[baseUrl]",
+    "exchangeType": "[API|file-based]", 
+    "part": "system_calendar.json",    
+    "description": "Standard GBFS json file",
+    "url": "[url]",
     "version": "[version]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
-    "implementationEffort": "D", 
+    "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
-    "fieldModifications": []
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
 }

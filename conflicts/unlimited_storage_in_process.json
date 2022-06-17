@@ -1,8 +1,6 @@
 {
     "name": "unlimited_storage_in_process",
     "reason": "time unspecified how long it will be visible in analysis/processing step",
-    "breach": "privacy_in_design_purpose_limitation",
-    "notApplicableWhenInCombinationWith": [],
-    "requiredAgreements": [ "DPIA", "DPA" ],
-    "requiredCertificates": [ "iso-27001" ]
+    "breach": "privacy_in_design_storage_restriction",
+    "bbversion": 1
 }

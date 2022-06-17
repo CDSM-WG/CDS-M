@@ -1,118 +1,127 @@
 [ 
 {
-    "type": "processing",
-    "name": "anonymization",
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "type": "processingCondition",
+    "name": "anonymization", 
+    "description": "the data must be anonymized before it can be analyzed", 
+    "conflictsWhenNotMet": [ "reveals_personal_trip_data" ],
+    "bbversion": 1
 }, 
 {
-    "type": "processing",
+    "type": "processingCondition",
     "name": "max-time-before-processing",
-    "days": "[days]"
+    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+    "days": "[days]", 
+    "conflictsWhenNotMet": [ "unlimited_storage_in_process" ],
+    "bbversion": 1
 }, 
 {
-    "type": "processing",
-    "name": "pseudonymization",
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "type": "processingCondition",
+    "name": "md5-encrypted",
+    "description": "The stored personal related data must be encrypted with MD5",
+    "encryption": "MD5", 
+    "conflicts": [ "security_not_updated" ],
+    "bbversion": 1
 }, 
 {
-    "type": "processing",
+    "type": "processingCondition",
+    "name": "no-encryption",
+    "description": "The stored personal related data is not encrypted",
+    "encryption": "None", 
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "bbversion": 1
+}, 
+{
+    "type": "processingCondition",
+    "name": "pseudonymization", 
+    "conflictsWhenNotMet": [ "reveals_personal_trip_data" ],
+    "description": "the incoming data must be pseudonymized, but with replacing personal related information, the personal movements can be distracted after all.",
+    "bbversion": 1
+}, 
+{
+    "type": "processingCondition",
     "name": "remove-raw-data-after-aggregate",
-    "conflicts": [ "reveals_personal_trip_data" ]
+    "description": "the data must be aggregated during the processing",
+    "conflictsWhenNotMet": [ "unlimited_storage_in_process" ],
+    "bbversion": 1
 }, 
 {
-    "name": "aggregate-average",
-    "annotation": "the data items are averages"
-}, 
-{
-    "name": "aggregate-count",
-    "annotation": "the data items are total counts"
-}, 
-{
-    "name": "aggregate-maximum",
-    "annotation": "the data items are maxima"
-}, 
-{
-    "name": "aggregate-median",
-    "annotation": "the data items are medians"
-}, 
-{
-    "name": "aggregate-minimum",
-    "annotation": "the data items are minima"
-}, 
-{
-    "name": "biweekly-aggregated",
-    "dimension" : "time",
-    "level": "2 weeks"
-}, 
-{
-    "name": "custom-geographical-aggregated",
-    "dimension" : "geografical",
-    "level": "custom",
-    "customGeographicalDimension": "This should be replaced in the city contract"
+    "type": "processingCondition",
+    "name": "sha256-encrypted",
+    "encryption": "SHA256",
+    "description": "The stored personal related data must be encrypted with SHA256",
+    "conflictsWhenNotMet": [ "security_not_updated" ],
+    "bbversion": 1
 }
 , 
 {
-    "name": "daily-aggregated",
-    "dimension" : "time",
-    "level": "day"
-}
-, 
-{
-    "name": "district-aggregated",
-    "dimension" : "geografical",
-    "level": "district"
-}
-, 
-{
-    "name": "hourly-aggregated",
-    "dimension" : "time",
-    "level": "hour"
+  "type": "certificates",
+  "name": "IEC62443 - level 1",
+  "requiredCertificate": "IEC62443",
+  "issuer": "ISO", 
+  "externalReference": "https://" ,
+  "bbversion": 1
 }, 
 {
-    "name": "monthly-aggregated",
-    "dimension" : "time",
-    "level": "monthly"
+  "type": "certificates",
+  "name": "IEC62443 - level 2",
+  "requiredCertificate": "IEC62443",
+  "issuer": "ISO", 
+  "externalReference": "https://" ,
+  "bbversion": 1
 }, 
 {
-    "name": "postalcode-aggregated",
-    "dimension" : "geografical",
-    "level": "postalcode"
-}
-, 
-{
-    "name": "postalcode-limited-aggregated",
-    "dimension" : "geografical",
-    "level": "postalcode-limited"
-}
-, 
-{
-    "name": "quarter-aggregated",
-    "dimension" : "time",
-    "level": "quarter"
+  "type": "certificates",
+  "name": "IEC62443 - level 3",
+  "requiredCertificate": "IEC62443",
+  "issuer": "ISO", 
+  "externalReference": "https://" ,
+  "bbversion": 1
 }, 
 {
-    "name": "region-aggregated",
-    "dimension" : "geografical",
-    "level": "region"
-}, 
-{
-    "name": "street-aggregated",
-    "dimension" : "geografical",
-    "level": "street"
-}, 
-{
-    "name": "weekly-aggregated",
-    "dimension" : "time",
-    "level": "week"
-}, 
-{
-    "name": "yearly-aggregated",
-    "dimension" : "time",
-    "level": "yearly"
+  "type": "certificates",
+  "name": "IEC62443 - level 4",
+  "requiredCertificate": "IEC62443",
+  "issuer": "ISO", 
+  "externalReference": "https://" ,
+  "bbversion": 1
 }, 
 {
   "type": "certificates",
   "name": "ISO27001",
   "requiredCertificate": "ISO 27001",
-  "issuer": "ISO"
+  "issuer": "ISO", 
+  "externalReference": "https://" ,
+  "bbversion": 1
+}, 
+{
+  "type": "certificates",
+  "name": "ISO27002",
+  "requiredCertificate": "ISO 27002",
+  "issuer": "ISO", 
+  "externalReference": "https://" ,
+  "bbversion": 1
+}, 
+{
+  "type": "certificates",
+  "name": "NCSC",
+  "requiredCertificate": "NCSC",
+  "issuer": "Nederlands Cyber Security Centrum", 
+  "externalReference": "https://" ,
+  "bbversion": 1
+}, 
+{
+  "type": "certificates",
+  "name": "OWASP",
+  "requiredCertificate": "OWASP",
+  "issuer": "NIST", 
+  "externalReference": "https://owasp.org/#" ,
+  "bbversion": 1
+}, 
+{
+  "type": "certificates",
+  "name": "PCI",
+  "requiredCertificate": "PCI",
+  "issuer": "", 
+  "externalReference": "https://" ,
+  "bbversion": 1
 }] 

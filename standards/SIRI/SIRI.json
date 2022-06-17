@@ -1,5 +1,5 @@
 {
-    "type": "standards",
+    "type": "standard",
     "name": "SIRI",
     "exchangeType": "file-based", 
     "part": "[complete url]",
@@ -8,5 +8,7 @@
     "mediumType": "shapefile",
     "implementationEffort": "E", 
     "reusability":"B", 
-    "interoperability": "B"
+    "interoperability": "B",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
 }
