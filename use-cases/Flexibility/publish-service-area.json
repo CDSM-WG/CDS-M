@@ -1,0 +1,14 @@
+{
+    "id": "operating-area",
+    "externalReference": "",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish the operational area for transport operators",
+        "inOrderTo": "maintain the order"
+    },
+    "standards": [
+        { "name": "MDS-policy-rules" },
+        { "name": "TOMP-API-regions" }
+    ]
+}

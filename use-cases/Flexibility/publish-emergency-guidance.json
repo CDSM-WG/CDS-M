@@ -1,0 +1,14 @@
+{
+    "id": "publish-emergency-guidance",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recPIbfFLib0KAgj7",
+    "tags": ["public-space:events"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish unplanned events beforehand or in realtime rules for providers to implement, such as emergency road closures, water main breaks, etc",
+        "inOrderTo": "to help them keep their users and contractors informed and safe."
+    },
+    "standards": [
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" }
+    ]
+}

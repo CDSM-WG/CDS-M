@@ -1,0 +1,17 @@
+{
+    "id": "car-reduction-analysis",
+    "externalReference": "",
+    "tags": ["green-deal:sharing"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the origin-destination of individual trips to subsequently ingest the data into a traffic model and perform a car-reduction-analysis",
+        "inOrderTo": "make informed decisions about the deployment of shared mobility in different areas in the city to reduce (private) car journeys."
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids-and-route", "privacy": "B"},
+        { "name": "MDS-provider-trips", "privacy": "E" }
+    ]
+}

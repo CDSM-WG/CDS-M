@@ -1,0 +1,22 @@
+{
+    "id": "zone-performance",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
+    "tags": ["public-space:parking-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get insights in the performance of existing zones (hubs, parking, drop-off, no ride etc.)",
+        "inOrderTo": "determine which areas need to be improved or modified"
+    },
+    "standards": [
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "GBFS-station-information" },
+        { "name": "GBFS-station-status" },
+        { "name": "GBFS-free-bike-status" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "TOMP-stations" },
+        { "name": "TOMP-available-assets" },
+        { "name": "SPDP-dynamic" },
+        { "name": "SPDP-static" }
+    ] 
+}

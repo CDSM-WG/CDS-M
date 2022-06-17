@@ -1,0 +1,28 @@
+{
+    "id": "ratio-offer-demand",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "I want to know how the demand/offer ratio is in different areas",
+        "inOrderTo": "steer towards the efficient use of the supply."
+    },
+    "standards": [
+        { "name": "MDS-provider-vehicles" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id" },
+        { "name": "TOMP-API-journal-entries", "privacy": "E" },
+        { "name": "TOMP-API-journal-entries-without-bankaccount", "privacy": "D" },        
+        { "name": "MDS-provider-vehicles-without-ids-non-booked" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
+    ]
+}

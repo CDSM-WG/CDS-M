@@ -1,0 +1,15 @@
+{
+    "id": "right-of-way-management",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recgAJ2lc0Hg2vSCM",
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "monitor if discounts/incentives work",
+        "inOrderTo": "influence travel behaviour"
+    },
+    "standards": [
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" }
+    ]
+}

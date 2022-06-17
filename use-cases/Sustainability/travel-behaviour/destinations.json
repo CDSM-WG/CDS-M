@@ -1,0 +1,32 @@
+{
+    "id": "destinations",
+    "externalReference": "",
+    "tags": [
+        "business:overload"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "get insight in location of the parked assets",
+        "inOrderTo": "change policy to match"
+    },
+    "standards": [
+        { "name": "MDS-provider-vehicles", "privacy": "E" },
+        { "name": "MDS-provider-stops", "privacy": "A" },
+        { "name": "MDS-provider-trips", "privacy": "E" },
+        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
+        { "name": "MDS-provider-status-changes", "privacy": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" },
+        { "name": "GBFS-free-bike-status", "privacy": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
+        { "name": "GBFS-vehicle-status", "privacy": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "privacy": "C" },
+        { "name": "TOMP-available-assets", "privacy": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "service-area-usage",
+    "externalReference": "",
+    "tags": [
+        "business:monitor"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "find out how the service area is used",
+        "inOrderTo": "to adjust accordingly"
+    },
+    "standards": [
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" },
+        { "name": "TOMP-available-assets" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id" }
+    ]
+}

@@ -13,6 +13,7 @@
         "inOrderTo": "manage the usage of public space"
     },
     "standards": [
+
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },

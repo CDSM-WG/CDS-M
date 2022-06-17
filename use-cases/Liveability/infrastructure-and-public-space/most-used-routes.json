@@ -1,0 +1,16 @@
+{
+    "id": "most-used-routes",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOEp2ybwC50OJHJ",
+    "tags": ["public-space:network-usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine which routes are the most popular for riders",
+        "inOrderTo": "improve the road network and the usage of physical space (curb, capacity, etc.)"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-trips" }
+        ]
+}

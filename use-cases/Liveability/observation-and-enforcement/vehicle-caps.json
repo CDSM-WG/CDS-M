@@ -1,0 +1,32 @@
+{
+    "id": "vehicle-caps",
+    "externalReference": "",
+    "tags": [
+        "business:demand"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "monitor compliance vehicle cap",
+        "inOrderTo": "act when thresholds are passed"
+    },
+    "standards": [
+        { "name": "MDS-provider-vehicles" },
+        { "name": "MDS-provider-stops" },
+        { "name": "MDS-provider-trips" },
+        { "name": "MDS-provider-trips-without-ids" },
+        { "name": "MDS-provider-status-changes" },
+        { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" },
+        { "name": "GBFS-free-bike-status" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id" },
+        { "name": "GBFS-vehicle-status" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id" },
+        { "name": "TOMP-available-assets" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id" }
+    ]
+}

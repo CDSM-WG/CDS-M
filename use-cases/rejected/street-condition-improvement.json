@@ -8,7 +8,7 @@
         "iWouldLikeTo": "find out popular trips",
         "inOrderTo": "prioritize street paving by using Street Condition Index values and popular trips for safer rides"
     },
-     "standards": [
+    "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },

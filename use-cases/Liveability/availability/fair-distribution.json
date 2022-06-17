@@ -1,0 +1,70 @@
+{
+  "id": " fair distribution",
+  "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
+  "story": {
+    "asA": "city",
+    "iWouldLikeTo": "get insight in availability of mobility services",
+    "inOrderTo": "serve our citizens by redistributing mobility services fairly"
+  },
+  "benefits": [
+    {
+      "to": "cities",
+      "items": [
+        "The citizens do have a higher availability of mobility assets"
+      ]
+    }
+  ],
+  "problemsSolved": [
+    {
+      "to": "cities",
+      "items": [
+        "Shortage by mispositioning of mobility assets"
+      ]
+    }
+  ],
+  "standards": [
+    { "name": "csv" },
+    { "name": "geojson" },
+    { "name": "json" },
+    { "name": "xml" },
+    { "name": "GBFS-free-bike-status" },
+    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
+    { "name": "GBFS-vehicle-status" },
+    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "privacy": "C" },
+    { "name": "GBFS-station-status" },
+    { "name": "TOMP-available-assets" },
+    { "name": "TOMP-available-assets-with-asset-name", "privacy": "C" },
+    { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" },
+    { "name": "MDS-provider-vehicles", "privacy": "E" },
+    { "name": "MDS-provider-stops" },
+    { "name": "MDS-provider-status-changes", "privacy": "E" },
+    { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
+    { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" }
+  ],
+  "termsAndConditions": [
+    "BIO", 
+    "privacy-by-design"
+  ],
+  "agreements": [
+    "DPA"
+  ],
+  "transport": [
+    "TLS-1.1",
+    "TLS-1.2",
+    "TLS-1.3"
+  ],
+  "processing": [
+    "max-time-before-processing",
+    "remove-raw-data-after-aggregate",
+    "max-storage",
+    "unlimited-storage"
+  ],
+  "archive": [], 
+  "tags": [
+    "public-space:distribution",
+    "assets:availability",
+    "mode:bike",
+    "mode:car",
+    "mode:shared-car"
+  ]
+}
