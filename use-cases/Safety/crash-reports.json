@@ -5,10 +5,22 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "investigate crashes of vehicles reported by riders, public, or operators",
-        "inOrderTo": "enhance the infrastructure and make areas safer and to enable a public debate on this topic."
+        "inOrderTo": "be able to assess whether the assets and driving behavior are safe. To improve the safety of new mobility services. Enable public debate on this topic."
     },
     "standards": [
-        { "name": "MDS-provider-status-change", "privacy": "D" },
-        { "name": "MDS-provider-status-change-without-ids", "privacy": "B" }
-    ]
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-status-change", "dataProtection": "D" },
+        { "name": "MDS-provider-status-change-without-ids", "dataProtection": "B" }
+    ],
+    "metrics":["Top crash locations by time of day/day/week/month", 
+        "Top crash locations by contributing factor",
+        "Top crash locations by severity"],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }
