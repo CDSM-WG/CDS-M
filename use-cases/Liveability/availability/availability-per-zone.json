@@ -5,43 +5,43 @@
         "asA": "city",
         "iWouldLikeTo": "determine the distribution of assets per zone (hubs, parking, drop-off, no ride, specific area etc.)",
         "inOrderTo": "redistribute assets to create a more inclusive supply"
+   {
+    "id": "performance-per-mobility-hub",
+    "externalReference": "",
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the number of assets per zone (hubs, parking, drop-off, no ride, specific area etc.)",
+        "inOrderTo": "redistribute assets to create a more inclusive supply, monitor operators' performance and compliance of zone requirements"
     },
-    "termsAndConditions": [],
-    "contract": [],
     "standards": [
         { "name": "csv" },
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "GBFS-free-bike-status", "privacy": "A" },
-        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
-        { "name": "GBFS-vehicle-status", "privacy": "A" },
-        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "privacy": "C" },
-        { "name": "TOMP-available-assets", "privacy": "A" },
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "privacy": "C" },
-        { "name": "MDS-provider-stops", "privacy": "A" },
-        { "name": "MDS-provider-trips", "privacy": "E" },
-        { "name": "MDS-provider-vehicles", "privacy": "E" },
-        { "name": "MDS-provider-trips-without-ids", "privacy": "E" },
-        { "name": "MDS-provider-status-changes", "privacy": "E" },
-        { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" } 
-      ],
-    "sharing": [],
-    "transport": [],
-    "storage": [],
-    "security": [],
-    "combinations": [
-        "publish-stations",
-        "publish-preferred-parking-zones"
+        { "name": "GBFS-station-status", "dataProtection": "A" },
+        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "TOMP-available-assets", "dataProtection": "A" },
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+        { "name": "MDS-provider-stops", "dataProtection": "A" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E"},
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
+        { "name": "SPDP-dynamic", "dataProtection": "A" }
     ],
+    "metrics": [ "Average number of available assets per hub per hour",
+        "Average number of unavailable assets per hub" ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
     "tags": [
-        "public-space:distribution",
-        "assets:availability",
-        "mode:step",
-        "mode:scooter",
-        "mode:bike",
-        "mode:shared-bike",
-        "mode:car",
-        "mode:shared-car"
+        "performance:availability"        
     ]
 }
