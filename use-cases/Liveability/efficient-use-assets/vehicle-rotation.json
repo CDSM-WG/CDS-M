@@ -5,23 +5,7 @@
     "asA": "city",
     "iWouldLikeTo": "monitor vehicle rotation per modality and area",
     "inOrderTo": "distribute assets efficiently and determine the right vehicle cap"
-  },
-  },
-  "benefits": [
-    {
-      "to": "cities",
-      "items": [
-        "The citizens do have a higher availability of mobility assets"
-      ]
-    }
-  ],
-  "problemsSolved": [
-    {
-      "to": "cities",
-      "items": [
-        "Shortage by mispositioning of mobility assets"
-      ]
-    }
+  }, 
   ],
   "standards": [
     { "name": "csv" },
@@ -45,8 +29,7 @@
     { "name": "KML-points" },
     { "name": "SPDP-dynamic" }
   ],
-  "metrics": [ "Available number of vehicles per zone and hour",
-               "Average vehicle rotation per zone and hour"],
+  "metrics": ["Average vehicle rotation per zone and hour","Available number of vehicles per zone and hour"],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],
