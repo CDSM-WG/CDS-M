@@ -1,12 +1,30 @@
 {
-    "id": "publish-zones",
-    "externalReference": "",
-    "tags": ["public-space:distribution", "public-space:parking-pressure"],
+    "id": "publish-slow-speed-zones",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
+    "tags": [
+        "dynamic-policy:areas"
+    ],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "publish zones (parking, hubs, drop-off, school-zone etc.) to the transport operators",
-        "inOrderTo": "maintain the order and dynamically steer the public space."
+        "iWouldLikeTo": "digitally publish zones, such as parking zones, no ride zones, preferred parking spaces, service area, mobility hubs, drop off zones etc.",
+        "inOrderTo": "to promote safety and liveability in the city"
     },
+    "benefits": [],
+    "problemsSolved": [],
     "standards": [
-    ]
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" },
+        { "name": "DATEX-2" },
+        { "name": "TOMP-API-regions" }
+    ],
+    "metrics": [],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
 }
