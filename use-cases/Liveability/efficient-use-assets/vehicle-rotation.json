@@ -45,14 +45,13 @@
     { "name": "KML-points" },
     { "name": "SPDP-dynamic" }
   ],
-  "metrics": [ "Available number of vehicles per hub/district/postal code/number of inhabitants and hour",
-               "Average idle time per hub and hour" ],
+  "metrics": [ "Available number of vehicles per zone and hour",
+               "Average vehicle rotation per zone and hour"],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],
   "processing": [],
   "archive": [],
   "tags": [
-    "policy:availability"
   ]
 }
