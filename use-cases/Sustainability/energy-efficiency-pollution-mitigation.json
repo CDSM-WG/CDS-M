@@ -5,7 +5,7 @@
     "story": {
         "asA": "city",
         "iWouldLikeTo": "collect trips along a corridor in conjunction with other vehicle data (eg, Waze)",
-        "inOrderTo": "reduce emissions over time"
+        "inOrderTo": "calculate eneregy efficiency per operator to reduce emissions over time"
     },
     "standards": [
         { "name": "csv" },
