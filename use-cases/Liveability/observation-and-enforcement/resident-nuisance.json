@@ -4,14 +4,21 @@
     "tags": ["public-space:complaints"],
     "story": {
         "asA": "city",
-        "iWouldLikeTo": "investigate and validate complaints from residents about operations, parking, riding, speed, etc",
-        "inOrderTo": "?"
+        "iWouldLikeTo": "investigate and validate complaints from residents about parking.",
+        "inOrderTo": "apply prevention in the right places."
     },
-    "standards": [
-        { "name": "MDS-provider-status-change" },
-        { "name": "MDS-provider-status-change-without-ids" },
-        { "name": "MDS-provider-trips" },
-        { "name": "MDS-provider-trips-without-ids-and-route" },
-        { "name": "MDS-provider-trips-without-ids" }
-    ]
+  "standards": [
+    { "name": "csv" },
+    { "name": "geojson" },
+    { "name": "json" },
+    { "name": "xml" },
+    { "name": "shapefile-points" },
+    { "name": "KML-points" }
+  ],
+  "metrics": ["Number of administrated complaints about parking, per district and hour"],
+  "termsAndConditions": [],
+  "agreements": [],
+  "transport": [],
+  "processing": [],
+  "archive": []
 }
