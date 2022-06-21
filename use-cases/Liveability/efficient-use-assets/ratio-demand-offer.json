@@ -42,9 +42,12 @@
     ],
     "metrics": [ "Available number of vehicles per hub/district/postal code/number of inhabitants and hour",
                ["Average idle time per hub and hour" ],["Departing number of vehicles per zone and hour"],[ "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" ],
-    "termsAndConditions": [],
-    "agreements": [],
-    "transport": [],
-    "processing": [],
-    "archive": []
+  "termsAndConditions": [],
+  "agreements": [],
+  "transport": [],
+  "processing": [],
+  "archive": [],
+  "tags": [
+    "policy:availability"
+  ]
 }
