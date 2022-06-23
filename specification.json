@@ -1,5 +1,5 @@
 {
-    "context": {
+    "@context": {
         "@vocab": "https://github.com/CDSM-WG/CDS-M/wiki/vocab/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "id": { "@id": "https://schema.org/identifier",
