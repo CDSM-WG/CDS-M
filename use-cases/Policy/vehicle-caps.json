@@ -1,5 +1,7 @@
 {
-    "id": "vehicle-caps",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+  "@type": "useCase",
+  "id": "vehicle-caps",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRcMuvCOD8CAXhh",
     "story": {
       "asA": "city",

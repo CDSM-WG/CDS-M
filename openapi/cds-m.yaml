@@ -367,19 +367,27 @@ components:
         metaData:
           type: object
           properties:
+            "@context":
+              type: string
+              format: URI
+              default: "https://github.com/CDSM-WG/CDS-M/wiki/vocab#meta-data"
+            "@type": 
+              type: string
+              default: "metaData"
             specificationVersion: 
               type: string
               description: version number, first number = use case selection, second = ict configuration, third = contract configuration
-            contractor1:
-              type: string
-            contractor2:
-              type: string
-            role1:
-              type: string
-              enum: [SUPPLIER, CONSUMER, BOTH]
-            role2:
-              type: string
-              enum: [SUPPLIER, CONSUMER, BOTH]      
+              format: d+.d+.d+
+            contractors:
+              type: array
+              items: 
+                description: the formal name of the contractor
+                type: string
+            roles:
+              type: array
+              items: 
+                type: string
+                enum: [SUPPLIER, CONSUMER, BOTH]
             startValidity:
               type: string
               format: date-time
@@ -482,7 +490,7 @@ components:
             description: a dimension with a value, seperated by a semicolon e.g. mode:car
 
     buildingBlockReference:
-      description: refers to a building block, format = name.bbversion
+      description: refers to a building block
       type: string
       default: someBuildingBlock
       

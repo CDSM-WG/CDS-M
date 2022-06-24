@@ -1,0 +1,89 @@
+{
+    "@context": {
+        "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#standard",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "type": {
+            "@type": "xsd:text"
+        },
+        "name": {
+            "@id": "https://schema.org/identifier",
+            "@type": "xsd:text"
+        },
+        "bbversion": {
+            "@type": "xsd:number",
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#building-block-version"
+        },
+        "description": {
+            "@type": "xsd:text"
+        },
+        "conflicts": { "@id" : "https://schema.org/URL", "@container": "@set", "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#conflict" },
+        "conflictsWhenNotMet": { "@id" : "https://schema.org/URL", "@container": "@set", "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#conflict-not-met" }, 
+        "part": {
+            "@id": "https://schema.org/identifier",
+            "@type": "xsd:text",
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#standard-part"
+        },
+        "version": {
+            "@id": "https://schema.org/identifier",
+            "@type": "xsd:text"
+        },
+        "externalReference": { "@id" : "https://schema.org/URL" },
+        "exchangeType": {
+            "@type": "xsd:text",
+            "enum": ["API", "SOAP", "file-based"],
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#exchange-type"
+        },
+        "url": { "@id" : "https://schema.org/URL" },
+        "authentications": { "@id" : "https://schema.org/URL", "@container": "@set", "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#authentication-method" },
+        "explanation": { "@type": "xsd:text" },
+        "dataProtection": {
+            "@type": "xsd:text",
+            "enum": ["A", "B", "C", "D", "E"],
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#data-protection-scale"
+        },
+        "privacy": {
+            "@type": "xsd:text",
+            "enum": ["A", "B", "C", "D", "E"],
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#privacy-scale"
+        },
+        "implementationEffort": {
+            "@type": "xsd:text",
+            "enum": ["A", "B", "C", "D", "E"],
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#implementation-effort-scale"
+        },
+        "reusability": {
+            "@type": "xsd:text",
+            "enum": ["A", "B", "C", "D", "E"],
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#reusability-scale"
+        },
+        "interoperability": {
+            "@type": "xsd:text",
+            "enum": ["A", "B", "C", "D", "E"],
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#interoperability-scale"
+        },
+        "domain": {
+            "@type": "xsd:text",
+            "enum": ["A", "B", "C", "D", "E"],
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#domain-fit-scale"
+        },
+        "fieldModifications": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#field-modification", 
+            "@container": "@set" },
+        "mediumType": {
+            "@type": "xsd:text",
+            "enum": ["json-file", "xml-file", "comma-delimited-csv-file", "semicolon-delimited-csv-file", "pipe-delimited-csv-file", "shapefile"],
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#medium-type"
+        },
+        "schema": {
+            "@type": "xsd:text",
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#standard-schema"
+        },
+        "refreshRate": {
+            "@type": "xsd:number",
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#refresh-rate"
+        },
+        "aggregationLevel": {
+            "@id" : "https://schema.org/URL",
+            "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#aggregation-level"
+        }
+    }
+}

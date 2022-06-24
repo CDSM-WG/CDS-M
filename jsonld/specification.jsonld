@@ -1,0 +1,13 @@
+{
+    "@context": {
+        "@vocab": "https://github.com/CDSM-WG/CDS-M/wiki/vocab#specification",
+        "metaData": "https://github.com/CDSM-WG/CDS-M/wiki/vocab#meta-data",
+        "useCases": { "@id" : "https://github.com/CDSM-WG/CDS-M/blob/main/jsonld/use-case.jsonld", "@container": "@set" },
+        "standards": { "@id" : "https://github.com/CDSM-WG/CDS-M/blob/main/jsonld/standard.jsonld", "@container": "@set" },
+        "termsAndConditions": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#term-or-condition", "@container": "@set" },
+        "contractParts": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#agreements", "@container": "@set" },
+        "transport": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#transport-condition", "@container": "@set" },
+        "processing": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#processing-condition", "@container": "@set" },
+        "archive": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#archive-condition", "@container": "@set" }
+  }
+}

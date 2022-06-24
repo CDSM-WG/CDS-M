@@ -1,5 +1,7 @@
 {
-    "id": "distribution-requirements",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+  "@type": "useCase",
+  "id": "distribution-requirements",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recBL5EgkaAEPuxOU",
     "tags": ["performance:distribution"],
     "story": {

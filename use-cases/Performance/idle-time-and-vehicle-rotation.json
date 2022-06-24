@@ -1,5 +1,7 @@
 {
-    "id": "idle-time-and-vehicle-rotation",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+  "@type": "useCase",
+  "id": "idle-time-and-vehicle-rotation",
     "externalReference": "",
     "story": {
       "asA": "city",

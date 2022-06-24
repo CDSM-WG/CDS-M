@@ -1,5 +1,7 @@
 {
-    "id": "open-data",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+  "@type": "useCase",
+  "id": "open-data",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOhqaFsHNlxVFn3",
     "tags": ["policy:open-data"],
     "story": {
