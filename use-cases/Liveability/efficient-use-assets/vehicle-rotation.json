@@ -1,0 +1,40 @@
+{
+  "id": " vehicle-rotation",
+  "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
+  "story": {
+    "asA": "city",
+    "iWouldLikeTo": "monitor vehicle rotation per modality and area",
+    "inOrderTo": "distribute assets efficiently and determine the right vehicle cap"
+  }, 
+  ],
+  "standards": [
+    { "name": "csv" },
+    { "name": "geojson" },
+    { "name": "json" },
+    { "name": "xml" },
+    { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "GBFS-station-status", "dataProtection": "A" },
+    { "name": "TOMP-available-assets", "dataProtection": "A" },
+    { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+    { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles", "dataProtection": "D" },
+    { "name": "MDS-provider-stops", "dataProtection": "A" },
+    { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+    { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+    { "name": "MDS-provider-trips", "dataProtection": "D" },"mark": "X*", "remark": "switch of the route option to enhance data rpotection, this data is not needed; data minimalisation"
+    { "name": "shapefile-points" },
+    { "name": "KML-points" },
+    { "name": "SPDP-dynamic" }
+  ],
+  "metrics": ["Average vehicle rotation per zone and hour","Available number of vehicles per zone and hour"],
+  "termsAndConditions": [],
+  "agreements": [],
+  "transport": [],
+  "processing": [],
+  "archive": [],
+  "tags": [
+  ]
+}

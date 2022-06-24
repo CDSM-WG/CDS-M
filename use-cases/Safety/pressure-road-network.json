@@ -1,0 +1,27 @@
+{
+    "id": "infrastructure-planning",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
+    "tags": ["public-space:planning", "public-space:usage", "mode:bike", "mode:scooter", "mode:step"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "measure the pressure on the road network",
+        "inOrderTo": "determine where to imrpove the road network"
+    },
+    "standards": [
+        { "name": "MDS-provider-trips", "dataProtection": "D" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
+    ],
+    "metrics": [ "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}
