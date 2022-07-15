@@ -88,3 +88,32 @@
     border-width: 2px;
     border-color: rgb(54, 53, 53);
 }
+
+.checkmark {
+    display:inline-block;
+    width: 66px;
+    height:66px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    margin-right: -20px;
+    margin-top: -22px;
+}
+
+.checkmark_stem {
+    position: absolute;
+    width:9px;
+    height:27px;
+    background-color: green;
+    left:44px;
+    top:25px;
+}
+
+.checkmark_kick {
+    position: absolute;
+    width:9px;
+    height:9px;
+    background-color:green;
+    left:36px;
+    top:43px ;
+}

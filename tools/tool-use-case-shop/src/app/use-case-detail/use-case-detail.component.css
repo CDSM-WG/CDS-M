@@ -16,6 +16,7 @@
     margin-top: -30px;
     margin-left: 10px;
     padding-left: 10px;
+    padding-bottom: 10px;
     width: 75%;
     background-color: white;
 }
@@ -53,7 +54,14 @@
 .metrics {
     margin-top: 20px;
     font-size: 12pt;
-    font-weight: bold;
+    font-weight: bold;  
+    margin-bottom: 10px;  
+    margin-bottom: 10px;
+}
+
+app-metric-ticket {
+    border-radius: 20px;
+    background-color: white;
 }
 
 .removeFromCart {
@@ -69,5 +77,15 @@
     text-align: center;
     vertical-align: middle;
     font-size: 17pt;
+    cursor: pointer;
+}
+
+.standards {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+}
+
+.information {
     cursor: pointer;
 }

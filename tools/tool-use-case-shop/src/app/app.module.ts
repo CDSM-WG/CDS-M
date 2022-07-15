@@ -23,6 +23,7 @@ import { CartComponent } from './cart/cart.component';
 import { CartTicketComponent } from './cart-ticket/cart-ticket.component';
 import { ExportService } from '../services/export.service';
 import { ReplaceUnderscorePipe } from './replace-underscore-pipe';
+import { MetricTicketComponent } from './metric-ticket/metric-ticket.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ReplaceUnderscorePipe } from './replace-underscore-pipe';
     BlackTicketComponent,
     CartComponent,
     CartTicketComponent,
-    ReplaceUnderscorePipe
+    ReplaceUnderscorePipe,
+    MetricTicketComponent
   ],
   imports: [
     BrowserModule,

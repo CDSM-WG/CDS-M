@@ -14,11 +14,15 @@
 
     <div class="metrics">Metrics</div>
     <ul>
-        <app-black-ticket *ngFor="let metric of data.metrics" [data]="metric"></app-black-ticket>
+        <app-metric-ticket *ngFor="let metric of data.metrics" [data]="metric"></app-metric-ticket>
     </ul>
 
     <div class="metrics">Known standards</div>
-    <ul>
-        <app-black-ticket *ngFor="let s of data.standards" [data]="getStandard(s.name)"></app-black-ticket>
-    </ul>
+    <table class="standards">
+        <tr><td><b>Name</b></td><td><b>Grade</b> <a href="/assets/grading-system/index.html">
+            <i class="fa fa-info-circle information"></i></a></td></tr>
+        <tr *ngFor="let s of data.standards">
+            <td>&nbsp;&nbsp;{{s.name}}</td><td [innerText]="getStandard(s.name).privacy"></td>
+        </tr>
+    </table>
 </div>    
