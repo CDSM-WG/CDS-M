@@ -2,7 +2,7 @@
     "id": "publish-speed-regulations",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
     "tags": [
-        "public-space:usage"
+        "public-space:usage" ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "digitally publish speed regulations",
@@ -25,6 +25,7 @@
     "agreements": [],
     "transport": [],
     "processing": [],
-    "archive": []
+    "archive": [],
+    "theme": "Safety"
 }
 

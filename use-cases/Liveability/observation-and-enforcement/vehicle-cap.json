@@ -28,7 +28,7 @@
       { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
       { "name": "MDS-provider-stops", "dataProtection": "A" },
       { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-      { "name": "MDS-provider-trips", "dataProtection": "D" },"mark": "X*", "remark": "switch of the route option to enhance data rpotection, this data is not needed; data minimalisation"
+      { "name": "MDS-provider-trips", "dataProtection": "D","mark": "X*", "remark": "switch of the route option to enhance data rpotection, this data is not needed; data minimalisation" },
       { "name": "shapefile-points" },
       { "name": "KML-points" },
       { "name": "SPDP-dynamic" }
@@ -38,5 +38,6 @@
     "agreements": [],
     "transport": [],
     "processing": [],
-    "archive": []
+    "archive": [],
+    "theme": "Liveability"
 }

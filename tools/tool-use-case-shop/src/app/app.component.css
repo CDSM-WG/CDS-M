@@ -1,0 +1,28 @@
+.toolbar {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    vertical-align: bottom;
+}
+
+.title {
+    font-size: 30pt;
+    font-weight: bold;
+    float: left;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.store {
+    float: right;
+    padding-top: 10px;
+    margin-right: 15px;
+}
+
+.cart {
+    cursor: pointer;
+    float: right;
+    padding-top: 10px;
+    margin-right: 15px;
+
+}

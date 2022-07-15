@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="useCases">
+        <span>
+            <div class="header">Use case cart</div><div class="counter">{{this.getCounter()}} use case(s)</div>
+        </span>
+        <app-cart-ticket *ngFor="let data of selectedUseCases" [data]="data"></app-cart-ticket>
+    </div>
+    <div class="totalBill">
+        <div class="header2">Data protection</div>
+        <hr/>
+        <table>
+            <tr *ngFor="let data of selectedUseCases">
+                <td><a href="/cart#{{data.id}}">{{data.id}}</a></td>
+                <td>{{data.totalGrade}}</td>
+            </tr>
+        </table>
+        <hr/>
+        <table><tr><td>Total grade for all use cases</td><td>{{getGrandTotal()}}</td></tr></table>
+        <hr/>
+        <div class="Button" (click)="this.export()">Proceed to checkout</div>
+    </div> 
+</div>

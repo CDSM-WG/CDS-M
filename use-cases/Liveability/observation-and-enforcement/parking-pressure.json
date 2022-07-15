@@ -66,5 +66,6 @@
     "mode:bike",
     "mode:car",
     "mode:shared-car"
-  ]
+  ],
+  "theme": "Liveability"
 }

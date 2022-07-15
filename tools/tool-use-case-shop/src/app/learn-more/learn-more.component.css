@@ -1,0 +1,57 @@
+.container {
+    padding: 10px;
+    float: left;
+    width: 100%;
+}
+
+.image1 {
+    width: 200px;
+    height: 415px;
+    position: relative;
+    margin-right: 20px;
+    margin-left: 50px;
+    float: left;
+    background-color: gray;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(54, 53, 53);
+}
+.image2 {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(54, 53, 53);
+}
+.image3 {
+    width: 200px;
+    height: 190px;
+    margin-top: 20px;
+    background-color: gray;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(54, 53, 53);
+}
+
+.imagecontainer {
+    width: 500px;
+}
+.innerimagecontainer {
+    float: left;
+    margin-left: 20px;
+}
+.content {
+    width: 25%;
+    float: left;
+    padding-left: 40px;
+}
+
+.header {
+    font-size: 24pt;
+    font-weight: bold;
+}
+.text {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

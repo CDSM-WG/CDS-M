@@ -1,0 +1,9 @@
+img {
+    width: 16px;
+    height: 16px;
+}
+
+.standard {
+    vertical-align: baseline;
+    white-space: nowrap;
+}

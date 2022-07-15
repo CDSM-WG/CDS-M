@@ -1,0 +1,32 @@
+[ 
+{
+    "type": "transportCondition",
+    "name": "content-PKI-encrypted",
+    "encryption": "PKI",
+    "bbversion": 1
+}, 
+{
+    "type": "transportCondition",
+    "name": "TLS-1.1",
+    "encryption": "TLS",
+    "version": "1.1",
+    "conflicts": [
+        "security_not_updated"
+    ],
+    "bbversion": 1
+}, 
+{
+    "type": "transportCondition",
+    "name": "TLS-1.2",
+    "encryption": "TLS",
+    "version": "1.2",
+    "bbversion": 1
+}
+, 
+{
+    "type": "transportCondition",
+    "name": "TLS-1.3",
+    "encryption": "TLS",
+    "version": "1.3",
+    "bbversion": 1
+}] 

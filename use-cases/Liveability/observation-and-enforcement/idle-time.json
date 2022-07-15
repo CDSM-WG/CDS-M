@@ -45,5 +45,6 @@
       "mode:bike",
       "mode:scooter",
       "mode:step"
-    ]
+    ],
+    "theme": "Liveability"
   }
