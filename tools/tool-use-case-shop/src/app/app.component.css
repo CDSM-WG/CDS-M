@@ -13,6 +13,13 @@
     cursor: pointer;
 }
 
+.usecasestore {
+    font-size: 20pt;
+    float: left;
+    color: lightgray;
+    margin-left: 15px;
+}
+
 .store {
     float: right;
     padding-top: 10px;

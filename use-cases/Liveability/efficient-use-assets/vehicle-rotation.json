@@ -1,5 +1,7 @@
 {
-  "id": " vehicle-rotation",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": " vehicle-rotation",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
   "story": {
     "asA": "city",

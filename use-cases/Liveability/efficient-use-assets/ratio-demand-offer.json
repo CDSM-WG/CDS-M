@@ -1,4 +1,6 @@
 {
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
     "id": "ratio-offer-demand",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
     "tags": ["public-space:usage"],

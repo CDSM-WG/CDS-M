@@ -1,7 +1,7 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
-    "@type": "useCase",
-    "id": "vehicle-cap-and-neighbouring-regions",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@type": "useCase",
+  "id": "vehicle-cap-and-neighbouring-regions",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
     "story": {
         "asA": "city",
@@ -39,5 +39,6 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Liveability"
+    "theme": "Liveability",
+    "popularity": 3
 }

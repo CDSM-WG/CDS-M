@@ -1,5 +1,7 @@
 {
-    "id": "idle-time",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@type": "useCase",
+  "id": "idle-time",
     "externalReference": "",
     "story": {
       "asA": "city",
