@@ -458,7 +458,7 @@ components:
           description: a list of possible metrics
           type: array
           items:
-            type: string
+            $ref: "#/components/schemas/metric"
         termsAndConditions:
           type: array
           items:
@@ -489,6 +489,16 @@ components:
             type: string
             description: a dimension with a value, seperated by a semicolon e.g. mode:car
 
+    metric:
+      type: object
+      properties:
+        description:
+          type: string
+        standards:
+          type: array
+          items:
+            $ref: "#/components/schemas/standardOrFileReference"
+
     buildingBlockReference:
       description: refers to a building block
       type: string
@@ -507,6 +517,9 @@ components:
         mark:
           type: string
           description: the mark for the ICT tool. If not provided, it is 'X'
+        content:
+          description: minimal required information, comma separated
+          type: string
 
     mitigationPossibility:
       type: array

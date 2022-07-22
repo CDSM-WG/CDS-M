@@ -18,10 +18,20 @@
         { "name": "xml" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-rules" },
-        { "name": "DATEX-2" },
-        { "name": "TOMP-API-regions" }
+        { "name": "DATEX-2" }
     ],
-    "metrics": [],
+    "metrics": [
+        { "description": "Publish emergency areas", 
+          "standards": [
+            { "name": "csv", "content": "description, and area (WKT, WGS84)" },
+            { "name": "json", "content": "description, and area (WKT, WGS84)" },
+            { "name": "geojson", "content": "description, and area (geojson) " },
+            { "name": "xml", "content": "description, and area (WKT, WGS84)" },
+            { "name": "MDS-policy-geography" },
+            { "name": "MDS-policy-rules" },
+            { "name": "DATEX-2" } ] 
+        }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

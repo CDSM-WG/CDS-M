@@ -30,7 +30,10 @@
     { "name": "KML-points" },
     { "name": "SPDP-dynamic" }
   ],
-  "metrics": ["Average vehicle rotation per zone and hour","Available number of vehicles per zone and hour"],
+  "metrics": [
+    { "description": "Average vehicle rotation per zone and hour" },
+    { "description": "Available number of vehicles per zone and hour" }
+  ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],

@@ -49,8 +49,11 @@
     { "name": "KML-points" },
     { "name": "SPDP-dynamic" }
   ],
-  "metrics": [ "Available number of assets per zone per hour",
-               "Average idle time per zone per hour", "Average vehicle rotation per zone per hour"],
+  "metrics": [ 
+    { "description": "Available number of assets per zone per hour" },
+    { "description": "Average idle time per zone per hour" }, 
+    { "description": "Average vehicle rotation per zone per hour" }
+  ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],

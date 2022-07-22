@@ -21,7 +21,21 @@
         { "name": "DATEX-2" },
         { "name": "TOMP-API-regions" }
     ],
-    "metrics": [],
+    "metrics": [
+        { 
+            "description": "Publish no-ride zones",
+            "standards": [
+                { "name": "csv" },
+                { "name": "json" },
+                { "name": "geojson" },
+                { "name": "xml" },
+                { "name": "MDS-policy-geography" },
+                { "name": "MDS-policy-rules" },
+                { "name": "DATEX-2" },
+                { "name": "TOMP-API-regions" }
+            ]
+        }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

@@ -14,10 +14,19 @@
     { "name": "geojson" },
     { "name": "json" },
     { "name": "xml" },
-    { "name": "shapefile-points" },
-    { "name": "KML-points" }
+    { "name": "shapefile-polygon" }
   ],
-  "metrics": ["Number of administrated complaints about parking, per district and hour"],
+  "metrics": [
+    { "description": "Number of administrated complaints about parking, per district and hour",
+      "standards": [
+        { "name": "csv", "content": "area-reference or WKT (WGS84), day, hour, number" },
+        { "name": "geojson", "content": "area (geojson), day, hour, number" },
+        { "name": "json", "content": "area-reference or WKT (WGS84), day, hour, number" },
+        { "name": "xml", "content": "area-reference or WKT (WGS84), day, hour, number" },
+        { "name": "shapefile-polygon", "content": "polygon (WGS84), day, hour, number" }
+      ]
+    }
+  ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],

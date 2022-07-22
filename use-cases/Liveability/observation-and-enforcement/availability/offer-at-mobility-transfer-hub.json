@@ -29,8 +29,10 @@
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
         { "name": "SPDP-dynamic", "dataProtection": "A" }
     ],
-    "metrics": [ "Average number of available assets per hub per hour",
-        "Average number of unavailable assets per hub" ],
+    "metrics": [ 
+        { "description": "Average number of available assets per hub per hour" },
+        { "description": "Average number of unavailable assets per hub" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

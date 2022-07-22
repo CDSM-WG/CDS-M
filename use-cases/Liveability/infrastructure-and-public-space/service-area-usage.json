@@ -34,8 +34,10 @@
         { "name": "OD-Matrix-geojson" },
         { "name": "OD-Matrix-shape" }
     ],
-    "metrics": [ "Differences between origin and destination per zone per hour",
-        "Differences between origin and destination numbers per zone per day" ],
+    "metrics": [ 
+        { "description": "Differences between origin and destination per zone per hour" },
+        { "description": "Differences between origin and destination numbers per zone per day" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

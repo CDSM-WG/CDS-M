@@ -35,7 +35,8 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
-    "metrics": [ "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" ],
+    "metrics": [ 
+        { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" } ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

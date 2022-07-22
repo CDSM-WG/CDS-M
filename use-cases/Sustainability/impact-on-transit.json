@@ -41,9 +41,11 @@
         { "name": "json" }, 
         { "name": "xml" }
     ],
-    "metrics": ["Average number of available vehicles per hub and hour",
-        "Average number of arriving vehicles per hub and hour",
-        "Average number of departing vehicles per hub and hour"],
+    "metrics": [
+        { "description": "Average number of available vehicles per hub and hour" },
+        { "description": "Average number of arriving vehicles per hub and hour" },
+        { "description": "Average number of departing vehicles per hub and hour" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

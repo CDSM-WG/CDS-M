@@ -24,8 +24,10 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
-    "metrics": ["Emission of CO2 per road segment",
-        "Emission of CO2/NOx per district" ],
+    "metrics": [
+        { "description": "Emission of CO2 per road segment" },
+        { "description": "Emission of CO2/NOx per district" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

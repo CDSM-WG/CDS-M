@@ -43,6 +43,10 @@
     { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
     { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" }
   ],
+  "metrics": [
+    { "description": "Minimum/maximum/average parking time per zone" },
+    { "description": "Parking density heatmap, per lon/lat parked minutes" }
+  ],
   "termsAndConditions": [
     "BIO", 
     "privacy-by-design"

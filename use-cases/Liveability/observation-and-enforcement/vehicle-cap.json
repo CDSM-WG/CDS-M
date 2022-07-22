@@ -33,7 +33,13 @@
       { "name": "KML-points" },
       { "name": "SPDP-dynamic" }
     ],
-    "metrics": [ "Average vehicle rotation per zone and hour","Average idle time per zone and hour", "Total number of available vehicles in the city per day", "Usage percentage per vehicle type and day", "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour"],
+    "metrics": [ 
+      { "description": "Average vehicle rotation per zone and hour" },
+      { "description": "Average idle time per zone and hour" }, 
+      { "description": "Total number of available vehicles in the city per day" }, 
+      { "description": "Usage percentage per vehicle type and day" }, 
+      { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

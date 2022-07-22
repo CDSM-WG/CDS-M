@@ -35,6 +35,10 @@
       { "name": "MDS-provider-status-changes" },
       { "name": "MDS-provider-status-changes-without-ids" }
     ],
+    "metrics": [
+      { "description": "Maximum/average parking time per zone" },
+      { "description": "Assets parked longer than a threshold time" }
+    ],
     "termsAndConditions": [],
     "agreements": [ "DPA" ],
     "sharing": [ ],

@@ -42,7 +42,13 @@
         { "name": "json" }, 
         { "name": "xml" }
     ],
-  "metrics": [ "Available number of vehicles per zone and hour", "Average idle time per zone and hour", "Average vehicle rotation per zone and hour","Departing number of vehicles per zone and hour", "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour"],
+  "metrics": [ 
+    { "description": "Available number of vehicles per zone and hour" }, 
+    { "description": "Average idle time per zone and hour" }, 
+    { "description": "Average vehicle rotation per zone and hour" },
+    { "description": "Departing number of vehicles per zone and hour" }, 
+    { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" } 
+  ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],

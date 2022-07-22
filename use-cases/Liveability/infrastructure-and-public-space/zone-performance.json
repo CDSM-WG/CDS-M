@@ -30,8 +30,10 @@
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
         { "name": "SPDP-dynamic", "dataProtection": "A" }
     ],
-    "metrics": [ "Average number of available assets per zone per hour",
-        "Average number of trips per zone per hour" ],
+    "metrics": [ 
+        { "description": "Average number of available assets per zone per hour" },
+        { "description": "Average number of trips per zone per hour" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

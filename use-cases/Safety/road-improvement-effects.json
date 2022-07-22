@@ -22,7 +22,7 @@
         { "name": "GPX" },
         { "name": "shapefile-points" }
     ],
-    "metrics": [ "Maximum usage per road segment per day, in registered number of trips" ],
+    "metrics": [ { "description" : "Maximum usage per road segment per day, in registered number of trips" } ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

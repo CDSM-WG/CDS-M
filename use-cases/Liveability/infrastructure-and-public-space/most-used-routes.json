@@ -24,9 +24,11 @@
         { "name": "shapefile-tracks" }, 
         { "name": "KML-Track" }
     ],
-    "metrics": [ "Top 10 of heavily used route segments",
-        "Average number of trips on a route segment per hour",
-        "Maximum number of registered users on every route segment" ],
+    "metrics": [ 
+        { "description": "Top 10 of heavily used route segments" },
+        { "description": "Average number of trips on a route segment per hour" },
+        { "description": "Maximum number of registered users on every route segment" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
