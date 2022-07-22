@@ -1,0 +1,16 @@
+{
+    "type": "standards",
+    "name": "GTFS-frequencies",
+    "exchangeType": "file-based", 
+    "part": "frequencies.txt",
+    "version": "[version]",
+    "mediumType": "csv-file",
+    "refreshRate": "[refresh rate]",
+    "implementationEffort": "B", 
+    "privacy": "A",
+    "reusability":"A", 
+    "interoperability": "B",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

@@ -1,0 +1,20 @@
+{
+    "type": "standard",
+    "name": "GBFS-versions",
+    "exchangeType": "[API|file-based]", 
+    "part": "gbfs_versions.json",
+    "description": "Standard GBFS json file",
+    "version": "[version >= 1.1]",
+    "url": "[url]",
+    "mediumType": "json-file",
+    "refreshRate": "[refresh rate]",
+    "privacy": "A",
+    "implementationEffort": "B", 
+    "reusability":"A", 
+    "interoperability": "A",
+    "domain": "B",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
+    "bbversion": 1
+}

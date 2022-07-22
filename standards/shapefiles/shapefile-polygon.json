@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "shapefile-polygon",
+    "exchangeType": "file-based", 
+    "part": "[complete url]",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "shapefile",
+    "schema": "[comma delimited extra field list]",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"E",
+    "interoperability": "B",
+    "domain": "D",
+    "description": "Shapefile should countain (multi)polygons only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

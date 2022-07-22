@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "MDS-provider-stops",
+    "exchangeType": "API", 
+    "part": "/stops",
+    "url": "[url]",
+    "version": "[version]",
+    "mediumType": "API",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}

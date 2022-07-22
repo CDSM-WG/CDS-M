@@ -1,0 +1,11 @@
+{
+    "id": "availability-per-inhabitant",
+    "reject-reason": "External information needed (inhabitants per region)",
+    "action": "Can be derived from use case `availability` and geo-social information.",
+    "externalReference": "",
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "determine the distribution of assets",
+        "inOrderTo": "redistribute asset to create a more inclusive supply"
+    }
+}

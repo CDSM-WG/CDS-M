@@ -1,0 +1,6 @@
+{
+    "type": "transportCondition",
+    "name": "content-PKI-encrypted",
+    "encryption": "PKI",
+    "bbversion": 1
+}

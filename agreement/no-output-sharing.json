@@ -1,0 +1,6 @@
+{
+    "type": "agreement",
+    "name": "no-output-sharing",
+    "description": "It isn't allowed to share output generated or derived from (parts of) the data",
+    "bbversion": 1
+}

@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "shapefile",
+    "exchangeType": "file-based", 
+    "part": "[complete url]",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "shapefile",
+    "schema": "[comma delimited extra field list]",
+    "privacy": "?",
+    "implementationEffort": "D", 
+    "reusability":"E",
+    "interoperability": "D",
+    "domain": "D",
+    "description": "https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

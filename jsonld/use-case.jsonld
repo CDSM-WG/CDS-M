@@ -1,0 +1,24 @@
+{
+    "@context": {
+        "@vocab": "https://github.com/CDSM-WG/CDS-M/wiki/vocab#use-case",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "id": {
+            "@id": "https://schema.org/identifier",
+            "@type": "xsd:text"
+        },
+        "externalReference": {
+            "@id": "https://schema.org/URL",
+            "@type": "xsd:text"
+        },
+        "story": "https://github.com/CDSM-WG/CDS-M/wiki/vocab#story",
+        "benefits": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#solution", "@container": "@set" },
+        "problemsSolved": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#solution", "@container": "@set" },
+        "standards": { "@id" : "https://github.com/CDSM-WG/CDS-M/blob/main/jsonld/standard.jsonld", "@container": "@set" },
+        "metrics": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#metrics", "@container": "@set" },
+        "termsAndConditions": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#term-or-condition", "@container": "@set" },
+        "agreements": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#agreements", "@container": "@set" },
+        "transport": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#transport-condition", "@container": "@set" },
+        "processing": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#processing-condition", "@container": "@set" },
+        "archive": { "@vocab" : "https://github.com/CDSM-WG/CDS-M/wiki/vocab#archive-condition", "@container": "@set" }
+  }
+}

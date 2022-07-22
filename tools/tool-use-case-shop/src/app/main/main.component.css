@@ -1,0 +1,42 @@
+.content {
+    margin: auto;
+    width: 80%;
+    min-width: 1000px;
+}
+
+.footer {
+    background-color: #505050;
+    color: white;
+    height: 180px;
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+a {
+    color: #B9B9B9;
+}
+
+.getting-started {
+    vertical-align: text-top;
+    float: left;
+    margin-right: 80px;
+}
+
+.about {
+    vertical-align: text-top;
+    float: left;
+    margin-right: 80px;
+}
+
+.themes {
+    vertical-align: text-top;
+    float: left;
+    margin-right: 80px;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 18pt;
+}

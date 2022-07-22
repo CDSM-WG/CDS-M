@@ -1,0 +1,11 @@
+{
+    "id": "public-transparency",
+    "reject-reason": "This is an aspect, whether data is transparently communicated. It is not a use case.",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOhqaFsHNlxVFn3",
+    "tags": [""],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "Communicate to the public what data is collected by companies and what subset of information is shared with cities.  Show where devices are going to and from and when they are operating.",
+        "inOrderTo": ""
+    }
+}

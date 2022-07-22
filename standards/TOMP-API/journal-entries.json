@@ -1,0 +1,25 @@
+{
+    "type": "standard",
+    "name": "TOMP-API-journal-entries",
+    "part": "/payment/journal-entry",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "json-file",
+    "refreshRate": 0,
+    "privacy": "C",
+    "implementationEffort": "C", 
+    "reusability":"D", 
+    "interoperability": "B",
+    "domain": "B",
+    "fieldModifications": [
+        {
+            "field": "bankaccount",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

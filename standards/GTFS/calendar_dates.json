@@ -1,0 +1,16 @@
+{
+    "type": "standards",
+    "name": "GTFS-calendar-dates",
+    "exchangeType": "file-based", 
+    "part": "calendar_dates.txt",
+    "version": "[version]",
+    "mediumType": "csv-file",
+    "refreshRate": "[refresh rate]",
+    "implementationEffort": "A", 
+    "privacy": "A",
+    "reusability":"B", 
+    "interoperability": "B",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

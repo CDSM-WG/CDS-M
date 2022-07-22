@@ -1,0 +1,7 @@
+{
+    "type": "authenticationCondition",
+    "name": "OAuth",
+    "description": "OAuth authentication",
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
+}

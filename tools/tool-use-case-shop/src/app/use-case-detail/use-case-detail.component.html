@@ -1,0 +1,28 @@
+<div class="fullscreen">
+    <div class="image"></div>
+
+    <div class="content">
+        <div [classList]="getClasses()" (click)="addToCart()" [innerText]="getContent()"></div>
+        <div class="theme">{{data.theme}}</div>    
+
+        <div class="name">{{data.id|replaceUnderscore|titlecase}}</div> 
+
+        <div class="userstory">
+            As a {{data.story.asA}} I would like to {{data.story.iWouldLikeTo | lowercase}} in order to {{data.story.inOrderTo | lowercase}}
+        </div>
+    </div>
+
+    <div class="metrics">Metrics</div>
+    <ul>
+        <app-metric-ticket *ngFor="let metric of data.metrics" [data]="metric"></app-metric-ticket>
+    </ul>
+
+    <div class="metrics">Known standards</div>
+    <table class="standards">
+        <tr><td><b>Name</b></td><td><b>Grade</b> <a href="/assets/grading-system/index.html">
+            <i class="fa fa-info-circle information"></i></a></td></tr>
+        <tr *ngFor="let s of data.standards">
+            <td>&nbsp;&nbsp;{{s.name}}</td><td [innerText]="getStandard(s.name).privacy"></td>
+        </tr>
+    </table>
+</div>    

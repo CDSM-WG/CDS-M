@@ -1,0 +1,7 @@
+{
+    "type": "authenticationCondition",
+    "name": "PKI", 
+    "description": "The delivering party must generate a certificate and hand over the public key to the requesting party",
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
+}

@@ -1,0 +1,19 @@
+{
+    "type": "standard",
+    "name": "TOMP-available-assets",
+    "exchangeType": "API", 
+    "part": "/operator/available-assets",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "json-file",
+    "refreshRate": 0,
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"A", 
+    "interoperability": "B",
+    "domain": "B",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

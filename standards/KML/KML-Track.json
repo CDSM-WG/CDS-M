@@ -1,0 +1,26 @@
+{
+    "type": "file",
+    "name": "KML-track", 
+    "exchangeType": "file-based", 
+    "part": "Track",
+    "version": "2.2",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "xml-file",
+    "privacy": "C",
+    "implementationEffort": "D", 
+    "reusability":"E",
+    "interoperability": "B",
+    "domain": "D",
+    "schema": "https://developers.google.com/kml/documentation/kmlreference#gx:track",
+    "fieldModifications": [
+        {
+            "field": "geometry"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
+    "bbversion": 1
+}

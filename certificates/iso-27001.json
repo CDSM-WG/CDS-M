@@ -1,0 +1,8 @@
+{
+  "type": "certificates",
+  "name": "ISO27001",
+  "requiredCertificate": "ISO 27001",
+  "issuer": "ISO", 
+  "externalReference": "https://www.itgovernance.co.uk/shop/product/isoiec-27001-2013-standard" ,
+  "bbversion": 1
+}

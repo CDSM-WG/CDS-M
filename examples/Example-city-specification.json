@@ -1,0 +1,880 @@
+{
+    "@context": "https://github.com/CDSM-WG/CDS-M/blob/main/jsonld/specification.jsonld",
+    "@type": "specification",
+    "metaData": {"specificationVersion": "1.1.0",
+        "contractors": ["Example City", "ToBeSpecified"],
+        "roles": ["BOTH", "BOTH"],
+        "startValidity": "2022-01-01",
+        "endValidity": "2022-12-31"
+    },
+    "useCases": [
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "availability-per-parkingspot",
+            "externalReference": "",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "determine the distribution of assets",
+                "inOrderTo": "redistribute assets to create a more inclusive supply"
+            },
+            "standards": [
+                {
+                    "name": "GBFS-free-bike-status",
+                    "dataProtection": "A",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "dataProtection": "A",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        },
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "availability",
+            "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "get insight in availability of mobility services",
+                "inOrderTo": "serve our citizens by redistributing mobility services"
+            },
+            "benefits": [
+                {
+                    "to": "cities",
+                    "items": [
+                        "The citizens do have a higher availability of mobility assets"
+                    ]
+                }
+            ],
+            "problemsSolved": [
+                {
+                    "to": "cities",
+                    "items": [
+                        "Shortage by mispositioning of mobility assets"
+                    ]
+                }
+            ],
+            "standards": [
+                {
+                    "name": "GBFS-free-bike-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        },
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "destinations",
+            "externalReference": "",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "get insight in location of the parked assets",
+                "inOrderTo": "change policy to match"
+            },
+            "standards": [
+                {
+                    "name": "GBFS-free-bike-status",
+                    "dataProtection": "A",
+                    "mark": "X*",
+                    "explanation": "assumption: when the asset is not in this file, it is in use",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "dataProtection": "A",
+                    "mark": "X*",
+                    "explanation": "assumption: when the asset is not in this file, it is in use",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        },
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "distribution-requirements",
+            "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recBL5EgkaAEPuxOU",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "ensure devices are distributed according to equity requirements",
+                "inOrderTo": "regulate inclusion"
+            },
+            "benefits": [],
+            "problemsSolved": [],
+            "standards": [
+                {
+                    "name": "GBFS-vehicle-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                },
+                {
+                    "name": "GBFS-free-bike-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        },
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "impact-on-transit",
+            "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKjAEob7RRBXf1P",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "provide visibility into the relationship between micromobility and other modes, such as public transit",
+                "inOrderTo": ""
+            },
+            "standards": [
+                {
+                    "name": "GBFS-free-bike-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        },
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "infrastructure-planning",
+            "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "retrieve usage and demand, start and end points, and trips taken",
+                "inOrderTo": "determine where to place new bike/scooter lanes and drop zones"
+            },
+            "standards": [
+                {
+                    "name": "GBFS-free-bike-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        },
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "open-data",
+            "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recnWXRAtSaugYHjN",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "publish a subset of raw data to open data websites",
+                "inOrderTo": "facilitate analysis and accountability by anyone, and fulfill open records requests"
+            },
+            "standards": [
+                {
+                    "name": "GBFS-free-bike-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        },
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "origins",
+            "externalReference": "",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "find out where high demand is located",
+                "inOrderTo": "change policy to match"
+            },
+            "standards": [
+                {
+                    "name": "GBFS-free-bike-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        },
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "parking-area-performance",
+            "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "get insights in the location and performance of all designated parking areas",
+                "inOrderTo": "?"
+            },
+            "standards": [
+                {
+                    "name": "GBFS-free-bike-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        },
+        {
+            "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+            "@type": "useCase",
+            "id": "parking-duration",
+            "externalReference": "",
+            "story": {
+                "asA": "city",
+                "iWouldLikeTo": "get insight in duration of the parked assets",
+                "inOrderTo": "act when certain thresholds are passed"
+            },
+            "benefits": [
+                {
+                    "to": "cities",
+                    "items": [
+                        "The citizens aren't annoyed about too long parked assets"
+                    ]
+                }
+            ],
+            "problemsSolved": [
+                {
+                    "to": "cities",
+                    "items": [
+                        "Shortage by mispositioning of mobility assets"
+                    ]
+                }
+            ],
+            "standards": [
+                {
+                    "name": "GBFS-free-bike-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[1.1 < version < 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "free_bike_status.json"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "authentications": [
+                        "fixed-X-API-key"
+                    ],
+                    "version": "[version >= 3.0]",
+                    "refreshRate": "0",
+                    "url": "[url]",
+                    "exchangeType": "API",
+                    "part": "vehicle_status.json"
+                }
+            ],
+            "termsAndConditions": [],
+            "agreements": [],
+            "transport": [
+                {
+                    "name": "TLS-1.2",
+                    "encryption": "TLS",
+                    "version": "1.2"
+                },
+                {
+                    "name": "TLS-1.3",
+                    "encryption": "TLS",
+                    "version": "1.3"
+                }
+            ],
+            "processing": [
+                {
+                    "name": "max-time-before-processing",
+                    "description": "the maximum number of days between data capture and delivery to the processor and processing it",
+                    "days": "1",
+                    "conflictsWhenNotMet": [
+                        "unlimited_storage_in_process"
+                    ]
+                },
+                {
+                    "name": "sha256-encrypted",
+                    "encryption": "SHA256",
+                    "description": "The stored personal related data must be encrypted with SHA256",
+                    "conflictsWhenNotMet": [
+                        "security_not_updated"
+                    ]
+                },
+                {
+                    "name": "ISO27001",
+                    "requiredCertificate": "ISO 27001",
+                    "issuer": "ISO"
+                }
+            ],
+            "archive": [
+                {
+                    "type": "archiveCondition",
+                    "description": "specifies when the data has to be removed from the processor",
+                    "name": "storage-max",
+                    "unit": "months",
+                    "value": "6",
+                    "returnToSender": "true"
+                }
+            ]
+        }
+    ],
+    "standards": [],
+    "contractParts": [],
+    "termsAndConditions": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

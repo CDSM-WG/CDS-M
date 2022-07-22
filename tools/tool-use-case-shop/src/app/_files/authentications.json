@@ -1,0 +1,71 @@
+[ 
+{
+    "type": "authenticationCondition",
+    "name": "basic-enhanced",
+    "description": "username/password authentication, password complies to these rules: a)_Length >= 6 characters, b) contains characters from three of the following four categories: - English uppercase characters (A through Z), - English lowercase characters (a through z) - Base 10 digits (0 through 9) - Non-alphabetic characters (for example, !, $, #, %)",
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
+}, 
+{
+    "type": "authenticationCondition",
+    "name": "basic",
+    "description": "username/password authentication",
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
+}, 
+{
+    "type": "authenticationCondition",
+    "name": "fixed-X-API-key", 
+    "description": "The delivering party must generate a x-api-key and hand it over to the requesting party",
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
+}, 
+{
+    "type": "authenticationCondition",
+    "name": "jwt",
+    "description": "Java Web Token authentication",
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
+}, 
+{
+    "type": "authenticationCondition",
+    "name": "limited-X-API-key", 
+    "description": "The delivering party must expose a webservice to request a valid x-api-key. This key must expire frequently.",
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
+}, 
+{
+    "type": "authenticationCondition",
+    "name": "none",
+    "description": "no authentication needed",
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
+}, 
+{
+    "type": "authenticationCondition",
+    "name": "OAuth",
+    "description": "OAuth authentication",
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
+}, 
+{
+    "type": "authenticationCondition",
+    "name": "OpenID-connect",
+    "description": "OpenID authentication",
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
+}, 
+{
+    "type": "authenticationCondition",
+    "name": "PKI", 
+    "description": "The delivering party must generate a certificate and hand over the public key to the requesting party",
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
+}, 
+{
+    "type": "authenticationCondition",
+    "name": "whitelisting",
+    "description": "The delivering party must whitelist the requesting party's server based on IP",
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
+}] 

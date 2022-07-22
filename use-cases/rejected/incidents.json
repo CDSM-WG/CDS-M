@@ -1,0 +1,11 @@
+{
+    "id": "incidents",
+    "reject-reason": "duplicate with vandalism-incidents and crash-reports",
+    "externalReference": "",
+    "tags": [""],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "",
+        "inOrderTo": ""
+    }
+}

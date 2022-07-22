@@ -1,0 +1,12 @@
+{
+    "id": "curb-management",
+    "reject-reason": "Duplicate, derivable data",
+    "action": "Use cases `availability` and `availability-per-parkingspot` can be used to determine the usage of the curbs.",
+    "externalReference": "",
+    "tags": ["public-space:curbstones", "distribution:availability"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "Compare to other curb users and",
+        "inOrderTo": "change policy to make better use"
+    }
+}

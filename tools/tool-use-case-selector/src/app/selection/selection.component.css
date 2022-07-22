@@ -1,0 +1,15 @@
+ul#grid.clear {
+    padding-inline-start: 1px;
+}
+
+.mat-icon-button {
+    margin-right: 10px;
+}
+
+.mat-checkbox {
+    margin-left: 10px;
+}
+
+::ng-deep mat-checkbox input {
+    appearance: none;
+}

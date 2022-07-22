@@ -1,0 +1,16 @@
+{
+    "type": "standards",
+    "name": "GTFS-feed-info",
+    "exchangeType": "file-based", 
+    "part": "feed_info.txt",
+    "version": "[version]",
+    "mediumType": "csv-file",
+    "refreshRate": "[refresh rate]",
+    "implementationEffort": "A", 
+    "privacy": "A",
+    "reusability":"B", 
+    "interoperability": "A",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

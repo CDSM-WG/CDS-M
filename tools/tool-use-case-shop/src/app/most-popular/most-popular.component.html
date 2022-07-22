@@ -1,0 +1,12 @@
+<div class="container"> 
+<div class="text">
+<div class="header">Most popular<br>
+use cases</div>
+<div routerLink="/store" class="use-case-button">Browse the use case store</div>
+<a href="/assets/build-usecase/index.html">Discover how these use cases are build</a>
+</div>
+<div class="usecases">
+    <app-use-case-ticket *ngFor="let usecase of useCases" [data]="usecase"></app-use-case-ticket>
+    <div routerLink="/store" class="use-case-link">&gt;</div>
+</div>
+</div>

@@ -1,0 +1,9 @@
+{
+  "type": "certificates",
+  "name": "IEC62443 - level 2",
+  "description":"Security Level 2: Protection against intentional misuse by simple means with few resources, general skills and low motivation.",
+  "requiredCertificate": "IEC62443-3-3, SL2",
+  "issuer": "IEC", 
+  "externalReference": "https://en.wikipedia.org/wiki/International_Electrotechnical_Commission" ,
+  "bbversion": 1
+}

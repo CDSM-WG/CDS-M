@@ -1,0 +1,7 @@
+{
+    "type": "authenticationCondition",
+    "name": "OpenID-connect",
+    "description": "OpenID authentication",
+    "allowedExchangeTypes": [ "API" ],
+    "bbversion": 1
+}

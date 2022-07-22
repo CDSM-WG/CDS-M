@@ -1,0 +1,5 @@
+<div>
+    <button class="import-button" onclick="document.getElementById('file').click()">Import</button>
+    <input type="file" class="invisible" id="file" (change)="uploadFile($event)">
+    <button class="export-button" (click)="export()">Export</button>
+</div>

@@ -1,0 +1,23 @@
+{
+    "id": "injury-investigation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recqUqEewxLgenFTz",
+    "tags": ["public-space:safety"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "investigate injuries and collisions with other objects and cars",
+        "inOrderTo": "to determine roadway accident causes"
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

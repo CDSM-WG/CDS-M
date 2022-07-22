@@ -1,0 +1,29 @@
+{
+    "id": "publish-preferred-parking-zones",
+    "reject-reason": "similar to publish-zones use case",
+    "externalReference": "",
+    "tags": [
+        "public-space:parking-pressure",
+        "public-space:nuisances",
+        "public-space:distribution"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish the preferred parking zones",
+        "inOrderTo": "manage the usage of public space"
+    },
+    "standards": [
+
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-policy-rules" },
+        { "name": "TOMP-API-regions" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": []
+}

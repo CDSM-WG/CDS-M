@@ -1,0 +1,46 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "restrict-hours-of-operation",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
+    "tags": ["assets:policy"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "monitor operating hours are being followed",
+        "inOrderTo": "ensure there is no riding late at night for safety in the city."
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
+        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
+        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B"},
+        { "name": "MDS-provider-trips", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
+        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
+        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
+        { "name": "OD-Matrix-odz" },
+        { "name": "OD-Matrix-matrix" },
+        { "name": "KML-Track" },
+        { "name": "KML-Point-and-timestamp" },
+        { "name": "GPX" },
+        { "name": "shapefile-tracks" }
+    ],
+    "metrics": [ 
+        { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" } ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Safety"
+}

@@ -1,0 +1,47 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "publish-speed-regulations",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
+    "tags": [
+        "public-space:usage" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish speed regulations",
+        "inOrderTo": "to promote safety and liveability in the city"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" },
+        { "name": "DATEX-2" },
+        { "name": "TOMP-API-regions" }
+    ],
+    "metrics": [
+        { 
+            "description": "Publish speed-regulation zones",
+            "standards": [
+                { "name": "csv" },
+                { "name": "json" },
+                { "name": "geojson" },
+                { "name": "xml" },
+                { "name": "MDS-policy-geography" },
+                { "name": "MDS-policy-rules" },
+                { "name": "DATEX-2" },
+                { "name": "TOMP-API-regions" }
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Safety"
+}
+

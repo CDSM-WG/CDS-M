@@ -1,0 +1,946 @@
+openapi: 3.0.0
+info:
+  title: CDS-M API
+  description:
+    This OpenAPI specification is used to describe the object model of the JSON.
+  version: "0.2.0"
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+
+# security. Allowed methods basic (in header: Authorization: Basic ZGVtbzpwQDU1dzByZA==),
+#                           bearer (in header: Authorization: Bearer <token>)
+#                           Api-key (in header: X-API-Key: abcdef12345)
+#                           OAuth2 and OpenId are also available
+# The exact ways to authenticate will be described in a later version
+security:
+  - BasicAuth: []
+  - BearerAuth: []
+  - ApiKeyAuth: []
+  - OAuth: []
+  - OpenId: []
+
+tags:
+  - name: use-cases
+  - name: building-blocks
+  - name: support
+
+paths:
+  /use-cases/{useCaseId}:
+    get:
+      tags:
+      - use-cases
+      parameters:
+      - $ref: "#/components/parameters/useCaseId"
+      responses:
+        "200":
+          description: a specific use case
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/useCase"
+  /use-cases/:
+    get:
+      tags:
+      - use-cases
+      responses:
+        "200":
+          description: complete overview of the use cases of CDS-M
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/useCase"
+
+  /aggregation/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific aggregation building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/aggregation"
+                
+  /aggregation/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all aggregation building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/aggregation"
+  /agreement/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific agreement building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agreement"
+  /agreement/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all agreement building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/agreement"
+
+  /archive/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific storage building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/archiveCondition"
+  /archive/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all storage building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/archiveCondition"
+                  
+  /authentication/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific authentication building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/authenticationCondition"
+  /authentication/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all authentication building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/authenticationCondition"
+
+  /certificates/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific certificate building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/certificateCondition"
+  /certificates/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all certificate building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/certificateCondition"
+
+  /processing/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific processing aspect
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/processingCondition"
+  /processing/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: complete overview of the processing aspects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/processingCondition"
+
+  /standards/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific standards building-block
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/standard"
+                  - $ref: "#/components/schemas/file"
+                discriminator:
+                  propertyName: type
+  /standards/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all standards building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - $ref: "#/components/schemas/standard"
+                    - $ref: "#/components/schemas/file"
+                  discriminator:
+                    propertyName: type
+
+  /terms-and-conditions/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific terms-and-conditions building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/termsAndCondition"
+  /terms-and-conditions/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all terms-and-conditions building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/termsAndCondition"
+
+  /transport/{name}:
+    get:
+      tags:
+      - building-blocks
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific transport building-block
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/transportCondition"
+  /transport/:
+    get:
+      tags:
+      - building-blocks
+      responses:
+        "200":
+          description: all transport building-blocks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/transportCondition"
+                  
+  /breaches/{name}:
+    get:
+      tags:
+      - support
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific breach
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/breach"
+  /breaches/:
+    get:
+      tags:
+      - support
+      responses:
+        "200":
+          description: complete overview of the breaches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/breach"                  
+
+  /conflicts/{name}:
+    get:
+      tags:
+      - support
+      parameters:
+      - $ref: "#/components/parameters/name"
+      responses:
+        "200":
+          description: a specific conflict
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/conflict"
+  /conflicts/:
+    get:
+      tags:
+      - support
+      responses:
+        "200":
+          description: complete overview of conflicts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/conflict"
+                  
+components:
+  schemas:
+    specification:
+      type: object
+      description: a complete specification
+      properties:
+        metaData:
+          type: object
+          properties:
+            "@context":
+              type: string
+              format: URI
+              default: "https://github.com/CDSM-WG/CDS-M/wiki/vocab#meta-data"
+            "@type": 
+              type: string
+              default: "metaData"
+            specificationVersion: 
+              type: string
+              description: version number, first number = use case selection, second = ict configuration, third = contract configuration
+              format: d+.d+.d+
+            contractors:
+              type: array
+              items: 
+                description: the formal name of the contractor
+                type: string
+            roles:
+              type: array
+              items: 
+                type: string
+                enum: [SUPPLIER, CONSUMER, BOTH]
+            startValidity:
+              type: string
+              format: date-time
+            endValidity:
+              type: string
+              format: date-time
+        useCases:
+          type: array
+          items:
+            $ref: "#/components/schemas/useCase"
+        standards:
+          type: array
+          items:
+            oneOf:
+              - $ref: "#/components/schemas/standard"
+              - $ref: "#/components/schemas/file"
+            discriminator:
+              propertyName: type
+        contractParts:
+          type: array
+          items:
+            $ref: "#/components/schemas/agreement"
+        termsAndConditions:
+          type: array
+          items:
+            $ref: "#/components/schemas/termsAndCondition"
+        transport:
+          type: array
+          items:
+            $ref: "#/components/schemas/transportCondition"
+        processing:
+          type: array
+          items:
+            $ref: "#/components/schemas/processingCondition"
+        archive: 
+          type: array
+          items:
+            $ref: "#/components/schemas/archiveCondition"
+
+    useCase:
+      type: object
+      description: use cases can be selected by cities to implicitly select the appropriate exchange data methods (standards/files).
+      required:
+      - id
+      - story
+      - benefits
+      - problemsSolved
+      properties:
+        id:
+          type: string
+          description: the identifier of the use case. Make it human-readable.
+        externalReference:
+          type: string
+          format: URL
+          description: the URL containing the description of the use case.
+        story:
+          $ref: "#/components/schemas/story"
+        benefits:
+          $ref: "#/components/schemas/prosAndCons"
+        problemsSolved:
+          $ref: "#/components/schemas/prosAndCons"
+        standards:
+          description: the list of standard(-endpoint)s that can provide the data required for this use case.
+          type: array
+          items:
+            $ref: "#/components/schemas/standardOrFileReference"
+        metrics:
+          description: a list of possible metrics
+          type: array
+          items:
+            $ref: "#/components/schemas/metric"
+        termsAndConditions:
+          type: array
+          items:
+            $ref: "#/components/schemas/buildingBlockReference"
+        agreements:
+          type: array
+          items:
+            $ref: "#/components/schemas/buildingBlockReference"
+        transport:
+          description: the transport conditions
+          type: array
+          items:
+            $ref: "#/components/schemas/transportCondition"
+        processing:
+          description: the processing conditions
+          type: array
+          items:
+            $ref: "#/components/schemas/processingCondition"
+        archive:
+          description: the archive conditions
+          type: array
+          items:
+            $ref: "#/components/schemas/archiveCondition"
+        tags:
+          description: the list of selection tags. 
+          type: array
+          items:
+            type: string
+            description: a dimension with a value, seperated by a semicolon e.g. mode:car
+
+    metric:
+      type: object
+      properties:
+        description:
+          type: string
+        standards:
+          type: array
+          items:
+            $ref: "#/components/schemas/standardOrFileReference"
+
+    buildingBlockReference:
+      description: refers to a building block
+      type: string
+      default: someBuildingBlock
+      
+    standardOrFileReference:
+      type: object
+      additionalProperties: true
+      properties:
+        name:
+          $ref: "#/components/schemas/buildingBlockReference"
+        dataProtection:
+          type: string
+          description: the data protection classification, if it differs from the default 'privacy' label of the standard.
+          enum: [A,B,C,D,E]
+        mark:
+          type: string
+          description: the mark for the ICT tool. If not provided, it is 'X'
+        content:
+          description: minimal required information, comma separated
+          type: string
+
+    mitigationPossibility:
+      type: array
+      items:
+        type: object
+        properties:
+          buildingBlock: 
+            $ref: "#/components/schemas/buildingBlockReference"
+          isRequired:
+            type: boolean
+            description: is this mitigation possibility a requirement (true) or is it a possiblity (false). When this property is omitted and it is in a list of options, it means that at least one of these mitigation actions has to be taken.
+
+    conflict:
+      type: object
+      description: a conflict can be assigned to any building block, it has to indicate problems. It contains also mitigation possibilities.
+      properties:
+        name:
+          type: string
+          description: a human-readable name, replace spaces by dashes.
+        reason:
+          description: an explanation
+          type: string
+        breach:
+          $ref: "#/components/schemas/buildingBlockReference"
+        notApplicableWhenInCombinationWith:
+          description: sometimes conflicts can be removed when other building blocks are used as well. The items refer to other build block's names
+          type: array
+          items:
+            $ref: "#/components/schemas/buildingBlockReference"
+        agreements:
+          description: mitigation possibilities using agreements
+          type: array
+          items:
+            $ref: "#/components/schemas/mitigationPossibility"
+        certificates:
+          description: mitigation possibilities using certificates
+          type: array
+          items:
+            $ref: "#/components/schemas/mitigationPossibility"
+        authenticationMethods:
+          description: mitigation possibilities using authentication methods
+          type: array
+          items:
+            $ref: "#/components/schemas/mitigationPossibility"
+        transportConditions:
+          description: mitigation possibilities using secure transport
+          type: array
+          items:
+            $ref: "#/components/schemas/mitigationPossibility"
+        processingConditions:
+          description: mitigation possibilities during processing
+          type: array
+          items:
+            $ref: "#/components/schemas/mitigationPossibility"
+            
+    breach:
+      allOf:
+      - $ref: "#/components/schemas/buildingBlock"
+      - type: object
+        properties:
+          type:
+            type: string
+            default: breach
+          name:
+            type: string
+          externalReference:
+            type: string
+      
+    agreement:
+      description: a (templated) agreement.
+      allOf:
+      - $ref: "#/components/schemas/buildingBlock"
+      - type: object
+        properties:
+          type:
+            type: string
+            default: agreement
+          externalReference:
+            type: string
+            format: URL
+          parameters:
+            type: array
+            items:
+              $ref: "#/components/schemas/agreementParameters"
+
+    agreementParameters:
+      type: object
+      description: agreementParameters in the template. This must be a named parameter, including a description between square brackets and where it is placed. The order indicates the order in the template, starting with 1.
+      example: { "Company": "[Company name]", "section": "General", "order": [1] }
+      additionalProperties: true
+      properties:
+        section:
+          type: string
+        order: 
+          type: array
+          items:
+            type: number
+
+    buildingBlock:
+      required:
+        - type
+        - name
+        - bbversion
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+        bbversion:
+          type: integer
+          description: the version number of the building block
+          default: 1
+        description:
+          type: string
+        conflicts:
+          type: array
+          items:
+            $ref: "#/components/schemas/buildingBlockReference"
+        conflictsWhenNotMet:
+          type: array
+          items:
+            $ref: "#/components/schemas/buildingBlockReference"
+
+    aggregation:
+      type: object
+      allOf:
+      - $ref: "#/components/schemas/buildingBlock"
+      - type: object
+        properties:
+          type:
+            type: string
+            default: "aggregation"
+          aggregationOperator:
+            type: string
+            enum: [AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]
+          timeUnit:
+            type: string
+            enum: [minute, quarter_of_hour, hour, daypart, day, week, month, year]
+          timeAmount:
+            type: number
+          geoUnit: 
+            type: string
+            enum: [postal, postal1_4, district, city, region, custom]
+          geoUnitCustomSpecification:
+            type: string
+            format: URL
+
+    authenticationCondition:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/buildingBlock"
+        - type: object
+          properties:
+            type:
+              type: string
+              default: "authenticationCondition"
+            allowedExchangeTypes:
+              description: this authentication method is allowed on these exchange types.
+              type: array
+              items:
+                $ref: "#/components/schemas/buildingBlockReference"
+
+    certificateCondition:
+      type: object
+      allOf:
+      - $ref: "#/components/schemas/buildingBlock"
+      - type: object
+        required: 
+        - requiredCertificate
+        properties:
+          type:
+            type: string
+            default: "certificateCondition"
+          requiredCertificate:
+            type: string
+          issuer:
+            type: string
+
+    processingCondition:
+      type: object
+      description: processing conditions can contain additional properties. The value of these properties must be enclosed by square brackets.
+      additionalProperties: true
+      allOf:
+      - $ref: "#/components/schemas/buildingBlock"
+      - type: object
+        properties:
+          type:
+            type: string
+            default: "processingCondition"
+          requiredCertificate:
+            type: string
+          issuer:
+            type: string
+
+    termsAndCondition:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/buildingBlock"
+        - type: object
+          properties:
+            type:
+              type: string
+              default: "termsAndCondition"
+            externalReference:
+              type: string
+              format: URL
+
+    archiveCondition:
+      type: object
+      description: specifies when the data has to be removed from the processor
+      allOf:
+      - $ref: "#/components/schemas/buildingBlock" 
+      - type: object
+        properties:
+          type:
+            type: string
+            default: "archiveCondition"
+          unit:
+            type: string
+            enum: [hours, days, weeks, months, years]
+          value:
+            type: number
+          returnToSender:
+            description: must the data be returned to the source before deleting
+            type: boolean
+
+    transportCondition:
+      type: object
+      allOf:
+      - $ref: "#/components/schemas/buildingBlock"
+      - type: object
+        properties:
+          type:
+            type: string
+            default: "transportCondition"
+          version:
+            type: string
+          encryption:
+            type: string
+        
+    standard:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/buildingBlock"
+        - type: object
+          properties:
+            type:
+              type: string
+              default: "standard"
+            part:
+              description: optional part where the endpoint is located
+              type: string
+            version:
+              type: string
+            externalReference:
+              description: a URL where the description of this endpoint is located
+              type: string
+            exchangeType:
+              type: string
+              enum: [API, SOAP, file-based]
+              
+            url:
+              type: string
+              format: URL
+              
+            authentications:
+              type: array
+              items:
+                $ref: "#/components/schemas/buildingBlockReference"
+                
+            explanation:
+              type: string
+              description: optional explanation for the standard
+
+            privacy:
+              type: string
+              enum: [A,B,C,D,E]
+            implementationEffort:
+              type: string
+              enum: [A,B,C,D,E]
+            reusability:
+              type: string
+              enum: [A,B,C,D,E]
+            interoperability:
+              type: string
+              enum: [A,B,C,D,E]
+            domain:
+              type: string
+              enum: [A,B,C,D,E]
+
+            fieldModifications: 
+              type: array
+              items:
+                $ref: "#/components/schemas/fieldModification"
+    
+    file:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/standard"
+        - type: object
+          properties:
+            type:
+              type: string
+              default: "file"
+            exchangeType:
+              type: string
+              default: "file-based"
+            mediumType: 
+              type: string
+              enum: [json-file, xml-file, comma-delimited-csv-file, semicolon-delimited-csv-file, pipe-delimited-csv-file, shapefile]
+              
+            schema:
+              type: string
+              description: reference to XSD, JSON scheme or just a comma separated list of field names
+              
+            refreshRate:
+              type: number
+              description: the number of minutes between 2 refreshes. When it is a real-time connection or API, this should be considered as 0 (always up-to-date). When it's obsolete, it is not specified.
+            
+            aggregationLevel:
+              $ref: "#/components/schemas/aggregation"
+  
+    fieldModification:
+      type: object
+      properties:
+        field: 
+          type: string
+        exception: 
+          type: string
+          enum: [non-rotating, removed, exposed]
+    
+    story:
+      type: object
+      properties:
+        asA: 
+          type: string
+        iWouldLikeTo: 
+          type: string
+        inOrderTo: 
+          type: string
+
+    prosAndCons:
+      type: array
+      items: 
+        type: object
+        properties:
+          to: 
+            type: string
+          items:
+            type: array
+            items: 
+              type: string
+
+    error:
+      type: object
+
+  parameters:
+    useCaseId:
+      in: path
+      name: useCaseId
+      required: true
+      schema:
+        type: string
+      description: The ID of the use case
+      example: 1324A-DFB3482-32ACD
+    name:
+      in: path
+      name: name
+      required: true
+      schema:
+        type: string
+      description: a referencing name
+      example: basic-enhanced
+
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+    OAuth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: /oauth/authorize
+          tokenUrl: /oauth/token
+          scopes: {}
+    OpenId:
+      type: openIdConnect
+      openIdConnectUrl: https://unknownserver/.well-known/openid-configuration
+
+  responses:
+    204NoContent:
+      description: Request was successful, no content to return.
+    400BadRequest:
+      description: Bad request. 
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    401Unauthorized:
+      description: Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    403Forbidden:
+      description: The client does not have access rights to the content, i.e. they are unauthorized, so server is rejecting to give proper response. Unlike 401, the client's identity is known to the server.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    404NotFound:
+      description: The requested resources does not exist or the requester is not authorized to see it or know it exists.
+    409Conflict:
+      description: The request will not be fulfilled. The request itself is legal, but the content conflicts with the server and might be stale. The user might try again after looking up the current state of the resource.
+
+    410Gone:
+      description: The requested resource is no longer available. This is permanent.

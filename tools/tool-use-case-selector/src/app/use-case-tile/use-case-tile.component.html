@@ -1,0 +1,5 @@
+<div [style.background-color]="getColor()" style="height: 100%" class="hexagon">
+    <input class="use-case-checkbox" type="checkbox" [checked]="checked" (change)="onChange($event)">
+    <div class="use-case-text" [title]="getTooltip()" [innerText]="getText()"></div>
+</div>
+

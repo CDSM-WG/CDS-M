@@ -1,0 +1,31 @@
+{
+    "type": "standard",
+    "name": "MDS-provider-status-changes",
+    "exchangeType": "API", 
+    "part": "/status_changes",
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "privacy": "B",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
+    "fieldModifications": [
+        {
+            "field": "status_changes[].device_id",
+            "exception": "exposed"
+        },
+        {
+            "field": "status_changes[].vehicle_id",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}

@@ -1,0 +1,23 @@
+{
+    "type": "standard",
+    "name": "GBFS-free-bike-status",
+    "exchangeType": "[API|file-based]", 
+    "mediumType": "json-file",
+    "part": "free_bike_status.json",
+
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
+    "description": "Standard GBFS json file",
+    "version": "[1.1 < version < 2.1]",
+    "url": "[url]",
+    "refreshRate": "[refresh rate]",
+
+    "privacy": "A",
+    "implementationEffort": "B", 
+    "reusability":"A", 
+    "interoperability": "A",
+    "domain": "B",
+
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

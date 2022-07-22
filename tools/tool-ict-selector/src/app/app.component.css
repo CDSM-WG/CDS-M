@@ -1,0 +1,24 @@
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    float: left;
+
+    background-color: #EC0000;
+    color: white;
+    font-weight: 600;
+}
+
+.content {
+    position: absolute;
+    left: 210px;
+    overflow-y: auto;
+    width: 140vh;
+    height: 100%;
+}
+
+body {
+    background-color: rgba(202,221,226,1);
+}

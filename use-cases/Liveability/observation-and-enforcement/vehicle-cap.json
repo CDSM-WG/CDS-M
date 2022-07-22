@@ -1,0 +1,50 @@
+{
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@type": "useCase",
+  "id": "vehicle-cap-and-neighbouring-regions",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the vehicle rotation, idle time and movements of trips in and outside the city",
+        "inOrderTo": "know if vehicle caps are breached and/or need alteration, find out if there is an efficient offer in/out of the city"
+    },  
+    "tags": [
+      "policy:vehicle-count"
+    ],
+    "standards": [
+      { "name": "csv" },
+      { "name": "geojson" },
+      { "name": "json" },
+      { "name": "xml" },
+      { "name": "GBFS-free-bike-status", "dataProtection": "A" },
+      { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "GBFS-vehicle-status", "dataProtection": "A" },
+      { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "GBFS-station-status", "dataProtection": "A" },
+      { "name": "TOMP-available-assets", "dataProtection": "A" },
+      { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
+      { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
+      { "name": "MDS-provider-vehicles", "dataProtection": "E" },
+      { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
+      { "name": "MDS-provider-stops", "dataProtection": "A" },
+      { "name": "MDS-provider-status-changes", "dataProtection": "D" },
+      { "name": "MDS-provider-trips", "dataProtection": "D","mark": "X*", "remark": "switch of the route option to enhance data rpotection, this data is not needed; data minimalisation" },
+      { "name": "shapefile-points" },
+      { "name": "KML-points" },
+      { "name": "SPDP-dynamic" }
+    ],
+    "metrics": [ 
+      { "description": "Average vehicle rotation per zone and hour" },
+      { "description": "Average idle time per zone and hour" }, 
+      { "description": "Total number of available vehicles in the city per day" }, 
+      { "description": "Usage percentage per vehicle type and day" }, 
+      { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Liveability",
+    "popularity": 3
+}

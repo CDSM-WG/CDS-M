@@ -1,0 +1,91 @@
+.fullscreen {
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.image {
+    height: 200px;
+    background-color: gray;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(54, 53, 53);
+}
+
+.content {
+    margin-top: -30px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 75%;
+    background-color: white;
+}
+
+.theme {
+    color: lightgray;
+    font-size: 16pt;
+    padding-top: 20px;
+}
+
+.name {
+    color: black;
+    font-size: 24pt;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.addToCart {
+    background-color: #15969F;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    right: 20px;
+    top: 15px;
+    position: relative;
+    float: right;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 17pt;
+    cursor: pointer;
+}
+
+.metrics {
+    margin-top: 20px;
+    font-size: 12pt;
+    font-weight: bold;  
+    margin-bottom: 10px;  
+    margin-bottom: 10px;
+}
+
+app-metric-ticket {
+    border-radius: 20px;
+    background-color: white;
+}
+
+.removeFromCart {
+    background-color: #E2477A;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    right: 20px;
+    top: 15px;
+    position: relative;
+    float: right;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 17pt;
+    cursor: pointer;
+}
+
+.standards {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+}
+
+.information {
+    cursor: pointer;
+}

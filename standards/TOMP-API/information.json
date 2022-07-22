@@ -1,0 +1,17 @@
+{
+    "type": "standard",
+    "name": "TOMP-API-information",
+    "exchangeType": "API", 
+    "part": "/operator/information",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Information",
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "json-file",
+    "refreshRate": 0,
+    "implementationEffort": "B", 
+    "reusability":"C", 
+    "interoperability": "B",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

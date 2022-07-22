@@ -1,0 +1,15 @@
+<div class="container">
+    <mat-paginator pageSize="10"></mat-paginator>
+    <div class="filter">
+        <input type="text" id="filter" placeholder="Search ... " (keyup)="onFilter($event)" />
+        <div class="link" (click)="filter('transparency')">Transparency</div>
+        <div class="link" (click)="filter('dynamic')">Dynamic</div>
+        <div class="link" (click)="filter('liveability')">Liveability</div>
+        <div class="link" (click)="filter('safety')">Safety</div>
+        <div class="link" (click)="filter('ustainability')">Sustainability</div>
+    </div>
+    <div class="cards">
+        <app-use-case-ticket *ngFor="let usecase of obs | async" [data]="usecase">    
+        </app-use-case-ticket>
+    </div>               
+</div>

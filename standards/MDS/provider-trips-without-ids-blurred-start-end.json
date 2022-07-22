@@ -1,0 +1,33 @@
+{
+    "type": "standard",
+    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+    "description": "MDS provider trips endpoint with one adjustment: the results don't contain device_id and vehicle_id, secondly, the route's start and end locations are blurred",
+    "exchangeType": "API", 
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
+    "part": "trips",
+    "fieldModifications": [
+        {
+            "field": "trips[].device_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].vehicle_id",
+            "exception": "removed"
+        },
+        {
+            "field": "trips[].route",
+            "exception": "contains only blurred start and end location (30m)"
+        }
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}

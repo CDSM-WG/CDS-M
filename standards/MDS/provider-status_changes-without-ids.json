@@ -1,0 +1,29 @@
+{
+    "type": "standard",
+    "name": "MDS-provider-status_changes-without-ids",
+    "description": "MDS provider status_changes endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.",
+    "exchangeType": "API", 
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "part": "GET /status_changes",
+    "privacy": "B",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "A",
+    "domain": "A",
+    "fieldModifications": [
+        {
+            "field": "status_changes[].device_id",
+            "exception": "removed"
+        },
+        {
+            "field": "status_changes[].vehicle_id",
+            "exception": "removed"
+        }
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}

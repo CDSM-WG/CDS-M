@@ -1,0 +1,16 @@
+{
+    "type": "standards",
+    "name": "GTFS-fare-attributes",
+    "exchangeType": "file-based", 
+    "part": "fare_attributes.txt",
+    "version": "[version]",
+    "mediumType": "csv-file",
+    "refreshRate": "[refresh rate]",
+    "implementationEffort": "A", 
+    "privacy": "A",
+    "reusability":"B", 
+    "interoperability": "A",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

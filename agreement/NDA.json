@@ -1,0 +1,7 @@
+{
+    "type": "agreement",
+    "name": "NDA",
+    "description": "Non-Disclosure Agreement required",
+    "url": "[url]",
+    "bbversion": 1
+}

@@ -1,0 +1,14 @@
+<div class="ticket">
+    <div class="header">{{data.theme}}
+    </div>    
+    <div [classList]="getClasses()" (click)="addToCart()" [innerText]="getContent()"></div>
+    
+    <div class="userstory" (click)="extendText()">
+        <div class="name">{{data.id|replaceUnderscore|titlecase}}</div>
+
+        <br><div [classList]="getExtendedText()">As a {{data.story.asA}} I would like to {{data.story.iWouldLikeTo}} in order to </div>{{data.story.inOrderTo}}
+        <div class="readmore" [routerLink]="['/use-case']" [queryParams]="{ id: data.id }">
+            Read more
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{
+    "type": "standard",
+    "name": "GBFS-vehicle-status-non-rotating-asset-id",
+    "exchangeType": "[API|file-based]", 
+    "part": "vehicle_status",
+    "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
+    "description": "Standard GBFS json file, with one adjustment: the vehicle_id doesn't rotate (causing GDPR issues).",
+    "version": "[version >= 2.1]",
+    "mediumType": "json-file",
+    "refreshRate": "[refresh rate]",    
+    "url": "[url]",
+    "privacy": "B",
+    "implementationEffort": "B", 
+    "reusability":"E", 
+    "interoperability": "D",
+    "domain": "B",
+    "fieldModifications": [
+        {
+            "field": "bike_id",
+            "exception": "non-rotating"            
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

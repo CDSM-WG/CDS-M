@@ -1,0 +1,43 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "operating-area",
+    "externalReference": "",
+    "tags": ["public-space:usage"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish the operational area for transport operators",
+        "inOrderTo": "maintain the order"
+    },
+    "benefits": [],
+    "problemsSolved": [],
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-policy-geography" },
+        { "name": "MDS-policy-rules" },
+        { "name": "GBFS-regions"},
+        { "name": "TOMP-API-regions" }
+    ],
+    "metrics": [
+        { "description": "Publish service areas",
+          "standards": [
+            { "name": "csv", "content": "description, and area (WKT, WGS84)" },
+            { "name": "json", "content": "description, and area (WKT, WGS84)" },
+            { "name": "geojson", "content": "description, and area (geojson)" },
+            { "name": "xml", "content": "description, and area (WKT, WGS84)" },
+            { "name": "MDS-policy-geography" },
+            { "name": "MDS-policy-rules" },
+            { "name": "GBFS-regions"},
+            { "name": "TOMP-API-regions" } ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Dynamic"
+}

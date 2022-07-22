@@ -1,0 +1,35 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "publish-fleet-caps",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
+    "tags": ["dynamic-policy:vehicle-counts"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "digitally publish vehicle caps per provider",
+        "inOrderTo": "allow dynamic fleet size adjustment based on policy"
+    },
+    "standards": [
+        { "name": "csv" },
+        { "name": "json" },
+        { "name": "geojson" },
+        { "name": "xml" },
+        { "name": "MDS-policy-rules" }
+    ],
+    "metrics": [ 
+        { "description": "Vehicle caps per provider (per vehicle type)",
+          "standards": [
+            { "name": "csv", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "json", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "geojson", "content": "description, urgency level and area (geojson)" },
+            { "name": "xml", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "MDS-policy-rules" } ]
+        } 
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Dynamic"
+}

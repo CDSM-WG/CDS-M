@@ -1,0 +1,43 @@
+[ 
+{
+    "name": "reveals_personal_trip_data",
+    "reason": "reveals personal trip data",
+    "breach": "privacy_in_design_purpose_limitation",
+    "notApplicableWhenInCombinationWith": [ "origin-destination-demand" ],
+    "description": "when exchanging personal-related data, one of the transport conditions and one of the authenticationMethods must be in place",
+    "agreements": [ { "buildingBlock": "DPIA", "isRequired": true },
+        { "buildingBlock": "DPA", "isRequired": true }, 
+        { "buildingBlock": "BIO", "isRequired": false } ],
+    "certificates": [ { "buildingBlock": "iso-27001", "isRequired": true } ],
+    "authenticationMethods": [ 
+        { "buildingBlock": "whitelisting" },
+        { "buildingBlock": "PKI" },
+        { "buildingBlock": "fixed-X-API-key" },
+        { "buildingBlock": "jwt" },
+        { "buildingBlock": "limited-X-API-key" },
+        { "buildingBlock": "OAuth" },
+        { "buildingBlock": "OpenID-connect" } ],
+    "transportConditions": [ { "buildingBlock": "TLS-1.2" }, 
+        { "buildingBlock": "TLS-1.3" }, 
+        { "buildingBlock": "content-PKI-encrypted" } ],
+    "bbversion": 1
+}, 
+{
+    "name": "security_not_updated",
+    "reason": "outdated security mechanisms used",
+    "breach": "privacy_in_design_integrity_and_confidentiality",
+    "description": "when storing personal-related data, the processing conditions must be met and one of the transport conditions must be in place",
+    "processingConditions": [ { "buildingBlock": "sha256-encrypted", "isRequired": true } ],
+    "transportConditions": [ 
+        { "buildingBlock": "TLS-1.2" }, 
+        { "buildingBlock": "TLS-1.3" }, 
+        { "buildingBlock": "content-PKI-encrypted" } 
+    ],
+    "bbversion": 1
+}, 
+{
+    "name": "unlimited_storage_in_process",
+    "reason": "time unspecified how long it will be visible in analysis/processing step",
+    "breach": "privacy_in_design_storage_restriction",
+    "bbversion": 1
+}] 

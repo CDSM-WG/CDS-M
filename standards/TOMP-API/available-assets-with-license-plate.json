@@ -1,0 +1,24 @@
+{
+    "type": "standard",
+    "name": "TOMP-API-available-assets-with-license-plate",
+    "exchangeType": "API", 
+    "part": "/operator/available-assets",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "json-file",
+    "privacy": "C",
+    "implementationEffort": "D", 
+    "reusability":"E", 
+    "interoperability": "B",
+    "domain": "B",
+    "fieldModifications": [
+        {
+            "field": "assets[].licensePlate",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [ "reveals_personal_trip_data" ],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

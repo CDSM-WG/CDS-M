@@ -1,0 +1,19 @@
+{
+    "type": "standard",
+    "name": "TOMP-API-stations",
+    "exchangeType": "API", 
+    "part": "/operator/stations",
+    "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Stations",
+    "version": "[version]",
+    "url": "[url]",
+    "mediumType": "json-file",
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"D",
+    "interoperability": "B",
+    "domain": "B",
+    "refreshRate": 0,
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

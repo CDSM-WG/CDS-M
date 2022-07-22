@@ -1,0 +1,6 @@
+{
+    "type": "archiveCondition",
+    "name": "within-Europe",
+    "description": "Data must be stored within EU. It is not allowed to leave the EU under any condition.",
+    "bbversion": 1
+}

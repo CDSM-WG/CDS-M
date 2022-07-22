@@ -1,0 +1,7 @@
+{
+    "type": "authenticationCondition",
+    "name": "basic",
+    "description": "username/password authentication",
+    "allowedExchangeTypes": [ "API", "SOAP", "file-based" ],
+    "bbversion": 1
+}

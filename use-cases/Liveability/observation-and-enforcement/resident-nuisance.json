@@ -1,0 +1,36 @@
+{
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "resident-complaints",
+    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRS7suODr8A3DZI",
+    "tags": ["public-space:complaints"],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "investigate and validate complaints from residents about parking.",
+        "inOrderTo": "apply prevention in the right places."
+    },
+  "standards": [
+    { "name": "csv" },
+    { "name": "geojson" },
+    { "name": "json" },
+    { "name": "xml" },
+    { "name": "shapefile-polygon" }
+  ],
+  "metrics": [
+    { "description": "Number of administrated complaints about parking, per district and hour",
+      "standards": [
+        { "name": "csv", "content": "area-reference or WKT (WGS84), day, hour, number" },
+        { "name": "geojson", "content": "area (geojson), day, hour, number" },
+        { "name": "json", "content": "area-reference or WKT (WGS84), day, hour, number" },
+        { "name": "xml", "content": "area-reference or WKT (WGS84), day, hour, number" },
+        { "name": "shapefile-polygon", "content": "polygon (WGS84), day, hour, number" }
+      ]
+    }
+  ],
+  "termsAndConditions": [],
+  "agreements": [],
+  "transport": [],
+  "processing": [],
+  "archive": [],
+  "theme": "Liveability"
+}

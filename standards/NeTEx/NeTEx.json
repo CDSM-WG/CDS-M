@@ -1,0 +1,15 @@
+{
+    "type": "standard",
+    "name": "NeTEx",
+    "exchangeType": "file-based", 
+    "part": "[complete url]",
+    "version": "[version]",
+    "mediumType": "xml-file",
+    "refreshRate": "[refresh rate]",
+    "implementationEffort": "E", 
+    "reusability":"B", 
+    "interoperability": "C",
+    "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "MDS-base-geographies",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/geography",
+    "part": "/geographies/",
+    "url": "[url]",
+    "version": "[version]",
+    "privacy": "A",
+    "implementationEffort": "D", 
+    "reusability":"D", 
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

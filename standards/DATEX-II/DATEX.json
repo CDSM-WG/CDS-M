@@ -1,0 +1,16 @@
+{
+    "type": "file",
+    "exchangeType": "file-based",
+    "name":"DATEX",
+    "version": "[version]",
+    "refreshRate": "[refresh rate]",
+    "mediumType": "xml-file",
+    "privacy": "A",
+    "implementationEffort": "E", 
+    "reusability":"D", 
+    "interoperability": "B",
+    "domain": "B",
+    "externalReference": "https://www.datex2.eu/node/261",
+    "retentionPeriod": "[ISO8601 duration]",
+    "bbversion": 1
+}

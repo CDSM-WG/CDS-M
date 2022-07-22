@@ -1,0 +1,17 @@
+<div class="ticket">
+    <div class="header" id="{{data.id}}">Use case {{data.id}}</div>
+    <i class="fa fa-trash removeFromCart" aria-hidden="true" (click)="this.removeFromCart()"></i>
+    <div class="userstory">
+        As a {{data.story.asA}} I would like to {{data.story.iWouldLikeTo}} in order to {{data.story.inOrderTo}}
+    </div>
+    <div class="header">Selected standards</div>
+    <table class="standards">
+    <tr class="standard" *ngFor="let s of data.standards">
+        <td><input type="checkbox" [checked]="getChecked(s)" (change)="clicked(s.name)"></td><td>{{s.name}}</td><td>{{getGrade(s.name)}}</td>
+    </tr>
+    </table>
+    <hr/>
+    <div class="footer">
+        <div class="header">Use case grade</div><div class="totalGrade">{{getTotalGrade()}}<i class="fa fa-info-circle right" aria-hidden="true"></i></div>
+    </div>
+</div>
