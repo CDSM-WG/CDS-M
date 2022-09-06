@@ -1,0 +1,14 @@
+<div class="w-[28vw] h-[300px] bg-white border-l-8 border-emerald-500 p-4">
+    <div *ngIf="data.displayName!=null" class="font-bold text-lg text-gray-500">{{data.displayName}}</div>
+    <div>
+        <div *ngIf="data.displayName==null" class="font-bold text-lg text-gray-500">{{data.name}}</div><div *ngIf="data.description!=null" class="text-sm mt-4">{{data.description}}</div>
+    </div>
+    <div class="">
+        <div class="font-bold">Uses personal data:</div>
+        <div *ngIf="data.privacy=='A'" class="font-bold">No</div>
+        <div *ngIf="data.privacy=='*'" class="font-bold">Possibly</div>
+        <div *ngIf="data.privacy!='A'" class="font-bold">Yes</div>
+
+        <a *ngIf="this.data.externalReference != null" [href]="this.data.externalReference" target="_new">Source description</a>
+    </div>
+</div>

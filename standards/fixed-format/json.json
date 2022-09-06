@@ -4,6 +4,7 @@
     "mediumType": "json-file",
 
     "name": "json",
+    "displayName": "JSON format",
     "schema": "[complete url of JSON scheme]",
 
     "url": "[complete url]",

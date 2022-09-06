@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS-station-information",
+    "displayName": "GBFS Station information",
     "exchangeType": "[API|file-based]", 
     "part": "station_information.json",
     "description": "Standard GBFS json file",

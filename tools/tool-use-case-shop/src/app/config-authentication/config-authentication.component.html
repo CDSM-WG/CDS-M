@@ -1,0 +1,3 @@
+<div class="right" *ngFor="let authentication of obs | async">
+    <input type="checkbox" id="{{authentication.name}}" [checked]="getChecked(authentication.name)" (change)="setSelected($event)"><div title="{{authentication.description}}">{{authentication.name|replaceUnderscore}}</div>
+</div>

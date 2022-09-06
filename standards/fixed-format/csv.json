@@ -4,6 +4,7 @@
     "mediumType": "csv-file",
 
     "name":"csv",
+    "displayName": "CSV format",
     "schema": "[comma seperated field list]",
 
     "url": "[complete url]",

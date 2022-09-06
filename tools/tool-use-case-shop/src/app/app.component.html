@@ -5,10 +5,96 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<div class="toolbar" role="banner">
+<!--div class="toolbar bg-red-500" role="banner">
     <div class="title" routerLink="/">CDS-M</div><div class="usecasestore">USE CASE STORE</div>
     <div class="store"><a routerLink="/store" routerLinkActive="active" ariaCurrentWhenActive="page">Use case store</a></div>
     <div class="cart">{{getCounter()}} <i routerLink="/cart" routerLinkActive="active" ariaCurrentWhenActive="page" class="fa fa-shopping-cart"></i></div>
-</div>
+</div-->
+
+<nav class="flex justify-center bg-blue-500">
+    <div
+      class="max-w-6xl mx-4 w-full flex justify-between items-center py-4 text-white"
+    >
+      <span routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" class="uppercase text-2xl cursor-pointer">
+        <span class="font-bold">CDS-M</span>
+        Use case store
+      </span>
+      <div class="ml-4 first:ml-0 flex items-center">
+        <a
+          class="inline-flex items-center justify-center pb-1 bg-transparent text-white border-b border-white focus:ring-white disabled:text-gray-600 disabled:border-gray-600 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed"
+        >
+          <span class="hidden lg:block" routerLink="/store" routerLinkActive="active" ariaCurrentWhenActive="page">Use case store</span>
+          <span class="ml-2.5">
+            <svg
+              width="13"
+              height="10"
+              viewBox="0 0 13 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.68298 0.500002L6.62466 1.6767L9.62661 4.2221L-8.13491e-07 4.2221L-1.1546e-06 5.78282L9.62153 5.78282L6.61957 8.32823L7.68806 9.5L13 5L7.68298 0.500002Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+        </a>
+        <a
+          class="inline-flex items-center justify-center pb-1 bg-transparent text-white border-b border-white focus:ring-white disabled:text-gray-600 disabled:border-gray-600 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed"
+        >
+          <span class="hidden lg:block" routerLink="/standards" routerLinkActive="active" ariaCurrentWhenActive="page">Data standard library</span>
+          <span class="ml-2.5">
+            <svg
+              width="13"
+              height="10"
+              viewBox="0 0 13 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.68298 0.500002L6.62466 1.6767L9.62661 4.2221L-8.13491e-07 4.2221L-1.1546e-06 5.78282L9.62153 5.78282L6.61957 8.32823L7.68806 9.5L13 5L7.68298 0.500002Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+        </a>
+        <a
+          class="inline-flex items-center justify-center pb-1 bg-transparent text-white border-b border-white focus:ring-white disabled:text-gray-600 disabled:border-gray-600 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed ml-14"
+        >
+          <span class="hidden lg:block">About CDS-M</span>
+          <span class="ml-2.5">
+            <svg
+              width="13"
+              height="10"
+              viewBox="0 0 13 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.68298 0.500002L6.62466 1.6767L9.62661 4.2221L-8.13491e-07 4.2221L-1.1546e-06 5.78282L9.62153 5.78282L6.61957 8.32823L7.68806 9.5L13 5L7.68298 0.500002Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+        </a>
+        <a class="ml-10 hover:cursor-pointer" routerLink="/cart" routerLinkActive="active" ariaCurrentWhenActive="page">
+            
+          <svg
+            width="22"
+            height="19"
+            viewBox="0 0 22 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.21 7.00002L11.83 0.44002C11.64 0.16002 11.32 0.0200195 11 0.0200195C10.68 0.0200195 10.36 0.16002 10.17 0.45002L5.79 7.00002H1C0.45 7.00002 0 7.45002 0 8.00002C0 8.09002 0.00999996 8.18002 0.04 8.27002L2.58 17.54C2.81 18.38 3.58 19 4.5 19H17.5C18.42 19 19.19 18.38 19.43 17.54L21.97 8.27002L22 8.00002C22 7.45002 21.55 7.00002 21 7.00002H16.21ZM8 7.00002L11 2.60002L14 7.00002H8ZM11 15C9.9 15 9 14.1 9 13C9 11.9 9.9 11 11 11C12.1 11 13 11.9 13 13C13 14.1 12.1 15 11 15Z"
+              fill="white"
+            ></path>
+          </svg>
+          
+        </a>
+      </div>
+    </div>
+  </nav>
 
 <router-outlet></router-outlet>

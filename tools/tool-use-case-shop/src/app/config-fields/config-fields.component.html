@@ -1,0 +1,5 @@
+<div class="right" *ngFor="let field of obs | async">
+    <div>{{field.name | removeCamelCase}}</div>
+    <input type="text" id="{{field.name}}" title="{{field.title}}" (change)="setValue($event)">
+    <br>
+</div>

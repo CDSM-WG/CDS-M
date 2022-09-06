@@ -3,6 +3,7 @@
     "type": "file",
     "exchangeType": "file-based",
     "name":"DATEX",
+    "displayName": "DATEX-II",
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",
@@ -21,6 +22,7 @@
     "mediumType": "csv-file",
 
     "name":"csv",
+    "displayName": "CSV format",
     "schema": "[comma seperated field list]",
 
     "url": "[complete url]",
@@ -46,6 +48,7 @@
     "mediumType": "json-file",
 
     "name":"geojson",
+    "displayName": "GeoJSON format",
     "schema": "[comma seperated attribute list OR json scheme]",
 
     "url": "[complete url]",
@@ -71,6 +74,7 @@
     "mediumType": "json-file",
 
     "name": "json",
+    "displayName": "JSON format",
     "schema": "[complete url of JSON scheme]",
 
     "url": "[complete url]",
@@ -96,6 +100,7 @@
     "mediumType": "xml-file",
 
     "name": "xml",
+    "displayName": "XML format",
     "schema": "[complete url of XSD]",
 
     "url": "[complete url]",
@@ -118,6 +123,7 @@
 {
     "type": "standard",
     "name": "GBFS-free-bike-status",
+    "displayName": "GBFS - Free bike status",
     "exchangeType": "[API|file-based]", 
     "mediumType": "json-file",
     "part": "free_bike_status.json",
@@ -141,6 +147,7 @@
 {
     "type": "standard",
     "name": "GBFS-free-bike-status-non-rotating-asset-id",
+    "displayName": "GBFS - Free bike status, with static bike_id",
     "exchangeType": "[API|file-based]",
     "mediumType": "json-file",
     "part": "free_bike_status.json",
@@ -174,6 +181,7 @@
 {
     "type": "standard",
     "name": "GBFS",
+    "displayName": "GBFS - Main reference file",
     "exchangeType": "[API|file-based]", 
     "part": "gbfs.json",    
     "description": "Standard GBFS json file",
@@ -194,6 +202,7 @@
 {
     "type": "standard",
     "name": "GBFS-versions",
+    "displayName": "GBFS - Versions",
     "exchangeType": "[API|file-based]", 
     "part": "gbfs_versions.json",
     "description": "Standard GBFS json file",
@@ -215,6 +224,7 @@
 {
     "type": "standard",
     "name": "GBFS-geofencing-zones",
+    "displayName": "GBFS - Geofencing zones",
     "exchangeType": "[API|file-based]", 
     "part": "geofencing_zones.json",
     "description": "Standard GBFS json file",
@@ -236,6 +246,7 @@
 {
     "type": "standard",
     "name": "GBFS-station-information",
+    "displayName": "GBFS Station information",
     "exchangeType": "[API|file-based]", 
     "part": "station_information.json",
     "description": "Standard GBFS json file",
@@ -256,6 +267,7 @@
 {
     "type": "standard",
     "name": "GBFS-station-status",
+    "displayName": "GBFS - Station status",
     "exchangeType": "[API|file-based]", 
     "part": "station_status.json",
     "description": "Standard GBFS json file",
@@ -277,6 +289,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-alerts",
+    "displayName": "GBFS - Alerts",
     "exchangeType": "[API|file-based]", 
     "part": "system_alerts.json",
     "description": "Standard GBFS json file",
@@ -298,6 +311,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-calendar",
+    "displayName": "GBFS - Calender",
     "exchangeType": "[API|file-based]", 
     "part": "system_calendar.json",    
     "description": "Standard GBFS json file",
@@ -318,6 +332,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-hours",
+    "displayName": "GBFS - Opening hours",
     "exchangeType": "[API|file-based]", 
     "part": "system_hours.json",
     "description": "Standard GBFS json file",
@@ -339,6 +354,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-information",
+    "displayName": "GBFS - Information",
     "exchangeType": "[API|file-based]", 
     "part": "system_information.json",
     "description": "Standard GBFS json file",
@@ -360,6 +376,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-pricing-plans",
+    "displayName": "GBFS - Pricing plans",
     "exchangeType": "[API|file-based]", 
     "part": "system_pricing_plans.json",
     "description": "Standard GBFS json file",
@@ -381,6 +398,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-regions",
+    "displayName": "GBFS - Regions",
     "exchangeType": "[API|file-based]", 
     "part": "system_regions.json",
     "description": "Standard GBFS json file",
@@ -401,6 +419,7 @@
 {
     "type": "standard",
     "name": "GBFS-vehicle-status",
+    "displayName": "GBFS - Vehicle status",
     "exchangeType": "[API|file-based]", 
     "part": "vehicle_status.json",
     "description": "Standard GBFS json file",    
@@ -421,6 +440,7 @@
 {
     "type": "standard",
     "name": "GBFS-vehicle-status-non-rotating-asset-id",
+    "displayName": "GBFS - Vehicle status with static vehicle_id",
     "exchangeType": "[API|file-based]", 
     "part": "vehicle_status",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
@@ -450,6 +470,7 @@
 {
     "type": "standard",
     "name": "GBFS-vehicle-types",
+    "displayName": "GBFS - Vehicle types",
     "exchangeType": "[API|file-based]", 
     "part": "vehicle_types.json",
     "description": "Standard GBFS json file",
@@ -471,6 +492,7 @@
 {
     "type": "file",
     "name": "GPX",
+    "displayName": "GPX - GPS data (XML)",
     "exchangeType": "file-based", 
     "version": "1.1",
     "refreshRate": "[refresh rate]",

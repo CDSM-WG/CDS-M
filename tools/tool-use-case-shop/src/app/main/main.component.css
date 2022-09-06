@@ -2,6 +2,8 @@
     margin: auto;
     width: 80%;
     min-width: 1000px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer {

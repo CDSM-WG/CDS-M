@@ -2,6 +2,7 @@
     "type": "file",
     "exchangeType": "file-based",
     "name":"DATEX",
+    "displayName": "DATEX-II",
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",

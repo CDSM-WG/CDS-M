@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS-vehicle-types",
+    "displayName": "GBFS - Vehicle types",
     "exchangeType": "[API|file-based]", 
     "part": "vehicle_types.json",
     "description": "Standard GBFS json file",

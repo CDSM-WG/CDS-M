@@ -1,14 +1,16 @@
-<div class="ticket">
-    <div class="header">{{data.theme}}
-    </div>    
-    <div [classList]="getClasses()" (click)="addToCart()" [innerText]="getContent()"></div>
-    
-    <div class="userstory" (click)="extendText()">
-        <div class="name">{{data.id|replaceUnderscore|titlecase}}</div>
-
-        <br><div [classList]="getExtendedText()">As a {{data.story.asA}} I would like to {{data.story.iWouldLikeTo}} in order to </div>{{data.story.inOrderTo}}
-        <div class="readmore" [routerLink]="['/use-case']" [queryParams]="{ id: data.id }">
-            Read more
-        </div>
+<div class="w-[28vw] h-[300px] bg-white border-l-8 border-emerald-500 p-4">
+  <button (click)="addToCart()"
+    class="w-[30px] h-[30px] rounded-full bg-emerald-600 flex items-center justify-center text-white text-lg font-semibold float-right"
+  >
+    +
+  </button>
+    <div class="font-bold text-lg text-gray-500">{{data.theme}}</div>
+    <div class="">
+      <div class="font-bold">{{data.id|replaceUnderscore|titlecase}}</div>
+      <div class="text-sm mt-4">
+        As a {{data.story.asA}} I would like to {{data.story.iWouldLikeTo}} in order to {{data.story.inOrderTo}}
+      </div>
+      <div><a class="text-sm underline mt-4" [routerLink]="['/use-case']" [queryParams]="{ id: data.id }">Read more...</a></div>
     </div>
-</div>
+    <!--app-small-button (click)="addToCart()"></app-small-button-->
+  </div>

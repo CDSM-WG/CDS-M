@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-regions",
+    "displayName": "GBFS - Regions",
     "exchangeType": "[API|file-based]", 
     "part": "system_regions.json",
     "description": "Standard GBFS json file",

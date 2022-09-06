@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS-geofencing-zones",
+    "displayName": "GBFS - Geofencing zones",
     "exchangeType": "[API|file-based]", 
     "part": "geofencing_zones.json",
     "description": "Standard GBFS json file",

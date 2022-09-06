@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-pricing-plans",
+    "displayName": "GBFS - Pricing plans",
     "exchangeType": "[API|file-based]", 
     "part": "system_pricing_plans.json",
     "description": "Standard GBFS json file",

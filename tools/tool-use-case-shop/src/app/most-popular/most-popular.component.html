@@ -1,12 +1,22 @@
-<div class="container"> 
-<div class="text">
-<div class="header">Most popular<br>
-use cases</div>
-<div routerLink="/store" class="use-case-button">Browse the use case store</div>
-<a href="/assets/build-usecase/index.html">Discover how these use cases are build</a>
-</div>
-<div class="usecases">
-    <app-use-case-ticket *ngFor="let usecase of useCases" [data]="usecase"></app-use-case-ticket>
-    <div routerLink="/store" class="use-case-link">&gt;</div>
-</div>
+<div class="container">
+    <div class="text">
+        <div class="header">Most popular<br>
+            use cases</div>
+        <app-filled-primary routerLink="/store" class="use-case-button" title="Browse use case store"></app-filled-primary>
+        <a   
+            class="inline-flex items-center justify-center px-5 py-3 bg-white text-blue-500 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-200 active:text-blue-900 disabled:text-gray-600 border-4 border-blue-500 hover:border-blue-400 active:border-blue-900 disabled:border-gray-200 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed"
+            href="/assets/build-usecase/index.html">
+            <span class="hidden lg:block">How are they build?</span>
+            <span class="ml-2.5">
+                <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.68298 0.500002L6.62466 1.6767L9.62661 4.2221L-8.13491e-07 4.2221L-1.1546e-06 5.78282L9.62153 5.78282L6.61957 8.32823L7.68806 9.5L13 5L7.68298 0.500002Z"
+                        fill="currentColor"></path>
+                </svg>
+            </span></a>
+    </div>
+    <div class="usecases">
+        <app-use-case-ticket *ngFor="let usecase of useCases" [data]="usecase"></app-use-case-ticket>
+        <div routerLink="/store" class="use-case-link">&gt;</div>
+    </div>
 </div>

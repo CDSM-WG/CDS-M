@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-hours",
+    "displayName": "GBFS - Opening hours",
     "exchangeType": "[API|file-based]", 
     "part": "system_hours.json",
     "description": "Standard GBFS json file",

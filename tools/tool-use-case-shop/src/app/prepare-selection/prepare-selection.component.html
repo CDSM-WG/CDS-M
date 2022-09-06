@@ -1,0 +1,22 @@
+<div class="container">
+
+    <div>
+        <a routerLink="/">back to data selection</a>
+    </div>
+    <div class="">
+        PREPARE YOUR SELECTION
+    </div>
+    <div class="">
+        Some text
+    </div>
+    <mat-paginator pageSize="10"></mat-paginator>
+    <div class="cards">
+        <app-prepare-standard-ticket *ngFor="let standard of obs | async" [data]="standard">
+        </app-prepare-standard-ticket>
+    </div>
+    <div>Selected standards</div>    
+    <div class="selectedcards">
+        <div *ngFor="let standard of obs | async">{{standard.name}}</div>
+    </div>
+    <app-filled-primary routerLink="/store" title="Export receipt"></app-filled-primary>
+</div>

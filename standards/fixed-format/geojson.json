@@ -4,6 +4,7 @@
     "mediumType": "json-file",
 
     "name":"geojson",
+    "displayName": "GeoJSON format",
     "schema": "[comma seperated attribute list OR json scheme]",
 
     "url": "[complete url]",

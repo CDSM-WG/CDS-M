@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-alerts",
+    "displayName": "GBFS - Alerts",
     "exchangeType": "[API|file-based]", 
     "part": "system_alerts.json",
     "description": "Standard GBFS json file",

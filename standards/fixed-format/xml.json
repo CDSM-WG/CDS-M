@@ -4,6 +4,7 @@
     "mediumType": "xml-file",
 
     "name": "xml",
+    "displayName": "XML format",
     "schema": "[complete url of XSD]",
 
     "url": "[complete url]",

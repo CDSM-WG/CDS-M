@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS-vehicle-status-non-rotating-asset-id",
+    "displayName": "GBFS - Vehicle status with static vehicle_id",
     "exchangeType": "[API|file-based]", 
     "part": "vehicle_status",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",

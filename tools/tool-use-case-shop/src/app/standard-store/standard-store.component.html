@@ -1,0 +1,20 @@
+<div class="container">
+    <div>
+        <a routerLink="/">back to start</a>
+    </div>
+    <div class="">
+        SELECT DATA STANDARDS
+    </div>
+    <div class="">
+        Some text
+    </div>
+    <div class="cards">
+        <app-standard-ticket *ngFor="let standard of obs | async" [data]="standard">
+        </app-standard-ticket>
+    </div>
+    <div>Selected standards</div> 
+    <div class="selectedcards">
+        <div *ngFor="let standard of obs | async">{{standard.name}}</div>
+    </div>
+    <app-filled-primary routerLink="/preparation" title="Confirm selection"></app-filled-primary>
+</div>

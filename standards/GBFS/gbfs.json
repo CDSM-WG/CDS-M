@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS",
+    "displayName": "GBFS - Main reference file",
     "exchangeType": "[API|file-based]", 
     "part": "gbfs.json",    
     "description": "Standard GBFS json file",

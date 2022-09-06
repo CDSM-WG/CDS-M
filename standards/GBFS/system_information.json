@@ -1,6 +1,7 @@
 {
     "type": "standard",
     "name": "GBFS-system-information",
+    "displayName": "GBFS - Information",
     "exchangeType": "[API|file-based]", 
     "part": "system_information.json",
     "description": "Standard GBFS json file",
