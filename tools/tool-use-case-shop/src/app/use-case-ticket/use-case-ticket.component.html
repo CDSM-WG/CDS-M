@@ -1,16 +1,70 @@
-<div class="w-[28vw] h-[300px] bg-white border-l-8 border-emerald-500 p-4">
-  <button (click)="addToCart()"
-    class="w-[30px] h-[30px] rounded-full bg-emerald-600 flex items-center justify-center text-white text-lg font-semibold float-right"
-  >
-    +
-  </button>
-    <div class="font-bold text-lg text-gray-500">{{data.theme}}</div>
-    <div class="">
-      <div class="font-bold">{{data.id|replaceUnderscore|titlecase}}</div>
-      <div class="text-sm mt-4">
-        As a {{data.story.asA}} I would like to {{data.story.iWouldLikeTo}} in order to {{data.story.inOrderTo}}
-      </div>
-      <div><a class="text-sm underline mt-4" [routerLink]="['/use-case']" [queryParams]="{ id: data.id }">Read more...</a></div>
-    </div>
-    <!--app-small-button (click)="addToCart()"></app-small-button-->
+<div
+  class="bg-white overflow-hidden relative inline-flex flex-col justify-end min-h-[340px] w-full p-4 md:p-6 group"
+>
+  <div class="absolute top-0 right-6 p-2 bg-yellow-50">{{data.theme}}</div>
+  <div class="text-sm">
+	<span class="group-hover:text-blue-500 font-bold">{{data.id|replaceUnderscore|titlecase}}</span>
+    <div class="mb-1 text-gray-600">As a {{data.story.asA}}</div>
+    I would like to
+    <span class="group-hover:text-blue-500 font-bold">
+      {{data.story.iWouldLikeTo}}
+    </span>
+    in order to
+    <span class="group-hover:text-blue-500 font-bold">
+      {{data.story.inOrderTo}}.
+    </span>
   </div>
+  <div
+    class="flex items-center justify-between mt-6 pt-4 border-t border-gray-200"
+  >
+    <a
+      class="inline-flex items-center justify-center pb-1 bg-transparent text-black hover:text-blue-500 focus:text-blue-900 border-b hover:border-blue-500 disabled:text-gray-600 disabled:border-gray-600 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed group-hover:text-blue-500 group-hover:border-blue-500"
+	  [routerLink]="['/use-case']" [queryParams]="{ id: data.id }"
+    >
+      Read more
+      <span class="ml-2.5">
+        <svg
+          width="13"
+          height="10"
+          viewBox="0 0 13 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.68298 0.500002L6.62466 1.6767L9.62661 4.2221L-8.13491e-07 4.2221L-1.1546e-06 5.78282L9.62153 5.78282L6.61957 8.32823L7.68806 9.5L13 5L7.68298 0.500002Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </a>
+    <button *ngIf="!isAdded()" 
+      class="inline-flex items-center justify-center p-2 bg-white text-blue-500 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-200 active:text-blue-900 disabled:text-gray-600 border-4 border-blue-500 hover:border-blue-400 active:border-blue-900 disabled:border-gray-200 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed border-0 outline outline-blue-500 outline-4"
+	  (click)="addToCart()"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_729_21560)">
+          <path
+            d="M19 11.5L13 11.5L13 5.5L11 5.5L11 11.5L5 11.5L5 13.5L11 13.5L11 19.5L13 19.5L13 13.5L19 13.5L19 11.5Z"
+            fill="currentColor"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_729_21560">
+            <rect
+              width="24"
+              height="24"
+              fill="currentColor"
+              transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24.5)"
+            ></rect>
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+  </div>
+</div>

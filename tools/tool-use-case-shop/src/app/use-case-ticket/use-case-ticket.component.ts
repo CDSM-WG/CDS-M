@@ -8,8 +8,6 @@ import { UseCaseService } from 'src/services/use-case.service';
 })
 export class UseCaseTicketComponent implements OnInit {
 
-  extended: boolean = false;
-
   @Input()
   data: any;
 
@@ -24,28 +22,7 @@ export class UseCaseTicketComponent implements OnInit {
     this.useCaseService.addToCart(this.data.id);
   }
 
-  getClasses() {
-    if (this.useCaseService.isInCart(this.data.id)) {
-      return "removeFromCart";
-    }
-    return "addToCart";
-  }
-
-  getContent() {
-    if (this.useCaseService.isInCart(this.data.id)) {
-      return "-";
-    }
-    return "+";
-  }
-
-  extendText(){
-    this.extended = !this.extended;
-  }
-
-  getExtendedText() {
-    if (this.extended) {
-      return "visible";
-    }
-    return "invisible";
+  isAdded() {
+    return this.useCaseService.isInCart(this.data.id);
   }
 }
