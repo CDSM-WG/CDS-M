@@ -72,7 +72,7 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
   }
 
   filter( event: Event, value: string ){
-    if (this.dataSource.filter === value ){
+    if (this.dataSource.filter === value || value == "All"){
       this.dataSource.filter = "";
       return;
     }

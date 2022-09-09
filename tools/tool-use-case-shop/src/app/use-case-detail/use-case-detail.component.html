@@ -21,7 +21,7 @@
 
     <div class="metrics">Known standards</div>
     <table class="standards">
-        <tr><td><b>Name</b></td><td><b>Grade</b> <a href="/assets/grading-system/index.html">
+        <tr><td><b>Name</b></td><td><b>Grade</b> <a href="assets/grading-system/index.html">
             <i class="fa fa-info-circle information"></i></a></td></tr>
         <tr *ngFor="let s of data.standards">
             <td>&nbsp;&nbsp;{{s.name}}</td><td [innerText]="getStandard(s.name).privacy"></td>
