@@ -39,6 +39,7 @@ import { ConfigAuthenticationComponent } from './config-authentication/config-au
 import { ConfigFieldsComponent } from './config-fields/config-fields.component';
 import { RemoveCamelCase } from './remove-camel-case-pipe';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MainTitleComponent } from './main-title/main-title.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ConfigAuthenticationComponent,
     ConfigFieldsComponent,
     RemoveCamelCase,
-    NavbarComponent
+    NavbarComponent,
+    MainTitleComponent
   ],
   imports: [
     BrowserModule,

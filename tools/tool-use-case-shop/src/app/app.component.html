@@ -5,12 +5,8 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!--div class="toolbar bg-red-500" role="banner">
-    <div class="title" routerLink="/">CDS-M</div><div class="usecasestore">USE CASE STORE</div>
-    <div class="store"><a routerLink="/store" routerLinkActive="active" ariaCurrentWhenActive="page">Use case store</a></div>
-    <div class="cart">{{getCounter()}} <i routerLink="/cart" routerLinkActive="active" ariaCurrentWhenActive="page" class="fa fa-shopping-cart"></i></div>
-</div-->
-
-<app-navbar></app-navbar>
-
-<router-outlet></router-outlet>
+<div class="flex flex-col w-screen min-h-screen overflow-hidden">
+    <div class=""><app-navbar class="example-container h-20"></app-navbar></div>
+    <div class="flex-1 w-screen"><router-outlet class="example-container"></router-outlet></div>
+    <div class=""><app-footer class="example-container h-96"></app-footer></div>
+</div>

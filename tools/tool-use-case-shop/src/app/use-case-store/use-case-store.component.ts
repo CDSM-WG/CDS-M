@@ -17,6 +17,8 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
 
   useCases: any[]  = [];
 
+  filterOptions: string[] = ["All", "Transparency", "Dynamic", "Liveability","Safety","Sustainability"]
+
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   obs!: Observable<any>;
@@ -65,11 +67,11 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
   onFilter(e: any) {
     if( e != null && e.target != null ) {
       let value = e.target.value;
-      this.filter(value);
+      this.filter(e, value);
     }
   }
 
-  filter( value: string ){
+  filter( event: Event, value: string ){
     if (this.dataSource.filter === value ){
       this.dataSource.filter = "";
       return;

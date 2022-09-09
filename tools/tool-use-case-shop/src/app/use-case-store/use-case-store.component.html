@@ -1,20 +1,43 @@
-<div class="container">
-    <mat-paginator pageSize="10"></mat-paginator>
-    <div class="filter">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M5.5 11H6.29L6.57 10.73C5.59 9.59 5 8.11 5 6.5C5 2.91 7.91 0 11.5 0C15.09 0 18 2.91 18 6.5C18 10.09 15.09 13 11.5 13C9.89 13 8.41 12.41 7.27 11.43L7 11.71V12.5L2 17.49L0.510002 16L5.5 11ZM11.5 11C13.99 11 16 8.99 16 6.5C16 4.01 13.99 2 11.5 2C9.01 2 7 4.01 7 6.5C7 8.99 9.01 11 11.5 11Z"
-                fill="currentColor"></path>
-        </svg>
-        <input type="text" id="filter" placeholder="Search ... " (keyup)="onFilter($event)" />
-        <div class="link" (click)="filter('transparency')">Transparency</div>
-        <div class="link" (click)="filter('dynamic')">Dynamic</div>
-        <div class="link" (click)="filter('liveability')">Liveability</div>
-        <div class="link" (click)="filter('safety')">Safety</div>
-        <div class="link" (click)="filter('ustainability')">Sustainability</div>
-    </div>
-    <div class="cards">
-        <app-use-case-ticket *ngFor="let usecase of obs | async" [data]="usecase">
-        </app-use-case-ticket>
+<div class="flex flex-col w-screen min-h-screen bg-white">
+    <div class="my-8">
+        <div class="mb-8 mx-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+                <div class="w-screen">
+                    <div>
+                        <div class="heading-1 uppercase">make better decisions</div>
+                        <span class="uppercase font-24">
+                            We let you know how safe the data is that you're trying to collect
+                        </span>
+                    </div>
+                </div>
+                <div class="w-full h-72 bg-cover bg-no-repeat bg-center"
+                    style='background-image: url("https://images.unsplash.com/photo-1471039497385-b6d6ba609f9c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2340&amp;q=80");'>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-200 w-screen px-32 pt-16">
+            <div class="uppercase text-4xl">Use case store</div>
+            <div class="flex flex-row">
+                <div>
+                    <input type="text" id="filter" placeholder="Search ... " (keyup)="onFilter($event)" />
+                    <div class="w-10 absolute">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.5 11H6.29L6.57 10.73C5.59 9.59 5 8.11 5 6.5C5 2.91 7.91 0 11.5 0C15.09 0 18 2.91 18 6.5C18 10.09 15.09 13 11.5 13C9.89 13 8.41 12.41 7.27 11.43L7 11.71V12.5L2 17.49L0.510002 16L5.5 11ZM11.5 11C13.99 11 16 8.99 16 6.5C16 4.01 13.99 2 11.5 2C9.01 2 7 4.01 7 6.5C7 8.99 9.01 11 11.5 11Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+                <select #selection (change)="filter($event, selection.value)">
+                    <option *ngFor="let o of this.filterOptions">{{o}}</option>
+                </select>
+            </div>
+            <div class="flex flex-wrap pb-8">
+                <app-use-case-ticket *ngFor="let usecase of obs | async" [data]="usecase">
+                </app-use-case-ticket>
+            </div>
+            <mat-paginator pageSize="9" class="mb-8"></mat-paginator>
+        </div>
     </div>
 </div>

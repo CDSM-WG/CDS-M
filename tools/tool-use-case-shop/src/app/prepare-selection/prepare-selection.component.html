@@ -1,22 +1,45 @@
-<div class="container">
+<div class="flex flex-col w-screen min-h-screen bg-white">
+    <div class="bg-slate-200 w-screen px-32 pt-16">
 
-    <div>
-        <a routerLink="/">back to data selection</a>
+        <div routerLink="/">
+            <button class="inline-flex items-center gap-1 font-semibold cursor-pointer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                        style="mask-type: alpha;">
+                        <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                            fill="currentColor"></rect>
+                    </mask>
+                    <g mask="url(#mask0_921_31157)">
+                        <path
+                            d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+                <span class="leading-4">Data standard library</span>
+            </button>
+        </div>
+        <div class="flex flex-row">
+            <div>                
+                <div class="text-blue-500">
+                    PREPARE YOUR SELECTION
+                </div>
+                <div class="">
+                    Some text
+                </div>
+        
+                <div class="flex flex-wrap pb-8 gap-2">
+                    <app-prepare-standard-ticket *ngFor="let standard of obs | async" [data]="standard">
+                    </app-prepare-standard-ticket>
+                </div>
+                <mat-paginator pageSize="10"></mat-paginator>
+            </div>
+            <div class="bg-white rounded-md p-4 min-w-fit">
+                <div class="text-xl">Selected standards</div>
+                <div class="ml-2">
+                    <div *ngFor="let standard of obs | async">{{standard.name}}</div>
+                </div>
+                <app-filled-primary routerLink="/store" title="Export receipt"></app-filled-primary>
+            </div>
+        </div>
     </div>
-    <div class="">
-        PREPARE YOUR SELECTION
-    </div>
-    <div class="">
-        Some text
-    </div>
-    <mat-paginator pageSize="10"></mat-paginator>
-    <div class="cards">
-        <app-prepare-standard-ticket *ngFor="let standard of obs | async" [data]="standard">
-        </app-prepare-standard-ticket>
-    </div>
-    <div>Selected standards</div>    
-    <div class="selectedcards">
-        <div *ngFor="let standard of obs | async">{{standard.name}}</div>
-    </div>
-    <app-filled-primary routerLink="/store" title="Export receipt"></app-filled-primary>
 </div>

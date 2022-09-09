@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UseCaseService } from 'src/services/use-case.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  useCaseStore: UseCaseService;
+
+  constructor(ucs: UseCaseService) { 
+    this.useCaseStore = ucs;
+  }
 
   ngOnInit(): void {
   }

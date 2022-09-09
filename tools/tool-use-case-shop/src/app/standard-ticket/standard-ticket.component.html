@@ -1,14 +1,29 @@
-<div class="w-[28vw] h-[300px] bg-white border-l-8 border-emerald-500 p-4">
+<div class="bg-white overflow-hidden relative inline-flex flex-col justify-start min-h-[340px] w-80 p-4 md:p-6 group max-h-32">
     <div *ngIf="data.displayName!=null" class="font-bold text-lg text-gray-500">{{data.displayName}}</div>
     <div>
-        <div *ngIf="data.displayName==null" class="font-bold text-lg text-gray-500">{{data.name}}</div><div *ngIf="data.description!=null" class="text-sm mt-4">{{data.description}}</div>
-    </div>
-    <div class="">
-        <div class="font-bold">Uses personal data:</div>
-        <div *ngIf="data.privacy=='A'" class="font-bold">No</div>
-        <div *ngIf="data.privacy=='*'" class="font-bold">Possibly</div>
-        <div *ngIf="data.privacy!='A'" class="font-bold">Yes</div>
+        <div *ngIf="data.displayName==null" class="font-bold text-lg text-gray-500">{{data.name}}</div>
+        <div class="flex flex-row gap-2">
+            <div class="font-bold">Uses personal data: </div>
+            <div *ngIf="data.privacy=='A'" class="bg-green-400 px-2">No</div>
+            <div *ngIf="data.privacy=='*'" class="bg-slate-100 px-2">Possibly</div>
+            <div *ngIf="data.privacy != 'A' && data.privacy != '*'" class="bg-red-500 px-2">Yes</div>
+        </div>
+        <div class="flex flex-row gap-2">
+            <div *ngIf="data.description!=null" class="text-sm mt-4">{{data.description}}</div>
 
-        <a *ngIf="this.data.externalReference != null" [href]="this.data.externalReference" target="_new">Source description</a>
+            <a *ngIf="this.data.externalReference != null" [href]="this.data.externalReference" target="_new"
+            class="ml-2 my-3 text-blue-400">more...</a>
+        </div>
+        <div *ngIf="this.dataSource.data.length > 0" class="font-bold">Used in following cases:</div>
+
+        <ul class="pl-2">
+            <li *ngFor="let usecase of obs | async"><a href="" (click)="this.show(usecase);">{{usecase | replaceUnderscore}}</a>
+            </li>
+
+        </ul>
+    </div>
+    <div *ngIf="this.ucShown">
+        <app-use-case-ticket [data]="selectedUseCase">
+        </app-use-case-ticket>
     </div>
 </div>

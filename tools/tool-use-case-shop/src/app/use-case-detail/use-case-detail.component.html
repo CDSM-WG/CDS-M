@@ -13,9 +13,11 @@
     </div>
 
     <div class="metrics">Metrics</div>
-    <ul>
-        <app-metric-ticket *ngFor="let metric of data.metrics" [data]="metric"></app-metric-ticket>
-    </ul>
+    <div class="divide-y divide-gray-200 py-1">
+        <div class="py-3">
+            <app-metric-ticket *ngFor="let metric of data.metrics" [data]="metric"></app-metric-ticket>
+        </div>
+    </div>
 
     <div class="metrics">Known standards</div>
     <table class="standards">
