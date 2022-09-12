@@ -40,6 +40,7 @@ import { ConfigFieldsComponent } from './config-fields/config-fields.component';
 import { RemoveCamelCase } from './remove-camel-case-pipe';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainTitleComponent } from './main-title/main-title.component';
+import { StylePaginatorDirective } from './style-paginator.directive';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { MainTitleComponent } from './main-title/main-title.component';
     ConfigFieldsComponent,
     RemoveCamelCase,
     NavbarComponent,
-    MainTitleComponent
+    MainTitleComponent,
+    StylePaginatorDirective
   ],
   imports: [
     BrowserModule,

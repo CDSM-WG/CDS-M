@@ -33,6 +33,7 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;
+    
     this.dataSource.filterPredicate = function customFilter(data, filter:string) : boolean {
       if (data.theme.toLowerCase().indexOf(filter) >= 0) {
         return true;
@@ -62,6 +63,10 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
     if (this.dataSource) { 
       this.dataSource.disconnect(); 
     }
+  }
+
+  getLength() {
+    return this.dataSource.data.length;
   }
 
   onFilter(e: any) {
