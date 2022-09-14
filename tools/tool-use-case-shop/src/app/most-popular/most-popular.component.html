@@ -3,7 +3,6 @@
         <div class="text-blue-500 text-4xl uppercase pb-10">Most popular use cases</div>
         <div class="flex items-center gap-4">
             <app-use-case-ticket *ngFor="let usecase of useCases" [data]="usecase"></app-use-case-ticket>
-            <div routerLink="/store" class="use-case-link">&gt;</div>
         </div>
 
         <div class="my-4">

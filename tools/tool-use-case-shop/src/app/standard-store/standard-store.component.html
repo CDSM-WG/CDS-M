@@ -31,10 +31,12 @@
                 </div>
             </div>
             <div class="bg-white rounded-md p-4 min-w-fit">
-                <app-filled-primary title="Upload your own .json receipe"></app-filled-primary>
-                <div class="text-xl">Selected standards</div>
+                <app-filled-primary title="Upload your own .json receipe" onclick="document.getElementById('file').click()"></app-filled-primary>
+                <input type="file" class="invisible" id="file" accept=".json" (change)="uploadFile($event)">
+    
+                <div class="text-xl text-blue-500">Selected standards</div>
                 <div class="ml-2">
-                    <div *ngFor="let standard of obs | async">{{standard.name}}</div>
+                    <div *ngFor="let standard of obsSelected | async">{{standard.name}}</div>
                 </div>
                 <app-filled-primary routerLink="/preparation" title="Confirm selection"></app-filled-primary>
             </div>

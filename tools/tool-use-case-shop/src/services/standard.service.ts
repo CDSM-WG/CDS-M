@@ -6,17 +6,18 @@ export class StandardService {
   getPrivacyGrace(standard: string) {
     let s = this.getStandard(standard);
     return s.privacy;
-  }  
+  }
 
-  standardList : any[] = [];
+  standardList: any[] = [];
+  selectedStandards: any[] = [];
 
-  constructor(){
+  constructor() {
     this.standardList = (data as any);
   }
 
-  getStandard (name: any) {
-    for( let i = 0; i < this.standardList.length; ++i){
-      if ( this.standardList[i].name === name ) {
+  getStandard(name: any) {
+    for (let i = 0; i < this.standardList.length; ++i) {
+      if (this.standardList[i].name === name) {
         return this.standardList[i];
       }
     }
@@ -25,9 +26,23 @@ export class StandardService {
 
   getAllStandards() {
     let s = [];
-    for( let i = 0; i < this.standardList.length; ++i){
-      s.push(this.standardList[i]);
+    for (let i = 0; i < this.standardList.length; ++i) {
+      let standard = this.standardList[i];
+      s.push(standard);
     }
     return s;
+  }
+
+  selectStandard(standard: any) {
+    if (this.selectedStandards.findIndex(x => { return x.name === standard.name; }) == -1) {
+      this.selectedStandards.push(standard);
+    }
+  }
+
+  deselectStandard(standard: any) {
+    let index = this.selectedStandards.indexOf(standard);
+    if (index >= 0) {
+      this.selectedStandards.splice(index, 1);
+    }
   }
 }

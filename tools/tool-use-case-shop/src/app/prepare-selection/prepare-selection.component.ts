@@ -18,7 +18,7 @@ export class PrepareSelectionComponent implements OnInit {
   paginator!: MatPaginator;
 
   constructor(private changeDetectorRef: ChangeDetectorRef, private standardService: StandardService) { 
-    this.dataSource = new MatTableDataSource<any>(standardService.getAllStandards());
+    this.dataSource = new MatTableDataSource<any>(standardService.selectedStandards);
   }
 
   ngOnInit(): void {
