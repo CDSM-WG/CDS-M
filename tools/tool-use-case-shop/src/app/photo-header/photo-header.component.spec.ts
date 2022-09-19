@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainTitleComponent } from './main-title.component';
+import { PhotoHeaderComponent } from './photo-header.component';
 
 describe('MainTitleComponent', () => {
-  let component: MainTitleComponent;
-  let fixture: ComponentFixture<MainTitleComponent>;
+  let component: PhotoHeaderComponent;
+  let fixture: ComponentFixture<PhotoHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainTitleComponent ]
+      declarations: [ PhotoHeaderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainTitleComponent);
+    fixture = TestBed.createComponent(PhotoHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

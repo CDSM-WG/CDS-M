@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FirstSelectionComponent } from './first-selection.component';
+import { CtaBlockComponent } from './cta-block.component';
 
 describe('FirstSelectionComponent', () => {
-  let component: FirstSelectionComponent;
-  let fixture: ComponentFixture<FirstSelectionComponent>;
+  let component: CtaBlockComponent;
+  let fixture: ComponentFixture<CtaBlockComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FirstSelectionComponent ]
+      declarations: [ CtaBlockComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FirstSelectionComponent);
+    fixture = TestBed.createComponent(CtaBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

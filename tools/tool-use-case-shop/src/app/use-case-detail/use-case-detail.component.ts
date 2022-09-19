@@ -45,4 +45,19 @@ export class UseCaseDetailComponent implements OnInit {
     }
     return "+";
   }
+
+  usesPersonalData(name:string){
+    let standard = this.standardService.getStandard(name);
+    if (standard.privacy=="A"){
+      return "No"
+    }
+    else if (standard.privacy=="*"){
+      return "Possibly"
+    }
+    return "Yes"
+  }
+
+  hasMetrics(){
+    return this.data.length > 0;
+  }
 }

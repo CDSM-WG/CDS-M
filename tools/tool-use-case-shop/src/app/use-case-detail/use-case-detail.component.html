@@ -1,30 +1,133 @@
-<div class="fullscreen">
-    <div class="image"></div>
-
-    <div class="content">
-        <div [classList]="getClasses()" (click)="addToCart()" [innerText]="getContent()"></div>
-        <div class="theme">{{data.theme}}</div>    
-
-        <div class="name">{{data.id|replaceUnderscore|titlecase}}</div> 
-
-        <div class="userstory">
-            As a {{data.story.asA}} I would like to {{data.story.iWouldLikeTo | lowercase}} in order to {{data.story.inOrderTo | lowercase}}
+<div class="flex-1 bg-white">
+    <div class="w-full min-h-[480px] md:min-h-[672px] flex bg-cover bg-no-repeat bg-center text-white"
+        style='background-image: url("https://images.unsplash.com/photo-1507090960745-b32f65d3113a?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1740&amp;q=80");'>
+        <div class="flex-1 flex justify-center py-16 md:py-20 bg-black bg-opacity-50">
+            <div class="max-w-6xl mx-auto px-4 w-full relative flex items-center justify-center p-2">
+                <button routerLink="/store"
+                    class="inline-flex items-center gap-1 font-semibold cursor-pointer absolute -top-10 md:top-0 left-4 md:left-0">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                            style="mask-type: alpha;">
+                            <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                                fill="currentColor"></rect>
+                        </mask>
+                        <g mask="url(#mask0_921_31157)">
+                            <path
+                                d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                                fill="currentColor"></path>
+                        </g>
+                    </svg>
+                    <span class="leading-4">Case store</span>
+                </button>
+                <div class="flex flex-col items-center gap-12">
+                    <h1 class="heading-2 uppercase text-center">
+                        As a {{data.story.asA}} I would like to {{data.story.iWouldLikeTo | lowercase}} in order to
+                        {{data.story.inOrderTo | lowercase}}
+                    </h1>
+                    <button
+                        class="inline-flex items-center justify-center px-5 py-3 text-black bg-yellow-700 hover:bg-yellow-600 focus:bg-yellow-600 focus:ring-yellow-600 active:bg-blue-400 active:text-blue-500 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-yellow-700 hover:border-yellow-600 focus:border-blue-100 active:border-blue-400 active:text-blue-500 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed"
+                        (click)="addToCart()">
+                        Add to cart
+                        <span class="ml-2.5">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_729_21560)">
+                                    <path
+                                        d="M19 11.5L13 11.5L13 5.5L11 5.5L11 11.5L5 11.5L5 13.5L11 13.5L11 19.5L13 19.5L13 13.5L19 13.5L19 11.5Z"
+                                        fill="currentColor"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_729_21560">
+                                        <rect width="24" height="24" fill="currentColor"
+                                            transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24.5)"></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="metrics">Metrics</div>
-    <div class="divide-y divide-gray-200 py-1">
-        <div class="py-3">
-            <app-metric-ticket *ngFor="let metric of data.metrics" [data]="metric"></app-metric-ticket>
+    <div class="flex justify-center">
+        <div class="max-w-3xl mx-auto px-4 w-full py-8 md:py-20 flex flex-col gap-4 font-medium">
+            <h2 class="text-2xl lg:text-3xl uppercase">{{data.id|replaceUnderscore|titlecase}}</h2>
+            <p>
+                {{data.description}}
+            </p>
+            <div class="max-w-3xl mx-auto px-4 w-full pt-8 pb-12 md:py-16">
+                <h2 class="mb-2 md:mb-6 heading-3 uppercase text-blue-600">
+                    Metrics for this use case
+                </h2>
+                <app-metric-ticket *ngFor="let metric of data.metrics" [data]="metric"></app-metric-ticket>
+                <h2 class="mb-6 mt-14 heading-3 uppercase text-blue-600">
+                    Data standards used for this use case
+                </h2>
+                <table class="w-full table-fixed md:table-auto border-4 border-gray-100">
+                    <thead>
+                        <tr>
+                            <th class="p-4 pl-4 md:pl-8 align-top text-left font-semibold">
+                                Data standard
+                            </th>
+                            <th class="p-4 align-top font-semibold">
+                                <div class="relative inline-flex flex-col md:flex-row">
+                                    Grade
+                                    <div class="md:absolute md:-right-7">
+                                        <div class="relative inline-flex">
+                                            <a href="assets/grading-system/index.html">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" class="text-gray-500">
+                                                    <path
+                                                        d="M9 15H11V9H9V15ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18ZM9 7H11V5H9V7Z"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="p-4 pr-4 md:pr-8 align-top font-semibold">
+                                <div class="relative inline-flex flex-col md:flex-row">
+                                    Uses personal data
+                                    <!--div class="md:absolute md:-right-7">
+                                        <div class="relative inline-flex">
+                                            <button>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" class="text-gray-500">
+                                                    <path
+                                                        d="M9 15H11V9H9V15ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18ZM9 7H11V5H9V7Z"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div-->
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let s of data.standards" class="odd:bg-gray-100">
+                            <td class="p-4 pl-4 md:pl-8 font-medium text-sm md:text-base underline">
+                                {{s.name}}
+                            </td>
+                            <td class="p-4 text-center font-medium">{{getStandard(s.name).privacy}}</td>
+                            <td *ngIf="usesPersonalData(s.name) != 'No'" class="p-4 pr-4 md:pr-8 text-center font-medium w-40 md:w-auto false">
+                                {{usesPersonalData(s.name)}}
+                            </td>
+                            <td *ngIf="usesPersonalData(s.name) == 'No'" class="p-4 pr-4 md:pr-8 text-center font-medium w-40 md:w-auto false text-green-500">
+                                No
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="flex flex-col md:items-start">
+                    <button routerLink="/standards"
+                        class="inline-flex items-center justify-center px-5 py-3 bg-transparent text-blue-600 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-400 active:text-blue-600 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed mt-6">
+                        Load more data standards
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="metrics">Known standards</div>
-    <table class="standards">
-        <tr><td><b>Name</b></td><td><b>Grade</b> <a href="assets/grading-system/index.html">
-            <i class="fa fa-info-circle information"></i></a></td></tr>
-        <tr *ngFor="let s of data.standards">
-            <td>&nbsp;&nbsp;{{s.name}}</td><td [innerText]="getStandard(s.name).privacy"></td>
-        </tr>
-    </table>
-</div>    
+</div>

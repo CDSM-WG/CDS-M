@@ -7,7 +7,7 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { UseCaseStoreComponent } from './use-case-store/use-case-store.component';
 import { UseCaseDetailComponent } from './use-case-detail/use-case-detail.component';
 import { UseCaseTicketComponent } from './use-case-ticket/use-case-ticket.component';
-import { FirstSelectionComponent } from './first-selection/first-selection.component';
+import { CtaBlockComponent } from './cta-block/cta-block.component';
 import { LearnMoreComponent } from './learn-more/learn-more.component';
 import { MostPopularComponent } from './most-popular/most-popular.component';
 import { UseCaseService } from '../services/use-case.service';
@@ -39,8 +39,9 @@ import { ConfigAuthenticationComponent } from './config-authentication/config-au
 import { ConfigFieldsComponent } from './config-fields/config-fields.component';
 import { RemoveCamelCase } from './remove-camel-case-pipe';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MainTitleComponent } from './main-title/main-title.component';
+import { PhotoHeaderComponent } from './photo-header/photo-header.component';
 import { StylePaginatorDirective } from './style-paginator.directive';
+import { PartnersComponent } from './partners/partners.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { StylePaginatorDirective } from './style-paginator.directive';
     UseCaseStoreComponent,
     UseCaseDetailComponent,
     UseCaseTicketComponent,
-    FirstSelectionComponent,
+    CtaBlockComponent,
     LearnMoreComponent,
     MostPopularComponent,
     MainComponent,
@@ -72,8 +73,9 @@ import { StylePaginatorDirective } from './style-paginator.directive';
     ConfigFieldsComponent,
     RemoveCamelCase,
     NavbarComponent,
-    MainTitleComponent,
-    StylePaginatorDirective
+    PhotoHeaderComponent,
+    StylePaginatorDirective,
+    PartnersComponent
   ],
   imports: [
     BrowserModule,

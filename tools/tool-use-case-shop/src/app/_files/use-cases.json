@@ -1,6 +1,6 @@
 [ 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "academic-research",
     "action": "Research requires often tailor made data, and doesn't have clearly specified boundaries.",
@@ -12,11 +12,11 @@
         "inOrderTo": "inform policy makers"
     },
     "metrics": [],
-    "theme": "Transparency"
+    "theme": "Research"
 }
 , 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
   "@type": "useCase",
   "id": "open-data",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOhqaFsHNlxVFn3",
@@ -87,13 +87,13 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Transparency"
+    "theme": "Research"
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
-    "id": "publish-event-guidance",
+    "id": "publish-emergency-guidance",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recPIbfFLib0KAgj7",
     "tags": ["dynamic-policy:events"],
     "story": {
@@ -108,20 +108,30 @@
         { "name": "xml" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-rules" },
-        { "name": "DATEX-2" },
-        { "name": "TOMP-API-regions" }
+        { "name": "DATEX-2" }
     ],
-    "metrics": [],
+    "metrics": [ 
+        { "description": "Publish emergency areas", 
+          "standards": [
+            { "name": "csv", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "json", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "geojson", "content": "description, urgency level and area (geojson) " },
+            { "name": "xml", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "MDS-policy-geography" },
+            { "name": "MDS-policy-rules" },
+            { "name": "DATEX-2" } ] 
+        } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Dynamic"
+    "theme": "Dynamic policy"
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-event-areas",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recsQ89oZGG1CRmJA",
@@ -140,20 +150,30 @@
         { "name": "xml" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-rules" },
-        { "name": "DATEX-2" },
-        { "name": "TOMP-API-regions" }
+        { "name": "DATEX-2" }
     ],
-    "metrics": [],
+    "metrics": [
+        { "description": "Publish emergency areas", 
+          "standards": [
+            { "name": "csv", "content": "description, and area (WKT, WGS84)" },
+            { "name": "json", "content": "description, and area (WKT, WGS84)" },
+            { "name": "geojson", "content": "description, and area (geojson) " },
+            { "name": "xml", "content": "description, and area (WKT, WGS84)" },
+            { "name": "MDS-policy-geography" },
+            { "name": "MDS-policy-rules" },
+            { "name": "DATEX-2" } ] 
+        }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Dynamic"
+    "theme": "Dynamic policy"
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-fleet-caps",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
@@ -170,16 +190,27 @@
         { "name": "xml" },
         { "name": "MDS-policy-rules" }
     ],
-    "metrics": ["Vehicle caps per provider (per vehicle type)"],
+    "metrics": [ 
+        { "description": "Vehicle caps per provider (per vehicle type)",
+          "standards": [
+            { "name": "csv", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "json", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "geojson", "content": "description, urgency level and area (geojson)" },
+            { "name": "xml", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "MDS-policy-rules" } ]
+        } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Dynamic"
+    "theme": "Dynamic policy"
 }
 , 
 {
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
     "id": "operating-area",
     "externalReference": "",
     "tags": ["public-space:usage"],
@@ -197,20 +228,32 @@
         { "name": "xml" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-rules" },
-        { "name": "DATEX-2" },
+        { "name": "GBFS-regions"},
         { "name": "TOMP-API-regions" }
     ],
-    "metrics": [],
+    "metrics": [
+        { "description": "Publish service areas",
+          "standards": [
+            { "name": "csv", "content": "description, and area (WKT, WGS84)" },
+            { "name": "json", "content": "description, and area (WKT, WGS84)" },
+            { "name": "geojson", "content": "description, and area (geojson)" },
+            { "name": "xml", "content": "description, and area (WKT, WGS84)" },
+            { "name": "MDS-policy-geography" },
+            { "name": "MDS-policy-rules" },
+            { "name": "GBFS-regions"},
+            { "name": "TOMP-API-regions" } ]
+        }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Dynamic"
+    "theme": "Dynamic policy"
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-slow-speed-zones",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
@@ -234,16 +277,30 @@
         { "name": "DATEX-2" },
         { "name": "TOMP-API-regions" }
     ],
-    "metrics": [],
+    "metrics": [{
+        "description": "publish exception zones",
+        "standards": [
+            { "name": "csv", "content": "description, type, and area (WKT, WGS84)" },
+            { "name": "json", "content": "description, type, and area (WKT, WGS84)" },
+            { "name": "geojson", "content": "description, type, and area (WKT, geojson)" },
+            { "name": "xml", "content": "description, type, and area (WKT, WGS84)" },
+            { "name": "MDS-policy-geography" },
+            { "name": "MDS-policy-rules" },
+            { "name": "DATEX-2" },
+            { "name": "TOMP-API-regions" }
+        ]   
+    }],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Dynamic"
+    "theme": "Dynamic policy"
 }
 , 
 {
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
     "id": "right-of-way-management",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recgAJ2lc0Hg2vSCM",
     "story": {
@@ -263,10 +320,12 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Dynamic"
+    "theme": "Dynamic policy"
 }
 , 
 {
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
     "id": "ratio-offer-demand",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
     "tags": ["public-space:usage"],
@@ -308,7 +367,13 @@
         { "name": "json" }, 
         { "name": "xml" }
     ],
-  "metrics": [ "Available number of vehicles per zone and hour", "Average idle time per zone and hour", "Average vehicle rotation per zone and hour","Departing number of vehicles per zone and hour", "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour"],
+  "metrics": [ 
+    { "description": "Available number of vehicles per zone and hour" }, 
+    { "description": "Average idle time per zone and hour" }, 
+    { "description": "Average vehicle rotation per zone and hour" },
+    { "description": "Departing number of vehicles per zone and hour" }, 
+    { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" } 
+  ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],
@@ -318,7 +383,9 @@
 }
 , 
 {
-  "id": " vehicle-rotation",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": " vehicle-rotation",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
   "story": {
     "asA": "city",
@@ -347,7 +414,10 @@
     { "name": "KML-points" },
     { "name": "SPDP-dynamic" }
   ],
-  "metrics": ["Average vehicle rotation per zone and hour","Available number of vehicles per zone and hour"],
+  "metrics": [
+    { "description": "Average vehicle rotation per zone and hour" },
+    { "description": "Available number of vehicles per zone and hour" }
+  ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],
@@ -359,7 +429,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "improve-most-popular-routes",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOEp2ybwC50OJHJ",
@@ -384,9 +454,11 @@
         { "name": "shapefile-tracks" }, 
         { "name": "KML-Track" }
     ],
-    "metrics": [ "Top 10 of heavily used route segments",
-        "Average number of trips on a route segment per hour",
-        "Maximum number of registered users on every route segment" ],
+    "metrics": [ 
+        { "description": "Top 10 of heavily used route segments" },
+        { "description": "Average number of trips on a route segment per hour" },
+        { "description": "Maximum number of registered users on every route segment" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -396,7 +468,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "infrastructure-planning",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
@@ -431,8 +503,10 @@
         { "name": "OD-Matrix-geojson" },
         { "name": "OD-Matrix-shape" }
     ],
-    "metrics": [ "Differences between origin and destination per zone per hour",
-        "Differences between origin and destination numbers per zone per day" ],
+    "metrics": [ 
+        { "description": "Differences between origin and destination per zone per hour" },
+        { "description": "Differences between origin and destination numbers per zone per day" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -442,7 +516,7 @@
 }
 , 
   {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "performance-per-mobility-hub",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
@@ -473,8 +547,10 @@
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
         { "name": "SPDP-dynamic", "dataProtection": "A" }
     ],
-    "metrics": [ "Average number of available assets per zone per hour",
-        "Average number of trips per zone per hour" ],
+    "metrics": [ 
+        { "description": "Average number of available assets per zone per hour" },
+        { "description": "Average number of trips per zone per hour" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -484,7 +560,9 @@
 }
 , 
 {
-    "id": "idle-time",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@type": "useCase",
+  "id": "idle-time",
     "externalReference": "",
     "story": {
       "asA": "city",
@@ -518,6 +596,10 @@
       { "name": "MDS-provider-status-changes" },
       { "name": "MDS-provider-status-changes-without-ids" }
     ],
+    "metrics": [
+      { "description": "Maximum/average parking time per zone" },
+      { "description": "Assets parked longer than a threshold time" }
+    ],
     "termsAndConditions": [],
     "agreements": [ "DPA" ],
     "sharing": [ ],
@@ -535,7 +617,9 @@
   }
 , 
 {
-  "id": "parking-pressure",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "parking-pressure",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
   "story": {
     "asA": "city",
@@ -577,6 +661,10 @@
     { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
     { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" }
   ],
+  "metrics": [
+    { "description": "Minimum/maximum/average parking time per zone" },
+    { "description": "Parking density heatmap, per lon/lat parked minutes" }
+  ],
   "termsAndConditions": [
     "BIO", 
     "privacy-by-design"
@@ -607,9 +695,9 @@
 }
 , 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
-  "@type": "useCase",
-  "id": "resident-complaints",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "resident-complaints",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRS7suODr8A3DZI",
     "tags": ["public-space:complaints"],
     "story": {
@@ -622,10 +710,19 @@
     { "name": "geojson" },
     { "name": "json" },
     { "name": "xml" },
-    { "name": "shapefile-points" },
-    { "name": "KML-points" }
+    { "name": "shapefile-polygon" }
   ],
-  "metrics": ["Number of administrated complaints about parking, per district and hour"],
+  "metrics": [
+    { "description": "Number of administrated complaints about parking, per district and hour",
+      "standards": [
+        { "name": "csv", "content": "area-reference or WKT (WGS84), day, hour, number" },
+        { "name": "geojson", "content": "area (geojson), day, hour, number" },
+        { "name": "json", "content": "area-reference or WKT (WGS84), day, hour, number" },
+        { "name": "xml", "content": "area-reference or WKT (WGS84), day, hour, number" },
+        { "name": "shapefile-polygon", "content": "polygon (WGS84), day, hour, number" }
+      ]
+    }
+  ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],
@@ -635,9 +732,9 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
-    "@type": "useCase",
-    "id": "vehicle-cap-and-neighbouring-regions",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@type": "useCase",
+  "id": "vehicle-cap-and-neighbouring-regions",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
     "story": {
         "asA": "city",
@@ -669,16 +766,23 @@
       { "name": "KML-points" },
       { "name": "SPDP-dynamic" }
     ],
-    "metrics": [ "Average vehicle rotation per zone and hour","Average idle time per zone and hour", "Total number of available vehicles in the city per day", "Usage percentage per vehicle type and day", "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour"],
+    "metrics": [ 
+      { "description": "Average vehicle rotation per zone and hour" },
+      { "description": "Average idle time per zone and hour" }, 
+      { "description": "Total number of available vehicles in the city per day" }, 
+      { "description": "Usage percentage per vehicle type and day" }, 
+      { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Liveability"
+    "theme": "Liveability",
+    "popularity": 3
 }, 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "availability-per-zone",
     "externalReference": "",
@@ -707,8 +811,10 @@
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
         { "name": "SPDP-dynamic", "dataProtection": "A" }
     ],
-    "metrics": [ "Average number of available assets per zone per hour",
-        "Average number of unavailable assets per zone" ],
+    "metrics": [ 
+        { "description": "Average number of available assets per zone per hour" },
+        { "description": "Average number of unavailable assets per zone" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -721,9 +827,9 @@
 }
 , 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
-  "@type": "useCase",
-  "id": "distribution-requirements-availability",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "distribution-requirements-availability",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
   "story": {
     "asA": "city",
@@ -771,8 +877,11 @@
     { "name": "KML-points" },
     { "name": "SPDP-dynamic" }
   ],
-  "metrics": [ "Available number of assets per zone per hour",
-               "Average idle time per zone per hour", "Average vehicle rotation per zone per hour"],
+  "metrics": [ 
+    { "description": "Available number of assets per zone per hour" },
+    { "description": "Average idle time per zone per hour" }, 
+    { "description": "Average vehicle rotation per zone per hour" }
+  ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],
@@ -781,11 +890,12 @@
   "tags": [
     "policy:availability"
   ],
-  "theme": "Liveability"
+  "theme": "Liveability",
+  "popularity": 2
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "offer-at-transfer-hub",
     "externalReference": "",
@@ -815,8 +925,10 @@
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
         { "name": "SPDP-dynamic", "dataProtection": "A" }
     ],
-    "metrics": [ "Average number of available assets per hub per hour",
-        "Average number of unavailable assets per hub" ],
+    "metrics": [ 
+        { "description": "Average number of available assets per hub per hour" },
+        { "description": "Average number of unavailable assets per hub" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -829,7 +941,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "crash-reports",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recHKsRyMKXFwFom3",
@@ -847,9 +959,11 @@
         { "name": "MDS-provider-status-change", "dataProtection": "D" },
         { "name": "MDS-provider-status-change-without-ids", "dataProtection": "B" }
     ],
-    "metrics":["Top crash locations by time of day/day/week/month", 
-        "Top crash locations by contributing factor",
-        "Top crash locations by severity"],
+    "metrics":[ 
+        { "description": "Top crash locations by time of day/day/week/month" }, 
+        { "description": "Top crash locations by contributing factor" },
+        { "description": "Top crash locations by severity" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -859,6 +973,8 @@
 }
 , 
 {
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
     "id": "infrastructure-planning",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
     "tags": ["public-space:planning", "public-space:usage", "mode:bike", "mode:scooter", "mode:step"],
@@ -878,7 +994,9 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
-    "metrics": [ "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" ],
+    "metrics": [ 
+        { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -888,7 +1006,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-no-ride-zones",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rec3rXhqSoIV35zcz",
@@ -910,7 +1028,21 @@
         { "name": "DATEX-2" },
         { "name": "TOMP-API-regions" }
     ],
-    "metrics": [],
+    "metrics": [
+        { 
+            "description": "Publish no-ride zones",
+            "standards": [
+                { "name": "csv" },
+                { "name": "json" },
+                { "name": "geojson" },
+                { "name": "xml" },
+                { "name": "MDS-policy-geography" },
+                { "name": "MDS-policy-rules" },
+                { "name": "DATEX-2" },
+                { "name": "TOMP-API-regions" }
+            ]
+        }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -920,6 +1052,8 @@
 }
 , 
 {
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@type": "useCase",
     "id": "publish-speed-regulations",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
     "tags": [
@@ -941,7 +1075,21 @@
         { "name": "DATEX-2" },
         { "name": "TOMP-API-regions" }
     ],
-    "metrics": [],
+    "metrics": [
+        { 
+            "description": "Publish speed-regulation zones",
+            "standards": [
+                { "name": "csv" },
+                { "name": "json" },
+                { "name": "geojson" },
+                { "name": "xml" },
+                { "name": "MDS-policy-geography" },
+                { "name": "MDS-policy-rules" },
+                { "name": "DATEX-2" },
+                { "name": "TOMP-API-regions" }
+            ]
+        }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -952,7 +1100,7 @@
 
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "restrict-hours-of-operation",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
@@ -988,7 +1136,8 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
-    "metrics": [ "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" ],
+    "metrics": [ 
+        { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" } ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -998,7 +1147,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "road-improvement-effects",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recUQ9z25tWaCzlaB",
@@ -1021,7 +1170,7 @@
         { "name": "GPX" },
         { "name": "shapefile-points" }
     ],
-    "metrics": [ "Maximum usage per road segment per day, in registered number of trips" ],
+    "metrics": [ { "description" : "Maximum usage per road segment per day, in registered number of trips" } ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -1031,7 +1180,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "modal-split-and-car-reduction-analysis",
     "externalReference": "",
@@ -1063,17 +1212,20 @@
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
     ],
-    "metrics": ["Number of moving vehicles between 2 regions per hour"],
+    "metrics": [
+        { "description": "Number of moving vehicles between 2 regions per hour" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Sustainability"
+    "theme": "Sustainability",
+    "popularity": 1
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "polution-mitigation",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recyvf0rp2zV56E5x",
@@ -1098,8 +1250,10 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
-    "metrics": ["Emission of CO2 per road segment",
-        "Emission of CO2/NOx per district" ],
+    "metrics": [
+        { "description": "Emission of CO2 per road segment" },
+        { "description": "Emission of CO2/NOx per district" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -1109,7 +1263,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "impact-on-transit",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKjAEob7RRBXf1P",
@@ -1151,9 +1305,11 @@
         { "name": "json" }, 
         { "name": "xml" }
     ],
-    "metrics": ["Average number of available vehicles per hub and hour",
-        "Average number of arriving vehicles per hub and hour",
-        "Average number of departing vehicles per hub and hour"],
+    "metrics": [
+        { "description": "Average number of available vehicles per hub and hour" },
+        { "description": "Average number of arriving vehicles per hub and hour" },
+        { "description": "Average number of departing vehicles per hub and hour" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -1163,7 +1319,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "average-km-per-trip",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recavl7mrhNVCYU76",
@@ -1189,8 +1345,10 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
-    "metrics": ["Average number of kilometers per trip, starting at a specific hub",
-              "Maximum length of trips per hour"],
+    "metrics": [
+        { "description": "Average number of kilometers per trip, starting at a specific hub" },
+        { "description": "Maximum length of trips per hour" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -1201,7 +1359,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "average-time-per-trip",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recqgvXE68b4l77mw",
@@ -1228,8 +1386,10 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
-    "metrics": ["Average duration in minutes per trip, starting at a specific hub",
-              "Maximum duration of trips per hour"],
+    "metrics": [
+        { "description": "Average duration in minutes per trip, starting at a specific hub" },
+        { "description": "Maximum duration of trips per hour" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -1239,7 +1399,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "destinations",
     "externalReference": "",
@@ -1284,7 +1444,9 @@
         { "name": "json" }, 
         { "name": "xml" }
     ],
-    "metrics": ["Arriving number of vehicles per hub and hour"],
+    "metrics": [
+        { "description": "Arriving number of vehicles per hub and hour" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -1294,7 +1456,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "commute-neighbouring-regions",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
@@ -1330,7 +1492,9 @@
         { "name": "GPX" },
         { "name": "shapefile-tracks" }
     ],
-    "metrics": [ "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" ],
+    "metrics": [ 
+        { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" } 
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],
@@ -1340,7 +1504,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "origins",
     "externalReference": "",
@@ -1385,7 +1549,9 @@
         { "name": "json" }, 
         { "name": "xml" }
     ],
-    "metrics": ["Departing number of vehicles per hub and hour"],
+    "metrics": [
+        { "description": "Departing number of vehicles per hub and hour" }
+    ],
     "termsAndConditions": [],
     "agreements": [],
     "transport": [],

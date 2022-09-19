@@ -1,14 +1,15 @@
-<div class="bg-white overflow-hidden relative inline-flex flex-col justify-end min-h-[340px] w-80 p-4 md:p-6 group ">
-  <div class="absolute top-0 right-6 p-2 bg-yellow-50">{{data.theme}}</div>
+<div class="bg-white overflow-hidden relative inline-flex flex-col justify-end min-h-[340px] w-full p-4 md:p-6 group">
+  <div class="absolute top-0 right-6 p-2 bg-yellow-500">{{data.theme}}</div>
   <div class="text-sm">
     <span class="group-hover:text-blue-500 font-bold">{{data.id|replaceUnderscore|titlecase}}</span>
+    <div></div>
     <div class="mb-1 text-gray-600">As a {{data.story.asA}}</div>
     I would like to
-    <span class="group-hover:text-blue-500 font-bold">
+    <span class="group-hover:text-blue-600 font-bold">
       {{data.story.iWouldLikeTo}}
     </span>
     in order to
-    <span class="group-hover:text-blue-500 font-bold">
+    <span class="group-hover:text-blue-600 font-bold">
       {{data.story.inOrderTo}}.
     </span>
   </div>
@@ -25,7 +26,7 @@
       </span>
     </a>
     <button *ngIf="!isAdded()"
-      class="inline-flex items-center justify-center p-2 bg-white text-blue-500 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-200 active:text-blue-900 disabled:text-gray-600 border-4 border-blue-500 hover:border-blue-400 active:border-blue-900 disabled:border-gray-200 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed border-0 outline outline-blue-500 outline-4"
+      class="inline-flex items-center justify-center h-12 w-12 text-blue-600 hover:text-blue-400 border-4 border-blue-600"
       (click)="addToCart()">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_729_21560)">
@@ -35,6 +36,20 @@
         </g>
         <defs>
           <clipPath id="clip0_729_21560">
+            <rect width="24" height="24" fill="currentColor" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24.5)">
+            </rect>
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+    <button *ngIf="isAdded()" (click)="addToCart()"
+      class="inline-flex items-center justify-center h-12 w-12 text-white hover:text-gray-300 border-4 border-black bg-black">
+      <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1131_21180)">
+          <path d="M19 11.5L5 11.5L5 13.5L19 13.5L19 11.5Z" fill="currentColor"></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_1131_21180">
             <rect width="24" height="24" fill="currentColor" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24.5)">
             </rect>
           </clipPath>

@@ -1,24 +1,19 @@
-<div class="w-screen">
-    <div>
-        <div class="text-blue-500 text-4xl uppercase pb-10">Most popular use cases</div>
-        <div class="flex items-center gap-4">
-            <app-use-case-ticket *ngFor="let usecase of useCases" [data]="usecase"></app-use-case-ticket>
-        </div>
-
-        <div class="my-4">
-            <app-filled-primary routerLink="/store" class="use-case-button" title="Browse use case store">
-            </app-filled-primary>
-            <a class="inline-flex items-center justify-center px-5 py-3 bg-white text-blue-500 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-200 active:text-blue-900 disabled:text-gray-600 border-4 border-blue-500 hover:border-blue-400 active:border-blue-900 disabled:border-gray-200 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed ml-4"
-                href="assets/build-usecase/index.html">
-                <span class="hidden lg:block">How are they build?</span>
-                <span class="ml-2.5">
-                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7.68298 0.500002L6.62466 1.6767L9.62661 4.2221L-8.13491e-07 4.2221L-1.1546e-06 5.78282L9.62153 5.78282L6.61957 8.32823L7.68806 9.5L13 5L7.68298 0.500002Z"
-                            fill="currentColor"></path>
-                    </svg>
-                </span></a>
-        </div>
-
+<div class="bg-gray-100">
+  <div class="max-w-6xl mx-auto px-4 w-full py-8 md:py-20">
+    <div class="bg-gray-100 md:p-0">
+      <h2 class="heading-2 uppercase font-medium text-blue-600">
+        Your use case?
+      </h2>
+      <p class="my-4">See which use cases are most relevant for cities</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <app-use-case-ticket *ngFor="let usecase of useCases" [data]="usecase"></app-use-case-ticket>
+      </div>
+      <div class="mt-4 flex flex-col md:flex-row gap-2.5">
+        <button routerLink="/store"
+          class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-500 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed">
+          Find your use case
+        </button>
+      </div>
     </div>
+  </div>
 </div>

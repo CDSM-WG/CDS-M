@@ -1,3 +1,32 @@
-<div class="ticket">
-    <div class="metric">{{data}}</div>
+<div class="py-4 border-b border-dashed border-blue-600"><button
+        class="w-full flex justify-between items-center gap-2.5 text-left font-semibold">
+        {{data.description}}
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="text-blue-600">
+            <g clip-path="url(#clip0_1183_21142)">
+                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor"></path>
+            </g>
+            <defs>
+                <clipPath id="clip0_1183_21142">
+                    <rect width="24" height="24" fill="currentColor"></rect>
+                </clipPath>
+            </defs>
+        </svg>
+    </button>
+    <div *ngIf="hasDataStandards()" class="mt-4">
+        <p class="font-semibold">Required data</p>
+        <ul class="ml-6 list-disc">
+            <li *ngFor="let ds of data.standards">{{ds.name}}</li>
+        </ul>
+        <!--p class="mt-6">
+        Lorem ipsum dolor sit amet platea quisque phasellus tristique luctus
+        suspendisse magna hendrerit orci. Fermentum incididunt a fames
+        pellentesque est vivamus eu duis fringilla aliquet hac fringilla
+        sagittis. Eget tellus ullamcorper eiusmod malesuada pretium eros
+        aenean. Massa molestie pretium nulla pharetra lacinia maecenas etiam
+        enim feugiat facilisis diam. Iaculis vel viverra fringilla vivamus
+        malesuada in ultricies aenean luctus ultrices massa turpis maecenas
+        viverra.
+    </p-->
+    </div>
 </div>

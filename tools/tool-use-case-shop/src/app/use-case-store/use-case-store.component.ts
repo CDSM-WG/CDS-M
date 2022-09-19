@@ -17,7 +17,7 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
 
   useCases: any[]  = [];
 
-  filterOptions: string[] = ["All", "Transparency", "Dynamic", "Liveability","Safety","Sustainability"]
+  filterOptions: string[] = ["All", "Research", "Dynamic policy", "Liveability","Safety","Sustainability"]
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;

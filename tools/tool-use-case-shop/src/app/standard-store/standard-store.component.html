@@ -1,4 +1,41 @@
-<div class="flex flex-col w-screen min-h-screen bg-white">
+<div class="flex-1 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 w-full pt-9 sm:pt-14 pb-6 sm:pb-20">
+        <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" routerLink="/">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                    style="mask-type: alpha;">
+                    <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                        fill="currentColor"></rect>
+                </mask>
+                <g mask="url(#mask0_921_31157)">
+                    <path
+                        d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                        fill="currentColor"></path>
+                </g>
+            </svg>
+            <span class="leading-4">Home</span>
+        </button>
+        <h1 class="heading-2 mt-14 text-blue-600">Data standard library</h1>
+        <div class="flex flex-col md:flex-row mt-6 gap-6">
+            <div class="flex-auto md:w-4/6">
+                <app-standard-ticket *ngFor="let standard of obs | async" [data]="standard">
+                </app-standard-ticket>
+            </div>
+            <div class="flex-auto md:w-2/6">
+                <app-filled-primary title="Upload your own .json receipe" onclick="document.getElementById('file').click()"></app-filled-primary>
+                <input type="file" class="invisible" id="file" accept=".json" (change)="uploadFile($event)">
+    
+                <div class="text-xl text-blue-500">Selected standards</div>
+                <div class="ml-2">
+                    <div *ngFor="let standard of obsSelected | async">{{standard.name}}</div>
+                </div>
+                <app-filled-primary routerLink="/preparation" title="Confirm selection"></app-filled-primary>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--div class="flex flex-col w-screen min-h-screen bg-white">
     <div class="bg-slate-200 w-screen px-32 pt-16">
         <div routerLink="/standards">
             <button class="inline-flex items-center gap-1 font-semibold cursor-pointer">
@@ -23,7 +60,7 @@
                     SELECT DATA STANDARDS
                 </div>
                 <div class="">
-                    Some text
+                    In this stage, you can upload the selection you received 
                 </div>
                 <div class="flex flex-wrap pb-8 gap-2">
                     <app-standard-ticket *ngFor="let standard of obs | async" [data]="standard">
@@ -42,4 +79,4 @@
             </div>
         </div>
     </div>
-</div>
+</div-->

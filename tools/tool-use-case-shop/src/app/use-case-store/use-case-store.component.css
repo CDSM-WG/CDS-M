@@ -5,3 +5,11 @@
 ::ng-deep .mat-paginator-range-label {
     visibility: hidden;
 }
+
+::ng-deep .mat-paginator-container {
+    justify-content: center !important; 
+}
+
+::ng-deep .mat-paginator-page-size {
+    display: none;
+}

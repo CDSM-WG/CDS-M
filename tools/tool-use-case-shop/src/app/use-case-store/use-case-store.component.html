@@ -1,44 +1,27 @@
-<div class="flex flex-col w-screen min-h-screen">
-    <div class="bg-white">
-        <div class="py-12 px-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-                <div class="w-screen">
-                    <div>
-                        <div class="heading-1 text-xl">make better decisions</div>
-                        <span class="uppercase text-3xl text-blue-500 max-w-md">
-                            We let you know how safe<br> the data is that you're trying to<br> collect
-                        </span>
-                    </div>
-                </div>
-                <div class="w-full h-72 bg-cover bg-no-repeat bg-center"
-                    style='background-image: url("https://images.unsplash.com/photo-1471039497385-b6d6ba609f9c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2340&amp;q=80");'>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-slate-200 w-screen pt-16 px-32">
+<div class="flex flex-col w-screen min-h-screen pt-16">
+    <div class="max-w-6xl mx-auto px-4 w-full">
         <div class="uppercase text-6xl">Use case store</div>
-        <div class="flex flex-row gap-12">
-            <input
-            type="text"
-            (keyup)="onFilter($event)"
-            placeholder="Search ... "
-            class="py-3 pl-4 pr-12 w-full max-w-lg text-black placeholder:text-gray-300 bg-white bg-no-repeat rounded-none"
-            style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_692_22207)'%3E%3Cpath d='M8.5 14H9.29L9.57 13.73C8.59 12.59 8 11.11 8 9.5C8 5.91 10.91 3 14.5 3C18.09 3 21 5.91 21 9.5C21 13.09 18.09 16 14.5 16C12.89 16 11.41 15.41 10.27 14.43L10 14.71V15.5L5 20.49L3.51 19L8.5 14V14ZM14.5 14C16.99 14 19 11.99 19 9.5C19 7.01 16.99 5 14.5 5C12.01 5 10 7.01 10 9.5C10 11.99 12.01 14 14.5 14Z' fill='%234B5563'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_692_22207'%3E%3Crect width='24' height='24' fill='white' transform='matrix(-1 0 0 1 24 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A&quot;); background-position: right 16px center;"
-            />
+        <div class="px-16">Find the use cases related to your policy issue(s)</div>
+        <div class="pb-8 px-16">CDS-M translates them to applicable standards (select & click on cart)</div>
+        <div class="flex flex-row gap-12 mb-8 justify-between">
+            <input type="text" (keyup)="onFilter($event)" placeholder="Routes, parking, availability, ... "
+                class="py-3 pl-4 pr-12 w-full max-w-lg text-black placeholder:text-gray-300 bg-white bg-no-repeat rounded-none"
+                style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_692_22207)'%3E%3Cpath d='M8.5 14H9.29L9.57 13.73C8.59 12.59 8 11.11 8 9.5C8 5.91 10.91 3 14.5 3C18.09 3 21 5.91 21 9.5C21 13.09 18.09 16 14.5 16C12.89 16 11.41 15.41 10.27 14.43L10 14.71V15.5L5 20.49L3.51 19L8.5 14V14ZM14.5 14C16.99 14 19 11.99 19 9.5C19 7.01 16.99 5 14.5 5C12.01 5 10 7.01 10 9.5C10 11.99 12.01 14 14.5 14Z' fill='%234B5563'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_692_22207'%3E%3Crect width='24' height='24' fill='white' transform='matrix(-1 0 0 1 24 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A&quot;); background-position: right 16px center;" />
 
-            <select
-            class="py-3 pl-4 pr-12 bg-white bg-no-repeat appearance-none cursor-pointer"
-            style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_699_24502)'%3E%3Cpath d='M14 18H10V16H14V18ZM21 6V8H3V6H21ZM18 13H6V11H18V13Z' fill='%234B5563'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_699_24502'%3E%3Crect width='24' height='24' fill='white' transform='matrix(-1 0 0 1 24 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A&quot;); background-position: right 16px center;"
-            #selection (change)="filter($event, selection.value)"
-            >
+            <select class="py-3 pl-4 pr-12 bg-white bg-no-repeat appearance-none cursor-pointer"
+                style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_699_24502)'%3E%3Cpath d='M14 18H10V16H14V18ZM21 6V8H3V6H21ZM18 13H6V11H18V13Z' fill='%234B5563'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_699_24502'%3E%3Crect width='24' height='24' fill='white' transform='matrix(-1 0 0 1 24 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A&quot;); background-position: right 16px center;"
+                #selection (change)="filter($event, selection.value)">
                 <option *ngFor="let o of this.filterOptions">{{o}}</option>
             </select>
         </div>
-        <div class="flex flex-wrap py-8 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
             <app-use-case-ticket *ngFor="let usecase of obs | async" [data]="usecase">
             </app-use-case-ticket>
+            <mat-paginator style-paginator showFirstLastButtons="false" [length]="this.getLength()" [showTotalPages]="5"
+                [pageSize]="12" class="mb-8 bg-gray-200"></mat-paginator>
         </div>
-        <mat-paginator style-paginator showFirstLastButtons="false" [length]="this.getLength()" [showTotalPages]="5" [pageSize]="9" class="mb-8 bg-gray-200"></mat-paginator>
+        <!--div >
+            <a routerLink="/cart">Proceed to checkout</a>
+        </div-->
     </div>
 </div>

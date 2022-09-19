@@ -1,22 +1,44 @@
-<div class="container">
-    <div class="useCases">
-        <span>
-            <div class="header">Use case cart</div><div class="counter">{{this.getCounter()}} use case(s)</div>
-        </span>
-        <app-cart-ticket *ngFor="let data of selectedUseCases" [data]="data"></app-cart-ticket>
+<div class="flex-1 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 w-full pt-9 sm:pt-14 pb-6 sm:pb-20">
+        <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" routerLink="/store">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                    style="mask-type: alpha;">
+                    <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                        fill="currentColor"></rect>
+                </mask>
+                <g mask="url(#mask0_921_31157)">
+                    <path
+                        d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                        fill="currentColor"></path>
+                </g>
+            </svg>
+            <span class="leading-4">Home</span>
+        </button>
+        <h1 class="heading-2 mt-14 text-blue-600">Overview shopping cart</h1>
+        <div class="flex flex-col md:flex-row mt-6 gap-6">
+            <div class="flex-auto md:w-4/6">
+                <app-cart-ticket *ngFor="let data of selectedUseCases" [data]="data"></app-cart-ticket>
+            </div>
+            <div class="flex-auto md:w-2/6">
+                <div class="header2">Data protection</div>
+                <hr />
+                <table>
+                    <tr *ngFor="let data of selectedUseCases">
+                        <td><a href="/cart#{{data.id}}">{{data.id}}</a></td>
+                        <td>{{data.totalGrade}}</td>
+                    </tr>
+                </table>
+                <hr />
+                <table>
+                    <tr>
+                        <td>Total grade for all use cases</td>
+                        <td>{{getGrandTotal()}}</td>
+                    </tr>
+                </table>
+                <hr />
+                <div class="Button" (click)="this.export()">Proceed to checkout</div>
+            </div>
+        </div>
     </div>
-    <div class="totalBill">
-        <div class="header2">Data protection</div>
-        <hr/>
-        <table>
-            <tr *ngFor="let data of selectedUseCases">
-                <td><a href="/cart#{{data.id}}">{{data.id}}</a></td>
-                <td>{{data.totalGrade}}</td>
-            </tr>
-        </table>
-        <hr/>
-        <table><tr><td>Total grade for all use cases</td><td>{{getGrandTotal()}}</td></tr></table>
-        <hr/>
-        <div class="Button" (click)="this.export()">Proceed to checkout</div>
-    </div> 
 </div>

@@ -15,4 +15,10 @@ export class MetricTicketComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  hasDataStandards() {
+    if (this.data.standards == null){
+      return false;
+    }
+    return this.data.standards.length > 0;
+  }
 }
