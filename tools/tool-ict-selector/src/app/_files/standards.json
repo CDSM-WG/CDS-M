@@ -14,7 +14,8 @@
     "domain": "B",
     "externalReference": "https://www.datex2.eu/node/261",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The standard for the exchange of traffic related data. The DATEX II data content standards are defined in the multi-part CEN specification number 16157: <ul>    <li> Part 1: Context and framework    <li> Part 2: Location referencing    <li> Part 3: Situation publication    <li> Part 4: Variable Message Sign (VMS) publications    <li> Part 5: Measured and elaborated data publications    <li> Part 6: Parking publications    <li> Part 7: Common data elements    <li> Part 8: Traffic management publications and urban extensions    <li> Part 9: Traffic signal management publications</ul>" 
 }, 
 {
     "type": "file",
@@ -40,7 +41,8 @@
     "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
     "timeAmount": "[time amount]",
     "geoUnit": "[postal, postal1_4, district, city, region, custom]",
-    "geoUnitCustomSpecification": "[URL]"
+    "geoUnitCustomSpecification": "[URL]",
+    "description": "A comma-separated values (CSV) file is a delimited text file that uses a comma to separate values. Each line of the file is a data record. Each record consists of one or more fields, separated by commas. The use of the comma as a field separator is the source of the name for this file format. A CSV file typically stores tabular data (numbers and text) in plain text, in which case each line will have the same number of fields."
 }, 
 {
     "type": "file",
@@ -66,7 +68,8 @@
     "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
     "timeAmount": "[time amount]",
     "geoUnit": "[postal, postal1_4, district, city, region, custom]",
-    "geoUnitCustomSpecification": "[URL]"
+    "geoUnitCustomSpecification": "[URL]",
+    "description": "GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format."
 }, 
 {
     "type": "file",
@@ -92,7 +95,8 @@
     "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
     "timeAmount": "[time amount]",
     "geoUnit": "[postal, postal1_4, district, city, region, custom]",
-    "geoUnitCustomSpecification": "[URL]"
+    "geoUnitCustomSpecification": "[URL]",
+    "description": "JSON (JavaScript Object Notation) is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values). It is a common data format with diverse uses in electronic data interchange, including that of web applications with servers."
 }, 
 {
     "type": "file",
@@ -118,19 +122,20 @@
     "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
     "timeAmount": "[time amount]",
     "geoUnit": "[postal, postal1_4, district, city, region, custom]",
-    "geoUnitCustomSpecification": "[URL]"
+    "geoUnitCustomSpecification": "[URL]", 
+    "description": "Extensible Markup Language (XML) is a markup language and file format for storing, transmitting, and reconstructing arbitrary data. It defines a set of rules for encoding documents in a format that is both human-readable and machine-readable"
 }, 
 {
     "type": "standard",
     "name": "GBFS-free-bike-status",
     "displayName": "GBFS - Free bike status",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "mediumType": "json-file",
     "part": "free_bike_status.json",
 
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
-    "description": "Standard GBFS json file",
-    "version": "[1.1 < version < 2.1]",
+    "description": "This part contains the available assets. <br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
+    "version": "[1.0,1.1,2.0]",
     "url": "[url]",
     "refreshRate": "[refresh rate]",
 
@@ -148,13 +153,13 @@
     "type": "standard",
     "name": "GBFS-free-bike-status-non-rotating-asset-id",
     "displayName": "GBFS - Free bike status, with static bike_id",
-    "exchangeType": "[API|file-based]",
+    "exchangeType": "[API,file-based]",
     "mediumType": "json-file",
     "part": "free_bike_status.json",
 
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
-    "description": "Standard GBFS json file with one adjustment: the bike_id doesn't rotate (causing GDPR issues).",
-    "version": "[version < 2.1]",
+    "description": "Is derived from the free-bike-status, but with one adjustment: the bike_id doesn't rotate (causing GDPR issues). <br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
+    "version": "[1.0,1.1,2.0]",
 
     "url": "[url]",
     "refreshRate": "[refresh rate]",
@@ -182,11 +187,11 @@
     "type": "standard",
     "name": "GBFS",
     "displayName": "GBFS - Main reference file",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "gbfs.json",    
-    "description": "Standard GBFS json file",
+    "description": "Auto-discovery file that links to all of the other files published by the system.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -203,10 +208,10 @@
     "type": "standard",
     "name": "GBFS-versions",
     "displayName": "GBFS - Versions",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "gbfs_versions.json",
-    "description": "Standard GBFS json file",
-    "version": "[version >= 1.1]",
+    "description": "Lists all feed endpoints published according to version sof the GBFS documentation<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
+    "version": "[1.1,2.0,2.1,2.2]",
     "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -225,11 +230,11 @@
     "type": "standard",
     "name": "GBFS-geofencing-zones",
     "displayName": "GBFS - Geofencing zones",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "geofencing_zones.json",
-    "description": "Standard GBFS json file",
+    "description": "Describes geofencing zones and their associated rules and attributes.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version >= 2.1]",
+    "version": "[2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -247,11 +252,11 @@
     "type": "standard",
     "name": "GBFS-station-information",
     "displayName": "GBFS Station information",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "station_information.json",
-    "description": "Standard GBFS json file",
+    "description": "Details including system operator, system location, year implemented, URL, contact info, time zone.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -268,11 +273,11 @@
     "type": "standard",
     "name": "GBFS-station-status",
     "displayName": "GBFS - Station status",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "station_status.json",
-    "description": "Standard GBFS json file",
+    "description": "Describes the capacity and rental availability of the station.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -290,11 +295,11 @@
     "type": "standard",
     "name": "GBFS-system-alerts",
     "displayName": "GBFS - Alerts",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "system_alerts.json",
-    "description": "Standard GBFS json file",
+    "description": "Describes ad-hoc changes to the system.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -312,11 +317,11 @@
     "type": "standard",
     "name": "GBFS-system-calendar",
     "displayName": "GBFS - Calender",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "system_calendar.json",    
-    "description": "Standard GBFS json file",
+    "description": "Describes the operating calendar for a system.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -333,11 +338,11 @@
     "type": "standard",
     "name": "GBFS-system-hours",
     "displayName": "GBFS - Opening hours",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "system_hours.json",
-    "description": "Standard GBFS json file",
+    "description": "Describes the system hours of operation.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -355,11 +360,11 @@
     "type": "standard",
     "name": "GBFS-system-information",
     "displayName": "GBFS - Information",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "system_information.json",
-    "description": "Standard GBFS json file",
+    "description": "Details including system operator, system location, year implemented, URL, contact info, time zone.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -377,11 +382,11 @@
     "type": "standard",
     "name": "GBFS-system-pricing-plans",
     "displayName": "GBFS - Pricing plans",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "system_pricing_plans.json",
-    "description": "Standard GBFS json file",
+    "description": "Describes the pricing schemes of the system.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -399,11 +404,11 @@
     "type": "standard",
     "name": "GBFS-system-regions",
     "displayName": "GBFS - Regions",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "system_regions.json",
-    "description": "Standard GBFS json file",
+    "description": "Describes regions for a system that is broken up by geographic or political region.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -420,12 +425,12 @@
     "type": "standard",
     "name": "GBFS-vehicle-status",
     "displayName": "GBFS - Vehicle status",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "vehicle_status.json",
-    "description": "Standard GBFS json file",    
+    "description": "Describes all vehicles that are not currently in active rental.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "url": "[url]",
-    "version": "[version >= 2.1]",
+    "version": "[2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -441,11 +446,11 @@
     "type": "standard",
     "name": "GBFS-vehicle-status-non-rotating-asset-id",
     "displayName": "GBFS - Vehicle status with static vehicle_id",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "vehicle_status",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
-    "description": "Standard GBFS json file, with one adjustment: the vehicle_id doesn't rotate (causing GDPR issues).",
-    "version": "[version >= 2.1]",
+    "description": "Like vehicle-status, but with one adjustment: the vehicle_id doesn't rotate (causing GDPR issues). <br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
+    "version": "[2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",    
     "url": "[url]",
@@ -471,11 +476,11 @@
     "type": "standard",
     "name": "GBFS-vehicle-types",
     "displayName": "GBFS - Vehicle types",
-    "exchangeType": "[API|file-based]", 
+    "exchangeType": "[API,file-based]", 
     "part": "vehicle_types.json",
-    "description": "Standard GBFS json file",
+    "description": "Describes the types of vehicles that System operator has available for rent.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[version >= 2.1]",
+    "version": "[2.1,2.2]",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
@@ -512,7 +517,8 @@
         "reveals_personal_trip_data"
     ],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "GPX, or GPS Exchange Format, is an XML schema designed as a common GPS data format for software applications. It can be used to describe waypoints, tracks, and routes. It is an open format and can be used without the need to pay license fees"
 }, 
 {
     "type": "standard",
@@ -529,7 +535,8 @@
     "interoperability": "A",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The agency table provides information about the transit agency as such, including name, website and contact information.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }, 
 {
     "type": "standards",
@@ -545,7 +552,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Specifies the attributions that are applied to the dataset.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -562,7 +570,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The calendar table defines service patterns that operate recurrently such as, for example, every weekday. Service patterns that don't repeat such as for a one-time special event will be defined in the calendar_dates table.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -579,7 +588,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Exceptions for the services defined in the calendar.txt. If calendar.txt is omitted, then calendar_dates.txt is required and must contain all dates of service.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -596,7 +606,8 @@
     "interoperability": "A",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Fare information for a transit agency's routes.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -613,7 +624,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Rules to apply fares for itineraries.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -630,7 +642,8 @@
     "interoperability": "A",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Dataset metadata, including publisher, version, and expiration information.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -647,7 +660,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Headway (time between trips) for routes with variable frequency of service.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -664,7 +678,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Levels within stations.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -681,7 +696,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Pathways linking together locations within stations.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -698,7 +714,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The routes table identifies distinct routes. This is to be distinguished from distinct routings (or paths), several of which may belong to a single route.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -715,7 +732,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Rules for drawing lines on a map to represent a transit organization's routes<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -732,7 +750,8 @@
     "interoperability": "A",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The stops table defines the geographic locations of each and every actual stop or station in the transit system as well as, and optionally, some of the amenities associated with those stops.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -749,7 +768,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Times that a vehicle arrives at and departs from stops for each trip.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -766,7 +786,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Rules for making connections at transfer points between routes.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -783,7 +804,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Translated information of a transit agency.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
 {
@@ -800,9 +822,29 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
 , 
+{
+    "type": "file",
+    "name": "KML-Heatmap", 
+    "exchangeType": "file-based", 
+    "part": "Heatmap",
+    "version": "2.2",
+    "refreshRate": "[refresh rate]",
+    "privacy": "A",
+    "implementationEffort": "C", 
+    "reusability":"E",
+    "interoperability": "C",
+    "domain": "D",
+    "mediumType": "xml-file",
+    "schema": "https://developers.google.com/kml/documentation/kmlreference#point",
+    "retentionPeriod": "[ISO8601 duration]",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
+    "bbversion": 1,
+    "description": "KML file containing all measurepoints of trips without timestamps, or at max time frames (e.g. rounded per hour)<br>Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008"
+}, 
 {
     "type": "file",
     "name": "KML-Point-and-timestamp", 
@@ -827,7 +869,8 @@
     ],
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "KML file containing locations & timestamps (a.k.a. tracks)<br>Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008"
 }, 
 {
     "type": "file",
@@ -845,7 +888,8 @@
     "schema": "https://developers.google.com/kml/documentation/kmlreference#point",
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "KML file only containing locations<br>Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008"
 }, 
 {
     "type": "file",
@@ -871,7 +915,8 @@
     ],
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "KML file only containing tracks<br>Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008"
 }, 
 {
     "type": "standard",
@@ -889,7 +934,8 @@
     "mediumType": "API",
     "refreshRate": "0",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The geography API endpoints are intended to be implemented by regulatory agencies and consumed by mobility providers. Providers query the Policy API to get information about geographical regions for regulatory and other purposes.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }, 
 {
     "type": "standard",
@@ -907,14 +953,15 @@
     "mediumType": "API",
     "refreshRate": "0",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Depricated, replaced by geographies<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }, 
 {
     "type": "standard",
-    "name": "MDS-policy-rules",
+    "name": "MDS-policy-policy",
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
-    "part": "/rules/",
+    "part": "/policies/",
     "url": "[url]",
     "version": "[version]",
     "privacy": "A",
@@ -925,12 +972,13 @@
     "mediumType": "API",
     "refreshRate": "0",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The Policy API endpoints are intended to be implemented by regulatory agencies and consumed by mobility providers. Providers query the Policy API to get information about local rules that may affect the operation of their mobility service or which may be used to determine compliance.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }, 
 {
     "type": "standard",
     "name": "MDS-provider-status_changes-without-ids",
-    "description": "MDS provider status_changes endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.",
+    "description": "MDS provider status_changes endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.", 
     "exchangeType": "API", 
     "version": "[version]",
     "url": "[url]",
@@ -986,7 +1034,8 @@
     ],
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The status of the inventory of vehicles available for customer use.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }
 , 
 {
@@ -1005,12 +1054,13 @@
     "refreshRate": "0",
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Stop information should be updated on a near-realtime basis by providers who operate docked mobility devices in a given municipality.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }, 
 {
     "type": "standard",
     "name": "MDS-provider-trips-without-ids-and-route",
-    "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is empty/not available",
+    "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is empty/not available<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
     "version": "[version]",
     "url": "[url]",
@@ -1047,7 +1097,7 @@
 {
     "type": "standard",
     "name": "MDS-provider-trips-without-ids-blurred-start-end",
-    "description": "MDS provider trips endpoint with one adjustment: the results don't contain device_id and vehicle_id, secondly, the route's start and end locations are blurred",
+    "description": "MDS provider trips endpoint with one adjustment: the results don't contain device_id and vehicle_id, secondly, the route's start and end locations are blurred<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
     "version": "[version]",
     "url": "[url]",
@@ -1081,7 +1131,7 @@
 {
     "type": "standard",
     "name": "MDS-provider-trips-without-ids-only-start-end",
-    "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is contains only start and endpoint",
+    "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is contains only start and endpoint<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
     "version": "[version]",
     "url": "[url]",
@@ -1136,13 +1186,14 @@
     ],
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "A trip represents a journey taken by a mobility as a service customer with a geo-tagged start and stop point.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }
 , 
 {
     "type": "standard",
     "name": "MDS-provider-vehicles-non-booked",
-    "description": "MDS provider vehicles endpoint with one adjustments: the results are filtered, only non-booked assets are exposed",
+    "description": "MDS provider vehicles endpoint with one adjustments: the results are filtered, only non-booked assets are exposed<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
     "part": "vehicles",
     "version": "[version]",
@@ -1172,7 +1223,7 @@
 {
     "type": "standard",
     "name": "MDS-provider-vehicles-without-ids-non-booked",
-    "description": "MDS provider vehicles endpoint with two adjustments: the results are filtered, only non-booked assets are exposed AND the device_id and vehicle_id are removed",
+    "description": "MDS provider vehicles endpoint with two adjustments: the results are filtered, only non-booked assets are exposed AND the device_id and vehicle_id are removed<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
     "version": "[version]",
     "url": "[url]",
@@ -1206,7 +1257,7 @@
 {
     "type": "standard",
     "name": "MDS-provider-vehicles-without-ids",
-    "description": "MDS provider vehicles endpoint with one adjustment: the device_id and vehicle_id are removed from the result",
+    "description": "MDS provider vehicles endpoint with one adjustment: the device_id and vehicle_id are removed from the result<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
     "version": "[version]",
     "url": "[url]",
@@ -1263,7 +1314,8 @@
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The /vehicles is a near-realtime endpoint and returns the current status of vehicles in an agency's Jurisdiction and/or area of agency responsibility.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }
 , 
 {
@@ -1279,7 +1331,8 @@
     "interoperability": "C",
     "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "NeTEx is a CEN Technical Standard for exchanging Public Transport Network, schedules and related data. It is divided into three parts, each covering a functional subset of the CEN Transmodel:<ul><li>Part 1 describes the Public Transport Network topology (CEN/TS 16614-1:2014);<li>Part 2 describes Scheduled Timetables (CEN/TS 16614-2:2014);<li>Part 3 covers Fare information (CEN/TS 16614-3:2015).</ul>"
 }, 
 {
     "type": "standard",
@@ -1296,7 +1349,8 @@
     "schema": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... ",
     "url": "[url]",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "A comma-separated values (CSV) file is a delimited text file that uses a comma or semi colon to separate values. Each line of the file is a data record. Each record consists of one or more fields, separated by commas. The use of the comma as a field separator is the source of the name for this file format. A CSV file typically stores tabular data (numbers and text) in plain text, in which case each line will have the same number of fields.<br>See 'schema' for the definition"
 }, 
 {
     "type": "standard",
@@ -1312,7 +1366,8 @@
     "mediumType": "json",
     "url": "[url]",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format.<br>Each geometry should have references to other geometries, including the number of movements"
 }, 
 {
     "type": "standard",
@@ -1345,7 +1400,8 @@
     "mediumType": "ESRI-shapefile",
     "url": "[url]",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "The shapefile format is a geospatial vector data format for geographic information system (GIS) software. It is developed and regulated by Esri as a mostly open specification for data interoperability among Esri and other GIS software products. <br>Each area should have references to other areas, including the number of movements"
 }, 
 {
     "type": "standard",
@@ -1501,7 +1557,8 @@
     "domain": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "SPDP specifies components required for the exchange and use of data in the field of parking. The components include the following: <ul><li>Domain model: Data structure and relationships;<li>Data content (or data dictionary)<li>Communications specification (or communication protocol)<li>Licensing for the use of the dynamic parking data.</ul>"
 }
 , 
 {
@@ -1520,7 +1577,8 @@
     "domain": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "SPDP specifies components required for the exchange and use of data in the field of parking. The components include the following: <ul><li>Domain model: Data structure and relationships;<li>Data content (or data dictionary)<li>Communications specification (or communication protocol)<li>Licensing for the use of the dynamic parking data.</ul>"
 }
 , 
 {
@@ -1528,7 +1586,7 @@
     "part": "/operator/alerts",
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Alerts",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
@@ -1538,7 +1596,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint is based on the GBFS - alerts.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
 {
     "type": "standard",
@@ -1546,7 +1605,7 @@
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "B",
@@ -1562,7 +1621,8 @@
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint is the same as the available-assets, but doesn't have a rotating asset id, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
 , 
 {
@@ -1571,7 +1631,7 @@
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "C",
@@ -1587,7 +1647,8 @@
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint is the same as the available-assets, and contains a traceable references to assets, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
 , 
 {
@@ -1596,7 +1657,7 @@
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "C",
@@ -1612,7 +1673,8 @@
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint is the same as the available-assets, and contains a traceable references to assets, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
 , 
 {
@@ -1621,7 +1683,7 @@
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
@@ -1632,7 +1694,8 @@
     "domain": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint contains available number per asset type, optionally including the assets themselves.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
 {
     "type": "standard",
@@ -1640,7 +1703,7 @@
     "exchangeType": "API", 
     "part": "/operator/information",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Information",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
@@ -1649,7 +1712,8 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint contains details including system operator, system location, year implemented, URL, contact info, time zone.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
 , 
 {
@@ -1658,7 +1722,7 @@
     "part": "/payment/journal-entry",
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
@@ -1677,7 +1741,8 @@
         "reveals_personal_trip_data"
     ],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint is the same as the journal-entry endpoint, but has removed the personal aspects regarding the banking details<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
 {
     "type": "standard",
@@ -1685,7 +1750,7 @@
     "part": "/payment/journal-entry",
     "exchangeType": "API", 
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Payment",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
@@ -1702,7 +1767,8 @@
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint contains a financial report per leg or period. It is only used in peer-to-peer situations.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
 {
     "type": "standard",
@@ -1710,7 +1776,7 @@
     "exchangeType": "API", 
     "part": "/operator/meta",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Meta-Information",
-    "version": "[version]",
+    "version": "[1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
@@ -1721,7 +1787,8 @@
     "domain": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint contains the meta data of the TOMP-API implementation, including the behavioral aspects.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
 , 
 {
@@ -1730,7 +1797,7 @@
     "exchangeType": "API", 
     "part": "/operator/operating-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Operating-hours-and-calendar",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
@@ -1741,7 +1808,8 @@
     "refreshRate": 0,
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint contains the calendar of the operator<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
 , 
 {
@@ -1750,7 +1818,7 @@
     "exchangeType": "API", 
     "part": "/operator/operating-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Operating-hours-and-calendar",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
@@ -1761,7 +1829,8 @@
     "refreshRate": 0,
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint contains the operating hours of the operator<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
 , 
 {
@@ -1770,7 +1839,7 @@
     "exchangeType": "API", 
     "part": "/operator/operator-calendar",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Pricing-information",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
@@ -1781,7 +1850,8 @@
     "refreshRate": 0,
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint contains the pricing plans of the operator.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
 {
     "type": "standard",
@@ -1789,7 +1859,7 @@
     "exchangeType": "API", 
     "part": "/operator/regions",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Regions",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
@@ -1800,7 +1870,8 @@
     "refreshRate": 0,
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint contains operating and other areas, like parking areas, slow speed areas etc.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
 , 
 {
@@ -1809,7 +1880,7 @@
     "exchangeType": "API", 
     "part": "/operator/stations",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Stations",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
@@ -1820,5 +1891,6 @@
     "refreshRate": 0,
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "This endpoint contains the stations of the operator.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }] 

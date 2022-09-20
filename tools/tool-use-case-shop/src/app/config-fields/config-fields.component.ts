@@ -47,6 +47,20 @@ export class ConfigFieldsComponent implements OnInit {
     let target: any = event.target;
     let entry = this.fields.find( (x) => x.name == target.id);
     entry.value = target.value;
+    this.data[target.id] = target.value;
+  }
+
+  isSelection(value: string){
+    if( value.indexOf(',') > 0 ){
+      return true;
+    }
+    return false;
+  }
+
+  getOptions(value: string){
+    let t = value.replace("[","").replace("]","");
+    let options = t.split(",");
+    return options;
   }
 
 }

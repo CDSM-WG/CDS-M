@@ -81,10 +81,12 @@ export class UseCaseService {
   isStandardInCart(name: string) {
     for (let i = 0; i < this.cart.length; i++) {
       let uc = this.getUseCase(this.cart[i]);
-      for (let j = 0; j < uc.standards.length; j++) {
-        let s = uc.standards[j];
-        if (s.name === name && s.checked != null && s.checked === true)
-          return true;
+      if (uc.standards != null) {
+        for (let j = 0; j < uc.standards.length; j++) {
+          let s = uc.standards[j];
+          if (s.name === name && s.checked != null && s.checked === true)
+            return true;
+        }
       }
     }
     return false;

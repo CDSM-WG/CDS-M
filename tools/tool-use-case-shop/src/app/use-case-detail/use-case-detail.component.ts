@@ -11,6 +11,7 @@ import { StandardService } from '../../services/standard.service';
 export class UseCaseDetailComponent implements OnInit {
 
   data: any;
+  sortedStandards: any[] = []
 
   constructor(private route: ActivatedRoute, private useCaseService: UseCaseService, private standardService: StandardService) 
     { 
@@ -21,6 +22,17 @@ export class UseCaseDetailComponent implements OnInit {
     this.route.queryParams.subscribe( p => {
       let id = p['id'];
       this.data = this.useCaseService.getUseCase( id );
+      this.sortedStandards = this.data.standards.sort( (a:any,b:any) => {
+        let standardA = this.standardService.getStandard(a.name);
+        if( standardA.privacy == "A") {
+          return -1;
+        }
+        let standardB = this.standardService.getStandard(b.name);
+        if( standardB.privacy == "A") {
+          return 1;
+        }
+        return standardA.privacy < standardB.privacy;
+      })
     });
   }
 
@@ -32,20 +44,6 @@ export class UseCaseDetailComponent implements OnInit {
     this.useCaseService.addToCart(this.data.id);
   }
 
-  getClasses() {
-    if (this.useCaseService.isInCart(this.data.id)) {
-      return "removeFromCart";
-    }
-    return "addToCart";
-  }
-
-  getContent() {
-    if (this.useCaseService.isInCart(this.data.id)) {
-      return "-";
-    }
-    return "+";
-  }
-
   usesPersonalData(name:string){
     let standard = this.standardService.getStandard(name);
     if (standard.privacy=="A"){
@@ -53,6 +51,9 @@ export class UseCaseDetailComponent implements OnInit {
     }
     else if (standard.privacy=="*"){
       return "Possibly"
+    }
+    else if (standard.privacy==null){
+      return "Not yet evaluated"
     }
     return "Yes"
   }

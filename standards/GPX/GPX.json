@@ -21,5 +21,6 @@
         "reveals_personal_trip_data"
     ],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "GPX, or GPS Exchange Format, is an XML schema designed as a common GPS data format for software applications. It can be used to describe waypoints, tracks, and routes. It is an open format and can be used without the need to pay license fees"
 }

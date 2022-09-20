@@ -2,29 +2,34 @@
     <div class="flex items-start justify-between gap-11 lg:gap-4">
         <div class="flex flex-col lg:flex-row gap-2 lg:gap-6">
             <input type="checkbox"
-                class="checkbox shrink-0 w-7 h-7 bg-transparent checked:bg-blue-600 bg-center bg-no-repeat bg-origin-border checked:border-blue-600 border border-gray-500 appearance-none" 
-                [checked]="isChecked(data)" (change)="checkChanged($event, data)"
-            />
+                class="checkbox shrink-0 w-7 h-7 bg-transparent checked:bg-blue-600 bg-center bg-no-repeat bg-origin-border checked:border-blue-600 border border-gray-500 appearance-none"
+                [checked]="isChecked(data)" (change)="checkChanged($event, data)" />
             <div class="flex flex-col">
-                <h3 class="heading-4 font-medium">
-                    {{data.displayName|titlecase}}
+                <h3 class="heading-4 font-medium" *ngIf="data.displayName!=null">
+                    {{data.displayName}}
+                </h3>
+                <h3 class="heading-4 font-medium" *ngIf="data.displayName==null">
+                    {{data.name|titlecase}}
                 </h3>
                 <div class="flex items-center gap-1.5 mt-2">
                     <span>Personal data:</span>
-                    <div *ngIf="data.privacy=='A'"  class="inline-flex py-1 px-2 font-semibold text-xs bg-green-700 text-white">
+                    <div *ngIf="data.privacy=='A'"
+                        class="inline-flex py-1 px-2 font-semibold text-xs bg-green-700 text-white">
                         No
                     </div>
-                    <div *ngIf="data.privacy=='*'"  class="inline-flex py-1 px-2 font-semibold text-xs bg-gray-100 text-black">
+                    <div *ngIf="data.privacy=='*'"
+                        class="inline-flex py-1 px-2 font-semibold text-xs bg-gray-100 text-black">
                         Possibly
                     </div>
-                    <div *ngIf="data.privacy != 'A' && data.privacy != '*'"  class="inline-flex py-1 px-2 font-semibold text-xs bg-red-500 text-white">
+                    <div *ngIf="data.privacy != 'A' && data.privacy != '*'"
+                        class="inline-flex py-1 px-2 font-semibold text-xs bg-red-500 text-white">
                         Yes
                     </div>
                 </div>
             </div>
         </div>
         <div class="shrink-0 flex flex-col lg:flex-row-reverse gap-3 lg:gap-4">
-            <button class="h-8 w-8 text-gray-500 hover:text-gray-500/80">
+            <button *ngIf="!collapsed" class="h-8 w-8 text-gray-500 hover:text-gray-500/80" (click)="toggle()">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                     class="h-8 w-8">
                     <g clip-path="url(#clip0_1183_21142)">
@@ -38,22 +43,43 @@
                     </defs>
                 </svg>
             </button>
+            <button *ngIf="collapsed" class="h-8 w-8 text-gray-500 hover:text-gray-500/80" (click)="toggle()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1183_21170)">
+                        <path d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"
+                            fill="currentColor"></path>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1183_21170">
+                            <rect width="24" height="24" fill="currentColor"></rect>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </button>
         </div>
     </div>
-    <div class="mt-2 max-w-xl">
+    <div class="mt-2 max-w-xl" *ngIf="!collapsed">
         <div class="lg:pl-[52px]">
-            <p *ngIf="data.description!=null" class="text-gray-500">{{data.description}}</p>
+            <p>{{data.name}}</p>
 
-            <a *ngIf="this.data.externalReference != null" [href]="this.data.externalReference" target="_new"
-            class="ml-2 my-3 text-blue-400">more...</a>
+            <div *ngIf="data.description!=null" class="text-gray-500">
+                <span [innerHTML]="data.description"></span>
+                <a
+                    *ngIf="this.data.externalReference != null" [href]="this.data.externalReference" target="_new"
+                    class="ml-2 my-3 text-blue-400">more...</a>
+            </div>
 
-            <div *ngIf="this.dataSource.data.length > 0" class="mt-4 font-semibold">Used in the following cases:</div>
-            <ul
-                class="flex flex-col gap-2 mt-2 pl-5 font-medium underline underline-offset-2 list-disc marker:text-blue-600">
-                <li *ngFor="let usecase of obs | async">
-                    <a href="" (click)="this.show(usecase);">{{usecase | replaceUnderscore}}</a>
-                </li>
-            </ul>
+            <div *ngIf="this.dataSource.data.length > 0">
+                <div class="mt-4 font-semibold">Used in the following cases:
+                </div>
+                <ul
+                    class="flex flex-col gap-2 mt-2 pl-5 font-medium underline underline-offset-2 list-disc marker:text-blue-600">
+                    <li *ngFor="let usecase of obs | async">
+                        <a href="" (click)="this.show(usecase);" title="{{getDetails(usecase)}}">{{usecase |
+                            replaceUnderscore}}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

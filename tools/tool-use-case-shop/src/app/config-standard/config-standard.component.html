@@ -1,9 +1,60 @@
-<div>Check information</div>
+<div class="flex flex-col lg:flex-row lg:items-center gap-2">
+    <div class="relative inline-flex items-center gap-2 group" (click)="setStep(1)">
+        <div
+            class="absolute -top-1.5 lg:top-auto left-2 lg:left-auto lg:relative group-first:hidden w-px lg:w-6 h-1 lg:h-px bg-gray-100">
+        </div>
+        <span *ngIf="step==1"
+            class="inline-flex items-center justify-center h-4 lg:h-6 w-4 lg:w-6 text-xs text-white font-semibold bg-blue-600 rounded-full">
+            1
+        </span>
+        <span *ngIf="step!=1"
+            class="inline-flex items-center justify-center h-4 lg:h-6 w-4 lg:w-6 text-xs text-white font-semibold bg-gray-300 rounded-full">
+            1
+        </span>
+        <span class="text-blue-600" *ngIf="step==1">Check information</span>
+        <span class="text-gray-300" *ngIf="step!=1">Check information</span>
+    </div>
+    <div class="relative inline-flex items-center gap-2 group" (click)="setStep(2)">
+        <div
+            class="absolute -top-1.5 lg:top-auto left-2 lg:left-auto lg:relative group-first:hidden w-px lg:w-6 h-1 lg:h-px bg-gray-100">
+        </div>
+        <span *ngIf="step==2"
+            class="inline-flex items-center justify-center h-4 lg:h-6 w-4 lg:w-6 text-xs text-white font-semibold bg-blue-600 rounded-full">
+            2
+        </span>
+        <span *ngIf="step!=2"
+            class="inline-flex items-center justify-center h-4 lg:h-6 w-4 lg:w-6 text-xs text-white font-semibold bg-gray-300 rounded-full">
+            2
+        </span>
+        <span class="text-blue-600" *ngIf="step==2">Authentication</span>
+        <span class="text-gray-300" *ngIf="step!=2">Authentication</span>
+    </div>
+    <div class="relative inline-flex items-center gap-2 group" (click)="setStep(3)">
+        <div
+            class="absolute -top-1.5 lg:top-auto left-2 lg:left-auto lg:relative group-first:hidden w-px lg:w-6 h-1 lg:h-px bg-gray-100">
+        </div>
+        <span *ngIf="step==3"
+            class="inline-flex items-center justify-center h-4 lg:h-6 w-4 lg:w-6 text-xs text-white font-semibold bg-blue-600 rounded-full">
+            3
+        </span>
+        <span *ngIf="step!=3"
+            class="inline-flex items-center justify-center h-4 lg:h-6 w-4 lg:w-6 text-xs text-white font-semibold bg-gray-300 rounded-full">
+            3
+        </span>
+        <span class="text-blue-600" *ngIf="step==3">Configuration</span>
+        <span class="text-gray-300" *ngIf="step!=3">Configuration</span>
+    </div>
+    <button (click)="next()"
+        class="inline-flex items-center justify-center px-5 py-3 bg-transparent text-blue-600 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-400 active:text-blue-600 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed">
+        Next step
+    </button>
+</div>
+<div #stepContainer></div>
+
+<!--div>Check information</div>
 <div>Authentication</div>
 <div>Configuration</div>
 <div>----</div>
 <app-outline-primary title="Next step" (click)="next()"></app-outline-primary>
 <div>----</div>
-<div #stepContainer></div>
-
-
+<div #stepContainer></div-->

@@ -18,7 +18,8 @@ export class StandardTicketComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   useCases: string[] = []
   selectedUseCase: any;
-  ucShown: boolean = false;
+  
+  collapsed: boolean = true;
 
   constructor(private usecaseService: UseCaseService, private standardService: StandardService) {
     this.dataSource = new MatTableDataSource<any>(this.useCases);
@@ -35,7 +36,9 @@ export class StandardTicketComponent implements OnInit {
         for (let j = 0; j < uc.standards.length; j++) {
           if (uc.standards[j].name === this.data.name) {
             let name = String(uc.id);
-            this.useCases.push(name);
+            if ( this.useCases.indexOf(name) == -1 ) {
+              this.useCases.push(name);
+            }
           }
         }
       }
@@ -46,7 +49,11 @@ export class StandardTicketComponent implements OnInit {
 
   show(useCase: string) {
     this.selectedUseCase = this.usecaseService.getUseCase(useCase);
-    this.ucShown = true;
+  }
+
+  getDetails(useCase: string) {
+    let uc = this.usecaseService.getUseCase(useCase);
+    return "As a " + uc.story.asA + " I would like to " + uc.story.iWouldLikeTo + " in order to " + uc.story.inOrderTo;
   }
 
   isChecked(standard: any) {
@@ -70,15 +77,23 @@ export class StandardTicketComponent implements OnInit {
         for (let j = 0; j < uc.standards.length; j++) {
           if (standard.name === uc.standards[j].name) {
             uc.standards[j].checked = event.target.checked;
-            if(uc.standards[j].checked){
-              this.standardService.selectStandard(uc.standards[j]);
-            }
-            else {
-              this.standardService.deselectStandard(uc.standards[j]);
-            }
           }
         }
       }
     }
+    if(event.target.checked){
+      this.standardService.selectStandard(standard);
+    }
+    else {
+      this.standardService.deselectStandard(standard);
+    }
+}
+
+  isCollapsed () {
+    return this.collapsed;
+  }
+
+  toggle() {
+    this.collapsed = !this.collapsed;
   }
 }

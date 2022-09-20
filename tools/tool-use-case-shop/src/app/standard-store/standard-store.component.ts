@@ -85,6 +85,7 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
 
       if (fileReader.result != null) {
         let jsonObj = (JSON.parse(fileReader.result.toString()));
+        this.standardService.standardList = jsonObj.standards;
         this.useCaseService.useCaseList = jsonObj.useCases;
         for (let i = 0; i < this.useCaseService.useCaseList.length; i++) {
           this.useCaseService.addToCart(this.useCaseService.useCaseList[i].id);
@@ -92,14 +93,22 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
           if (uc.standards != null) {
             for (let k = 0; k < uc.standards.length; k++) {
               let s = uc.standards[k];
-              if (!this.alreadyInSelected(s) && s.checked) {
-                this.standardService.selectedStandards.push(s);
+              if (!this.alreadyInSelected(s)) {
+                let standard = this.standardService.getStandard(s.name);
+                this.standardService.selectedStandards.push(standard);
               }
             }
           }
         }
 
-        this.dataSource.data = jsonObj.standards;
+        this.standardService.selectedStandards = this.standardService.selectedStandards.sort((a, b) => {
+          if (a.checked) return -1;
+          if (b.checked) return 1;
+          return 0;
+        }
+        )
+
+        this.dataSource.data = this.standardService.selectedStandards;
         this.dataSourceSelected.data = this.standardService.selectedStandards;
 
       }
@@ -107,7 +116,18 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
     fileReader.onerror = (error) => {
       console.log(error);
     }
+  }
 
+  onFilter(e: any) {
+    if (e != null && e.target != null) {
+      let value = e.target.value;
+      this.filter(e, value);
+    }
+  }
 
+  filter(event: Event, value: string) {
+    value = value.trim();
+    value = value.toLowerCase();
+    this.dataSource.filter = value;
   }
 }

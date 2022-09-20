@@ -1,9 +1,9 @@
 ::ng-deep .mat-paginator-page-size {
-    visibility: hidden;
+    display: none !important;
 }
 
 ::ng-deep .mat-paginator-range-label {
-    visibility: hidden;
+    display: none !important;
 }
 
 ::ng-deep .mat-paginator-container {
@@ -11,5 +11,5 @@
 }
 
 ::ng-deep .mat-paginator-page-size {
-    display: none;
+    display: none !important;
 }

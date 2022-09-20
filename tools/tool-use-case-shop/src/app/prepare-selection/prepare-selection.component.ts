@@ -2,7 +2,8 @@ import { Component, OnInit, OnDestroy, ChangeDetectorRef, ViewChild } from '@ang
 import { StandardService } from '../../services/standard.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
-import { MatPaginator } from '@angular/material/paginator';
+import { ExportService } from 'src/services/export.service';
+import { UseCaseService } from '../../services/use-case.service';
 
 @Component({
   selector: 'app-prepare-selection',
@@ -14,16 +15,15 @@ export class PrepareSelectionComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   obs!: Observable<any>;
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
-
-  constructor(private changeDetectorRef: ChangeDetectorRef, private standardService: StandardService) { 
+  constructor(private changeDetectorRef: ChangeDetectorRef
+    , private standardService: StandardService
+    , private exportService: ExportService
+    , private usecaseService: UseCaseService) { 
     this.dataSource = new MatTableDataSource<any>(standardService.selectedStandards);
   }
 
   ngOnInit(): void {
     this.changeDetectorRef.detectChanges();
-    this.dataSource.paginator = this.paginator;
     this.obs = this.dataSource.connect();
   }
 
@@ -31,6 +31,13 @@ export class PrepareSelectionComponent implements OnInit {
     if (this.dataSource) { 
       this.dataSource.disconnect(); 
     }
+  }
+
+  export(){
+    this.exportService.useCases = this.usecaseService.useCaseList;
+    this.exportService.specification.useCases = this.usecaseService.useCaseList;
+    this.exportService.specification.standards = this.dataSource.data;
+    this.exportService.export();
   }
 
 }

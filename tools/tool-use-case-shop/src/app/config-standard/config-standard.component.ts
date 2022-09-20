@@ -15,14 +15,15 @@ export class ConfigStandardComponent implements OnInit, OnChanges {
   @ViewChild('stepContainer', {read: ViewContainerRef}) 
   container!: ViewContainerRef;
 
-  step: number = 1;
+  step: number = 0;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { 
   }
 
   ngOnInit(): void {
     this.determineStep();
-    this.fillComponent();     
+    this.fillComponent();  
+    this.step = 1;   
   }
 
   ngOnChanges() {
@@ -31,6 +32,7 @@ export class ConfigStandardComponent implements OnInit, OnChanges {
   fillComponent() {
     if( this.step == 1 ){
       // do nothing
+      this.container.clear();
     } else if (this.step == 2 ){
       this.container.clear();
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ConfigAuthenticationComponent);
@@ -67,8 +69,13 @@ export class ConfigStandardComponent implements OnInit, OnChanges {
   }
   
   next() {
-    console.log("next");
     this.step = this.step + 1;
     this.fillComponent();
   }
+
+  setStep(i:number){
+    this.step = i;
+    this.fillComponent();
+  }
+
 }

@@ -12,5 +12,6 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Translated information of a transit agency.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }

@@ -22,5 +22,6 @@
     "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
     "timeAmount": "[time amount]",
     "geoUnit": "[postal, postal1_4, district, city, region, custom]",
-    "geoUnitCustomSpecification": "[URL]"
+    "geoUnitCustomSpecification": "[URL]",
+    "description": "GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format."
 }

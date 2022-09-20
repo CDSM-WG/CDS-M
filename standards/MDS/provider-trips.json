@@ -19,5 +19,6 @@
     ],
     "retentionPeriod": "[ISO8601 duration]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "A trip represents a journey taken by a mobility as a service customer with a geo-tagged start and stop point.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }
