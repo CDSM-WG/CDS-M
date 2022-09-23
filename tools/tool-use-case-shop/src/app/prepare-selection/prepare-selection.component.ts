@@ -37,7 +37,7 @@ export class PrepareSelectionComponent implements OnInit {
     this.exportService.useCases = this.usecaseService.useCaseList;
     this.exportService.specification.useCases = this.usecaseService.useCaseList;
     this.exportService.specification.standards = this.dataSource.data;
-    this.exportService.export();
+    this.exportService.export("ICT", "A");
   }
 
 }

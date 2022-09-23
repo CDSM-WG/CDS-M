@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
+    "./node_modules/flowbite/**/*.js",
   ],
   "theme": {
     "extend": [],
@@ -95,20 +96,27 @@ module.exports = {
         "200": "#FECACA",
         "500": "#FE005B"
       },
-      "orange": {
+      "amber": {
         "400": "#FFC801",
         "500": "#FF7101"
       },
       "neutral": {
-        "200": "#E5E5E5"
+        "200": "#E5E5E5",
+        "300": "#D4D4D4",
+        "400": "#A1A1AA"
       },
       "white": {
         "DEFAULT": "#FFFFFF"
       },
       "black": {
         "DEFAULT": "#000000"
-      }
+      },
+      "transparent": "transparent",
+      "current": "currentColor",
+      "inherit": "inherit"
     }
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }

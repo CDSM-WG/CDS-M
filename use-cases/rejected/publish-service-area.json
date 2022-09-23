@@ -13,7 +13,7 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-policy-rules" },
+        { "name": "MDS-policy-policies" },
         { "name": "TOMP-API-regions" }
     ],
     "termsAndConditions": [],

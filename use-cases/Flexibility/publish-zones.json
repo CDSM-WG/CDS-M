@@ -18,10 +18,10 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-rules" },
-        { "name": "DATEX-2" },
-        { "name": "TOMP-API-regions" }
+        { "name": "MDS-policy-geography", "dataProtection": "A" },
+        { "name": "MDS-policy-policies", "dataProtection": "A" },
+        { "name": "DATEX", "dataProtection": "A" },
+        { "name": "TOMP-API-regions", "dataProtection": "A" }
     ],
     "metrics": [{
         "description": "publish exception zones",
@@ -31,8 +31,8 @@
             { "name": "geojson", "content": "description, type, and area (WKT, geojson)" },
             { "name": "xml", "content": "description, type, and area (WKT, WGS84)" },
             { "name": "MDS-policy-geography" },
-            { "name": "MDS-policy-rules" },
-            { "name": "DATEX-2" },
+            { "name": "MDS-policy-policies" },
+            { "name": "DATEX" },
             { "name": "TOMP-API-regions" }
         ]   
     }],

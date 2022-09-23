@@ -17,7 +17,7 @@
         { "name": "geojson" },
         { "name": "xml" },
         { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-rules" },
+        { "name": "MDS-policy-policies" },
         { "name": "GBFS-regions"},
         { "name": "TOMP-API-regions" }
     ],
@@ -29,7 +29,7 @@
             { "name": "geojson", "content": "description, and area (geojson)" },
             { "name": "xml", "content": "description, and area (WKT, WGS84)" },
             { "name": "MDS-policy-geography" },
-            { "name": "MDS-policy-rules" },
+            { "name": "MDS-policy-policies" },
             { "name": "GBFS-regions"},
             { "name": "TOMP-API-regions" } ]
         }

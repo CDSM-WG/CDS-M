@@ -9,7 +9,7 @@
                     {{data.displayName}}
                 </h3>
                 <h3 class="heading-4 font-medium" *ngIf="data.displayName==null">
-                    {{data.name|titlecase}}
+                    {{data.name|replaceUnderscore}}
                 </h3>
                 <div class="flex items-center gap-1.5 mt-2">
                     <span>Personal data:</span>

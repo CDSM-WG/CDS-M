@@ -1,6 +1,7 @@
 <div class="py-4 border-b border-dashed border-blue-600">
     <button class="w-full flex justify-between items-center gap-2.5 text-left font-semibold" (click)="toggle()">
         {{data.description}}
+        <div *ngIf="hasDataStandards()">
         <svg *ngIf="collapsed" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
             class="text-blue-600">
             <g clip-path="url(#clip0_1183_21142)">
@@ -23,11 +24,12 @@
                 </clipPath>
             </defs>
         </svg>
+    </div>
     </button>
     <div *ngIf="showStandards()" class="mt-4">
         <p class="font-semibold">Possible data exchange standards</p>
         <ul class="ml-6 list-disc">
-            <li *ngFor="let ds of data.standards">{{ds.name}}</li>
+            <li *ngFor="let ds of data.standards">{{ds.name}} {{ds.content}}</li>
         </ul>
     </div>
 </div>

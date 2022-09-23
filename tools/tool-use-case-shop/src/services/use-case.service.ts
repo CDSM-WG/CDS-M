@@ -9,6 +9,8 @@ export class UseCaseService {
   cart: any[] = [];
   cartContent: any[] = [];
 
+  grades: string[] = ['A', 'B', 'C', 'D', 'E']
+
   constructor(private standardService: StandardService) {
     this.loadUseCases();
   }
@@ -126,4 +128,37 @@ export class UseCaseService {
     return result;
   }
 
+  getGrade(uc: any) {
+    let maxGrade = "";
+    if (uc.standards != undefined) {
+      for (let i = 0; i < uc.standards.length; ++i) {
+        if (uc.standards[i].checked) {
+          let grade = this.standardService.getPrivacyGrace(uc.standards[i].name);
+          if (this.grades.indexOf(grade) == -1) {
+            maxGrade = "?";
+            break;
+          }
+          else if (grade > maxGrade) {
+            maxGrade = grade;
+          }
+        }
+      }
+    }
+    return maxGrade;
+  }
+
+  getGrandTotal() {
+    let maxGrade = "";
+    for (let i = 0; i < this.cartContent.length; i++) {
+      let grade = this.getGrade(this.cartContent[i]);
+      if (this.grades.indexOf(grade) == -1) {
+        maxGrade = "?";
+        break;
+      }
+      else if (grade > maxGrade) {
+        maxGrade = grade;
+      }
+    }
+    return maxGrade;
+  }
 }

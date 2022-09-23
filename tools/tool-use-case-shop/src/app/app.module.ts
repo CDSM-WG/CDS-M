@@ -42,6 +42,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PhotoHeaderComponent } from './photo-header/photo-header.component';
 import { StylePaginatorDirective } from './style-paginator.directive';
 import { PartnersComponent } from './partners/partners.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { BookmarkComponent } from './bookmark/bookmark.component';
+import { DndDirective } from './dnd.directive';
+import { YourReceiptComponent } from './your-receipt/your-receipt.component';
+import { PopoverComponent } from './popover/popover.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +80,12 @@ import { PartnersComponent } from './partners/partners.component';
     NavbarComponent,
     PhotoHeaderComponent,
     StylePaginatorDirective,
-    PartnersComponent
+    PartnersComponent,
+    CheckoutComponent,
+    BookmarkComponent,
+    DndDirective,
+    YourReceiptComponent,
+    PopoverComponent
   ],
   imports: [
     BrowserModule,

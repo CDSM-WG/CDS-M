@@ -1,5 +1,5 @@
 <div class="flex-1 bg-gray-100">
-    <div class="max-w-6xl mx-auto px-4 w-full pt-9 sm:pt-14 pb-6 sm:pb-20">
+    <div class="max-w-6xl mx-auto px-4 w-full pt-20 sm:pt-20 pb-6 sm:pb-20">
         <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" routerLink="/">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
@@ -22,21 +22,74 @@
                 style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_692_22207)'%3E%3Cpath d='M8.5 14H9.29L9.57 13.73C8.59 12.59 8 11.11 8 9.5C8 5.91 10.91 3 14.5 3C18.09 3 21 5.91 21 9.5C21 13.09 18.09 16 14.5 16C12.89 16 11.41 15.41 10.27 14.43L10 14.71V15.5L5 20.49L3.51 19L8.5 14V14ZM14.5 14C16.99 14 19 11.99 19 9.5C19 7.01 16.99 5 14.5 5C12.01 5 10 7.01 10 9.5C10 11.99 12.01 14 14.5 14Z' fill='%234B5563'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_692_22207'%3E%3Crect width='24' height='24' fill='white' transform='matrix(-1 0 0 1 24 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A&quot;); background-position: right 16px center;" />
         </div>
 
-        <div class="flex flex-col md:flex-row mt-6 gap-4">
-            <div class="flex-auto md:w-4/6">
-                <app-standard-ticket *ngFor="let standard of obs | async" [data]="standard">
-                </app-standard-ticket>
+        <div class="flex flex-col md:flex-row mt-6 gap-6" data-component="SplitContainer">
+            <div class="flex-auto md:w-4/6" data-component="SplitContainerLeft">
+                <div class="flex flex-col gap-2">
+                    <app-standard-ticket *ngFor="let standard of obs | async" [data]="standard">
+                    </app-standard-ticket>
+                </div>
             </div>
-            <div class="flex-auto md:w-2/6">
-                <app-filled-primary title="Upload your own .json receipe" onclick="document.getElementById('file').click()"></app-filled-primary>
+
+            <div class="flex-auto md:w-2/6" data-component="SplitContainerRight">
+                <div class="flex flex-col gap-2">
+                    <div class="bg-white overflow-hidden hidden md:block p-2" data-component="Card">
+                        <div class="flex flex-col items-center justify-center gap-4 pt-8 lg:pt-9 pb-6 lg:pb-4 px-8 lg:px-10 border-2 border-dashed border-blue-600 cursor-pointer"
+                            data-component="UploadContainer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" data-component="UploadIcon"
+                                class="h-12 w-12 text-gray-500">
+                                <g clip-path="url(#clip0_621_968)">
+                                    <path d="M9 16H15V10H19L12 3L5 10H9V16ZM5 18H19V20H5V18Z" fill="currentColor">
+                                    </path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_621_968">
+                                        <rect width="24" height="24" fill="currentColor"></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <div class="text-2xl font-medium text-center" appDnd (fileDropped)="ondrop($event)">
+                                Or drag and drop your own .json receipt
+                            </div>
+                            <button onclick="document.getElementById('file').click()"
+                                class="inline-flex items-center justify-center px-5 py-3 bg-transparent text-blue-600 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-400 active:text-blue-600 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed"
+                                data-component="Button">
+                                Upload .json file
+                            </button>
+                            <input type="file" class="invisible" id="file" accept=".json" (change)="uploadFile($event)">
+                        </div>
+                    </div>
+                    <div class="bg-white overflow-hidden -mx-6 md:mx-auto -mb-6 md:mb-auto p-6 font-medium"
+                        data-component="Card">
+                        <h2 class="mb-4 uppercase text-3xl text-blue-600">
+                            Selected standards
+                        </h2>
+                        <div class="flex flex-col gap-2 mt-4">
+                            <div *ngFor="let standard of obsSelected | async">{{standard.name}}</div>
+                        </div>
+                        <div class="mt-3 pt-4 border-t border-gray-300">
+                            <button routerLink="/preparation" 
+                                class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full"
+                                data-component="Button">
+                                Confirm selection
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--div class="flex-auto md:w-2/6">
+                <app-filled-primary title="Upload your own .json receipe"
+                    onclick="document.getElementById('file').click()"></app-filled-primary>
                 <input type="file" class="invisible" id="file" accept=".json" (change)="uploadFile($event)">
-    
+
                 <div class="text-xl text-blue-500">Selected standards</div>
                 <div class="ml-2">
                     <div *ngFor="let standard of obsSelected | async">{{standard.name}}</div>
                 </div>
                 <app-filled-primary routerLink="/preparation" title="Confirm selection"></app-filled-primary>
-            </div>
+            </div-->
+
         </div>
     </div>
 </div>

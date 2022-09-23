@@ -6,6 +6,8 @@ import { UseCaseDetailComponent } from './use-case-detail/use-case-detail.compon
 import { CartComponent } from './cart/cart.component';
 import { StandardStoreComponent } from './standard-store/standard-store.component';
 import { PrepareSelectionComponent } from './prepare-selection/prepare-selection.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { YourReceiptComponent } from './your-receipt/your-receipt.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent }
@@ -14,6 +16,8 @@ const routes: Routes = [
   , { path: 'cart', component: CartComponent }
   , { path: 'standards', component: StandardStoreComponent }
   , { path: 'preparation', component: PrepareSelectionComponent }
+  , { path: 'checkout', component: CheckoutComponent }
+  , { path: 'receipt', component: YourReceiptComponent}
 ]; 
 
 @NgModule({

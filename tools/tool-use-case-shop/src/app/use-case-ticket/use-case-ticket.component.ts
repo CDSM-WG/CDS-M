@@ -11,7 +11,7 @@ export class UseCaseTicketComponent implements OnInit {
   @Input()
   data: any;
 
-  constructor(private useCaseService: UseCaseService){
+  constructor(private useCaseService: UseCaseService) {
 
   }
 
@@ -24,5 +24,18 @@ export class UseCaseTicketComponent implements OnInit {
 
   isAdded() {
     return this.useCaseService.isInCart(this.data.id);
+  }
+
+  getTags() {
+    let result = "";
+    if (this.data.tags != null) {
+      for (let s of this.data.tags) {
+        let split = s.split(":")
+        for (let part of split) {
+          result = result + " #" + part;
+        }
+      }
+    }
+    return result
   }
 }

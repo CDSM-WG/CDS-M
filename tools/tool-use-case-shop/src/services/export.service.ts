@@ -32,16 +32,31 @@ export class ExportService {
         archive: []
       };
 
-    export() {
+    export(name: string, grade: string) {
         this.applyStandardsSelectionToUseCases();
         this.applyTransportConditions();
         this.applyProcessingConditions();
         this.applyArchivingConditions();
+        if (grade != "A") {
+            this.applyAgreements();
+            this.applyConditions();
+        }
         this.deleteTags();
 
         var json = JSON.stringify(this.specification); 
         const data: Blob = new Blob([json], { type: "text/json" });
-        FileSaver.saveAs(data, "CDS-M-ICT-" + new Date().getTime() + ".json");
+        FileSaver.saveAs(data, "CDS-M-" + name + '-' + new Date().getTime() + ".json");
+    }
+
+    private applyAgreements() {
+        this.specification.agreements = [];
+        this.specification.agreements.push("DPA");
+        this.specification.agreements.push("DPIA");
+    }
+
+    private applyConditions() {
+        this.specification.termsAndConditions = [];
+        this.specification.termsAndConditions.push("BIO");
     }
 
     private applyArchivingConditions() {

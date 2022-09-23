@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { StandardService } from '../../services/standard.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
@@ -77,10 +77,14 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
 
   uploadFile(event: any) {
     let selectedFile = event.target.files[0];
+    this.processFile(selectedFile);
+  }
+
+  private processFile( file: any ){
     this.useCaseService.useCaseList = [];
     this.standardService.selectedStandards = [];
     const fileReader = new FileReader();
-    fileReader.readAsText(selectedFile, "UTF-8");
+    fileReader.readAsText(file, "UTF-8");
     fileReader.onload = () => {
 
       if (fileReader.result != null) {
@@ -129,5 +133,26 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
     value = value.trim();
     value = value.toLowerCase();
     this.dataSource.filter = value;
+  }
+
+  @HostListener('drop', ['$event']) public ondrop(evt: any) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    const files = evt.dataTransfer.files;
+    if (files.length > 0) {
+      this.processFile(files[0]);
+    }
+  }
+
+  @HostListener('dragover', ['$event']) onDragOver(evt: any){
+    evt.preventDefault();
+    evt.stopPropagation();
+    console.log('drag over');
+  }
+
+  @HostListener('dragleave', ['$event']) onDragLeave(evt: any){
+    evt.preventDefault();
+    evt.stopPropagation();
+    console.log('drag leave');
   }
 }

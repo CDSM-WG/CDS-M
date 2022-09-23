@@ -12,6 +12,8 @@ export class UseCaseDetailComponent implements OnInit {
 
   data: any;
   sortedStandards: any[] = []
+  popupDetails = "";
+  showPopup = false;
 
   constructor(private route: ActivatedRoute, private useCaseService: UseCaseService, private standardService: StandardService) 
     { 
@@ -44,6 +46,10 @@ export class UseCaseDetailComponent implements OnInit {
     this.useCaseService.addToCart(this.data.id);
   }
 
+  isInCart() {
+    return this.useCaseService.isInCart(this.data.id);
+  }
+
   usesPersonalData(name:string){
     let standard = this.standardService.getStandard(name);
     if (standard.privacy=="A"){
@@ -61,4 +67,10 @@ export class UseCaseDetailComponent implements OnInit {
   hasMetrics(){
     return this.data.length > 0;
   }
+
+  showDetails(standard: any){
+    let standardObject = this.standardService.getStandard(standard.name);
+    this.popupDetails = standardObject.description;
+  }
+
 }
