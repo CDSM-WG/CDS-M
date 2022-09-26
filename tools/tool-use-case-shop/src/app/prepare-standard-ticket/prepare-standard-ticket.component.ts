@@ -10,6 +10,8 @@ export class PrepareStandardTicketComponent implements OnInit {
 
   @Input()
   data: any;
+  
+  expanded: boolean = false;
 
   constructor(private standardService: StandardService) { }
 
@@ -23,4 +25,7 @@ export class PrepareStandardTicketComponent implements OnInit {
     }
   }
 
+  toggle() {
+    this.expanded = !this.expanded;
+  }
 }

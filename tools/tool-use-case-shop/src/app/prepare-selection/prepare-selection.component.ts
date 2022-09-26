@@ -18,8 +18,12 @@ export class PrepareSelectionComponent implements OnInit {
   constructor(private changeDetectorRef: ChangeDetectorRef
     , private standardService: StandardService
     , private exportService: ExportService
-    , private usecaseService: UseCaseService) { 
+    , private usecaseService: UseCaseService) {
     this.dataSource = new MatTableDataSource<any>(standardService.selectedStandards);
+
+    for (let s of this.standardService.selectedStandards) {
+      s.step = 0;
+    }
   }
 
   ngOnInit(): void {
@@ -28,16 +32,44 @@ export class PrepareSelectionComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    if (this.dataSource) { 
-      this.dataSource.disconnect(); 
+    if (this.dataSource) {
+      this.dataSource.disconnect();
     }
   }
 
-  export(){
+  grandTotal() {
+
+    let maxGrade = "";
+    for (let i = 0; i < this.standardService.selectedStandards.length; i++) {
+      let grade = this.usecaseService.getGrade(this.standardService.selectedStandards[i]);
+      if (this.usecaseService.grades.indexOf(grade) == -1) {
+        maxGrade = "?";
+        break;
+      }
+      else if (grade > maxGrade) {
+        maxGrade = grade;
+      }
+    }
+    return maxGrade;
+
+    return this.usecaseService.getGrandTotal(); // .getGradeOfStandardList(this.standardService.selectedStandards);
+  }
+
+  export() {
     this.exportService.useCases = this.usecaseService.useCaseList;
     this.exportService.specification.useCases = this.usecaseService.useCaseList;
     this.exportService.specification.standards = this.dataSource.data;
     this.exportService.export("ICT", "A");
+  }
+
+  isDisabled() {
+    let result: boolean = false;
+    for (let s of this.standardService.selectedStandards) {
+      if (s.step < 4) {
+        return true;
+      }
+    }
+    return result;
   }
 
 }

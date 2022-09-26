@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="shrink-0 flex flex-col lg:flex-row-reverse gap-3 lg:gap-4">
-            <button class="h-8 w-8 text-gray-500 hover:text-gray-500/80" >
+            <button class="h-8 w-8 text-gray-500 hover:text-gray-500/80" *ngIf="expanded" (click)="toggle()">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                     class="h-8 w-8">
                     <g clip-path="url(#clip0_1183_21142)">
@@ -32,6 +32,20 @@
                     </g>
                     <defs>
                         <clipPath id="clip0_1183_21142">
+                            <rect width="24" height="24" fill="currentColor"></rect>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </button>
+            <button class="h-8 w-8 text-gray-500 hover:text-gray-500/80" *ngIf="!expanded" (click)="toggle()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    data-component="ChevronDownIcon">
+                    <g clip-path="url(#clip0_1183_21170)">
+                        <path d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"
+                            fill="currentColor"></path>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1183_21170">
                             <rect width="24" height="24" fill="currentColor"></rect>
                         </clipPath>
                     </defs>
@@ -55,8 +69,7 @@
         </div>
     </div>
     <div class="mt-2 max-w-xl">
-        <p class="text-gray-500" [innerHTML]="data.description">
-            
+        <p *ngIf="expanded" class="text-gray-500" [innerHTML]="data.description">
         </p>
     </div>
     <div class="mt-6 lg:mt-10 pt-2 lg:pt-5 border-t border-gray-300">

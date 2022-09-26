@@ -1,6 +1,6 @@
 <div class="flex flex-col w-screen min-h-screen pt-16">
     <div class="max-w-6xl mx-auto px-4 w-full mt-16">
-        <div class="uppercase text-6xl">Use case library</div>
+        <h2 class="heading-2 uppercase font-medium">Use case library</h2>
         <div class="px-16">Find the use cases related to your policy issue(s)</div>
         <div class="pb-8 px-16">CDS-M translates them to applicable standards (select & click on cart)</div>
         <div class="flex flex-row gap-12 mb-8 justify-between">
@@ -19,9 +19,6 @@
             </app-use-case-ticket>
         </div>
         <mat-paginator style-paginator showFirstLastButtons="false" [length]="this.getLength()" [showTotalPages]="5"
-            [pageSize]="12" class="flex flex-col w-screen mb-8 bg-gray-200 max-w-6xl mx-auto w-full"></mat-paginator>
-        <!--div >
-            <a routerLink="/cart">Proceed to checkout</a>
-        </div-->
+            [pageSize]="12" class="flex flex-col w-screen mb-8 bg-gray-200 max-w-6xl mx-auto w-full mt-8"></mat-paginator>
     </div>
 </div>

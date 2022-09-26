@@ -11,7 +11,6 @@ export class CheckoutComponent implements OnInit {
 
   useCases: any[];
   privacy = false;
-  statement = false;
 
   constructor(private exportService: ExportService, private useCaseService: UseCaseService) { 
     this.useCases = exportService.useCases;
@@ -30,13 +29,9 @@ export class CheckoutComponent implements OnInit {
 
   buttonDisabled() {
     if (this.getGrandTotal() == 'A'){
-      return !this.statement;
+      return false;
     }
-    return !(this.statement && this.privacy);
-  }
-
-  toggleStatement() {
-    this.statement = !this.statement;
+    return !this.privacy;
   }
 
   togglePrivacy() {
