@@ -15,6 +15,12 @@ export class UseCaseService {
     this.loadUseCases();
   }
 
+  reset() {
+    this.loadUseCases();
+    this.cart = [];
+    this.cartContent = [];
+  }
+
   loadUseCases() {
     this.useCaseList = [];
     let list = data;

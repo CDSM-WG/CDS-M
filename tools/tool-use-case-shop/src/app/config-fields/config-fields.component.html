@@ -4,8 +4,9 @@
             <td class="p-4 text-left font-medium"><div title="{{field.title}}">{{field.name | removeCamelCase}}</div></td>
             <td>
                 <input *ngIf="!isSelection(field.title)" type="text" id="{{field.name}}" placeholder="{{field.title}}" (change)="setValue($event)">
-                <select *ngIf="isSelection(field.title)" id="{{field.name}}" (change)="setValue($event)">
-                    <option *ngFor="let o of getOptions(field.title)" value="o">{{o}}</option>
+                <select *ngIf="isSelection(field.title)" id="{{field.name}}" (change)="setValue($event)" value="">
+                    <option value="">-- select one ---</option>
+                    <option *ngFor="let o of getOptions(field.title)" value="{{o}}">{{o}}</option>
                 </select>
             </td>
         </tr>

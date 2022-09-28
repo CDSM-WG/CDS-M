@@ -22,12 +22,12 @@
             </p>
         </div>
         <div class="flex flex-col items-center w-full md:max-w-[200px]">
-            <button routerLink="/"
+            <button routerLink="/" (click)="reset()"
                 class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full mt-6"
                 data-component="Button">
                 Go to home
             </button>
-            <button routerLink="/store"
+            <button routerLink="/store" (click)="reset()"
                 class="inline-flex items-center justify-center px-5 py-3 bg-transparent text-blue-600 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-400 active:text-blue-600 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full mt-2"
                 data-component="Button">
                 Start another session

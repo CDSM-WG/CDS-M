@@ -1,5 +1,6 @@
 <div class="max-w-6xl mx-auto px-4 w-full py-6 md:py-20" data-component="Container">
-    <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" data-component="BackButton" routerLink="/store">
+    <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" data-component="BackButton"
+        routerLink="/store">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
             data-component="ArrowLeftIcon">
             <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
@@ -16,28 +17,107 @@
         <span class="leading-4">Use case library</span>
     </button>
     <h1 class="heading-2 text-blue-600 uppercase">Use case cart</h1>
-    <div class="max-w-xl mt-2">
+    <div class="flex-auto md:w-4/6 mt-2">
         <p>
             Here you can find an overview of all the Use cases you have selected
             together with a label indicating how well they align with the GDPR.
         </p>
-        <a class="inline-flex items-center gap-1 mt-4 md:mt-2 leading-6 font-semibold cursor-pointer"
+        <a class="flex flex-row gap-1 mt-4 md:mt-2 leading-6 font-semibold cursor-pointer bg-white justify-between pt-2 mr-4"
             href="assets/grading-system/index.html">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                data-component="ArrowRightIcon">
-                <mask id="mask0_925_21566" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
-                    style="mask-type: alpha;">
-                    <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
-                        fill="currentColor"></rect>
-                </mask>
-                <g mask="url(#mask0_925_21566)">
-                    <path
-                        d="M12.683 7L11.6247 8.1767L14.6266 10.7221L5 10.7221L5 12.2828L14.6215 12.2828L11.6196 14.8282L12.6881 16L18 11.5L12.683 7Z"
-                        fill="currentColor"></path>
-                </g>
-            </svg>
-            Learn more about how cases are labelled
+            <div class="flex flex-row">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    data-component="ArrowRightIcon">
+                    <mask id="mask0_925_21566" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                        style="mask-type: alpha;">
+                        <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                            fill="currentColor"></rect>
+                    </mask>
+                    <g mask="url(#mask0_925_21566)">
+                        <path
+                            d="M12.683 7L11.6247 8.1767L14.6266 10.7221L5 10.7221L5 12.2828L14.6215 12.2828L11.6196 14.8282L12.6881 16L18 11.5L12.683 7Z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+                <div>Learn more about how cases are labelled</div>
+            </div>
+            <div class="flex flex-row bg-white">
+                <div class="text-xs mr-1">non-personal data</div>
+                <svg _ngcontent-rsm-c143="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" data-component="ArrowLeftIcon" class="top-0 -mr-6 -mt-1">
+                    <mask _ngcontent-rsm-c143="" id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                        height="24" style="mask-type: alpha;">
+                        <rect _ngcontent-rsm-c143="" width="24" height="24"
+                            transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)" fill="currentColor"></rect>
+                    </mask>
+                    <g _ngcontent-rsm-c143="" mask="url(#mask0_921_31157)">
+                        <path _ngcontent-rsm-c143=""
+                            d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+                <span class="pt-4" title="non-personal data">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-green-700"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        A
+                    </div>
+                </span>
+                <span class="pt-4" title="personal data & fully complies">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-green-500"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        B
+                    </div>
+                </span>
+                <span class="pt-4" title="unnecessary personal data">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-amber-400"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        C
+                    </div>
+                </span>
+                <span class="pt-4" title="personal data and not fully compliant">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-amber-500"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        D
+                    </div>
+                </span>
+                <span class="pt-4" title="a surplus of personal data or unlawful processing">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-red-500"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        E
+                    </div>
+                </span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    data-component="ArrowRightIcon" class="top-0 -ml-6 -mt-1">
+                    <mask id="mask0_925_21566" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                        style="mask-type: alpha;">
+                        <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                            fill="currentColor"></rect>
+                    </mask>
+                    <g mask="url(#mask0_925_21566)">
+                        <path
+                            d="M12.683 7L11.6247 8.1767L14.6266 10.7221L5 10.7221L5 12.2828L14.6215 12.2828L11.6196 14.8282L12.6881 16L18 11.5L12.683 7Z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+                <div class="text-xs pl-1 pr-2">a surplus of <br>personal
+                    data or unlawful<br> processing</div>
+            </div>
         </a>
+
     </div>
     <div class="flex flex-col md:flex-row mt-8 gap-6" data-component="SplitContainer">
         <div class="flex-auto md:w-4/6" data-component="SplitContainer.Left">
@@ -57,8 +137,8 @@
                         </label>
                     </div -->
                 <div class="relative flex flex-col gap-2.5 py-4 mt-4 border-y border-gray-300">
-                    <a class="flex gap-2" *ngFor="let data of selectedUseCases"
-                        [routerLink]="['/use-case']" [queryParams]="{ id: data.id }" target="_blank">
+                    <a class="flex gap-2" *ngFor="let data of selectedUseCases" [routerLink]="['/use-case']"
+                        [queryParams]="{ id: data.id }" target="_blank">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
                             class="flex-none" data-component="InfoIcon">
                             <path

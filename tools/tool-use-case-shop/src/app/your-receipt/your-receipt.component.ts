@@ -19,4 +19,8 @@ export class YourReceiptComponent implements OnInit {
     this.exportService.export("UC", this.useCaseService.getGrandTotal());
   }
 
+  reset() {
+    this.exportService.reset();
+    this.useCaseService.reset();
+  }
 }
