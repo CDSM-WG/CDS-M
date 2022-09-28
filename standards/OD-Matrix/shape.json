@@ -12,5 +12,6 @@
     "mediumType": "ESRI-shapefile",
     "url": "[url]",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "The shapefile format is a geospatial vector data format for geographic information system (GIS) software. It is developed and regulated by Esri as a mostly open specification for data interoperability among Esri and other GIS software products. <br>Each area should have references to other areas, including the number of movements"
 }

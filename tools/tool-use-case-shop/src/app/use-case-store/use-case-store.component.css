@@ -1,51 +1,15 @@
-.container {
-    width: 95%;
-    height: 900px;
-    margin: auto;
-    background-color: lightgray;
+::ng-deep .mat-paginator-page-size {
+    display: none !important;
 }
 
-app-use-case-ticket {
-    padding-left: 12px;
-    padding-top: 10px;
-    display: block;
-    float: left;
+::ng-deep .mat-paginator-range-label {
+    display: none !important;
 }
 
-.filter {
-    margin-bottom: 20px;
-    margin-left: 15px;
-    margin-top: 20px;
-    background-color: transparent;
-    top: 72px;
-    position: absolute;
+::ng-deep .mat-paginator-container {
+    justify-content: center !important; 
 }
 
-input {
-    width: 250px;
-    height: 30px;
-    border-radius: 8px;
-    padding-left: 10px;
-    border-color: lightgray;
-    border-style: none;
-    float: left;
-    margin-right: 40px;
-}
-
-input:focus {
-    outline: none;
-}
-
-.cards {
-    height: 875px;
-    margin-top: 20px;
-}
-
-.link {
-    float: left;
-    cursor: pointer;
-    margin-right: 10px;
-    text-decoration: underline;
-    color: lightgray;
-    margin-top: 5px;
+::ng-deep .mat-paginator-page-size {
+    display: none !important;
 }

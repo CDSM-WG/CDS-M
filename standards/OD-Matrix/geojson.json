@@ -12,5 +12,6 @@
     "mediumType": "json",
     "url": "[url]",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format.<br>Each geometry should have references to other geometries, including the number of movements"
 }

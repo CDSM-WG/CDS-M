@@ -12,5 +12,6 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "Exceptions for the services defined in the calendar.txt. If calendar.txt is omitted, then calendar_dates.txt is required and must contain all dates of service.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }

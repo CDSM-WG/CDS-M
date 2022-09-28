@@ -3,7 +3,7 @@
     "name": "SPDP-dynamic",
     "exchangeType": "file-based", 
     "externalReference": "https://data.openparking.nl/downloads/Standard_for_the_Publication_of_Dynamic_Parking_Data_v2.0.pdf",
-    "part": "dynamic",
+    "part": "dynamic policy",
     "version": "2.0",
     "mediumType": "json-file",
     "refreshRate": "[refresh rate]",
@@ -14,5 +14,6 @@
     "domain": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "SPDP specifies components required for the exchange and use of data in the field of parking. The components include the following: <ul><li>Domain model: Data structure and relationships;<li>Data content (or data dictionary)<li>Communications specification (or communication protocol)<li>Licensing for the use of the dynamic parking data.</ul>"
 }

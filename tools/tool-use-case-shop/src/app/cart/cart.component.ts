@@ -12,12 +12,14 @@ export class CartComponent implements OnInit {
 
   selectedUseCases: any[] = [];
   totalGrade: string = "";
-  
-  constructor(private useCaseService: UseCaseService, private exportService: ExportService, private standardService: StandardService) { }
+  grades: string[] = ['A', 'B', 'C', 'D', 'E']
+
+  constructor(private useCaseService: UseCaseService, private exportService: ExportService, private standardService: StandardService) {
+    this.selectedUseCases = this.useCaseService.cartContent;
+    this.totalGrade = this.useCaseService.getGrandTotal();
+  }
 
   ngOnInit(): void {
-    this.selectedUseCases = this.useCaseService.cartContent;
-    this.getGrandTotal();
   }
 
   getCounter() {
@@ -25,19 +27,27 @@ export class CartComponent implements OnInit {
   }
 
   getGrandTotal() {
-    let grade = "";
-    for( let i = 0; i < this.selectedUseCases.length; i++ ){
-      if (this.selectedUseCases[i].totalGrade > grade) {
-        grade = this.selectedUseCases[i].totalGrade;
-      }
-    }
-    this.totalGrade = grade;
-    return grade;
+    return this.useCaseService.getGrandTotal();
   }
 
-  export() {
+  prepareCheckout() {
     this.exportService.useCases = this.selectedUseCases;
     this.exportService.standards = this.standardService.getAllStandards();
-    this.exportService.export();
+  }
+
+  toggle() {
+    for (let i = 0; i < this.selectedUseCases.length; i++) {
+      let uc = this.selectedUseCases[i];
+      if (uc.standards != undefined) {
+        for (let i = 0; i < uc.standards.length; ++i) {
+          if (uc.standards[i].checked) {
+            let grade = this.standardService.getPrivacyGrace(uc.standards[i].name);
+            if( grade != 'A') {
+              uc.standards[i].checked = false;
+            }
+          }
+        }
+      }
+    }    
   }
 }

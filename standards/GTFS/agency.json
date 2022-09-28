@@ -13,5 +13,6 @@
     "interoperability": "A",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The agency table provides information about the transit agency as such, including name, website and contact information.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }

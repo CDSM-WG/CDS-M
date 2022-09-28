@@ -1,22 +1,207 @@
-<div class="container">
-    <div class="useCases">
-        <span>
-            <div class="header">Use case cart</div><div class="counter">{{this.getCounter()}} use case(s)</div>
-        </span>
-        <app-cart-ticket *ngFor="let data of selectedUseCases" [data]="data"></app-cart-ticket>
+<div class="max-w-6xl mx-auto px-4 w-full py-6 md:py-20" data-component="Container">
+    <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" data-component="BackButton"
+        routerLink="/store">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            data-component="ArrowLeftIcon">
+            <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                style="mask-type: alpha;">
+                <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)" fill="currentColor">
+                </rect>
+            </mask>
+            <g mask="url(#mask0_921_31157)">
+                <path
+                    d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                    fill="currentColor"></path>
+            </g>
+        </svg>
+        <span class="leading-4">Use case library</span>
+    </button>
+    <h1 class="heading-2 text-blue-600 uppercase">Use case cart</h1>
+    <div class="flex-auto md:w-4/6 mt-2">
+        <p>
+            Here you can find an overview of all the Use cases you have selected
+            together with a label indicating how well they align with the GDPR.
+        </p>
+        <a class="flex flex-row gap-1 mt-4 md:mt-2 leading-6 font-semibold cursor-pointer bg-white justify-between pt-2 mr-4"
+            href="assets/grading-system/index.html">
+            <div class="flex flex-row">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    data-component="ArrowRightIcon">
+                    <mask id="mask0_925_21566" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                        style="mask-type: alpha;">
+                        <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                            fill="currentColor"></rect>
+                    </mask>
+                    <g mask="url(#mask0_925_21566)">
+                        <path
+                            d="M12.683 7L11.6247 8.1767L14.6266 10.7221L5 10.7221L5 12.2828L14.6215 12.2828L11.6196 14.8282L12.6881 16L18 11.5L12.683 7Z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+                <div>Learn more about how cases are labelled</div>
+            </div>
+            <div class="flex flex-row bg-white">
+                <div class="text-xs mr-1">non-personal data</div>
+                <svg _ngcontent-rsm-c143="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" data-component="ArrowLeftIcon" class="top-0 -mr-6 -mt-1">
+                    <mask _ngcontent-rsm-c143="" id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                        height="24" style="mask-type: alpha;">
+                        <rect _ngcontent-rsm-c143="" width="24" height="24"
+                            transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)" fill="currentColor"></rect>
+                    </mask>
+                    <g _ngcontent-rsm-c143="" mask="url(#mask0_921_31157)">
+                        <path _ngcontent-rsm-c143=""
+                            d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+                <span class="pt-4" title="non-personal data">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-green-700"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        A
+                    </div>
+                </span>
+                <span class="pt-4" title="personal data & fully complies">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-green-500"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        B
+                    </div>
+                </span>
+                <span class="pt-4" title="unnecessary personal data">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-amber-400"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        C
+                    </div>
+                </span>
+                <span class="pt-4" title="personal data and not fully compliant">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-amber-500"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        D
+                    </div>
+                </span>
+                <span class="pt-4" title="a surplus of personal data or unlawful processing">
+                    <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-red-500"
+                        data-component="Bookmark">
+                        <div
+                            class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+                        </div>
+                        E
+                    </div>
+                </span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    data-component="ArrowRightIcon" class="top-0 -ml-6 -mt-1">
+                    <mask id="mask0_925_21566" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                        style="mask-type: alpha;">
+                        <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                            fill="currentColor"></rect>
+                    </mask>
+                    <g mask="url(#mask0_925_21566)">
+                        <path
+                            d="M12.683 7L11.6247 8.1767L14.6266 10.7221L5 10.7221L5 12.2828L14.6215 12.2828L11.6196 14.8282L12.6881 16L18 11.5L12.683 7Z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+                <div class="text-xs pl-1 pr-2">a surplus of <br>personal
+                    data or unlawful<br> processing</div>
+            </div>
+        </a>
+
     </div>
-    <div class="totalBill">
-        <div class="header2">Data protection</div>
-        <hr/>
-        <table>
-            <tr *ngFor="let data of selectedUseCases">
-                <td><a href="/cart#{{data.id}}">{{data.id}}</a></td>
-                <td>{{data.totalGrade}}</td>
-            </tr>
-        </table>
-        <hr/>
-        <table><tr><td>Total grade for all use cases</td><td>{{getGrandTotal()}}</td></tr></table>
-        <hr/>
-        <div class="Button" (click)="this.export()">Proceed to checkout</div>
-    </div> 
+    <div class="flex flex-col md:flex-row mt-8 gap-6" data-component="SplitContainer">
+        <div class="flex-auto md:w-4/6" data-component="SplitContainer.Left">
+            <div class="flex flex-col gap-2">
+                <app-cart-ticket *ngFor="let data of selectedUseCases" [data]="data"></app-cart-ticket>
+            </div>
+        </div>
+        <div class="flex-auto md:w-2/6" data-component="SplitContainer.Right">
+            <div class="bg-white overflow-hidden p-6 -mx-6 -mb-6 md:m-0">
+                <h2 class="text-3xl uppercase font-medium">Data protection</h2>
+                <!--div class="mt-4">
+                        <label class="relative h-6 group" data-component="CheckboxToggle" (click)="toggle()">
+                            <input type="checkbox" class="w-0 h-0 opacity-0 peer" />
+                            <span
+                                class="before:absolute before:h-4 before:w-4 before:bg-white before:rounded-full before:transition peer-checked:before:translate-x-8 before:duration-500 before:ease-in-out absolute h-6 w-14 p-1 bg-gray-300 group-hover:bg-gray-500 peer-checked:bg-blue-600 peer-checked:group-hover:bg-blue-600 cursor-pointer rounded-3xl transition duration-500 ease-in-out"></span>
+                            <span class="ml-16">Improve privacy label</span>
+                        </label>
+                    </div -->
+                <div class="relative flex flex-col gap-2.5 py-4 mt-4 border-y border-gray-300">
+                    <a class="flex gap-2" *ngFor="let data of selectedUseCases" [routerLink]="['/use-case']"
+                        [queryParams]="{ id: data.id }" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="flex-none" data-component="InfoIcon">
+                            <path
+                                d="M9 15H11V9H9V15ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18ZM9 7H11V5H9V7Z"
+                                fill="currentColor"></path>
+                        </svg>
+                        <div class="flex-1 font-medium">{{data.id|replaceUnderscore|titlecase}}</div>
+                        <div class="flex-none font-bold">{{data.totalGrade}}</div>
+                    </a>
+                    <app-bookmark [grade]="getGrandTotal()"></app-bookmark>
+                </div>
+                <div class="mt-8">Total score</div>
+                <button
+                    class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full mt-8"
+                    data-component="Button" (click)="prepareCheckout()" routerLink="/checkout">
+                    Proceed to checkout
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!--div class="flex-1 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 w-full pt-9 sm:pt-14 pb-6 sm:pb-20">
+        <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" routerLink="/store">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                    style="mask-type: alpha;">
+                    <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                        fill="currentColor"></rect>
+                </mask>
+                <g mask="url(#mask0_921_31157)">
+                    <path
+                        d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                        fill="currentColor"></path>
+                </g>
+            </svg>
+            <span class="leading-4">Home</span>
+        </button>
+        <h1 class="heading-2 mt-14 text-blue-600">Overview shopping cart</h1>
+        <div class="flex flex-col md:flex-row mt-6 gap-4">
+            <div class="flex-auto md:w-4/6">
+                <app-cart-ticket *ngFor="let data of selectedUseCases" [data]="data"></app-cart-ticket>
+            </div>
+            <div class="flex-auto md:w-2/6">
+                <div class="header2">Data protection</div>
+                <hr />
+                <table>
+                    <tr *ngFor="let data of selectedUseCases">
+                        <td><a href="/cart#{{data.id}}">{{data.id}}</a></td>
+                        <td>{{data.totalGrade}}</td>
+                    </tr>
+                </table>
+                <hr />
+                <table>
+                    <tr>
+                        <td>Total grade for all use cases</td>
+                        <td>{{totalGrade}}</td>
+                    </tr>
+                </table>
+                <hr />
+                <div class="Button" (click)="this.export()">Proceed to checkout</div>
+            </div>
+        </div>
+    </div>
+</div-->

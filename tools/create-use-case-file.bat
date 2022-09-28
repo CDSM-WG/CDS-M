@@ -158,6 +158,6 @@ for /D %%d in (*) do (
 )
 exit /b
 
-copy ..\tools\tool-use-case-selector\src\app\_files\* ..\tools\tool-use-case-shop\src\app\_files\
+copy ..\tools\tool-ict-selector\src\app\_files\* ..\tools\tool-use-case-shop\src\app\_files\
 
 CD ..\tools\

@@ -17,6 +17,8 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
 
   useCases: any[]  = [];
 
+  filterOptions: string[] = ["All", "Research", "Dynamic policy", "Liveability","Safety","Sustainability"]
+
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   obs!: Observable<any>;
@@ -31,6 +33,7 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;
+    
     this.dataSource.filterPredicate = function customFilter(data, filter:string) : boolean {
       if (data.theme.toLowerCase().indexOf(filter) >= 0) {
         return true;
@@ -62,15 +65,19 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
     }
   }
 
+  getLength() {
+    return this.dataSource.data.length;
+  }
+
   onFilter(e: any) {
     if( e != null && e.target != null ) {
       let value = e.target.value;
-      this.filter(value);
+      this.filter(e, value);
     }
   }
 
-  filter( value: string ){
-    if (this.dataSource.filter === value ){
+  filter( event: Event, value: string ){
+    if (this.dataSource.filter === value || value == "All"){
       this.dataSource.filter = "";
       return;
     }

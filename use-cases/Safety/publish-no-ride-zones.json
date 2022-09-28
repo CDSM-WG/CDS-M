@@ -17,8 +17,8 @@
         { "name": "geojson" },
         { "name": "xml" },
         { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-rules" },
-        { "name": "DATEX-2" },
+        { "name": "MDS-policy-policies" },
+        { "name": "DATEX" },
         { "name": "TOMP-API-regions" }
     ],
     "metrics": [
@@ -30,8 +30,8 @@
                 { "name": "geojson" },
                 { "name": "xml" },
                 { "name": "MDS-policy-geography" },
-                { "name": "MDS-policy-rules" },
-                { "name": "DATEX-2" },
+                { "name": "MDS-policy-policies" },
+                { "name": "DATEX" },
                 { "name": "TOMP-API-regions" }
             ]
         }

@@ -1,14 +1,8 @@
 <head><base href="/">
-    <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<div class="toolbar" role="banner">
-    <div class="title" routerLink="/">CDS-M</div><div class="usecasestore">USE CASE STORE</div>
-    <div class="store"><a routerLink="/store" routerLinkActive="active" ariaCurrentWhenActive="page">Use case store</a></div>
-    <div class="cart">{{getCounter()}} <i routerLink="/cart" routerLinkActive="active" ariaCurrentWhenActive="page" class="fa fa-shopping-cart"></i></div>
+<div class="flex flex-col w-screen min-h-screen overflow-hidden">
+    <div class=""><app-navbar class="h-20"></app-navbar></div>
+    <div class="flex-1 w-screen"><router-outlet class=""></router-outlet></div>
+    <div class=""><app-footer class="h-96"></app-footer></div>
 </div>
-
-<router-outlet></router-outlet>

@@ -15,8 +15,8 @@
         { "name": "geojson" },
         { "name": "xml" },
         { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-rules" },
-        { "name": "DATEX-2" }
+        { "name": "MDS-policy-policies" },
+        { "name": "DATEX" }
     ],
     "metrics": [ 
         { "description": "Publish emergency areas", 
@@ -26,8 +26,8 @@
             { "name": "geojson", "content": "description, urgency level and area (geojson) " },
             { "name": "xml", "content": "description, urgency level and area (WKT, WGS84)" },
             { "name": "MDS-policy-geography" },
-            { "name": "MDS-policy-rules" },
-            { "name": "DATEX-2" } ] 
+            { "name": "MDS-policy-policies" },
+            { "name": "DATEX" } ] 
         } 
     ],
     "termsAndConditions": [],
@@ -35,5 +35,5 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Dynamic"
+    "theme": "Dynamic policy"
 }

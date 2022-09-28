@@ -12,5 +12,6 @@
     "interoperability": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1, 
+    "description": "The routes table identifies distinct routes. This is to be distinguished from distinct routings (or paths), several of which may belong to a single route.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
