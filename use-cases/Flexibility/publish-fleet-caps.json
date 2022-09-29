@@ -14,7 +14,7 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-policy-rules" }
+        { "name": "MDS-policy-policies" }
     ],
     "metrics": [ 
         { "description": "Vehicle caps per provider (per vehicle type)",
@@ -23,7 +23,7 @@
             { "name": "json", "content": "description, urgency level and area (WKT, WGS84)" },
             { "name": "geojson", "content": "description, urgency level and area (geojson)" },
             { "name": "xml", "content": "description, urgency level and area (WKT, WGS84)" },
-            { "name": "MDS-policy-rules" } ]
+            { "name": "MDS-policy-policies" } ]
         } 
     ],
     "termsAndConditions": [],
@@ -31,5 +31,5 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Dynamic"
+    "theme": "Dynamic policy"
 }

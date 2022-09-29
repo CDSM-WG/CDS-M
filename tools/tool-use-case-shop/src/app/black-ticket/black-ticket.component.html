@@ -1,5 +1,5 @@
 <div class="standard">
     Name: <a href="{{data.externalReference}}" *ngIf="data.externalReference">{{data.name|replaceUnderscore}}</a>
     <span *ngIf="!data.externalReference">{{data.name}}</span>
-    <img src="/assets/cdsm.png" *ngIf="data.privacy==='A'" title="No personal data included"/>
+    <img src="assets/cdsm.png" *ngIf="data.privacy==='A'" title="No personal data included"/>
 </div><br>

@@ -1,0 +1,37 @@
+<div class="flex-1 flex items-center justify-center p-6 pb-16 bg-gray-100" data-component="PageLayoutMain">
+    <div class="bg-white overflow-hidden flex flex-col items-center mt-20 pt-32 pb-14 px-6 md:px-14 text-center"
+        data-component="Card">
+        <div class="flex flex-col items-center max-w-md">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                data-component="DownloadIcon" class="w-24 h-24 text-gray-500">
+                <g clip-path="url(#clip0_621_969)">
+                    <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_621_969">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+            <h1 class="mt-4 text-2xl md:text-3xl font-medium uppercase">
+                Preparing download
+            </h1>
+            <p class="mt-2">
+                Your receipt has been succesfully configured and will be downloaded
+                shortly in the background.
+            </p>
+        </div>
+        <div class="flex flex-col items-center w-full md:max-w-[200px]">
+            <button routerLink="/" (click)="reset()"
+                class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full mt-6"
+                data-component="Button">
+                Go to home
+            </button>
+            <button routerLink="/store" (click)="reset()"
+                class="inline-flex items-center justify-center px-5 py-3 bg-transparent text-blue-600 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-400 active:text-blue-600 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full mt-2"
+                data-component="Button">
+                Start another session
+            </button>
+        </div>
+    </div>
+</div>

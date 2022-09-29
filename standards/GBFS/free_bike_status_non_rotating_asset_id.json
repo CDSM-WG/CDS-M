@@ -1,13 +1,14 @@
 {
     "type": "standard",
     "name": "GBFS-free-bike-status-non-rotating-asset-id",
-    "exchangeType": "[API|file-based]",
+    "displayName": "GBFS - Free bike status, with static bike_id",
+    "exchangeType": "[API,file-based]",
     "mediumType": "json-file",
     "part": "free_bike_status.json",
 
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
-    "description": "Standard GBFS json file with one adjustment: the bike_id doesn't rotate (causing GDPR issues).",
-    "version": "[version < 2.1]",
+    "description": "Is derived from the free-bike-status, but with one adjustment: the bike_id doesn't rotate (causing GDPR issues). <br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
+    "version": "[1.0,1.1,2.0]",
 
     "url": "[url]",
     "refreshRate": "[refresh rate]",

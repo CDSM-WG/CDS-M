@@ -1,0 +1,94 @@
+<div class="max-w-6xl mx-auto px-4 w-full pt-20 mb-20" data-component="Container">
+    <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" data-component="BackButton" routerLink="/cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            data-component="ArrowLeftIcon">
+            <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                style="mask-type: alpha;">
+                <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)" fill="currentColor">
+                </rect>
+            </mask>
+            <g mask="url(#mask0_921_31157)">
+                <path
+                    d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                    fill="currentColor"></path>
+            </g>
+        </svg>
+        <span class="leading-4">Use case cart</span>
+    </button>
+    <div class="max-w-xl mx-auto">
+        <h1 class="mt-8 md:mt-16 heading-2 text-blue-600 uppercase">
+            Checkout
+        </h1>
+        <div class="bg-white overflow-hidden mt-4 md:mt-6 p-6 font-medium" data-component="Card">
+            <h2 class="text-2xl font-bold">Overview</h2>
+            <div class="relative flex flex-col gap-3 pb-7 mt-4 border-b border-gray-300">
+
+                <div *ngFor="let uc of useCases" class="flex gap-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        data-component="InfoIcon" class="flex-none text-gray-500">
+                        <g clip-path="url(#clip0_715_105085)">
+                            <path
+                                d="M11.0001 17H13.0001V11H11.0001V17ZM12.0001 2C6.48012 2 2.00012 6.48 2.00012 12C2.00012 17.52 6.48012 22 12.0001 22C17.5201 22 22.0001 17.52 22.0001 12C22.0001 6.48 17.5201 2 12.0001 2ZM12.0001 20C7.59012 20 4.00012 16.41 4.00012 12C4.00012 7.59 7.59012 4 12.0001 4C16.4101 4 20.0001 7.59 20.0001 12C20.0001 16.41 16.4101 20 12.0001 20ZM11.0001 9H13.0001V7H11.0001V9Z"
+                                fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_715_105085">
+                                <rect width="24" height="24" fill="currentColor"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="flex-1 font-medium">{{uc.id|replaceUnderscore|titlecase}}</div>
+                    <div class="flex-none font-bold">{{getGrade(uc)}}</div>
+                </div>
+                <app-bookmark [grade]="getGrandTotal()"></app-bookmark>
+            </div>
+            <div class="mt-8">Total score</div>
+            <div *ngIf="getGrandTotal()!='A'" class="flex items-start md:items-center gap-3 p-3 text-xs font-semibold bg-blue-50 border border-blue-500 mt-7 lg:mt-6"
+                data-component="Alert">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    data-component="InfoIcon" class="flex-none text-blue-500">
+                    <g clip-path="url(#clip0_715_105085)">
+                        <path
+                            d="M11.0001 17H13.0001V11H11.0001V17ZM12.0001 2C6.48012 2 2.00012 6.48 2.00012 12C2.00012 17.52 6.48012 22 12.0001 22C17.5201 22 22.0001 17.52 22.0001 12C22.0001 6.48 17.5201 2 12.0001 2ZM12.0001 20C7.59012 20 4.00012 16.41 4.00012 12C4.00012 7.59 7.59012 4 12.0001 4C16.4101 4 20.0001 7.59 20.0001 12C20.0001 16.41 16.4101 20 12.0001 20ZM11.0001 9H13.0001V7H11.0001V9Z"
+                            fill="currentColor"></path>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_715_105085">
+                            <rect width="24" height="24" fill="currentColor"></rect>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div>
+                    Because your grade is B or lower you need to make sure you have
+                    the following documents ready when you want to make use of the
+                    APIs.
+                </div>
+            </div>
+            <div class="flex flex-col gap-3 mt-7">
+                <label class="inline-flex items-start gap-4 cursor-pointer" data-component="LabelCheckbox" *ngIf="getGrandTotal()!='A'">
+                    <div class="flex-none h-7">
+                        <input type="checkbox" (click)="togglePrivacy()"
+                            class="checkbox shrink-0 w-7 h-7 bg-transparent checked:bg-blue-600 bg-center bg-no-repeat bg-origin-border checked:border-blue-600 border border-gray-500 appearance-none"
+                            data-component="Checkbox" />
+                    </div>
+                    <div class="self-center text-black text-base font-medium">
+                        I have / I will make the DPIA, DPA and BIO-test documents ready
+                        before I make use of the APIs. Find your template <a class="text-blue-500 underline" target="_new" href="https://www.cds-m.nl/10/">here</a>.
+                    </div>
+                </label>
+            </div>
+            <button [disabled]="buttonDisabled()" routerLink="/receipt"
+                class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full mt-10"
+                data-component="Button">
+                Download your receipt
+            </button>
+            <p class="mt-4 text-gray-500 text-sm font-semibold">
+                * Your receipt contains the selected use cases, data-items,
+                technical specifications (APIs) and GDPR requirements. This export
+                file of the can be shared with the technical people involved in your
+                project. Actors such as mobility operators, data processors,
+                developers, data analysts and data management.
+            </p>
+        </div>
+    </div>
+</div>

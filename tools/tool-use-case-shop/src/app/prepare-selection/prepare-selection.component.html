@@ -1,0 +1,69 @@
+<div class="flex-1 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 w-full pt-20 sm:pt-20 pb-6 sm:pb-20">
+        <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" routerLink="/standards">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_921_31157" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                    style="mask-type: alpha;">
+                    <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                        fill="currentColor"></rect>
+                </mask>
+                <g mask="url(#mask0_921_31157)">
+                    <path
+                        d="M10.317 16L11.3753 14.8233L8.37339 12.2779L18 12.2779L18 10.7172L8.37847 10.7172L11.3804 8.17177L10.3119 7L5 11.5L10.317 16Z"
+                        fill="currentColor"></path>
+                </g>
+            </svg>
+            <span class="leading-4">Data Standards Library</span>
+        </button>
+        <h1 class="heading-2 mt-14 text-blue-600">Configure your receipt</h1>
+        <div class="flex flex-col md:flex-row mt-6 gap-6" data-component="SplitContainer">
+            <div class="flex-auto md:w-4/6" data-component="SplitContainerLeft">
+                <div class="flex flex-col gap-2">
+                    <app-prepare-standard-ticket *ngFor="let standard of obs | async" [data]="standard">
+                    </app-prepare-standard-ticket>
+                </div>
+            </div>
+            <div class="flex-auto md:w-2/6" data-component="SplitContainerRight">
+                <div class="flex flex-col gap-2">
+                    <div class="bg-white overflow-hidden -mx-6 md:mx-auto -mb-6 md:mb-auto p-6 font-medium"
+                        data-component="Card">
+                        <div class="relative pb-3 pr-3.5 border-b border-gray-300">
+                            <h2 class="mb-4 uppercase text-3xl font-medium">
+                                Global checklist
+                            </h2>
+                            <div class="flex flex-col gap-2 mt-4">
+                                <div *ngFor="let standard of obs | async" class="flex justify-between w-full">
+                                    <div class="inline-flex items-start text-base before:inline-block before:h-1
+                                        before:w-1 before:mt-2 before:rounded-full before:mr-2.5 before:bg-gray-100"
+                                        data-component="StatusIndicator" *ngIf="standard.step < 4">
+                                    </div>
+                                    <div class="inline-flex items-start text-base before:inline-block before:h-1
+                                        before:w-1 before:mt-2 before:rounded-full before:mr-2.5 before:bg-blue-600"
+                                        data-component="StatusIndicator" *ngIf="standard.step == 4">
+                                    </div>
+                                    <div class="flex justify-between w-full">
+                                        <span *ngIf="standard.displayName">{{standard.displayName}}</span>
+                                        <span
+                                            *ngIf="standard.displayName==null">{{standard.name|replaceUnderscore}}</span>
+                                        <span class="font-bold">{{standard.privacy}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 right-1.5 translate-y-full">
+                                <app-bookmark [grade]="grandTotal()"></app-bookmark>
+                            </div>
+                        </div>
+                        <div class="mt-6">Total score</div>
+                        <div class="mt-8">
+                            <button (click)="this.export()" [disabled]="isDisabled()"
+                                class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full"
+                                data-component="Button">
+                                Export receipt
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

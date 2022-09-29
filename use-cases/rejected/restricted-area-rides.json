@@ -15,7 +15,7 @@
 
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" },
-        { "name": "MDS-policy-rules" }
+        { "name": "MDS-policy-policies" }
     ],
     "termsAndConditions": [],
     "agreements": [],

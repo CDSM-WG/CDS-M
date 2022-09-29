@@ -1,17 +1,93 @@
-<div class="ticket">
-    <div class="header" id="{{data.id}}">Use case {{data.id}}</div>
-    <i class="fa fa-trash removeFromCart" aria-hidden="true" (click)="this.removeFromCart()"></i>
-    <div class="userstory">
-        As a {{data.story.asA}} I would like to {{data.story.iWouldLikeTo}} in order to {{data.story.inOrderTo}}
+<div class="bg-white overflow-hidden relative p-4 pb-9 md:p-6 md:pb-6" data-component="Card">
+    <span class="absolute top-0 right-16" *ngIf="totalGrade=='A'">
+        <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-green-700"
+            data-component="Bookmark">
+            <div class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+            </div>
+            A
+        </div>
+    </span>
+    <span class="absolute top-0 right-16" *ngIf="totalGrade=='B'">
+        <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-green-500"
+            data-component="Bookmark">
+            <div class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+            </div>
+            B
+        </div>
+    </span>
+    <span class="absolute top-0 right-16" *ngIf="totalGrade=='C'">
+        <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-amber-400"
+            data-component="Bookmark">
+            <div class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+            </div>
+            C
+        </div>
+    </span>
+    <span class="absolute top-0 right-16" *ngIf="totalGrade=='D'">
+        <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-amber-500"
+            data-component="Bookmark">
+            <div class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+            </div>
+            D
+        </div>
+    </span>
+    <span class="absolute top-0 right-16" *ngIf="totalGrade=='E'">
+        <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-red-500"
+            data-component="Bookmark">
+            <div class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+            </div>
+            E
+        </div>
+    </span>
+    <span class="absolute top-0 right-16" *ngIf="totalGrade=='?'">
+        <div class="relative inline-flex items-end justify-center h-16 w-7 pb-3 font-semibold text-white bg-neutral-300"
+            data-component="Bookmark">
+            <div class="absolute bottom-0 border-x-transparent border-x-[24px] border-b-[12px] border-b-white">
+            </div>
+            {{totalGrade}}
+        </div>
+    </span>
+    <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold">{{data.id|replaceUnderscore|titlecase}}</h2>
+        <button (click)="this.removeFromCart()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="text-gray-500" data-component="DeleteIcon">
+                <g clip-path="url(#clip0_1184_22248)">
+                    <path
+                        d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM19 4H15.5L14.5 3H9.5L8.5 4H5V6H19V4Z"
+                        fill="currentColor"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1184_22248">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+        </button>
     </div>
-    <div class="header">Selected standards</div>
-    <table class="standards">
-    <tr class="standard" *ngFor="let s of data.standards">
-        <td><input type="checkbox" [checked]="getChecked(s)" (change)="clicked(s.name)"></td><td>{{s.name}}</td><td>{{getGrade(s.name)}}</td>
-    </tr>
-    </table>
-    <hr/>
-    <div class="footer">
-        <div class="header">Use case grade</div><div class="totalGrade">{{getTotalGrade()}}<i class="fa fa-info-circle right" aria-hidden="true"></i></div>
+    <p class="mt-4 max-w-xl text-lg font-medium">
+        <span class="block mb-1 text-base font-semibold text-gray-500">
+           As a {{data.story.asA}}
+        </span>
+        I would like to {{data.story.iWouldLikeTo}} in order to {{data.story.inOrderTo}}.
+    </p>
+    <div class="mt-1 md:mt-2 font-semibold text-blue-600">
+        {{formatTags(data)}}
     </div>
+    <h3 class="mt-4 font-bold">Selected data standards</h3>
+    <ul class="flex flex-col gap-2 mt-4">
+        <li class="flex items-start justify-between gap-9" *ngFor="let s of data.standards">
+            <label class="inline-flex items-start gap-4 cursor-pointer">
+                <div class="flex-none h-7">
+                    <input type="checkbox"
+                        class="checkbox shrink-0 w-7 h-7 bg-transparent checked:bg-blue-600 bg-center bg-no-repeat bg-origin-border checked:border-blue-600 border border-gray-500 appearance-none"
+                        data-component="Checkbox" [checked]="getChecked(s)" (change)="clicked(s.name)" />
+                </div>
+                <div class="self-center text-black text-base font-medium">
+                    {{s.name|replaceUnderscore}}
+                </div>
+            </label>
+            <span class="flex-none font-bold">{{getGrade(s.name)}}</span>
+        </li>
+    </ul>
 </div>

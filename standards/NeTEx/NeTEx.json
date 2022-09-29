@@ -11,5 +11,6 @@
     "interoperability": "C",
     "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd",
     "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1
+    "bbversion": 1,
+    "description": "NeTEx is a CEN Technical Standard for exchanging Public Transport Network, schedules and related data. It is divided into three parts, each covering a functional subset of the CEN Transmodel:<ul><li>Part 1 describes the Public Transport Network topology (CEN/TS 16614-1:2014);<li>Part 2 describes Scheduled Timetables (CEN/TS 16614-2:2014);<li>Part 3 covers Fare information (CEN/TS 16614-3:2015).</ul>"
 }

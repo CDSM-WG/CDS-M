@@ -12,33 +12,41 @@ export class CartTicketComponent implements OnInit {
   @Input()
   data: any;
   totalGrade: string = "A";
-  
-  constructor(private useCaseService: UseCaseService, private standardService: StandardService) { }
+
+  grades: string[] = ['A', 'B', 'C', 'D', 'E']
+
+  constructor(private useCaseService: UseCaseService, private standardService: StandardService) {
+  }
 
   ngOnInit(): void {
+    this.getTotalGrade();
   }
 
   getTotalGrade() {
     let maxGrade = "";
-    if( this.data.standards != undefined ) {
-      for( let i = 0; i < this.data.standards.length; ++i ){ 
-        if (this.data.standards[i].checked ) {
-          let grade = this.getGrade( this.data.standards[i].name);
-          if ( grade > maxGrade ){
+    if (this.data.standards != undefined) {
+      for (let i = 0; i < this.data.standards.length; ++i) {
+        if (this.data.standards[i].checked) {
+          let grade = this.getGrade(this.data.standards[i].name);
+          if (this.grades.indexOf(grade) == -1) {
+            maxGrade = "?";
+            break;
+          }
+          else if (grade > maxGrade) {
             maxGrade = grade;
           }
         }
       }
     }
     this.data.totalGrade = maxGrade;
-    return maxGrade;
+    this.totalGrade = maxGrade;
   }
 
   removeFromCart() {
     this.useCaseService.removeFromCart(this.data.id);
   }
 
-  getGrade(standard: string) {    
+  getGrade(standard: string) {
     return this.standardService.getPrivacyGrace(standard);
   }
 
@@ -48,8 +56,8 @@ export class CartTicketComponent implements OnInit {
 
   clicked(standard: string) {
     let s = this.data.standards.filter((x: any) => x.name === standard);
-    if ( s != null ) {
-      if( s[0].checked === undefined ){
+    if (s != null) {
+      if (s[0].checked === undefined) {
         s[0].checked = true;
       }
       else {
@@ -57,5 +65,18 @@ export class CartTicketComponent implements OnInit {
       }
     }
     this.getTotalGrade();
+  }
+
+  formatTags(standard: any) {
+    let result = "";
+    if (standard.tags != null) {
+      for (let s of standard.tags) {
+        let split = s.split(":")
+        for (let part of split) {
+          result = result + " #" + part;
+        }
+      }
+    }
+    return result
   }
 }
