@@ -2,8 +2,11 @@
     <div class="flex items-start justify-between gap-11 lg:gap-4">
         <div class="flex flex-col lg:flex-row items-start lg:justify-between gap-2 lg:gap-6 w-full">
             <div class="flex flex-col">
-                <h3 class="heading-4 font-medium">
+                <h3 class="heading-4 font-medium" *ngIf="data.displayName != null">
                     {{data.displayName|titlecase}}
+                </h3>
+                <h3 class="heading-4 font-medium" *ngIf="data.displayName == null">
+                    {{data.name|replaceUnderscore}}
                 </h3>
                 <div class="flex items-center gap-1.5 mt-2">
                     <span>Personal data:</span>

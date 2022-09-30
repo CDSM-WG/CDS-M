@@ -38,10 +38,9 @@ export class PrepareSelectionComponent implements OnInit {
   }
 
   grandTotal() {
-
     let maxGrade = "";
-    for (let i = 0; i < this.standardService.selectedStandards.length; i++) {
-      let grade = this.usecaseService.getGrade(this.standardService.selectedStandards[i]);
+    for (let i = 0; i < this.usecaseService.useCaseList.length; i++) {
+      let grade = this.usecaseService.getGrade(this.usecaseService.useCaseList[i]);
       if (this.usecaseService.grades.indexOf(grade) == -1) {
         maxGrade = "?";
         break;
@@ -51,8 +50,6 @@ export class PrepareSelectionComponent implements OnInit {
       }
     }
     return maxGrade;
-
-    return this.usecaseService.getGrandTotal(); // .getGradeOfStandardList(this.standardService.selectedStandards);
   }
 
   export() {

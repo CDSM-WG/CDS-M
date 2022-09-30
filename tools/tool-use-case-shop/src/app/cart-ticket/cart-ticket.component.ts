@@ -27,7 +27,7 @@ export class CartTicketComponent implements OnInit {
     if (this.data.standards != undefined) {
       for (let i = 0; i < this.data.standards.length; ++i) {
         if (this.data.standards[i].checked) {
-          let grade = this.getGrade(this.data.standards[i].name);
+          let grade = this.getGrade(this.data.standards[i].name, this.data.standards[i]);
           if (this.grades.indexOf(grade) == -1) {
             maxGrade = "?";
             break;
@@ -37,6 +37,30 @@ export class CartTicketComponent implements OnInit {
           }
         }
       }
+
+      this.data.standards = this.data.standards.sort((a: any, b: any) => {
+
+        let aP = a.dataProtection;
+        if( aP == null ) {
+          aP = this.getGrade(a.name, a);
+        }
+
+        let bP = b.dataProtection;
+        if( bP == null ) {
+          bP = this.getGrade(b.name, b);
+        }
+
+        if ( aP == "*" || aP == null || aP == '?') {
+          return 1;
+        }
+        if ( bP == "*" || bP == null || bP == '?') {
+          return -1;
+        }
+
+        return aP > bP ? 1 : -1;
+      }
+      );
+
     }
     this.data.totalGrade = maxGrade;
     this.totalGrade = maxGrade;
@@ -46,8 +70,8 @@ export class CartTicketComponent implements OnInit {
     this.useCaseService.removeFromCart(this.data.id);
   }
 
-  getGrade(standard: string) {
-    return this.standardService.getPrivacyGrace(standard);
+  getGrade(standard: string, ucStandard: any) {
+    return this.standardService.getPrivacyGrade(standard, ucStandard);
   }
 
   getChecked(standardObject: any) {

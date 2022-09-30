@@ -3,7 +3,12 @@ import * as data from '../app/_files/standards.json';
 
 @Injectable()
 export class StandardService {
-  getPrivacyGrace(standard: string) {
+  getPrivacyGrade(standard: string, ucStandard: any) {
+    if (ucStandard != null) {
+      if (ucStandard.dataProtection != null){
+        return ucStandard.dataProtection;
+      }
+    }
     let s = this.getStandard(standard);
     return s.privacy;
   }

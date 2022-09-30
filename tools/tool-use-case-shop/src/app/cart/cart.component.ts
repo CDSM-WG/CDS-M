@@ -41,7 +41,7 @@ export class CartComponent implements OnInit {
       if (uc.standards != undefined) {
         for (let i = 0; i < uc.standards.length; ++i) {
           if (uc.standards[i].checked) {
-            let grade = this.standardService.getPrivacyGrace(uc.standards[i].name);
+            let grade = this.standardService.getPrivacyGrade(uc.standards[i].name, uc);
             if( grade != 'A') {
               uc.standards[i].checked = false;
             }

@@ -139,7 +139,7 @@ export class UseCaseService {
     if (uc.standards != undefined) {
       for (let i = 0; i < uc.standards.length; ++i) {
         if (uc.standards[i].checked) {
-          let grade = this.standardService.getPrivacyGrace(uc.standards[i].name);
+          let grade = this.standardService.getPrivacyGrade(uc.standards[i].name, uc);
           if (this.grades.indexOf(grade) == -1) {
             maxGrade = "?";
             break;
