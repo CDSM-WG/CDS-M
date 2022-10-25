@@ -8,6 +8,8 @@
     "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": 0,
+    "privacy": "A",
+    "confidentiality": "A",
     "implementationEffort": "B", 
     "reusability":"C", 
     "interoperability": "B",

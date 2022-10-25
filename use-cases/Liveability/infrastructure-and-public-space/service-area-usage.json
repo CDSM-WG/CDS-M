@@ -1,5 +1,5 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "infrastructure-planning",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
@@ -11,10 +11,7 @@
         "inOrderTo": "know the service area usage and determine where to place new lanes, mobility hubs and drop zones"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
         { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
         { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },

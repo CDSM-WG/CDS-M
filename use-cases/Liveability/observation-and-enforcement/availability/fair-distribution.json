@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "distribution-requirements-availability",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
@@ -25,10 +25,7 @@
     }
   ],
   "standards": [
-    { "name": "csv" },
-    { "name": "geojson" },
-    { "name": "json" },
-    { "name": "xml" },
+    { "name": "fixed-format" },
     { "name": "GBFS-free-bike-status", "dataProtection": "A" },
     { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
     { "name": "GBFS-vehicle-status", "dataProtection": "A" },

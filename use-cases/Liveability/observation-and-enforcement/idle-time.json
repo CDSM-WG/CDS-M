@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
   "@type": "useCase",
   "id": "idle-time",
     "externalReference": "",
@@ -33,7 +33,8 @@
       { "name": "TOMP-available-assets-non-rotating-asset-id" },
       { "name": "MDS-provider-vehicles" },
       { "name": "MDS-provider-status-changes" },
-      { "name": "MDS-provider-status-changes-without-ids" }
+      { "name": "MDS-provider-status-changes-without-ids" },
+      { "name": "fixed-format" }
     ],
     "metrics": [
       { "description": "Maximum/average parking time per zone" },

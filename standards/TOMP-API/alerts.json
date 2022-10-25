@@ -8,6 +8,7 @@
     "mediumType": "json-file",
     "refreshRate": 0,
     "privacy": "A",
+    "confidentiality": "B",
     "implementationEffort": "C", 
     "reusability":"B", 
     "interoperability": "B",

@@ -6,6 +6,8 @@
     "version": "[version]",
     "mediumType": "xml-file",
     "refreshRate": "[refresh rate]",
+    "privacy": "A",
+    "confidentiality": "C",
     "implementationEffort": "E", 
     "reusability":"B", 
     "interoperability": "C",

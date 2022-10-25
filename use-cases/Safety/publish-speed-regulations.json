@@ -1,5 +1,5 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-speed-regulations",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
@@ -13,10 +13,7 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-policies" },
         { "name": "DATEX" },

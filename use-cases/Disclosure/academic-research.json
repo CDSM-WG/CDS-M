@@ -1,5 +1,5 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "academic-research",
     "action": "Research requires often tailor made data, and doesn't have clearly specified boundaries.",
@@ -12,20 +12,11 @@
         "iWouldLikeTo": "use the data for analysis, prediction, and modeling",
         "inOrderTo": "inform policy makers"
     },
-    "metrics": [ { "description": "This is custom made to each research goal", "standards": [ "csv", "geojson" ] } ],
+    "metrics": [ { "description": "This is custom made to each research goal", "standards": [ "fixed-format" ] } ],
     "theme": "Research",
     "standards": [
         {
-            "name": "csv"
-        },
-        {
-            "name": "geojson"
-        },
-        {
-            "name": "json"
-        },
-        {
-            "name": "xml"
+            "name": "fixed-format"
         }
     ]
 }

@@ -6,6 +6,7 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "semicolon-delimited-csv-file",
     "privacy": "A",
+    "confidentiality": "C",
     "implementationEffort": "B", 
     "reusability":"C", 
     "domain": "B",

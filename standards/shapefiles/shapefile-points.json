@@ -8,6 +8,7 @@
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
     "privacy": "A",
+    "confidentiality": "A",
     "implementationEffort": "D", 
     "reusability":"E",
     "interoperability": "B",

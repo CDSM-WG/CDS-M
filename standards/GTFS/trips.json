@@ -7,6 +7,7 @@
     "mediumType": "csv-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
+    "confidentiality": "B",
     "implementationEffort": "C", 
     "reusability":"A", 
     "interoperability": "B",

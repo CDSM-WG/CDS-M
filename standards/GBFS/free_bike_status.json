@@ -13,6 +13,7 @@
     "refreshRate": "[refresh rate]",
 
     "privacy": "A",
+    "confidentiality": "B",
     "implementationEffort": "B", 
     "reusability":"A", 
     "interoperability": "A",

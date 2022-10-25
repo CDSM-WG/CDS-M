@@ -1,5 +1,5 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "crash-reports",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recHKsRyMKXFwFom3",
@@ -10,10 +10,7 @@
         "inOrderTo": "be able to assess whether the assets and driving behavior are safe. To improve the safety of new mobility services. Enable public debate on this topic."
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-provider-status-change", "dataProtection": "D" },
         { "name": "MDS-provider-status-change-without-ids", "dataProtection": "B" }
     ],

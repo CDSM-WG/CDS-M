@@ -6,6 +6,8 @@
     "version": "[version]",
     "refreshRate": "[refresh rate]",
     "mediumType": "shapefile",
+    "privacy": "A",
+    "confidentiality": "B",
     "implementationEffort": "E", 
     "reusability":"B", 
     "interoperability": "B",

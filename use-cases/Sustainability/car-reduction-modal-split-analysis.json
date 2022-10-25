@@ -1,9 +1,11 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "modal-split-and-car-reduction-analysis",
     "externalReference": "",
-    "tags": ["policy:modal-split"],
+    "tags": [
+        "policy:modal-split"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the origin-destination of individual trips to subsequently ingest the data into a traffic model and perform a modal-split or car-reduction-analysis",
@@ -12,27 +14,171 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
-        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
-        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
-        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B"},
-        { "name": "MDS-provider-trips", "dataProtection": "E" },
-        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
-        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
-        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
-        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
+        {
+            "name": "fixed-format"
+        },
+        {
+            "name": "GBFS-free-bike-status-non-rotating-asset-id",
+            "dataProtection": "B",
+            "mark": "X*",
+            "explanation": "assumption: when the asset is not in this file, it is in use"
+        },
+        {
+            "name": "GBFS-vehicle-status-non-rotating-asset-id",
+            "dataProtection": "B",
+            "mark": "X*",
+            "explanation": "assumption: when the asset is not in this file, it is in use"
+        },
+        {
+            "name": "TOMP-available-assets-non-rotating-asset-id",
+            "dataProtection": "B",
+            "mark": "X*",
+            "explanation": "assumption: when the asset is not in this file, it is in use"
+        },
+        {
+            "name": "MDS-provider-status-changes",
+            "dataProtection": "D"
+        },
+        {
+            "name": "MDS-provider-trips-without-ids",
+            "dataProtection": "D"
+        },
+        {
+            "name": "MDS-provider-trips-without-ids-only-start-end",
+            "dataProtection": "B"
+        },
+        {
+            "name": "MDS-provider-trips",
+            "dataProtection": "E"
+        },
+        {
+            "name": "MDS-provider-vehicles",
+            "dataProtection": "E"
+        },
+        {
+            "name": "MDS-provider-vehicles-non-booked",
+            "dataProtection": "D"
+        },
+        {
+            "name": "OD-Matrix-csv",
+            "dataProtection": "A"
+        },
+        {
+            "name": "OD-Matrix-geojson",
+            "dataProtection": "A"
+        },
+        {
+            "name": "OD-Matrix-shape",
+            "dataProtection": "A"
+        },
+        {
+            "name": "ODyZee",
+            "dataProtection": "A"
+        },
+        {
+            "name": "GPX",
+            "dataProtection": "B"
+        },
+        {
+            "name": "GPX-without-timestamps",
+            "dataProtection": "A"
+        }
     ],
     "metrics": [
-        { "description": "Number of moving vehicles between 2 regions per hour" }
+        {
+            "description": "Number of moving vehicles between each pair of regions per hour",
+            "standards": [
+                {
+                    "name": "fixed-format"
+                },
+                {
+                    "name": "GBFS-free-bike-status-non-rotating-asset-id"
+                },
+                {
+                    "name": "GBFS-vehicle-status-non-rotating-asset-id"
+                },
+                {
+                    "name": "TOMP-available-assets-non-rotating-asset-id"
+                },
+                {
+                    "name": "MDS-provider-status-changes"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end"
+                },
+                {
+                    "name": "MDS-provider-trips"
+                },
+                {
+                    "name": "MDS-provider-vehicles"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked"
+                },
+                {
+                    "name": "OD-Matrix-csv"
+                },
+                {
+                    "name": "OD-Matrix-geojson"
+                },
+                {
+                    "name": "OD-Matrix-shape"
+                },
+                {
+                    "name": "ODyZee"
+                },
+                {
+                    "name": "GPX"
+                },
+                {
+                    "name": "GPX-without-timestamps"
+                }
+            ]
+        },
+        {
+            "description": "Individual start and endpoints per trip",
+            "standards": [
+                {
+                    "name": "fixed-format"
+                },
+                {
+                    "name": "GBFS-free-bike-status-non-rotating-asset-id"
+                },
+                {
+                    "name": "GBFS-vehicle-status-non-rotating-asset-id"
+                },
+                {
+                    "name": "TOMP-available-assets-non-rotating-asset-id"
+                },
+                {
+                    "name": "MDS-provider-status-changes"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end"
+                },
+                {
+                    "name": "MDS-provider-trips"
+                },
+                {
+                    "name": "MDS-provider-vehicles"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked"
+                },
+                {
+                    "name": "GPX"
+                },
+                {
+                    "name": "GPX-without-timestamps"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],

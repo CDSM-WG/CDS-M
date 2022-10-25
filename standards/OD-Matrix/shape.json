@@ -5,6 +5,7 @@
     "part": "shape-file",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
+    "confidentiality": "C",
     "implementationEffort": "C", 
     "reusability":"C", 
     "domain": "B",

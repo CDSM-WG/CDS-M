@@ -1,5 +1,5 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-event-areas",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recsQ89oZGG1CRmJA",
@@ -12,21 +12,15 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-policies" },
         { "name": "DATEX" }
     ],
     "metrics": [
-        { "description": "Publish emergency areas", 
+        { "description": "Publish event areas", 
           "standards": [
-            { "name": "csv", "content": "description, and area (WKT, WGS84)" },
-            { "name": "json", "content": "description, and area (WKT, WGS84)" },
-            { "name": "geojson", "content": "description, and area (geojson) " },
-            { "name": "xml", "content": "description, and area (WKT, WGS84)" },
+            { "name": "fixed-format", "content": "description, and area (WKT, WGS84)" },
             { "name": "MDS-policy-geography" },
             { "name": "MDS-policy-policies" },
             { "name": "DATEX" } ] 

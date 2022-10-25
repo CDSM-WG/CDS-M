@@ -9,6 +9,7 @@
     "refreshRate": "0",
     "url": "[url]",
     "privacy": "B",
+    "confidentiality": "C",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "D",

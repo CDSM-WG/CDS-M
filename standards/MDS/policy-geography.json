@@ -7,6 +7,7 @@
     "url": "[url]",
     "version": "[version]",
     "privacy": "A",
+    "confidentiality": "A",
     "implementationEffort": "D", 
     "reusability":"D", 
     "interoperability": "A",

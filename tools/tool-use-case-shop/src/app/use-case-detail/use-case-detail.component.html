@@ -72,7 +72,7 @@
                 <h2 class="mb-2 md:mb-6 heading-3 uppercase text-blue-600">
                     Metrics for this use case
                 </h2>
-                <app-metric-ticket *ngFor="let metric of data.metrics; let i = index" [data]="metric" [index]="i">
+                <app-metric-ticket *ngFor="let metric of data.metrics; let i = index" [data]="metric" [standards]="data.standards" [index]="i">
                 </app-metric-ticket>
                 <h2 class="mb-6 mt-14 heading-3 uppercase text-blue-600">
                     Data standards used for this use case

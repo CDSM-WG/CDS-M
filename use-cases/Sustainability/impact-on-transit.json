@@ -1,5 +1,5 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "impact-on-transit",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKjAEob7RRBXf1P",
@@ -36,10 +36,7 @@
         { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
         { "name": "TOMP-available-assets-with-asset-license-plate", "dataProtection": "C" },
         { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" }, 
-        { "name": "csv" }, 
-        { "name": "geojson" }, 
-        { "name": "json" }, 
-        { "name": "xml" }
+        { "name": "fixed-format" }
     ],
     "metrics": [
         { "description": "Average number of available vehicles per hub and hour" },

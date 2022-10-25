@@ -29,7 +29,7 @@
     <div *ngIf="showStandards()" class="mt-4">
         <p class="font-semibold">Possible data exchange standards</p>
         <ul class="ml-6 list-disc">
-            <li *ngFor="let ds of data.standards">{{ds.name}} {{ds.content}}</li>
+            <li *ngFor="let ds of data.standards">{{ds.name|replaceUnderscore}} {{ds.content}}</li>
         </ul>
     </div>
 </div>

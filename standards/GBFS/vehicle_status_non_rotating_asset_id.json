@@ -11,6 +11,7 @@
     "refreshRate": "[refresh rate]",    
     "url": "[url]",
     "privacy": "B",
+    "confidentiality": "B",
     "implementationEffort": "B", 
     "reusability":"E", 
     "interoperability": "D",

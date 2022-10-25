@@ -1,5 +1,5 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "availability-per-zone",
     "externalReference": "",
@@ -8,10 +8,7 @@
         "iWouldLikeTo": "determine the distribution of assets per zone (hubs, parking, drop-off, no ride, specific area etc.)",
         "inOrderTo": "redistribute assets to create a more inclusive supply" },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "GBFS-station-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },

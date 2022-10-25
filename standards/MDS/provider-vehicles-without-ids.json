@@ -8,6 +8,7 @@
     "mediumType": "API",
     "refreshRate": "0",
     "privacy": "B",
+    "confidentiality": "C",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",

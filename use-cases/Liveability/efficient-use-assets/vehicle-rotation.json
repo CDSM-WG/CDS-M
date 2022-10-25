@@ -1,45 +1,122 @@
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
-    "@type": "useCase",
-    "id": " vehicle-rotation",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+  "@type": "useCase",
+  "id": " vehicle-rotation",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
   "story": {
     "asA": "city",
     "iWouldLikeTo": "monitor vehicle rotation per modality and area",
     "inOrderTo": "distribute assets efficiently and determine the right vehicle cap"
-  }, 
+  },
   "standards": [
-    { "name": "csv" },
-    { "name": "geojson" },
-    { "name": "json" },
-    { "name": "xml" },
-    { "name": "GBFS-free-bike-status", "dataProtection": "A" },
-    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
-    { "name": "GBFS-vehicle-status", "dataProtection": "A" },
-    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
-    { "name": "GBFS-station-status", "dataProtection": "A" },
-    { "name": "TOMP-available-assets", "dataProtection": "A" },
-    { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
-    { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
-    { "name": "MDS-provider-vehicles", "dataProtection": "D" },
-    { "name": "MDS-provider-stops", "dataProtection": "A" },
-    { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-    { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
-    { "name": "MDS-provider-trips", "dataProtection": "D","mark": "X*", "remark": "switch of the route option to enhance data rpotection, this data is not needed; data minimalisation" },
-    { "name": "shapefile-points" },
-    { "name": "KML-points" },
-    { "name": "SPDP-dynamic" }
+    {
+      "name": "fixed-format"
+    },
+    {
+      "name": "GBFS-free-bike-status",
+      "dataProtection": "A"
+    },
+    {
+      "name": "GBFS-free-bike-status-non-rotating-asset-id",
+      "dataProtection": "C"
+    },
+    {
+      "name": "GBFS-vehicle-status",
+      "dataProtection": "A"
+    },
+    {
+      "name": "GBFS-vehicle-status-non-rotating-asset-id",
+      "dataProtection": "C"
+    },
+    {
+      "name": "GBFS-station-status",
+      "dataProtection": "A"
+    },
+    {
+      "name": "TOMP-available-assets",
+      "dataProtection": "A"
+    },
+    {
+      "name": "TOMP-available-assets-with-asset-name",
+      "dataProtection": "C"
+    },
+    {
+      "name": "TOMP-available-assets-non-rotating-asset-id",
+      "dataProtection": "C"
+    },
+    {
+      "name": "MDS-provider-vehicles",
+      "dataProtection": "D"
+    },
+    {
+      "name": "MDS-provider-stops",
+      "dataProtection": "A"
+    },
+    {
+      "name": "MDS-provider-status-changes",
+      "dataProtection": "D"
+    },
+    {
+      "name": "MDS-provider-vehicles-non-booked",
+      "dataProtection": "C"
+    },
+    {
+      "name": "MDS-provider-trips",
+      "dataProtection": "D",
+      "mark": "X*",
+      "remark": "switch of the route option to enhance data rpotection, this data is not needed; data minimalisation"
+    },
+    {
+      "name": "SPDP-dynamic"
+    }
   ],
   "metrics": [
-    { "description": "Average vehicle rotation per zone and hour" },
-    { "description": "Available number of vehicles per zone and hour" }
+    {
+      "description": "Average vehicle rotation per zone and hour",
+      "standards": [
+        "MDS-provider-vehicles",
+        "MDS-provider-vehicles-non-booked",
+        "MDS-provider-vehicles-without-ids-non-booked",
+        "MDS-provider-vehicles-without-ids",
+        "MDS-provider-status-changes",
+        "MDS-provider-status-changes-without-ids",
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-with-asset-name",
+        "TOMP-available-assets-with-asset-license-plate",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "fixed-format"
+      ]
+    },
+    {
+      "description": "Available number of vehicles per zone and hour",
+      "standards": [
+        "MDS-provider-vehicles",
+        "MDS-provider-vehicles-non-booked",
+        "MDS-provider-vehicles-without-ids-non-booked",
+        "MDS-provider-vehicles-without-ids",
+        "MDS-provider-status-changes",
+        "MDS-provider-status-changes-without-ids",
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-with-asset-name",
+        "TOMP-available-assets-with-asset-license-plate",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "fixed-format"
+      ]
+    }
   ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],
   "processing": [],
   "archive": [],
-  "tags": [
-  ],
+  "tags": [],
   "theme": "Liveability"
 }

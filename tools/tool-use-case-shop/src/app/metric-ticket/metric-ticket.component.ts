@@ -11,31 +11,47 @@ export class MetricTicketComponent implements OnInit {
   data: any;
 
   @Input()
+  standards: any;
+
+  @Input()
   index: number = 0;
 
-  collapsed: boolean = true;
-  
+  collapsed: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
-    this.collapsed = this.index == 0;
+    this.collapsed = this.index != 0;
+    if (this.data.standards == null) {
+      this.data.standards = [];
+      for(let s of this.standards){
+        this.data.standards.push( s );
+      }
+    }
+    else {
+      let reformatted = [];
+      for( let i = 0 ; i < this.data.standards.length; i++ ){
+        reformatted.push( {"name": this.data.standards[i] } );
+      }
+      this.data.standards = reformatted;
+    }
   }
 
   hasDataStandards() {
-    if (this.data.standards == null){
+    if (this.data.standards == null) {
       return false;
     }
     return this.data.standards.length > 0;
   }
 
   showStandards() {
-    if (this.collapsed){
+    if (this.collapsed) {
       return false;
     }
     return this.hasDataStandards();
   }
 
-  isCollapsed () {
+  isCollapsed() {
     return this.collapsed;
   }
 

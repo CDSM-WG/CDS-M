@@ -1,6 +1,6 @@
 {
     "type": "standard",
-    "name": "MDS-provider-status_changes-without-ids",
+    "name": "MDS-provider-status-changes-without-ids",
     "description": "MDS provider status_changes endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.", 
     "exchangeType": "API", 
     "version": "[version]",
@@ -9,6 +9,7 @@
     "refreshRate": "0",
     "part": "GET /status_changes",
     "privacy": "B",
+    "confidentiality": "C",
     "implementationEffort": "D", 
     "reusability":"E", 
     "interoperability": "A",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
   "@type": "useCase",
   "id": "vehicle-cap-and-neighbouring-regions",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
@@ -12,10 +12,7 @@
       "policy:vehicle-count"
     ],
     "standards": [
-      { "name": "csv" },
-      { "name": "geojson" },
-      { "name": "json" },
-      { "name": "xml" },
+      { "name": "fixed-format" },
       { "name": "GBFS-free-bike-status", "dataProtection": "A" },
       { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
       { "name": "GBFS-vehicle-status", "dataProtection": "A" },
@@ -34,7 +31,7 @@
       { "name": "SPDP-dynamic" }
     ],
     "metrics": [ 
-      { "description": "Average vehicle rotation per zone and hour" },
+      { "description": "Average vehicle rotation per zone and hour", "standards": ["fixed-format"] },
       { "description": "Average idle time per zone and hour" }, 
       { "description": "Total number of available vehicles in the city per day" }, 
       { "description": "Usage percentage per vehicle type and day" }, 

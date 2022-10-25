@@ -1,22 +1,25 @@
 {
     "type": "file",
-    "name": "GPX",
-    "displayName": "GPX - GPS data (XML)",
+    "name": "GPX-without-timestamps",
+    "displayName": "GPX - GPS data (XML) - without timestamp",
     "exchangeType": "file-based", 
     "version": "1.1",
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",
-    "privacy": "D",
+    "privacy": "B",
     "confidentiality": "B",
     "implementationEffort": "C", 
     "reusability":"D", 
     "interoperability": "B",
     "domain": "D",
     "schema": "https://www.topografix.com/gpx/1/1/gpx.xsd",
-    "fieldModifications": [],
-    "conflicts": [
-        "reveals_personal_trip_data"
+    "fieldModifications": [
+        {
+            "field": "time",
+            "exception": "removed"
+        }
     ],
+    "conflicts": [],
     "retentionPeriod": "[ISO8601 duration]",
     "bbversion": 1,
     "description": "GPX, or GPS Exchange Format, is an XML schema designed as a common GPS data format for software applications. It can be used to describe waypoints, tracks, and routes. It is an open format and can be used without the need to pay license fees"

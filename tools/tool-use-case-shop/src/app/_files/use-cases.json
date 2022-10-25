@@ -1,6 +1,6 @@
 [ 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "academic-research",
     "action": "Research requires often tailor made data, and doesn't have clearly specified boundaries.",
@@ -13,25 +13,16 @@
         "iWouldLikeTo": "use the data for analysis, prediction, and modeling",
         "inOrderTo": "inform policy makers"
     },
-    "metrics": [ { "description": "This is custom made to each research goal", "standards": [ "csv", "geojson" ] } ],
+    "metrics": [ { "description": "This is custom made to each research goal", "standards": [ "fixed-format" ] } ],
     "theme": "Research",
     "standards": [
         {
-            "name": "csv"
-        },
-        {
-            "name": "geojson"
-        },
-        {
-            "name": "json"
-        },
-        {
-            "name": "xml"
+            "name": "fixed-format"
         }
     ]
 }, 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
   "@type": "useCase",
   "id": "open-data",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOhqaFsHNlxVFn3",
@@ -42,10 +33,7 @@
         "inOrderTo": "Build trust between citizens, car operators and the government and share knowledge."
     },
     "standards": [
-      { "name": "csv" },
-      { "name": "geojson" },
-      { "name": "json" },
-      { "name": "xml" },
+      { "name": "fixed-format" },
       { "name": "GBFS-free-bike-status" },
       { "name": "GBFS-vehicle-status" },
       { "name": "GBFS-versions" },
@@ -102,7 +90,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-emergency-guidance",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recPIbfFLib0KAgj7",
@@ -113,10 +101,7 @@
         "inOrderTo": "to help them keep their users and contractors informed and safe."
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-policies" },
         { "name": "DATEX" }
@@ -124,10 +109,7 @@
     "metrics": [ 
         { "description": "Publish emergency areas", 
           "standards": [
-            { "name": "csv", "content": "description, urgency level and area (WKT, WGS84)" },
-            { "name": "json", "content": "description, urgency level and area (WKT, WGS84)" },
-            { "name": "geojson", "content": "description, urgency level and area (geojson) " },
-            { "name": "xml", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "fixed-format", "content": "description, urgency level and area (WKT, WGS84)" },
             { "name": "MDS-policy-geography" },
             { "name": "MDS-policy-policies" },
             { "name": "DATEX" } ] 
@@ -142,7 +124,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-event-areas",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recsQ89oZGG1CRmJA",
@@ -155,21 +137,15 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-policies" },
         { "name": "DATEX" }
     ],
     "metrics": [
-        { "description": "Publish emergency areas", 
+        { "description": "Publish event areas", 
           "standards": [
-            { "name": "csv", "content": "description, and area (WKT, WGS84)" },
-            { "name": "json", "content": "description, and area (WKT, WGS84)" },
-            { "name": "geojson", "content": "description, and area (geojson) " },
-            { "name": "xml", "content": "description, and area (WKT, WGS84)" },
+            { "name": "fixed-format", "content": "description, and area (WKT, WGS84)" },
             { "name": "MDS-policy-geography" },
             { "name": "MDS-policy-policies" },
             { "name": "DATEX" } ] 
@@ -184,7 +160,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-fleet-caps",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
@@ -195,19 +171,13 @@
         "inOrderTo": "allow dynamic fleet size adjustment based on policy"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-policy-policies" }
     ],
     "metrics": [ 
         { "description": "Vehicle caps per provider (per vehicle type)",
           "standards": [
-            { "name": "csv", "content": "description, urgency level and area (WKT, WGS84)" },
-            { "name": "json", "content": "description, urgency level and area (WKT, WGS84)" },
-            { "name": "geojson", "content": "description, urgency level and area (geojson)" },
-            { "name": "xml", "content": "description, urgency level and area (WKT, WGS84)" },
+            { "name": "fixed-format", "content": "description, caps and area (WKT, WGS84)" },
             { "name": "MDS-policy-policies" } ]
         } 
     ],
@@ -220,7 +190,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "operating-area",
     "externalReference": "",
@@ -233,10 +203,7 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-policies" },
         { "name": "GBFS-regions"},
@@ -264,7 +231,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-slow-speed-zones",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
@@ -279,10 +246,7 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-policy-geography", "dataProtection": "A" },
         { "name": "MDS-policy-policies", "dataProtection": "A" },
         { "name": "DATEX", "dataProtection": "A" },
@@ -310,7 +274,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "right-of-way-management",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recgAJ2lc0Hg2vSCM",
@@ -323,7 +287,8 @@
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" },
         { "name": "MDS-provider-status-changes" },
-        { "name": "MDS-provider-status-changes-without-ids" }
+        { "name": "MDS-provider-status-changes-without-ids" },
+        { "name": "fixed-format"}
     ],
     "metrics": [],
     "termsAndConditions": [],
@@ -335,55 +300,198 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
-    "@type": "useCase",
-    "id": "ratio-offer-demand",
-    "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
-    "tags": ["public-space:usage"],
-    "story": {
-        "asA": "city",
-        "iWouldLikeTo": "I want to know how the demand/offer ratio is in different areas",
-        "inOrderTo": "steer towards the efficient use of the supply."
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+  "@type": "useCase",
+  "id": "ratio-offer-demand",
+  "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recNhhtVvy2k5OMSw",
+  "tags": [
+    "public-space:usage"
+  ],
+  "story": {
+    "asA": "city",
+    "iWouldLikeTo": "I want to know how the demand/offer ratio is in different areas",
+    "inOrderTo": "steer towards the efficient use of the supply."
+  },
+  "standards": [
+    {
+      "name": "MDS-provider-vehicles",
+      "dataProtection": "E"
     },
-    "standards": [
-        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
-        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
-        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
-        { "name": "MDS-provider-stops", "dataProtection": "A" },
-        { "name": "MDS-provider-trips", "dataProtection": "E" },
-        { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
-        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B" },
-        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "A" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
-        { "name": "OD-Matrix-csv" },
-        { "name": "ODyZee" },        
-        { "name": "OD-Matrix-geojson" },
-        { "name": "OD-Matrix-shape" },
-        { "name": "KML-Track", "dataProtection": "E" },
-        { "name": "KML-Point-and-timestamp", "dataProtection": "E" },
-        { "name": "GPX", "dataProtection": "E" },
-        { "name": "shapefile-tracks", "dataProtection": "E" },
-        { "name": "GBFS-free-bike-status", "dataProtection": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
-        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
-        { "name": "GBFS-vehicle-status", "dataProtection": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
-        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
-        { "name": "TOMP-available-assets", "dataProtection": "A", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
-        { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
-        { "name": "TOMP-available-assets-with-asset-license-plate", "dataProtection": "C" },
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" }, 
-        { "name": "csv" }, 
-        { "name": "geojson" }, 
-        { "name": "json" }, 
-        { "name": "xml" }
-    ],
-  "metrics": [ 
-    { "description": "Available number of vehicles per zone and hour" }, 
-    { "description": "Average idle time per zone and hour" }, 
-    { "description": "Average vehicle rotation per zone and hour" },
-    { "description": "Departing number of vehicles per zone and hour" }, 
-    { "description": "Minimum/maximum/average number of moving vehicles per origin/destination combination and hour" } 
+    {
+      "name": "MDS-provider-vehicles-non-booked",
+      "dataProtection": "D"
+    },
+    {
+      "name": "MDS-provider-vehicles-without-ids-non-booked",
+      "dataProtection": "A"
+    },
+    {
+      "name": "MDS-provider-vehicles-without-ids",
+      "dataProtection": "E"
+    },
+    {
+      "name": "MDS-provider-stops",
+      "dataProtection": "A"
+    },
+    {
+      "name": "MDS-provider-trips",
+      "dataProtection": "E"
+    },
+    {
+      "name": "MDS-provider-trips-without-ids",
+      "dataProtection": "E"
+    },
+    {
+      "name": "MDS-provider-trips-without-ids-only-start-end",
+      "dataProtection": "B"
+    },
+    {
+      "name": "MDS-provider-trips-without-ids-blurred-start-end",
+      "dataProtection": "A"
+    },
+    {
+      "name": "MDS-provider-status-changes",
+      "dataProtection": "D"
+    },
+    {
+      "name": "MDS-provider-status-changes-without-ids",
+      "dataProtection": "B"
+    },
+    {
+      "name": "OD-Matrix-csv"
+    },
+    {
+      "name": "ODyZee"
+    },
+    {
+      "name": "OD-Matrix-geojson"
+    },
+    {
+      "name": "OD-Matrix-shape"
+    },
+    {
+      "name": "GBFS-free-bike-status",
+      "dataProtection": "A",
+      "mark": "X*",
+      "explanation": "assumption: when the asset is not in this file, it is in use"
+    },
+    {
+      "name": "GBFS-free-bike-status-non-rotating-asset-id",
+      "dataProtection": "C"
+    },
+    {
+      "name": "GBFS-vehicle-status",
+      "dataProtection": "A",
+      "mark": "X*",
+      "explanation": "assumption: when the asset is not in this file, it is in use"
+    },
+    {
+      "name": "GBFS-vehicle-status-non-rotating-asset-id",
+      "dataProtection": "C"
+    },
+    {
+      "name": "TOMP-available-assets",
+      "dataProtection": "A",
+      "mark": "X*",
+      "explanation": "assumption: when the asset is not in this file, it is in use"
+    },
+    {
+      "name": "TOMP-available-assets-with-asset-name",
+      "dataProtection": "C"
+    },
+    {
+      "name": "TOMP-available-assets-with-asset-license-plate",
+      "dataProtection": "C"
+    },
+    {
+      "name": "TOMP-available-assets-non-rotating-asset-id",
+      "dataProtection": "C"
+    },
+    {
+      "name": "fixed-format"
+    }
+  ],
+  "metrics": [
+    {
+      "description": "Available number of vehicles per zone and hour",
+      "standards": [
+        "MDS-provider-vehicles",
+        "MDS-provider-vehicles-non-booked",
+        "MDS-provider-vehicles-without-ids-non-booked",
+        "MDS-provider-vehicles-without-ids",
+        "MDS-provider-status-changes",
+        "MDS-provider-status-changes-without-ids",
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-with-asset-name",
+        "TOMP-available-assets-with-asset-license-plate",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "fixed-format"
+      ]
+    },
+    {
+      "description": "Average idle time per zone and hour",
+      "standards": [
+        "MDS-provider-vehicles",
+        "MDS-provider-vehicles-non-booked",
+        "MDS-provider-vehicles-without-ids-non-booked",
+        "MDS-provider-vehicles-without-ids",
+        "MDS-provider-status-changes",
+        "MDS-provider-status-changes-without-ids",
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-with-asset-name",
+        "TOMP-available-assets-with-asset-license-plate",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "fixed-format"
+      ]
+    },
+    {
+      "description": "Average vehicle rotation per zone and hour",
+      "standards": [
+        "MDS-provider-vehicles",
+        "MDS-provider-vehicles-non-booked",
+        "MDS-provider-vehicles-without-ids-non-booked",
+        "MDS-provider-vehicles-without-ids",
+        "MDS-provider-status-changes",
+        "MDS-provider-status-changes-without-ids",
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-with-asset-name",
+        "TOMP-available-assets-with-asset-license-plate",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "fixed-format"
+      ]
+    },
+    {
+      "description": "Departing number of vehicles per zone and hour",
+      "standards": [
+        "MDS-provider-vehicles",
+        "MDS-provider-vehicles-non-booked",
+        "MDS-provider-vehicles-without-ids-non-booked",
+        "MDS-provider-vehicles-without-ids",
+        "MDS-provider-status-changes",
+        "MDS-provider-status-changes-without-ids",
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-with-asset-name",
+        "TOMP-available-assets-with-asset-license-plate",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "fixed-format"
+      ]
+    }
   ],
   "termsAndConditions": [],
   "agreements": [],
@@ -391,84 +499,186 @@
   "processing": [],
   "archive": [],
   "theme": "Liveability"
-}
-, 
+}, 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
-    "@type": "useCase",
-    "id": " vehicle-rotation",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+  "@type": "useCase",
+  "id": " vehicle-rotation",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
   "story": {
     "asA": "city",
     "iWouldLikeTo": "monitor vehicle rotation per modality and area",
     "inOrderTo": "distribute assets efficiently and determine the right vehicle cap"
-  }, 
+  },
   "standards": [
-    { "name": "csv" },
-    { "name": "geojson" },
-    { "name": "json" },
-    { "name": "xml" },
-    { "name": "GBFS-free-bike-status", "dataProtection": "A" },
-    { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
-    { "name": "GBFS-vehicle-status", "dataProtection": "A" },
-    { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "C" },
-    { "name": "GBFS-station-status", "dataProtection": "A" },
-    { "name": "TOMP-available-assets", "dataProtection": "A" },
-    { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
-    { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" },
-    { "name": "MDS-provider-vehicles", "dataProtection": "D" },
-    { "name": "MDS-provider-stops", "dataProtection": "A" },
-    { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-    { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
-    { "name": "MDS-provider-trips", "dataProtection": "D","mark": "X*", "remark": "switch of the route option to enhance data rpotection, this data is not needed; data minimalisation" },
-    { "name": "shapefile-points" },
-    { "name": "KML-points" },
-    { "name": "SPDP-dynamic" }
+    {
+      "name": "fixed-format"
+    },
+    {
+      "name": "GBFS-free-bike-status",
+      "dataProtection": "A"
+    },
+    {
+      "name": "GBFS-free-bike-status-non-rotating-asset-id",
+      "dataProtection": "C"
+    },
+    {
+      "name": "GBFS-vehicle-status",
+      "dataProtection": "A"
+    },
+    {
+      "name": "GBFS-vehicle-status-non-rotating-asset-id",
+      "dataProtection": "C"
+    },
+    {
+      "name": "GBFS-station-status",
+      "dataProtection": "A"
+    },
+    {
+      "name": "TOMP-available-assets",
+      "dataProtection": "A"
+    },
+    {
+      "name": "TOMP-available-assets-with-asset-name",
+      "dataProtection": "C"
+    },
+    {
+      "name": "TOMP-available-assets-non-rotating-asset-id",
+      "dataProtection": "C"
+    },
+    {
+      "name": "MDS-provider-vehicles",
+      "dataProtection": "D"
+    },
+    {
+      "name": "MDS-provider-stops",
+      "dataProtection": "A"
+    },
+    {
+      "name": "MDS-provider-status-changes",
+      "dataProtection": "D"
+    },
+    {
+      "name": "MDS-provider-vehicles-non-booked",
+      "dataProtection": "C"
+    },
+    {
+      "name": "MDS-provider-trips",
+      "dataProtection": "D",
+      "mark": "X*",
+      "remark": "switch of the route option to enhance data rpotection, this data is not needed; data minimalisation"
+    },
+    {
+      "name": "SPDP-dynamic"
+    }
   ],
   "metrics": [
-    { "description": "Average vehicle rotation per zone and hour" },
-    { "description": "Available number of vehicles per zone and hour" }
+    {
+      "description": "Average vehicle rotation per zone and hour",
+      "standards": [
+        "MDS-provider-vehicles",
+        "MDS-provider-vehicles-non-booked",
+        "MDS-provider-vehicles-without-ids-non-booked",
+        "MDS-provider-vehicles-without-ids",
+        "MDS-provider-status-changes",
+        "MDS-provider-status-changes-without-ids",
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-with-asset-name",
+        "TOMP-available-assets-with-asset-license-plate",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "fixed-format"
+      ]
+    },
+    {
+      "description": "Available number of vehicles per zone and hour",
+      "standards": [
+        "MDS-provider-vehicles",
+        "MDS-provider-vehicles-non-booked",
+        "MDS-provider-vehicles-without-ids-non-booked",
+        "MDS-provider-vehicles-without-ids",
+        "MDS-provider-status-changes",
+        "MDS-provider-status-changes-without-ids",
+        "GBFS-free-bike-status",
+        "GBFS-free-bike-status-non-rotating-asset-id",
+        "GBFS-vehicle-status",
+        "GBFS-vehicle-status-non-rotating-asset-id",
+        "TOMP-available-assets",
+        "TOMP-available-assets-with-asset-name",
+        "TOMP-available-assets-with-asset-license-plate",
+        "TOMP-available-assets-non-rotating-asset-id",
+        "fixed-format"
+      ]
+    }
   ],
   "termsAndConditions": [],
   "agreements": [],
   "transport": [],
   "processing": [],
   "archive": [],
-  "tags": [
-  ],
+  "tags": [],
   "theme": "Liveability"
-}
-, 
+}, 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "improve-most-popular-routes",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recOEp2ybwC50OJHJ",
-    "tags": ["planning:popular-routes"],
+    "tags": [
+        "planning:popular-routes"
+    ],
     "story": {
-         "asA": "city",
+        "asA": "city",
         "iWouldLikeTo": "determine which routes are the most popular for riders",
         "inOrderTo": "improve the road network and the usage of physical space (curb, capacity, etc.)"
     },
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
-        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B","mark": "X*", "explanation": "assumption: the fastest route is probably the most used route from A to B and can be derived with the use of a conventinional route planner"},
-        { "name": "MDS-provider-trips-without-ids-blurred-start-end","dataProtection": "B" },
-        { "name": "MDS-provider-trips", "dataProtection": "D" },
-        { "name": "GPX" },
-        { "name": "shapefile-tracks" }, 
-        { "name": "KML-Track" }
+        {
+            "name": "fixed-format"
+        },
+        {
+            "name": "MDS-provider-trips-without-ids",
+            "dataProtection": "D"
+        },
+        {
+            "name": "MDS-provider-trips-without-ids-only-start-end",
+            "dataProtection": "B",
+            "mark": "X*",
+            "explanation": "assumption: the fastest route is probably the most used route from A to B and can be derived with the use of a conventinional route planner"
+        },
+        {
+            "name": "MDS-provider-trips-without-ids-blurred-start-end",
+            "dataProtection": "B"
+        },
+        {
+            "name": "MDS-provider-trips",
+            "dataProtection": "D"
+        },
+        {
+            "name": "GPX"
+        },
+        {
+            "name": "shapefile-tracks"
+        },
+        {
+            "name": "KML-Track"
+        }
     ],
-    "metrics": [ 
-        { "description": "Top 10 of heavily used route segments" },
-        { "description": "Average number of trips on a route segment per hour" },
-        { "description": "Maximum number of registered users on every route segment" } 
+    "metrics": [
+        {
+            "description": "Top 10 of heavily used route segments"
+        },
+        {
+            "description": "Average number of trips on a route segment per hour"
+        },
+        {
+            "description": "Maximum number of registered users on every route segment"
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],
@@ -476,10 +686,9 @@
     "processing": [],
     "archive": [],
     "theme": "Liveability"
-}
-, 
+}, 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "infrastructure-planning",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
@@ -491,10 +700,7 @@
         "inOrderTo": "know the service area usage and determine where to place new lanes, mobility hubs and drop zones"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
         { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
         { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
@@ -527,7 +733,7 @@
 }
 , 
   {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "performance-per-mobility-hub",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
@@ -538,10 +744,7 @@
         "inOrderTo": "determine which areas need to be improved or modified"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "GBFS-station-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
@@ -571,7 +774,7 @@
 }
 , 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
   "@type": "useCase",
   "id": "idle-time",
     "externalReference": "",
@@ -605,7 +808,8 @@
       { "name": "TOMP-available-assets-non-rotating-asset-id" },
       { "name": "MDS-provider-vehicles" },
       { "name": "MDS-provider-status-changes" },
-      { "name": "MDS-provider-status-changes-without-ids" }
+      { "name": "MDS-provider-status-changes-without-ids" },
+      { "name": "fixed-format" }
     ],
     "metrics": [
       { "description": "Maximum/average parking time per zone" },
@@ -628,7 +832,7 @@
   }
 , 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "parking-pressure",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
@@ -654,10 +858,7 @@
     }
   ],
   "standards": [
-    { "name": "csv" },
-    { "name": "geojson" },
-    { "name": "json" },
-    { "name": "xml" },
+    { "name": "fixed-format" },
     { "name": "GBFS-free-bike-status" },
     { "name": "GBFS-free-bike-status-non-rotating-asset-id", "privacy": "C" },
     { "name": "GBFS-vehicle-status" },
@@ -706,7 +907,7 @@
 }
 , 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "resident-complaints",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recRS7suODr8A3DZI",
@@ -717,10 +918,7 @@
         "inOrderTo": "apply prevention in the right places."
     },
   "standards": [
-    { "name": "csv" },
-    { "name": "geojson" },
-    { "name": "json" },
-    { "name": "xml" },
+    { "name": "fixed-format" },
     { "name": "shapefile-polygon" }
   ],
   "metrics": [
@@ -743,7 +941,7 @@
 }
 , 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
   "@type": "useCase",
   "id": "vehicle-cap-and-neighbouring-regions",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
@@ -756,10 +954,7 @@
       "policy:vehicle-count"
     ],
     "standards": [
-      { "name": "csv" },
-      { "name": "geojson" },
-      { "name": "json" },
-      { "name": "xml" },
+      { "name": "fixed-format" },
       { "name": "GBFS-free-bike-status", "dataProtection": "A" },
       { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
       { "name": "GBFS-vehicle-status", "dataProtection": "A" },
@@ -778,7 +973,7 @@
       { "name": "SPDP-dynamic" }
     ],
     "metrics": [ 
-      { "description": "Average vehicle rotation per zone and hour" },
+      { "description": "Average vehicle rotation per zone and hour", "standards": ["fixed-format"] },
       { "description": "Average idle time per zone and hour" }, 
       { "description": "Total number of available vehicles in the city per day" }, 
       { "description": "Usage percentage per vehicle type and day" }, 
@@ -793,7 +988,7 @@
     "popularity": 3
 }, 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "availability-per-zone",
     "externalReference": "",
@@ -802,10 +997,7 @@
         "iWouldLikeTo": "determine the distribution of assets per zone (hubs, parking, drop-off, no ride, specific area etc.)",
         "inOrderTo": "redistribute assets to create a more inclusive supply" },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "GBFS-station-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
@@ -838,7 +1030,7 @@
 }
 , 
 {
-  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+  "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "distribution-requirements-availability",
   "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recxqdTNFnleDcUHG",
@@ -864,10 +1056,7 @@
     }
   ],
   "standards": [
-    { "name": "csv" },
-    { "name": "geojson" },
-    { "name": "json" },
-    { "name": "xml" },
+    { "name": "fixed-format" },
     { "name": "GBFS-free-bike-status", "dataProtection": "A" },
     { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
     { "name": "GBFS-vehicle-status", "dataProtection": "A" },
@@ -882,6 +1071,7 @@
     { "name": "MDS-provider-status-changes", "dataProtection": "E" },
     { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
     { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
+    { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
     { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
     { "name": "shapefile-points" },
     { "name": "KML-points" },
@@ -905,7 +1095,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "offer-at-transfer-hub",
     "externalReference": "",
@@ -915,10 +1105,7 @@
         "inOrderTo": "redistribute assets to create a more inclusive supply, monitor operators' performance and compliance of transfer hub requirements"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "GBFS-station-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },
@@ -951,7 +1138,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "crash-reports",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recHKsRyMKXFwFom3",
@@ -962,10 +1149,7 @@
         "inOrderTo": "be able to assess whether the assets and driving behavior are safe. To improve the safety of new mobility services. Enable public debate on this topic."
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-provider-status-change", "dataProtection": "D" },
         { "name": "MDS-provider-status-change-without-ids", "dataProtection": "B" }
     ],
@@ -983,7 +1167,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "infrastructure-planning",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recmhocJRA1cOKaHw",
@@ -1016,7 +1200,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-no-ride-zones",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rec3rXhqSoIV35zcz",
@@ -1029,10 +1213,7 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-policies" },
         { "name": "DATEX" },
@@ -1062,7 +1243,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "publish-speed-regulations",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/rectpiAo9yWYkCXGT",
@@ -1076,10 +1257,7 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-policy-geography" },
         { "name": "MDS-policy-policies" },
         { "name": "DATEX" },
@@ -1110,7 +1288,7 @@
 
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "restrict-hours-of-operation",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recYaurzi08Mhnkyn",
@@ -1121,10 +1299,7 @@
         "inOrderTo": "ensure there is no riding late at night for safety in the city."
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
         { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
         { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
@@ -1157,7 +1332,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "road-improvement-effects",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recUQ9z25tWaCzlaB",
@@ -1168,10 +1343,7 @@
         "inOrderTo": "get insights in before and after implementing road changes, improvements, signal retimings, etc."
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-provider-trips", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
         { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B","mark": "X*", "explanation": "assumption: the fastest route is probably the most popular route from A to B and can be derived with the use of a conventinional route planner"},
@@ -1190,11 +1362,13 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "modal-split-and-car-reduction-analysis",
     "externalReference": "",
-    "tags": ["policy:modal-split"],
+    "tags": [
+        "policy:modal-split"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the origin-destination of individual trips to subsequently ingest the data into a traffic model and perform a modal-split or car-reduction-analysis",
@@ -1203,27 +1377,171 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
-        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" },
-        { "name": "MDS-provider-trips-without-ids", "dataProtection": "D" },
-        { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "B"},
-        { "name": "MDS-provider-trips", "dataProtection": "E" },
-        { "name": "MDS-provider-vehicles", "dataProtection": "E" },
-        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "D" },
-        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "B" },
-        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }
+        {
+            "name": "fixed-format"
+        },
+        {
+            "name": "GBFS-free-bike-status-non-rotating-asset-id",
+            "dataProtection": "B",
+            "mark": "X*",
+            "explanation": "assumption: when the asset is not in this file, it is in use"
+        },
+        {
+            "name": "GBFS-vehicle-status-non-rotating-asset-id",
+            "dataProtection": "B",
+            "mark": "X*",
+            "explanation": "assumption: when the asset is not in this file, it is in use"
+        },
+        {
+            "name": "TOMP-available-assets-non-rotating-asset-id",
+            "dataProtection": "B",
+            "mark": "X*",
+            "explanation": "assumption: when the asset is not in this file, it is in use"
+        },
+        {
+            "name": "MDS-provider-status-changes",
+            "dataProtection": "D"
+        },
+        {
+            "name": "MDS-provider-trips-without-ids",
+            "dataProtection": "D"
+        },
+        {
+            "name": "MDS-provider-trips-without-ids-only-start-end",
+            "dataProtection": "B"
+        },
+        {
+            "name": "MDS-provider-trips",
+            "dataProtection": "E"
+        },
+        {
+            "name": "MDS-provider-vehicles",
+            "dataProtection": "E"
+        },
+        {
+            "name": "MDS-provider-vehicles-non-booked",
+            "dataProtection": "D"
+        },
+        {
+            "name": "OD-Matrix-csv",
+            "dataProtection": "A"
+        },
+        {
+            "name": "OD-Matrix-geojson",
+            "dataProtection": "A"
+        },
+        {
+            "name": "OD-Matrix-shape",
+            "dataProtection": "A"
+        },
+        {
+            "name": "ODyZee",
+            "dataProtection": "A"
+        },
+        {
+            "name": "GPX",
+            "dataProtection": "B"
+        },
+        {
+            "name": "GPX-without-timestamps",
+            "dataProtection": "A"
+        }
     ],
     "metrics": [
-        { "description": "Number of moving vehicles between 2 regions per hour" }
+        {
+            "description": "Number of moving vehicles between each pair of regions per hour",
+            "standards": [
+                {
+                    "name": "fixed-format"
+                },
+                {
+                    "name": "GBFS-free-bike-status-non-rotating-asset-id"
+                },
+                {
+                    "name": "GBFS-vehicle-status-non-rotating-asset-id"
+                },
+                {
+                    "name": "TOMP-available-assets-non-rotating-asset-id"
+                },
+                {
+                    "name": "MDS-provider-status-changes"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end"
+                },
+                {
+                    "name": "MDS-provider-trips"
+                },
+                {
+                    "name": "MDS-provider-vehicles"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked"
+                },
+                {
+                    "name": "OD-Matrix-csv"
+                },
+                {
+                    "name": "OD-Matrix-geojson"
+                },
+                {
+                    "name": "OD-Matrix-shape"
+                },
+                {
+                    "name": "ODyZee"
+                },
+                {
+                    "name": "GPX"
+                },
+                {
+                    "name": "GPX-without-timestamps"
+                }
+            ]
+        },
+        {
+            "description": "Individual start and endpoints per trip",
+            "standards": [
+                {
+                    "name": "fixed-format"
+                },
+                {
+                    "name": "GBFS-free-bike-status-non-rotating-asset-id"
+                },
+                {
+                    "name": "GBFS-vehicle-status-non-rotating-asset-id"
+                },
+                {
+                    "name": "TOMP-available-assets-non-rotating-asset-id"
+                },
+                {
+                    "name": "MDS-provider-status-changes"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end"
+                },
+                {
+                    "name": "MDS-provider-trips"
+                },
+                {
+                    "name": "MDS-provider-vehicles"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked"
+                },
+                {
+                    "name": "GPX"
+                },
+                {
+                    "name": "GPX-without-timestamps"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],
@@ -1232,10 +1550,9 @@
     "archive": [],
     "theme": "Sustainability",
     "popularity": 1
-}
-, 
+}, 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "polution-mitigation",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recyvf0rp2zV56E5x",
@@ -1246,10 +1563,7 @@
         "inOrderTo": "calculate eneregy efficiency per operator to reduce emissions over time"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-provider-trips", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "B" },
@@ -1273,7 +1587,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "impact-on-transit",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKjAEob7RRBXf1P",
@@ -1310,10 +1624,7 @@
         { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
         { "name": "TOMP-available-assets-with-asset-license-plate", "dataProtection": "C" },
         { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" }, 
-        { "name": "csv" }, 
-        { "name": "geojson" }, 
-        { "name": "json" }, 
-        { "name": "xml" }
+        { "name": "fixed-format" }
     ],
     "metrics": [
         { "description": "Average number of available vehicles per hub and hour" },
@@ -1329,7 +1640,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "average-km-per-trip",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recavl7mrhNVCYU76",
@@ -1339,10 +1650,7 @@
         "inOrderTo": "to (partly) determine for what travel purposes shared mobility is used."
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-provider-trips", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "B" },
@@ -1369,7 +1677,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "average-time-per-trip",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recqgvXE68b4l77mw",
@@ -1380,10 +1688,7 @@
         "inOrderTo": "use this information for the modal split analyses"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-provider-trips", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "B" },
@@ -1409,7 +1714,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "destinations",
     "externalReference": "",
@@ -1449,10 +1754,7 @@
         { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
         { "name": "TOMP-available-assets-with-asset-license-plate", "dataProtection": "C" },
         { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" }, 
-        { "name": "csv" }, 
-        { "name": "geojson" }, 
-        { "name": "json" }, 
-        { "name": "xml" }
+        { "name": "fixed-format" }
     ],
     "metrics": [
         { "description": "Arriving number of vehicles per hub and hour" }
@@ -1466,7 +1768,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "commute-neighbouring-regions",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recrLZt8jCp4HDOch",
@@ -1477,10 +1779,7 @@
         "inOrderTo": "find out how shared mobility is used to travel through the city and to/from its regions. Use this information for modal split analyses"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
         { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B", "mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use"},
         { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B","mark": "X*", "explanation": "assumption: when the asset is not in this file, it is in use" },
@@ -1514,7 +1813,7 @@
 }
 , 
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "origins",
     "externalReference": "",
@@ -1554,10 +1853,7 @@
         { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "C" },
         { "name": "TOMP-available-assets-with-asset-license-plate", "dataProtection": "C" },
         { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "C" }, 
-        { "name": "csv" }, 
-        { "name": "geojson" }, 
-        { "name": "json" }, 
-        { "name": "xml" }
+        { "name": "fixed-format" }
     ],
     "metrics": [
         { "description": "Departing number of vehicles per hub and hour" }

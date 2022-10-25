@@ -6,6 +6,7 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "odz-file",
     "privacy": "A",
+    "confidentiality": "C",
     "domain": "B",
     "implementationEffort": "C", 
     "reusability":"C", 

@@ -1,5 +1,5 @@
   {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "performance-per-mobility-hub",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recKEQoOBpKQdTyoU",
@@ -10,10 +10,7 @@
         "inOrderTo": "determine which areas need to be improved or modified"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "GBFS-station-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status", "dataProtection": "A" },
         { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "C" },

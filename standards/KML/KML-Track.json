@@ -7,6 +7,7 @@
     "refreshRate": "[refresh rate]",
     "mediumType": "xml-file",
     "privacy": "C",
+    "confidentiality": "C",
     "implementationEffort": "D", 
     "reusability":"E",
     "interoperability": "B",

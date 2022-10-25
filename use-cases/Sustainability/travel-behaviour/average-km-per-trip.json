@@ -1,5 +1,5 @@
 {
-    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/building-blocks-proposal/jsonld/use-case.jsonld",
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "average-km-per-trip",
     "externalReference": "https://airtable.com/shrPf4QvORkjZmHIs/tblzFfU6fxQm5Sdhm/viwsiyw4MNx5CHmFI/recavl7mrhNVCYU76",
@@ -9,10 +9,7 @@
         "inOrderTo": "to (partly) determine for what travel purposes shared mobility is used."
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
         { "name": "MDS-provider-trips", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids", "dataProtection": "E" },
         { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "B" },

@@ -5,6 +5,7 @@
     "part": "geojson",
     "refreshRate": "[refresh rate]",
     "privacy": "A",
+    "confidentiality": "C",
     "domain": "B",
     "implementationEffort": "C", 
     "reusability":"C", 
