@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef, ComponentFactory, OnChanges } from '@angular/core';
+import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef, ComponentFactory, OnChanges, ComponentRef } from '@angular/core';
 import { ConfigAuthenticationComponent } from '../config-authentication/config-authentication.component';
 import { ConfigFieldsComponent } from '../config-fields/config-fields.component';
 
@@ -14,6 +14,7 @@ export class ConfigStandardComponent implements OnInit, OnChanges {
 
   @ViewChild('stepContainer', {read: ViewContainerRef}) 
   container!: ViewContainerRef;
+  ref! : ComponentRef<any>;
 
   step: number = 0;
 
@@ -35,19 +36,29 @@ export class ConfigStandardComponent implements OnInit, OnChanges {
     } else if (this.step == 2 ){
       this.container.clear();
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ConfigAuthenticationComponent);
-      const ref = this.container.createComponent(componentFactory);
-      ref?.instance.setData(this.data);
+      this.ref = this.container.createComponent(componentFactory);
+      this.ref.instance.setData(this.data);
       this.data.step = 2;
     } else if (this.step == 3){
       this.container.clear();
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ConfigFieldsComponent);
-      const ref = this.container.createComponent(componentFactory);
-      ref?.instance.setData(this.data);
+      this.ref = this.container.createComponent(componentFactory);
+      this.ref.instance.setData(this.data);
       this.data.step = 3;
     } else if( this.step > 3 ){
       this.container.clear();
       this.data.step = 4;
     }
+  }
+
+  isBlocked() {
+    if (this.step == 1) {
+      return false;
+    }
+    if (this.ref == null ) {
+      return false;
+    }
+    return this.ref.instance.isBlocked();
   }
 
   determineStep() {

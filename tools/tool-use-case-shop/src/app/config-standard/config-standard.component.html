@@ -87,7 +87,7 @@
         <span class="text-blue-600" *ngIf="step>=3">Configuration</span>
         <span class="text-gray-300" *ngIf="step<3">Configuration</span>
     </div>
-    <button (click)="next()" *ngIf="step<4"
+    <button (click)="next()" *ngIf="step<4" [disabled]="isBlocked()"
         class="inline-flex items-center justify-center px-5 py-3 bg-transparent text-blue-600 hover:text-blue-400 focus:text-blue-400 focus:ring-blue-400 active:text-blue-600 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed">
         Next step
     </button>

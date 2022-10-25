@@ -43,6 +43,16 @@ export class ConfigFieldsComponent implements OnInit {
     }
   }
 
+  isBlocked(){
+    for (let i = 0; i < this.fields.length; ++i) {
+      let kv: any = this.fields[i];
+      if (kv.value === ""){
+        return true;
+      }
+    }
+    return false;
+  }
+
   setValue(event: Event){
     let target: any = event.target;
     let entry = this.fields.find( (x) => x.name == target.id);

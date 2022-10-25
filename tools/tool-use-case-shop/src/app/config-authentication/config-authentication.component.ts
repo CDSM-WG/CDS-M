@@ -48,6 +48,10 @@ export class ConfigAuthenticationComponent implements OnInit, OnDestroy {
     }
   }
 
+  isBlocked(){
+    return this.data.authentication == null || this.data.authentication.length == 0;
+  }
+
   getAuthentication(name: string){
     return AuthenticationJson.find( (x) => x.name == name );
   }
