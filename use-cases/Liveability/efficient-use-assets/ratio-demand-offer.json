@@ -57,16 +57,16 @@
       "dataProtection": "B"
     },
     {
-      "name": "OD-Matrix-csv"
+      "name": "OD-csv"
     },
     {
-      "name": "ODyZee"
+      "name": "OD-ODyZee"
     },
     {
-      "name": "OD-Matrix-geojson"
+      "name": "OD-geojson"
     },
     {
-      "name": "OD-Matrix-shape"
+      "name": "OD-shape"
     },
     {
       "name": "GBFS-free-bike-status",

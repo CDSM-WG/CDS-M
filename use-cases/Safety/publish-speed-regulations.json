@@ -14,8 +14,7 @@
     "problemsSolved": [],
     "standards": [
         { "name": "fixed-format" },
-        { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-policies" },
+        { "name": "MDS-policy-policy" },
         { "name": "DATEX" },
         { "name": "TOMP-API-regions" }
     ],
@@ -23,12 +22,8 @@
         { 
             "description": "Publish speed-regulation zones",
             "standards": [
-                { "name": "csv" },
-                { "name": "json" },
-                { "name": "geojson" },
-                { "name": "xml" },
-                { "name": "MDS-policy-geography" },
-                { "name": "MDS-policy-policies" },
+                { "name": "fixed-format" },
+                { "name": "MDS-policy-policy" },
                 { "name": "DATEX" },
                 { "name": "TOMP-API-regions" }
             ]

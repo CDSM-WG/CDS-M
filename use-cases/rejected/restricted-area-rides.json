@@ -8,14 +8,11 @@
         "inOrderTo": "?"
     },
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
+        { "name": "fixed-format" },
 
         { "name": "MDS-provider-trips" },
         { "name": "MDS-provider-trips-without-ids" },
-        { "name": "MDS-policy-policies" }
+        { "name": "MDS-policy-policy" }
     ],
     "termsAndConditions": [],
     "agreements": [],

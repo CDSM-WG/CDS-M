@@ -8,15 +8,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }

@@ -8,14 +8,12 @@
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "B",
+    "confidentiality": "B",
+    "interoperability": "A",
     "domain": "B",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains operating and other areas, like parking areas, slow speed areas etc.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }

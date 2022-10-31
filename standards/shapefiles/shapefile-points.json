@@ -4,16 +4,16 @@
     "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
-    "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "D", 
-    "reusability":"E",
-    "interoperability": "B",
+
+    "privacy": "*",
+    "confidentiality": "*",
+    "interoperability": "E",
+
     "domain": "D",
     "description": "Shapefile should contain points only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }

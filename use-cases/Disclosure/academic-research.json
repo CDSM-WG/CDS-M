@@ -12,7 +12,16 @@
         "iWouldLikeTo": "use the data for analysis, prediction, and modeling",
         "inOrderTo": "inform policy makers"
     },
-    "metrics": [ { "description": "This is custom made to each research goal", "standards": [ "fixed-format" ] } ],
+    "metrics": [
+        {
+            "description": "This is custom made to each research goal",
+            "standards": [
+                {
+                    "name": "fixed-format"
+                }
+            ]
+        }
+    ],
     "theme": "Research",
     "standards": [
         {

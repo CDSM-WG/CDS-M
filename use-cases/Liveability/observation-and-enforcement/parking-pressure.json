@@ -38,7 +38,11 @@
     { "name": "MDS-provider-stops" },
     { "name": "MDS-provider-status-changes", "privacy": "E" },
     { "name": "MDS-provider-status-changes-without-ids", "privacy": "E" },
-    { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" }
+    { "name": "MDS-provider-vehicles-without-ids-non-booked", "privacy": "A" },
+    { "name": "CDS-events-events" },
+    { "name": "CDS-events-status" },
+    { "name": "CDS-metrics-aggregate" },
+    { "name": "CDS-metrics-session" }
   ],
   "metrics": [
     { "description": "Minimum/maximum/average parking time per zone" },

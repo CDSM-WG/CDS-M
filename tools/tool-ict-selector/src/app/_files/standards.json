@@ -958,7 +958,7 @@
 }, 
 {
     "type": "standard",
-    "name": "MDS-policy-policies",
+    "name": "MDS-policy-policy",
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#policies",
     "part": "/policies/",

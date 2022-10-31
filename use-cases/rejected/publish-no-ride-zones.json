@@ -11,11 +11,8 @@
     "benefits": [],
     "problemsSolved": [],
     "standards": [
-        { "name": "csv" },
-        { "name": "json" },
-        { "name": "geojson" },
-        { "name": "xml" },
-        { "name": "MDS-policy-policies" },
+        { "name": "fixed-format" },
+        { "name": "MDS-policy-policy" },
         { "name": "TOMP-API-regions" }
     ],
     "termsAndConditions": [],

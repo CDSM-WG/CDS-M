@@ -25,13 +25,13 @@
       { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
       { "name": "MDS-provider-stops", "dataProtection": "A" },
       { "name": "MDS-provider-status-changes", "dataProtection": "D" },
-      { "name": "MDS-provider-trips", "dataProtection": "D","mark": "X*", "remark": "switch of the route option to enhance data rpotection, this data is not needed; data minimalisation" },
+      { "name": "MDS-provider-trips", "dataProtection": "D","mark": "X*", "remark": "switch of the route option to enhance data protection, this data is not needed; data minimalisation" },
       { "name": "shapefile-points" },
       { "name": "KML-points" },
       { "name": "SPDP-dynamic" }
     ],
     "metrics": [ 
-      { "description": "Average vehicle rotation per zone and hour", "standards": ["fixed-format"] },
+      { "description": "Average vehicle rotation per zone and hour", "standards": [ { "name": "fixed-format" } ] },
       { "description": "Average idle time per zone and hour" }, 
       { "description": "Total number of available vehicles in the city per day" }, 
       { "description": "Usage percentage per vehicle type and day" }, 

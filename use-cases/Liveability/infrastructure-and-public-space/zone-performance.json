@@ -25,7 +25,11 @@
         { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
         { "name": "MDS-provider-status-changes", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "E" },
-        { "name": "SPDP-dynamic", "dataProtection": "A" }
+        { "name": "SPDP-dynamic", "dataProtection": "A" },
+        { "name": "CDS-events-events" },
+        { "name": "CDS-events-status" },
+        { "name": "CDS-metrics-aggregate" },
+        { "name": "CDS-metrics-session" }  
     ],
     "metrics": [ 
         { "description": "Average number of available assets per zone per hour" },

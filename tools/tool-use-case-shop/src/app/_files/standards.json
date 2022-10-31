@@ -1,20 +1,162 @@
 [ 
 {
+    "type": "standard",
+    "name": "CDS-curbs-areas",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/curbs#curb-area",
+    "part": "/curbs/areas",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. Defines curb areas in a city and their properties. A Curb Area is a particular neighborhood or area of interest that includes one or more Curb Zones. Important notes about Curb Areas:<br>   <ol><li>Curb Areas MAY overlap with other Curb Areas    <li>Multiple Curb Areas MAY include the same Curb Zones    <li>Curb Areas are not meant to be city-wide, and instead should be an area of interest around one or more Curb Zones that is no bigger than a neighborhood.    <li>Unlike Zones, Areas may be updated as needed, with a new curb_area_id being optionally assigned by the city</ol>"
+}, 
+{
+    "type": "standard",
+    "name": "CDS-curbs-policy",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/curbs#policy",
+    "part": "/curbs/policies/<id>",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "A Policy object is a rule that allows or prohibits a particular set of users from using a particular curb at a particular time or times. Multiple Policy objects together define the full extent of regulations within a Curb Zone. The design of the Policy object borrows heavily from the work of the CurbLR project, with additions for the larger scope of CDS."
+}, 
+{
+    "type": "standard",
+    "name": "CDS-curbs-spaces",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/curbs#curb-space",
+    "part": "/curbs/spaces",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. Defines individual demarcated spaces within a Curb Zone. Important notes about Curb Spaces:<br>   <ol><li>Curb Spaces may NOT overlap with other Curb Spaces    <li>Curb Spaces must be wholly contained within a single Curb Zone    <li>Unlike Zones, Spaces may be updated as needed, with a new curb_space_id being optionally assigned by the city</ol>"
+}, 
+{
+    "type": "standard",
+    "name": "CDS-curbs-zone",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/curbs",
+    "part": "/curbs/zones",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. A Curb Zone is a geographical entity representing a single region along the curb, along with metadata about that region and the policies that apply to its use by vehicles. What constitutes an individual Curb Zone is determined by the city, but all Curb Zones MUST meet the following criteria: <br>    <ol><li>Always have a common regulation along their entire extent (i.e., if at certain times of day, half of a given stretch of curb is a loading zone and the other half is metered parking, that stretch of curb must be divided into at least two Curb Zones);    <li>Never span multiple blocks -- an entire Curb Zone must be on the same street and be between the same two cross streets, alleys, or service roads.    <li>Never overlap other Curb Zones in the same dataset with overlapping validity times. This applies to both the zone's polygon geometries and linear references (if used).    <li>Be assigned a unique ID, in the form of a UUID. This ID SHOULD remain consistent as long as the Curb Zone's geography remains substantially the same. Policies may be updated without changing the ID.    <li>It SHOULD NOT be possible to legally park a single vehicle in two different Curb Zone at the same time (i.e., a given non-demarcated parking area or loading zone should be represented as a single curb location), unless this conflicts with the requirements above.</ol>"
+}, 
+{
+    "type": "standard",
+    "name": "CDS-events-events",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/events#curb-event",
+    "part": "/events/events",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "B",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "A Curb Event is a record of activity that happens within the geographic bounds of a Curbs object."
+}, 
+{
+    "type": "standard",
+    "name": "CDS-events-status",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/events#status",
+    "part": "/events/status",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "The Curb Status is the current status of sensors that are monitoring curb places."
+}, 
+{
+    "type": "standard",
+    "name": "CDS-metrics-aggregate",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/metrics#query-aggregate",
+    "part": "/metrics/aggregates",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "Aggregates are historic pre-computed counts and metrics of Events occurring in curb places, aggregated to the hour. All Aggregates can be calculated from the data included in Session."
+}, 
+{
+    "type": "standard",
+    "name": "CDS-metrics-session",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/metrics#session",
+    "part": "/metrics/sessions",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "Sessions are a historic subset of curb events, with some rows combined, some columns removed for clarity and privacy, and for only some curb event types. Sessions are meant to provide a granular view of parking and area sessions happening around the curb places, so consumers can do their own analysis."
+}, 
+{
     "type": "file",
     "exchangeType": "file-based",
     "name":"DATEX",
     "displayName": "DATEX-II",
     "version": "[version]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "xml-file",
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "E",
-    "reusability":"D", 
-    "interoperability": "B",
+    "confidentiality": "B",
+    "interoperability": "A",
     "domain": "B",
     "externalReference": "https://www.datex2.eu/node/261",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "The standard for the exchange of traffic related data. The DATEX II data content standards are defined in the multi-part CEN specification number 16157: <ul>    <li> Part 1: Context and framework    <li> Part 2: Location referencing    <li> Part 3: Situation publication    <li> Part 4: Variable Message Sign (VMS) publications    <li> Part 5: Measured and elaborated data publications    <li> Part 6: Parking publications    <li> Part 7: Common data elements    <li> Part 8: Traffic management publications and urban extensions    <li> Part 9: Traffic signal management publications</ul>" 
 }, 
@@ -31,15 +173,13 @@
     "csvSeperationToken": "[comma,semi-colon,space,tab,not-applicable]",
 
     "url": "[complete url]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
 
     "privacy": "*",
     "confidentiality": "*",
-    "implementationEffort": "A", 
-    "reusability":"E",
     "interoperability": "E",
     "domain": "E",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
 
     "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
@@ -61,17 +201,15 @@
     "description": "This part contains the available assets. <br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "version": "[1.0,1.1,2.0]",
     "url": "[url]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
 
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
 
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -87,12 +225,10 @@
     "version": "[1.0,1.1,2.0]",
 
     "url": "[url]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
 
     "privacy": "B",
-    "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"E", 
+    "confidentiality": "D",
     "interoperability": "D",
     "domain": "B",
 
@@ -105,7 +241,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }
 , 
@@ -119,15 +255,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }, 
@@ -141,15 +275,13 @@
     "version": "[1.1,2.0,2.1,2.2]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }
@@ -164,15 +296,13 @@
     "url": "[url]",
     "version": "[2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }
@@ -187,15 +317,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }, 
@@ -209,15 +337,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"A", 
+    "confidentiality": "B",
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }
@@ -232,15 +358,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }
@@ -255,15 +379,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"A", 
+    "confidentiality": "B",
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }, 
@@ -277,15 +399,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }
@@ -300,15 +420,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }
@@ -323,15 +441,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }
@@ -346,15 +462,13 @@
     "url": "[url]",
     "version": "[1.0,1.1,2.0,2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }, 
@@ -369,15 +483,13 @@
     "url": "[url]",
     "version": "[2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -390,12 +502,10 @@
     "description": "Like vehicle-status, but with one adjustment: the vehicle_id doesn't rotate (causing GDPR issues). <br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "version": "[2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",    
+    "refreshRate": "[ISO8601 timespan]",    
     "url": "[url]",
     "privacy": "B",
-    "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"E", 
+    "confidentiality": "D",
     "interoperability": "D",
     "domain": "B",
     "fieldModifications": [
@@ -407,7 +517,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }
 , 
@@ -421,15 +531,13 @@
     "url": "[url]",
     "version": "[2.1,2.2]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"A", 
     "interoperability": "A",
     "domain": "B",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
     "bbversion": 1
 }
@@ -440,13 +548,11 @@
     "displayName": "GPX - GPS data (XML) - without timestamp",
     "exchangeType": "file-based", 
     "version": "1.1",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "xml-file",
     "privacy": "B",
-    "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"D", 
-    "interoperability": "B",
+    "confidentiality": "D",
+    "interoperability": "D",
     "domain": "D",
     "schema": "https://www.topografix.com/gpx/1/1/gpx.xsd",
     "fieldModifications": [
@@ -456,7 +562,7 @@
         }
     ],
     "conflicts": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "GPX, or GPS Exchange Format, is an XML schema designed as a common GPS data format for software applications. It can be used to describe waypoints, tracks, and routes. It is an open format and can be used without the need to pay license fees"
 }, 
@@ -466,12 +572,10 @@
     "displayName": "GPX - GPS data (XML)",
     "exchangeType": "file-based", 
     "version": "1.1",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "xml-file",
-    "privacy": "D",
-    "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"D", 
+    "privacy": "B",
+    "confidentiality": "D",
     "interoperability": "B",
     "domain": "D",
     "schema": "https://www.topografix.com/gpx/1/1/gpx.xsd",
@@ -479,7 +583,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "GPX, or GPS Exchange Format, is an XML schema designed as a common GPS data format for software applications. It can be used to describe waypoints, tracks, and routes. It is an open format and can be used without the need to pay license fees"
 }, 
@@ -487,18 +591,17 @@
     "type": "standard",
     "name": "GTFS-agency",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#agencytxt",
     "part": "agency.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "url": "[url]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "A", 
-    "reusability":"B", 
     "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "The agency table provides information about the transit agency as such, including name, website and contact information.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }, 
@@ -506,17 +609,16 @@
     "type": "standards",
     "name": "GTFS-attributions",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#attributionstxt",
     "part": "attributions.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "A", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Specifies the attributions that are applied to the dataset.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -525,17 +627,16 @@
     "type": "standards",
     "name": "GTFS-calendar",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#calendartxt",
     "part": "calendar.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "The calendar table defines service patterns that operate recurrently such as, for example, every weekday. Service patterns that don't repeat such as for a one-time special event will be defined in the calendar_dates table.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -544,17 +645,16 @@
     "type": "standards",
     "name": "GTFS-calendar-dates",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#calendar_datestxt",
     "part": "calendar_dates.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Exceptions for the services defined in the calendar.txt. If calendar.txt is omitted, then calendar_dates.txt is required and must contain all dates of service.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -563,17 +663,16 @@
     "type": "standards",
     "name": "GTFS-fare-attributes",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#fare_attributestxt",
     "part": "fare_attributes.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "reusability":"B", 
     "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Fare information for a transit agency's routes.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -582,17 +681,16 @@
     "type": "standards",
     "name": "GTFS-fare-rules",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#fare_rulestxt",
     "part": "fare_rules.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Rules to apply fares for itineraries.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -601,17 +699,16 @@
     "type": "standards",
     "name": "GTFS-feed-info",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#feed_infotxt",
     "part": "feed_info.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "reusability":"B", 
     "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Dataset metadata, including publisher, version, and expiration information.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -620,17 +717,16 @@
     "type": "standards",
     "name": "GTFS-frequencies",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#frequenciestxt",
     "part": "frequencies.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
-    "implementationEffort": "B", 
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Headway (time between trips) for routes with variable frequency of service.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -639,17 +735,16 @@
     "type": "standards",
     "name": "GTFS-levels",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#levelstxt",
     "part": "levels.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
-    "implementationEffort": "A", 
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Levels within stations.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -658,17 +753,16 @@
     "type": "standards",
     "name": "GTFS-pathways",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#pathwaystxt",
     "part": "pathways.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Pathways linking together locations within stations.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -676,18 +770,17 @@
 {
     "type": "standards",
     "name": "GTFS-routes",
-    "exchangeType": "file-based", 
+    "exchangeType": "file-based",
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt", 
     "part": "routes.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "The routes table identifies distinct routes. This is to be distinguished from distinct routings (or paths), several of which may belong to a single route.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -696,17 +789,16 @@
     "type": "standards",
     "name": "GTFS-shapes",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#shapestxt",
     "part": "shapes.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Rules for drawing lines on a map to represent a transit organization's routes<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -715,17 +807,16 @@
     "type": "standards",
     "name": "GTFS-stops",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt",
     "part": "stops.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "A", 
-    "reusability":"A", 
     "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "The stops table defines the geographic locations of each and every actual stop or station in the transit system as well as, and optionally, some of the amenities associated with those stops.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -734,17 +825,16 @@
     "type": "standards",
     "name": "GTFS-stop-times",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt",
     "part": "stop_times.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Times that a vehicle arrives at and departs from stops for each trip.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -753,17 +843,16 @@
     "type": "standards",
     "name": "GTFS-transfers",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#transferstxt",
     "part": "transfers.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Rules for making connections at transfer points between routes.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -772,17 +861,16 @@
     "type": "standards",
     "name": "GTFS-translations",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#translationstxt",
     "part": "translations.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Translated information of a transit agency.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -791,17 +879,16 @@
     "type": "standards",
     "name": "GTFS-trips",
     "exchangeType": "file-based", 
+    "externalReference": "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt",
     "part": "trips.txt",
-    "version": "[version]",
+    "version": "[2.0,1.0]",
     "mediumType": "csv-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Trips for each route. A trip is a sequence of two or more stops that occur during a specific time period.<br>The General Transit Feed Specification (GTFS),[1] originally known as the Google Transit Feed Specification, defines a common format for public transportation schedules and associated geographic information."
 }
@@ -812,16 +899,14 @@
     "exchangeType": "file-based", 
     "part": "Heatmap",
     "version": "2.2",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "C",
-    "implementationEffort": "C", 
-    "reusability":"E",
-    "interoperability": "C",
+    "interoperability": "E",
     "domain": "D",
     "mediumType": "xml-file",
     "schema": "https://developers.google.com/kml/documentation/kmlreference#point",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
     "bbversion": 1,
     "description": "KML file containing all measurepoints of trips without timestamps, or at max time frames (e.g. rounded per hour)<br>Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008"
@@ -832,13 +917,11 @@
     "exchangeType": "file-based", 
     "part": "Points+Timestamp",
     "version": "2.2",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "xml-file",
     "privacy": "D",
     "confidentiality": "C",
-    "implementationEffort": "C", 
-    "reusability":"D", 
-    "interoperability": "D",
+    "interoperability": "E",
     "domain": "E",
     "schema": "https://developers.google.com/kml/documentation/time#example:-showing-movement-of-a-point-along-a-path",
     "fieldModifications": [
@@ -849,7 +932,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
     "bbversion": 1,
     "description": "KML file containing locations & timestamps (a.k.a. tracks)<br>Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008"
@@ -860,16 +943,14 @@
     "exchangeType": "file-based", 
     "part": "Points",
     "version": "2.2",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
     "confidentiality": "C",
-    "implementationEffort": "C", 
-    "reusability":"E",
-    "interoperability": "C",
+    "interoperability": "E",
     "domain": "D",
     "mediumType": "xml-file",
     "schema": "https://developers.google.com/kml/documentation/kmlreference#point",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
     "bbversion": 1,
     "description": "KML file only containing locations<br>Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008"
@@ -880,13 +961,11 @@
     "exchangeType": "file-based", 
     "part": "Track",
     "version": "2.2",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "xml-file",
     "privacy": "C",
     "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E",
-    "interoperability": "B",
+    "interoperability": "E",
     "domain": "D",
     "schema": "https://developers.google.com/kml/documentation/kmlreference#gx:track",
     "fieldModifications": [
@@ -897,30 +976,10 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
     "bbversion": 1,
     "description": "KML file only containing tracks<br>Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008"
-}, 
-{
-    "type": "standard",
-    "name": "MDS-base-geographies",
-    "exchangeType": "API", 
-    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/geography",
-    "part": "/geographies/",
-    "url": "[url]",
-    "version": "[version]",
-    "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "D", 
-    "reusability":"D", 
-    "interoperability": "A",
-    "domain": "A",
-    "mediumType": "API",
-    "refreshRate": "0",
-    "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1, 
-    "description": "The geography API endpoints are intended to be implemented by regulatory agencies and consumed by mobility providers. Providers query the Policy API to get information about geographical regions for regulatory and other purposes.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }, 
 {
     "type": "standard",
@@ -931,36 +990,14 @@
     "url": "[url]",
     "version": "[version]",
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "D", 
-    "reusability":"D", 
+    "confidentiality": "B",
     "interoperability": "A",
     "domain": "A",
     "mediumType": "API",
     "refreshRate": "0",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "Depricated, replaced by geographies<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
-}, 
-{
-    "type": "standard",
-    "name": "MDS-policy-policies",
-    "exchangeType": "API", 
-    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#policies",
-    "part": "/policies/",
-    "url": "[url]",
-    "version": "[version]",
-    "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
-    "domain": "A",
-    "mediumType": "API",
-    "refreshRate": "0",
-    "retentionPeriod": "[ISO8601 duration]",
-    "bbversion": 1, 
-    "description": "The Policy API endpoints are intended to be implemented by regulatory agencies and consumed by mobility providers. Providers query the Policy API to get information about local rules that may affect the operation of their mobility service or which may be used to determine compliance.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }, 
 {
     "type": "standard",
@@ -971,14 +1008,12 @@
     "url": "[url]",
     "version": "[version]",
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "D", 
-    "reusability":"E", 
+    "confidentiality": "B",
     "interoperability": "A",
     "domain": "A",
     "mediumType": "API",
     "refreshRate": "0",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "The Policy API endpoints are intended to be implemented by regulatory agencies and consumed by mobility providers. Providers query the Policy API to get information about local rules that may affect the operation of their mobility service or which may be used to determine compliance.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
 }, 
@@ -992,12 +1027,12 @@
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",
+    
     "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
+    "confidentiality": "B",
+    "interoperability": "D",
     "domain": "A",
+
     "fieldModifications": [
         {
             "field": "status_changes[].device_id",
@@ -1008,7 +1043,7 @@
             "exception": "removed"
         }
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }
@@ -1021,13 +1056,13 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "API",
-    "refreshRate": "0",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
+    "confidentiality": "D",
     "interoperability": "A",
     "domain": "A",
+
     "fieldModifications": [
         {
             "field": "status_changes[].device_id",
@@ -1041,7 +1076,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1, 
     "description": "The status of the inventory of vehicles available for customer use.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
@@ -1056,13 +1091,11 @@
     "version": "[version]",
     "mediumType": "API",
     "privacy": "A",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
+    "confidentiality": "B",
     "interoperability": "A",
     "domain": "A",
     "refreshRate": "0",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1, 
     "description": "Stop information should be updated on a near-realtime basis by providers who operate docked mobility devices in a given municipality.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
@@ -1075,13 +1108,13 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "API",
-    "refreshRate": "0",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
+    "confidentiality": "D",
+    "interoperability": "E",
     "domain": "A",
+    
     "part": "trips",
     "fieldModifications": [
         {
@@ -1100,7 +1133,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }
@@ -1113,13 +1146,13 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "API",
-    "refreshRate": "0",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
+    "confidentiality": "D",
+    "interoperability": "E",
     "domain": "A",
+    
     "part": "trips",
     "fieldModifications": [
         {
@@ -1135,7 +1168,7 @@
             "exception": "contains only blurred start and end location (30m)"
         }
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }
@@ -1147,14 +1180,14 @@
     "exchangeType": "API", 
     "version": "[version]",
     "url": "[url]",
-    "mediumType": "API",
-    "refreshRate": "0",
+    "mediumType": "API",    
+    "refreshRate": "[ISO8601 timespan]",
+    
     "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
+    "confidentiality": "D",
+    "interoperability": "E",
     "domain": "A",
+
     "part": "trips",
     "fieldModifications": [
         {
@@ -1173,7 +1206,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }
@@ -1186,13 +1219,13 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "API",
-    "refreshRate": "0",
-    "privacy": "D",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "B",
+    "confidentiality": "D",
+    "interoperability": "C",
     "domain": "A",
+    
     "part": "trips",
     "fieldModifications": [
         {
@@ -1207,7 +1240,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }
@@ -1221,18 +1254,16 @@
     "version": "[version]",
     "mediumType": "API",
 
-    "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
+    "privacy": "D",
+    "confidentiality": "D",
     "interoperability": "A",
     "domain": "A",
     
-    "refreshRate": "0",
+    "refreshRate": "[ISO8601 timespan]",
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1, 
     "description": "A trip represents a journey taken by a mobility as a service customer with a geo-tagged start and stop point.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
@@ -1248,12 +1279,12 @@
     "mediumType": "API",
     "refreshRate": "0",
     "url": "[url]",
+    
     "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "D",
+    "confidentiality": "D",
+    "interoperability": "B",
     "domain": "A",
+
     "conflicts": [
         "reveals_personal_trip_data"
     ],
@@ -1264,7 +1295,7 @@
             "exception": "only non-booked"
         }
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }
@@ -1277,13 +1308,13 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "API",
-    "refreshRate": "0",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
+    "confidentiality": "D",
+    "interoperability": "E",
     "domain": "A",
+
     "part": "vehicles",
     "fieldModifications": [
         {
@@ -1299,7 +1330,7 @@
             "exception": "only non-booked"
         }
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }
@@ -1312,17 +1343,15 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "API",
-    "refreshRate": "0",
-    "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "A",
+    "confidentiality": "D",
+    "interoperability": "D",
     "domain": "A",
+    
     "part": "vehicles",
-    "conflicts": [
-        "reveals_personal_trip_data"
-    ],
+    "conflicts": [],
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
@@ -1333,7 +1362,7 @@
             "exception": "removed"
         }
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }
@@ -1346,13 +1375,13 @@
     "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
-    "refreshRate": "0",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
+    "confidentiality": "D",
     "interoperability": "A",
     "domain": "A",
+
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
@@ -1364,7 +1393,7 @@
         }
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1, 
     "description": "The /vehicles is a near-realtime endpoint and returns the current status of vehicles in an agency's Jurisdiction and/or area of agency responsibility.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
@@ -1377,87 +1406,87 @@
     "part": "[complete url]",
     "version": "[version]",
     "mediumType": "xml-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+    
     "privacy": "A",
-    "confidentiality": "C",
-    "implementationEffort": "E", 
-    "reusability":"B", 
-    "interoperability": "C",
+    "confidentiality": "B",
+    "interoperability": "A",
+
     "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "NeTEx is a CEN Technical Standard for exchanging Public Transport Network, schedules and related data. It is divided into three parts, each covering a functional subset of the CEN Transmodel:<ul><li>Part 1 describes the Public Transport Network topology (CEN/TS 16614-1:2014);<li>Part 2 describes Scheduled Timetables (CEN/TS 16614-2:2014);<li>Part 3 covers Fare information (CEN/TS 16614-3:2015).</ul>"
 }, 
 {
     "type": "standard",
-    "name": "OD-Matrix-csv",
+    "name": "OD-csv",
     "exchangeType": "file-based", 
     "part": "semicolon-csv",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "semicolon-delimited-csv-file",
+
     "privacy": "A",
     "confidentiality": "C",
-    "implementationEffort": "B", 
-    "reusability":"C", 
     "domain": "B",
-    "interoperability": "B",
+    "interoperability": "E",
+
     "schema": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... ",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "A comma-separated values (CSV) file is a delimited text file that uses a comma or semi colon to separate values. Each line of the file is a data record. Each record consists of one or more fields, separated by commas. The use of the comma as a field separator is the source of the name for this file format. A CSV file typically stores tabular data (numbers and text) in plain text, in which case each line will have the same number of fields.<br>See 'schema' for the definition"
 }, 
 {
     "type": "standard",
-    "name": "OD-Matrix-geojson",
+    "name": "OD-geojson",
     "exchangeType": "file-based", 
     "part": "geojson",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "C",
     "domain": "B",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "interoperability": "E",
+    
     "mediumType": "json",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format.<br>Each geometry should have references to other geometries, including the number of movements"
 }, 
 {
     "type": "standard",
-    "name": "ODyZee",
+    "name": "OD-ODyZee",
     "exchangeType": "file-based", 
     "description": "Standard to exchange OD related data",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "odz-file",
+
     "privacy": "A",
     "confidentiality": "C",
     "domain": "B",
-    "implementationEffort": "C", 
-    "reusability":"C", 
     "interoperability": "A",
+    
     "externalReference": "https://github.com/TOMP-WG/ODyZee",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
     "type": "standards",
-    "name": "OD-Matrix-shape",
+    "name": "OD-shape",
     "exchangeType": "file-based", 
     "part": "shape-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "C",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "domain": "B",
-    "interoperability": "B",
+    "domain": "B",    
+    "interoperability": "E",
+    
     "mediumType": "ESRI-shapefile",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "The shapefile format is a geospatial vector data format for geographic information system (GIS) software. It is developed and regulated by Esri as a mostly open specification for data interoperability among Esri and other GIS software products. <br>Each area should have references to other areas, including the number of movements"
 }, 
@@ -1469,14 +1498,14 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
+    
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -1487,14 +1516,14 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
+
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -1505,14 +1534,14 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "C", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "confidentiality": "B",
+    "interoperability": "A",
+
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -1521,17 +1550,17 @@
     "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
-    "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "D", 
-    "reusability":"E",
-    "interoperability": "B",
+
+    "privacy": "*",
+    "confidentiality": "*",
+    "interoperability": "E",
+
     "domain": "D",
     "description": "Shapefile should contain points only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -1540,17 +1569,17 @@
     "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
+
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "D", 
-    "reusability":"E",
-    "interoperability": "B",
+    "confidentiality": "*",
+    "interoperability": "E",
+
     "domain": "D",
     "description": "Shapefile should countain (multi)polygons only. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -1559,18 +1588,18 @@
     "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
+
     "privacy": "D",
-    "confidentiality": "A",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "B",
+    "confidentiality": "D",
+    "interoperability": "E",
+    
     "domain": "C",
     "description": "shapefile should contain (multi)linestrings. See https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
     "conflicts": [ "reveals_personal_trip_data" ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -1579,17 +1608,17 @@
     "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
     "schema": "[comma delimited extra field list]",
-    "privacy": "?",
+
+    "privacy": "*",
     "confidentiality": "A",
-    "implementationEffort": "D", 
-    "reusability":"E",
-    "interoperability": "D",
+    "interoperability": "E",
+
     "domain": "D",
     "description": "https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -1598,14 +1627,14 @@
     "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
+
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "E", 
-    "reusability":"B", 
-    "interoperability": "B",
-    "retentionPeriod": "[ISO8601 duration]",
+    "interoperability": "A",
+    
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
 {
@@ -1616,15 +1645,15 @@
     "part": "dynamic policy",
     "version": "2.0",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "C",
+    "interoperability": "A",
     "domain": "B",
+    
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "SPDP specifies components required for the exchange and use of data in the field of parking. The components include the following: <ul><li>Domain model: Data structure and relationships;<li>Data content (or data dictionary)<li>Communications specification (or communication protocol)<li>Licensing for the use of the dynamic parking data.</ul>"
 }
@@ -1637,15 +1666,15 @@
     "part": "static",
     "version": "2.0",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "B",
+    "confidentiality": "B",
+    "interoperability": "A",
     "domain": "B",
+
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "SPDP specifies components required for the exchange and use of data in the field of parking. The components include the following: <ul><li>Domain model: Data structure and relationships;<li>Data content (or data dictionary)<li>Communications specification (or communication protocol)<li>Licensing for the use of the dynamic parking data.</ul>"
 }
@@ -1658,14 +1687,14 @@
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
+    
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint is based on the GBFS - alerts.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
@@ -1678,12 +1707,12 @@
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
+
     "privacy": "B",
-    "confidentiality": "B",
-    "implementationEffort": "D", 
-    "reusability":"E", 
+    "confidentiality": "D",
     "interoperability": "D",
     "domain": "B",
+
     "fieldModifications": [
         {
             "field": "assets[].id",
@@ -1691,26 +1720,26 @@
         }
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint is the same as the available-assets, but doesn't have a rotating asset id, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
 , 
 {
     "type": "standard",
-    "name": "TOMP-API-available-assets-with-asset-name",
+    "name": "TOMP-available-assets-with-asset-name",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "privacy": "C",
-    "confidentiality": "B",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "B",
+
+    "privacy": "B",
+    "confidentiality": "D",
+    "interoperability": "A",
     "domain": "B",
+
     "fieldModifications": [
         {
             "field": "assets[].name",
@@ -1718,7 +1747,7 @@
         }
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint is the same as the available-assets, and contains a traceable references to assets, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
@@ -1732,12 +1761,12 @@
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "privacy": "C",
-    "confidentiality": "B",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "B",
+    
+    "privacy": "B",
+    "confidentiality": "D",
+    "interoperability": "A",
     "domain": "B",
+
     "fieldModifications": [
         {
             "field": "assets[].licensePlate",
@@ -1745,7 +1774,7 @@
         }
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint is the same as the available-assets, and contains a traceable references to assets, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
@@ -1759,15 +1788,15 @@
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "D", 
-    "reusability":"A", 
-    "interoperability": "B",
+    "interoperability": "A",
     "domain": "B",
+    
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains available number per asset type, optionally including the assets themselves.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
@@ -1780,14 +1809,14 @@
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
+    
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "interoperability": "A",
+
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains details including system operator, system location, year implemented, URL, contact info, time zone.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
@@ -1801,13 +1830,13 @@
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "C", 
-    "reusability":"D", 
-    "interoperability": "B",
+    "confidentiality": "D",
+    "interoperability": "C",
     "domain": "B",
+    
     "fieldModifications": [
         {
             "field": "bankaccount",
@@ -1817,7 +1846,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint is the same as the journal-entry endpoint, but has removed the personal aspects regarding the banking details<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
@@ -1830,13 +1859,13 @@
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": 0,
-    "privacy": "C",
-    "confidentiality": "C",
-    "implementationEffort": "C", 
-    "reusability":"D", 
-    "interoperability": "B",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "D",
+    "confidentiality": "D",
+    "interoperability": "A",
     "domain": "B",
+    
     "fieldModifications": [
         {
             "field": "bankaccount",
@@ -1844,7 +1873,7 @@
         }
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains a financial report per leg or period. It is only used in peer-to-peer situations.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
@@ -1857,15 +1886,15 @@
     "version": "[1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "C", 
-    "reusability":"E", 
-    "interoperability": "B",
+    "interoperability": "A",
     "domain": "B",
+    
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains the meta data of the TOMP-API implementation, including the behavioral aspects.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
@@ -1880,14 +1909,12 @@
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "B",
+    "confidentiality": "B",
+    "interoperability": "A",
     "domain": "B",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains the calendar of the operator<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
@@ -1902,14 +1929,12 @@
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "B",
+    "confidentiality": "B",
+    "interoperability": "A",
     "domain": "B",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains the operating hours of the operator<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
@@ -1925,13 +1950,11 @@
     "mediumType": "json-file",
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "B",
+    "interoperability": "A",
     "domain": "B",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains the pricing plans of the operator.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }, 
@@ -1945,14 +1968,12 @@
     "url": "[url]",
     "mediumType": "json-file",
     "privacy": "A",
-    "confidentiality": "A",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "B",
+    "confidentiality": "B",
+    "interoperability": "A",
     "domain": "B",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains operating and other areas, like parking areas, slow speed areas etc.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }
@@ -1968,13 +1989,11 @@
     "mediumType": "json-file",
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "B",
+    "interoperability": "A",
     "domain": "B",
-    "refreshRate": 0,
+    "refreshRate":"[ISO8601 timespan]",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains the stations of the operator.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }] 

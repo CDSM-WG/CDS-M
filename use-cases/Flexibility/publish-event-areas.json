@@ -13,16 +13,14 @@
     "problemsSolved": [],
     "standards": [
         { "name": "fixed-format" },
-        { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-policies" },
+        { "name": "MDS-policy-policy" },
         { "name": "DATEX" }
     ],
     "metrics": [
         { "description": "Publish event areas", 
           "standards": [
             { "name": "fixed-format", "content": "description, and area (WKT, WGS84)" },
-            { "name": "MDS-policy-geography" },
-            { "name": "MDS-policy-policies" },
+            { "name": "MDS-policy-policy" },
             { "name": "DATEX" } ] 
         }
     ],

@@ -117,8 +117,7 @@
         { "name": "json" },
         { "name": "geojson" },
         { "name": "xml" },
-        { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-policies" },
+        { "name": "MDS-policy-policy" },
         { "name": "DATEX" }
     ],
     "metrics": [ 
@@ -128,8 +127,7 @@
             { "name": "json", "content": "description, urgency level and area (WKT, WGS84)" },
             { "name": "geojson", "content": "description, urgency level and area (geojson) " },
             { "name": "xml", "content": "description, urgency level and area (WKT, WGS84)" },
-            { "name": "MDS-policy-geography" },
-            { "name": "MDS-policy-policies" },
+            { "name": "MDS-policy-policy" },
             { "name": "DATEX" } ] 
         } 
     ],

@@ -26,10 +26,14 @@
         { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
         { "name": "MDS-provider-status-changes", "dataProtection": "D" },
         { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "B" }, 
-        { "name": "ODyzee" },
-        { "name": "OD-Matrix-csv" },
-        { "name": "OD-Matrix-geojson" },
-        { "name": "OD-Matrix-shape" }
+        { "name": "CDS-events-events" },
+        { "name": "CDS-events-status" },
+        { "name": "CDS-metrics-aggregate" },
+        { "name": "CDS-metrics-session" },
+        { "name": "OD-ODyZee" },
+        { "name": "OD-csv" },
+        { "name": "OD-geojson" },
+        { "name": "OD-shape" }
     ],
     "metrics": [ 
         { "description": "Differences between origin and destination per zone per hour" },

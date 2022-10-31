@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "CDS-curbs-zone",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/curbs",
+    "part": "/curbs/zones",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. A Curb Zone is a geographical entity representing a single region along the curb, along with metadata about that region and the policies that apply to its use by vehicles. What constitutes an individual Curb Zone is determined by the city, but all Curb Zones MUST meet the following criteria: <br>    <ol><li>Always have a common regulation along their entire extent (i.e., if at certain times of day, half of a given stretch of curb is a loading zone and the other half is metered parking, that stretch of curb must be divided into at least two Curb Zones);    <li>Never span multiple blocks -- an entire Curb Zone must be on the same street and be between the same two cross streets, alleys, or service roads.    <li>Never overlap other Curb Zones in the same dataset with overlapping validity times. This applies to both the zone's polygon geometries and linear references (if used).    <li>Be assigned a unique ID, in the form of a UUID. This ID SHOULD remain consistent as long as the Curb Zone's geography remains substantially the same. Policies may be updated without changing the ID.    <li>It SHOULD NOT be possible to legally park a single vehicle in two different Curb Zone at the same time (i.e., a given non-demarcated parking area or loading zone should be represented as a single curb location), unless this conflicts with the requirements above.</ol>"
+}

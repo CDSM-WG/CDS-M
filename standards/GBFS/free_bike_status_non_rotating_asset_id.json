@@ -11,12 +11,10 @@
     "version": "[1.0,1.1,2.0]",
 
     "url": "[url]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
 
     "privacy": "B",
-    "confidentiality": "B",
-    "implementationEffort": "B", 
-    "reusability":"E", 
+    "confidentiality": "D",
     "interoperability": "D",
     "domain": "B",
 
@@ -29,6 +27,6 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }

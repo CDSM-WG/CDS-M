@@ -6,15 +6,15 @@
     "part": "dynamic policy",
     "version": "2.0",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "C",
+    "interoperability": "A",
     "domain": "B",
+    
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "SPDP specifies components required for the exchange and use of data in the field of parking. The components include the following: <ul><li>Domain model: Data structure and relationships;<li>Data content (or data dictionary)<li>Communications specification (or communication protocol)<li>Licensing for the use of the dynamic parking data.</ul>"
 }

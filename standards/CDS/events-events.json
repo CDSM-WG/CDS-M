@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "CDS-events-events",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/events#curb-event",
+    "part": "/events/events",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "B",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "A Curb Event is a record of activity that happens within the geographic bounds of a Curbs object."
+}

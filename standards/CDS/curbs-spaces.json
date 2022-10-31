@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "CDS-curbs-spaces",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/curbs#curb-space",
+    "part": "/curbs/spaces",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. Defines individual demarcated spaces within a Curb Zone. Important notes about Curb Spaces:<br>   <ol><li>Curb Spaces may NOT overlap with other Curb Spaces    <li>Curb Spaces must be wholly contained within a single Curb Zone    <li>Unlike Zones, Spaces may be updated as needed, with a new curb_space_id being optionally assigned by the city</ol>"
+}

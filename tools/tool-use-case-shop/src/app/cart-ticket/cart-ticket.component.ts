@@ -20,6 +20,26 @@ export class CartTicketComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTotalGrade();
+    this.sort();
+  }
+
+  sort() {
+    this.data.standards = this.data.standards.sort((a:any,b:any) => {
+      let standardA = this.standardService.getStandard(a.name);
+      let standardB = this.standardService.getStandard(b.name);
+      if( standardA.privacy == null || standardA.privacy == "*" ){
+        return 1;
+      }
+      else if( standardB.privacy == null || standardB.privacy == "*"){
+        return -1;
+      }
+
+      if(standardA.privacy.charCodeAt(0) == standardB.privacy.charCodeAt(0)){
+        return a.name.charCodeAt(0) > b.name.charCodeAt(0) ? 1 : -1;
+      }
+
+      return standardA.privacy.charCodeAt(0) > standardB.privacy.charCodeAt(0) ? 1 : -1;
+    });
   }
 
   getTotalGrade() {
@@ -37,30 +57,6 @@ export class CartTicketComponent implements OnInit {
           }
         }
       }
-
-      this.data.standards = this.data.standards.sort((a: any, b: any) => {
-
-        let aP = a.dataProtection;
-        if( aP == null ) {
-          aP = this.getGrade(a.name, a);
-        }
-
-        let bP = b.dataProtection;
-        if( bP == null ) {
-          bP = this.getGrade(b.name, b);
-        }
-
-        if ( aP == "*" || aP == null || aP == '?') {
-          return 1;
-        }
-        if ( bP == "*" || bP == null || bP == '?') {
-          return -1;
-        }
-
-        return aP > bP ? 1 : -1;
-      }
-      );
-
     }
     this.data.totalGrade = maxGrade;
     this.totalGrade = maxGrade;

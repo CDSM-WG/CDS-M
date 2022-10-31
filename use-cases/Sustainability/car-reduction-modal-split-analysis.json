@@ -60,19 +60,19 @@
             "dataProtection": "D"
         },
         {
-            "name": "OD-Matrix-csv",
+            "name": "OD-csv",
             "dataProtection": "A"
         },
         {
-            "name": "OD-Matrix-geojson",
+            "name": "OD-geojson",
             "dataProtection": "A"
         },
         {
-            "name": "OD-Matrix-shape",
+            "name": "OD-shape",
             "dataProtection": "A"
         },
         {
-            "name": "ODyZee",
+            "name": "OD-ODyZee",
             "dataProtection": "A"
         },
         {
@@ -119,16 +119,16 @@
                     "name": "MDS-provider-vehicles-non-booked"
                 },
                 {
-                    "name": "OD-Matrix-csv"
+                    "name": "OD-csv"
                 },
                 {
-                    "name": "OD-Matrix-geojson"
+                    "name": "OD-geojson"
                 },
                 {
-                    "name": "OD-Matrix-shape"
+                    "name": "OD-shape"
                 },
                 {
-                    "name": "ODyZee"
+                    "name": "OD-ODyZee"
                 },
                 {
                     "name": "GPX"

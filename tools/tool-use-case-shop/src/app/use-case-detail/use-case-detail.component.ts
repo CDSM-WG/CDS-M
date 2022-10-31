@@ -26,14 +26,19 @@ export class UseCaseDetailComponent implements OnInit {
       this.data = this.useCaseService.getUseCase( id );
       this.sortedStandards = this.data.standards.sort( (a:any,b:any) => {
         let standardA = this.standardService.getStandard(a.name);
-        if( standardA.privacy == "A") {
-          return -1;
-        }
         let standardB = this.standardService.getStandard(b.name);
-        if( standardB.privacy == "A") {
+        if( standardA.privacy == null || standardA.privacy == "*" ){
           return 1;
         }
-        return standardA.privacy < standardB.privacy;
+        else if( standardB.privacy == null || standardB.privacy == "*"){
+          return -1;
+        }
+
+        if(standardA.privacy.charCodeAt(0) == standardB.privacy.charCodeAt(0)){
+          return a.name.charCodeAt(0) > b.name.charCodeAt(0) ? 1 : -1;
+        }
+
+        return standardA.privacy.charCodeAt(0) > standardB.privacy.charCodeAt(0) ? 1 : -1;
       })
     });
   }

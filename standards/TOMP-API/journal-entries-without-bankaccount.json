@@ -7,13 +7,13 @@
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "C", 
-    "reusability":"D", 
-    "interoperability": "B",
+    "confidentiality": "D",
+    "interoperability": "C",
     "domain": "B",
+    
     "fieldModifications": [
         {
             "field": "bankaccount",
@@ -23,7 +23,7 @@
     "conflicts": [
         "reveals_personal_trip_data"
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint is the same as the journal-entry endpoint, but has removed the personal aspects regarding the banking details<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }

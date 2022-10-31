@@ -6,13 +6,13 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "API",
-    "refreshRate": "0",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
+    "confidentiality": "D",
+    "interoperability": "E",
     "domain": "A",
+
     "part": "vehicles",
     "fieldModifications": [
         {
@@ -28,7 +28,7 @@
             "exception": "only non-booked"
         }
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }

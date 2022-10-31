@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "CDS-metrics-aggregate",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/metrics#query-aggregate",
+    "part": "/metrics/aggregates",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "Aggregates are historic pre-computed counts and metrics of Events occurring in curb places, aggregated to the hour. All Aggregates can be calculated from the data included in Session."
+}

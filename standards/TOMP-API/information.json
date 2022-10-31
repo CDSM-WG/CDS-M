@@ -7,14 +7,14 @@
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
+    
     "privacy": "A",
     "confidentiality": "A",
-    "implementationEffort": "B", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "interoperability": "A",
+
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains details including system operator, system location, year implemented, URL, contact info, time zone.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }

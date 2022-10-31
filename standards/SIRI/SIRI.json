@@ -4,13 +4,13 @@
     "exchangeType": "file-based", 
     "part": "[complete url]",
     "version": "[version]",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
+
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "E", 
-    "reusability":"B", 
-    "interoperability": "B",
-    "retentionPeriod": "[ISO8601 duration]",
+    "interoperability": "A",
+    
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }

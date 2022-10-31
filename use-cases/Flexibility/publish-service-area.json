@@ -13,8 +13,7 @@
     "problemsSolved": [],
     "standards": [
         { "name": "fixed-format" },
-        { "name": "MDS-policy-geography" },
-        { "name": "MDS-policy-policies" },
+        { "name": "MDS-policy-policy" },
         { "name": "GBFS-regions"},
         { "name": "TOMP-API-regions" }
     ],
@@ -25,8 +24,7 @@
             { "name": "json", "content": "description, and area (WKT, WGS84)" },
             { "name": "geojson", "content": "description, and area (geojson)" },
             { "name": "xml", "content": "description, and area (WKT, WGS84)" },
-            { "name": "MDS-policy-geography" },
-            { "name": "MDS-policy-policies" },
+            { "name": "MDS-policy-policy" },
             { "name": "GBFS-regions"},
             { "name": "TOMP-API-regions" } ]
         }

@@ -9,13 +9,11 @@
     "mediumType": "json-file",
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"D",
-    "interoperability": "B",
+    "interoperability": "A",
     "domain": "B",
-    "refreshRate": 0,
+    "refreshRate": "[ISO8601 timespan]",
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint contains the pricing plans of the operator.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }

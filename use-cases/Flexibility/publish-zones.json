@@ -15,22 +15,19 @@
     "problemsSolved": [],
     "standards": [
         { "name": "fixed-format" },
-        { "name": "MDS-policy-geography", "dataProtection": "A" },
-        { "name": "MDS-policy-policies", "dataProtection": "A" },
+        { "name": "MDS-policy-policy", "dataProtection": "A" },
         { "name": "DATEX", "dataProtection": "A" },
-        { "name": "TOMP-API-regions", "dataProtection": "A" }
+        { "name": "TOMP-API-regions", "dataProtection": "A" },
+        { "name": "CDS-curbs-policy" }
     ],
     "metrics": [{
         "description": "publish exception zones",
         "standards": [
-            { "name": "csv", "content": "description, type, and area (WKT, WGS84)" },
-            { "name": "json", "content": "description, type, and area (WKT, WGS84)" },
-            { "name": "geojson", "content": "description, type, and area (WKT, geojson)" },
-            { "name": "xml", "content": "description, type, and area (WKT, WGS84)" },
-            { "name": "MDS-policy-geography" },
-            { "name": "MDS-policy-policies" },
+            { "name": "fixed-format", "content": "description, type, and area (WKT, WGS84)" },
+            { "name": "MDS-policy-policy" },
             { "name": "DATEX" },
-            { "name": "TOMP-API-regions" }
+            { "name": "TOMP-API-regions" },
+            { "name": "CDS-curbs-policy" }
         ]   
     }],
     "termsAndConditions": [],

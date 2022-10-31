@@ -52,10 +52,16 @@
       { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "C" },
       { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "E" },
       { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-      { "name": "shapefile-points" },
+      { "name": "CDS-curbs-areas" },
+      { "name": "CDS-curbs-spaces" },
+      { "name": "CDS-curbs-zone" },
+      { "name": "CDS-events-events" },
+      { "name": "CDS-events-status" },
+      { "name": "CDS-metrics-aggregate" },
+      { "name": "CDS-metrics-session" },
       { "name": "KML-points" },
       { "name": "SPDP-dynamic" },
-      { "name": "OD-Matrix-odz", "mark": "X*", "explanation": "the data has to be aggregated per mode, not per operator, as no commercial sensitive data may be shared"}
+      { "name": "OD-odz", "mark": "X*", "explanation": "the data has to be aggregated per mode, not per operator, as no commercial sensitive data may be shared"}
     ],
     "metrics": [],
     "termsAndConditions": [],

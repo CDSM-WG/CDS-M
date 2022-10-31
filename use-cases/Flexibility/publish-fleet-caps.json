@@ -11,13 +11,13 @@
     },
     "standards": [
         { "name": "fixed-format" },
-        { "name": "MDS-policy-policies" }
+        { "name": "MDS-policy-policy" }
     ],
     "metrics": [ 
         { "description": "Vehicle caps per provider (per vehicle type)",
           "standards": [
             { "name": "fixed-format", "content": "description, caps and area (WKT, WGS84)" },
-            { "name": "MDS-policy-policies" } ]
+            { "name": "MDS-policy-policy" } ]
         } 
     ],
     "termsAndConditions": [],

@@ -8,11 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BookmarkComponent implements OnInit {
 
   @Input()
-  grade: string= "";
+  grade: string = "";
 
-  constructor() { }
+  @Input()
+  isAbsolute: boolean = true;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+    
   }
 
 }

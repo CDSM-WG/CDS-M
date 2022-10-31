@@ -6,13 +6,13 @@
     "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
-    "refreshRate": "0",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
+    "confidentiality": "D",
     "interoperability": "A",
     "domain": "A",
+
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
@@ -24,7 +24,7 @@
         }
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1, 
     "description": "The /vehicles is a near-realtime endpoint and returns the current status of vehicles in an agency's Jurisdiction and/or area of agency responsibility.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."

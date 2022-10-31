@@ -1,18 +1,18 @@
 {
     "type": "standards",
-    "name": "OD-Matrix-shape",
+    "name": "OD-shape",
     "exchangeType": "file-based", 
     "part": "shape-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "C",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "domain": "B",
-    "interoperability": "B",
+    "domain": "B",    
+    "interoperability": "E",
+    
     "mediumType": "ESRI-shapefile",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "The shapefile format is a geospatial vector data format for geographic information system (GIS) software. It is developed and regulated by Esri as a mostly open specification for data interoperability among Esri and other GIS software products. <br>Each area should have references to other areas, including the number of movements"
 }

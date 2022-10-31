@@ -1,18 +1,18 @@
 {
     "type": "standard",
-    "name": "OD-Matrix-geojson",
+    "name": "OD-geojson",
     "exchangeType": "file-based", 
     "part": "geojson",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "C",
     "domain": "B",
-    "implementationEffort": "C", 
-    "reusability":"C", 
-    "interoperability": "B",
+    "interoperability": "E",
+    
     "mediumType": "json",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format.<br>Each geometry should have references to other geometries, including the number of movements"
 }

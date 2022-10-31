@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "CDS-curbs-policy",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/curbs#policy",
+    "part": "/curbs/policies/<id>",
+    "url": "[url]",
+    "version": "[1.0.0,1.0.0-RC]",
+    "privacy": "A",
+    "confidentiality": "A",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "A Policy object is a rule that allows or prohibits a particular set of users from using a particular curb at a particular time or times. Multiple Policy objects together define the full extent of regulations within a Curb Zone. The design of the Policy object borrows heavily from the work of the CurbLR project, with additions for the larger scope of CDS."
+}

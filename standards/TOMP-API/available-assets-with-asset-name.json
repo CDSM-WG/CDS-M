@@ -1,18 +1,18 @@
 {
     "type": "standard",
-    "name": "TOMP-API-available-assets-with-asset-name",
+    "name": "TOMP-available-assets-with-asset-name",
     "exchangeType": "API", 
     "part": "/operator/available-assets",
     "externalReference": "https://github.com/TOMP-WG/TOMP-API/wiki/Available-assets",
     "version": "[1.0.0,1.1.0,1.2.0,1.2.1,1.3.0]",
     "url": "[url]",
     "mediumType": "json-file",
-    "privacy": "C",
-    "confidentiality": "B",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "B",
+
+    "privacy": "B",
+    "confidentiality": "D",
+    "interoperability": "A",
     "domain": "B",
+
     "fieldModifications": [
         {
             "field": "assets[].name",
@@ -20,7 +20,7 @@
         }
     ],
     "conflicts": [ "reveals_personal_trip_data" ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
     "description": "This endpoint is the same as the available-assets, and contains a traceable references to assets, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
 }

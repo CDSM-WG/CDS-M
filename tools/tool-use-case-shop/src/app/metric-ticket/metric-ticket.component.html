@@ -29,7 +29,22 @@
     <div *ngIf="showStandards()" class="mt-4">
         <p class="font-semibold">Possible data exchange standards</p>
         <ul class="ml-6 list-disc">
-            <li *ngFor="let ds of data.standards">{{ds.name|replaceUnderscore}} {{ds.content}}</li>
+            <li *ngFor="let dn of standardNames">{{dn|replaceUnderscore}}
+                <ul class="ml-6 list-disc">
+                    <div *ngFor="let ds of data.standards">
+                        <li *ngIf="ds.name.startsWith(dn)" class="flex flex-row w-full place-content-between">
+                            <div *ngIf="ds.name != dn">{{formatName(dn,ds.name)|replaceUnderscore}} {{ds.content}}</div>
+                            <div *ngIf="ds.name == dn">{{ds.content}}</div>
+                            <div class="flex flex-row gap-2">
+                                <!--app-bookmark [isAbsolute]="false" [grade]="getPrivacy(ds.name)"></app-bookmark>
+                                <app-bookmark [isAbsolute]="false" [grade]="getConfidentiality(ds.name)"></app-bookmark>
+                                <app-bookmark [isAbsolute]="false" [grade]="getInteroperability(ds.name)"></app-bookmark-->
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </li>
+            
         </ul>
     </div>
 </div>

@@ -6,13 +6,13 @@
     "version": "[version]",
     "url": "[url]",
     "mediumType": "json-file",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
+
     "privacy": "A",
     "confidentiality": "B",
-    "implementationEffort": "C", 
-    "reusability":"B", 
-    "interoperability": "B",
+    "interoperability": "A",
+
     "fieldModifications": [],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }

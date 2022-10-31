@@ -1,18 +1,18 @@
 {
     "type": "standard",
-    "name": "ODyZee",
+    "name": "OD-ODyZee",
     "exchangeType": "file-based", 
     "description": "Standard to exchange OD related data",
-    "refreshRate": "[refresh rate]",
+    "refreshRate": "[ISO8601 timespan]",
     "mediumType": "odz-file",
+
     "privacy": "A",
     "confidentiality": "C",
     "domain": "B",
-    "implementationEffort": "C", 
-    "reusability":"C", 
     "interoperability": "A",
+    
     "externalReference": "https://github.com/TOMP-WG/ODyZee",
     "url": "[url]",
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }

@@ -8,12 +8,12 @@
     "mediumType": "API",
     "refreshRate": "0",
     "part": "GET /status_changes",
+    
     "privacy": "B",
-    "confidentiality": "C",
-    "implementationEffort": "D", 
-    "reusability":"E", 
-    "interoperability": "A",
+    "confidentiality": "B",
+    "interoperability": "D",
     "domain": "A",
+
     "fieldModifications": [
         {
             "field": "status_changes[].device_id",
@@ -24,7 +24,7 @@
             "exception": "removed"
         }
     ],
-    "retentionPeriod": "[ISO8601 duration]",
+    "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1
 }

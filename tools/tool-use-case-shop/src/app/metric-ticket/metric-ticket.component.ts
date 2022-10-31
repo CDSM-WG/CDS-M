@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { StandardService } from 'src/services/standard.service';
 
 @Component({
   selector: 'app-metric-ticket',
@@ -17,24 +18,67 @@ export class MetricTicketComponent implements OnInit {
   index: number = 0;
 
   collapsed: boolean = false;
+  standardNames: any[] = [];
 
-  constructor() { }
+  constructor(private standardService: StandardService) { }
 
   ngOnInit(): void {
     this.collapsed = this.index != 0;
     if (this.data.standards == null) {
       this.data.standards = [];
-      for(let s of this.standards){
-        this.data.standards.push( s );
+      for (let s of this.standards) {
+        this.data.standards.push(s);
       }
     }
-    else {
-      let reformatted = [];
-      for( let i = 0 ; i < this.data.standards.length; i++ ){
-        reformatted.push( {"name": this.data.standards[i] } );
+
+    for (let s of this.standards) {
+      let parts = s.name.split('-');
+      let standardName = parts.length > 1 ? parts[0] : s.name;
+
+      if (this.standardNames.indexOf(standardName) == -1) {
+        this.standardNames.push(standardName);
       }
-      this.data.standards = reformatted;
     }
+
+    this.standardNames.sort((a: any, b: any) => {
+      let aN = a.charCodeAt(0);
+      let bN = b.charCodeAt(0);
+      if (aN == bN) {
+        return a.length > b.length ? 1 : -1;
+      }
+      return aN > bN ? 1 : -1;
+    });
+
+    this.data.standards.sort((a: any, b: any) => {
+      let aN = a.name.charCodeAt(0);
+      let bN = b.name.charCodeAt(0);
+      if (aN == bN) {
+        return a.name.length > b.name.length ? 1 : -1;
+      }
+      return aN > bN ? 1 : -1;
+    });
+  }
+
+  formatName(name: string, endpoint: string){
+    if( name == endpoint){
+      return name;
+    }
+    return endpoint.replace(name, '');
+  }
+
+  getPrivacy(name: string) {
+    let standard = this.standardService.getStandard(name);
+    return standard.privacy;    
+  }
+
+  getConfidentiality(name: string) {
+    let standard = this.standardService.getStandard(name);
+    return standard.confidentiality;    
+  }
+
+  getInteroperability(name: string) {
+    let standard = this.standardService.getStandard(name);
+    return standard.interoperability;    
   }
 
   hasDataStandards() {
