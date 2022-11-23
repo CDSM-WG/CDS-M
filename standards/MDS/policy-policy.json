@@ -5,7 +5,7 @@
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
     "part": "/policies/",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "privacy": "A",
     "confidentiality": "B",
     "interoperability": "A",

@@ -8,6 +8,7 @@ import { StandardStoreComponent } from './standard-store/standard-store.componen
 import { PrepareSelectionComponent } from './prepare-selection/prepare-selection.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { YourReceiptComponent } from './your-receipt/your-receipt.component';
+import { CloseGuardService } from '../services/close-guard';
 
 const routes: Routes = [
   { path: '', component: MainComponent }
@@ -15,13 +16,14 @@ const routes: Routes = [
   , { path: 'use-case', component: UseCaseDetailComponent }
   , { path: 'cart', component: CartComponent }
   , { path: 'standards', component: StandardStoreComponent }
-  , { path: 'preparation', component: PrepareSelectionComponent }
+  , { path: 'preparation', component: PrepareSelectionComponent, canDeactivate: [CloseGuardService] }
   , { path: 'checkout', component: CheckoutComponent }
   , { path: 'receipt', component: YourReceiptComponent}
 ]; 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+  providers: [CloseGuardService],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -32,9 +32,27 @@
 
             <div class="flex-auto md:w-2/6" data-component="SplitContainerRight">
                 <div class="flex flex-col gap-2">
-                    <div class="bg-white overflow-hidden hidden md:block p-2" data-component="Card">
-                        <div class="flex flex-col items-center justify-center gap-4 pt-8 lg:pt-9 pb-6 lg:pb-4 px-8 lg:px-10 border-2 border-dashed border-blue-600 cursor-pointer"
-                            data-component="UploadContainer">
+                    <div class="bg-white overflow-hidden -mx-6 md:mx-auto -mb-6 md:mb-auto p-6 font-medium w-full"
+                        data-component="Card">
+                        <h2 class="mb-4 uppercase text-3xl text-blue-600">
+                            Selected standards
+                        </h2>
+                        <div class="flex flex-col gap-2 mt-4">
+                            <div *ngFor="let standard of obsSelected | async">{{standard.name}}</div>
+                        </div>
+                        <div class="mt-3 pt-4 border-t border-gray-300">
+                            <button routerLink="/preparation"
+                                class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full"
+                                data-component="Button">
+                                Confirm selection
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white overflow-hidden hidden md:block p-2" data-component="Card" *ngIf="!hovered">
+                        <div id="dropTarget"
+                            class="flex flex-col items-center justify-center gap-4 pt-8 lg:pt-9 pb-6 lg:pb-4 px-8 lg:px-10 border-2 border-dashed border-blue-600 cursor-pointer"
+                            data-component="UploadContainer" (mouseenter)="onDragOver($event)">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" data-component="UploadIcon"
                                 class="h-12 w-12 text-gray-500">
@@ -59,36 +77,98 @@
                             <input type="file" class="invisible" id="file" accept=".json" (change)="uploadFile($event)">
                         </div>
                     </div>
-                    <div class="bg-white overflow-hidden -mx-6 md:mx-auto -mb-6 md:mb-auto p-6 font-medium"
-                        data-component="Card">
-                        <h2 class="mb-4 uppercase text-3xl text-blue-600">
-                            Selected standards
-                        </h2>
-                        <div class="flex flex-col gap-2 mt-4">
-                            <div *ngFor="let standard of obsSelected | async">{{standard.name}}</div>
+                    <div class="bg-white overflow-hidden p-2 bg-blue-600" data-component="UploadContainer"
+                        (mouseleave)="onDragLeave($event)" *ngIf="hovered">
+                        <div
+                            class="flex items-center justify-center py-8 lg:py-9 px-8 lg:px-auto text-2xl text-center text-white border-2 border-dashed border-white bg-blue-600 cursor-pointer  h-[305px]">
+                            Drop your files here
                         </div>
-                        <div class="mt-3 pt-4 border-t border-gray-300">
-                            <button routerLink="/preparation" 
-                                class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full"
-                                data-component="Button">
-                                Confirm selection
-                            </button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-8 pb-9 -mb-6 md:mb-0 -mx-6 md:mx-0"
+                        data-component="GradeLegenda">
+                        <div class="mb-4 text-3xl uppercase text-blue-600">
+                            Legenda
+                        </div>
+                        <div
+                            class="w-full flex border-t pt-3 justify-between items-center gap-2.5 text-left font-semibold md:mb-2">
+                            <div class="inline-flex py-1 px-2 font-semibold text-black text-xs bg-green-200"
+                                data-component="Label">
+                                Doesn't use personal data
+                            </div>
+                        </div>
+                        <div class="w-full flex justify-between items-center gap-2.5 text-left font-semibold md:mb-2">
+                            <div class="inline-flex py-1 px-2 font-semibold text-black text-xs bg-red-200"
+                                data-component="Label">
+                                Uses personal data
+                            </div>
+                        </div>
+                        <div class="w-full flex justify-between items-center gap-2.5 text-left font-semibold">
+                            <div class="inline-flex py-1 px-2 font-semibold text-black text-xs bg-gray-300"
+                                data-component="Label">
+                                Possibly uses personal data
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!--div class="flex-auto md:w-2/6">
-                <app-filled-primary title="Upload your own .json receipe"
-                    onclick="document.getElementById('file').click()"></app-filled-primary>
-                <input type="file" class="invisible" id="file" accept=".json" (change)="uploadFile($event)">
-
-                <div class="text-xl text-blue-500">Selected standards</div>
-                <div class="ml-2">
-                    <div *ngFor="let standard of obsSelected | async">{{standard.name}}</div>
+            <div *ngIf="undoShown">
+                <div class="bg-white overflow-hidden flex items-center justify-between gap-2 max-w-xl w-full p-4 bg-yellow-700"
+                    data-component="Toast">
+                    <div class="flex items-start">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            data-component="CheckmarkIcon" class="shrink-0 text-blue-500">
+                            <g clip-path="url(#clip0_1184_27224)">
+                                <path
+                                    d="M9.00016 16.1698L4.83016 11.9998L3.41016 13.4098L9.00016 18.9998L21.0002 6.99984L19.5902 5.58984L9.00016 16.1698Z"
+                                    fill="currentColor"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1184_27224">
+                                    <rect width="24" height="24" fill="currentColor"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <div class="ml-2 pt-1 font-semibold leading-4">
+                            Data standard has been removed
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 shrink-0">
+                        <button class="flex items-center text-blue-500 font-semibold">
+                            <span>Undo</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" data-component="UndoIcon" class="ml-1">
+                                <g clip-path="url(#clip0_1286_105733)">
+                                    <path
+                                        d="M12.5 8C9.85 8 7.45 8.99 5.6 10.6L2 7L2 16L11 16L7.38 12.38C8.77 11.22 10.54 10.5 12.5 10.5C16.04 10.5 19.05 12.81 20.1 16L22.47 15.22C21.08 11.03 17.15 8 12.5 8Z"
+                                        fill="#0032FF"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1286_105733">
+                                        <rect width="24" height="24" fill="currentColor"></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                        <button>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" data-component="TimesIcon">
+                                <g clip-path="url(#clip0_921_38688)">
+                                    <path
+                                        d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                                        fill="currentColor"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_921_38688">
+                                        <rect width="24" height="24" fill="currentColor"></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <app-filled-primary routerLink="/preparation" title="Confirm selection"></app-filled-primary>
-            </div-->
+            </div>
 
         </div>
     </div>

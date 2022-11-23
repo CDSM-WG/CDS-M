@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import * as data from '../app/_files/use-cases.json';
 import { StandardService } from './standard.service';
 
@@ -8,6 +9,8 @@ export class UseCaseService {
   useCaseList: any[] = [];
   cart: any[] = [];
   cartContent: any[] = [];
+
+  addedUseCaseInCart: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   grades: string[] = ['A', 'B', 'C', 'D', 'E']
 
@@ -75,6 +78,7 @@ export class UseCaseService {
       }
       this.cart.push(id);
       this.cartContent.push(uc[0]);
+      this.addedUseCaseInCart.next(uc[0]);
     }
     else {
       this.removeFromCart(id);
@@ -89,7 +93,7 @@ export class UseCaseService {
   isStandardInCart(name: string) {
     for (let i = 0; i < this.cart.length; i++) {
       let uc = this.getUseCase(this.cart[i]);
-      if (uc.standards != null) {
+      if (uc != null && uc.standards != null) {
         for (let j = 0; j < uc.standards.length; j++) {
           let s = uc.standards[j];
           if (s.name === name && s.checked != null && s.checked === true)

@@ -14,7 +14,6 @@ import { UseCaseService } from '../services/use-case.service';
 import { MainComponent } from './main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatDialogRef, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BlackTicketComponent } from './black-ticket/black-ticket.component';
 import { StandardService } from '../services/standard.service';
 import { CartComponent } from './cart/cart.component';
@@ -47,6 +46,7 @@ import { BookmarkComponent } from './bookmark/bookmark.component';
 import { DndDirective } from './dnd.directive';
 import { YourReceiptComponent } from './your-receipt/your-receipt.component';
 import { PopoverComponent } from './popover/popover.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -85,22 +85,20 @@ import { PopoverComponent } from './popover/popover.component';
     BookmarkComponent,
     DndDirective,
     YourReceiptComponent,
-    PopoverComponent
+    PopoverComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule,
     MatPaginatorModule,
     HttpClientModule
   ],
   providers: [
     UseCaseService,
     StandardService,
-    ExportService,
-    { provide: MatDialogRef, useValue: {} },
-    { provide: MAT_DIALOG_DATA, useValue: {} }
+    ExportService,    
   ],
   bootstrap: [AppComponent]
 })

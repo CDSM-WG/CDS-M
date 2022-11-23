@@ -1,3 +1,58 @@
+<div class="bg-white overflow-hidden flex items-center justify-between gap-2 max-w-xl w-full p-4 bg-yellow-700 fixed z-30 bottom-8 inset-x-0 mx-auto"
+    data-component="Toast" *ngIf="toastShown">
+    <div class="flex items-start">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            data-component="CheckmarkIcon" class="shrink-0 text-blue-500">
+            <g clip-path="url(#clip0_1184_27224)">
+                <path
+                    d="M9.00016 16.1698L4.83016 11.9998L3.41016 13.4098L9.00016 18.9998L21.0002 6.99984L19.5902 5.58984L9.00016 16.1698Z"
+                    fill="currentColor"></path>
+            </g>
+            <defs>
+                <clipPath id="clip0_1184_27224">
+                    <rect width="24" height="24" fill="currentColor"></rect>
+                </clipPath>
+            </defs>
+        </svg>
+        <div class="ml-2 pt-1 font-semibold leading-4">
+            Case has been added to cart
+        </div>
+    </div>
+    <div class="flex items-center gap-6 shrink-0">
+        <button class="flex items-center text-blue-500 font-semibold border-b border-blue-500" routerLink="/cart">
+            <span>View cart</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                data-component="ArrowRightIcon">
+                <mask id="mask0_925_21566" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                    style="mask-type: alpha;">
+                    <rect width="24" height="24" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 24)"
+                        fill="currentColor"></rect>
+                </mask>
+                <g mask="url(#mask0_925_21566)">
+                    <path
+                        d="M12.683 7L11.6247 8.1767L14.6266 10.7221L5 10.7221L5 12.2828L14.6215 12.2828L11.6196 14.8282L12.6881 16L18 11.5L12.683 7Z"
+                        fill="currentColor"></path>
+                </g>
+            </svg>
+        </button>
+        <button (click)="hideToast()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                data-component="TimesIcon">
+                <g clip-path="url(#clip0_921_38688)">
+                    <path
+                        d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                        fill="currentColor"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_921_38688">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+        </button>
+    </div>
+</div>
+
 <div class="flex flex-col w-screen min-h-screen pt-16">
     <div class="max-w-6xl mx-auto px-4 w-full mt-16">
         <h2 class="heading-2 uppercase font-medium">Use case library</h2>
@@ -19,6 +74,7 @@
             </app-use-case-ticket>
         </div>
         <mat-paginator style-paginator showFirstLastButtons="false" [length]="this.getLength()" [showTotalPages]="5"
-            [pageSize]="12" class="flex flex-col w-screen mb-8 bg-gray-200 max-w-6xl mx-auto w-full mt-8"></mat-paginator>
+            [pageSize]="12" class="flex flex-col w-screen mb-8 bg-gray-200 max-w-6xl mx-auto w-full mt-8">
+        </mat-paginator>
     </div>
 </div>

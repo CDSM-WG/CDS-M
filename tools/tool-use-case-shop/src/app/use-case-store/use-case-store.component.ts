@@ -19,6 +19,8 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
 
   filterOptions: string[] = ["All", "Research", "Dynamic policy", "Liveability","Safety","Sustainability"]
 
+  toastShown: boolean = false;
+
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   obs!: Observable<any>;
@@ -28,6 +30,12 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
   { 
     this.useCases = this.useCaseService.useCaseList;
     this.dataSource = new MatTableDataSource<any>(this.useCases);
+    this.useCaseService.addedUseCaseInCart.subscribe( (x) => {
+      this.toastShown = true;
+      //setTimeout (() => { this.toastShown = false; }, 5000 );
+    } );
+
+    this.toastShown = false;
   }
 
   ngOnInit() {
@@ -63,6 +71,14 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
     if (this.dataSource) { 
       this.dataSource.disconnect(); 
     }
+  }
+
+  routeToCart() {
+
+  }
+
+  hideToast() {
+    this.toastShown = false;
   }
 
   getLength() {

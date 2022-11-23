@@ -17,21 +17,32 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
   obs!: Observable<any>;
   obsSelected!: Observable<any>;
 
+  hovered: boolean = false;
+  undoShown: boolean = false;
+
   constructor(private standardService: StandardService, private useCaseService: UseCaseService) {
     this.dataSource = new MatTableDataSource<any>(this.standardService.getAllStandards());
+    this.dataSourceSelected = new MatTableDataSource<any>(this.standardService.selectedStandards);
+    this.loadStandards();
+    this.sort();
+  }
 
+  sort(){
     this.dataSource.data.sort((a: any, b: any) => {
       if (this.useCaseService.isStandardInCart(a.name)) {
         return -1;
       }
-      else if (this.useCaseService.isStandardInCart(b.name)) {
+      if (this.useCaseService.isStandardInCart(b.name)) {
         return 1;
+      } 
+      if( this.standardService.isStandardSelected(a.name)) {
+        return -1;
+      }
+      if( this.standardService.isStandardSelected(b.name)) {
+        return -1;
       }
       return 0;
     });
-
-    this.dataSourceSelected = new MatTableDataSource<any>(this.standardService.selectedStandards);
-    this.loadStandards();
   }
 
   loadStandards() {
@@ -80,13 +91,12 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
     this.processFile(selectedFile);
   }
 
-  private processFile( file: any ){
+  private processFile(file: any) {
     this.useCaseService.useCaseList = [];
     this.standardService.selectedStandards = [];
     const fileReader = new FileReader();
     fileReader.readAsText(file, "UTF-8");
     fileReader.onload = () => {
-
       if (fileReader.result != null) {
         let jsonObj = (JSON.parse(fileReader.result.toString()));
         this.standardService.standardList = jsonObj.standards;
@@ -105,16 +115,12 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
           }
         }
 
-        this.standardService.selectedStandards = this.standardService.selectedStandards.sort((a, b) => {
-          if (a.checked) return -1;
-          if (b.checked) return 1;
-          return 0;
-        }
-        )
+        this.standardService.standardList = this.standardService.selectedStandards;
+        this.dataSource = new MatTableDataSource<any>(this.standardService.getAllStandards());
+        this.obs = this.dataSource.connect();
 
-        this.dataSource.data = this.standardService.selectedStandards;
         this.dataSourceSelected.data = this.standardService.selectedStandards;
-
+        this.sort();
       }
     }
     fileReader.onerror = (error) => {
@@ -141,18 +147,27 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
     const files = evt.dataTransfer.files;
     if (files.length > 0) {
       this.processFile(files[0]);
+      this.hovered = false;
     }
   }
 
-  @HostListener('dragover', ['$event']) onDragOver(evt: any){
+  @HostListener('dragover', ['$event']) onDragOver(evt: any) {
     evt.preventDefault();
     evt.stopPropagation();
-    console.log('drag over');
+    if (!this.hovered && evt.dataTransfer != null) {
+      if (evt.target.id == "dropTarget") {
+        console.log('drag over');
+        console.log(evt.target.id);
+        this.hovered = true;
+      }
+    }
+
   }
 
-  @HostListener('dragleave', ['$event']) onDragLeave(evt: any){
+  @HostListener('dragleave', ['$event']) onDragLeave(evt: any) {
     evt.preventDefault();
     evt.stopPropagation();
     console.log('drag leave');
+    this.hovered = false;
   }
 }

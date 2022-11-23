@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import * as data from '../app/_files/standards.json';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class StandardService {
+
+  deselectedStandard: any = null;
+  standardRemoved: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+
   getPrivacyGrade(standard: string, ucStandard: any) {
     if (ucStandard != null) {
-      if (ucStandard.dataProtection != null){
+      if (ucStandard.dataProtection != null) {
         return ucStandard.dataProtection;
       }
     }
@@ -46,8 +51,33 @@ export class StandardService {
 
   deselectStandard(standard: any) {
     let index = this.selectedStandards.indexOf(standard);
+    if (index == -1) {
+      for (let i = 0; i < this.selectedStandards.length; i++) {
+        if (this.selectedStandards[i].name == standard.name) {
+          index = i;
+        }
+      }
+    }
     if (index >= 0) {
+      this.standardRemoved.next(this.selectedStandards[index]);
+      this.deselectedStandard = this.selectedStandards[index];
       this.selectedStandards.splice(index, 1);
+    }
+  }
+
+  isStandardSelected(name: string) {
+    for (let i = 0; i < this.selectedStandards.length; i++) {
+      if (this.selectedStandards[i].name == name) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  undoDeselect() {
+    if (this.deselectedStandard != null) {
+      this.selectedStandards.push(this.deselectedStandard);
+      this.deselectedStandard = null;
     }
   }
 }

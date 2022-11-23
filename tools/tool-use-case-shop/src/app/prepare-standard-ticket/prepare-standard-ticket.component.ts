@@ -19,10 +19,7 @@ export class PrepareStandardTicketComponent implements OnInit {
   }
 
   remove() {
-    let index = this.standardService.selectedStandards.findIndex(x => x.name == this.data.name);
-    if (index >= 0) {
-      this.standardService.selectedStandards = this.standardService.selectedStandards.splice(index, 1);
-    }
+    this.standardService.deselectStandard(this.data);
   }
 
   toggle() {

@@ -1,4 +1,60 @@
+<div class="bg-white overflow-hidden flex items-center justify-between gap-2 max-w-xl w-full p-4 bg-yellow-700 fixed z-30 bottom-8 inset-x-0 mx-auto"
+    data-component="Toast" *ngIf="this.undoShowed">
+    <div class="flex items-start">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            data-component="CheckmarkIcon" class="shrink-0 text-blue-500">
+            <g clip-path="url(#clip0_1184_27224)">
+                <path
+                    d="M9.00016 16.1698L4.83016 11.9998L3.41016 13.4098L9.00016 18.9998L21.0002 6.99984L19.5902 5.58984L9.00016 16.1698Z"
+                    fill="currentColor"></path>
+            </g>
+            <defs>
+                <clipPath id="clip0_1184_27224">
+                    <rect width="24" height="24" fill="currentColor"></rect>
+                </clipPath>
+            </defs>
+        </svg>
+        <div class="ml-2 pt-1 font-semibold leading-4">
+            Data standard has been removed
+        </div>
+    </div>
+    <div class="flex items-center gap-6 shrink-0">
+        <button class="flex items-center text-blue-500 font-semibold" (click)="this.undo()">
+            <span>Undo</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                data-component="UndoIcon" class="ml-1">
+                <g clip-path="url(#clip0_1286_105733)">
+                    <path
+                        d="M12.5 8C9.85 8 7.45 8.99 5.6 10.6L2 7L2 16L11 16L7.38 12.38C8.77 11.22 10.54 10.5 12.5 10.5C16.04 10.5 19.05 12.81 20.1 16L22.47 15.22C21.08 11.03 17.15 8 12.5 8Z"
+                        fill="#0032FF"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1286_105733">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+        </button>
+        <button (click)="this.hideUndo()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                data-component="TimesIcon">
+                <g clip-path="url(#clip0_921_38688)">
+                    <path
+                        d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                        fill="currentColor"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_921_38688">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+        </button>
+    </div>
+</div>
+
 <div class="flex-1 bg-gray-100">
+    <app-modal *ngIf="showDialog" (selection)="onSelection($event)"></app-modal>
     <div class="max-w-6xl mx-auto px-4 w-full pt-20 sm:pt-20 pb-6 sm:pb-20">
         <button class="inline-flex items-center gap-1 font-semibold cursor-pointer" routerLink="/standards">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -14,15 +14,15 @@
                 <div class="flex items-center gap-1.5 mt-2">
                     <span>Personal data:</span>
                     <div *ngIf="data.privacy=='A'"
-                        class="inline-flex py-1 px-2 font-semibold text-xs bg-green-700 text-white">
+                        class="inline-flex py-1 px-2 font-semibold text-xs bg-green-200 text-black">
                         No
                     </div>
                     <div *ngIf="data.privacy=='*'"
-                        class="inline-flex py-1 px-2 font-semibold text-xs bg-gray-100 text-black">
+                        class="inline-flex py-1 px-2 font-semibold text-xs bg-gray-300 text-black">
                         Possibly
                     </div>
                     <div *ngIf="data.privacy != 'A' && data.privacy != '*'"
-                        class="inline-flex py-1 px-2 font-semibold text-xs bg-red-500 text-white">
+                        class="inline-flex py-1 px-2 font-semibold text-xs bg-red-200 text-black">
                         Yes
                     </div>
                 </div>

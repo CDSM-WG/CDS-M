@@ -1,29 +1,52 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { StandardService } from '../../services/standard.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable } from 'rxjs';
+import { Observable, Subject, Subscription } from 'rxjs';
 import { ExportService } from 'src/services/export.service';
 import { UseCaseService } from '../../services/use-case.service';
 
 @Component({
   selector: 'app-prepare-selection',
   templateUrl: './prepare-selection.component.html',
-  styleUrls: ['./prepare-selection.component.css']
+  styleUrls: ['./prepare-selection.component.css'],
+  host: {'window:beforeunload':'onClose()'}
 })
 export class PrepareSelectionComponent implements OnInit {
 
   dataSource: MatTableDataSource<any>;
   obs!: Observable<any>;
 
+  undoShowed: boolean = false;
+
+  showDialog = false;
+  subject = new Subject<boolean>();
+
   constructor(private changeDetectorRef: ChangeDetectorRef
     , private standardService: StandardService
     , private exportService: ExportService
-    , private usecaseService: UseCaseService) {
+    , private usecaseService: UseCaseService
+  ) {
     this.dataSource = new MatTableDataSource<any>(standardService.selectedStandards);
 
     for (let s of this.standardService.selectedStandards) {
       s.step = 0;
     }
+
+    this.standardService.standardRemoved.subscribe(
+      (x) => {
+        this.undoShowed = true;
+      }
+    );
+    this.undoShowed = false;
+  }
+
+  undo() {
+    this.standardService.undoDeselect();
+    this.undoShowed = false;
+  }
+
+  hideUndo() {
+    this.undoShowed = false;
   }
 
   ngOnInit(): void {
@@ -38,7 +61,7 @@ export class PrepareSelectionComponent implements OnInit {
   }
 
   grandTotal() {
-    let maxGrade = "";
+    let maxGrade = "?";
     for (let i = 0; i < this.usecaseService.useCaseList.length; i++) {
       let grade = this.usecaseService.getGrade(this.usecaseService.useCaseList[i]);
       if (this.usecaseService.grades.indexOf(grade) == -1) {
@@ -69,4 +92,16 @@ export class PrepareSelectionComponent implements OnInit {
     return result;
   }
 
+  onClose() {
+    return false;
+  }
+
+  openDialog() {
+    this.showDialog = true;
+  }
+
+  onSelection($event: any) {
+    this.showDialog = false;
+    this.subject.next($event);
+  }
 }

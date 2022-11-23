@@ -3,7 +3,7 @@
     "name": "MDS-provider-status-changes",
     "exchangeType": "API", 
     "part": "/status_changes",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
