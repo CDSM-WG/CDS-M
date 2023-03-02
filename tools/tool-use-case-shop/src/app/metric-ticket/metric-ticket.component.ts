@@ -17,23 +17,34 @@ export class MetricTicketComponent implements OnInit {
   @Input()
   index: number = 0;
 
+  popupDetails = "";
+  showPopup = false;  
+
   collapsed: boolean = false;
   standardNames: any[] = [];
+  standardsToShow: any[] = [];
 
   constructor(private standardService: StandardService) { }
 
   ngOnInit(): void {
-    this.collapsed = this.index != 0;
-    if (this.data.standards == null) {
-      this.data.standards = [];
-      for (let s of this.standards) {
-        this.data.standards.push(s);
-      }
+    this.collapsed = false; // this.index != 0;
+
+    this.standardsToShow = this.data.standards;
+    if (this.standardsToShow == null || this.standardsToShow.length == 0) {
+      this.standardsToShow = this.standards;
     }
 
-    for (let s of this.standards) {
+    for (let s of this.standardsToShow) {
       let parts = s.name.split('-');
       let standardName = parts.length > 1 ? parts[0] : s.name;
+
+      if (standardName == "fixed"){
+        standardName = "fixed-format";
+      } else if (standardName == "TOMP"){
+        standardName = "TOMP";
+      } else if (standardName == "MDS") {
+        standardName = parts[0] + "-" + parts[1];
+      }
 
       if (this.standardNames.indexOf(standardName) == -1) {
         this.standardNames.push(standardName);
@@ -49,7 +60,7 @@ export class MetricTicketComponent implements OnInit {
       return aN > bN ? 1 : -1;
     });
 
-    this.data.standards.sort((a: any, b: any) => {
+    this.standardsToShow.sort((a: any, b: any) => {
       let aN = a.name.charCodeAt(0);
       let bN = b.name.charCodeAt(0);
       if (aN == bN) {
@@ -60,7 +71,7 @@ export class MetricTicketComponent implements OnInit {
   }
 
   formatName(name: string, endpoint: string){
-    if( name == endpoint){
+    if(name == endpoint){
       return name;
     }
     return endpoint.replace(name, '');
@@ -82,10 +93,10 @@ export class MetricTicketComponent implements OnInit {
   }
 
   hasDataStandards() {
-    if (this.data.standards == null) {
+    if (this.standardsToShow == null) {
       return false;
     }
-    return this.data.standards.length > 0;
+    return this.standardsToShow.length > 0;
   }
 
   showStandards() {
@@ -101,5 +112,16 @@ export class MetricTicketComponent implements OnInit {
 
   toggle() {
     this.collapsed = !this.collapsed;
+  }
+
+  showDetails(standard: any){
+    let standardObject = this.standardService.getStandard(standard.name);
+    this.popupDetails = standardObject.description;
+    this.showPopup = true;
+    return this.popupDetails;
+  }
+
+  getGrade(standard: any){
+    return this.standardService.getPrivacyGrade(standard.name, null);
   }
 }

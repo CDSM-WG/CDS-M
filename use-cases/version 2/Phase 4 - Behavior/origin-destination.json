@@ -1,0 +1,43 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "origin-destination",
+    "externalReference": "",
+    "tags": [ "stage:behavior", "usage", "road", "network" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the origin-destination combination",
+        "inOrderTo": ["reduce private car usage", "stimulate usage", "facilitate commuting"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        {
+            "description": "Counts of origin-destination pairs, with (minimum, maximum, average) counts per (hour, day)",
+            "standards": [
+                { "name": "fixed-format", "dataProtection": "A" },
+                { "name": "shapefile", "dataProtection": "A" }
+            ]
+        },
+        {
+            "description": "Counts of origin-destination paris, derived from trips or monitored assets to remove personal information",
+            "standards": [
+                { "name": "MDS-provider-trips", "dataProtection": "B" },
+                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
+                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" },
+                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
+                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
+                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
+                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
+                { "name": "MDS-provider-events", "dataProtection": "B" }
+           ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Behavior",
+    "image": "origin-destination.jfif"
+}

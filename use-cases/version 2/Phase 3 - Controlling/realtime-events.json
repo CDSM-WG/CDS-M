@@ -1,0 +1,33 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "realtime-events",
+    "externalReference": "",
+    "tags": [ "stage:controlling", "events", "publish", "planned" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish realtime events",
+        "inOrderTo": ["stimulate usage"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        {
+            "description": "Geographical representation of the areas",
+            "standards": [
+                { "name": "fixed-format", "dataProtection": "A" },
+                { "name": "DATEX", "dataProtection": "A" },
+                { "name": "SIRI", "dataProtection": "A" },
+                { "name": "GBFS-system-alerts", "dataProtection": "A", "remarks": "has to be combined with GBFS-system-regions or GBFS-station-information" },
+                { "name": "TOMP-alerts", "dataProtection": "A", "remarks": "has to be combined with TOMP-regions or TOMP-stations" },
+                { "name": "shapefile", "dataProtection": "A" }
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Controlling"
+}

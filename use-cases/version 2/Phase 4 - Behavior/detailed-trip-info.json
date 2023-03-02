@@ -1,0 +1,43 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "detailed-trip-info",
+    "externalReference": "",
+    "tags": [ "stage:behavior", "distances" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the total number of trips shorter than X kilometer",
+        "inOrderTo": ["reduce private car usage", "stimulate usage", "facilitate commuting"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        {
+            "description": "Geographical representation of the trips, including asset information",
+            "standards": [
+                { "name": "fixed-format", "dataProtection": "A" },
+                { "name": "shapefile", "dataProtection": "A" }
+            ]
+        },
+        {
+            "description": "Geographical representation of the trips, including asset information",
+            "standards": [
+                { "name": "MDS-provider-trips", "dataProtection": "B" },
+                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
+                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" },
+                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
+                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
+                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
+                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
+                { "name": "MDS-provider-events", "dataProtection": "B" }
+           ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Behavior", 
+    "image": "details.jfif"
+}

@@ -3,6 +3,8 @@ import { StandardService } from '../../services/standard.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { UseCaseService } from '../../services/use-case.service';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-standard-store',
@@ -20,7 +22,8 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
   hovered: boolean = false;
   undoShown: boolean = false;
 
-  constructor(private standardService: StandardService, private useCaseService: UseCaseService) {
+  constructor(private standardService: StandardService, private useCaseService: UseCaseService, 
+    private route: ActivatedRoute, private http: HttpClient) {
     this.dataSource = new MatTableDataSource<any>(this.standardService.getAllStandards());
     this.dataSourceSelected = new MatTableDataSource<any>(this.standardService.selectedStandards);
     this.loadStandards();
@@ -75,6 +78,19 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.obs = this.dataSource.connect();
     this.obsSelected = this.dataSourceSelected.connect();
+
+    this.route.queryParamMap
+      .subscribe((params) => {
+        if (params.has("name")) {
+          var n = params.get('name');
+          this.http.get("/assets/uploads/" + n, { responseType: 'blob' }).subscribe(
+            (r) => {
+              this.processFile(r);
+            } 
+          )     
+        }
+      }
+    );
   }
 
   ngOnDestroy() {

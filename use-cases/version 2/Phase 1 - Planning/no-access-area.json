@@ -1,0 +1,30 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "no-access-area",
+    "externalReference": "",
+    "tags": [
+        "stage:planning", "access", "no-parking", "limit" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish no access areas",
+        "inOrderTo": ["maintain order in the public space"]
+    },
+    "standards": [
+        { "name": "fixed-format" },
+        { "name": "GBFS-geofencing-zones" },
+        { "name": "TOMP-API-regions" },
+        { "name": "MDS-policy-policy" },
+        { "name": "shapefile" }
+    ],
+    "metrics": [ 
+        { "description": "Geographical representations of no access areas." } 
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Planning",
+    "image": "noaccess.jpeg"
+}

@@ -1,9 +1,19 @@
-import { Injectable } from "@angular/core";
-import * as FileSaver from 'file-saver';
-import { BehaviorSubject } from "rxjs";
+import { Injectable, Inject } from "@angular/core";
+import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { APP_BASE_HREF } from "@angular/common";
+
+export interface ReturnValue {
+    name: string;
+}
 
 @Injectable()
 export class ExportService {
+
+    url: string = "";
+    urlListener: BehaviorSubject<string> = new BehaviorSubject(this.url);
+
+    constructor(private http: HttpClient, @Inject(APP_BASE_HREF) private baseHref: string) { }
 
     signalExport = new BehaviorSubject<string>("");
 
@@ -18,8 +28,8 @@ export class ExportService {
     specification: any = {
         metaData: {
             versionNumber: 1,
-            contractor1: "",
             contractor2: "",
+            contractor1: "",
             role1: "BOTH",
             role2: "BOTH"
         },
@@ -72,7 +82,24 @@ export class ExportService {
 
         var json = JSON.stringify(this.specification);
         const data: Blob = new Blob([json], { type: "text/json" });
-        FileSaver.saveAs(data, "CDS-M-" + name + '-' + new Date().getTime() + ".json");
+        var n = "CDS-M-" + name + '-' + new Date().getTime() + ".json";
+        // FileSaver.saveAs(data, n);
+ 
+        const formData: FormData = new FormData();
+        formData.append("name", n);
+        formData.append("data", json);
+
+        let url = "/upload/";
+        if (this.baseHref.indexOf('localhost') > 0 ){
+            url = "http://localhost:4201/";
+        }
+
+        this.http.post<ReturnValue>(url, formData).subscribe(
+            (r)=> {
+                console.log('got r', r.name);
+                this.urlListener.next(r.name);
+            }
+          )
     }
 
     private applyAgreements() {

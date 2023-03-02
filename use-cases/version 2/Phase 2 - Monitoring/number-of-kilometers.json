@@ -1,0 +1,42 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "number-of-kilometers",
+    "externalReference": "",
+    "tags": [ "stage:monitoring", "trips", "kilometers", "aggregation" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the total number of kilometers",
+        "inOrderTo": ["show added value"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        {
+            "description": "(Minimum, maximum, average) kilometers usage, per (hour, day), per (area, zone, postal code)",
+            "standards": [
+                { "name": "fixed-format", "dataProtection": "A" }, 
+                { "name": "shapefile", "dataProtection": "A" } 
+            ]
+        },
+        {
+            "description": "(Minimum, maximum, average) kilometers usage, derived from trips or vehicle status (start-end). Needs aggregation to remove all personal movements.",
+            "standards": [
+                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
+                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
+                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
+                { "name": "MDS-provider-events", "dataProtection": "B" },
+                { "name": "MDS-provider-trips", "dataProtection": "B" },
+                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
+                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Monitoring", 
+    "image": "origin-destination.jfif"
+}

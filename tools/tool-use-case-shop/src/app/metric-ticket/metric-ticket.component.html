@@ -2,49 +2,50 @@
     <button class="w-full flex justify-between items-center gap-2.5 text-left font-semibold" (click)="toggle()">
         {{data.description}}
         <div *ngIf="hasDataStandards()">
-        <svg *ngIf="collapsed" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-            class="text-blue-600">
-            <g clip-path="url(#clip0_1183_21142)">
-                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor"></path>
-            </g>
-            <defs>
-                <clipPath id="clip0_1183_21142">
-                    <rect width="24" height="24" fill="currentColor"></rect>
-                </clipPath>
-            </defs>
-        </svg>
-        <svg *ngIf="!collapsed" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_1183_21170)">
-                <path d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"
-                    fill="currentColor"></path>
-            </g>
-            <defs>
-                <clipPath id="clip0_1183_21170">
-                    <rect width="24" height="24" fill="currentColor"></rect>
-                </clipPath>
-            </defs>
-        </svg>
-    </div>
+            <svg *ngIf="collapsed" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg" class="text-blue-600">
+                <g clip-path="url(#clip0_1183_21142)">
+                    <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1183_21142">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+            <svg *ngIf="!collapsed" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1183_21170)">
+                    <path d="M7.41 7.83997L12 12.42L16.59 7.83997L18 9.24997L12 15.25L6 9.24997L7.41 7.83997Z"
+                        fill="currentColor"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1183_21170">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
     </button>
-    <div *ngIf="showStandards()" class="mt-4">
-        <p class="font-semibold">Possible data exchange standards</p>
+    <app-popover [data]="popupDetails"></app-popover>
+    <div *ngIf="showStandards()" class="mt-4 px-10">
         <ul class="ml-6 list-disc">
             <li *ngFor="let dn of standardNames">{{dn|replaceUnderscore}}
                 <ul class="ml-6 list-disc">
-                    <div *ngFor="let ds of data.standards">
+                    <div *ngFor="let ds of standardsToShow">
                         <li *ngIf="ds.name.startsWith(dn)" class="flex flex-row w-full place-content-between">
-                            <div *ngIf="ds.name != dn">{{formatName(dn,ds.name)|replaceUnderscore}} {{ds.content}}</div>
-                            <div *ngIf="ds.name == dn">{{ds.content}}</div>
-                            <div class="flex flex-row gap-2">
-                                <!--app-bookmark [isAbsolute]="false" [grade]="getPrivacy(ds.name)"></app-bookmark>
-                                <app-bookmark [isAbsolute]="false" [grade]="getConfidentiality(ds.name)"></app-bookmark>
-                                <app-bookmark [isAbsolute]="false" [grade]="getInteroperability(ds.name)"></app-bookmark-->
+                            <div data-popover-target="popover-default" (mouseover)="showDetails(ds)">
+                                <div>
+                                    <div *ngIf="ds.name != dn">{{formatName(dn,ds.name)|replaceUnderscore}} {{ds.content}} GDPR: {{getGrade(ds)}}
+                                    </div>
+                                    <div *ngIf="ds.name == dn">{{ds.content}} GDPR: {{getGrade(ds)}}</div>
+                                </div>
                             </div>
                         </li>
                     </div>
                 </ul>
             </li>
-            
+
         </ul>
     </div>
 </div>

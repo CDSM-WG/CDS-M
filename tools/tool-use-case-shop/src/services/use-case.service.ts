@@ -70,8 +70,7 @@ export class UseCaseService {
       let uc = this.useCaseList.filter(x => x.id === id);
       if (uc[0].standards != undefined) {
         for (let i = 0; i < uc[0].standards.length; ++i) {
-          let standard = this.standardService.getStandard(uc[0].standards[i].name);
-          if (standard.privacy === "A") {
+          if ( uc[0].standards[i].dataProtection === "A" ){
             uc[0].standards[i].checked = true;
           }
         }

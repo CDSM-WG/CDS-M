@@ -53,6 +53,33 @@
     </div>
 </div>
 
+<div class="bg-white overflow-hidden flex items-center justify-between gap-2 max-w-xl w-full p-4 bg-yellow-700 fixed z-30 bottom-8 inset-x-0 mx-auto"
+    data-component="Toast" *ngIf="toastShown">
+    <div class="flex items-start">
+        <div class="ml-2 pt-1 font-semibold leading-4">
+            <a class="border-b border-blue-600 text-blue-600" href="mailto:?subject=Connection details for [name]&body=Dear [data processor],%0A%0DIn the link you can find the details needed to use our data. Authentication details will be sended seperately.%0A%0D{{this.url}}%0A%0DRegards,%0A%0D[Name]">Create mail</a>
+        </div>
+    </div>
+    <div class="flex items-center gap-6 shrink-0">
+        URL copied!
+        <button (click)="hideToast()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                data-component="TimesIcon">
+                <g clip-path="url(#clip0_921_38688)">
+                    <path
+                        d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                        fill="currentColor"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_921_38688">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+        </button>
+    </div>
+</div>
+
 <div class="flex-1 bg-gray-100">
     <app-modal *ngIf="showDialog" (selection)="onSelection($event)"></app-modal>
     <div class="max-w-6xl mx-auto px-4 w-full pt-20 sm:pt-20 pb-6 sm:pb-20">
@@ -69,9 +96,9 @@
                         fill="currentColor"></path>
                 </g>
             </svg>
-            <span class="leading-4">Data Standards Library</span>
+            <span class="leading-4">Data Standards</span>
         </button>
-        <h1 class="heading-2 mt-14 text-blue-600">Configure your receipt</h1>
+        <h1 class="heading-2 mt-14 text-blue-600">Configure your implementation</h1>
         <div class="flex flex-col md:flex-row mt-6 gap-6" data-component="SplitContainer">
             <div class="flex-auto md:w-4/6" data-component="SplitContainerLeft">
                 <div class="flex flex-col gap-2">
@@ -114,7 +141,7 @@
                             <button (click)="this.export()" [disabled]="isDisabled()"
                                 class="inline-flex items-center justify-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-400 focus:bg-blue-400 focus:ring-blue-400 active:bg-blue-600 disabled:bg-gray-300 disabled:text-gray-500 border-4 border-blue-600 hover:border-blue-400 focus:border-blue-400 active:border-blue-600 disabled:border-gray-300 leading-none font-medium focus:ring-4 focus:ring-offset-4 cursor-pointer focus:outline-none disabled:cursor-not-allowed w-full"
                                 data-component="Button">
-                                Export receipt
+                                Hand over configuration
                             </button>
                         </div>
                     </div>

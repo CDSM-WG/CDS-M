@@ -21,24 +21,50 @@ export class CartTicketComponent implements OnInit {
   ngOnInit(): void {
     this.getTotalGrade();
     this.sort();
+    this.standardService.standardRemoved.subscribe( (standardRemovedFromCart) => {
+      if (standardRemovedFromCart == null) {
+        return;
+      }
+
+      for( let i = 0; i < this.data.standards.length; ++i){
+        if (this.data.standards[i].name === standardRemovedFromCart.name ) {
+          this.data.standards[i].checked = false;
+          break;
+        }
+      }
+    } );
+  }
+
+  standards() {
+    let standards: any[] = this.data.standards;
+    if (standards == null || standards.length == 0) {
+      standards = []
+      for (let i = 0; i < this.data.metrics.length; ++i) {
+        for (let j = 0; j < this.data.metrics[i].standards.length; ++j) {
+          standards.push(this.data.metrics[i].standards[j]);
+        }
+      }
+    }
+
+    return standards;
   }
 
   sort() {
-    this.data.standards = this.data.standards.sort((a:any,b:any) => {
-      let standardA = this.standardService.getStandard(a.name);
-      let standardB = this.standardService.getStandard(b.name);
-      if( standardA.privacy == null || standardA.privacy == "*" ){
+    this.data.standards = this.standards().sort((a: any, b: any) => {
+      let standardA = this.standardService.getPrivacyGrade(a.name, a);
+      let standardB = this.standardService.getPrivacyGrade(b.name, b);
+      if (standardA == null || standardA == "*") {
         return 1;
       }
-      else if( standardB.privacy == null || standardB.privacy == "*"){
+      else if (standardB == null || standardB == "*") {
         return -1;
       }
 
-      if(standardA.privacy.charCodeAt(0) == standardB.privacy.charCodeAt(0)){
-        return a.name.charCodeAt(0) > b.name.charCodeAt(0) ? 1 : -1;
+      if (standardA.charCodeAt(0) == standardB.charCodeAt(0)) {
+        return a.name.localeCompare(b.name);
       }
 
-      return standardA.privacy.charCodeAt(0) > standardB.privacy.charCodeAt(0) ? 1 : -1;
+      return standardA.localeCompare(standardB);
     });
   }
 
@@ -82,6 +108,10 @@ export class CartTicketComponent implements OnInit {
       }
       else {
         s[0].checked = !s[0].checked;
+
+        if( !s[0].checked) {
+          this.standardService.standardRemoved.next(s[0]);
+        }
       }
     }
     this.getTotalGrade();
@@ -92,11 +122,13 @@ export class CartTicketComponent implements OnInit {
     if (standard.tags != null) {
       for (let s of standard.tags) {
         let split = s.split(":")
-        for (let part of split) {
-          result = result + " #" + part;
+        if (split[0] != "stage") {
+          for (let part of split) {
+            result = result + " #" + part;
+          }
         }
       }
     }
-    return result
+    return result;
   }
 }

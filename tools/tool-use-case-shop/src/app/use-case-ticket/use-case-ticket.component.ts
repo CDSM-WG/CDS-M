@@ -26,13 +26,24 @@ export class UseCaseTicketComponent implements OnInit {
     return this.useCaseService.isInCart(this.data.id);
   }
 
+  getImage() {
+
+    if (this.data.image != null) {
+      return 'assets/' + this.data.image;  
+    }
+
+    return 'assets/parking.jpeg';
+  }
+
   getTags() {
     let result = "";
     if (this.data.tags != null) {
       for (let s of this.data.tags) {
         let split = s.split(":")
-        for (let part of split) {
-          result = result + " #" + part;
+        if (split[0] != "stage") {
+          for (let part of split) {
+            result = result + " #" + part;
+          }
         }
       }
     }

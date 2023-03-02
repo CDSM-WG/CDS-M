@@ -48,6 +48,14 @@ import { YourReceiptComponent } from './your-receipt/your-receipt.component';
 import { PopoverComponent } from './popover/popover.component';
 import { ModalComponent } from './modal/modal.component';
 
+import { APP_BASE_HREF, PlatformLocation } from "@angular/common";
+
+export function getBaseHref(platformLocation: PlatformLocation): string {
+  let p: any = platformLocation;
+  let origin = p.location.origin;
+  return origin;
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,7 +106,12 @@ import { ModalComponent } from './modal/modal.component';
   providers: [
     UseCaseService,
     StandardService,
-    ExportService,    
+    ExportService,  
+    {
+      provide: APP_BASE_HREF,
+      useFactory: getBaseHref,
+      deps: [PlatformLocation]
+    }  
   ],
   bootstrap: [AppComponent]
 })

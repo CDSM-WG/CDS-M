@@ -1,0 +1,32 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "price-steering",
+    "externalReference": "",
+    "tags": [ "stage:controlling", "price", "areas" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish reduction areas, surtax areas",
+        "inOrderTo": ["stimulate usage", "increase inclusion"]
+    },
+    "standards": [
+        { "name": "fixed-format", "dataProtection": "A" },
+        { "name": "MDS-policy-policy", "dataProtection": "A", "remarks": "has to be combined with MDS-geographies" },
+        { "name": "MDS-geographies" },
+        { "name": "shapefile", "dataProtection": "A" }
+    ],
+    "metrics": [ 
+        {
+            "description": "Geographical representation of the areas, including the time slots and prices.",
+            "standards": [
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Controlling", 
+    "image": "price.jpeg"
+}

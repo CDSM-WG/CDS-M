@@ -1,0 +1,53 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "operating-area",
+    "externalReference": "",
+    "tags": [
+        "stage:planning",
+        "operation",
+        "limit"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish operating areas per mobility provider",
+        "inOrderTo": [
+            "maintain order in the public space"
+        ]
+    },
+    "standards": [],
+    "metrics": [
+        {
+            "description": "Geographical representations of operating area.",
+            "standards": [
+                {
+                    "name": "fixed-format",
+                    "privacyGrade": "A"
+                },
+                {
+                    "name": "GBFS-system-regions",
+                    "privacyGrade": "A"
+                },
+                {
+                    "name": "TOMP-API-regions",
+                    "privacyGrade": "A"
+                },
+                {
+                    "name": "MDS-geographies",
+                    "privacyGrade": "A"
+                },
+                {
+                    "name": "shapefile",
+                    "privacyGrade": "A"
+                }
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Planning",
+    "image": "boundary.jpeg"
+}

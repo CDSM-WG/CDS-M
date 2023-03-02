@@ -1,0 +1,44 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "idle-time",
+    "externalReference": "",
+    "tags": [ "stage:monitoring", "idle", "nuisance" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know how long each asset is unused",
+        "inOrderTo": ["prevent nuisance"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        { 
+            "description": "(minimum, maximum, average, 85-percentile) Aggregated idle time per (hour, part-of-day, day, week, month) and per ((free-floating) area, station, postal code, ... )",
+            "standards": [ 
+                { "name": "fixed-format", "dataProtection": "A" }, 
+                { "name": "shapefile", "dataProtection": "A" } 
+            ]
+        },
+        {
+            "description": "(near) idle time per (asset, free-floating area, station, lon/lats), derived from statusses of assets. Needs aggregation to remove all personal movements.",
+            "standards": [
+                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
+                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
+                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
+                { "name": "MDS-provider-events", "dataProtection": "B" },
+                { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B" },
+                { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B" },
+                { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B" },
+                { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "B" },
+                { "name": "TOMP-available-assets-with-license-plate", "dataProtection": "B" }
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Monitoring",
+    "image": "idle.jpeg"
+}

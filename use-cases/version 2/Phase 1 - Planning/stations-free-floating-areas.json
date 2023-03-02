@@ -1,0 +1,33 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "stations-free-floating-areas",
+    "externalReference": "",
+    "tags": [
+        "stage:planning", "station", "free-floating", "location" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish station locations or free-floating areas",
+        "inOrderTo": ["stimulate usage (findable)"]
+    },
+    "standards": [
+        { "name": "fixed-format" },
+        { "name": "GBFS-station-information" },
+        { "name": "GBFS-geofencing-zones" },
+        { "name": "TOMP-API-stations" },
+        { "name": "TOMP-API-regions" },
+        { "name": "MDS-provider-stops" },
+        { "name": "MDS-geographies" },
+        { "name": "shapefile" }
+    ],
+    "metrics": [ 
+        { "description": "Geographical representations of locations of stations or free-floating areas." } 
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Planning",
+    "image": "bikestation.jpg"
+}

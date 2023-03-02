@@ -1,0 +1,27 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "unwanted-parking-locations",
+    "externalReference": "",
+    "tags": [ "stage:monitoring", "parking", "nuisance", "destination", "end" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the location of parked assets at unwanted locations",
+        "inOrderTo": ["prevent nuisance"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        {
+            "description": "This is a combination of the end-trips use case and the parking-areas use case. The near realtime end location should be compared with the parking locations. When it is parked nearby the appropriate parking location, it is unwanted.",
+            "standards": [
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Monitoring"
+}

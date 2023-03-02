@@ -1,0 +1,30 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "formation",
+    "externalReference": "",
+    "tags": [ "stage:behavior", "fleet", "formation", "electrical" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the formation of the fleet (emissions)",
+        "inOrderTo": ["show impact on the environment"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        {
+            "description": "Different asset classes, including environmental classification",
+            "standards": [
+                { "name": "fixed-format", "dataProtection": "A" },
+                { "name": "shapefile", "dataProtection": "A" }
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Behavior", 
+    "image": "formation.jfif"
+}

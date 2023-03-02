@@ -1,0 +1,31 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "minimum-assets",
+    "externalReference": "",
+    "tags": [ "stage:controlling", "assets", "minimum" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish minimum number of available assets",
+        "inOrderTo": ["stimulate usage"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        {
+            "description": "Geographical representation of the areas, including the required minimum number of assets.",
+            "standards": [
+                { "name": "fixed-format", "dataProtection": "A" },
+                { "name": "MDS-policy-policy", "dataProtection": "A", "remarks": "has to be combined with MDS-geographies" },
+                { "name": "shapefile", "dataProtection": "A" }
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Controlling",
+    "image": "minimum.jfif"
+}

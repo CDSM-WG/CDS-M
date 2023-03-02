@@ -1,0 +1,39 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "accident-locations",
+    "externalReference": "",
+    "tags": [ "stage:behavior", "accidents", "safety" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know details of (near) accident locations",
+        "inOrderTo": ["increase safety"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        {
+            "description": "Geographical locations of accidents. Including driver details like age class",
+            "standards": [
+                { "name": "fixed-format", "dataProtection": "B" },
+                { "name": "shapefile", "dataProtection": "B" }
+            ]
+        },
+        {
+            "description": "Geographical location of the accidents, has to be aggregated from realtime information.",
+            "standards": [
+                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
+                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
+                { "name": "MDS-provider-events", "dataProtection": "B" },
+                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
+           ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Behavior", 
+    "image": "accident.jpeg"
+}

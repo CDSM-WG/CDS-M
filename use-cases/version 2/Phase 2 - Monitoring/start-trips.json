@@ -1,0 +1,53 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "start-trips",
+    "externalReference": "",
+    "tags": [ "stage:monitoring", "origin", "start" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know where inhabitants start their trips",
+        "inOrderTo": ["find out the inhabitants needs"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        { 
+            "description": "(minimum, maximum, average, 85-percentile) Aggregated number of rental starts per (hour, part-of-day, day, week, month) and per ((free-floating) area, station, postal code, ... )",
+            "standards": [ 
+                { "name": "fixed-format", "dataProtection": "A" }, 
+                { "name": "shapefile", "dataProtection": "A" } 
+            ]
+        },
+        {
+            "description": "(near) realtime information about the rental starts per (free-floating area, station, lon/lats), derived from statusses of assets. Needs aggregation to remove all personal movements.",
+            "standards": [
+                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
+                { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
+                { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
+                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
+                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
+                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
+                { "name": "MDS-provider-events", "dataProtection": "B" },
+                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
+            ]
+        },
+        {
+            "description": "(near) realtime information about the trips starting in (free-floating area, station, lon/lats). Needs aggregation to remove all personal movements.",
+            "standards": [
+                { "name": "MDS-provider-trips", "dataProtection": "B" },
+                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
+                { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "A" },
+                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
+                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Monitoring",
+    "image": "start.jfif"
+}

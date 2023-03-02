@@ -1,0 +1,38 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "network-usage",
+    "externalReference": "",
+    "tags": [ "stage:behavior", "usage", "road", "network" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the usage of the infrastructure over time",
+        "inOrderTo": ["reduce private car usage", "stimulate usage", "maintain order in the public space"]
+    },
+    "standards": [
+    ],
+    "metrics": [ 
+        {
+            "description": "Geographical representation of the usage of the network, with (minimum, maximum, average) counts per (hour, day)",
+            "standards": [
+                { "name": "fixed-format", "dataProtection": "A" },
+                { "name": "shapefile", "dataProtection": "A" }
+            ]
+        },
+        {
+            "description": "Geographical representation of the usage of the network, needs to be mapped on a network and to be aggregated from trips to remove personal information",
+            "standards": [
+                { "name": "MDS-provider-trips", "dataProtection": "B" },
+                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
+                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" }
+           ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Behavior", 
+    "image": "road-usage.jfif"
+}

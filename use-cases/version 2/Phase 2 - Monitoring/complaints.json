@@ -1,0 +1,32 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "complaints",
+    "externalReference": "",
+    "tags": [ "stage:monitoring", "complaints", "nuisance" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the number of complaints per area",
+        "inOrderTo": ["find out the inhabitants needs"]
+    },
+    "standards": [
+        { "name": "fixed-format" }, 
+        { "name": "shapefile" } 
+    ],
+    "metrics": [ 
+        { 
+            "description": "Number of complaints per (station, free-floating area)",
+            "standards": [ 
+                { "name": "fixed-format", "dataProtection": "?" }, 
+                { "name": "shapefile", "dataProtection": "?" } 
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Monitoring",
+    "image": "complaint.jfif"
+}

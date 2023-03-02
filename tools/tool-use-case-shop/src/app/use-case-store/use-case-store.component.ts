@@ -17,7 +17,7 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
 
   useCases: any[]  = [];
 
-  filterOptions: string[] = ["All", "Research", "Dynamic policy", "Liveability","Safety","Sustainability"]
+  filterOptions: string[] = ["All", "Planning", "Monitoring", "Controlling","Behavior"]
 
   toastShown: boolean = false;
 
@@ -49,13 +49,17 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
       else if (data.story.iWouldLikeTo.toLowerCase().indexOf(filter) >= 0) {
         return true;
       }
-      else if (data.story.inOrderTo.toLowerCase().indexOf(filter) >= 0) {
+      if (data.story.inOrderTo != null) {
+        for (let i = 0; i < data.story.inOrderTo.length; ++i) {
+          if( data.story.inOrderTo[i].toLowerCase().indexOf(filter) >= 0) {
+            return true;
+          }
+        }
+      }
+      if (data.id.toLowerCase().indexOf(filter) >= 0) {
         return true;
       }
-      else if (data.id.toLowerCase().indexOf(filter) >= 0) {
-        return true;
-      }
-      else if ( data.tags != null ){
+      if ( data.tags != null ){
         for ( let i = 0; i < data.tags.length; ++i ) {
           if (data.tags[i].toLowerCase().indexOf(filter) >= 0){
             return true;

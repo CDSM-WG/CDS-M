@@ -7,15 +7,16 @@ SET OUTPUTFILE="%OUTPUTDIR%\tool-use-case-shop\src\app\_files\use-cases.json"
 SET COUNT=0
 
 :use-cases
-CD ..\use-cases\
+CD "..\use-cases\version 2\"
 
 call :processTreeUC
 echo ] >> %OUTPUTFILE%
+cd ..
 goto :authentications
 
 :processTreeUC
 FOR %%I in (*.json) do (
-    REM echo %%I
+    echo %%I
     IF !COUNT! == 0 (echo [ > %OUTPUTFILE%) ELSE (echo , >> %OUTPUTFILE%)
     SET COUNT=1
     type %%I >> %OUTPUTFILE%

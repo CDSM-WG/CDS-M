@@ -1,0 +1,31 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "parking-area",
+    "externalReference": "",
+    "tags": [
+        "stage:planning", "parking", "limit" ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "publish (public) parking areas",
+        "inOrderTo": ["maintain order in the public space"]
+    },
+    "standards": [
+        { "name": "fixed-format" },
+            { "name": "GBFS-geofencing-zones" },
+            { "name": "TOMP-API-regions" },
+            { "name": "MDS-policy-policy" },
+            { "name": "shapefile" },
+            { "name": "NeTEx" }
+    ],
+    "metrics": [ 
+        { "description": "Geographical representations of parking areas." } 
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Planning",
+    "image": "parking.jpeg"
+}

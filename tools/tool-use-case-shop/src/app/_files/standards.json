@@ -983,12 +983,32 @@
 }, 
 {
     "type": "standard",
+    "name": "MDS-geographies",
+    "displayName": "MDS - Geographies",
+    "exchangeType": "[API,file-based]", 
+    "part": "geographies.json",
+    "description": "Geographical data has many applications in the context of mobility, such as the description of municipal boundaries, locations for pick-up and drop-off zones, and areas of temporary closure for special events or emergencies.",
+    "url": "[url]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]]",
+    "mediumType": "json-file",
+    "refreshRate": "[ISO8601 timespan]",
+    "privacy": "A",
+    "confidentiality": "B",
+    "interoperability": "A",
+    "domain": "A",
+    "fieldModifications": [],
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/geography",
+    "bbversion": 1
+}, 
+{
+    "type": "standard",
     "name": "MDS-policy-geography",
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#geography",
     "part": "/geographies",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "privacy": "A",
     "confidentiality": "B",
     "interoperability": "A",
@@ -1006,7 +1026,7 @@
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
     "part": "/policies/",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "privacy": "A",
     "confidentiality": "B",
     "interoperability": "A",
@@ -1019,10 +1039,75 @@
 }, 
 {
     "type": "standard",
+    "name": "MDS-provider-events-without-ids",
+    "description": "MDS provider events endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.", 
+    "exchangeType": "API", 
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "part": "GET /events",
+    
+    "privacy": "B",
+    "confidentiality": "B",
+    "interoperability": "D",
+    "domain": "A",
+
+    "fieldModifications": [
+        {
+            "field": "events[].device_id",
+            "exception": "removed"
+        },
+        {
+            "field": "events[].vehicle_id",
+            "exception": "removed"
+        }
+    ],
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1
+}
+, 
+{
+    "type": "standard",
+    "name": "MDS-provider-events",
+    "exchangeType": "API", 
+    "part": "/events",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "B",
+    "confidentiality": "D",
+    "interoperability": "A",
+    "domain": "A",
+
+    "fieldModifications": [
+        {
+            "field": "events[].device_id",
+            "exception": "exposed"
+        },
+        {
+            "field": "events[].vehicle_id",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1, 
+    "description": "The status of the inventory of vehicles available for customer use.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
+}
+, 
+{
+    "type": "standard",
     "name": "MDS-provider-status-changes-without-ids",
     "description": "MDS provider status_changes endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.", 
     "exchangeType": "API", 
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
@@ -1053,7 +1138,7 @@
     "name": "MDS-provider-status-changes",
     "exchangeType": "API", 
     "part": "/status_changes",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -1088,7 +1173,7 @@
     "exchangeType": "API", 
     "part": "/stops",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "mediumType": "API",
     "privacy": "A",
     "confidentiality": "B",
@@ -1105,7 +1190,7 @@
     "name": "MDS-provider-trips-without-ids-and-route",
     "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is empty/not available<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -1143,7 +1228,7 @@
     "name": "MDS-provider-trips-without-ids-blurred-start-end",
     "description": "MDS provider trips endpoint with one adjustment: the results don't contain device_id and vehicle_id, secondly, the route's start and end locations are blurred<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -1178,7 +1263,7 @@
     "name": "MDS-provider-trips-without-ids-only-start-end",
     "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is contains only start and endpoint<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",    
     "refreshRate": "[ISO8601 timespan]",
@@ -1216,7 +1301,7 @@
     "name": "MDS-provider-trips-without-ids",
     "description": "MDS provider trips endpoint with one adjustments: the results don't contain device_id and vehicle_id, secondly<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -1251,7 +1336,7 @@
     "exchangeType": "API", 
     "part": "/trips",
     "url": "[url]",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "mediumType": "API",
 
     "privacy": "D",
@@ -1275,7 +1360,7 @@
     "description": "MDS provider vehicles endpoint with one adjustments: the results are filtered, only non-booked assets are exposed<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
     "part": "vehicles",
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "mediumType": "API",
     "refreshRate": "0",
     "url": "[url]",
@@ -1305,7 +1390,7 @@
     "name": "MDS-provider-vehicles-without-ids-non-booked",
     "description": "MDS provider vehicles endpoint with two adjustments: the results are filtered, only non-booked assets are exposed AND the device_id and vehicle_id are removed<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -1340,7 +1425,7 @@
     "name": "MDS-provider-vehicles-without-ids",
     "description": "MDS provider vehicles endpoint with one adjustment: the device_id and vehicle_id are removed from the result<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[version]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",

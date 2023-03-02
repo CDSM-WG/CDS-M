@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "server": "node_modules/.bin/ts-node-dev server/server.ts"
   },
   "private": true,
   "dependencies": {

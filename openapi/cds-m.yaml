@@ -859,7 +859,9 @@ components:
         iWouldLikeTo: 
           type: string
         inOrderTo: 
-          type: string
+          type: array
+          items:
+            type: string
 
     prosAndCons:
       type: array
