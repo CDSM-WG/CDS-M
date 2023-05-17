@@ -22,23 +22,25 @@
             "standards": [
                 {
                     "name": "fixed-format",
-                    "privacyGrade": "A"
+                    "dataProtection": "A",
+                    "remark": "Applicable: geoJSON, with fields like an identifier and name"
                 },
                 {
                     "name": "GBFS-system-regions",
-                    "privacyGrade": "A"
+                    "dataProtection": "A"
                 },
                 {
                     "name": "TOMP-API-regions",
-                    "privacyGrade": "A"
+                    "dataProtection": "A"
                 },
                 {
                     "name": "MDS-geographies",
-                    "privacyGrade": "A"
+                    "dataProtection": "A"
                 },
                 {
                     "name": "shapefile",
-                    "privacyGrade": "A"
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier and name"
                 }
             ]
         }

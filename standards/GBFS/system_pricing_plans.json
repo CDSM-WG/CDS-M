@@ -16,5 +16,6 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }

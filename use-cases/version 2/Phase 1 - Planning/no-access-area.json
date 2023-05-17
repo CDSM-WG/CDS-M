@@ -4,21 +4,48 @@
     "id": "no-access-area",
     "externalReference": "",
     "tags": [
-        "stage:planning", "access", "no-parking", "limit" ],
+        "stage:planning",
+        "access",
+        "no-parking",
+        "limit"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish no access areas",
-        "inOrderTo": ["maintain order in the public space"]
+        "inOrderTo": [
+            "maintain order in the public space"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format" },
-        { "name": "GBFS-geofencing-zones" },
-        { "name": "TOMP-API-regions" },
-        { "name": "MDS-policy-policy" },
-        { "name": "shapefile" }
-    ],
-    "metrics": [ 
-        { "description": "Geographical representations of no access areas." } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "Geographical representations of no access areas.",
+            "standards": [
+                {
+                    "name": "fixed-format",
+                    "remark": "Applicable: geoJSON, with fields like an identifier and name",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-geofencing-zones"
+                },
+                {
+                    "name": "TOMP-API-regions"
+                },
+                {
+                    "name": "MDS-policy-policy",
+                    "remark": "Requires geography endpoint"
+                },
+                {
+                    "name": "MDS-policy-geography"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier and name"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],

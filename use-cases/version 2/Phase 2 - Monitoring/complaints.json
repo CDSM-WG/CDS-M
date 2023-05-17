@@ -3,22 +3,65 @@
     "@type": "useCase",
     "id": "complaints",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "complaints", "nuisance" ],
+    "tags": [
+        "stage:monitoring",
+        "complaints",
+        "nuisance"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the number of complaints per area",
-        "inOrderTo": ["find out the inhabitants needs"]
+        "inOrderTo": [
+            "find out the inhabitants needs"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format" }, 
-        { "name": "shapefile" } 
-    ],
-    "metrics": [ 
-        { 
+    "standards": [],
+    "metrics": [
+        {
             "description": "Number of complaints per (station, free-floating area)",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "?" }, 
-                { "name": "shapefile", "dataProtection": "?" } 
+            "standards": [
+                {
+                    "name": "fixed-format",
+                    "dataProtection": "A",
+                    "schema": "CSV",
+                    "mediumType": "csv-file",
+                    "schemaUrl": "not-applicable",
+                    "fieldList": "date,time,category,complaint,severity,station_id,area_id",
+                    "csvSeperationToken": "semi-colon",
+                    "retentionPeriod": "P1Y",
+                    "aggregationOperator": "COUNT",
+                    "geoUnit": "[postal, postal1_4, station, free-floating-area]",
+                    "geoUnitCustomSpecification": "n.a."
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "schema": "date,time,category,complaint,severity,station_id,area_id",
+                    "retentionPeriod": "P1Y",
+                    "aggregationOperator": "COUNT",
+                    "geoUnit": "[postal, postal1_4, station, free-floating-area]",
+                    "geoUnitCustomSpecification": "n.a."
+                }
+            ]
+        },
+        {
+            "description": "Anonymized complaints",
+            "standards": [
+                {
+                    "name": "fixed-format",
+                    "dataProtection": "B",
+                    "schema": "CSV",
+                    "mediumType": "csv-file",
+                    "privacy": "A",
+                    "schemaUrl": "not-applicable",
+                    "fieldList": "date,time,category,complaint,severity,lon,lat",
+                    "csvSeperationToken": "semi-colon"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "B",
+                    "schema": "date,time,category,complaint,severity"
+                }
             ]
         }
     ],

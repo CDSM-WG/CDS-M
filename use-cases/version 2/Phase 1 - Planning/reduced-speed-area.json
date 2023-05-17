@@ -4,21 +4,47 @@
     "id": "reduced-speed-area",
     "externalReference": "",
     "tags": [
-        "stage:planning", "speed", "limit" ],
+        "stage:planning",
+        "speed",
+        "limit"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish slow speed areas",
-        "inOrderTo": ["maintain order in the public space"]
+        "inOrderTo": [
+            "maintain order in the public space"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format" },
-        { "name": "GBFS-geofencing-zones" },
-        { "name": "TOMP-API-regions" },
-        { "name": "MDS-policy-policy" },
-        { "name": "shapefile" }
-    ],
-    "metrics": [ 
-        { "description": "Geographical representations of slow speed areas." } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "Geographical representations of slow speed areas.",
+            "standards": [
+                {
+                    "name": "fixed-format",
+                    "dataProtection": "A",
+                    "remark": "Applicable: geoJSON, with fields like an identifier and max speed"
+                },
+                {
+                    "name": "GBFS-geofencing-zones"
+                },
+                {
+                    "name": "TOMP-API-regions"
+                },
+                {
+                    "name": "MDS-policy-policy",
+                    "remark": "Requires geography endpoint"
+                },
+                {
+                    "name": "MDS-policy-geography"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier and max speed"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],

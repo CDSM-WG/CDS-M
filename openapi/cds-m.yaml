@@ -839,6 +839,18 @@ components:
               type: number
               description: the number of minutes between 2 refreshes. When it is a real-time connection or API, this should be considered as 0 (always up-to-date). When it's obsolete, it is not specified.
             
+            conditionalRequiredEndPoints:
+              type: array
+              description: the conditional required endpoints that this endpoint relies on
+              items: 
+                type: string
+
+            requiredEndPoints:
+              type: array
+              description: the required endpoints that this endpoint relies on
+              items: 
+                type: string
+
             aggregationLevel:
               $ref: "#/components/schemas/aggregation"
   

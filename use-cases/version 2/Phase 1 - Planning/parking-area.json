@@ -4,22 +4,62 @@
     "id": "parking-area",
     "externalReference": "",
     "tags": [
-        "stage:planning", "parking", "limit" ],
+        "stage:planning",
+        "parking",
+        "limit"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish (public) parking areas",
-        "inOrderTo": ["maintain order in the public space"]
+        "inOrderTo": [
+            "maintain order in the public space"
+        ]
     },
     "standards": [
-        { "name": "fixed-format" },
-            { "name": "GBFS-geofencing-zones" },
-            { "name": "TOMP-API-regions" },
-            { "name": "MDS-policy-policy" },
-            { "name": "shapefile" },
-            { "name": "NeTEx" }
     ],
-    "metrics": [ 
-        { "description": "Geographical representations of parking areas." } 
+    "metrics": [
+        {
+            "description": "Geographical representations of parking areas.",
+            "standards": [
+                {
+                    "name": "fixed-format",
+                    "remark": "Applicable: geoJSON, with fields like an identifier, name, license number, etc",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-geofencing-zones"
+                },
+                {
+                    "name": "TOMP-API-regions"
+                },
+                {
+                    "name": "MDS-policy-policy",
+                    "remark": "Requires geography endpoint"
+                },
+                {
+                    "name": "MDS-policy-geography"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier and name"
+                },
+                {
+                    "name": "NeTEx"
+                },
+                {
+                    "name": "CDS-curbs-spaces",
+                    "remark": "Requires CDS zones"
+                },
+                {
+                    "name": "CDS-curbs-zone"
+                },
+                {
+                    "name": "CDS-curbs-policy", 
+                    "remark": "Only needed when policies are required (like max duration)"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],

@@ -22,5 +22,6 @@
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint is the same as the available-assets, but doesn't have a rotating asset id, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint is the same as the available-assets, but doesn't have a rotating asset id, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-meta" ]
 }

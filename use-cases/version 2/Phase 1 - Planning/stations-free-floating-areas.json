@@ -4,24 +4,53 @@
     "id": "stations-free-floating-areas",
     "externalReference": "",
     "tags": [
-        "stage:planning", "station", "free-floating", "location" ],
+        "stage:planning",
+        "station",
+        "free-floating",
+        "location"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish station locations or free-floating areas",
-        "inOrderTo": ["stimulate usage (findable)"]
+        "inOrderTo": [
+            "stimulate usage (findable)"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format" },
-        { "name": "GBFS-station-information" },
-        { "name": "GBFS-geofencing-zones" },
-        { "name": "TOMP-API-stations" },
-        { "name": "TOMP-API-regions" },
-        { "name": "MDS-provider-stops" },
-        { "name": "MDS-geographies" },
-        { "name": "shapefile" }
-    ],
-    "metrics": [ 
-        { "description": "Geographical representations of locations of stations or free-floating areas." } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "Geographical representations of locations of stations or free-floating areas.",
+            "standards": [
+                {
+                    "name": "fixed-format",
+                    "dataProtection": "A",
+                    "remark": "Applicable: geoJSON, with fields like an identifier and name"
+                },
+                {
+                    "name": "GBFS-station-information"
+                },
+                {
+                    "name": "GBFS-geofencing-zones"
+                },
+                {
+                    "name": "TOMP-API-stations"
+                },
+                {
+                    "name": "TOMP-API-regions"
+                },
+                {
+                    "name": "MDS-provider-stops"
+                },
+                {
+                    "name": "MDS-geographies"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier and name"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],

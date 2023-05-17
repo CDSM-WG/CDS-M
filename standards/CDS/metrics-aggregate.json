@@ -14,5 +14,6 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "Aggregates are historic pre-computed counts and metrics of Events occurring in curb places, aggregated to the hour. All Aggregates can be calculated from the data included in Session."
+    "description": "Aggregates are historic pre-computed counts and metrics of Events occurring in curb places, aggregated to the hour. All Aggregates can be calculated from the data included in Session.",
+    "conditionalRequiredEndPoints": [ "CDS-curbs-zone", "CDS-curbs-spaces", "CDS-curbs-areas" ]
 }

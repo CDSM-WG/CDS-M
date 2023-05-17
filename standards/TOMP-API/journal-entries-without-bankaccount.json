@@ -25,5 +25,6 @@
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint is the same as the journal-entry endpoint, but has removed the personal aspects regarding the banking details<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint is the same as the journal-entry endpoint, but has removed the personal aspects regarding the banking details<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-meta" ]
 }

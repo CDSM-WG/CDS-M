@@ -14,5 +14,6 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "Sessions are a historic subset of curb events, with some rows combined, some columns removed for clarity and privacy, and for only some curb event types. Sessions are meant to provide a granular view of parking and area sessions happening around the curb places, so consumers can do their own analysis."
+    "description": "Sessions are a historic subset of curb events, with some rows combined, some columns removed for clarity and privacy, and for only some curb event types. Sessions are meant to provide a granular view of parking and area sessions happening around the curb places, so consumers can do their own analysis.",
+    "conditionalRequiredEndPoints": [ "CDS-curbs-zone", "CDS-curbs-spaces", "CDS-curbs-areas" ]
 }

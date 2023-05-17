@@ -16,5 +16,6 @@
     "domain": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }

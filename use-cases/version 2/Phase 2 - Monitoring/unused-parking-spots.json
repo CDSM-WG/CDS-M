@@ -1,0 +1,159 @@
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "unused-parking-spots",
+    "externalReference": "",
+    "tags": [
+        "stage:monitoring",
+        "parking",
+        "efficiency",
+        "destination",
+        "end"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the location of unused parking spots",
+        "inOrderTo": [
+            "provide a better offer of assets to all inhabitants"
+        ]
+    },
+    "standards": [],
+    "metrics": [
+        {
+            "name": "location of offered assets",
+            "description": "This is a combination of the offered-assets use case and the parking-areas use case. These must be combined to determine how long a parking spot is unused. The first metric is to determine the locations of the offered assets.",
+            "standards": [
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-and-route",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-free-bike-status",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-free-bike-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-vehicle-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "TOMP-available-assets-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-asset-name",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-license-plate",
+                    "dataProtection": "B"
+                }
+            ]
+        },
+        {
+            "name": "location of parking areas",
+            "description": "and the second metric is to determine where parking is allowed",
+            "standards": [
+                {
+                    "name": "fixed-format",
+                    "remark": "Applicable: geoJSON, with fields like an identifier, name, license number, etc"
+                },
+                {
+                    "name": "GBFS-geofencing-zones"
+                },
+                {
+                    "name": "TOMP-API-regions"
+                },
+                {
+                    "name": "MDS-policy-policy",
+                    "remark": "Requires geography endpoint"
+                },
+                {
+                    "name": "MDS-policy-geography"
+                },
+                {
+                    "name": "shapefile"
+                },
+                {
+                    "name": "NeTEx"
+                },
+                {
+                    "name": "CDS-curbs-spaces",
+                    "remark": "Requires CDS zones"
+                },
+                {
+                    "name": "CDS-curbs-zone"
+                },
+                {
+                    "name": "CDS-curbs-policy", 
+                    "remark": "Only needed when policies are required (like max duration)"
+                }
+            ]
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Monitoring"
+}

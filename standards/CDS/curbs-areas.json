@@ -14,5 +14,6 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. Defines curb areas in a city and their properties. A Curb Area is a particular neighborhood or area of interest that includes one or more Curb Zones. Important notes about Curb Areas:<br>   <ol><li>Curb Areas MAY overlap with other Curb Areas    <li>Multiple Curb Areas MAY include the same Curb Zones    <li>Curb Areas are not meant to be city-wide, and instead should be an area of interest around one or more Curb Zones that is no bigger than a neighborhood.    <li>Unlike Zones, Areas may be updated as needed, with a new curb_area_id being optionally assigned by the city</ol>"
+    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. Defines curb areas in a city and their properties. A Curb Area is a particular neighborhood or area of interest that includes one or more Curb Zones. Important notes about Curb Areas:<br>   <ol><li>Curb Areas MAY overlap with other Curb Areas    <li>Multiple Curb Areas MAY include the same Curb Zones    <li>Curb Areas are not meant to be city-wide, and instead should be an area of interest around one or more Curb Zones that is no bigger than a neighborhood.    <li>Unlike Zones, Areas may be updated as needed, with a new curb_area_id being optionally assigned by the city</ol>",
+    "requiredEndPoints": []
 }
