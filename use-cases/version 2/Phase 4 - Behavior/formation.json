@@ -3,20 +3,39 @@
     "@type": "useCase",
     "id": "formation",
     "externalReference": "",
-    "tags": [ "stage:behavior", "fleet", "formation", "electrical" ],
+    "tags": [
+        "stage:behavior",
+        "fleet",
+        "formation",
+        "electrical"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the formation of the fleet (emissions)",
-        "inOrderTo": ["show impact on the environment"]
+        "inOrderTo": [
+            "show impact on the environment"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Different asset classes, including environmental classification",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "A"
+                },{
+                    "name": "fixed-format csv",
+                    "dataProtection": "A",
+                    "schema": "asset_id,asset_type,name,propulsion_type,year,make,model,color,vin,license_plate",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "fixed-format|json",
+                    "dataProtection": "A",
+                    "schema": "asset_id,asset_type,name,propulsion_type,year,make,model,color,vin,license_plate",
+                    "mediumType": "json-file"
+                }
             ]
         }
     ],
@@ -25,6 +44,6 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Behavior", 
+    "theme": "Behavior",
     "image": "formation.jfif"
 }

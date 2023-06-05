@@ -1,0 +1,18 @@
+{
+    "type": "standard",
+    "name": "APDS",
+    "exchangeType": "file-based", 
+    "part": "[complete url]",
+    "version": "[version]",
+    "mediumType": "xml-file",
+    "refreshRate": "[ISO8601 timespan]",
+    
+    "privacy": "A",
+    "confidentiality": "B",
+    "interoperability": "A",
+
+    "schema": "https://github.com/parkingdata/spec",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1,
+    "description": "APDS has developed the global parking data standard in form of a comprehensive (UML) model. This model is the source for the APDS Specifications (overview, information model, data model, use cases)."
+}

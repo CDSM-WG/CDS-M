@@ -21,26 +21,27 @@
             "description": "Geographical representations of operating area.",
             "standards": [
                 {
-                    "name": "fixed-format",
+                    "name": "GBFS-system-regions"
+                },
+                {
+                    "name": "MDS-geographies"
+                },
+                {
+                    "name": "TOMP-API-regions"
+                },
+                {
+                    "name": "fixed-format geojson",
                     "dataProtection": "A",
-                    "remark": "Applicable: geoJSON, with fields like an identifier and name"
-                },
-                {
-                    "name": "GBFS-system-regions",
-                    "dataProtection": "A"
-                },
-                {
-                    "name": "TOMP-API-regions",
-                    "dataProtection": "A"
-                },
-                {
-                    "name": "MDS-geographies",
-                    "dataProtection": "A"
+                    "remark": "with fields like an identifier and name",
+                    "mediumType": "json-file",
+                    "schema": "area_id,name,start_date,start_time,end_date,end_time,geometry"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "remark": "With fields like an identifier and name"
+                    "remark": "with fields like an identifier and name",
+                    "mediumType": "shapefile",
+                    "schema": "area_id,name,start_date,start_time,end_date,end_time,geometry"
                 }
             ]
         }

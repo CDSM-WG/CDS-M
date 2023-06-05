@@ -3,30 +3,67 @@
     "@type": "useCase",
     "id": "accident-locations",
     "externalReference": "",
-    "tags": [ "stage:behavior", "accidents", "safety" ],
+    "tags": [
+        "stage:behavior",
+        "accidents",
+        "safety"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know details of (near) accident locations",
-        "inOrderTo": ["increase safety"]
+        "inOrderTo": [
+            "increase safety"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical locations of accidents. Including driver details like age class",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "B" },
-                { "name": "shapefile", "dataProtection": "B" }
+                {
+                    "name": "fixed-format csv",
+                    "dataProtection": "B",
+                    "schema": "lon,lat,date,time,severity,driver_age,asset_type,second_asset_type,damage,injured",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "fixed-format geojson",
+                    "dataProtection": "B",
+                    "schema": "date,time,severity,driver_age,asset_type,second_asset_type,damage,injured,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "B",
+                    "schema": "date,time,severity,driver_age,asset_type,second_asset_type,damage,injured",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "Geographical location of the accidents, has to be aggregated from realtime information.",
             "standards": [
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
-           ]
+                {
+                    "name": "MDS-provider-vehicles-status",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-without-ids",
+                    "dataProtection": "A"
+                }
+            ]
         }
     ],
     "termsAndConditions": [],
@@ -34,6 +71,6 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Behavior", 
+    "theme": "Behavior",
     "image": "accident.jpeg"
 }

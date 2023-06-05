@@ -3,64 +3,124 @@
     "@type": "useCase",
     "id": "offered-assets",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "offer" ],
+    "tags": [
+        "stage:monitoring",
+        "offer"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the offered amounts of assets",
-        "inOrderTo": ["find out the inhabitants needs"]
+        "inOrderTo": [
+            "find out the inhabitants needs"
+        ]
     },
-    "standards": [
-        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
-        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B" },
-        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
-        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B" },
-        { "name": "TOMP-available-assets", "dataProtection": "A" },
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B" },
-        { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "B" },
-        { "name": "TOMP-available-assets-with-license-plate", "dataProtection": "B" },
-        { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-        { "name": "MDS-provider-events", "dataProtection": "B" },
-        { "name": "MDS-provider-events-without-ids", "dataProtection": "A" },
-        { "name": "fixed-format" },
-        { "name": "shapefile" }
-    ],
-    "metrics": [ 
-        { 
-            "description": "(minimum, maximum, average, 85-percentile) Aggregated number of available assets per (hour, part-of-day, day, week, month) and per (free floating area, station, postal code, ... )",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "(minimum, maximum, average, 85-percentile) Aggregated number of available assets per (hour, part-of-day, day, week, month), asset type, and per (free floating area, station, postal code, ... )",
+            "standards": [
+                {
+                    "name": "fixed-format csv",
+                    "dataProtection": "A",
+                    "schema": "area_id,asset_type,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "fixed-format geojson",
+                    "dataProtection": "A",
+                    "schema": "area_id,asset_type,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "schema": "area_id,asset_type,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the availability per (free-floating area, station). Needs aggregation.",
-            "standards": [          
-                { "name": "GBFS-free-bike-status", "dataProtection": "A" },
-                { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "GBFS-vehicle-status", "dataProtection": "A" },
-                { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "TOMP-available-assets", "dataProtection": "A" },
-                { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-with-license-plate", "dataProtection": "B" }
+            "standards": [
+                {
+                    "name": "MDS-provider-stops",
+                    "dataProtection": "B",
+                    "remark": "Starting from version 2.0"
+                },
+                {
+                    "name": "GBFS-free-bike-status",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-free-bike-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-vehicle-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "TOMP-available-assets-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-asset-name",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-license-plate",
+                    "dataProtection": "B"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the availability per (free-floating area, station), derived from statusses of assets. Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-status",
+                    "dataProtection": "B",
+                    "remark": "From version 2.0"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-without-ids",
+                    "dataProtection": "A"
+                }
             ]
         }
     ],

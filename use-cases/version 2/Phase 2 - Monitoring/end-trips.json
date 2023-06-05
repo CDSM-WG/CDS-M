@@ -3,43 +3,166 @@
     "@type": "useCase",
     "id": "end-trips",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "destination", "end" ],
+    "tags": [
+        "stage:monitoring",
+        "destination",
+        "end"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know where inhabitants go to",
-        "inOrderTo": ["find out the inhabitants needs"]
+        "inOrderTo": [
+            "find out the inhabitants needs"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
-        { 
+    "standards": [],
+    "metrics": [
+        {
             "description": "(minimum, maximum, average, 85-percentile) Aggregated number of rental ends per (hour, part-of-day, day, week, month) and per ((free-floating) area, station, postal code, ... )",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+            "standards": [
+                {
+                    "name": "fixed-format csv",
+                    "dataProtection": "A",
+                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "fixed-format geojson",
+                    "dataProtection": "A",
+                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number",
+                    "mediumType": "shapefilefile"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the rental ends per (free-floating area, station, lon/lat), derived from statusses of assets. Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles|without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles|without-ids-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles|non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-status-changes|without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events|without-ids",
+                    "dataProtection": "A",
+                    "fieldModifications": [
+                        {
+                            "field": "vehicles[].device_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        },
+                        {
+                            "field": "vehicles[].vehicle_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        }
+                    ],
+                    "requiredEndPoints": [
+                        "MDS-policy-requirements"
+                    ]
+                },
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-historical",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-recent",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-stops2",
+                    "dataProtection": "B"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the trips ending in (free-floating area, station, lon/lat). Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A",
+                    "fieldModifications": [
+                        {
+                            "field": "device_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        }
+                    ],
+                    "requiredEndPoints": [
+                        "MDS-policy-requirements"
+                    ]
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end",
+                    "dataProtection": "A",
+                    "fieldModifications": [
+                        {
+                            "field": "device_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        },
+                        {
+                            "field": "route",
+                            "exception": "limited",
+                            "remark": "Since v2.0 per default, only start and end location"
+                        }
+                    ],
+                    "requiredEndPoints": [
+                        "MDS-policy-requirements"
+                    ]
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A",
+                    "fieldModifications": [
+                        {
+                            "field": "device_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        },
+                        {
+                            "field": "route",
+                            "exception": "limited",
+                            "remark": "Since v2.0 per default, only start and end location"
+                        }
+                    ],
+                    "requiredEndPoints": [
+                        "MDS-policy-requirements"
+                    ]
+                }
             ]
         }
     ],

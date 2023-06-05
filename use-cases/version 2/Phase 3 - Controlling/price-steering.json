@@ -3,22 +3,41 @@
     "@type": "useCase",
     "id": "price-steering",
     "externalReference": "",
-    "tags": [ "stage:controlling", "price", "areas" ],
+    "tags": [
+        "stage:controlling",
+        "price",
+        "areas"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish reduction areas, surtax areas",
-        "inOrderTo": ["stimulate usage", "increase inclusion"]
+        "inOrderTo": [
+            "stimulate usage",
+            "increase inclusion"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format", "dataProtection": "A" },
-        { "name": "MDS-policy-policy", "dataProtection": "A", "remarks": "has to be combined with MDS-geographies" },
-        { "name": "MDS-geographies" },
-        { "name": "shapefile", "dataProtection": "A" }
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical representation of the areas, including the time slots and prices.",
             "standards": [
+                {
+                    "name": "MDS-policy-policy",
+                    "dataProtection": "A",
+                    "remarks": "has to be combined with MDS-geographies"
+                },
+                {
+                    "name": "fixed-format geojson",
+                    "dataProtection": "A",
+                    "schema": "area_id,start_date,start_time,end_date,end_time,geometry,price,lower_boundary,upper_boundary",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "schema": "area_id,start_date,start_time,end_date,end_time,geometry,price,lower_boundary,upper_boundary",
+                    "mediumType": "shapefile"
+                }
             ]
         }
     ],
@@ -27,6 +46,6 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Controlling", 
+    "theme": "Controlling",
     "image": "price.jpeg"
 }

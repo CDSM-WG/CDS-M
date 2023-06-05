@@ -19,30 +19,35 @@
     "standards": [],
     "metrics": [
         {
-            "description": "Geographical representations of no access areas.",
+            "description": "Geographical representations of no-access areas.",
             "standards": [
                 {
-                    "name": "fixed-format",
-                    "remark": "Applicable: geoJSON, with fields like an identifier and name",
+                    "name": "MDS-policy-policies",
+                    "remark": "requires geographies endpoint or file",
+                    "dataProtection": "A",
+                    "requiredEndPoints": [ "MDS-geographies" ]
+                },
+                {
+                    "name": "GBFS-geofencing-zones",
                     "dataProtection": "A"
                 },
                 {
-                    "name": "GBFS-geofencing-zones"
+                    "name": "TOMP-API-regions",
+                    "dataProtection": "A"
                 },
                 {
-                    "name": "TOMP-API-regions"
-                },
-                {
-                    "name": "MDS-policy-policy",
-                    "remark": "Requires geography endpoint"
-                },
-                {
-                    "name": "MDS-policy-geography"
+                    "name": "fixed-format geojson",
+                    "remark": "with fields like an identifier and name",
+                    "dataProtection": "A",
+                    "mediumType": "json-file",
+                    "schema": "area_id,name,start_date,start_time,end_date,end_time,geometry"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "remark": "With fields like an identifier and name"
+                    "remark": "with fields like an identifier and name",
+                    "mediumType": "shapefile",
+                    "schema": "area_id,name,start_date,start_time,end_date,end_time"
                 }
             ]
         }

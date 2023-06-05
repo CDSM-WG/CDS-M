@@ -17,18 +17,22 @@
     "fieldModifications": [
         {
             "field": "trips[].device_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "trips[].vehicle_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "trips[].route",
-            "exception": "contains only blurred start and end location (30m)"
+            "exception": "contains only blurred start and end location (30m)",
+            "remark": "this applies in v2.0 to the fields 'start_location' and 'end_location'"
         }
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "MDS-policy-requirements" ]
 }

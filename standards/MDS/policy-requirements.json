@@ -1,0 +1,19 @@
+{
+    "type": "standard",
+    "name": "MDS-policy-requirements",
+    "exchangeType": "API", 
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/policy/examples/requirements.md",
+    "part": "/requirements/",
+    "url": "[url]",
+    "version": "[2.0]",
+    "privacy": "A",
+    "confidentiality": "B",
+    "interoperability": "A",
+    "domain": "A",
+    "mediumType": "API",
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1, 
+    "description": "A public agency's Policy program Requirements endpoint enumerates all of the parts of MDS, CDS, GBFS, and other specifications that an agency requires from providers for certain programs, including APIs, endpoints, and optional fields, as well as information for providers about the APIs the agency is hosting.",
+    "requiredEndPoints": []
+}

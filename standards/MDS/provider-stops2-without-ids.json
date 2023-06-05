@@ -1,12 +1,12 @@
 {
     "type": "standard",
-    "name": "MDS-provider-stops",
+    "name": "MDS-provider-stops-20-without-ids",
     "exchangeType": "API", 
     "part": "/stops",
     "url": "[url]",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[2.0]",
     "mediumType": "API",
-    "privacy": "A",
+    "privacy": "B",
     "confidentiality": "B",
     "interoperability": "A",
     "domain": "A",
@@ -14,6 +14,16 @@
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1, 
+    "fieldModifications": [
+        {
+            "field": "devices",
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
     "description": "Stop information should be updated on a near-realtime basis by providers who operate docked mobility devices in a given municipality.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
-    "conditionalRequiredEndPoints": [ "MDS-geographies" ]
+    "conditionalRequiredEndPoints": [ "MDS-geographies", "MDS-policy-requirements" ]
 }

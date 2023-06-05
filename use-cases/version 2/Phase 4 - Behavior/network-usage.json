@@ -3,29 +3,59 @@
     "@type": "useCase",
     "id": "network-usage",
     "externalReference": "",
-    "tags": [ "stage:behavior", "usage", "road", "network" ],
+    "tags": [
+        "stage:behavior",
+        "usage",
+        "road",
+        "network"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the usage of the infrastructure over time",
-        "inOrderTo": ["reduce private car usage", "stimulate usage", "maintain order in the public space"]
+        "inOrderTo": [
+            "reduce private car usage",
+            "stimulate usage",
+            "maintain order in the public space"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical representation of the usage of the network, with (minimum, maximum, average) counts per (hour, day)",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "fixed-format geojson",
+                    "dataProtection": "A",
+                    "schema": "segment_id,[year],[month],[day_of_week|day],[part_of_day|hour],counts,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "schema": "segment_id,[year],[month],[day_of_week|day],[part_of_day|hour],counts,geometry",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "Geographical representation of the usage of the network, needs to be mapped on a network and to be aggregated from trips to remove personal information",
             "standards": [
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" }
-           ]
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B",
+                    "remarks": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A",
+                    "remarks": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A",
+                    "remarks": "Up to version 1.2"
+                }
+            ]
         }
     ],
     "termsAndConditions": [],
@@ -33,6 +63,6 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Behavior", 
+    "theme": "Behavior",
     "image": "road-usage.jfif"
 }

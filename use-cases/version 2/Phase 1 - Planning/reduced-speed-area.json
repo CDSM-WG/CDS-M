@@ -21,9 +21,9 @@
             "description": "Geographical representations of slow speed areas.",
             "standards": [
                 {
-                    "name": "fixed-format",
-                    "dataProtection": "A",
-                    "remark": "Applicable: geoJSON, with fields like an identifier and max speed"
+                    "name": "MDS-policy-policies",
+                    "remark": "Requires geography endpoint",
+                    "requiredEndPoints": [ "MDS-geographies" ]
                 },
                 {
                     "name": "GBFS-geofencing-zones"
@@ -32,16 +32,18 @@
                     "name": "TOMP-API-regions"
                 },
                 {
-                    "name": "MDS-policy-policy",
-                    "remark": "Requires geography endpoint"
-                },
-                {
-                    "name": "MDS-policy-geography"
+                    "name": "fixed-format",
+                    "dataProtection": "A",
+                    "remark": "GeoJSON, with fields like an identifier and max speed",
+                    "mediumType": "json-file",
+                    "schema": "area_id,name,start_date,start_time,end_date,end_time,max_speed,geometry"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "remark": "With fields like an identifier and max speed"
+                    "remark": "With fields like an identifier and max speed",
+                    "mediumType": "shapefile",
+                    "schema": "area_id,name,start_date,start_time,end_date,end_time,max_speed"
                 }
             ]
         }

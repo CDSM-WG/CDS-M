@@ -3,7 +3,7 @@
     "name": "MDS-provider-trips-without-ids",
     "description": "MDS provider trips endpoint with one adjustments: the results don't contain device_id and vehicle_id, secondly<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -16,12 +16,14 @@
     "part": "trips",
     "fieldModifications": [
         {
-            "field": "trips[].device_id",
-            "exception": "removed"
+            "field": "device_id",
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
-            "field": "trips[].vehicle_id",
-            "exception": "removed"
+            "field": "vehicle_id",
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         }
     ],
     "conflicts": [
@@ -29,5 +31,6 @@
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "MDS-policy-requirements" ]
 }

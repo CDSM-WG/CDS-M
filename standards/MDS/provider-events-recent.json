@@ -1,0 +1,30 @@
+{
+    "type": "standard",
+    "name": "MDS-provider-events-recent",
+    "exchangeType": "API", 
+    "part": "/events/recent",
+    "version": "[2.0]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "B",
+    "confidentiality": "D",
+    "interoperability": "A",
+    "domain": "A",
+
+    "fieldModifications": [
+        {
+            "field": "events[].device_id",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1, 
+    "description": "Events represent changes in vehicle status.",
+    "conditionalRequiredEndPoints": [ "MDS-geographies" ]
+}

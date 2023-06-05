@@ -22,9 +22,25 @@
             "description": "Geographical representations of parking areas.",
             "standards": [
                 {
-                    "name": "fixed-format",
-                    "remark": "Applicable: geoJSON, with fields like an identifier, name, license number, etc",
-                    "dataProtection": "A"
+                    "name": "MDS-policy-policies",
+                    "requiredEndPoints": [ "MDS-geographies" ]
+                },
+                {
+                    "name": "CDS-curbs-spaces",
+                    "remark": "Requires CDS zones",
+                    "requiredEndPoints": [ "CDS-curbs-zone" ]
+
+                },
+                {
+                    "name": "CDS-curbs-policy", 
+                    "remark": "Conditonally requires spaces or zones",
+                    "conditionallyRequiredEndPoints": [ "CDS-curbs-zone" ]
+                },
+                {
+                    "name": "NeTEx"
+                },
+                {
+                    "name": "APDS"
                 },
                 {
                     "name": "GBFS-geofencing-zones"
@@ -33,30 +49,32 @@
                     "name": "TOMP-API-regions"
                 },
                 {
-                    "name": "MDS-policy-policy",
-                    "remark": "Requires geography endpoint"
-                },
-                {
-                    "name": "MDS-policy-geography"
+                    "name": "fixed-format geojson",
+                    "remark": "with fields like an identifier, no personal referencing information",
+                    "dataProtection": "A",
+                    "mediumType": "json-file",
+                    "schema": "parking_id,name,start_date,start_time,end_date,end_time,geometry"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "remark": "With fields like an identifier and name"
+                    "remark": "With fields like an identifier, without personal referencing information",
+                    "mediumType": "shapefile",
+                    "schema": "parking_id,start_date,start_time,end_date,end_time"
                 },
                 {
-                    "name": "NeTEx"
+                    "name": "fixed-format geojson with license reference",
+                    "remark": "with fields like an identifier, parking license number, etc",
+                    "dataProtection": "B",
+                    "mediumType": "json-file",
+                    "schema": "parking_id,name,start_date,start_time,end_date,end_time,license_number,geometry"
                 },
                 {
-                    "name": "CDS-curbs-spaces",
-                    "remark": "Requires CDS zones"
-                },
-                {
-                    "name": "CDS-curbs-zone"
-                },
-                {
-                    "name": "CDS-curbs-policy", 
-                    "remark": "Only needed when policies are required (like max duration)"
+                    "name": "shapefile- with license reference",
+                    "dataProtection": "B",
+                    "remark": "With fields like an identifier, parking license",
+                    "mediumType": "shapefile",
+                    "schema": "parking_id,start_date,start_time,end_date,end_time,license_number"
                 }
             ]
         }

@@ -4,7 +4,7 @@
     "description": "MDS provider vehicles endpoint with one adjustments: the results are filtered, only non-booked assets are exposed<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
     "part": "vehicles",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "mediumType": "API",
     "refreshRate": "0",
     "url": "[url]",
@@ -21,7 +21,8 @@
     "fieldModifications": [
         {
             "field": "vehicles",
-            "exception": "only non-booked"
+            "exception": "only non-booked",
+            "remark": "this cannot be specified in the requirements endpoint"
         }
     ],
     "retentionPeriod": "[ISO8601 timespan]",

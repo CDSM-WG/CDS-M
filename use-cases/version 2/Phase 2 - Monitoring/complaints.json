@@ -21,17 +21,30 @@
             "description": "Number of complaints per (station, free-floating area)",
             "standards": [
                 {
-                    "name": "fixed-format",
+                    "name": "fixed-format csv",
                     "dataProtection": "A",
-                    "schema": "CSV",
                     "mediumType": "csv-file",
                     "schemaUrl": "not-applicable",
-                    "fieldList": "date,time,category,complaint,severity,station_id,area_id",
+                    "schema": "date,time,category,complaint,severity,station_id,area_id",
                     "csvSeperationToken": "semi-colon",
                     "retentionPeriod": "P1Y",
                     "aggregationOperator": "COUNT",
                     "geoUnit": "[postal, postal1_4, station, free-floating-area]",
-                    "geoUnitCustomSpecification": "n.a."
+                    "geoUnitCustomSpecification": "n.a.",
+                    "remark": "containing e.g. periods and category, aggregated"
+                },
+                {
+                    "name": "fixed-format json",
+                    "dataProtection": "A",
+                    "mediumType": "json-file",
+                    "schemaUrl": "not-applicable",
+                    "schema": "date,time,category,complaint,severity,station_id,area_id",
+                    "csvSeperationToken": "semi-colon",
+                    "retentionPeriod": "P1Y",
+                    "aggregationOperator": "COUNT",
+                    "geoUnit": "[postal, postal1_4, station, free-floating-area]",
+                    "geoUnitCustomSpecification": "n.a.",
+                    "remark": "containing e.g. periods and category, aggregated"
                 },
                 {
                     "name": "shapefile",
@@ -40,7 +53,8 @@
                     "retentionPeriod": "P1Y",
                     "aggregationOperator": "COUNT",
                     "geoUnit": "[postal, postal1_4, station, free-floating-area]",
-                    "geoUnitCustomSpecification": "n.a."
+                    "geoUnitCustomSpecification": "n.a.",
+                    "remark": "Shapefile, containing e.g. periods and category, aggregated"
                 }
             ]
         },
@@ -48,19 +62,29 @@
             "description": "Anonymized complaints",
             "standards": [
                 {
-                    "name": "fixed-format",
+                    "name": "fixed-format csv",
                     "dataProtection": "B",
-                    "schema": "CSV",
                     "mediumType": "csv-file",
-                    "privacy": "A",
+                    "privacy": "B",
                     "schemaUrl": "not-applicable",
-                    "fieldList": "date,time,category,complaint,severity,lon,lat",
-                    "csvSeperationToken": "semi-colon"
+                    "schema": "date,time,category,complaint,severity,lon,lat",
+                    "csvSeperationToken": "semi-colon",
+                    "remark": "CSV file, containing e.g. date, time, category and location"
+                },
+                {
+                    "name": "fixed-format geojson",
+                    "dataProtection": "B",
+                    "mediumType": "json-file",
+                    "privacy": "B",
+                    "schemaUrl": "not-applicable",
+                    "schema": "date,time,category,complaint,severity,geometry",
+                    "remark": "containing e.g. date, time, category and location"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "B",
-                    "schema": "date,time,category,complaint,severity"
+                    "schema": "date,time,category,complaint,severity",
+                    "remark": "Shapefile, containing e.g. date, time, category and location"
                 }
             ]
         }

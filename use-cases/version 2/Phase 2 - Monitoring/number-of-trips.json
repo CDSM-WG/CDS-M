@@ -3,38 +3,111 @@
     "@type": "useCase",
     "id": "number-of-trips",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "trips", "aggregation" ],
+    "tags": [
+        "stage:monitoring",
+        "trips",
+        "aggregation"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the total number of trips",
-        "inOrderTo": ["show added value"]
+        "inOrderTo": [
+            "show added value"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
-            "description": "Number of trips, per (hour, day), per (area, zone, postal code)",
+            "description": "Number of trips, per (hour, day), starting at (area, zone, postal code)",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+                {
+                    "name": "fixed-format csv",
+                    "dataProtection": "A",
+                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],kilometers",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "fixed-format geojson",
+                    "dataProtection": "A",
+                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],kilometers,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],kilometers",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "Number of trips, derived from trips or vehicle status (start). Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids",
+                    "dataProtection": "A",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids-non-booked",
+                    "dataProtection": "A",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-status",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-stops",
+                    "dataProtection": "B",
+                    "remark": "starting at 2.0"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-and-route",
+                    "dataProtection": "A"
+                }
             ]
         }
     ],
@@ -43,6 +116,6 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Monitoring", 
+    "theme": "Monitoring",
     "image": "number-trips.jfif"
 }

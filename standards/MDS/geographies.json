@@ -6,7 +6,7 @@
     "part": "geographies.json",
     "description": "Geographical data has many applications in the context of mobility, such as the description of municipal boundaries, locations for pick-up and drop-off zones, and areas of temporary closure for special events or emergencies.",
     "url": "[url]",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",

@@ -3,34 +3,88 @@
     "@type": "useCase",
     "id": "idle-time",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "idle", "nuisance" ],
+    "tags": [
+        "stage:monitoring",
+        "idle",
+        "nuisance"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know how long each asset is unused",
-        "inOrderTo": ["prevent nuisance"]
+        "inOrderTo": [
+            "prevent nuisance"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
-        { 
+    "standards": [],
+    "metrics": [
+        {
             "description": "(minimum, maximum, average, 85-percentile) Aggregated idle time per (hour, part-of-day, day, week, month) and per ((free-floating) area, station, postal code, ... )",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+            "standards": [
+                {
+                    "name": "fixed-format csv",
+                    "dataProtection": "A",
+                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "fixed-format geojson",
+                    "dataProtection": "A",
+                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "(near) idle time per (asset, free-floating area, station, lon/lats), derived from statusses of assets. Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-with-license-plate", "dataProtection": "B" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B",
+                    "remark": "Only possible up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A",
+                    "remark": "Only possible up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-status",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "GBFS-free-bike-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "GBFS-vehicle-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-asset-name",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-license-plate",
+                    "dataProtection": "B"
+                }
             ]
         }
     ],

@@ -517,6 +517,9 @@ components:
         mark:
           type: string
           description: the mark for the ICT tool. If not provided, it is 'X'
+        remark:
+          type: string 
+          description: note for applying the standard / file in this reference
         content:
           description: minimal required information, comma separated
           type: string
@@ -814,7 +817,19 @@ components:
               type: array
               items:
                 $ref: "#/components/schemas/fieldModification"
-    
+
+            conditionalRequiredEndPoints:
+              type: array
+              description: the conditional required endpoints that this endpoint relies on
+              items: 
+                type: string
+
+            requiredEndPoints:
+              type: array
+              description: the required endpoints that this endpoint relies on
+              items: 
+                type: string
+
     file:
       type: object
       allOf:
@@ -839,18 +854,6 @@ components:
               type: number
               description: the number of minutes between 2 refreshes. When it is a real-time connection or API, this should be considered as 0 (always up-to-date). When it's obsolete, it is not specified.
             
-            conditionalRequiredEndPoints:
-              type: array
-              description: the conditional required endpoints that this endpoint relies on
-              items: 
-                type: string
-
-            requiredEndPoints:
-              type: array
-              description: the required endpoints that this endpoint relies on
-              items: 
-                type: string
-
             aggregationLevel:
               $ref: "#/components/schemas/aggregation"
   

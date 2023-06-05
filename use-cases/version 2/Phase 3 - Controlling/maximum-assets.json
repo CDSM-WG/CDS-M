@@ -3,21 +3,46 @@
     "@type": "useCase",
     "id": "maximum-assets",
     "externalReference": "",
-    "tags": [ "stage:controlling", "assets", "maximum" ],
+    "tags": [
+        "stage:controlling",
+        "assets",
+        "maximum"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish maximum number of available assets",
-        "inOrderTo": ["prevent nuisance"]
+        "inOrderTo": [
+            "prevent nuisance"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical representation of the areas, including the required maximum number of assets.",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "MDS-policy-policy", "dataProtection": "A", "remarks": "has to be combined with MDS-geographies" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "MDS-policy-policy",
+                    "dataProtection": "A",
+                    "remarks": "has to be combined with MDS-geographies"
+                },
+                {
+                    "name": "fixed-format csv",
+                    "dataProtection": "A",
+                    "schema": "area_id,start_date,start_time,end_date,end_time,maximum",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "fixed-format geojson",
+                    "dataProtection": "A",
+                    "schema": "area_id,start_date,start_time,end_date,end_time,maximum,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "schema": "area_id,start_date,start_time,end_date,end_time,maximum",
+                    "mediumType": "shapefile"
+                }
             ]
         }
     ],
@@ -26,6 +51,6 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Controlling", 
+    "theme": "Controlling",
     "image": "max-bikes.jfif"
 }

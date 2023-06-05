@@ -1,9 +1,9 @@
 {
     "type": "standard",
-    "name": "MDS-provider-events",
+    "name": "MDS-provider-vehicle-status",
     "exchangeType": "API", 
-    "part": "/events (v2+: /recent or /historical)",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "part": "/vehicles/status/",
+    "version": "[2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -15,11 +15,7 @@
 
     "fieldModifications": [
         {
-            "field": "events[].device_id",
-            "exception": "exposed"
-        },
-        {
-            "field": "events[].vehicle_id",
+            "field": "device_id",
             "exception": "exposed"
         }
     ],
