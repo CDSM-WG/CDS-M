@@ -21,21 +21,21 @@
             "description": "Geographical locations of accidents. Including driver details like age class",
             "standards": [
                 {
-                    "name": "fixed-format csv",
+                    "name": "CSV",
                     "dataProtection": "B",
-                    "schema": "lon,lat,date,time,severity,driver_age,asset_type,second_asset_type,damage,injured",
+                    "fieldList": "lon,lat,date,time,severity,driver_age,asset_type,second_asset_type,damage,injured",
                     "mediumType": "csv-file"
                 },
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "dataProtection": "B",
-                    "schema": "date,time,severity,driver_age,asset_type,second_asset_type,damage,injured,geometry",
+                    "fieldList": "date,time,severity,driver_age,asset_type,second_asset_type,damage,injured,geometry",
                     "mediumType": "json-file"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "B",
-                    "schema": "date,time,severity,driver_age,asset_type,second_asset_type,damage,injured",
+                    "fieldList": "date,time,severity,driver_age,asset_type,second_asset_type,damage,injured",
                     "mediumType": "shapefile"
                 }
             ]
@@ -44,7 +44,7 @@
             "description": "Geographical location of the accidents, has to be aggregated from realtime information.",
             "standards": [
                 {
-                    "name": "MDS-provider-vehicles-status",
+                    "name": "MDS-provider-vehicle-status",
                     "dataProtection": "B"
                 },
                 {

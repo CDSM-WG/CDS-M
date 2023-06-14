@@ -1,0 +1,26 @@
+{
+    "type": "file",
+    "exchangeType": "file-based",
+    "mediumType": "json-file",
+
+    "name":"JSON",
+    "displayName": "JSON",
+    "schemaUrl": "[url of the json scheme]",
+    "fieldList": "[comma seperated field list]",
+
+    "url": "[complete url]",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "*",
+    "confidentiality": "*",
+    "interoperability": "E",
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE,not-applicable]",
+    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+    "customSpatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+    "description": "<b>JSON (JavaScript Object Notation)</b> is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values). It is a common data format with diverse uses in electronic data interchange, including that of web applications with servers."
+}

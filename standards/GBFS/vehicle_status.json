@@ -7,7 +7,7 @@
     "description": "Describes all vehicles that are not currently in active rental.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "url": "[url]",
-    "version": "[2.1,2.2]",
+    "version": "[2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",

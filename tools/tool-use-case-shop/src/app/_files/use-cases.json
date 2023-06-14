@@ -5,21 +5,53 @@
     "id": "no-access-area",
     "externalReference": "",
     "tags": [
-        "stage:planning", "access", "no-parking", "limit" ],
+        "stage:planning",
+        "access",
+        "no-parking",
+        "limit"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish no access areas",
-        "inOrderTo": ["maintain order in the public space"]
+        "inOrderTo": [
+            "maintain order in the public space"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format" },
-        { "name": "GBFS-geofencing-zones" },
-        { "name": "TOMP-API-regions" },
-        { "name": "MDS-policy-policy" },
-        { "name": "shapefile" }
-    ],
-    "metrics": [ 
-        { "description": "Geographical representations of no access areas." } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "Geographical representations of no-access areas.",
+            "standards": [
+                {
+                    "name": "MDS-policy-policies",
+                    "remark": "requires geographies endpoint or file",
+                    "dataProtection": "A",
+                    "requiredEndPoints": [ "MDS-geographies" ]
+                },
+                {
+                    "name": "GBFS-geofencing-zones",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "TOMP-API-regions",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GeoJSON",
+                    "remark": "with fields like an identifier and name",
+                    "dataProtection": "A",
+                    "mediumType": "json-file",
+                    "fieldList": "area_id,name,start_date,start_time,end_date,end_time,geometry"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "remark": "with fields like an identifier and name",
+                    "mediumType": "shapefile",
+                    "fieldList": "area_id,name,start_date,start_time,end_date,end_time"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],
@@ -28,8 +60,7 @@
     "archive": [],
     "theme": "Planning",
     "image": "noaccess.jpeg"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
@@ -53,24 +84,27 @@
             "description": "Geographical representations of operating area.",
             "standards": [
                 {
-                    "name": "fixed-format",
-                    "privacyGrade": "A"
+                    "name": "GBFS-system-regions"
                 },
                 {
-                    "name": "GBFS-system-regions",
-                    "privacyGrade": "A"
+                    "name": "MDS-geographies"
                 },
                 {
-                    "name": "TOMP-API-regions",
-                    "privacyGrade": "A"
+                    "name": "TOMP-API-regions"
                 },
                 {
-                    "name": "MDS-geographies",
-                    "privacyGrade": "A"
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "remark": "with fields like an identifier and name",
+                    "mediumType": "json-file",
+                    "fieldList": "area_id,name,start_date,start_time,end_date,end_time,geometry"
                 },
                 {
                     "name": "shapefile",
-                    "privacyGrade": "A"
+                    "dataProtection": "A",
+                    "remark": "with fields like an identifier and name",
+                    "mediumType": "shapefile",
+                    "fieldList": "area_id,name,start_date,start_time,end_date,end_time,geometry"
                 }
             ]
         }
@@ -89,22 +123,80 @@
     "id": "parking-area",
     "externalReference": "",
     "tags": [
-        "stage:planning", "parking", "limit" ],
+        "stage:planning",
+        "parking",
+        "limit"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish (public) parking areas",
-        "inOrderTo": ["maintain order in the public space"]
+        "inOrderTo": [
+            "maintain order in the public space"
+        ]
     },
     "standards": [
-        { "name": "fixed-format" },
-            { "name": "GBFS-geofencing-zones" },
-            { "name": "TOMP-API-regions" },
-            { "name": "MDS-policy-policy" },
-            { "name": "shapefile" },
-            { "name": "NeTEx" }
     ],
-    "metrics": [ 
-        { "description": "Geographical representations of parking areas." } 
+    "metrics": [
+        {
+            "description": "Geographical representations of parking areas.",
+            "standards": [
+                {
+                    "name": "MDS-policy-policies",
+                    "requiredEndPoints": [ "MDS-geographies" ]
+                },
+                {
+                    "name": "CDS-curbs-spaces",
+                    "remark": "Requires CDS zones",
+                    "requiredEndPoints": [ "CDS-curbs-zone" ]
+
+                },
+                {
+                    "name": "CDS-curbs-policy", 
+                    "remark": "Conditonally requires spaces or zones",
+                    "conditionallyRequiredEndPoints": [ "CDS-curbs-zone" ]
+                },
+                {
+                    "name": "NeTEx"
+                },
+                {
+                    "name": "APDS"
+                },
+                {
+                    "name": "GBFS-geofencing-zones"
+                },
+                {
+                    "name": "TOMP-API-regions"
+                },
+                {
+                    "name": "GeoJSON",
+                    "remark": "with fields like an identifier, no personal referencing information",
+                    "dataProtection": "A",
+                    "mediumType": "json-file",
+                    "fieldList": "parking_id,name,start_date,start_time,end_date,end_time,geometry"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier, without personal referencing information",
+                    "mediumType": "shapefile",
+                    "fieldList": "parking_id,start_date,start_time,end_date,end_time"
+                },
+                {
+                    "name": "GeoJSON with license reference",
+                    "remark": "with fields like an identifier, parking license number, etc",
+                    "dataProtection": "B",
+                    "mediumType": "json-file",
+                    "fieldList": "parking_id,name,start_date,start_time,end_date,end_time,license_number,geometry"
+                },
+                {
+                    "name": "shapefile with license reference",
+                    "dataProtection": "B",
+                    "remark": "With fields like an identifier, parking license",
+                    "mediumType": "shapefile",
+                    "fieldList": "parking_id,start_date,start_time,end_date,end_time,license_number"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],
@@ -113,29 +205,56 @@
     "archive": [],
     "theme": "Planning",
     "image": "parking.jpeg"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "reduced-speed-area",
     "externalReference": "",
     "tags": [
-        "stage:planning", "speed", "limit" ],
+        "stage:planning",
+        "speed",
+        "limit"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish slow speed areas",
-        "inOrderTo": ["maintain order in the public space"]
+        "inOrderTo": [
+            "maintain order in the public space"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format" },
-        { "name": "GBFS-geofencing-zones" },
-        { "name": "TOMP-API-regions" },
-        { "name": "MDS-policy-policy" },
-        { "name": "shapefile" }
-    ],
-    "metrics": [ 
-        { "description": "Geographical representations of slow speed areas." } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "Geographical representations of slow speed areas.",
+            "standards": [
+                {
+                    "name": "MDS-policy-policies",
+                    "remark": "Requires geography endpoint",
+                    "requiredEndPoints": [ "MDS-geographies" ]
+                },
+                {
+                    "name": "GBFS-geofencing-zones"
+                },
+                {
+                    "name": "TOMP-API-regions"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier and max speed",
+                    "mediumType": "json-file",
+                    "fieldList": "area_id,name,start_date,start_time,end_date,end_time,max_speed,geometry"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier and max speed",
+                    "mediumType": "shapefile",
+                    "fieldList": "area_id,name,start_date,start_time,end_date,end_time,max_speed"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],
@@ -144,32 +263,62 @@
     "archive": [],
     "theme": "Planning",
     "image": "speedlimit.jpeg"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "stations-free-floating-areas",
     "externalReference": "",
     "tags": [
-        "stage:planning", "station", "free-floating", "location" ],
+        "stage:planning",
+        "station",
+        "free-floating",
+        "location"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish station locations or free-floating areas",
-        "inOrderTo": ["stimulate usage (findable)"]
+        "inOrderTo": [
+            "stimulate usage (findable)"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format" },
-        { "name": "GBFS-station-information" },
-        { "name": "GBFS-geofencing-zones" },
-        { "name": "TOMP-API-stations" },
-        { "name": "TOMP-API-regions" },
-        { "name": "MDS-provider-stops" },
-        { "name": "MDS-geographies" },
-        { "name": "shapefile" }
-    ],
-    "metrics": [ 
-        { "description": "Geographical representations of locations of stations or free-floating areas." } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "Geographical representations of locations of stations or free-floating areas.",
+            "standards": [
+                {
+                    "name": "MDS-provider-stops",
+                    "conditionallyRequiredEndPoints": [ "MDS-geographies" ]
+                },
+                {
+                    "name": "GBFS-station-information"
+                },
+                {
+                    "name": "GBFS-geofencing-zones"
+                },
+                {
+                    "name": "TOMP-API-stations"
+                },
+                {
+                    "name": "TOMP-API-regions"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier and name",
+                    "mediumType": "json-file",
+                    "fieldList": "id,name,start_date,start_time,end_date,end_time,geometry"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "remark": "With fields like an identifier and name",
+                    "mediumType": "shapefile",
+                    "fieldList": "id,name,start_date,start_time,end_date,end_time,geometry"
+                }
+            ]
+        }
     ],
     "termsAndConditions": [],
     "agreements": [],
@@ -178,29 +327,98 @@
     "archive": [],
     "theme": "Planning",
     "image": "bikestation.jpg"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "complaints",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "complaints", "nuisance" ],
+    "tags": [
+        "stage:monitoring",
+        "complaints",
+        "nuisance"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the number of complaints per area",
-        "inOrderTo": ["find out the inhabitants needs"]
+        "inOrderTo": [
+            "find out the inhabitants needs"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format" }, 
-        { "name": "shapefile" } 
-    ],
-    "metrics": [ 
-        { 
+    "standards": [],
+    "metrics": [
+        {
             "description": "Number of complaints per (station, free-floating area)",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "?" }, 
-                { "name": "shapefile", "dataProtection": "?" } 
+            "standards": [
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "mediumType": "csv-file",
+                    "schemaUrl": "not-applicable",
+                    "fieldList": "start_timestamp,category,complaint,severity,station_id,area_id",
+                    "csvSeperationToken": "semi-colon",
+                    "retentionPeriod": "P1Y",
+                    "aggregationOperator": "COUNT",
+                    "aggregationLevelSpatial": "[postal, postal1_4, station, free-floating-area, custom]",
+                    "customSpatialDefinitionUrl": "[URL]",
+                    "aggregationLevelTime": "[year=P1Y,month=P1M,day_of_week,day=P1D,part_of_day,hour=PT1H]",
+                    "remark": "containing e.g. periods and category, aggregated"
+                },
+                {
+                    "name": "JSON",
+                    "dataProtection": "A",
+                    "mediumType": "json-file",
+                    "schemaUrl": "not-applicable",
+                    "fieldList": "start_timestamp,category,complaint,severity,station_id,area_id",
+                    "csvSeperationToken": "semi-colon",
+                    "retentionPeriod": "P1Y",
+                    "aggregationOperator": "COUNT",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, station, free-floating-area, custom]",
+                    "customSpatialDefinitionUrl": "[URL]",
+                    "remark": "containing e.g. periods and category, aggregated"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "start_timestamp,category,complaint,severity,station_id,area_id",
+                    "retentionPeriod": "P1Y",
+                    "aggregationOperator": "COUNT",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, station, free-floating-area]",
+                    "geoUnitCustomSpecification": "n.a.",
+                    "remark": "Shapefile, containing e.g. periods and category, aggregated"
+                }
+            ]
+        },
+        {
+            "description": "Anonymized complaints",
+            "standards": [
+                {
+                    "name": "CSV",
+                    "dataProtection": "B",
+                    "mediumType": "csv-file",
+                    "privacy": "B",
+                    "schemaUrl": "not-applicable",
+                    "fieldList": "date,time,category,complaint,severity,lon,lat",
+                    "csvSeperationToken": "semi-colon",
+                    "remark": "CSV file, containing e.g. date, time, category and location"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "B",
+                    "mediumType": "json-file",
+                    "privacy": "B",
+                    "schemaUrl": "not-applicable",
+                    "fieldList": "date,time,category,complaint,severity,geometry",
+                    "remark": "containing e.g. date, time, category and location"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "B",
+                    "fieldList": "date,time,category,complaint,severity",
+                    "remark": "Shapefile, containing e.g. date, time, category and location"
+                }
             ]
         }
     ],
@@ -211,50 +429,184 @@
     "archive": [],
     "theme": "Monitoring",
     "image": "complaint.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "end-trips",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "destination", "end" ],
+    "tags": [
+        "stage:monitoring",
+        "destination",
+        "end"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know where inhabitants go to",
-        "inOrderTo": ["find out the inhabitants needs"]
+        "inOrderTo": [
+            "find out the inhabitants needs"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
-        { 
+    "standards": [],
+    "metrics": [
+        {
             "description": "(minimum, maximum, average, 85-percentile) Aggregated number of rental ends per (hour, part-of-day, day, week, month) and per ((free-floating) area, station, postal code, ... )",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+            "standards": [
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_time,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_time,aggregated_number,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "shapefilefile"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the rental ends per (free-floating area, station, lon/lat), derived from statusses of assets. Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles|without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles|without-ids-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles|non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-status-changes|without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events|without-ids",
+                    "dataProtection": "A",
+                    "fieldModifications": [
+                        {
+                            "field": "vehicles[].device_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        },
+                        {
+                            "field": "vehicles[].vehicle_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        }
+                    ],
+                    "requiredEndPoints": [
+                        "MDS-policy-requirements"
+                    ]
+                },
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-historical",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-recent",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-stops2",
+                    "dataProtection": "B"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the trips ending in (free-floating area, station, lon/lat). Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A",
+                    "fieldModifications": [
+                        {
+                            "field": "device_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        }
+                    ],
+                    "requiredEndPoints": [
+                        "MDS-policy-requirements"
+                    ]
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end",
+                    "dataProtection": "A",
+                    "fieldModifications": [
+                        {
+                            "field": "device_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        },
+                        {
+                            "field": "route",
+                            "exception": "limited",
+                            "remark": "Since v2.0 per default, only start and end location"
+                        }
+                    ],
+                    "requiredEndPoints": [
+                        "MDS-policy-requirements"
+                    ]
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A",
+                    "fieldModifications": [
+                        {
+                            "field": "device_id",
+                            "exception": "removed",
+                            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+                        },
+                        {
+                            "field": "route",
+                            "exception": "limited",
+                            "remark": "Since v2.0 per default, only start and end location"
+                        }
+                    ],
+                    "requiredEndPoints": [
+                        "MDS-policy-requirements"
+                    ]
+                }
             ]
         }
     ],
@@ -265,41 +617,106 @@
     "archive": [],
     "theme": "Monitoring",
     "image": "finish.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "idle-time",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "idle", "nuisance" ],
+    "tags": [
+        "stage:monitoring",
+        "idle",
+        "nuisance"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know how long each asset is unused",
-        "inOrderTo": ["prevent nuisance"]
+        "inOrderTo": [
+            "prevent nuisance"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
-        { 
+    "standards": [],
+    "metrics": [
+        {
             "description": "(minimum, maximum, average, 85-percentile) Aggregated idle time per (hour, part-of-day, day, week, month) and per ((free-floating) area, station, postal code, ... )",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+            "standards": [
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,aggregated_number,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "(near) idle time per (asset, free-floating area, station, lon/lats), derived from statusses of assets. Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-with-license-plate", "dataProtection": "B" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B",
+                    "remark": "Only possible up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A",
+                    "remark": "Only possible up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "GBFS-free-bike-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "GBFS-vehicle-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-asset-name",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-license-plate",
+                    "dataProtection": "B"
+                }
             ]
         }
     ],
@@ -310,39 +727,96 @@
     "archive": [],
     "theme": "Monitoring",
     "image": "idle.jpeg"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "number-of-kilometers",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "trips", "kilometers", "aggregation" ],
+    "tags": [
+        "stage:monitoring",
+        "trips",
+        "kilometers",
+        "aggregation"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the total number of kilometers",
-        "inOrderTo": ["show added value"]
+        "inOrderTo": [
+            "show added value"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
-            "description": "(Minimum, maximum, average) kilometers usage, per (hour, day), per (area, zone, postal code)",
+            "description": "(Minimum, maximum, average) kilometers usage, per (hour, day), starting in (area, zone, postal code)",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,kilometers",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,kilometers,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,kilomters",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "(Minimum, maximum, average) kilometers usage, derived from trips or vehicle status (start-end). Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-and-route",
+                    "dataProtection": "A"
+                }
             ]
         }
     ],
@@ -351,47 +825,128 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Monitoring", 
+    "theme": "Monitoring",
     "image": "origin-destination.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "number-of-trips",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "trips", "aggregation" ],
+    "tags": [
+        "stage:monitoring",
+        "trips",
+        "aggregation"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the total number of trips",
-        "inOrderTo": ["show added value"]
+        "inOrderTo": [
+            "show added value"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
-            "description": "Number of trips, per (hour, day), per (area, zone, postal code)",
+            "description": "Number of trips, per (hour, day), starting at (area, zone, postal code)",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,kilometers",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,kilometers,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_timestamp,kilometers",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "Number of trips, derived from trips or vehicle status (start). Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids",
+                    "dataProtection": "A",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids-non-booked",
+                    "dataProtection": "A",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A",
+                    "remark": "Only usable up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-stops",
+                    "dataProtection": "B",
+                    "remark": "starting at 2.0"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-and-route",
+                    "dataProtection": "A"
+                }
             ]
         }
     ],
@@ -400,73 +955,144 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Monitoring", 
+    "theme": "Monitoring",
     "image": "number-trips.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "offered-assets",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "offer" ],
+    "tags": [
+        "stage:monitoring",
+        "offer"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the offered amounts of assets",
-        "inOrderTo": ["find out the inhabitants needs"]
+        "inOrderTo": [
+            "find out the inhabitants needs"
+        ]
     },
-    "standards": [
-        { "name": "GBFS-free-bike-status", "dataProtection": "A" },
-        { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B" },
-        { "name": "GBFS-vehicle-status", "dataProtection": "A" },
-        { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B" },
-        { "name": "TOMP-available-assets", "dataProtection": "A" },
-        { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B" },
-        { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "B" },
-        { "name": "TOMP-available-assets-with-license-plate", "dataProtection": "B" },
-        { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-        { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-        { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-        { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-        { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-        { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-        { "name": "MDS-provider-events", "dataProtection": "B" },
-        { "name": "MDS-provider-events-without-ids", "dataProtection": "A" },
-        { "name": "fixed-format" },
-        { "name": "shapefile" }
-    ],
-    "metrics": [ 
-        { 
-            "description": "(minimum, maximum, average, 85-percentile) Aggregated number of available assets per (hour, part-of-day, day, week, month) and per (free floating area, station, postal code, ... )",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "(minimum, maximum, average, 85-percentile) Aggregated number of available assets per (hour, part-of-day, day, week, month), asset type, and per (free floating area, station, postal code, ... )",
+            "standards": [
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the availability per (free-floating area, station). Needs aggregation.",
-            "standards": [          
-                { "name": "GBFS-free-bike-status", "dataProtection": "A" },
-                { "name": "GBFS-free-bike-status-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "GBFS-vehicle-status", "dataProtection": "A" },
-                { "name": "GBFS-vehicle-status-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "TOMP-available-assets", "dataProtection": "A" },
-                { "name": "TOMP-available-assets-non-rotating-asset-id", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-with-asset-name", "dataProtection": "B" },
-                { "name": "TOMP-available-assets-with-license-plate", "dataProtection": "B" }
+            "standards": [
+                {
+                    "name": "MDS-provider-stops",
+                    "dataProtection": "B",
+                    "remark": "Starting from version 2.0"
+                },
+                {
+                    "name": "GBFS-free-bike-status",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-free-bike-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "GBFS-vehicle-status",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-vehicle-status-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "TOMP-available-assets-non-rotating-asset-id",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-asset-name",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "TOMP-available-assets-with-license-plate",
+                    "dataProtection": "B"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the availability per (free-floating area, station), derived from statusses of assets. Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B",
+                    "remark": "From version 2.0"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-without-ids",
+                    "dataProtection": "A"
+                }
             ]
         }
     ],
@@ -477,50 +1103,125 @@
     "archive": [],
     "theme": "Monitoring",
     "image": "scooter.jpeg"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "rented-assets",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "rentals" ],
+    "tags": [
+        "stage:monitoring",
+        "rentals"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know how often assets are rented per day",
-        "inOrderTo": ["find out the inhabitants needs"]
+        "inOrderTo": [
+            "find out the inhabitants needs"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
-        { 
-            "description": "(minimum, maximum, average, 85-percentile) Aggregated number of rented assets per (hour, part-of-day, day, week, month) and per ((free-floating) area, station, postal code, ... )",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "(minimum, maximum, average, 85-percentile) Aggregated number of rented assets per (hour, part-of-day, day, week, month), asset type, and per ((free-floating) area, station, postal code, ... )",
+            "standards": [
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationLevelTime": "[year,month,day_of_week,day,part_of_day,hour]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number,geometry",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationLevelTime": "[year,month,day_of_week,day,part_of_day,hour]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationLevelTime": "[year,month,day_of_week,day,part_of_day,hour]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the rentals per (free-floating area, station), derived from statusses of assets. Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B", 
+                    "remarks": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B", 
+                    "remarks": "Starting at version 2.0"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-without-ids",
+                    "dataProtection": "A"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the trips starting in (free-floating area, station). Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-and-route",
+                    "dataProtection": "A"
+                }
             ]
         }
     ],
@@ -531,50 +1232,127 @@
     "archive": [],
     "theme": "Monitoring",
     "image": "scooter.jpeg"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "start-trips",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "origin", "start" ],
+    "tags": [
+        "stage:monitoring",
+        "origin",
+        "start"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know where inhabitants start their trips",
-        "inOrderTo": ["find out the inhabitants needs"]
+        "inOrderTo": [
+            "find out the inhabitants needs"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
-        { 
-            "description": "(minimum, maximum, average, 85-percentile) Aggregated number of rental starts per (hour, part-of-day, day, week, month) and per ((free-floating) area, station, postal code, ... )",
-            "standards": [ 
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+    "standards": [],
+    "metrics": [
+        {
+            "description": "(minimum, maximum, average, 85-percentile) Aggregated number of rental starts per (hour, part-of-day, day, week, month), asset type, and per ((free-floating) area, station, postal code, ... )",
+            "standards": [
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the rental starts per (free-floating area, station, lon/lats), derived from statusses of assets. Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-without-ids-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B", 
+                    "remarks": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B", 
+                    "remarks": "Starting at version 2.0"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-without-ids-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-without-ids",
+                    "dataProtection": "A"
+                }
             ]
         },
         {
             "description": "(near) realtime information about the trips starting in (free-floating area, station, lon/lats). Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-only-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-only-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-and-route",
+                    "dataProtection": "A"
+                }
             ]
         }
     ],
@@ -585,39 +1363,96 @@
     "archive": [],
     "theme": "Monitoring",
     "image": "start.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "time-usage",
     "externalReference": "",
-    "tags": [ "stage:monitoring", "trips", "time", "usage" ],
+    "tags": [
+        "stage:monitoring",
+        "trips",
+        "time",
+        "usage"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the total used amount of time",
-        "inOrderTo": ["show added value"]
+        "inOrderTo": [
+            "show added value"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
-            "description": "(Minimum, maximum, average) time usage, per (hour, day), per (area, zone, postal code)",
+            "description": "(Minimum, maximum, average) time usage, per (hour, day), asset type, and per (area, zone, postal code)",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" }, 
-                { "name": "shapefile", "dataProtection": "A" } 
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,asset_type,start_timestamp,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "(Minimum, maximum, average) time usage, derived from trips or vehicle status (start-end). Needs aggregation to remove all personal movements.",
             "standards": [
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B", 
+                    "remarks": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B", 
+                    "remarks": "Starting at version 2.0"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-and-route",
+                    "dataProtection": "A"
+                }
             ]
         }
     ],
@@ -628,8 +1463,40 @@
     "archive": [],
     "theme": "Monitoring",
     "image": "clock.jpg"
-}
-, 
+}, 
+{
+    "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
+    "@type": "useCase",
+    "id": "unused-parking-spots",
+    "externalReference": "",
+    "tags": [
+        "stage:monitoring",
+        "parking",
+        "efficiency",
+        "destination",
+        "end"
+    ],
+    "story": {
+        "asA": "city",
+        "iWouldLikeTo": "know the location of unused parking spots",
+        "inOrderTo": [
+            "provide a better offer of assets to all inhabitants"
+        ]
+    },
+    "standards": [],
+    "metrics": [
+        {
+            "description": "This is a combination of the offered-assets use case and the parking-areas use case. These must be combined to determine how long a parking spot is unused. The first metric is to determine the locations of the offered assets. Select the use cases 'offered assets' and 'parking area'",
+            "standards": []
+        }
+    ],
+    "termsAndConditions": [],
+    "agreements": [],
+    "transport": [],
+    "processing": [],
+    "archive": [],
+    "theme": "Monitoring"
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
@@ -663,21 +1530,46 @@
     "@type": "useCase",
     "id": "maximum-assets",
     "externalReference": "",
-    "tags": [ "stage:controlling", "assets", "maximum" ],
+    "tags": [
+        "stage:controlling",
+        "assets",
+        "maximum"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish maximum number of available assets",
-        "inOrderTo": ["prevent nuisance"]
+        "inOrderTo": [
+            "prevent nuisance"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical representation of the areas, including the required maximum number of assets.",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "MDS-policy-policy", "dataProtection": "A", "remarks": "has to be combined with MDS-geographies" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "MDS-policy-policy",
+                    "dataProtection": "A",
+                    "remarks": "has to be combined with MDS-geographies"
+                },
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,maximum",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,maximum,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,maximum",
+                    "mediumType": "shapefile"
+                }
             ]
         }
     ],
@@ -686,30 +1578,54 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Controlling", 
+    "theme": "Controlling",
     "image": "max-bikes.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "minimum-assets",
     "externalReference": "",
-    "tags": [ "stage:controlling", "assets", "minimum" ],
+    "tags": [
+        "stage:controlling",
+        "assets",
+        "minimum"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish minimum number of available assets",
-        "inOrderTo": ["stimulate usage"]
+        "inOrderTo": [
+            "stimulate usage"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical representation of the areas, including the required minimum number of assets.",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "MDS-policy-policy", "dataProtection": "A", "remarks": "has to be combined with MDS-geographies" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "MDS-policy-policy",
+                    "dataProtection": "A",
+                    "remarks": "has to be combined with MDS-geographies"
+                },
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,minimum",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,minimum,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,minimum",
+                    "mediumType": "shapefile"
+                }
             ]
         }
     ],
@@ -720,30 +1636,56 @@
     "archive": [],
     "theme": "Controlling",
     "image": "minimum.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "planned-events",
     "externalReference": "",
-    "tags": [ "stage:controlling", "events", "publish", "planned" ],
+    "tags": [
+        "stage:controlling",
+        "events",
+        "publish",
+        "planned"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish planned events",
-        "inOrderTo": ["stimulate usage"]
+        "inOrderTo": [
+            "stimulate usage"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical representation of the areas",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "DATEX", "dataProtection": "A" },
-                { "name": "GBFS-system-alerts", "dataProtection": "A", "remarks": "has to be combined with GBFS-system-regions or GBFS-station-information" },
-                { "name": "TOMP-alerts", "dataProtection": "A", "remarks": "has to be combined with TOMP-regions or TOMP-stations" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "DATEX",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-system-alerts",
+                    "dataProtection": "A",
+                    "remarks": "has to be combined with GBFS-system-regions or GBFS-station-information"
+                },
+                {
+                    "name": "TOMP-alerts",
+                    "dataProtection": "A",
+                    "remarks": "has to be combined with TOMP-regions or TOMP-stations"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time",
+                    "mediumType": "shapefile"
+                }
             ]
         }
     ],
@@ -752,31 +1694,49 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Controlling", 
+    "theme": "Controlling",
     "image": "planned-event.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "price-steering",
     "externalReference": "",
-    "tags": [ "stage:controlling", "price", "areas" ],
+    "tags": [
+        "stage:controlling",
+        "price",
+        "areas"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish reduction areas, surtax areas",
-        "inOrderTo": ["stimulate usage", "increase inclusion"]
+        "inOrderTo": [
+            "stimulate usage",
+            "increase inclusion"
+        ]
     },
-    "standards": [
-        { "name": "fixed-format", "dataProtection": "A" },
-        { "name": "MDS-policy-policy", "dataProtection": "A", "remarks": "has to be combined with MDS-geographies" },
-        { "name": "MDS-geographies" },
-        { "name": "shapefile", "dataProtection": "A" }
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical representation of the areas, including the time slots and prices.",
             "standards": [
+                {
+                    "name": "MDS-policy-policy",
+                    "dataProtection": "A",
+                    "remarks": "has to be combined with MDS-geographies"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,geometry,price,lower_boundary,upper_boundary",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,geometry,price,lower_boundary,upper_boundary",
+                    "mediumType": "shapefile"
+                }
             ]
         }
     ],
@@ -785,33 +1745,50 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Controlling", 
+    "theme": "Controlling",
     "image": "price.jpeg"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "realtime-events",
     "externalReference": "",
-    "tags": [ "stage:controlling", "events", "publish", "planned" ],
+    "tags": [
+        "stage:controlling",
+        "events",
+        "publish",
+        "planned"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "publish realtime events",
-        "inOrderTo": ["stimulate usage"]
+        "inOrderTo": [
+            "stimulate usage"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
-            "description": "Geographical representation of the areas",
+            "description": "Geographical representation of the areas, including event information",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "DATEX", "dataProtection": "A" },
-                { "name": "SIRI", "dataProtection": "A" },
-                { "name": "GBFS-system-alerts", "dataProtection": "A", "remarks": "has to be combined with GBFS-system-regions or GBFS-station-information" },
-                { "name": "TOMP-alerts", "dataProtection": "A", "remarks": "has to be combined with TOMP-regions or TOMP-stations" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "SIRI",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "DATEX",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "GBFS-system-alerts",
+                    "dataProtection": "A",
+                    "remarks": "has to be combined with GBFS-system-regions or GBFS-station-information"
+                },
+                {
+                    "name": "TOMP-alerts",
+                    "dataProtection": "A",
+                    "remarks": "has to be combined with TOMP-regions or TOMP-stations"
+                }
             ]
         }
     ],
@@ -821,37 +1798,73 @@
     "processing": [],
     "archive": [],
     "theme": "Controlling"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "accident-locations",
     "externalReference": "",
-    "tags": [ "stage:behavior", "accidents", "safety" ],
+    "tags": [
+        "stage:behavior",
+        "accidents",
+        "safety"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know details of (near) accident locations",
-        "inOrderTo": ["increase safety"]
+        "inOrderTo": [
+            "increase safety"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical locations of accidents. Including driver details like age class",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "B" },
-                { "name": "shapefile", "dataProtection": "B" }
+                {
+                    "name": "CSV",
+                    "dataProtection": "B",
+                    "fieldList": "lon,lat,date,time,severity,driver_age,asset_type,second_asset_type,damage,injured",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "B",
+                    "fieldList": "date,time,severity,driver_age,asset_type,second_asset_type,damage,injured,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "B",
+                    "fieldList": "date,time,severity,driver_age,asset_type,second_asset_type,damage,injured",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "Geographical location of the accidents, has to be aggregated from realtime information.",
             "standards": [
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-status-changes-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-events", "dataProtection": "B" },
-                { "name": "MDS-provider-events-without-ids", "dataProtection": "A" }
-           ]
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-status-changes-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events-without-ids",
+                    "dataProtection": "A"
+                }
+            ]
         }
     ],
     "termsAndConditions": [],
@@ -859,43 +1872,82 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Behavior", 
+    "theme": "Behavior",
     "image": "accident.jpeg"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "detailed-trip-info",
     "externalReference": "",
-    "tags": [ "stage:behavior", "distances" ],
+    "tags": [
+        "stage:behavior",
+        "distances"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the total number of trips shorter than X kilometer",
-        "inOrderTo": ["reduce private car usage", "stimulate usage", "facilitate commuting"]
+        "inOrderTo": [
+            "reduce private car usage",
+            "stimulate usage",
+            "facilitate commuting"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical representation of the trips, including asset information",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A"
+                },
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B",
+                    "remark": "Starting at 2.0"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "start_date,start_time,end_date,end_time,start_lon,start_lat,end_lon,end_lat,distance,duration,price,asset_type,asset_id",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "start_date,start_time,end_date,end_time,distance,duration,price,asset_type,asset_id,geometry",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "fieldList": "start_date,start_time,end_date,end_time,distance,duration,price,asset_type,asset_id,",
+                    "mediumType": "shapefile"
+                }
             ]
-        },
-        {
-            "description": "Geographical representation of the trips, including asset information",
-            "standards": [
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-events", "dataProtection": "B" }
-           ]
         }
     ],
     "termsAndConditions": [],
@@ -903,29 +1955,47 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Behavior", 
+    "theme": "Behavior",
     "image": "details.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "formation",
     "externalReference": "",
-    "tags": [ "stage:behavior", "fleet", "formation", "electrical" ],
+    "tags": [
+        "stage:behavior",
+        "fleet",
+        "formation",
+        "electrical"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the formation of the fleet (emissions)",
-        "inOrderTo": ["show impact on the environment"]
+        "inOrderTo": [
+            "show impact on the environment"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Different asset classes, including environmental classification",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "A"
+                },{
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "asset_id,asset_type,name,propulsion_type,year,make,model,color,vin,license_plate",
+                    "mediumType": "csv-file"
+                },
+                {
+                    "name": "JSON",
+                    "dataProtection": "A",
+                    "fieldList": "asset_id,asset_type,name,propulsion_type,year,make,model,color,vin,license_plate",
+                    "mediumType": "json-file"
+                }
             ]
         }
     ],
@@ -934,38 +2004,73 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Behavior", 
+    "theme": "Behavior",
     "image": "formation.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "network-usage",
     "externalReference": "",
-    "tags": [ "stage:behavior", "usage", "road", "network" ],
+    "tags": [
+        "stage:behavior",
+        "usage",
+        "road",
+        "network"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the usage of the infrastructure over time",
-        "inOrderTo": ["reduce private car usage", "stimulate usage", "maintain order in the public space"]
+        "inOrderTo": [
+            "reduce private car usage",
+            "stimulate usage",
+            "maintain order in the public space"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Geographical representation of the usage of the network, with (minimum, maximum, average) counts per (hour, day)",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "GeoJSON",
+                    "dataProtection": "A",
+                    "fieldList": "segment_id,start_timestamp,counts,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "json-file"
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "schema": "segment_id,start_timestamp,counts,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "mediumType": "shapefile"
+                }
             ]
         },
         {
             "description": "Geographical representation of the usage of the network, needs to be mapped on a network and to be aggregated from trips to remove personal information",
             "standards": [
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" }
-           ]
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B",
+                    "remarks": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A",
+                    "remarks": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A",
+                    "remarks": "Up to version 1.2"
+                }
+            ]
         }
     ],
     "termsAndConditions": [],
@@ -973,43 +2078,113 @@
     "transport": [],
     "processing": [],
     "archive": [],
-    "theme": "Behavior", 
+    "theme": "Behavior",
     "image": "road-usage.jfif"
-}
-, 
+}, 
 {
     "@context": "https://raw.githubusercontent.com/CDSM-WG/CDS-M/main/jsonld/use-case.jsonld",
     "@type": "useCase",
     "id": "origin-destination",
     "externalReference": "",
-    "tags": [ "stage:behavior", "usage", "road", "network" ],
+    "tags": [
+        "stage:behavior",
+        "usage",
+        "road",
+        "network"
+    ],
     "story": {
         "asA": "city",
         "iWouldLikeTo": "know the origin-destination combination",
-        "inOrderTo": ["reduce private car usage", "stimulate usage", "facilitate commuting"]
+        "inOrderTo": [
+            "reduce private car usage",
+            "stimulate usage",
+            "facilitate commuting"
+        ]
     },
-    "standards": [
-    ],
-    "metrics": [ 
+    "standards": [],
+    "metrics": [
         {
             "description": "Counts of origin-destination pairs, with (minimum, maximum, average) counts per (hour, day)",
             "standards": [
-                { "name": "fixed-format", "dataProtection": "A" },
-                { "name": "shapefile", "dataProtection": "A" }
+                {
+                    "name": "CSV",
+                    "dataProtection": "A",
+                    "fieldList": "origin_id,destination_id,start_timestamp,count",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]"
+                },
+                {
+                    "name": "JSON",
+                    "dataProtection": "A",
+                    "fieldList": "origin_id,destination_id,start_timestamp,count,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]"
+
+                },
+                {
+                    "name": "shapefile",
+                    "dataProtection": "A",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "fieldList": "origin_id,destination_id,start_timestamp,count"
+                }
             ]
         },
         {
             "description": "Counts of origin-destination paris, derived from trips or monitored assets to remove personal information",
             "standards": [
-                { "name": "MDS-provider-trips", "dataProtection": "B" },
-                { "name": "MDS-provider-trips-without-ids", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-and-route", "dataProtection": "A" },
-                { "name": "MDS-provider-trips-without-ids-blurred-start-end", "dataProtection": "A" },
-                { "name": "MDS-provider-vehicles", "dataProtection": "B" },
-                { "name": "MDS-provider-vehicles-non-booked", "dataProtection": "A" },
-                { "name": "MDS-provider-status-changes", "dataProtection": "B" },
-                { "name": "MDS-provider-events", "dataProtection": "B" }
-           ]
+                {
+                    "name": "MDS-provider-trips",
+                    "dataProtection": "B",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-telemetry",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids",
+                    "dataProtection": "A",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-and-route",
+                    "dataProtection": "A",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-trips-without-ids-blurred-start-end",
+                    "dataProtection": "A",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles",
+                    "dataProtection": "B",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-vehicles-non-booked",
+                    "dataProtection": "A",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-status-changes",
+                    "dataProtection": "B",
+                    "remark": "Up to version 1.2"
+                },
+                {
+                    "name": "MDS-provider-events",
+                    "dataProtection": "B"
+                },
+                {
+                    "name": "MDS-provider-vehicle-status",
+                    "dataProtection": "B",
+                    "remark": "starting from version 2.0"
+                }
+            ]
         }
     ],
     "termsAndConditions": [],
@@ -1019,5 +2194,4 @@
     "archive": [],
     "theme": "Behavior",
     "image": "origin-destination.jfif"
-}
-] 
+}] 

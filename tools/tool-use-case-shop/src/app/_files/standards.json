@@ -1,6 +1,24 @@
 [ 
 {
     "type": "standard",
+    "name": "APDS",
+    "exchangeType": "file-based", 
+    "part": "[complete url]",
+    "version": "[version]",
+    "mediumType": "xml-file",
+    "refreshRate": "[ISO8601 timespan]",
+    
+    "privacy": "A",
+    "confidentiality": "B",
+    "interoperability": "A",
+
+    "externalReference": "https://github.com/parkingdata/spec",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1,
+    "description": "APDS has developed the global parking data standard in form of a comprehensive (UML) model. This model is the source for the APDS Specifications (overview, information model, data model, use cases)."
+}, 
+{
+    "type": "standard",
     "name": "CDS-curbs-areas",
     "exchangeType": "API", 
     "externalReference": "https://github.com/openmobilityfoundation/curb-data-specification/tree/main/curbs#curb-area",
@@ -15,7 +33,8 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. Defines curb areas in a city and their properties. A Curb Area is a particular neighborhood or area of interest that includes one or more Curb Zones. Important notes about Curb Areas:<br>   <ol><li>Curb Areas MAY overlap with other Curb Areas    <li>Multiple Curb Areas MAY include the same Curb Zones    <li>Curb Areas are not meant to be city-wide, and instead should be an area of interest around one or more Curb Zones that is no bigger than a neighborhood.    <li>Unlike Zones, Areas may be updated as needed, with a new curb_area_id being optionally assigned by the city</ol>"
+    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. Defines curb areas in a city and their properties. A Curb Area is a particular neighborhood or area of interest that includes one or more Curb Zones. Important notes about Curb Areas:<br>   <ol><li>Curb Areas MAY overlap with other Curb Areas    <li>Multiple Curb Areas MAY include the same Curb Zones    <li>Curb Areas are not meant to be city-wide, and instead should be an area of interest around one or more Curb Zones that is no bigger than a neighborhood.    <li>Unlike Zones, Areas may be updated as needed, with a new curb_area_id being optionally assigned by the city</ol>",
+    "requiredEndPoints": []
 }, 
 {
     "type": "standard",
@@ -33,7 +52,8 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "A Policy object is a rule that allows or prohibits a particular set of users from using a particular curb at a particular time or times. Multiple Policy objects together define the full extent of regulations within a Curb Zone. The design of the Policy object borrows heavily from the work of the CurbLR project, with additions for the larger scope of CDS."
+    "description": "A Policy object is a rule that allows or prohibits a particular set of users from using a particular curb at a particular time or times. Multiple Policy objects together define the full extent of regulations within a Curb Zone. The design of the Policy object borrows heavily from the work of the CurbLR project, with additions for the larger scope of CDS.",
+    "requiredEndPoints": ["CDS-curbs-zone"]
 }, 
 {
     "type": "standard",
@@ -51,7 +71,8 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. Defines individual demarcated spaces within a Curb Zone. Important notes about Curb Spaces:<br>   <ol><li>Curb Spaces may NOT overlap with other Curb Spaces    <li>Curb Spaces must be wholly contained within a single Curb Zone    <li>Unlike Zones, Spaces may be updated as needed, with a new curb_space_id being optionally assigned by the city</ol>"
+    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. Defines individual demarcated spaces within a Curb Zone. Important notes about Curb Spaces:<br>   <ol><li>Curb Spaces may NOT overlap with other Curb Spaces    <li>Curb Spaces must be wholly contained within a single Curb Zone    <li>Unlike Zones, Spaces may be updated as needed, with a new curb_space_id being optionally assigned by the city</ol>",
+    "requiredEndPoints": ["CDS-curbs-zone"]
 }, 
 {
     "type": "standard",
@@ -69,7 +90,8 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. A Curb Zone is a geographical entity representing a single region along the curb, along with metadata about that region and the policies that apply to its use by vehicles. What constitutes an individual Curb Zone is determined by the city, but all Curb Zones MUST meet the following criteria: <br>    <ol><li>Always have a common regulation along their entire extent (i.e., if at certain times of day, half of a given stretch of curb is a loading zone and the other half is metered parking, that stretch of curb must be divided into at least two Curb Zones);    <li>Never span multiple blocks -- an entire Curb Zone must be on the same street and be between the same two cross streets, alleys, or service roads.    <li>Never overlap other Curb Zones in the same dataset with overlapping validity times. This applies to both the zone's polygon geometries and linear references (if used).    <li>Be assigned a unique ID, in the form of a UUID. This ID SHOULD remain consistent as long as the Curb Zone's geography remains substantially the same. Policies may be updated without changing the ID.    <li>It SHOULD NOT be possible to legally park a single vehicle in two different Curb Zone at the same time (i.e., a given non-demarcated parking area or loading zone should be represented as a single curb location), unless this conflicts with the requirements above.</ol>"
+    "description": "This dataset cannot be used seperately. It needs to be combined with policy, events of metrics. A Curb Zone is a geographical entity representing a single region along the curb, along with metadata about that region and the policies that apply to its use by vehicles. What constitutes an individual Curb Zone is determined by the city, but all Curb Zones MUST meet the following criteria: <br>    <ol><li>Always have a common regulation along their entire extent (i.e., if at certain times of day, half of a given stretch of curb is a loading zone and the other half is metered parking, that stretch of curb must be divided into at least two Curb Zones);    <li>Never span multiple blocks -- an entire Curb Zone must be on the same street and be between the same two cross streets, alleys, or service roads.    <li>Never overlap other Curb Zones in the same dataset with overlapping validity times. This applies to both the zone's polygon geometries and linear references (if used).    <li>Be assigned a unique ID, in the form of a UUID. This ID SHOULD remain consistent as long as the Curb Zone's geography remains substantially the same. Policies may be updated without changing the ID.    <li>It SHOULD NOT be possible to legally park a single vehicle in two different Curb Zone at the same time (i.e., a given non-demarcated parking area or loading zone should be represented as a single curb location), unless this conflicts with the requirements above.</ol>",
+    "requiredEndPoints": []
 }, 
 {
     "type": "standard",
@@ -87,7 +109,8 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "A Curb Event is a record of activity that happens within the geographic bounds of a Curbs object."
+    "description": "A Curb Event is a record of activity that happens within the geographic bounds of a Curbs object.",
+    "conditionalRequiredEndPoints": [ "CDS-curbs-zone", "CDS-curbs-spaces", "CDS-curbs-areas" ]
 }, 
 {
     "type": "standard",
@@ -123,7 +146,8 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "Aggregates are historic pre-computed counts and metrics of Events occurring in curb places, aggregated to the hour. All Aggregates can be calculated from the data included in Session."
+    "description": "Aggregates are historic pre-computed counts and metrics of Events occurring in curb places, aggregated to the hour. All Aggregates can be calculated from the data included in Session.",
+    "conditionalRequiredEndPoints": [ "CDS-curbs-zone", "CDS-curbs-spaces", "CDS-curbs-areas" ]
 }, 
 {
     "type": "standard",
@@ -141,7 +165,8 @@
     "refreshRate": "[ISO8601 timespan]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "Sessions are a historic subset of curb events, with some rows combined, some columns removed for clarity and privacy, and for only some curb event types. Sessions are meant to provide a granular view of parking and area sessions happening around the curb places, so consumers can do their own analysis."
+    "description": "Sessions are a historic subset of curb events, with some rows combined, some columns removed for clarity and privacy, and for only some curb event types. Sessions are meant to provide a granular view of parking and area sessions happening around the curb places, so consumers can do their own analysis.",
+    "conditionalRequiredEndPoints": [ "CDS-curbs-zone", "CDS-curbs-spaces", "CDS-curbs-areas" ]
 }, 
 {
     "type": "file",
@@ -163,12 +188,10 @@
 {
     "type": "file",
     "exchangeType": "file-based",
-    "mediumType": "[csv-file,json-file,xml-file,geojson-file,Excel-file]",
+    "mediumType": "csv-file",
 
-    "name":"fixed-format",
-    "displayName": "Fixed format (csv, xml, json, ..)",
-    "schema": "[comma seperated field list,XSD,json scheme]",
-    "schemaUrl": "[url of the XSD or json scheme]",
+    "name":"csv",
+    "displayName": "CSV",
     "fieldList": "[comma seperated field list]",
     "csvSeperationToken": "[comma,semi-colon,space,tab,not-applicable]",
 
@@ -182,12 +205,89 @@
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
 
-    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
-    "timeUnit": "[minute, quarter_of_hour, hour, daypart, day, week, month, year]",
-    "timeAmount": "[measurement period]",
-    "geoUnit": "[postal, postal1_4, district, city, region, custom]",
-    "geoUnitCustomSpecification": "[URL of the spatial areas (geojson, shapefile, etc)]",
-    "description": "<b>A separated values (CSV) file</b> is a delimited text file that uses a comma to separate values. Each line of the file is a data record. Each record consists of one or more fields, separated by commas. The use of the comma as a field separator is the source of the name for this file format. A CSV file typically stores tabular data (numbers and text) in plain text, in which case each line will have the same number of fields.<br><b>GeoJSON</b> is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format.<br><b>JSON (JavaScript Object Notation)</b> is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values). It is a common data format with diverse uses in electronic data interchange, including that of web applications with servers.<br><b>Extensible Markup Language (XML)</b> is a markup language and file format for storing, transmitting, and reconstructing arbitrary data. It defines a set of rules for encoding documents in a format that is both human-readable and machine-readable"
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE,not-applicable]",
+    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable, custom]",
+    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+    "description": "<b>A separated values (CSV) file</b> is a delimited text file that uses a comma to separate values. Each line of the file is a data record. Each record consists of one or more fields, separated by commas. The use of the comma as a field separator is the source of the name for this file format. A CSV file typically stores tabular data (numbers and text) in plain text, in which case each line will have the same number of fields."
+}, 
+{
+    "type": "file",
+    "exchangeType": "file-based",
+    "mediumType": "geojson-file",
+
+    "name":"GeoJSON",
+    "displayName": "GeoJSON",
+    "schemaUrl": "[url of the json scheme]",
+    "fieldList": "[comma seperated field list]",
+
+    "url": "[complete url]",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "*",
+    "confidentiality": "*",
+    "interoperability": "E",
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE,not-applicable]",
+    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable, custon]",
+    "customSpatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+    "description": "<b>GeoJSON</b> is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format."
+}, 
+{
+    "type": "file",
+    "exchangeType": "file-based",
+    "mediumType": "json-file",
+
+    "name":"JSON",
+    "displayName": "JSON",
+    "schemaUrl": "[url of the json scheme]",
+    "fieldList": "[comma seperated field list]",
+
+    "url": "[complete url]",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "*",
+    "confidentiality": "*",
+    "interoperability": "E",
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE,not-applicable]",
+    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+    "customSpatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+    "description": "<b>JSON (JavaScript Object Notation)</b> is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values). It is a common data format with diverse uses in electronic data interchange, including that of web applications with servers."
+}, 
+{
+    "type": "file",
+    "exchangeType": "file-based",
+    "mediumType": "xml-file",
+
+    "name":"XML",
+    "displayName": "XML",
+    "schemaUrl": "[url of the XSD]",
+    "fieldList": "[comma seperated field list]",
+
+    "url": "[complete url]",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "*",
+    "confidentiality": "*",
+    "interoperability": "E",
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE,not-applicable]",
+    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+    "customSpatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+    "description": "<b>Extensible Markup Language (XML)</b> is a markup language and file format for storing, transmitting, and reconstructing arbitrary data. It defines a set of rules for encoding documents in a format that is both human-readable and machine-readable"
 }, 
 {
     "type": "standard",
@@ -210,7 +310,8 @@
 
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }, 
 {
     "type": "standard",
@@ -242,7 +343,8 @@
         "reveals_personal_trip_data"
     ],
     "retentionPeriod": "[ISO8601 timespan]",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -253,7 +355,7 @@
     "part": "gbfs.json",    
     "description": "Auto-discovery file that links to all of the other files published by the system.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[1.0,1.1,2.0,2.1,2.2]",
+    "version": "[1.0,1.1,2.0,2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -272,7 +374,7 @@
     "exchangeType": "[API,file-based]", 
     "part": "gbfs_versions.json",
     "description": "Lists all feed endpoints published according to version sof the GBFS documentation<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
-    "version": "[1.1,2.0,2.1,2.2]",
+    "version": "[1.1,2.0,2.1,2.2,2.3]",
     "url": "[url]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
@@ -283,7 +385,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -294,7 +397,7 @@
     "part": "geofencing_zones.json",
     "description": "Describes geofencing zones and their associated rules and attributes.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[2.1,2.2]",
+    "version": "[2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -304,7 +407,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -315,7 +419,7 @@
     "part": "station_information.json",
     "description": "Details including system operator, system location, year implemented, URL, contact info, time zone.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[1.0,1.1,2.0,2.1,2.2]",
+    "version": "[1.0,1.1,2.0,2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -325,7 +429,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }, 
 {
     "type": "standard",
@@ -335,7 +440,7 @@
     "part": "station_status.json",
     "description": "Describes the capacity and rental availability of the station.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[1.0,1.1,2.0,2.1,2.2]",
+    "version": "[1.0,1.1,2.0,2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -345,7 +450,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -356,7 +462,7 @@
     "part": "system_alerts.json",
     "description": "Describes ad-hoc changes to the system.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[1.0,1.1,2.0,2.1,2.2]",
+    "version": "[1.0,1.1,2.0,2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -366,7 +472,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -377,7 +484,7 @@
     "part": "system_calendar.json",    
     "description": "Describes the operating calendar for a system.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[1.0,1.1,2.0,2.1,2.2]",
+    "version": "[1.0,1.1,2.0,2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -387,7 +494,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }, 
 {
     "type": "standard",
@@ -397,7 +505,7 @@
     "part": "system_hours.json",
     "description": "Describes the system hours of operation.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[1.0,1.1,2.0,2.1,2.2]",
+    "version": "[1.0,1.1,2.0,2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -407,7 +515,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -418,7 +527,7 @@
     "part": "system_information.json",
     "description": "Details including system operator, system location, year implemented, URL, contact info, time zone.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[1.0,1.1,2.0,2.1,2.2]",
+    "version": "[1.0,1.1,2.0,2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -428,7 +537,8 @@
     "fieldModifications": [],
     "retentionPeriod": "ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -439,7 +549,7 @@
     "part": "system_pricing_plans.json",
     "description": "Describes the pricing schemes of the system.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[1.0,1.1,2.0,2.1,2.2]",
+    "version": "[1.0,1.1,2.0,2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -449,7 +559,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -460,7 +571,7 @@
     "part": "system_regions.json",
     "description": "Describes regions for a system that is broken up by geographic or political region.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[1.0,1.1,2.0,2.1,2.2]",
+    "version": "[1.0,1.1,2.0,2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -470,7 +581,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }, 
 {
     "type": "standard",
@@ -481,7 +593,7 @@
     "description": "Describes all vehicles that are not currently in active rental.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "url": "[url]",
-    "version": "[2.1,2.2]",
+    "version": "[2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -490,7 +602,8 @@
     "domain": "B",
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }, 
 {
     "type": "standard",
@@ -500,7 +613,7 @@
     "part": "vehicle_status",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_statusjson",
     "description": "Like vehicle-status, but with one adjustment: the vehicle_id doesn't rotate (causing GDPR issues). <br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
-    "version": "[2.1,2.2]",
+    "version": "[2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",    
     "url": "[url]",
@@ -518,7 +631,8 @@
         "reveals_personal_trip_data"
     ],
     "retentionPeriod": "[ISO8601 timespan]",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -529,7 +643,7 @@
     "part": "vehicle_types.json",
     "description": "Describes the types of vehicles that System operator has available for rent.<br>The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.",
     "url": "[url]",
-    "version": "[2.1,2.2]",
+    "version": "[2.1,2.2,2.3]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -539,7 +653,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/NABSA/gbfs/blob/master/gbfs.md",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "GBFS" ]
 }
 , 
 {
@@ -554,7 +669,7 @@
     "confidentiality": "D",
     "interoperability": "D",
     "domain": "D",
-    "schema": "https://www.topografix.com/gpx/1/1/gpx.xsd",
+    "externalReference": "https://www.topografix.com/gpx/1/1/gpx.xsd",
     "fieldModifications": [
         {
             "field": "time",
@@ -578,7 +693,7 @@
     "confidentiality": "D",
     "interoperability": "B",
     "domain": "D",
-    "schema": "https://www.topografix.com/gpx/1/1/gpx.xsd",
+    "externalReference": "https://www.topografix.com/gpx/1/1/gpx.xsd",
     "fieldModifications": [],
     "conflicts": [
         "reveals_personal_trip_data"
@@ -905,7 +1020,6 @@
     "interoperability": "E",
     "domain": "D",
     "mediumType": "xml-file",
-    "schema": "https://developers.google.com/kml/documentation/kmlreference#point",
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
     "bbversion": 1,
@@ -923,7 +1037,6 @@
     "confidentiality": "C",
     "interoperability": "E",
     "domain": "E",
-    "schema": "https://developers.google.com/kml/documentation/time#example:-showing-movement-of-a-point-along-a-path",
     "fieldModifications": [
         {
             "field": "geometry"            
@@ -949,7 +1062,6 @@
     "interoperability": "E",
     "domain": "D",
     "mediumType": "xml-file",
-    "schema": "https://developers.google.com/kml/documentation/kmlreference#point",
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
     "bbversion": 1,
@@ -967,7 +1079,7 @@
     "confidentiality": "C",
     "interoperability": "E",
     "domain": "D",
-    "schema": "https://developers.google.com/kml/documentation/kmlreference#gx:track",
+    "externalReference": "https://developers.google.com/kml/documentation/kmlreference#gx:track",
     "fieldModifications": [
         {
             "field": "geometry"
@@ -977,7 +1089,6 @@
         "reveals_personal_trip_data"
     ],
     "retentionPeriod": "[ISO8601 timespan]",
-    "externalReference": "https://developers.google.com/kml/documentation/kmlreference",
     "bbversion": 1,
     "description": "KML file only containing tracks<br>Keyhole Markup Language (KML) is an XML notation for expressing geographic annotation and visualization within two-dimensional maps and three-dimensional Earth browsers. KML was developed for use with Google Earth, which was originally named Keyhole Earth Viewer. It was created by Keyhole, Inc, which was acquired by Google in 2004. KML became an international standard of the Open Geospatial Consortium in 2008"
 }, 
@@ -989,7 +1100,7 @@
     "part": "geographies.json",
     "description": "Geographical data has many applications in the context of mobility, such as the description of municipal boundaries, locations for pick-up and drop-off zones, and areas of temporary closure for special events or emergencies.",
     "url": "[url]",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "mediumType": "json-file",
     "refreshRate": "[ISO8601 timespan]",
     "privacy": "A",
@@ -1003,12 +1114,12 @@
 }, 
 {
     "type": "standard",
-    "name": "MDS-policy-geography",
+    "name": "MDS-policy-policies",
     "exchangeType": "API", 
-    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#geography",
-    "part": "/geographies",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#policies",
+    "part": "/policies/",
     "url": "[url]",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "privacy": "A",
     "confidentiality": "B",
     "interoperability": "A",
@@ -1017,16 +1128,17 @@
     "refreshRate": "0",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "Depricated, replaced by geographies<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
+    "description": "The Policy API endpoints are intended to be implemented by regulatory agencies and consumed by mobility providers. Providers query the Policy API to get information about local rules that may affect the operation of their mobility service or which may be used to determine compliance.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
+    "requiredEndPoints": [ "MDS-geographies" ]
 }, 
 {
     "type": "standard",
-    "name": "MDS-policy-policy",
+    "name": "MDS-policy-requirements",
     "exchangeType": "API", 
-    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/policy#rules",
-    "part": "/policies/",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/policy/examples/requirements.md",
+    "part": "/requirements/",
     "url": "[url]",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[2.0]",
     "privacy": "A",
     "confidentiality": "B",
     "interoperability": "A",
@@ -1035,18 +1147,81 @@
     "refreshRate": "0",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "The Policy API endpoints are intended to be implemented by regulatory agencies and consumed by mobility providers. Providers query the Policy API to get information about local rules that may affect the operation of their mobility service or which may be used to determine compliance.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
+    "description": "A public agency's Policy program Requirements endpoint enumerates all of the parts of MDS, CDS, GBFS, and other specifications that an agency requires from providers for certain programs, including APIs, endpoints, and optional fields, as well as information for providers about the APIs the agency is hosting.",
+    "requiredEndPoints": []
 }, 
+{
+    "type": "standard",
+    "name": "MDS-provider-events-historical",
+    "exchangeType": "API", 
+    "part": "/events/historical",
+    "version": "[2.0]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "B",
+    "confidentiality": "D",
+    "interoperability": "A",
+    "domain": "A",
+
+    "fieldModifications": [
+        {
+            "field": "events[].device_id",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1, 
+    "description": "Events represent changes in vehicle status.",
+    "conditionalRequiredEndPoints": [ "MDS-geographies" ]
+}
+, 
+{
+    "type": "standard",
+    "name": "MDS-provider-events-recent",
+    "exchangeType": "API", 
+    "part": "/events/recent",
+    "version": "[2.0]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "B",
+    "confidentiality": "D",
+    "interoperability": "A",
+    "domain": "A",
+
+    "fieldModifications": [
+        {
+            "field": "events[].device_id",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1, 
+    "description": "Events represent changes in vehicle status.",
+    "conditionalRequiredEndPoints": [ "MDS-geographies" ]
+}
+, 
 {
     "type": "standard",
     "name": "MDS-provider-events-without-ids",
     "description": "MDS provider events endpoint with one adjustment: the results don't contain device_id NOR vehicle_id.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.", 
     "exchangeType": "API", 
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "0",
-    "part": "GET /events",
+    "part": "/events (v2+: /recent or /historical)",
     
     "privacy": "B",
     "confidentiality": "B",
@@ -1056,23 +1231,26 @@
     "fieldModifications": [
         {
             "field": "events[].device_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "events[].vehicle_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         }
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1,
+    "conditionalRequiredEndPoints": [ "MDS-geographies", "MDS-policy-requirements" ]    
 }
 , 
 {
     "type": "standard",
     "name": "MDS-provider-events",
     "exchangeType": "API", 
-    "part": "/events",
+    "part": "/events (v2+: /recent or /historical)",
     "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
     "url": "[url]",
     "mediumType": "API",
@@ -1183,7 +1361,65 @@
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
     "bbversion": 1, 
-    "description": "Stop information should be updated on a near-realtime basis by providers who operate docked mobility devices in a given municipality.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
+    "description": "Stop information should be updated on a near-realtime basis by providers who operate docked mobility devices in a given municipality.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
+    "conditionalRequiredEndPoints": [ "MDS-geographies" ]
+}, 
+{
+    "type": "standard",
+    "name": "MDS-provider-stops-20-without-ids",
+    "exchangeType": "API", 
+    "part": "/stops",
+    "url": "[url]",
+    "version": "[2.0]",
+    "mediumType": "API",
+    "privacy": "B",
+    "confidentiality": "B",
+    "interoperability": "A",
+    "domain": "A",
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1, 
+    "fieldModifications": [
+        {
+            "field": "devices",
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "description": "Stop information should be updated on a near-realtime basis by providers who operate docked mobility devices in a given municipality.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
+    "conditionalRequiredEndPoints": [ "MDS-geographies", "MDS-policy-requirements" ]
+}, 
+{
+    "type": "standard",
+    "name": "MDS-provider-stops-20",
+    "exchangeType": "API", 
+    "part": "/stops",
+    "url": "[url]",
+    "version": "[2.0]",
+    "mediumType": "API",
+    "privacy": "B",
+    "confidentiality": "B",
+    "interoperability": "A",
+    "domain": "A",
+    "refreshRate": "0",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1, 
+    "fieldModifications": [
+        {
+            "field": "devices",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "description": "Stop information should be updated on a near-realtime basis by providers who operate docked mobility devices in a given municipality.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
+    "conditionalRequiredEndPoints": [ "MDS-geographies" ]
 }, 
 {
     "type": "standard",
@@ -1204,15 +1440,28 @@
     "fieldModifications": [
         {
             "field": "trips[].device_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "trips[].vehicle_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "trips[].route",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: per default."
+        },
+        {
+            "field": "trips[].start_location",
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
+        },
+        {
+            "field": "trips[].end_location",
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         }
     ],
     "conflicts": [
@@ -1220,7 +1469,8 @@
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "MDS-policy-requirements" ]
 }
 , 
 {
@@ -1242,20 +1492,24 @@
     "fieldModifications": [
         {
             "field": "trips[].device_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "trips[].vehicle_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "trips[].route",
-            "exception": "contains only blurred start and end location (30m)"
+            "exception": "contains only blurred start and end location (30m)",
+            "remark": "this applies in v2.0 to the fields 'start_location' and 'end_location'"
         }
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "MDS-policy-requirements" ]
 }
 , 
 {
@@ -1263,7 +1517,7 @@
     "name": "MDS-provider-trips-without-ids-only-start-end",
     "description": "MDS provider trips endpoint with two adjustments: the results don't contain device_id and vehicle_id, secondly, the route is contains only start and endpoint<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "url": "[url]",
     "mediumType": "API",    
     "refreshRate": "[ISO8601 timespan]",
@@ -1277,15 +1531,18 @@
     "fieldModifications": [
         {
             "field": "trips[].device_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "trips[].vehicle_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "trips[].route",
-            "exception": "limited"
+            "exception": "limited",
+            "remark": "this field is removed from v2.0"
         }
     ],
     "conflicts": [
@@ -1293,7 +1550,8 @@
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "MDS-policy-requirements" ]
 }
 , 
 {
@@ -1301,7 +1559,7 @@
     "name": "MDS-provider-trips-without-ids",
     "description": "MDS provider trips endpoint with one adjustments: the results don't contain device_id and vehicle_id, secondly<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -1314,12 +1572,14 @@
     "part": "trips",
     "fieldModifications": [
         {
-            "field": "trips[].device_id",
-            "exception": "removed"
+            "field": "device_id",
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
-            "field": "trips[].vehicle_id",
-            "exception": "removed"
+            "field": "vehicle_id",
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         }
     ],
     "conflicts": [
@@ -1327,7 +1587,8 @@
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "MDS-policy-requirements" ]
 }
 , 
 {
@@ -1336,7 +1597,7 @@
     "exchangeType": "API", 
     "part": "/trips",
     "url": "[url]",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "mediumType": "API",
 
     "privacy": "D",
@@ -1356,11 +1617,41 @@
 , 
 {
     "type": "standard",
+    "name": "MDS-provider-vehicle-status",
+    "exchangeType": "API", 
+    "part": "/vehicles/status/",
+    "version": "[2.0]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "B",
+    "confidentiality": "D",
+    "interoperability": "A",
+    "domain": "A",
+
+    "fieldModifications": [
+        {
+            "field": "device_id",
+            "exception": "exposed"
+        }
+    ],
+    "conflicts": [
+        "reveals_personal_trip_data"
+    ],
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1, 
+    "description": "The status of the inventory of vehicles available for customer use.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
+}
+, 
+{
+    "type": "standard",
     "name": "MDS-provider-vehicles-non-booked",
     "description": "MDS provider vehicles endpoint with one adjustments: the results are filtered, only non-booked assets are exposed<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
     "part": "vehicles",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "mediumType": "API",
     "refreshRate": "0",
     "url": "[url]",
@@ -1377,7 +1668,8 @@
     "fieldModifications": [
         {
             "field": "vehicles",
-            "exception": "only non-booked"
+            "exception": "only non-booked",
+            "remark": "this cannot be specified in the requirements endpoint"
         }
     ],
     "retentionPeriod": "[ISO8601 timespan]",
@@ -1390,7 +1682,7 @@
     "name": "MDS-provider-vehicles-without-ids-non-booked",
     "description": "MDS provider vehicles endpoint with two adjustments: the results are filtered, only non-booked assets are exposed AND the device_id and vehicle_id are removed<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -1404,20 +1696,24 @@
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "vehicles[].vehicle_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "vehicles",
-            "exception": "only non-booked"
+            "exception": "only non-booked",
+            "remark": "this cannot be specified in the requirements endpoint"
         }
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "MDS-policy-requirements" ]
 }
 , 
 {
@@ -1425,7 +1721,7 @@
     "name": "MDS-provider-vehicles-without-ids",
     "description": "MDS provider vehicles endpoint with one adjustment: the device_id and vehicle_id are removed from the result<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS.",
     "exchangeType": "API", 
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -1440,16 +1736,19 @@
     "fieldModifications": [
         {
             "field": "vehicles[].device_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         },
         {
             "field": "vehicles[].vehicle_id",
-            "exception": "removed"
+            "exception": "removed",
+            "remark": "v2.0: specify this in disallowed_fields (requirments endpoint)"
         }
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
-    "bbversion": 1
+    "bbversion": 1,
+    "requiredEndPoints": [ "MDS-policy-requirements" ]
 }
 , 
 {
@@ -1457,7 +1756,7 @@
     "name": "MDS-provider-vehicles",
     "exchangeType": "API", 
     "part": "vehicles",
-    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0]",
+    "version": "[1.0.0,1.1.0-RC1,1.1.0,1.1.1.2.0-RC1,1.2.0,2.0]",
     "url": "[url]",
     "mediumType": "API",
     "refreshRate": "[ISO8601 timespan]",
@@ -1486,6 +1785,27 @@
 , 
 {
     "type": "standard",
+    "name": "MDS-provider-vehicles2",
+    "exchangeType": "API", 
+    "part": "vehicles",
+    "version": "[2.0]",
+    "url": "[url]",
+    "mediumType": "API",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "A",
+    "confidentiality": "B",
+    "interoperability": "A",
+    "domain": "A",
+
+    "retentionPeriod": "[ISO8601 timespan]",
+    "externalReference": "https://github.com/openmobilityfoundation/mobility-data-specification/tree/main/provider",
+    "bbversion": 1, 
+    "description": "The /vehicles is a near-realtime endpoint and returns the vehicles in an agency's Jurisdiction and/or area of agency responsibility.<br>The Mobility Data Specification (MDS), a project of the Open Mobility Foundation (OMF), is a set of Application Programming Interfaces (APIs) focused on shared mobility services such as dockless scooters, bicycles, mopeds, and carshare, and inspired by projects like GTFS and GBFS."
+}
+, 
+{
+    "type": "standard",
     "name": "NeTEx",
     "exchangeType": "file-based", 
     "part": "[complete url]",
@@ -1497,7 +1817,7 @@
     "confidentiality": "B",
     "interoperability": "A",
 
-    "schema": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd",
+    "externalReference": "https://github.com/NeTEx-CEN/NeTEx/tree/master/xsd",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
     "description": "NeTEx is a CEN Technical Standard for exchanging Public Transport Network, schedules and related data. It is divided into three parts, each covering a functional subset of the CEN Transmodel:<ul><li>Part 1 describes the Public Transport Network topology (CEN/TS 16614-1:2014);<li>Part 2 describes Scheduled Timetables (CEN/TS 16614-2:2014);<li>Part 3 covers Fare information (CEN/TS 16614-3:2015).</ul>"
@@ -1515,7 +1835,7 @@
     "domain": "B",
     "interoperability": "E",
 
-    "schema": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... ",
+    "fieldList": "line 1: 'number of trips';location1;location2;...  line 2..n: locationN;<valueN-1>;<valueN-2>;... ",
     "url": "[url]",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1,
@@ -1637,7 +1957,7 @@
     "version": "[version]",
     "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
-    "schema": "[comma delimited extra field list]",
+    "fieldList": "[comma delimited extra field list]",
 
     "privacy": "*",
     "confidentiality": "*",
@@ -1656,7 +1976,7 @@
     "version": "[version]",
     "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
-    "schema": "[comma delimited extra field list]",
+    "fieldList": "[comma delimited extra field list]",
 
     "privacy": "A",
     "confidentiality": "*",
@@ -1675,7 +1995,7 @@
     "version": "[version]",
     "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
-    "schema": "[comma delimited extra field list]",
+    "fieldList": "[comma delimited extra field list]",
 
     "privacy": "D",
     "confidentiality": "D",
@@ -1695,14 +2015,14 @@
     "version": "[version]",
     "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
-    "schema": "[comma delimited extra field list]",
+    "fieldList": "[comma delimited extra field list]",
 
     "privacy": "*",
     "confidentiality": "A",
     "interoperability": "E",
 
     "domain": "D",
-    "description": "https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf",
+    "description": "<a target='_new' href='https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf'>ESRI</a>",
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1
 }, 
@@ -1781,7 +2101,9 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint is based on the GBFS - alerts.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint is based on the GBFS - alerts.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
+
 }, 
 {
     "type": "standard",
@@ -1807,7 +2129,8 @@
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint is the same as the available-assets, but doesn't have a rotating asset id, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint is the same as the available-assets, but doesn't have a rotating asset id, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }
 , 
 {
@@ -1834,7 +2157,8 @@
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint is the same as the available-assets, and contains a traceable references to assets, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint is the same as the available-assets, and contains a traceable references to assets, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }
 , 
 {
@@ -1861,7 +2185,8 @@
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint is the same as the available-assets, and contains a traceable references to assets, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint is the same as the available-assets, and contains a traceable references to assets, resulting in a GDPR issue<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }
 , 
 {
@@ -1883,7 +2208,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint contains available number per asset type, optionally including the assets themselves.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint contains available number per asset type, optionally including the assets themselves.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }, 
 {
     "type": "standard",
@@ -1903,7 +2229,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint contains details including system operator, system location, year implemented, URL, contact info, time zone.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint contains details including system operator, system location, year implemented, URL, contact info, time zone.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }
 , 
 {
@@ -1933,7 +2260,8 @@
     ],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint is the same as the journal-entry endpoint, but has removed the personal aspects regarding the banking details<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint is the same as the journal-entry endpoint, but has removed the personal aspects regarding the banking details<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }, 
 {
     "type": "standard",
@@ -1960,7 +2288,8 @@
     "conflicts": [ "reveals_personal_trip_data" ],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint contains a financial report per leg or period. It is only used in peer-to-peer situations.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint contains a financial report per leg or period. It is only used in peer-to-peer situations.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }, 
 {
     "type": "standard",
@@ -1981,7 +2310,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint contains the meta data of the TOMP-API implementation, including the behavioral aspects.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint contains the meta data of the TOMP-API implementation, including the behavioral aspects.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }
 , 
 {
@@ -2001,7 +2331,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint contains the calendar of the operator<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint contains the calendar of the operator<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }
 , 
 {
@@ -2021,7 +2352,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint contains the operating hours of the operator<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint contains the operating hours of the operator<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }
 , 
 {
@@ -2041,7 +2373,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint contains the pricing plans of the operator.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint contains the pricing plans of the operator.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }, 
 {
     "type": "standard",
@@ -2060,7 +2393,8 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint contains operating and other areas, like parking areas, slow speed areas etc.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint contains operating and other areas, like parking areas, slow speed areas etc.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }
 , 
 {
@@ -2080,5 +2414,6 @@
     "fieldModifications": [],
     "retentionPeriod": "[ISO8601 timespan]",
     "bbversion": 1, 
-    "description": "This endpoint contains the stations of the operator.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." 
+    "description": "This endpoint contains the stations of the operator.<br>The TOMP-API (Transport Operator to MaaS Provider - Application Programming Interface) is a standardized and technical interface between MaaS providers and transport operators." ,
+    "requiredEndPoints": [ "TOMP-API-meta" ]
 }] 

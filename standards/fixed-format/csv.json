@@ -1,0 +1,26 @@
+{
+    "type": "file",
+    "exchangeType": "file-based",
+    "mediumType": "csv-file",
+
+    "name":"csv",
+    "displayName": "CSV",
+    "fieldList": "[comma seperated field list]",
+    "csvSeperationToken": "[comma,semi-colon,space,tab,not-applicable]",
+
+    "url": "[complete url]",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "*",
+    "confidentiality": "*",
+    "interoperability": "E",
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE,not-applicable]",
+    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable, custom]",
+    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+    "description": "<b>A separated values (CSV) file</b> is a delimited text file that uses a comma to separate values. Each line of the file is a data record. Each record consists of one or more fields, separated by commas. The use of the comma as a field separator is the source of the name for this file format. A CSV file typically stores tabular data (numbers and text) in plain text, in which case each line will have the same number of fields."
+}

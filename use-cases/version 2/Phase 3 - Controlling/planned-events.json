@@ -36,15 +36,15 @@
                     "remarks": "has to be combined with TOMP-regions or TOMP-stations"
                 },
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "dataProtection": "A",
-                    "schema": "area_id,start_date,start_time,end_date,end_time,geometry",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,geometry",
                     "mediumType": "json-file"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "schema": "area_id,start_date,start_time,end_date,end_time",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time",
                     "mediumType": "shapefile"
                 }
             ]

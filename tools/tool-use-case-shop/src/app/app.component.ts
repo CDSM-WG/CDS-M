@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, private useCaseService: UseCaseService) {}
 
   getCounter() {
-    return this.useCaseService.cart.length;
+    return this.useCaseService.cartContentSize();
   }
 
   ngOnInit() {

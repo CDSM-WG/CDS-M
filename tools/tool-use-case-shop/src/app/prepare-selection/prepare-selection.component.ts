@@ -99,21 +99,18 @@ export class PrepareSelectionComponent implements OnInit {
     let base = this.baseHref;
 
     if (base.indexOf('localhost') > 0){
-      base = "http://localhost:4201/";
+      base = "http://localhost:4200/";
     }
   
     this.url = base + "/assets/uploads/" +  r;
     this.clipboard.copy( this.url );
-    //             console.log('got r', r.name);
-    //             this.urlListener.next("http://localhost:4200/standards?name=" + r.name);
-    //this.url = r.replace('/standards?name=','/assets/uploads/');
     this.toastShown = true;
   }
 
   isDisabled() {
     let result: boolean = false;
     for (let s of this.standardService.selectedStandards) {
-      if (s.step < 4) {
+      if (s.step < 3) {
         return true;
       }
     }

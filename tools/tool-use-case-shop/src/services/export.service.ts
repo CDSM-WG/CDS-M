@@ -122,7 +122,20 @@ export class ExportService {
     }
 
     deleteTags() {
-        this.useCases.forEach(u => { delete u.tags; });
+        this.specification.useCases.forEach((u:any) => 
+            { 
+                delete u.tags; 
+            });
+        this.specification.standards.forEach((u:any) => 
+            {
+                delete u.checked;
+                delete u.step;
+                delete u.bbversion;
+                delete u.confidentiality;
+                delete u.interoperability;
+                delete u.domain;
+                delete u.dataProtection;
+            });
     }
 
     applyProcessingConditions() {
@@ -143,18 +156,64 @@ export class ExportService {
         this.specification.transport = toExport;
     }
 
+    isGenericFormat(format: string){
+        let name = format.toLowerCase();
+        return name.startsWith('csv')
+            || name.startsWith('json')
+            || name.startsWith('geojson')
+            || name.startsWith('xml')
+            || name.startsWith('shapefile');
+    }
+
     applyStandardsSelectionToUseCases() {
         let usedStandards: any[] = [];
         this.useCases.forEach((useCase: any) => {
             useCase.standards = useCase.standards.filter((x: any) => x.checked);
-            useCase.standards.forEach((element: any) => { usedStandards.push(element.name); });
+            useCase.standards.forEach((element: any) => { usedStandards.push(element); });
+            useCase.metrics.forEach((metric: any) => 
+            {
+                metric.standards.forEach((standard: any) => 
+                { 
+                    if (standard.checked) {
+                        let copy = JSON.parse(JSON.stringify(standard));
+                        if ( this.isGenericFormat(copy.name) ){
+                            copy.name = copy.name + ' ' + metric.description;
+                        }
+                        usedStandards.push(copy);
+                    } 
+                });
+            });
         });
 
-        this.standards.forEach((s: any) => {
-            if (usedStandards.includes(s.name)) {
-                this.specification.standards.push(s);
+        usedStandards.forEach( ( s: any ) => {
+            let name: string = s.name;
+            if (name.indexOf(' ') > 0){
+                name = name.split(' ')[0];
             }
-        });
+            if (this.isGenericFormat(name)){
+                let index = -1; 
+                
+                for( let i = 0; i < this.specification.standards.length; i++ ){
+                    if(this.specification.standards[i].name === s.name){
+                        index = i;
+                        break;
+                    }
+                }
+                if( index == -1) {
+                    this.specification.standards.push(s);
+                }
+            }
+            else {
+                let filtered = this.specification.standards.filter( (x: any) => x.name === name );
+                if (filtered.length === 0){
+                    this.specification.standards.push(s);
+                }
+            }
+
+            if (s.dataProtection=='A') {
+                s.privacy = 'A';
+            }
+        })
         this.specification.useCases = this.useCases;
     }
 }

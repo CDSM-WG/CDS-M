@@ -10,7 +10,7 @@
     "confidentiality": "D",
     "interoperability": "B",
     "domain": "D",
-    "schema": "https://www.topografix.com/gpx/1/1/gpx.xsd",
+    "externalReference": "https://www.topografix.com/gpx/1/1/gpx.xsd",
     "fieldModifications": [],
     "conflicts": [
         "reveals_personal_trip_data"

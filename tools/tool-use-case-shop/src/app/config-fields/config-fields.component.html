@@ -3,8 +3,9 @@
         <tr *ngFor="let field of obs | async" class="odd:bg-gray-100">
             <td class="p-4 text-left font-medium"><div title="{{field.title}}">{{field.name | removeCamelCase}}</div></td>
             <td>
-                <input *ngIf="!isSelection(field.title)" type="text" id="{{field.name}}" placeholder="{{field.title}}" (change)="setValue($event)">
-                <select *ngIf="isSelection(field.title)" id="{{field.name}}" (change)="setValue($event)" value="">
+                <span *ngIf="showOnly(field)">{{field.title}}</span>
+                <input *ngIf="!showOnly(field) && !isSelection(field.title)" type="text" id="{{field.name}}" placeholder="{{field.title}}" (change)="setValue($event)" [title]="getTitle(field.title)" [value]="getDefaultValue(field)">
+                <select *ngIf="!showOnly(field) && isSelection(field.title)" id="{{field.name}}" (change)="setValue($event)" [value]="getDefaultValue(field)" [title]="getTitle(field.title)">
                     <option value="">-- select one ---</option>
                     <option *ngFor="let o of getOptions(field.title)" value="{{o}}">{{o}}</option>
                 </select>

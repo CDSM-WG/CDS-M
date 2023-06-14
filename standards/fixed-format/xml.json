@@ -1,0 +1,26 @@
+{
+    "type": "file",
+    "exchangeType": "file-based",
+    "mediumType": "xml-file",
+
+    "name":"XML",
+    "displayName": "XML",
+    "schemaUrl": "[url of the XSD]",
+    "fieldList": "[comma seperated field list]",
+
+    "url": "[complete url]",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "*",
+    "confidentiality": "*",
+    "interoperability": "E",
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE,not-applicable]",
+    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+    "customSpatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+    "description": "<b>Extensible Markup Language (XML)</b> is a markup language and file format for storing, transmitting, and reconstructing arbitrary data. It defines a set of rules for encoding documents in a format that is both human-readable and machine-readable"
+}

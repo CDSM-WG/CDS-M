@@ -49,32 +49,32 @@
                     "name": "TOMP-API-regions"
                 },
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "remark": "with fields like an identifier, no personal referencing information",
                     "dataProtection": "A",
                     "mediumType": "json-file",
-                    "schema": "parking_id,name,start_date,start_time,end_date,end_time,geometry"
+                    "fieldList": "parking_id,name,start_date,start_time,end_date,end_time,geometry"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
                     "remark": "With fields like an identifier, without personal referencing information",
                     "mediumType": "shapefile",
-                    "schema": "parking_id,start_date,start_time,end_date,end_time"
+                    "fieldList": "parking_id,start_date,start_time,end_date,end_time"
                 },
                 {
-                    "name": "fixed-format geojson with license reference",
+                    "name": "GeoJSON with license reference",
                     "remark": "with fields like an identifier, parking license number, etc",
                     "dataProtection": "B",
                     "mediumType": "json-file",
-                    "schema": "parking_id,name,start_date,start_time,end_date,end_time,license_number,geometry"
+                    "fieldList": "parking_id,name,start_date,start_time,end_date,end_time,license_number,geometry"
                 },
                 {
-                    "name": "shapefile- with license reference",
+                    "name": "shapefile with license reference",
                     "dataProtection": "B",
                     "remark": "With fields like an identifier, parking license",
                     "mediumType": "shapefile",
-                    "schema": "parking_id,start_date,start_time,end_date,end_time,license_number"
+                    "fieldList": "parking_id,start_date,start_time,end_date,end_time,license_number"
                 }
             ]
         }

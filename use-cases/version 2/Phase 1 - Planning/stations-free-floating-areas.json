@@ -38,18 +38,18 @@
                     "name": "TOMP-API-regions"
                 },
                 {
-                    "name": "fixed-format",
+                    "name": "GeoJSON",
                     "dataProtection": "A",
-                    "remark": "GeoJSON, with fields like an identifier and name",
+                    "remark": "With fields like an identifier and name",
                     "mediumType": "json-file",
-                    "schema": "id,name,start_date,start_time,end_date,end_time,geometry"
+                    "fieldList": "id,name,start_date,start_time,end_date,end_time,geometry"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
                     "remark": "With fields like an identifier and name",
                     "mediumType": "shapefile",
-                    "schema": "id,name,start_date,start_time,end_date,end_time,geometry"
+                    "fieldList": "id,name,start_date,start_time,end_date,end_time,geometry"
                 }
             ]
         }

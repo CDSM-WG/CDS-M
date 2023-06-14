@@ -6,7 +6,7 @@
     "version": "[version]",
     "refreshRate": "[ISO8601 timespan]",
     "mediumType": "shapefile",
-    "schema": "[comma delimited extra field list]",
+    "fieldList": "[comma delimited extra field list]",
 
     "privacy": "D",
     "confidentiality": "D",

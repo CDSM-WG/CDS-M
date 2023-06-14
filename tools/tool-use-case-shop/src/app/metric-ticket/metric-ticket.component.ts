@@ -38,9 +38,7 @@ export class MetricTicketComponent implements OnInit {
       let parts = s.name.split('-');
       let standardName = parts.length > 1 ? parts[0] : s.name;
 
-      if (standardName == "fixed"){
-        standardName = "fixed-format";
-      } else if (standardName == "TOMP"){
+      if (standardName == "TOMP"){
         standardName = "TOMP";
       } else if (standardName == "MDS") {
         standardName = parts[0] + "-" + parts[1];
@@ -122,6 +120,6 @@ export class MetricTicketComponent implements OnInit {
   }
 
   getGrade(standard: any){
-    return this.standardService.getPrivacyGrade(standard.name, null);
+    return this.standardService.getPrivacyGrade(standard.name, standard);
   }
 }

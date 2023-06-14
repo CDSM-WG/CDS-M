@@ -16,38 +16,47 @@ export class ConfigStandardComponent implements OnInit, OnChanges {
   container!: ViewContainerRef;
   ref! : ComponentRef<any>;
 
-  step: number = 0;
+  step: number = 1;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { 
   }
 
   ngOnInit(): void {
     this.determineStep();
-    this.fillComponent();  
+    this.fillComponent();
   }
 
   ngOnChanges() {
   }
 
   fillComponent() {
+    if( this.container == null ) {
+      setTimeout(() => {this.fillComponent()}, 400);
+      return;
+    }
+
     if( this.step == 1 ){
-      this.container.clear();
+      if( this.container != null ){
+        this.container.clear();
+      
+        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ConfigAuthenticationComponent);
+        this.ref = this.container.createComponent(componentFactory);
+        this.ref.instance.setData(this.data);
+      }
       this.data.step = 1;
-    } else if (this.step == 2 ){
-      this.container.clear();
-      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ConfigAuthenticationComponent);
-      this.ref = this.container.createComponent(componentFactory);
-      this.ref.instance.setData(this.data);
+    } else if (this.step == 2){
+      if( this.container != null ){
+        this.container.clear();
+        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ConfigFieldsComponent);
+        this.ref = this.container.createComponent(componentFactory);
+        this.ref.instance.setData(this.data);
+      }
       this.data.step = 2;
-    } else if (this.step == 3){
-      this.container.clear();
-      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ConfigFieldsComponent);
-      this.ref = this.container.createComponent(componentFactory);
-      this.ref.instance.setData(this.data);
+    } else if( this.step > 2 ){
+      if( this.container != null ){
+        this.container.clear();
+      }
       this.data.step = 3;
-    } else if( this.step > 3 ){
-      this.container.clear();
-      this.data.step = 4;
     }
   }
 
@@ -63,7 +72,7 @@ export class ConfigStandardComponent implements OnInit, OnChanges {
 
   determineStep() {
     if (this.data.authentications != null) {
-      this.step = 2;
+      this.step = 1;
     }
     else {
       return;
@@ -79,7 +88,7 @@ export class ConfigStandardComponent implements OnInit, OnChanges {
       }
     }
     if (!unspecifiedValueFound) {
-      this.step = 3;
+      this.step = 2;
     }
   }
   
@@ -95,5 +104,4 @@ export class ConfigStandardComponent implements OnInit, OnChanges {
     this.step = i;
     this.fillComponent();
   }
-
 }

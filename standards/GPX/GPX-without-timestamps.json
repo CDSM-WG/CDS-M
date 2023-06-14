@@ -10,7 +10,7 @@
     "confidentiality": "D",
     "interoperability": "D",
     "domain": "D",
-    "schema": "https://www.topografix.com/gpx/1/1/gpx.xsd",
+    "externalReference": "https://www.topografix.com/gpx/1/1/gpx.xsd",
     "fieldModifications": [
         {
             "field": "time",

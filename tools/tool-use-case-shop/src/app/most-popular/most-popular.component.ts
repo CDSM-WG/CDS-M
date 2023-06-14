@@ -10,9 +10,12 @@ export class MostPopularComponent implements OnInit {
 
   useCases: any[] = [];
 
-  constructor(service: UseCaseService) { 
+  constructor(private service: UseCaseService) { 
+  }
 
-    let list = service.useCaseList.sort((a,b) => {
+  ngOnInit(): void {
+    let list: any[] = this.service.getUseCases();
+    list = list.sort((a,b) => {
       if( a.popularity == null ) {
         return 1;
       }
@@ -25,8 +28,5 @@ export class MostPopularComponent implements OnInit {
     for (let t=0; t < 3; ++t) {
       this.useCases.push(list[t]);
     }
-  }
-
-  ngOnInit(): void {
   }
 }

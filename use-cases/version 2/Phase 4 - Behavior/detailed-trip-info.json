@@ -53,21 +53,21 @@
                     "dataProtection": "B"
                 },
                 {
-                    "name": "fixed-format csv",
+                    "name": "CSV",
                     "dataProtection": "A",
-                    "schema": "start_date,start_time,end_date,end_time,start_lon,start_lat,end_lon,end_lat,distance,duration,price,asset_type,asset_id",
+                    "fieldList": "start_date,start_time,end_date,end_time,start_lon,start_lat,end_lon,end_lat,distance,duration,price,asset_type,asset_id",
                     "mediumType": "csv-file"
                 },
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "dataProtection": "A",
-                    "schema": "start_date,start_time,end_date,end_time,distance,duration,price,asset_type,asset_id,geometry",
+                    "fieldList": "start_date,start_time,end_date,end_time,distance,duration,price,asset_type,asset_id,geometry",
                     "mediumType": "json-file"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "schema": "start_date,start_time,end_date,end_time,distance,duration,price,asset_type,asset_id,",
+                    "fieldList": "start_date,start_time,end_date,end_time,distance,duration,price,asset_type,asset_id,",
                     "mediumType": "shapefile"
                 }
             ]

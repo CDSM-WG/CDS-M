@@ -25,15 +25,15 @@
                     "name": "MDS-provider-vehicles",
                     "dataProtection": "A"
                 },{
-                    "name": "fixed-format csv",
+                    "name": "CSV",
                     "dataProtection": "A",
-                    "schema": "asset_id,asset_type,name,propulsion_type,year,make,model,color,vin,license_plate",
+                    "fieldList": "asset_id,asset_type,name,propulsion_type,year,make,model,color,vin,license_plate",
                     "mediumType": "csv-file"
                 },
                 {
-                    "name": "fixed-format|json",
+                    "name": "JSON",
                     "dataProtection": "A",
-                    "schema": "asset_id,asset_type,name,propulsion_type,year,make,model,color,vin,license_plate",
+                    "fieldList": "asset_id,asset_type,name,propulsion_type,year,make,model,color,vin,license_plate",
                     "mediumType": "json-file"
                 }
             ]

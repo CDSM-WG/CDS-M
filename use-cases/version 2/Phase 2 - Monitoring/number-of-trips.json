@@ -21,21 +21,30 @@
             "description": "Number of trips, per (hour, day), starting at (area, zone, postal code)",
             "standards": [
                 {
-                    "name": "fixed-format csv",
+                    "name": "CSV",
                     "dataProtection": "A",
-                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],kilometers",
+                    "fieldList": "area_id,start_timestamp,kilometers",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
                     "mediumType": "csv-file"
                 },
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "dataProtection": "A",
-                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],kilometers,geometry",
+                    "fieldList": "area_id,start_timestamp,kilometers,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
                     "mediumType": "json-file"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],kilometers",
+                    "fieldList": "area_id,start_timestamp,kilometers",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
                     "mediumType": "shapefile"
                 }
             ]
@@ -64,7 +73,7 @@
                     "remark": "Only usable up to version 1.2"
                 },
                 {
-                    "name": "MDS-provider-vehicles-status",
+                    "name": "MDS-provider-vehicle-status",
                     "dataProtection": "B"
                 },
                 {

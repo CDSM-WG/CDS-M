@@ -49,6 +49,7 @@ import { PopoverComponent } from './popover/popover.component';
 import { ModalComponent } from './modal/modal.component';
 
 import { APP_BASE_HREF, PlatformLocation } from "@angular/common";
+import { OrderByPipe } from './order-by-pipe';
 
 export function getBaseHref(platformLocation: PlatformLocation): string {
   let p: any = platformLocation;
@@ -94,7 +95,8 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
     DndDirective,
     YourReceiptComponent,
     PopoverComponent,
-    ModalComponent
+    ModalComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

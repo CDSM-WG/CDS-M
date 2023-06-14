@@ -32,18 +32,18 @@
                     "name": "TOMP-API-regions"
                 },
                 {
-                    "name": "fixed-format",
+                    "name": "GeoJSON",
                     "dataProtection": "A",
-                    "remark": "GeoJSON, with fields like an identifier and max speed",
+                    "remark": "With fields like an identifier and max speed",
                     "mediumType": "json-file",
-                    "schema": "area_id,name,start_date,start_time,end_date,end_time,max_speed,geometry"
+                    "fieldList": "area_id,name,start_date,start_time,end_date,end_time,max_speed,geometry"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
                     "remark": "With fields like an identifier and max speed",
                     "mediumType": "shapefile",
-                    "schema": "area_id,name,start_date,start_time,end_date,end_time,max_speed"
+                    "fieldList": "area_id,name,start_date,start_time,end_date,end_time,max_speed"
                 }
             ]
         }

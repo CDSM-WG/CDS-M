@@ -49,30 +49,8 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
   }
 
   loadStandards() {
-    this.standardService.selectedStandards = [];
-    for (let i = 0; i < this.useCaseService.cart.length; i++) {
-      let uc = this.useCaseService.getUseCase(this.useCaseService.cart[i]);
-      if (uc.standards != null) {
-        for (let j = 0; j < uc.standards.length; j++) {
-          if (this.useCaseService.isStandardInCart(uc.standards[j].name)) {
-            if (!this.alreadyInSelected(uc.standards[j])) {
-              this.standardService.selectedStandards.push(uc.standards[j]);
-            }
-          }
-        }
-      }
-    }
+    this.standardService.selectedStandards = this.useCaseService.getSelectedStandards();
     this.dataSourceSelected.data = this.standardService.selectedStandards;
-  }
-
-  alreadyInSelected(standard: any) {
-    for (let i = 0; i < this.standardService.selectedStandards.length; i++) {
-      let s = this.standardService.selectedStandards[i];
-      if (s.name === standard.name) {
-        return true;
-      }
-    }
-    return false;
   }
 
   ngOnInit(): void {
@@ -115,24 +93,13 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
     fileReader.onload = () => {
       if (fileReader.result != null) {
         let jsonObj = (JSON.parse(fileReader.result.toString()));
-        this.standardService.standardList = jsonObj.standards;
+        //this.standardService.standardList = jsonObj.standards;
         this.useCaseService.useCaseList = jsonObj.useCases;
-        for (let i = 0; i < this.useCaseService.useCaseList.length; i++) {
-          this.useCaseService.addToCart(this.useCaseService.useCaseList[i].id);
-          let uc = this.useCaseService.useCaseList[i];
-          if (uc.standards != null) {
-            for (let k = 0; k < uc.standards.length; k++) {
-              let s = uc.standards[k];
-              if (!this.alreadyInSelected(s)) {
-                let standard = this.standardService.getStandard(s.name);
-                this.standardService.selectedStandards.push(standard);
-              }
-            }
-          }
-        }
+
+        this.useCaseService.parseStandards(jsonObj);
 
         this.standardService.standardList = this.standardService.selectedStandards;
-        this.dataSource = new MatTableDataSource<any>(this.standardService.getAllStandards());
+        this.dataSource = new MatTableDataSource<any>(this.standardService.selectedStandards);
         this.obs = this.dataSource.connect();
 
         this.dataSourceSelected.data = this.standardService.selectedStandards;
@@ -177,7 +144,6 @@ export class StandardStoreComponent implements OnInit, OnDestroy {
         this.hovered = true;
       }
     }
-
   }
 
   @HostListener('dragleave', ['$event']) onDragLeave(evt: any) {

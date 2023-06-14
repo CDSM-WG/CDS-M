@@ -32,7 +32,6 @@ export class UseCaseStoreComponent implements OnInit, OnDestroy {
     this.dataSource = new MatTableDataSource<any>(this.useCases);
     this.useCaseService.addedUseCaseInCart.subscribe( (x) => {
       this.toastShown = true;
-      //setTimeout (() => { this.toastShown = false; }, 5000 );
     } );
 
     this.toastShown = false;

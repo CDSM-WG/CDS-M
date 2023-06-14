@@ -21,38 +21,41 @@
             "description": "Number of complaints per (station, free-floating area)",
             "standards": [
                 {
-                    "name": "fixed-format csv",
+                    "name": "CSV",
                     "dataProtection": "A",
                     "mediumType": "csv-file",
                     "schemaUrl": "not-applicable",
-                    "schema": "date,time,category,complaint,severity,station_id,area_id",
+                    "fieldList": "start_timestamp,category,complaint,severity,station_id,area_id",
                     "csvSeperationToken": "semi-colon",
                     "retentionPeriod": "P1Y",
                     "aggregationOperator": "COUNT",
-                    "geoUnit": "[postal, postal1_4, station, free-floating-area]",
-                    "geoUnitCustomSpecification": "n.a.",
+                    "aggregationLevelSpatial": "[postal, postal1_4, station, free-floating-area, custom]",
+                    "customSpatialDefinitionUrl": "[URL]",
+                    "aggregationLevelTime": "[year=P1Y,month=P1M,day_of_week,day=P1D,part_of_day,hour=PT1H]",
                     "remark": "containing e.g. periods and category, aggregated"
                 },
                 {
-                    "name": "fixed-format json",
+                    "name": "JSON",
                     "dataProtection": "A",
                     "mediumType": "json-file",
                     "schemaUrl": "not-applicable",
-                    "schema": "date,time,category,complaint,severity,station_id,area_id",
+                    "fieldList": "start_timestamp,category,complaint,severity,station_id,area_id",
                     "csvSeperationToken": "semi-colon",
                     "retentionPeriod": "P1Y",
                     "aggregationOperator": "COUNT",
-                    "geoUnit": "[postal, postal1_4, station, free-floating-area]",
-                    "geoUnitCustomSpecification": "n.a.",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, station, free-floating-area, custom]",
+                    "customSpatialDefinitionUrl": "[URL]",
                     "remark": "containing e.g. periods and category, aggregated"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "schema": "date,time,category,complaint,severity,station_id,area_id",
+                    "fieldList": "start_timestamp,category,complaint,severity,station_id,area_id",
                     "retentionPeriod": "P1Y",
                     "aggregationOperator": "COUNT",
-                    "geoUnit": "[postal, postal1_4, station, free-floating-area]",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, station, free-floating-area]",
                     "geoUnitCustomSpecification": "n.a.",
                     "remark": "Shapefile, containing e.g. periods and category, aggregated"
                 }
@@ -62,28 +65,28 @@
             "description": "Anonymized complaints",
             "standards": [
                 {
-                    "name": "fixed-format csv",
+                    "name": "CSV",
                     "dataProtection": "B",
                     "mediumType": "csv-file",
                     "privacy": "B",
                     "schemaUrl": "not-applicable",
-                    "schema": "date,time,category,complaint,severity,lon,lat",
+                    "fieldList": "date,time,category,complaint,severity,lon,lat",
                     "csvSeperationToken": "semi-colon",
                     "remark": "CSV file, containing e.g. date, time, category and location"
                 },
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "dataProtection": "B",
                     "mediumType": "json-file",
                     "privacy": "B",
                     "schemaUrl": "not-applicable",
-                    "schema": "date,time,category,complaint,severity,geometry",
+                    "fieldList": "date,time,category,complaint,severity,geometry",
                     "remark": "containing e.g. date, time, category and location"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "B",
-                    "schema": "date,time,category,complaint,severity",
+                    "fieldList": "date,time,category,complaint,severity",
                     "remark": "Shapefile, containing e.g. date, time, category and location"
                 }
             ]

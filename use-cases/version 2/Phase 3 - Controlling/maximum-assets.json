@@ -26,21 +26,21 @@
                     "remarks": "has to be combined with MDS-geographies"
                 },
                 {
-                    "name": "fixed-format csv",
+                    "name": "CSV",
                     "dataProtection": "A",
-                    "schema": "area_id,start_date,start_time,end_date,end_time,maximum",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,maximum",
                     "mediumType": "csv-file"
                 },
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "dataProtection": "A",
-                    "schema": "area_id,start_date,start_time,end_date,end_time,maximum,geometry",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,maximum,geometry",
                     "mediumType": "json-file"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "schema": "area_id,start_date,start_time,end_date,end_time,maximum",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,maximum",
                     "mediumType": "shapefile"
                 }
             ]

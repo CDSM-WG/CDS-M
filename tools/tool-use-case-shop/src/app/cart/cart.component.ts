@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
   }
 
   getCounter() {
-    return this.selectedUseCases.length;
+    return this.useCaseService.cartContentSize();
   }
 
   getGrandTotal() {

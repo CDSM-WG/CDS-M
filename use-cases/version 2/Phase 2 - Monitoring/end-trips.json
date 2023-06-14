@@ -21,21 +21,33 @@
             "description": "(minimum, maximum, average, 85-percentile) Aggregated number of rental ends per (hour, part-of-day, day, week, month) and per ((free-floating) area, station, postal code, ... )",
             "standards": [
                 {
-                    "name": "fixed-format csv",
+                    "name": "CSV",
                     "dataProtection": "A",
-                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number",
+                    "fieldList": "area_id,start_time,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
                     "mediumType": "csv-file"
                 },
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "dataProtection": "A",
-                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number,geometry",
+                    "fieldList": "area_id,start_time,aggregated_number,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
                     "mediumType": "json-file"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "schema": "area_id,[year],[month],[day_of_week|day],[part_of_day|hour],aggregated_number",
+                    "fieldList": "area_id,start_timestamp,aggregated_number",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+                    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE]",
                     "mediumType": "shapefilefile"
                 }
             ]

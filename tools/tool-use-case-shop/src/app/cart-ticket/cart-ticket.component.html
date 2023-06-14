@@ -66,28 +66,33 @@
         </button>
     </div>
     <p class="mt-4 max-w-xl text-lg font-medium">
-        <span class="block mb-1 text-base font-semibold text-gray-500">
-           As a {{data.story.asA}}
+        <span class="block">
+            <span class="mb-1 text-base font-semibold text-gray-500">As a {{data.story.asA}} I would like to 
+            </span>{{data.story.iWouldLikeTo}}
         </span>
-        I would like to {{data.story.iWouldLikeTo}} in order to {{data.story.inOrderTo}}.
+        <span class="block">
+            <span class="mb-1 text-base font-semibold text-gray-500">in order to</span> {{data.story.inOrderTo}}.</span>
     </p>
     <div class="mt-1 md:mt-2 font-semibold text-blue-600">
         {{formatTags(data)}}
     </div>
-    <h3 class="mt-4 font-bold">Applicable data standards</h3>
-    <ul class="flex flex-col gap-2 mt-4">
-        <li class="flex items-start justify-between gap-9" *ngFor="let s of standards()">
-            <label class="inline-flex items-start gap-4 cursor-pointer">
-                <div class="flex-none h-7">
-                    <input type="checkbox"
-                        class="checkbox shrink-0 w-7 h-7 bg-transparent checked:bg-blue-600 bg-center bg-no-repeat bg-origin-border checked:border-blue-600 border border-gray-500 appearance-none"
-                        data-component="Checkbox" [checked]="getChecked(s)" (change)="clicked(s.name)" />
-                </div>
-                <div class="self-center text-black text-base font-medium">
-                    {{s.name|replaceUnderscore}}
-                </div>
-            </label>
-            <span class="flex-none font-bold">{{getGrade(s.name, s)}}</span>
-        </li>
-    </ul>
+    
+    <span *ngFor="let m of this.data.metrics">
+        <ul class="flex flex-col gap-2 mt-4">
+            <h3 class="mt-4 font-bold">{{m.description}}</h3>
+            <li class="flex items-start justify-between gap-9" *ngFor="let s of m.standards | orderBy: sortStandards">
+                <label class="inline-flex items-start gap-4 cursor-pointer">
+                    <div class="flex-none h-7">
+                        <input type="checkbox"
+                            class="checkbox shrink-0 w-7 h-7 bg-transparent checked:bg-blue-600 bg-center bg-no-repeat bg-origin-border checked:border-blue-600 border border-gray-500 appearance-none"
+                            data-component="Checkbox" [checked]="getChecked(s)" (change)="clicked(s.name, m)" />
+                    </div>
+                    <div class="self-center text-black text-base font-medium">
+                        {{s.name|replaceUnderscore}}
+                    </div>
+                </label>
+                <span class="flex-none font-bold">{{getGrade(s.name, s)}}</span>
+            </li>
+        </ul>
+    </span>
 </div>

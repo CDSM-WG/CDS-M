@@ -118,11 +118,11 @@
                                 <div *ngFor="let standard of obs | async" class="flex justify-between w-full">
                                     <div class="inline-flex items-start text-base before:inline-block before:h-1
                                         before:w-1 before:mt-2 before:rounded-full before:mr-2.5 before:bg-gray-100"
-                                        data-component="StatusIndicator" *ngIf="standard.step < 4">
+                                        data-component="StatusIndicator" *ngIf="standard.step < 3">
                                     </div>
                                     <div class="inline-flex items-start text-base before:inline-block before:h-1
                                         before:w-1 before:mt-2 before:rounded-full before:mr-2.5 before:bg-blue-600"
-                                        data-component="StatusIndicator" *ngIf="standard.step == 4">
+                                        data-component="StatusIndicator" *ngIf="standard.step == 3">
                                     </div>
                                     <div class="flex justify-between w-full">
                                         <span *ngIf="standard.displayName">{{standard.displayName}}</span>

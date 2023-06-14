@@ -27,15 +27,15 @@
                     "remarks": "has to be combined with MDS-geographies"
                 },
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "dataProtection": "A",
-                    "schema": "area_id,start_date,start_time,end_date,end_time,geometry,price,lower_boundary,upper_boundary",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,geometry,price,lower_boundary,upper_boundary",
                     "mediumType": "json-file"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "schema": "area_id,start_date,start_time,end_date,end_time,geometry,price,lower_boundary,upper_boundary",
+                    "fieldList": "area_id,start_date,start_time,end_date,end_time,geometry,price,lower_boundary,upper_boundary",
                     "mediumType": "shapefile"
                 }
             ]

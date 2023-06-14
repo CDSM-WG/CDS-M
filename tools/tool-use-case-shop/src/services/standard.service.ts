@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as data from '../app/_files/standards.json';
 import { BehaviorSubject, Observable } from 'rxjs';
+import allStandards from '../app/_files/standards.json'
 
 @Injectable()
 export class StandardService {
@@ -22,13 +23,27 @@ export class StandardService {
   selectedStandards: any[] = [];
 
   constructor() {
-    this.standardList = (data as any);
+    this.standardList = [].slice.call(data);
   }
 
-  getStandard(name: any) {
-    for (let i = 0; i < this.standardList.length; ++i) {
-      if (this.standardList[i].name === name) {
-        return this.standardList[i];
+  isGenericFormat(format: string){
+    let name = format.toLowerCase();
+    return name.startsWith('csv')
+        || name.startsWith('json')
+        || name.startsWith('geojson')
+        || name.startsWith('xml')
+        || name.startsWith('shapefile');
+  }
+
+  getStandard(name: string) {
+    let all = this.getAllStandards();
+    // if( this.isGenericFormat(name)) {
+    //   name = name.split(' ')[0];
+    // }
+
+    for (let i = 0; i < all.length; ++i) {
+      if (all[i].name === name) {
+        return all[i];
       }
     }
     return { "name": name };
@@ -36,8 +51,9 @@ export class StandardService {
 
   getAllStandards() {
     let s = [];
-    for (let i = 0; i < this.standardList.length; ++i) {
-      let standard = this.standardList[i];
+    let array : any[] = allStandards;
+    for (let i = 0; i < array.length; ++i) {
+      let standard = array[i];
       s.push(standard);
     }
     return s;

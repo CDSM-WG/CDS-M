@@ -15,6 +15,7 @@ export class ConfigFieldsComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   obs!: Observable<any>;
   fields: any[] = [];
+  fieldsToShow: string[] = ['fieldList', 'csvSeperationToken', 'retentionPeriod', 'remark'];
 
   constructor() { 
     this.dataSource = new MatTableDataSource<any>(this.fields);
@@ -36,7 +37,7 @@ export class ConfigFieldsComponent implements OnInit {
     for( let key of Object.keys(this.data) ) {
       let value = this.data[key];
       if (typeof value === 'string' || value instanceof String) {
-        if( value.includes('[')) {
+        if( value.includes('[') || this.fieldsToShow.indexOf(key) >= 0 ) {
           this.fields.push({ name: key, value: "", title: value });
         }
       }
@@ -55,13 +56,12 @@ export class ConfigFieldsComponent implements OnInit {
 
   setValue(event: Event){
     let target: any = event.target;
-    let entry = this.fields.find( (x) => x.name == target.id);
-    entry.value = target.value;
     this.data[target.id] = target.value;
+    return true;
   }
 
   isSelection(value: string){
-    if( value.indexOf(',') > 0 ){
+    if( value != null && value.indexOf(',') > 0 && value.startsWith('[')){
       return true;
     }
     return false;
@@ -70,7 +70,36 @@ export class ConfigFieldsComponent implements OnInit {
   getOptions(value: string){
     let t = value.replace("[","").replace("]","");
     let options = t.split(",");
+    for( let i = 0; i < options.length; i++){
+      options[i] = options[i].trim();      
+    }
     return options;
   }
 
+  getTitle(title: string){
+    if (title.indexOf('url') >= 0 ){
+      return "a valid URI, starting with http or https";
+    }
+    else if (title.indexOf('ISO8601') >= 0){
+      return "Use 'NA' (not applicable) or a valid format, starting with a P, for example P1M (1 month), or in case of timespans, PT1H (1 hour)";
+    }
+    return title;
+  }
+
+  showOnly(field: any){
+    if ( field.name === "fieldList") {
+      return false;
+    }
+    return this.fieldsToShow.indexOf(field.name) >= 0 && field.title[0] != '[';
+  }
+
+  getDefaultValue(field: any){
+    if (this.isSelection(field.title)) {
+      return this.getOptions(field.title).splice(-1)[0];
+    }
+    if( field.title.indexOf( 'URL') > 0) {
+      return "";
+    }
+    return (field.title as string).replace(',', ', ');
+  }
 }

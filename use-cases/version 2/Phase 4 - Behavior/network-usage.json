@@ -24,15 +24,21 @@
             "description": "Geographical representation of the usage of the network, with (minimum, maximum, average) counts per (hour, day)",
             "standards": [
                 {
-                    "name": "fixed-format geojson",
+                    "name": "GeoJSON",
                     "dataProtection": "A",
-                    "schema": "segment_id,[year],[month],[day_of_week|day],[part_of_day|hour],counts,geometry",
+                    "fieldList": "segment_id,start_timestamp,counts,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
                     "mediumType": "json-file"
                 },
                 {
                     "name": "shapefile",
                     "dataProtection": "A",
-                    "schema": "segment_id,[year],[month],[day_of_week|day],[part_of_day|hour],counts,geometry",
+                    "schema": "segment_id,start_timestamp,counts,geometry",
+                    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+                    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable]",
+                    "spatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
                     "mediumType": "shapefile"
                 }
             ]

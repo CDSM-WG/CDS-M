@@ -1,0 +1,26 @@
+{
+    "type": "file",
+    "exchangeType": "file-based",
+    "mediumType": "geojson-file",
+
+    "name":"GeoJSON",
+    "displayName": "GeoJSON",
+    "schemaUrl": "[url of the json scheme]",
+    "fieldList": "[comma seperated field list]",
+
+    "url": "[complete url]",
+    "refreshRate": "[ISO8601 timespan]",
+
+    "privacy": "*",
+    "confidentiality": "*",
+    "interoperability": "E",
+    "domain": "E",
+    "retentionPeriod": "[ISO8601 timespan]",
+    "bbversion": 1,
+
+    "aggregationOperator": "[AVG, COUNT, MAX, MIN, MED, SUM, 75PERCENTILE, 80PERCENTILE, 85PERCENTILE, 90PERCENTILE, 95PERCENTILE, 99PERCENTILE,not-applicable]",
+    "aggregationLevelTime": "[minute, quarter_of_hour, hour, daypart, day, week, month, year,not-applicable]",
+    "aggregationLevelSpatial": "[postal, postal1_4, district, city, region, custom, station, free-floating-area, not-applicable, custon]",
+    "customSpatialDefinitionUrl": "[URL of the spatial areas (geojson shapefile etc)]",
+    "description": "<b>GeoJSON</b> is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format."
+}
